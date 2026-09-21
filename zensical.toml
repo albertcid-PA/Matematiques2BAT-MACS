@@ -1,6 +1,9 @@
 [project]
 site_name = "Matemàtiques Aplicades a les Ciències Socials II"
 site_description = "Apunts de Matemàtiques Aplicades a les Ciències Socials II de segon de batxillerat"
+site_url = "https://albertcid-pa.github.io/Matematiques2BAT-MACS/"
+repo_url = "https://github.com/albertcid-PA/Matematiques2BAT-MACS"
+repo_name = "albertcid-PA/Matematiques2BAT-MACS"
 
 nav = [
   { "Inici" = "index.md" },
