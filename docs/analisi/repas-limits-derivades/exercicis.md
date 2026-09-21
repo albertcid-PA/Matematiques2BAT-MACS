@@ -7,12 +7,12 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 
 ## 1. Derivada en un punt
 
-**1.** Calcula el valor de la derivada en el punt indicat.
+**1.** Calcula la derivada de cada funció. Quan s'indiqui un punt, calcula també el valor de la derivada en aquest punt.
 
 | | |
 |:--|:--|
 | **a)** $f(x)=x^2-3x$, en $x=2$ | **b)** $f(x)=\sqrt{x+5}$, en $x=4$ |
-| **c)** $f(x)=e^{2x}$, en $x=0$ | |
+| **c)** $f(x)=e^{2x}$, en $x=0$ | **d)** $f(x)=x^3$ |
 
 ## 2. Derivades elementals
 
