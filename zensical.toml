@@ -1,0 +1,93 @@
+[project]
+site_name = "Matemàtiques Aplicades a les Ciències Socials II"
+site_description = "Apunts de Matemàtiques Aplicades a les Ciències Socials II de segon de batxillerat"
+
+nav = [
+  { "Inici" = "index.md" },
+  { "Anàlisi" = [
+    { "Introducció" = "analisi/index.md" },
+    { "1. Repàs de límits i derivades" = [
+      { "Índex" = "analisi/repas-limits-derivades/index.md" },
+      { "Repàs de límits" = "analisi/repas-limits-derivades/01_limits.md" },
+      { "Repàs de derivades" = "analisi/repas-limits-derivades/02_derivades.md" },
+      { "Exercicis" = "analisi/repas-limits-derivades/exercicis.md" },
+    ] },
+    { "2. Aplicacions de les derivades" = [
+      { "Índex" = "analisi/aplicacions-derivades/index.md" },
+      { "Derivabilitat" = "analisi/aplicacions-derivades/01_derivabilitat.md" },
+      { "Creixement i extrems" = "analisi/aplicacions-derivades/02_creixement-extrems.md" },
+      { "Representació de funcions" = "analisi/aplicacions-derivades/03_representacio-funcions.md" },
+      { "Optimització" = "analisi/aplicacions-derivades/04_optimitzacio.md" },
+      { "Exercicis" = "analisi/aplicacions-derivades/exercicis.md" },
+    ] },
+  ] },
+  { "Àlgebra lineal" = [
+    { "Introducció" = "algebra-lineal/index.md" },
+    { "1. Sistemes i mètode de Gauss" = "algebra-lineal/sistemes-gauss/index.md" },
+    { "2. Matrius" = "algebra-lineal/matrius/index.md" },
+    { "3. Problemes de tipus PAU" = "algebra-lineal/problemes-pau/index.md" },
+  ] },
+  { "Probabilitat i estadística" = [
+    { "Introducció" = "probabilitat-estadistica/index.md" },
+    { "1. Probabilitat i teorema de Bayes" = "probabilitat-estadistica/probabilitat/index.md" },
+    { "2. Distribucions de probabilitat" = "probabilitat-estadistica/distribucions/index.md" },
+    { "3. Inferència estadística" = "probabilitat-estadistica/inferencia/index.md" },
+    { "4. Problemes de tipus PAU" = "probabilitat-estadistica/problemes-pau/index.md" },
+  ] },
+]
+
+extra_javascript = [
+  "javascripts/katex.js",
+  "https://unpkg.com/katex@0/dist/katex.min.js",
+  "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
+]
+
+extra_css = [
+  "https://unpkg.com/katex@0/dist/katex.min.css",
+  "stylesheets/extra.css",
+]
+
+[project.theme]
+language = "ca"
+features = [
+  "content.code.copy",
+  "content.footnote.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.top",
+  "search.highlight",
+]
+
+[project.theme.icon]
+logo = "lucide/sigma"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Canvia el tema"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Activa el mode fosc"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Segueix el tema del sistema"
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+md_in_html = {}
+tables = {}
+toc = { permalink = true }
+pymdownx.arithmatex = { generic = true }
+pymdownx.details = {}
+pymdownx.superfences = {}

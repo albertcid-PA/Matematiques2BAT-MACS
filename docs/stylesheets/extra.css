@@ -1,0 +1,28 @@
+/* Manté les fórmules i el text dels requadres a la mateixa mida que el cos. */
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-size: inherit;
+}
+
+/* Centra les figures matemàtiques i limita l'amplada en pantalles grans. */
+.md-typeset figure {
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* Conserva el contrast dels eixos i les etiquetes TikZ en mode fosc. */
+.md-typeset figure img[src$=".svg"] {
+  box-sizing: border-box;
+  padding: 0.75rem;
+  background: #fff;
+  border-radius: 0.25rem;
+}
+
+/* Evita que les fórmules amples trenquin la pàgina en pantalles petites. */
+.md-typeset .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.25rem;
+}
