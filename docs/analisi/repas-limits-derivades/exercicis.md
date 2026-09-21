@@ -5,9 +5,18 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 !!! note "Apartat en construcció"
     Els exercicis de límits s'afegiran quan redactem el repàs de límits. Aquesta pàgina acabarà reunint tots els exercicis del tema.
 
-## 1. Derivades elementals
+## 1. Derivada en un punt
 
-**1.** Calcula la derivada de les funcions següents:
+**1.** Calcula el valor de la derivada en el punt indicat.
+
+| | |
+|:--|:--|
+| **a)** $f(x)=x^2-3x$, en $x=2$ | **b)** $f(x)=\sqrt{x+5}$, en $x=4$ |
+| **c)** $f(x)=e^{2x}$, en $x=0$ | |
+
+## 2. Derivades elementals
+
+**2.** Calcula la derivada de les funcions següents:
 
 | | |
 |:--|:--|
@@ -15,9 +24,9 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 | **c)** $f(x)=3\sqrt{x}-\dfrac{5}{x}$ | **d)** $f(x)=\dfrac{2}{3}x^6-\dfrac{4}{x^2}$ |
 | **e)** $f(x)=7e^x-3\ln x$ | **f)** $f(x)=2\cdot5^x+\log_2x$ |
 
-## 2. Productes i quocients
+## 3. Productes i quocients
 
-**2.** Calcula les derivades. Indica la regla que utilitzes en cada cas.
+**3.** Calcula les derivades. Indica la regla que utilitzes en cada cas.
 
 | | |
 |:--|:--|
@@ -25,9 +34,9 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 | **c)** $f(x)=(2x-1)(x^2+3)$ | **d)** $f(x)=\dfrac{x^2-4}{x+1}$ |
 | **e)** $f(x)=\dfrac{3x+2}{x^2+1}$ | **f)** $f(x)=\dfrac{\ln x}{x^2}$ |
 
-## 3. Regla de la cadena
+## 4. Regla de la cadena
 
-**3.** Deriva les funcions compostes següents:
+**4.** Deriva les funcions compostes següents:
 
 | | |
 |:--|:--|
@@ -36,9 +45,9 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 | **e)** $f(x)=\ln(4x^2+1)$ | **f)** $f(x)=(x^3+1)^{-2}$ |
 | **g)** $f(x)=\sqrt{1-e^x}$ | **h)** $f(x)=3^{2x+1}$ |
 
-## 4. Simplifica abans de derivar
+## 5. Simplifica abans de derivar
 
-**4.** Simplifica cada expressió i deriva-la. Conserva les restriccions del domini original.
+**5.** Simplifica cada expressió i deriva-la. Conserva les restriccions del domini original.
 
 | | |
 |:--|:--|
@@ -46,18 +55,9 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 | **c)** $f(x)=x^2\sqrt{x}$ | **d)** $f(x)=\dfrac{x^2-9}{x-3}$ |
 | **e)** $f(x)=\ln(x^3)$, amb $x>0$ | **f)** $f(x)=e^{\ln x}$, amb $x>0$ |
 
-## 5. Derivada en un punt
+## 6. Regles de derivació
 
-**5.** Calcula el valor de la derivada en el punt indicat.
-
-| | |
-|:--|:--|
-| **a)** $f(x)=x^2-3x$, en $x=2$ | **b)** $f(x)=\sqrt{x+5}$, en $x=4$ |
-| **c)** $f(x)=e^{2x}$, en $x=0$ | |
-
-## 7. Regles de derivació
-
-**7.** Calcula la derivada de les funcions següents i simplifica el resultat:
+**6.** Calcula la derivada de les funcions següents i simplifica el resultat:
 
 | | |
 |:--|:--|
@@ -65,9 +65,9 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 | **c)** $f(x)=\dfrac{4x^2}{x+\sqrt{x}}$ | **d)** $f(x)=\left(\dfrac34-\dfrac{x}{6}\right)^5$ |
 | **e)** $f(x)=\sqrt[4]{2x^3}$ | **f)** $f(x)=(3\sqrt{x}+2)^6$ |
 
-## 8. Quocients i funcions compostes
+## 7. Quocients i funcions compostes
 
-**8.** Troba la derivada de les funcions següents i simplifica-la sempre que sigui possible:
+**7.** Troba la derivada de les funcions següents i simplifica-la sempre que sigui possible:
 
 | | |
 |:--|:--|
@@ -75,9 +75,9 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 | **c)** $f(x)=\dfrac{x^2}{(3x-1)^4}$ | **d)** $f(x)=\dfrac{4-x^2}{x^2-6x+9}$ |
 | **e)** $f(x)=\left(\dfrac{2-x}{2+x}\right)^{3/2}$ | **f)** $f(x)=\dfrac{3}{x}+\dfrac{x^2}{4}$ |
 
-## 10. Funcions exponencials i logarítmiques
+## 8. Funcions exponencials i logarítmiques
 
-**10.** Deriva les funcions següents:
+**8.** Deriva les funcions següents:
 
 | | |
 |:--|:--|
