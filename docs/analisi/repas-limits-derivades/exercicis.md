@@ -55,13 +55,6 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 | **a)** $f(x)=x^2-3x$, en $x=2$ | **b)** $f(x)=\sqrt{x+5}$, en $x=4$ |
 | **c)** $f(x)=e^{2x}$, en $x=0$ | |
 
-## 6. Comprovació conceptual
-
-**6.** Digues si cada afirmació és certa o falsa. Si és falsa, corregeix-la.
-
-- **a)** La derivada d'un producte és el producte de les derivades.
-- **b)** En aplicar la regla de la cadena, cal multiplicar per la derivada de la funció interior.
-
 ## 7. Regles de derivació
 
 **7.** Calcula la derivada de les funcions següents i simplifica el resultat:
