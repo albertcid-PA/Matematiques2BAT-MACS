@@ -11,8 +11,8 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 
 | | |
 |:--|:--|
-| **a)** $f(x)=x^2-3x$, en $x=2$ | **b)** $f(x)=\sqrt{x+5}$, en $x=4$ |
-| **c)** $f(x)=e^{2x}$, en $x=0$ | **d)** $f(x)=x^3$ |
+| **a)** $f(x)=x^3$ | **b)** $f(x)=x^2-3x$, en $x=2$ |
+| **c)** $f(x)=\sqrt{x+5}$, en $x=4$ | **d)** $f(x)=e^{2x}$, en $x=0$ |
 
 ## 2. Derivades elementals
 
