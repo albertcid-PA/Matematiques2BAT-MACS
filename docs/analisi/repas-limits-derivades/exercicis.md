@@ -61,3 +61,33 @@ Els exercicis estan agrupats per tipus. Abans de començar cada derivada, identi
 
 - **a)** La derivada d'un producte és el producte de les derivades.
 - **b)** En aplicar la regla de la cadena, cal multiplicar per la derivada de la funció interior.
+
+## 7. Regles de derivació
+
+**7.** Calcula la derivada de les funcions següents i simplifica el resultat:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^2-4}{x^2+4}$ | **b)** $f(x)=\dfrac{x-2}{(3-x)^2}$ |
+| **c)** $f(x)=\dfrac{4x^2}{x+\sqrt{x}}$ | **d)** $f(x)=\left(\dfrac34-\dfrac{x}{6}\right)^5$ |
+| **e)** $f(x)=\sqrt[4]{2x^3}$ | **f)** $f(x)=(3\sqrt{x}+2)^6$ |
+
+## 8. Quocients i funcions compostes
+
+**8.** Troba la derivada de les funcions següents i simplifica-la sempre que sigui possible:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^4}{(x-2)^3}$ | **b)** $f(x)=\left(\dfrac{x^2-3}{x}\right)^4$ |
+| **c)** $f(x)=\dfrac{x^2}{(3x-1)^4}$ | **d)** $f(x)=\dfrac{4-x^2}{x^2-6x+9}$ |
+| **e)** $f(x)=\left(\dfrac{2-x}{2+x}\right)^{3/2}$ | **f)** $f(x)=\dfrac{3}{x}+\dfrac{x^2}{4}$ |
+
+## 10. Funcions exponencials i logarítmiques
+
+**10.** Deriva les funcions següents:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\ln(x^2+3)$ | **b)** $f(x)=\ln\sqrt{2-x}$ |
+| **c)** $f(x)=\dfrac{\ln x}{e^{2x}}$ | **d)** $f(x)=e^{3x^2-2}$ |
+| **f)** $f(x)=\ln\left(\ln\dfrac{2}{x}\right)$ | |
