@@ -13,6 +13,7 @@ nav = [
       { "Índex" = "analisi/repas-limits-derivades/index.md" },
       { "Repàs de límits" = "analisi/repas-limits-derivades/01_limits.md" },
       { "Repàs de derivades" = "analisi/repas-limits-derivades/02_derivades.md" },
+      { "Per practicar" = "analisi/repas-limits-derivades/exercicis.md" },
     ] },
     { "2. Aplicacions de les derivades" = [
       { "Índex" = "analisi/aplicacions-derivades/index.md" },
@@ -20,6 +21,7 @@ nav = [
       { "Creixement i extrems" = "analisi/aplicacions-derivades/02_creixement-extrems.md" },
       { "Representació de funcions" = "analisi/aplicacions-derivades/03_representacio-funcions.md" },
       { "Optimització" = "analisi/aplicacions-derivades/04_optimitzacio.md" },
+      { "Per practicar" = "analisi/aplicacions-derivades/exercicis.md" },
     ] },
   ] },
   { "Àlgebra lineal" = [
