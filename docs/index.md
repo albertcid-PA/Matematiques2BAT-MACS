@@ -2,7 +2,7 @@
 
 Benvinguts al recull d'apunts de Matemàtiques Aplicades a les Ciències Socials II de segon de batxillerat.
 
-Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicacions breus, exemples resolts, exercicis i problemes de tipus PAU.
+Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicacions breus, exemples resolts, exercicis i problemes PAU.
 
 ## Temes disponibles
 

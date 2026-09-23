@@ -1,4 +1,4 @@
-# 3. Problemes de tipus PAU
+# 3. Problemes PAU
 
 !!! note "En preparació"
-    Aquí agruparem els problemes d'àlgebra lineal de tipus PAU.
+    Aquí agruparem els problemes PAU d'àlgebra lineal.

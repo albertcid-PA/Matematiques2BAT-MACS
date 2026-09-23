@@ -9,4 +9,4 @@
 - Funció que cal optimitzar i domini del problema.
 - Obtenció i comprovació del màxim o del mínim.
 - Interpretació de la solució en el context de l'enunciat.
-- Problemes de tipus PAU.
+- Problemes PAU.

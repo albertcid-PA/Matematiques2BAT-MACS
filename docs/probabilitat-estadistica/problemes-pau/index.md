@@ -1,4 +1,4 @@
-# 4. Problemes de tipus PAU
+# 4. Problemes PAU
 
 !!! note "En preparació"
-    Aquí agruparem els problemes de probabilitat i inferència estadística de tipus PAU.
+    Aquí agruparem els problemes PAU de probabilitat i inferència estadística.

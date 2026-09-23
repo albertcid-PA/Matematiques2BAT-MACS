@@ -7,4 +7,4 @@ Aquest bloc reuneix la probabilitat, les distribucions i la inferència estadís
 1. [**Probabilitat i teorema de Bayes**](probabilitat/index.md).
 2. [**Distribucions de probabilitat**](distribucions/index.md).
 3. [**Inferència estadística**](inferencia/index.md).
-4. [**Problemes de tipus PAU**](problemes-pau/index.md).
+4. [**Problemes PAU**](problemes-pau/index.md).

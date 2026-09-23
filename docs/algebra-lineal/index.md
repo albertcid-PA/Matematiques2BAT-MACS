@@ -6,4 +6,4 @@ Aquest bloc estudia els sistemes d'equacions i les matrius, amb especial atenci√
 
 1. [**Sistemes i m√®tode de Gauss**](sistemes-gauss/index.md).
 2. [**Matrius**](matrius/index.md).
-3. [**Problemes de tipus PAU**](problemes-pau/index.md).
+3. [**Problemes PAU**](problemes-pau/index.md).

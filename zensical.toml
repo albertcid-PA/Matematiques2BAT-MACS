@@ -31,14 +31,14 @@ nav = [
     { "Introducció" = "algebra-lineal/index.md" },
     { "1. Sistemes i mètode de Gauss" = "algebra-lineal/sistemes-gauss/index.md" },
     { "2. Matrius" = "algebra-lineal/matrius/index.md" },
-    { "3. Problemes de tipus PAU" = "algebra-lineal/problemes-pau/index.md" },
+    { "3. Problemes PAU" = "algebra-lineal/problemes-pau/index.md" },
   ] },
   { "Probabilitat i estadística" = [
     { "Introducció" = "probabilitat-estadistica/index.md" },
     { "1. Probabilitat i teorema de Bayes" = "probabilitat-estadistica/probabilitat/index.md" },
     { "2. Distribucions de probabilitat" = "probabilitat-estadistica/distribucions/index.md" },
     { "3. Inferència estadística" = "probabilitat-estadistica/inferencia/index.md" },
-    { "4. Problemes de tipus PAU" = "probabilitat-estadistica/problemes-pau/index.md" },
+    { "4. Problemes PAU" = "probabilitat-estadistica/problemes-pau/index.md" },
   ] },
 ]
 
