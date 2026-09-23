@@ -14,7 +14,3 @@ En aquest tema utilitzarem les derivades per estudiar el comportament de les fun
 ## Optimització
 
 - [**Optimització de funcions**](04_optimitzacio.md) — plantejament, resolució i interpretació de problemes contextualitzats.
-
-## Per practicar
-
-- [**Exercicis i problemes**](exercicis.md) — relació completa d'exercicis del tema, ordenada com els apartats. Els exercicis de PAU recents s'identificaran amb l'any i la convocatòria.

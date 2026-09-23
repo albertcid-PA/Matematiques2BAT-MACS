@@ -1,4 +1,4 @@
-# 3. Inferència estadística
+# 7. Inferència estadística
 
 !!! note "En preparació"
     Aquest apartat es redactarà durant el darrer bloc del curs.

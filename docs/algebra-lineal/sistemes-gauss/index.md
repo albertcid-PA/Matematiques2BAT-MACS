@@ -1,4 +1,4 @@
-# 1. Sistemes i mètode de Gauss
+# 3. Sistemes i mètode de Gauss
 
 !!! note "En preparació"
     Aquest apartat es redactarà quan comenci el bloc d'àlgebra lineal.

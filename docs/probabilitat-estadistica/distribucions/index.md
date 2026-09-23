@@ -1,4 +1,4 @@
-# 2. Distribucions de probabilitat
+# 6. Distribucions de probabilitat
 
 !!! note "En preparació"
     Aquest apartat es redactarà després del repàs de probabilitat.

@@ -4,7 +4,7 @@ Benvinguts al recull d'apunts de Matemàtiques Aplicades a les Ciències Socials
 
 Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicacions breus, exemples resolts, exercicis i problemes PAU.
 
-## Temes disponibles
+## Blocs del curs
 
 - [**Anàlisi**](analisi/index.md) — repàs de límits i derivades, aplicacions de les derivades, representació de funcions i optimització.
 - [**Àlgebra lineal**](algebra-lineal/index.md) — sistemes d'equacions, mètode de Gauss, matrius i problemes contextualitzats.

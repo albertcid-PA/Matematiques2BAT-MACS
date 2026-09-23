@@ -1,4 +1,4 @@
-# 2. Matrius
+# 4. Matrius
 
 !!! note "En preparació"
     Aquest apartat es redactarà després dels sistemes d'equacions.
