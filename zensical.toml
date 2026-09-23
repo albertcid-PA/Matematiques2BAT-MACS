@@ -22,6 +22,7 @@ nav = [
       { "Optimització" = "analisi/aplicacions-derivades/04_optimitzacio.md" },
     ] },
     { "Per practicar" = [
+      { "Índex" = "analisi/per-practicar.md" },
       { "Exercicis dels temes 1 i 2" = "analisi/exercicis.md" },
       { "Problemes PAU" = "analisi/problemes-pau.md" },
     ] },
@@ -31,6 +32,7 @@ nav = [
     { "3. Sistemes i mètode de Gauss" = "algebra-lineal/sistemes-gauss/index.md" },
     { "4. Matrius" = "algebra-lineal/matrius/index.md" },
     { "Per practicar" = [
+      { "Índex" = "algebra-lineal/per-practicar.md" },
       { "Exercicis dels temes 3 i 4" = "algebra-lineal/exercicis.md" },
       { "Problemes PAU" = "algebra-lineal/problemes-pau/index.md" },
     ] },
@@ -41,6 +43,7 @@ nav = [
     { "6. Distribucions de probabilitat" = "probabilitat-estadistica/distribucions/index.md" },
     { "7. Inferència estadística" = "probabilitat-estadistica/inferencia/index.md" },
     { "Per practicar" = [
+      { "Índex" = "probabilitat-estadistica/per-practicar.md" },
       { "Exercicis dels temes 5, 6 i 7" = "probabilitat-estadistica/exercicis.md" },
       { "Problemes PAU" = "probabilitat-estadistica/problemes-pau/index.md" },
     ] },
