@@ -26,3 +26,34 @@
   overflow-y: hidden;
   padding-block: 0.25rem;
 }
+
+/* Compacta el ritme vertical dels apunts sense reduir la mida del text. */
+.md-typeset p {
+  margin-block: 0.55em;
+}
+
+.md-typeset div.arithmatex {
+  margin-block: 0.45em;
+}
+
+.md-typeset div.arithmatex .katex-display {
+  margin-block: 0.35em;
+}
+
+/* Acosta els requadres d'exemple al text que expliquen. */
+.md-typeset .admonition,
+.md-typeset details {
+  margin-block: 0.8em;
+}
+
+/* Redueix l'espai entre paràgrafs i fórmules dins dels requadres. */
+.md-typeset .admonition > :not(.admonition-title),
+.md-typeset details > :not(summary) {
+  margin-block: 0.3em;
+}
+
+.md-typeset .admonition .katex-display,
+.md-typeset details .katex-display {
+  margin-block: 0.2em;
+  padding-block: 0;
+}
