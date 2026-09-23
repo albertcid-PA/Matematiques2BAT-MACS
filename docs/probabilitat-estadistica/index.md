@@ -11,4 +11,4 @@ Aquest bloc reuneix la probabilitat, les distribucions i la inferència estadís
 ## Per practicar
 
 - [**Exercicis dels temes 5, 6 i 7**](exercicis.md) — col·lecció completa d'exercicis de probabilitat i estadística, agrupats per tema.
-- [**Problemes PAU**](problemes-pau/index.md) — problemes de probabilitat i estadística de les PAU, identificats amb l'any i la convocatòria.
+- [**Problemes PAU**](problemes-pau.md) — problemes de probabilitat i estadística de les PAU, identificats amb l'any i la convocatòria.

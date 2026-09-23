@@ -10,4 +10,4 @@ Aquest bloc estudia els sistemes d'equacions i les matrius, amb especial atenci�
 ## Per practicar
 
 - [**Exercicis dels temes 3 i 4**](exercicis.md) — col·lecció completa d'exercicis d'àlgebra lineal, agrupats per tema.
-- [**Problemes PAU**](problemes-pau/index.md) — problemes d'àlgebra lineal de les PAU, identificats amb l'any i la convocatòria.
+- [**Problemes PAU**](problemes-pau.md) — problemes d'àlgebra lineal de les PAU, identificats amb l'any i la convocatòria.
