@@ -25,7 +25,18 @@ Les figures es numeren amb el número del tema i el seu ordre d'aparició dins d
 - tema 1: **Figura 1.1**, **Figura 1.2**, **Figura 1.3**...
 - tema 2: **Figura 2.1**, **Figura 2.2**, **Figura 2.3**...
 
-La numeració i el títol s'escriuen al peu de la figura dins del document Markdown. El web no mostra cap enllaç al fitxer `.tex`; aquest fitxer es conserva a l'ordinador dins de `figures/tikz` per poder-lo modificar amb VS Code.
+La numeració i el títol s'escriuen al peu de la figura dins del document Markdown. El text **Figura tema.número** enllaça amb el fitxer `.tex` corresponent del repositori. El fitxer font es modifica a l'ordinador, dins de `figures/tikz`, amb VS Code.
+
+## Publicació
+
+LaTeX, TikZ i PGFPlots només s'executen a l'ordinador. Abans de publicar cal comprovar que cada `.tex` modificat hagi generat el seu `.svg` actualitzat.
+
+Git desa i publica tots dos fitxers:
+
+- el `.tex`, perquè la figura continuï sent editable;
+- l'`.svg`, perquè Zensical la pugui mostrar al web.
+
+El servidor de GitHub no instal·la ni executa LaTeX. GitHub Actions construeix directament el web de Zensical amb els SVG generats localment.
 
 ## Compilació manual de reserva
 
