@@ -3,3 +3,9 @@
 /site/
 /.cache/
 /tmp/
+
+# Fitxers auxiliars generats en compilar les figures LaTeX.
+figures/tikz/**/*.aux
+figures/tikz/**/*.log
+figures/tikz/**/*.pdf
+figures/tikz/**/*.synctex.gz
