@@ -71,58 +71,56 @@ $$
 
 ### 2.1 Ordre dels infinits
 
-Quan $x\to+\infty$, algunes funcions creixen més de pressa que d'altres. Direm que $f$ té un ordre d'infinit superior a $g$ si
+Quan $x\to+\infty$, unes funcions creixen més de pressa que d'altres. En les condicions indicades, l'ordre de creixement és
 
 $$
-\lim_{x\to+\infty}\frac{f(x)}{g(x)}=+\infty.
+\boxed{a^x>x^m>\sqrt[n]{x}>\log_b x}.
 $$
 
-En les condicions adequades, l'ordre de creixement és
+En aquesta expressió, el signe $>$ significa **«creix més de pressa que»**.
+
+| Exponencial | Potència | Radical | Logarítmica |
+|:---:|:---:|:---:|:---:|
+| $a^x$ | $x^m$ | $\sqrt[n]{x}$ | $\log_b x$ |
+| $a>1$ | $m>1$ | $n\ge 2$ | $b>1$ i $x>0$ |
+| Com més gran és $a$, més ràpid creix. | Com més gran és $m$, més ràpid creix. | Com més gran és $n$, més lentament creix. | Com més gran és $b$, més petit és el valor del logaritme. |
+
+Per exemple, quan $x\to+\infty$,
 
 $$
-\boxed{\text{exponencial}>\text{polinòmica}>\text{racional}>\text{logarítmica}}.
+3^x>2^x,\qquad x^5>x^2,\qquad
+\sqrt{x}>\sqrt[3]{x},\qquad
+\log_2x>\log_{10}x.
 $$
 
-Cal tenir en compte aquestes condicions:
-
-- **Exponencial:** $a^x$, amb $a>1$. Si $0<a<1$, aleshores $a^x\to0$ quan $x\to+\infty$.
-- **Polinòmica:** $P(x)$ es comporta com el seu terme de grau més alt. Si $P(x)=c_dx^d+\cdots$, aleshores $P(x)\sim c_dx^d$.
-- **Racional:** si $R(x)=\dfrac{P_m(x)}{Q_n(x)}$, amb coeficients principals $p_m$ i $q_n$, aleshores
+Totes les exponencials de base més gran que $1$ tendeixen a $+\infty$, i tots els logaritmes de base més gran que $1$ també. En els logaritmes, canviar la base només multiplica la funció per una constant:
 
 $$
-R(x)\sim\frac{p_m}{q_n}x^{m-n}.
+\log_bx=\frac{\ln x}{\ln b}.
 $$
 
-- **Logarítmica:** $\log_b x$, amb $b>1$ i $x>0$.
-
-Per tant, una funció racional queda entre una polinòmica de grau $d$ i un logaritme quan $m-n=k$ compleix $0<k<d$ i els coeficients principals són positius. En aquest cas,
-
-$$
-a^x\gg x^d\gg\frac{P_m(x)}{Q_n(x)}\sim\frac{p_m}{q_n}x^k\gg\log_b x,
-\qquad a>1,\ b>1.
-$$
-
-Si $m=n$, la funció racional tendeix a un nombre; si $m<n$, tendeix a $0$. Per això, una funció racional no ocupa sempre la mateixa posició en l'ordre dels infinits.
+!!! note "Funció radical i funció racional"
+    $\sqrt[n]{x}$ és una **funció radical**. Una funció **racional** és un quocient de polinomis, $\dfrac{P(x)}{Q(x)}$, i el seu límit depèn dels graus del numerador i del denominador. En veurem un exemple al final.
 
 !!! example "Exemple 1. Tots els tipus de funcions"
     Calculem
 
     $$
     \lim_{x\to+\infty}
-    \frac{2^x+x^5+\dfrac{3x^3+1}{x^2+1}+\ln x}{2^x}.
+    \frac{2^x+x^5+\sqrt[3]{x}+\ln x}{2^x}.
     $$
 
-    La funció racional es comporta com $3x$, perquè la diferència de graus és $3-2=1$. Per tant,
+    Segons l'ordre dels infinits,
 
     $$
-    2^x\gg x^5\gg\frac{3x^3+1}{x^2+1}\sim3x\gg\ln x.
+    2^x>x^5>\sqrt[3]{x}>\ln x.
     $$
 
     Dividint cada terme per $2^x$,
 
     $$
     1+\frac{x^5}{2^x}
-    +\frac{3x^3+1}{(x^2+1)2^x}
+    +\frac{\sqrt[3]{x}}{2^x}
     +\frac{\ln x}{2^x}
     \longrightarrow 1+0+0+0.
     $$
@@ -132,7 +130,7 @@ Si $m=n$, la funció racional tendeix a un nombre; si $m<n$, tendeix a $0$. Per 
     $$
     \boxed{\displaystyle
     \lim_{x\to+\infty}
-    \frac{2^x+x^5+\dfrac{3x^3+1}{x^2+1}+\ln x}{2^x}=1.}
+    \frac{2^x+x^5+\sqrt[3]{x}+\ln x}{2^x}=1.}
     $$
 
 !!! example "Exemple 2. Funció polinòmica"
