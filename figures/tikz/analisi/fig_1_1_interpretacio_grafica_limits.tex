@@ -56,10 +56,10 @@
     \node[assimptota, fill=white, inner sep=1.5pt, anchor=south west]
       at (axis cs:5.08,7.8) {$x=5$};
 
-    % Punts oberts: forat, punt desplaçat i extrem esquerre del salt.
+    % Punts oberts: el farciment blanc tapa completament la corba inferior.
     \addplot[
       only marks,
-      mark=o,
+      mark=*,
       mark size=3.2pt,
       mark options={draw=punt, fill=white, line width=1.1pt}
     ] coordinates {(-4,3) (-1,4) (2,1)};
@@ -72,15 +72,24 @@
       mark options={draw=punt, fill=punt}
     ] coordinates {(-1,1) (0,3) (2,4)};
 
-    % Etiquetes que ajuden a identificar cada fenomen.
-    \node[punt, fill=white, inner sep=1.5pt, anchor=south]
-      at (axis cs:-4,3.22) {forat};
-    \node[punt, fill=white, inner sep=1.5pt, anchor=north east]
-      at (axis cs:-1.08,0.82) {punt desplaçat};
-    \node[punt, fill=white, inner sep=1.5pt, anchor=south west]
-      at (axis cs:0.12,3.08) {punt continu};
-    \node[punt, fill=white, inner sep=1.5pt, anchor=south west]
-      at (axis cs:2.08,4.05) {salt finit};
+    % Etiquetes situades en zones buides i unides als punts amb fletxes.
+    \node[punt, fill=white, inner sep=1.5pt] (forat)
+      at (axis cs:-4.9,4.6) {forat};
+    \draw[->, punt, thin] (forat) -- (axis cs:-4,3);
+
+    \node[punt, fill=white, inner sep=1.5pt] (desplacat)
+      at (axis cs:-3,0.55) {punt desplaçat};
+    \draw[->, punt, thin] (desplacat) -- (axis cs:-1,1);
+
+    \node[punt, fill=white, inner sep=1.5pt] (continu)
+      at (axis cs:0.8,5.8) {punt continu};
+    \draw[->, punt, thin] (continu) -- (axis cs:0,3);
+
+    \node[punt, fill=white, inner sep=1.5pt] (salt)
+      at (axis cs:3.2,2.15) {salt finit};
+    \draw[->, punt, thin] (salt) -- (axis cs:2,4);
+    \draw[->, punt, thin] (salt) -- (axis cs:2,1);
+
     \node[corba, anchor=west] at (axis cs:8.1,2.72) {$f$};
   \end{axis}
 \end{tikzpicture}
