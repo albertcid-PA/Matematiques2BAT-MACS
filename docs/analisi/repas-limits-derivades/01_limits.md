@@ -71,7 +71,22 @@ $$
 
 ### 2.1 Ordre dels infinits
 
-Quan $x\to+\infty$, unes funcions creixen més de pressa que d'altres. En les condicions indicades, l'ordre de creixement és
+Abans de comparar funcions, recordem què estem calculant. Quan $x$ pren valors cada vegada més grans, estudiem el comportament de $f(x)$:
+
+$$
+\lim_{x\to+\infty}f(x)=\;?
+$$
+
+Poden passar quatre situacions:
+
+- $\displaystyle\lim_{x\to+\infty}f(x)=L$: la funció s'apropa a un nombre real $L$;
+- $\displaystyle\lim_{x\to+\infty}f(x)=+\infty$: la funció creix indefinidament;
+- $\displaystyle\lim_{x\to+\infty}f(x)=-\infty$: la funció decreix indefinidament;
+- el límit **no existeix**: la funció no s'apropa a cap valor ni presenta un únic comportament.
+
+La lletra $f$ representa qualsevol funció: polinòmica, racional, exponencial, radical, logarítmica, etc.
+
+Quan diverses funcions tendeixen a $+\infty$, l'ordre dels infinits ens permet saber quina creix més de pressa. En les condicions indicades,
 
 $$
 \boxed{a^x>x^m>\sqrt[n]{x}>\log_b x}.
