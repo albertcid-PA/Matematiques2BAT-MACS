@@ -160,7 +160,10 @@ $$
 
     $$
     \boxed{\displaystyle
-    \lim_{x\to+\infty}\left(-4x^5+2x^3-7x+6\right)=-\infty.}
+    \lim_{x\to+\infty}\left(-4x^5+2x^3-7x+6\right)
+    =
+    \lim_{x\to+\infty}\left(-4x^5\right)
+    =-\infty.}
     $$
 
 !!! example "Exemple 3. Funció racional que tendeix a un nombre"
@@ -183,5 +186,8 @@ $$
 
     $$
     \boxed{\displaystyle
-    \lim_{x\to+\infty}\frac{6x^3-2x^2+5}{3x^3+x-4}=2.}
+    \lim_{x\to+\infty}\frac{6x^3-2x^2+5}{3x^3+x-4}
+    =
+    \lim_{x\to+\infty}\frac{6x^3}{3x^3}
+    =2.}
     $$
