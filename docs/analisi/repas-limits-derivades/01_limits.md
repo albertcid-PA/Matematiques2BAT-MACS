@@ -18,7 +18,7 @@ El límit $\displaystyle\lim_{x\to a}f(x)$ existeix quan els dos límits lateral
 
 ### Lectura dels punts destacats
 
-| Punt | Límit per l'esquerra | Límit per la dreta | Límit | Valor de la funció | Interpretació |
+| Punt<br>$x=a$ | Límit per l'esquerra<br>$\displaystyle\lim_{x\to a^-}f(x)=$ | Límit per la dreta<br>$\displaystyle\lim_{x\to a^+}f(x)=$ | Límit<br>$\displaystyle\lim_{x\to a}f(x)=$ | Valor de la funció<br>$f(a)=$ | Interpretació |
 |---|---:|---:|---:|---:|---|
 | $x=-4$ | $3$ | $3$ | $3$ | No està definida | Discontinuïtat evitable |
 | $x=-1$ | $4$ | $4$ | $4$ | $f(-1)=1$ | Evitable amb el punt desplaçat |
@@ -48,3 +48,8 @@ Per tant, $y=1$ és una asímptota horitzontal quan $x\to-\infty$ i $y=2$ és un
 
 !!! note "Quan el límit a l'infinit no existeix"
     No totes les funcions s'apropen a un valor concret ni creixen cap a $+\infty$ o $-\infty$. Per exemple, $f(x)=\sin x$ oscil·la indefinidament entre $-1$ i $1$. Per això, $\displaystyle\lim_{x\to+\infty}\sin x$ i $\displaystyle\lim_{x\to-\infty}\sin x$ no existeixen.
+
+    <figure markdown="span">
+      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/analisi/fig_1_2_limit_inexistent_sinus.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_1_2_limit_inexistent_sinus.tex">Figura 1.2.</a></strong> Exemple de límit a l'infinit que no existeix.</figcaption>
+    </figure>
