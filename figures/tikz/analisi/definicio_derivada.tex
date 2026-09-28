@@ -29,13 +29,13 @@
     \addplot[corba, very thick, domain=-0.2:2.5, samples=150] {x^2};
     \node[corba, anchor=west] at (axis cs:2.48,5.9) {$f$};
 
-    % A=(a,f(a)), C=(a+h,f(a+h)), amb a=1 i h=1.
+    % A=(a,f(a)), B=(a+h,f(a+h)), amb a=1 i h=1.
     \addplot[only marks, mark=*, mark size=2.2pt, corba]
       coordinates {(1,1) (2,4)};
     \node[anchor=east] at (axis cs:0.94,1.12) {$A$};
-    \node[anchor=west] at (axis cs:2.06,4.08) {$C$};
+    \node[anchor=west] at (axis cs:2.06,4.08) {$B$};
 
-    % Recta secant AC i recta tangent en A.
+    % Recta secant AB i recta tangent en A.
     \addplot[secant, thick, domain=0.25:2.55] {3*x-2};
     \node[secant, anchor=west] at (axis cs:2.18,4.72) {recta secant};
     \addplot[tangent, thick, domain=0.15:2.75] {2*x-1};
