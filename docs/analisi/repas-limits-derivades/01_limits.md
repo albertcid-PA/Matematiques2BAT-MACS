@@ -46,10 +46,23 @@ $$
 
 Per tant, $y=1$ és una asímptota horitzontal quan $x\to-\infty$ i $y=2$ és una asímptota horitzontal quan $x\to+\infty$.
 
+Una funció també pot créixer o decréixer indefinidament. Per exemple, si $f(x)=-x^3$,
+
+$$
+\lim_{x\to-\infty}(-x^3)=+\infty
+\qquad\text{i}\qquad
+\lim_{x\to+\infty}(-x^3)=-\infty.
+$$
+
+<figure markdown="span">
+  ![Gràfica de menys x al cub, que creix cap a infinit quan x tendeix a menys infinit i decreix cap a menys infinit quan x tendeix a infinit](../../img/analisi/fig_1_2_comportament_infinits_menys_x_cub.svg){ width="700" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_1_2_comportament_infinits_menys_x_cub.tex">Figura 1.2.</a></strong> Comportament de $f(x)=-x^3$ als infinits.</figcaption>
+</figure>
+
 !!! note "Quan el límit a l'infinit no existeix"
     No totes les funcions s'apropen a un valor concret ni creixen cap a $+\infty$ o $-\infty$. Per exemple, $f(x)=\sin x$ oscil·la indefinidament entre $-1$ i $1$. Per això, $\displaystyle\lim_{x\to+\infty}\sin x$ i $\displaystyle\lim_{x\to-\infty}\sin x$ no existeixen.
 
     <figure markdown="span">
-      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/analisi/fig_1_2_limit_inexistent_sinus.svg){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_1_2_limit_inexistent_sinus.tex">Figura 1.2.</a></strong> Exemple de límit a l'infinit que no existeix.</figcaption>
+      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/analisi/fig_1_3_limit_inexistent_sinus.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_1_3_limit_inexistent_sinus.tex">Figura 1.3.</a></strong> Exemple de límit a l'infinit que no existeix.</figcaption>
     </figure>
