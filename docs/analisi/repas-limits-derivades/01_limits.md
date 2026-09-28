@@ -166,6 +166,16 @@ $$
     =-\infty.}
     $$
 
+    Amb la mateixa funció, quan $x\to-\infty$, el terme dominant continua sent $-4x^5$. En aquest cas, $x^5\to-\infty$ i, per tant, $-4x^5\to+\infty$:
+
+    $$
+    \boxed{\displaystyle
+    \lim_{x\to-\infty}\left(-4x^5+2x^3-7x+6\right)
+    =
+    \lim_{x\to-\infty}\left(-4x^5\right)
+    =+\infty.}
+    $$
+
 !!! example "Exemple 3. Funció racional que tendeix a un nombre"
     Calculem
 
