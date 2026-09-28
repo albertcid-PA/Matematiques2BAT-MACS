@@ -2,7 +2,29 @@
 
 En aquest apartat recordarem les derivades de les funcions elementals i les regles que permeten derivar operacions i composicions de funcions. Cada regla va seguida dels exemples treballats a classe.
 
-## 1. Derivades de funcions elementals
+## 1. Definició de derivada
+
+La **taxa de variació mitjana** d'una funció $f$ entre $x=a$ i $x=a+h$ és
+
+$$
+\frac{f(a+h)-f(a)}{h}.
+$$
+
+Geomètricament, aquesta expressió és el pendent de la recta secant que passa pels punts $A=(a,f(a))$ i $B=(a+h,f(a+h))$.
+
+Quan fem que $h$ s'apropi a zero, el punt $B$ s'apropa al punt $A$ i la recta secant s'apropa a la recta tangent. Si el límit existeix, anomenem **derivada de $f$ en el punt $a$** el valor
+
+$$
+\boxed{f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}}.
+$$
+
+La derivada $f'(a)$ representa la **taxa de variació instantània** de la funció en $a$ i coincideix amb el pendent de la recta tangent a la gràfica en aquest punt.
+
+![Interpretació geomètrica de la derivada mitjançant una recta secant que s'apropa a la tangent](../../img/analisi/definicio_derivada.svg){ width="720" }
+
+*[Codi font editable de la figura en TikZ i PGFPlots](https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/definicio_derivada.tex).*
+
+## 2. Derivades de funcions elementals
 
 ### Funció constant
 
@@ -98,7 +120,7 @@ $$
     f'(x)=\frac{1}{x}.
     $$
 
-## 2. Derivades d'operacions entre funcions
+## 3. Derivades d'operacions entre funcions
 
 ### Suma i resta
 
@@ -205,7 +227,7 @@ $$
     \end{aligned}
     $$
 
-## 3. Composició: regla de la cadena
+## 4. Composició: regla de la cadena
 
 Si $h(x)=f(g(x))$, aleshores
 

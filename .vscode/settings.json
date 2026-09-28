@@ -1,0 +1,28 @@
+{
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "TikZ a SVG per al web",
+      "tools": [
+        "tikz-a-svg"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "tikz-a-svg",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\scripts\\compila_figures.ps1",
+        "-Source",
+        "%DOC_EXT_W32%"
+      ],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
