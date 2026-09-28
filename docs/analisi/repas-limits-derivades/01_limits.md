@@ -187,9 +187,10 @@ $$
     Per tant, al numerador domina $6x^3$ i al denominador domina $3x^3$:
 
     $$
-    \boxed{\displaystyle
+    \boxed{\begin{aligned}
     \lim_{x\to+\infty}\frac{6x^3-2x^2+5}{3x^3+x-4}
-    =
-    \lim_{x\to+\infty}\frac{6x^3}{3x^3}
-    =2.}
+    &=\lim_{x\to+\infty}\frac{6x^3}{3x^3}\\
+    &=\frac{6\cancel{x^3}}{3\cancel{x^3}}
+    =\frac{6}{3}=2.
+    \end{aligned}}
     $$
