@@ -139,14 +139,13 @@ $$
     \lim_{x\to+\infty}\left(-4x^5+2x^3-7x+6\right).
     $$
 
-    Traiem factor comú $x^5$:
+    Segons l'ordre dels infinits, el terme de grau més alt creix més de pressa:
 
     $$
-    -4x^5+2x^3-7x+6
-    =x^5\left(-4+\frac{2}{x^2}-\frac{7}{x^4}+\frac{6}{x^5}\right).
+    x^5>x^3>x>1.
     $$
 
-    El parèntesi tendeix a $-4$ i $x^5\to+\infty$. Per tant, domina el terme principal $-4x^5$ i
+    Per tant, domina el terme $-4x^5$:
 
     $$
     \boxed{\displaystyle
@@ -156,7 +155,7 @@ $$
     =-\infty.}
     $$
 
-    Amb la mateixa funció, quan $x\to-\infty$, el terme dominant continua sent $-4x^5$. En aquest cas, $x^5\to-\infty$ i, per tant, $-4x^5\to+\infty$:
+    Quan $x\to-\infty$, apliquem el mateix criteri i el terme dominant continua sent $-4x^5$:
 
     $$
     \boxed{\displaystyle
@@ -173,16 +172,15 @@ $$
     \lim_{x\to+\infty}\frac{6x^3-2x^2+5}{3x^3+x-4}.
     $$
 
-    El numerador i el denominador tenen el mateix grau. Dividim tots els termes entre $x^3$:
+    Apliquem l'ordre dels infinits al numerador i al denominador:
 
     $$
-    \lim_{x\to+\infty}
-    \frac{6-\dfrac{2}{x}+\dfrac{5}{x^3}}
-         {3+\dfrac{1}{x^2}-\dfrac{4}{x^3}}
-    =\frac{6}{3}.
+    x^3>x^2>1,
+    \qquad
+    x^3>x>1.
     $$
 
-    Per tant,
+    Per tant, al numerador domina $6x^3$ i al denominador domina $3x^3$:
 
     $$
     \boxed{\displaystyle
