@@ -153,8 +153,7 @@ $$
     \boxed{\begin{aligned}
     \lim_{x\to+\infty}\left(-4x^5+2x^3-7x+6\right)
     &=\lim_{x\to+\infty}\left(-4x^5\right)\\
-    &=-4\cdot(+\infty)^5\\
-    &=-4\cdot(+\infty)=-\infty.
+    &=-4\cdot(+\infty)^5=-4\cdot(+\infty)=-\infty.
     \end{aligned}}
     $$
 
@@ -164,8 +163,7 @@ $$
     \boxed{\begin{aligned}
     \lim_{x\to-\infty}\left(-4x^5+2x^3-7x+6\right)
     &=\lim_{x\to-\infty}\left(-4x^5\right)\\
-    &=-4\cdot(-\infty)^5\\
-    &=-4\cdot(-\infty)=+\infty.
+    &=-4\cdot(-\infty)^5=-4\cdot(-\infty)=+\infty.
     \end{aligned}}
     $$
 
