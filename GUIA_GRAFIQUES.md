@@ -49,7 +49,7 @@ Des de l'arrel del projecte pots regenerar totes les figures amb:
 Per regenerar només una figura:
 
 ```powershell
-& ".\scripts\compila_figures.ps1" -Source ".\figures\tikz\analisi\fig_1_2_definicio_derivada.tex"
+& ".\scripts\compila_figures.ps1" -Source ".\figures\tikz\analisi\fig_1_3_definicio_derivada.tex"
 ```
 
 Els fitxers temporals de LaTeX es guarden dins de `tmp`, una carpeta ignorada per Git.
