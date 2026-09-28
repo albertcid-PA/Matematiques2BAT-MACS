@@ -34,19 +34,6 @@ jobs:
       - name: Instal·la Zensical
         run: pip install zensical
 
-      - name: Instal·la LaTeX, TikZ i PGFPlots
-        run: |
-          sudo apt-get update
-          sudo apt-get install --yes --no-install-recommends \
-            texlive-latex-base \
-            texlive-latex-extra \
-            texlive-pictures \
-            dvisvgm
-
-      - name: Genera automàticament les figures TikZ
-        shell: pwsh
-        run: ./scripts/compila_figures.ps1
-
       - name: Construeix el web
         run: zensical build --clean
 
