@@ -20,9 +20,10 @@ $$
 
 La derivada $f'(a)$ representa la **taxa de variació instantània** de la funció en $a$ i coincideix amb el pendent de la recta tangent a la gràfica en aquest punt.
 
-![Interpretació geomètrica de la derivada mitjançant una recta secant que s'apropa a la tangent](../../img/analisi/definicio_derivada.svg){ width="720" }
-
-*[Codi font editable de la figura en TikZ i PGFPlots](https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/definicio_derivada.tex).*
+<figure markdown="span">
+  ![Interpretació geomètrica de la derivada mitjançant una recta secant que s'apropa a la tangent](../../img/analisi/definicio_derivada.svg){ width="720" }
+  <figcaption><strong>Figura 1.1.</strong> Interpretació geomètrica de la derivada.</figcaption>
+</figure>
 
 ## 2. Derivades de funcions elementals
 

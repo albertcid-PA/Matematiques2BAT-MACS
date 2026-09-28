@@ -20,6 +20,14 @@
   border-radius: 0.25rem;
 }
 
+/* Presenta la numeració i el títol de les figures de manera uniforme. */
+.md-typeset figure figcaption {
+  max-width: 44rem;
+  margin: 0.35rem auto 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85em;
+}
+
 /* Evita que les fórmules amples trenquin la pàgina en pantalles petites. */
 .md-typeset .katex-display {
   overflow-x: auto;

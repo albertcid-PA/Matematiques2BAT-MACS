@@ -16,9 +16,16 @@ LaTeX Workshop executarà automàticament la recepta **TikZ a SVG per al web**. 
 
 No cal editar mai l'SVG manualment.
 
-## Edició des de GitHub
+El procés de conversió afegeix automàticament un fons blanc a l'SVG. No cal definir-lo a cada document TikZ.
 
-També pots editar un fitxer `.tex` directament al web de GitHub. Quan confirmis el canvi, GitHub Actions compilarà totes les figures TikZ abans de construir i publicar el web amb Zensical. La publicació pot trigar uns minuts perquè el servidor ha de preparar LaTeX.
+## Numeració
+
+Les figures es numeren amb el número del tema i el seu ordre d'aparició dins del tema:
+
+- tema 1: **Figura 1.1**, **Figura 1.2**, **Figura 1.3**...
+- tema 2: **Figura 2.1**, **Figura 2.2**, **Figura 2.3**...
+
+La numeració i el títol s'escriuen al peu de la figura dins del document Markdown. El web no mostra cap enllaç al fitxer `.tex`; aquest fitxer es conserva a l'ordinador dins de `figures/tikz` per poder-lo modificar amb VS Code.
 
 ## Compilació manual de reserva
 
