@@ -69,6 +69,34 @@ function Convert-TikzToSvg {
         throw "dvisvgm no ha pogut convertir $relativePath"
     }
 
+    # Afegeix un fons blanc dins de l'SVG perquè la figura conservi el mateix
+    # aspecte en els modes clar i fosc del web.
+    $svgContent = [System.IO.File]::ReadAllText($svgPath)
+    $viewBoxMatch = [regex]::Match(
+        $svgContent,
+        'viewBox=[''"](?<coordinates>[^''"]+)[''"]'
+    )
+
+    if (-not $viewBoxMatch.Success) {
+        throw "No s'ha pogut trobar el viewBox de $svgPath"
+    }
+
+    $viewBox = $viewBoxMatch.Groups["coordinates"].Value -split "\s+"
+
+    if ($viewBox.Count -ne 4) {
+        throw "El viewBox de $svgPath no té quatre coordenades"
+    }
+
+    $whiteBackground = "<rect x='$($viewBox[0])' y='$($viewBox[1])' width='$($viewBox[2])' height='$($viewBox[3])' fill='white'/>"
+    $svgContent = [regex]::Replace(
+        $svgContent,
+        "(<svg\b[^>]*>)",
+        "`$1`r`n$whiteBackground",
+        1
+    )
+    $utf8WithoutBom = [System.Text.UTF8Encoding]::new($false)
+    [System.IO.File]::WriteAllText($svgPath, $svgContent, $utf8WithoutBom)
+
     Write-Host "Figura actualitzada: $svgPath" -ForegroundColor Green
 }
 
