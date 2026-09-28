@@ -150,21 +150,23 @@ $$
     Per tant, domina el terme $-4x^5$:
 
     $$
-    \boxed{\displaystyle
+    \boxed{\begin{aligned}
     \lim_{x\to+\infty}\left(-4x^5+2x^3-7x+6\right)
-    =
-    \lim_{x\to+\infty}\left(-4x^5\right)
-    =-\infty.}
+    &=\lim_{x\to+\infty}\left(-4x^5\right)\\
+    &=-4\cdot(+\infty)^5\\
+    &=-4\cdot(+\infty)=-\infty.
+    \end{aligned}}
     $$
 
     Quan $x\to-\infty$, apliquem el mateix criteri i el terme dominant continua sent $-4x^5$:
 
     $$
-    \boxed{\displaystyle
+    \boxed{\begin{aligned}
     \lim_{x\to-\infty}\left(-4x^5+2x^3-7x+6\right)
-    =
-    \lim_{x\to-\infty}\left(-4x^5\right)
-    =+\infty.}
+    &=\lim_{x\to-\infty}\left(-4x^5\right)\\
+    &=-4\cdot(-\infty)^5\\
+    &=-4\cdot(-\infty)=+\infty.
+    \end{aligned}}
     $$
 
 !!! example "Exemple 3. Funció racional que tendeix a un nombre"
