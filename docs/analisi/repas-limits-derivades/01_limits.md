@@ -1,12 +1,50 @@
 # Repàs de límits
 
-!!! note "En preparació"
-    Aquest serà el primer apartat del tema. Encara no n'hem redactat els apunts.
+En aquest apartat repassarem com s'interpreta un límit a partir de la gràfica d'una funció. La part analítica es treballarà després.
 
-## Contingut previst
+## 1. Interpretació gràfica
 
-- Concepte de límit i límits laterals.
-- Operacions amb límits.
-- Indeterminacions bàsiques.
-- Límits infinits i límits a l'infinit.
-- Exemples resolts després de cada concepte.
+Quan $x$ s'apropa a un punt $a$, podem observar la funció des dels dos costats:
+
+- el **límit per l'esquerra**, $\displaystyle\lim_{x\to a^-}f(x)$;
+- el **límit per la dreta**, $\displaystyle\lim_{x\to a^+}f(x)$.
+
+El límit $\displaystyle\lim_{x\to a}f(x)$ existeix quan els dos límits laterals coincideixen. El valor $f(a)$ és una informació diferent: pot coincidir amb el límit, ser diferent o no estar definit.
+
+<figure markdown="span">
+  ![Gràfica d'una funció amb continuïtat, discontinuïtats evitables, un salt finit, una asímptota vertical i dues asímptotes horitzontals](../../img/analisi/interpretacio_grafica_limits.svg){ width="900" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/interpretacio_grafica_limits.tex">Figura 1.1.</a></strong> Interpretació gràfica dels límits.</figcaption>
+</figure>
+
+### Lectura dels punts destacats
+
+| Punt | Límit per l'esquerra | Límit per la dreta | Límit | Valor de la funció | Interpretació |
+|---|---:|---:|---:|---:|---|
+| $x=-4$ | $3$ | $3$ | $3$ | No està definida | Discontinuïtat evitable |
+| $x=-1$ | $4$ | $4$ | $4$ | $f(-1)=1$ | Evitable amb el punt desplaçat |
+| $x=0$ | $3$ | $3$ | $3$ | $f(0)=3$ | Funció contínua |
+| $x=2$ | $1$ | $4$ | No existeix | $f(2)=4$ | Discontinuïtat de salt finit |
+| $x=5$ | $+\infty$ | $+\infty$ | $+\infty$ | No està definida | Discontinuïtat asimptòtica |
+
+En particular:
+
+- a $x=-4$, el límit existeix, però a la gràfica hi ha un forat;
+- a $x=-1$, el límit existeix, però el valor de la funció està desplaçat;
+- a $x=0$, es compleix $\displaystyle\lim_{x\to0}f(x)=f(0)=3$;
+- a $x=2$, els límits laterals són diferents i, per tant, el límit no existeix;
+- a $x=5$, la recta $x=5$ és una **asímptota vertical**.
+
+### Límits a l'infinit
+
+La gràfica també mostra que
+
+$$
+\lim_{x\to-\infty}f(x)=1
+\qquad\text{i}\qquad
+\lim_{x\to+\infty}f(x)=2.
+$$
+
+Per tant, $y=1$ és una asímptota horitzontal quan $x\to-\infty$ i $y=2$ és una asímptota horitzontal quan $x\to+\infty$.
+
+!!! note "Quan el límit a l'infinit no existeix"
+    No totes les funcions s'apropen a un valor concret ni creixen cap a $+\infty$ o $-\infty$. Per exemple, $f(x)=\sin x$ oscil·la indefinidament entre $-1$ i $1$. Per això, $\displaystyle\lim_{x\to+\infty}\sin x$ i $\displaystyle\lim_{x\to-\infty}\sin x$ no existeixen.

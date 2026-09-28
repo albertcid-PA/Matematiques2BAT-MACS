@@ -22,7 +22,7 @@ La derivada $f'(a)$ representa la **taxa de variació instantània** de la funci
 
 <figure markdown="span">
   ![Interpretació geomètrica de la derivada mitjançant una recta secant que s'apropa a la tangent](../../img/analisi/definicio_derivada.svg){ width="720" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/definicio_derivada.tex">Figura 1.1.</a></strong> Definició de derivada.</figcaption>
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/definicio_derivada.tex">Figura 1.2.</a></strong> Definició de derivada.</figcaption>
 </figure>
 
 ## 2. Derivades de funcions elementals
