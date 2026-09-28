@@ -142,8 +142,10 @@ $$
     Segons l'ordre dels infinits, el terme de grau més alt creix més de pressa:
 
     $$
-    x^5>x^3>x>1.
+    x^5>x^3>x>k.
     $$
+
+    Aquí $k$ representa qualsevol constant real.
 
     Per tant, domina el terme $-4x^5$:
 
@@ -175,9 +177,9 @@ $$
     Apliquem l'ordre dels infinits al numerador i al denominador:
 
     $$
-    x^3>x^2>1,
+    x^3>x^2>k,
     \qquad
-    x^3>x>1.
+    x^3>x>k.
     $$
 
     Per tant, al numerador domina $6x^3$ i al denominador domina $3x^3$:
