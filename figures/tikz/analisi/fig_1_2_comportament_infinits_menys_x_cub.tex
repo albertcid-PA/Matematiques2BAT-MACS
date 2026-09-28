@@ -25,10 +25,6 @@
     grid style={black!10},
     clip=false,
   ]
-    % Un toc de color destaca els dos comportaments oposats.
-    \fill[corba!6] (axis cs:-2.35,0) rectangle (axis cs:0,10);
-    \fill[corba!6] (axis cs:0,-10) rectangle (axis cs:2.35,0);
-
     \addplot[
       corba,
       very thick,
@@ -36,18 +32,6 @@
       domain=-2.08:2.08,
       samples=180
     ] {-x^3};
-
-    \node[corba, fill=white, inner sep=2pt, align=center]
-      (esquerra) at (axis cs:-1.18,7.8)
-      {$x\to-\infty$\\$f(x)\to+\infty$};
-    \draw[->, corba, thick]
-      (esquerra.south west) -- (axis cs:-1.82,6.03);
-
-    \node[corba, fill=white, inner sep=2pt, align=center]
-      (dreta) at (axis cs:1.18,-7.8)
-      {$x\to+\infty$\\$f(x)\to-\infty$};
-    \draw[->, corba, thick]
-      (dreta.north east) -- (axis cs:1.82,-6.03);
 
     \node[corba, fill=white, inner sep=1.5pt, anchor=west]
       at (axis cs:0.45,1.8) {$f(x)=-x^3$};
