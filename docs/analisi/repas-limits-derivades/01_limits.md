@@ -18,7 +18,7 @@ El límit $\displaystyle\lim_{x\to a}f(x)$ existeix quan els dos límits lateral
 
 ### Lectura dels punts destacats
 
-| Punt<br>$x=a$ | Límit per l'esquerra<br>$\displaystyle\lim_{x\to a^-}f(x)=$ | Límit per la dreta<br>$\displaystyle\lim_{x\to a^+}f(x)=$ | Límit<br>$\displaystyle\lim_{x\to a}f(x)=$ | Valor de la funció<br>$f(a)=$ | Interpretació |
+| <span class="capcalera-limit"><span class="capcalera-limit__titol">Punt</span><span class="capcalera-limit__formula">$x=a$</span></span> | <span class="capcalera-limit"><span class="capcalera-limit__titol">Límit per l'esquerra</span><span class="capcalera-limit__formula">$\displaystyle\lim_{x\to a^-}f(x)=$</span></span> | <span class="capcalera-limit"><span class="capcalera-limit__titol">Límit per la dreta</span><span class="capcalera-limit__formula">$\displaystyle\lim_{x\to a^+}f(x)=$</span></span> | <span class="capcalera-limit"><span class="capcalera-limit__titol">Límit</span><span class="capcalera-limit__formula">$\displaystyle\lim_{x\to a}f(x)=$</span></span> | <span class="capcalera-limit"><span class="capcalera-limit__titol">Valor de la funció</span><span class="capcalera-limit__formula">$f(a)=$</span></span> | <span class="capcalera-limit"><span class="capcalera-limit__titol">Interpretació</span><span class="capcalera-limit__formula" aria-hidden="true">&nbsp;</span></span> |
 |---|---:|---:|---:|---:|---|
 | $x=-4$ | $3$ | $3$ | $3$ | No està definida | Discontinuïtat evitable |
 | $x=-1$ | $4$ | $4$ | $4$ | $f(-1)=1$ | Evitable amb el punt desplaçat |

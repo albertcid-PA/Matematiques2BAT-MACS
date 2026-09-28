@@ -65,3 +65,21 @@
   margin-block: 0.2em;
   padding-block: 0;
 }
+
+/* Alinea els títols i les fórmules de la taula de lectura de límits. */
+.md-typeset .capcalera-limit {
+  display: grid;
+  grid-template-rows: minmax(2.8em, auto) 2.2em;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.md-typeset .capcalera-limit__titol,
+.md-typeset .capcalera-limit__formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
