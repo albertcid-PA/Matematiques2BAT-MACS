@@ -5,9 +5,13 @@ param(
 $ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")).Path
-$sourceRoot = (Join-Path $projectRoot "figures\tikz")
-$outputRoot = (Join-Path $projectRoot "docs\img")
-$buildRoot = (Join-Path $projectRoot "tmp\tikz")
+$sourceRoot = (Join-Path $projectRoot "figures/tikz")
+$outputRoot = (Join-Path $projectRoot "docs/img")
+$buildRoot = (Join-Path $projectRoot "tmp/tikz")
+$directorySeparator = [System.IO.Path]::DirectorySeparatorChar
+$runningOnWindows = [System.Environment]::OSVersion.Platform -eq [System.PlatformID]::Win32NT
+$latexCommand = if ($runningOnWindows) { "latex.exe" } else { "latex" }
+$dvisvgmCommand = if ($runningOnWindows) { "dvisvgm.exe" } else { "dvisvgm" }
 
 function Convert-TikzToSvg {
     param(
@@ -16,7 +20,7 @@ function Convert-TikzToSvg {
     )
 
     $fullTexPath = (Resolve-Path -LiteralPath $TexPath).Path
-    $sourcePrefix = $sourceRoot.TrimEnd("\") + "\"
+    $sourcePrefix = $sourceRoot.TrimEnd($directorySeparator) + $directorySeparator
 
     if (-not $fullTexPath.StartsWith($sourcePrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
         throw "La figura ha d'estar dins de $sourceRoot"
@@ -42,7 +46,7 @@ function Convert-TikzToSvg {
 
     Write-Host "Compilant $relativePath..."
 
-    & latex.exe `
+    & $latexCommand `
         "-interaction=nonstopmode" `
         "-halt-on-error" `
         "-output-directory=$figureBuildDirectory" `
@@ -55,7 +59,7 @@ function Convert-TikzToSvg {
     $dviPath = Join-Path $figureBuildDirectory "$baseName.dvi"
     $svgPath = Join-Path $svgDirectory "$baseName.svg"
 
-    & dvisvgm.exe `
+    & $dvisvgmCommand `
         "--no-fonts" `
         "--exact-bbox" `
         "--output=$svgPath" `
