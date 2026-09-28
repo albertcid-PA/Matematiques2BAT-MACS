@@ -113,29 +113,19 @@ $$
 
     $$
     \lim_{x\to+\infty}
-    \left(\sqrt[10]{x}-\log_{10}x+50\sqrt[5]{x}-(1{,}1)^x\right).
-    $$
-
-    Escrivim les arrels com a potències:
-
-    $$
-    \sqrt[10]{x}=x^{1/10},
-    \qquad
-    \sqrt[5]{x}=x^{1/5}.
+    \left(\sqrt[10]{x}-\log_{10}x+50x^7-(1{,}1)^x\right).
     $$
 
     Segons l'ordre dels infinits, l'exponencial creix més de pressa que les potències i que el logaritme:
 
     $$
-    (1{,}1)^x>x^{1/5}>x^{1/10}>\log_{10}x.
+    (1{,}1)^x>x^7>x^{1/10}>\log_{10}x.
     $$
-
-    El factor $50$ no canvia l'ordre d'infinit. Per tant, domina el terme exponencial $-(1{,}1)^x$, que té signe negatiu, i
 
     $$
     \boxed{\displaystyle
     \lim_{x\to+\infty}
-    \left(\sqrt[10]{x}-\log_{10}x+50\sqrt[5]{x}-(1{,}1)^x\right)
+    \left(\sqrt[10]{x}-\log_{10}x+50x^7-(1{,}1)^x\right)
     =
     \lim_{x\to+\infty}
     \left(-(1{,}1)^x\right)
