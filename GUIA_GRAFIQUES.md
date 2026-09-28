@@ -16,6 +16,10 @@ LaTeX Workshop executarà automàticament la recepta **TikZ a SVG per al web**. 
 
 No cal editar mai l'SVG manualment.
 
+## Edició des de GitHub
+
+També pots editar un fitxer `.tex` directament al web de GitHub. Quan confirmis el canvi, GitHub Actions compilarà totes les figures TikZ abans de construir i publicar el web amb Zensical. La publicació pot trigar uns minuts perquè el servidor ha de preparar LaTeX.
+
 ## Compilació manual de reserva
 
 Des de l'arrel del projecte pots regenerar totes les figures amb:

@@ -10,9 +10,9 @@ $$
 \frac{f(a+h)-f(a)}{h}.
 $$
 
-Geomètricament, aquesta expressió és el pendent de la recta secant que passa pels punts $A=(a,f(a))$ i $B=(a+h,f(a+h))$.
+Geomètricament, aquesta expressió és el pendent de la recta secant que passa pels punts $A=(a,f(a))$ i $C=(a+h,f(a+h))$.
 
-Quan fem que $h$ s'apropi a zero, el punt $B$ s'apropa al punt $A$ i la recta secant s'apropa a la recta tangent. Si el límit existeix, anomenem **derivada de $f$ en el punt $a$** el valor
+Quan fem que $h$ s'apropi a zero, el punt $C$ s'apropa al punt $A$ i la recta secant s'apropa a la recta tangent. Si el límit existeix, anomenem **derivada de $f$ en el punt $a$** el valor
 
 $$
 \boxed{f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}}.
