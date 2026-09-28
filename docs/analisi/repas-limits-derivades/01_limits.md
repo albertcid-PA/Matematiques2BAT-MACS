@@ -108,44 +108,35 @@ $$
 \log_2x>\log_{10}x.
 $$
 
-Totes les exponencials de base més gran que $1$ tendeixen a $+\infty$, i tots els logaritmes de base més gran que $1$ també. En els logaritmes, canviar la base només multiplica la funció per una constant:
-
-$$
-\log_bx=\frac{\ln x}{\ln b}.
-$$
-
-!!! note "Funció radical i funció racional"
-    $\sqrt[n]{x}$ és una **funció radical**. Una funció **racional** és un quocient de polinomis, $\dfrac{P(x)}{Q(x)}$, i el seu límit depèn dels graus del numerador i del denominador. En veurem un exemple al final.
-
-!!! example "Exemple 1. Tots els tipus de funcions"
+!!! example "Exemple 1. Aplicació de l'ordre dels infinits"
     Calculem
 
     $$
     \lim_{x\to+\infty}
-    \frac{2^x+x^5+\sqrt[3]{x}+\ln x}{2^x}.
+    \left(\sqrt[10]{x}-\log_{10}x+50\sqrt[5]{x}-(1{,}1)^x\right).
     $$
 
-    Segons l'ordre dels infinits,
+    Escrivim les arrels com a potències:
 
     $$
-    2^x>x^5>\sqrt[3]{x}>\ln x.
+    \sqrt[10]{x}=x^{1/10},
+    \qquad
+    \sqrt[5]{x}=x^{1/5}.
     $$
 
-    Dividint cada terme per $2^x$,
+    Segons l'ordre dels infinits, l'exponencial creix més de pressa que les potències i que el logaritme:
 
     $$
-    1+\frac{x^5}{2^x}
-    +\frac{\sqrt[3]{x}}{2^x}
-    +\frac{\ln x}{2^x}
-    \longrightarrow 1+0+0+0.
+    (1{,}1)^x>x^{1/5}>x^{1/10}>\log_{10}x.
     $$
 
-    Així doncs,
+    El factor $50$ no canvia l'ordre d'infinit. Per tant, domina el terme exponencial $-(1{,}1)^x$, que té signe negatiu, i
 
     $$
     \boxed{\displaystyle
     \lim_{x\to+\infty}
-    \frac{2^x+x^5+\sqrt[3]{x}+\ln x}{2^x}=1.}
+    \left(\sqrt[10]{x}-\log_{10}x+50\sqrt[5]{x}-(1{,}1)^x\right)
+    =-\infty.}
     $$
 
 !!! example "Exemple 2. Funció polinòmica"
