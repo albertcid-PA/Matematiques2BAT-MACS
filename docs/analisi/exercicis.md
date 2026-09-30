@@ -191,15 +191,82 @@ on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en 
 
 ### Derivabilitat
 
-**2.1.** Estudia la continuïtat i la derivabilitat en el punt d'unió.
+**2.1.** Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
+
+<figure markdown="span">
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/analisi/fig_2_3_exercici_punts_no_derivables.svg){ width="920" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_3_exercici_punts_no_derivables.tex">Figura 2.3.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
+</figure>
+
+**2.2.** La figura representa una funció $y=f(x)$.
+
+- **a)** Calcula $f'(-2)$, $f'(1)$ i $f'(4)$ a partir del pendent de la gràfica.
+- **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
+
+<figure markdown="span">
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/analisi/fig_2_4_exercici_derivades_grafica.svg){ width="700" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_4_exercici_derivades_grafica.tex">Figura 2.4.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
+</figure>
+
+#### Estudi en els punts d'unió
+
+**2.3.** Estudia la continuïtat i la derivabilitat de la funció en $x=1$:
+
+$$
+f(x)=
+\begin{cases}
+x^2+x-2, & x\leq 1,\\[2pt]
+3x-3, & x>1.
+\end{cases}
+$$
+
+**2.4.** Estudia la continuïtat i la derivabilitat de la funció en $x=-1$:
+
+$$
+f(x)=
+\begin{cases}
+x^2+4x+1, & x\leq -1,\\[2pt]
+x-1, & x>-1.
+\end{cases}
+$$
+
+**2.5.** Estudia la continuïtat i la derivabilitat de la funció en $x=2$. Interpreta gràficament el resultat.
+
+$$
+f(x)=
+\begin{cases}
+\sqrt{2-x}, & x\leq 2,\\[2pt]
+\sqrt{x-2}, & x>2.
+\end{cases}
+$$
+
+**2.6.** Considera la funció
+
+$$
+f(x)=
+\begin{cases}
+x^2+5x+4, & x<-2,\\[2pt]
+2x+2, & -2\leq x\leq 1,\\[2pt]
+x+1, & x>1.
+\end{cases}
+$$
+
+- **a)** Estudia la continuïtat i la derivabilitat de $f$ en els punts d'unió.
+- **b)** Determina $f'(x)$ en els intervals on existeix.
+- **c)** Representa, en uns eixos separats, les funcions $f$ i $f'$.
+
+#### Continuïtat i derivabilitat en tot el domini
+
+**2.7.** Estudia la continuïtat i la derivabilitat de les funcions següents. Indica el conjunt de punts on cadascuna és derivable i escriu-ne la funció derivada.
 
 **a)**
 
 $$
 f(x)=
 \begin{cases}
-x^2+1, & x\leq1,\\
-2x, & x>1.
+0, & x<0,\\[2pt]
+x^2, & 0\leq x<2,\\[2pt]
+2x, & x\geq2.
 \end{cases}
 $$
 
@@ -208,15 +275,97 @@ $$
 $$
 g(x)=
 \begin{cases}
-2x+1, & x<0,\\
-x^2+1, & x\geq0.
+e^{2x}, & x\leq0,\\[2pt]
+2x+1, & x>0.
 \end{cases}
 $$
 
-**2.2.** Digues si cada afirmació és certa o falsa. Si és falsa, corregeix-la.
+#### Càlcul de paràmetres
 
-- **a)** Si una funció és derivable en un punt, és contínua en aquell punt.
-- **b)** Si una funció és contínua en un punt, sempre és derivable en aquell punt.
+**2.8.** Troba els valors de $k$ perquè la funció sigui derivable en tot $\mathbb{R}$:
+
+$$
+f_k(x)=
+\begin{cases}
+kx^4+3x^2+5, & x\leq0,\\[2pt]
+2x^2+5, & x>0.
+\end{cases}
+$$
+
+**2.9.** Calcula $m$ i $n$ perquè la funció sigui derivable en tot $\mathbb{R}$:
+
+$$
+f(x)=
+\begin{cases}
+x^2+mx+4, & x\leq0,\\[2pt]
+-2x^2+n, & x>0.
+\end{cases}
+$$
+
+**2.10.** Determina $a$ i $b$ perquè la funció sigui derivable en tot $\mathbb{R}$:
+
+$$
+f(x)=
+\begin{cases}
+x^3+1, & x<2,\\[2pt]
+ax^2+b, & x\geq2.
+\end{cases}
+$$
+
+**2.11.** Considera la funció
+
+$$
+f(x)=
+\begin{cases}
+x^2-4x+m, & x\leq2,\\[2pt]
+-x^2+nx, & x>2.
+\end{cases}
+$$
+
+- **a)** Calcula $m$ i $n$ perquè $f$ sigui derivable en tot $\mathbb{R}$.
+- **b)** Per als valors obtinguts, determina els punts en què $f'(x)=0$.
+
+**2.12.** Calcula $a$ i $b$ perquè cadascuna de les funcions següents sigui derivable en tot $\mathbb{R}$:
+
+**a)**
+
+$$
+f(x)=
+\begin{cases}
+ax^2+2x, & x\leq1,\\[2pt]
+x^2-bx-1, & x>1.
+\end{cases}
+$$
+
+**b)**
+
+$$
+g(x)=
+\begin{cases}
+x^3+2x, & x\leq0,\\[2pt]
+ax+b, & x>0.
+\end{cases}
+$$
+
+**2.13.** Calcula $a$ i $b$ perquè la funció sigui derivable en tot el seu domini:
+
+$$
+f(x)=
+\begin{cases}
+a-2x, & x\leq1,\\[6pt]
+\dfrac{b+\ln x}{x}, & x>1.
+\end{cases}
+$$
+
+**2.14.** Determina $a$ i $b$ perquè la funció sigui derivable en tot $\mathbb{R}$:
+
+$$
+f(x)=
+\begin{cases}
+ax^2+bx+1, & x\leq1,\\[6pt]
+\dfrac{a}{x}-\dfrac{b}{x^2}+3, & x>1.
+\end{cases}
+$$
 
 ### Creixement, decreixement i extrems
 

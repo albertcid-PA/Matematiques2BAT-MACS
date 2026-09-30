@@ -1,37 +1,221 @@
 # Derivabilitat
 
-Si una funció és derivable en un punt, aleshores és contínua en aquell punt:
+La **derivabilitat** ens indica si una funció té una taxa de variació instantània ben definida en un punt. Gràficament, significa que podem dibuixar-hi una única recta tangent amb pendent finit.
+
+Per estudiar si una funció és derivable en $x=a$, comprovarem dues condicions:
+
+1. La funció és **contínua** en $a$.
+2. Les dues **derivades laterals** en $a$ existeixen, són finites i coincideixen.
+
+## 1. Continuïtat en un punt
+
+Una funció $f$ és contínua en $x=a$ si es compleixen les tres condicions següents:
+
+1. Els límits laterals de la funció són finits i coincideixen:
+
+    $$
+    \lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=L,\qquad L\in\mathbb{R}.
+    $$
+
+2. El valor de la funció existeix: $f(a)$ està definida.
+
+3. El valor del límit coincideix amb el valor de la funció en l'abscissa estudiada:
+
+    $$
+    \lim_{x\to a}f(x)=f(a).
+    $$
+
+!!! warning "Condició necessària"
+    Si una funció és derivable en $a$, aleshores és contínua en $a$. En canvi, que sigui contínua no garanteix que sigui derivable: la gràfica pot tenir, per exemple, un punt angulós.
+
+## 2. Derivades laterals
+
+La **derivada per l'esquerra** de $f$ en $a$ es calcula fent que l'increment $h$ s'apropi a zero per valors negatius:
 
 $$
-f\text{ derivable en }a\quad\Longrightarrow\quad f\text{ contínua en }a.
+\boxed{f'(a^{-})=\lim_{h\to0^-}\frac{f(a+h)-f(a)}{h}}.
 $$
 
-El recíproc no sempre és cert: una funció pot ser contínua i no ser derivable, com passa en un punt angulós.
+La **derivada per la dreta** de $f$ en $a$ es calcula fent que $h$ s'apropi a zero per valors positius:
 
-Per comprovar la derivabilitat d'una funció a trossos en $x=a$:
+$$
+\boxed{f'(a^{+})=\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h}}.
+$$
 
-1. Comprovem que sigui contínua en $a$.
-2. Calculem les derivades laterals $f'_-(a)$ i $f'_+(a)$.
-3. La funció és derivable si les dues derivades laterals existeixen, són finites i coincideixen.
+!!! note "Recorda"
+    $h\to0^-$ significa que $h$ pren valors negatius cada vegada més pròxims a zero. En canvi, $h\to0^+$ significa que pren valors positius cada vegada més pròxims a zero.
 
-!!! example "Exemple"
-    Estudiem la derivabilitat en $x=1$ de
+Si la funció és contínua en $a$ i les dues derivades laterals existeixen, són finites i coincideixen, aleshores $f$ és derivable en $a$:
+
+$$
+\boxed{f'(a^{-})=f'(a^{+})=f'(a)}.
+$$
+
+<figure markdown="span">
+  ![Comparació gràfica entre un punt suau, on les derivades laterals coincideixen, i un punt angulós, on són diferents](../../img/analisi/fig_2_1_derivades_laterals.svg){ width="900" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_1_derivades_laterals.tex">Figura 2.1.</a></strong> Derivades laterals en un punt suau i en un punt angulós.</figcaption>
+</figure>
+
+En el primer gràfic, la pendent s'apropa al mateix valor des dels dos costats: la funció és derivable en $a$. En el segon, les pendents laterals són diferents: la funció és contínua, però no és derivable en $a$.
+
+## 3. Com es reconeix gràficament?
+
+Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
+
+| Aspecte de la gràfica en $x=a$ | Què passa? | És derivable? |
+|---|---|:---:|
+| Punt suau | Les dues pendents laterals són finites i iguals. | Sí |
+| Punt angulós | Les pendents laterals són finites, però diferents. | No |
+| Cúspide | Les pendents laterals es fan infinites amb signes diferents. | No |
+| Tangent vertical | La pendent no és finita. | No |
+| Discontinuïtat | No es compleixen les tres condicions de continuïtat. | No |
+
+<figure markdown="span">
+  ![Tres situacions en què una funció no és derivable: discontinuïtat, cúspide i tangent vertical](../../img/analisi/fig_2_2_casos_no_derivables.svg){ width="960" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_2_casos_no_derivables.tex">Figura 2.2.</a></strong> Casos en què una funció no és derivable.</figcaption>
+</figure>
+
+!!! tip "Ordre de comprovació"
+    Primer comprovem la **continuïtat**. Si la funció no és contínua en $a$, ja podem afirmar que no és derivable en aquest punt. Només si és contínua passem a comparar $f'(a^-)$ i $f'(a^+)$.
+
+## 4. Estudi analític de la derivabilitat
+
+En una funció definida a trossos, estudiem primer si els dos trossos enllacen i després si ho fan amb la mateixa pendent.
+
+!!! example "Exemple 1. Funció contínua però no derivable"
+    Estudia la derivabilitat de la funció en $x=1$:
 
     $$
     f(x)=
     \begin{cases}
-      x^2, & x\leq1,\\
-      2x-1, & x>1.
+    x^2+1, & x<1,\\
+    3x-1, & x\geq 1.
     \end{cases}
     $$
 
-    **Continuïtat:** els dos trams tendeixen a $1$ i $f(1)=1$. Per tant, $f$ és contínua en $x=1$.
+    **Continuïtat en $x=1$**
 
-    **Derivades laterals:**
+    $$
+    \lim_{x\to1^-}f(x)=1^2+1=2,
+    \qquad
+    \lim_{x\to1^+}f(x)=3\cdot1-1=2,
+    \qquad
+    f(1)=2.
+    $$
 
-    $$f'_-(1)=2\cdot1=2,\qquad f'_+(1)=2.$$
+    Els límits laterals coincideixen amb $f(1)$; per tant, $f$ és contínua en $x=1$.
 
-    Com que coincideixen, $f$ és derivable en $x=1$ i $f'(1)=2$.
+    **Derivabilitat en $x=1$**
 
-!!! warning "Error habitual"
-    Que els dos trams tinguin derivada no garanteix que la funció sigui derivable en el punt d'unió. També cal comprovar la continuïtat i comparar les derivades laterals.
+    $$
+    f'(x)=
+    \begin{cases}
+    2x, & x<1,\\
+    3, & x>1,
+    \end{cases}
+    \qquad
+    f'(1^-)=2,\qquad f'(1^+)=3.
+    $$
+
+    Les derivades laterals no coincideixen. Per tant, $f$ **no és derivable** en $x=1$ i la gràfica té un punt angulós.
+
+!!! example "Exemple 2. Funció contínua i derivable"
+    Estudia la derivabilitat de la funció en $x=-1$:
+
+    $$
+    f(x)=
+    \begin{cases}
+    x^3+3x^2+2, & x\leq -1,\\
+    -3x+1, & x>-1.
+    \end{cases}
+    $$
+
+    **Continuïtat en $x=-1$**
+
+    $$
+    \lim_{x\to-1^-}f(x)=(-1)^3+3(-1)^2+2=4,
+    \qquad
+    \lim_{x\to-1^+}f(x)=-3(-1)+1=4,
+    \qquad
+    f(-1)=4.
+    $$
+
+    La funció és contínua en $x=-1$.
+
+    **Derivabilitat en $x=-1$**
+
+    $$
+    f'(x)=
+    \begin{cases}
+    3x^2+6x, & x<-1,\\
+    -3, & x>-1,
+    \end{cases}
+    \qquad
+    f'(-1^-)=3-6=-3,\qquad f'(-1^+)=-3.
+    $$
+
+    Les derivades laterals coincideixen. Per tant, $f$ **és derivable** en $x=-1$ i $f'(-1)=-3$.
+
+!!! example "Exemple 3. Càlcul de paràmetres"
+    Calcula $m$ i $n$ perquè la funció sigui derivable en $x=2$:
+
+    $$
+    f(x)=
+    \begin{cases}
+    mx^2+1, & x\leq 2,\\
+    nx-3, & x>2.
+    \end{cases}
+    $$
+
+    Perquè sigui contínua, els dos trossos han d'enllaçar:
+
+    $$
+    \lim_{x\to2^-}f(x)=\lim_{x\to2^+}f(x)
+    \quad\Longrightarrow\quad
+    4m+1=2n-3
+    \quad\Longrightarrow\quad
+    2m-n=-2.
+    $$
+
+    Perquè sigui derivable, les derivades laterals han de coincidir:
+
+    $$
+    f'(2^-)=4m,\qquad f'(2^+)=n
+    \quad\Longrightarrow\quad
+    4m-n=0.
+    $$
+
+    Les dues condicions formen el sistema
+
+    $$
+    \begin{cases}
+    2m-n=-2,\\
+    4m-n=0.
+    \end{cases}
+    $$
+
+    Restem la primera equació de la segona:
+
+    $$
+    (4m-n)-(2m-n)=0-(-2)
+    \quad\Longrightarrow\quad
+    2m=2
+    \quad\Longrightarrow\quad
+    m=1.
+    $$
+
+    Substituïm $m=1$ en $4m-n=0$:
+
+    $$
+    4-n=0
+    \quad\Longrightarrow\quad
+    n=4.
+    $$
+
+    Per tant, la funció és derivable en $x=2$ quan
+
+    $$
+    \boxed{m=1,\qquad n=4},
+    $$
+
+    i en aquest cas $f'(2)=4$.
