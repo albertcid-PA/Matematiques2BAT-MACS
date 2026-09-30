@@ -66,6 +66,35 @@
   padding-block: 0;
 }
 
+/* Unifica els recordatoris i els exemples de tot el web. */
+.md-typeset .admonition.note,
+.md-typeset .admonition.example {
+  border-color: transparent;
+  border-radius: 0.65rem;
+  box-shadow: none;
+}
+
+.md-typeset .admonition.note {
+  background-color: #eaf2ff;
+}
+
+.md-typeset .admonition.example {
+  background-color: #f2edff;
+}
+
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset .admonition.example > .admonition-title {
+  background-color: transparent;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.note {
+  background-color: rgba(41, 121, 255, 0.14);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.example {
+  background-color: rgba(124, 77, 255, 0.14);
+}
+
 /* Alinea els títols i les fórmules de la taula de lectura de límits. */
 .md-typeset .capcalera-limit {
   display: grid;
