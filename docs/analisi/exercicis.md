@@ -187,6 +187,16 @@ on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en 
 | **c)** $f(x)=\dfrac{\ln x}{e^{2x}}$ | **d)** $f(x)=e^{3x^2-2}$ |
 | **f)** $f(x)=\ln\left(\ln\dfrac{2}{x}\right)$ | |
 
+### Derivades successives
+
+**1.17.** Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=x^3-2x^2+4x-1$ | **b)** $f(x)=e^{3x}$ |
+| **c)** $f(x)=(x-2)e^x$ | **d)** $f(x)=\ln(x+3)$ |
+| **e)** $f(x)=\dfrac{1}{x+2}$ | |
+
 ## Tema 2. Aplicacions de les derivades
 
 ### Derivabilitat
@@ -366,6 +376,22 @@ ax^2+bx+1, & x\leq1,\\[6pt]
 \dfrac{a}{x}-\dfrac{b}{x^2}+3, & x>1.
 \end{cases}
 $$
+
+#### Funcions amb valor absolut
+
+**2.15.** Escriu cada funció com una funció a trossos i indica en quins punts no és derivable.
+
+| | |
+|:--|:--|
+| **a)** $f(x)=|x^2-9|$ | **b)** $g(x)=|3x+6|$ |
+| **c)** $h(x)=|x^2-5x+6|$ | |
+
+**2.16.** Escriu les funcions següents a trossos i estudia'n la continuïtat i la derivabilitat. Indica el conjunt de punts on cadascuna és derivable.
+
+| | |
+|:--|:--|
+| **a)** $f(x)=|x+4|$ | **b)** $g(x)=|x^2+x-6|$ |
+| **c)** $h(x)=2x+|x-1|$ | **d)** $p(x)=x^2+|x+2|$ |
 
 ### Creixement, decreixement i extrems
 
