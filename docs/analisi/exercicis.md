@@ -395,13 +395,125 @@ $$
 
 ### Creixement, decreixement i extrems
 
-!!! note "En preparació"
-    Els exercicis s'afegiran quan redactem aquest apartat.
+**2.17.** Determina els intervals de creixement i de decreixement i calcula els màxims i els mínims relatius de les funcions següents:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=x^3-3x^2-9x+4$ | **b)** $f(x)=x^4-10x^2+9$ |
+| **c)** $f(x)=\dfrac{x^2+2}{x-1}$ | **d)** $f(x)=(x-1)e^{-x}$ |
+| **e)** $f(x)=\dfrac{\ln x}{x^2}$ | **f)** $f(x)=\dfrac{x^3}{x^2+1}$ |
+
+**2.18.** Estudia la curvatura i troba els punts d'inflexió de cada funció:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=x^4-4x^3+2$ | **b)** $f(x)=2x^4-12x^2+1$ |
+| **c)** $f(x)=x^5-5x^3+x$ | **d)** $f(x)=(x-1)e^x$ |
+
+**2.19.** Fes un estudi complet del creixement, els extrems relatius, la curvatura i els punts d'inflexió de les funcions següents:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=x^3-12x+1$ | **b)** $f(x)=x^4-4x^2$ |
+| **c)** $f(x)=\dfrac{x^2-4}{x^2+1}$ | **d)** $f(x)=(x+1)e^{-x}$ |
 
 ### Representació de funcions
 
-!!! note "En preparació"
-    Els exercicis s'afegiran quan redactem aquest apartat.
+#### Funcions polinòmiques
+
+**2.20.** Estudia i representa les funcions polinòmiques següents. Indica el domini, els talls amb els eixos, les branques a l'infinit, els intervals de creixement i decreixement, els extrems i els punts d'inflexió.
+
+| | |
+|:--|:--|
+| **a)** $f(x)=x^4-6x^2+5$ | **b)** $f(x)=x^3+3x^2-9x-2$ |
+| **c)** $f(x)=x^4-4x^3+4$ | **d)** $f(x)=x^5-10x^3+9x$ |
+| **e)** $f(x)=(x-2)^3-3(x-2)$ | **f)** $f(x)=x^2(x-3)^2$ |
+
+#### Funcions racionals
+
+**2.21.** Estudia i representa les funcions racionals següents. Determina també totes les asímptotes i la posició de la corba respecte de les asímptotes horitzontals o obliqües.
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^3}{4-x^2}$ | **b)** $f(x)=\dfrac{x^2-4}{x^2-1}$ |
+| **c)** $f(x)=\dfrac{x^2+x-6}{x}$ | **d)** $f(x)=\dfrac{x^3+x}{x^2-4}$ |
+| **e)** $f(x)=\dfrac{1}{(x+1)(x-2)}$ | **f)** $f(x)=\dfrac{x+2}{x(x-1)(x+3)}$ |
+| **g)** $f(x)=\dfrac{6-2x}{x(x-3)}$ | |
+
+#### Funcions a trossos
+
+**2.22.** Estudia la continuïtat, la derivabilitat, el creixement, els extrems i la curvatura de cada funció i representa-la. Recorda que cada expressió només es dibuixa dins del seu interval.
+
+**a)**
+
+$$
+f(x)=
+\begin{cases}
+-x^2+4x+1, & x<1,\\
+x^2-2x+3, & x\geq1.
+\end{cases}
+$$
+
+**b)**
+
+$$
+g(x)=
+\begin{cases}
+x^3-3x+2, & x<0,\\
+(x-1)^2+1, & x\geq0.
+\end{cases}
+$$
+
+**c)**
+
+$$
+h(x)=
+\begin{cases}
+3^x, & x\leq1,\\
+\dfrac{3}{x}, & x>1.
+\end{cases}
+$$
+
+**d)**
+
+$$
+p(x)=
+\begin{cases}
+\dfrac{1}{x^2+4}, & x<0,\\[6pt]
+1-\dfrac{x}{4}, & x\geq0.
+\end{cases}
+$$
+
+#### Funcions amb valor absolut
+
+**2.23.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=x+\lvert x-2\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
+| **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
+
+**2.24.** Estudia i representa les funcions següents:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{1}{\lvert x\rvert-3}$ | **b)** $f(x)=\dfrac{\lvert x\rvert}{x^2+4}$ |
+| **c)** $f(x)=\dfrac{\lvert x-2\rvert}{2+\lvert x\rvert}$ | **d)** $f(x)=\dfrac{\lvert x\rvert}{x-2}$ |
+
+En l'apartat **d)**, comprova en particular que la funció té dues asímptotes horitzontals diferents, una quan $x\to-\infty$ i una altra quan $x\to+\infty$.
+
+#### Funcions irracionals, exponencials i logarítmiques
+
+**2.25.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
+
+- **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
+- **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.
+- **c)** Per a $h(x)=\ln(x^2-4)$, troba el domini, els talls i les asímptotes verticals.
+- **d)** Per a $p(x)=\dfrac{x}{\ln(x^2+2)}$, estudia el domini, les simetries i els talls amb els eixos.
+- **e)** Per a $q(x)=e^{-x^2}$, estudia les simetries, els límits a l'infinit, el creixement i els extrems.
+- **f)** Per a $r(x)=x^2e^{-2x}$, estudia les branques a l'infinit, el creixement i els extrems.
+- **g)** Per a $s(x)=\dfrac{x^2}{\ln x}$, determina el domini, les asímptotes i els intervals de creixement i decreixement.
+- **h)** Per a $t(x)=\ln(x^2-9)$, estudia el domini, les simetries, les asímptotes i els extrems.
 
 ### Optimització
 
