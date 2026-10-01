@@ -391,7 +391,7 @@ $$
 | | |
 |:--|:--|
 | **a)** $f(x)=\lvert x^2-9\rvert$ | **b)** $g(x)=\lvert 3x+6\rvert$ |
-| **c)** $h(x)=\lvert x^2-5x+6\rvert$ | **d)** $f(x)=\lvert x^2+x-6\rvert$ |
+| **c)** $h(x)=\lvert x^2-5x+6\rvert$ | **d)** $f(x)=\lvert -x^2-x+6\rvert$ |
 
 ### Creixement, decreixement i extrems
 
