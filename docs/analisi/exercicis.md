@@ -379,19 +379,19 @@ $$
 
 #### Funcions amb valor absolut
 
-**2.15.** Escriu cada funció com una funció a trossos i indica en quins punts no és derivable.
+**2.15.** Escriu les funcions següents a trossos i estudia'n la continuïtat i la derivabilitat. Indica el conjunt de punts on cadascuna és derivable.
 
 | | |
 |:--|:--|
-| **a)** $f(x)=|x^2-9|$ | **b)** $g(x)=|3x+6|$ |
-| **c)** $h(x)=|x^2-5x+6|$ | |
+| **a)** $f(x)=\lvert x+4\rvert$ | **b)** $g(x)=\lvert x^2+x-6\rvert$ |
+| **c)** $h(x)=2x+\lvert x-1\rvert$ | **d)** $p(x)=x^2+\lvert x+2\rvert$ |
 
-**2.16.** Escriu les funcions següents a trossos i estudia'n la continuïtat i la derivabilitat. Indica el conjunt de punts on cadascuna és derivable.
+**2.16.** Escriu cada funció com una funció a trossos i indica en quins punts no és derivable.
 
 | | |
 |:--|:--|
-| **a)** $f(x)=|x+4|$ | **b)** $g(x)=|x^2+x-6|$ |
-| **c)** $h(x)=2x+|x-1|$ | **d)** $p(x)=x^2+|x+2|$ |
+| **a)** $f(x)=\lvert x^2-9\rvert$ | **b)** $g(x)=\lvert 3x+6\rvert$ |
+| **c)** $h(x)=\lvert x^2-5x+6\rvert$ | |
 
 ### Creixement, decreixement i extrems
 
