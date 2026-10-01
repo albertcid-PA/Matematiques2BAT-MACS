@@ -78,66 +78,7 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 !!! tip "Ordre de comprovació"
     Primer comprovem la **continuïtat**. Si la funció no és contínua en $a$, ja podem afirmar que no és derivable en aquest punt. Només si és contínua passem a comparar $f'(a^-)$ i $f'(a^+)$.
 
-## 4. Del valor absolut a una funció a trossos
-
-Per estudiar la derivabilitat d'una funció amb valor absolut, primer l'hem d'escriure com una funció a trossos. Si l'expressió interior és $g(x)$, aleshores
-
-$$
-|g(x)|=
-\begin{cases}
-g(x), & g(x)\geq0,\\[2pt]
--g(x), & g(x)<0.
-\end{cases}
-$$
-
-El procediment és el següent:
-
-1. Resolem $g(x)=0$ per trobar els punts on l'expressió interior pot canviar de signe.
-2. Estudiem el signe de $g(x)$ en cadascun dels intervals determinats per aquests punts.
-3. Substituïm $|g(x)|$ per $g(x)$ en els intervals on $g(x)\geq0$ i per $-g(x)$ on $g(x)<0$.
-4. Derivem cada tros i comparem les derivades laterals en els punts d'unió.
-
-!!! note "Recorda"
-    Una funció de la forma $f(x)=|g(x)|$ és contínua en tots els punts on $g$ és contínua. Els zeros de $g$ són els punts que cal estudiar per decidir si $f$ és derivable. Un zero no implica sempre un punt angulós: cal comprovar les derivades laterals.
-
-!!! example "Exemple. Funció amb valor absolut"
-    Escriu com una funció a trossos i estudia la derivabilitat de
-
-    $$
-    f(x)=|x^2+x-2|.
-    $$
-
-    Factoritzem l'expressió interior:
-
-    $$
-    x^2+x-2=(x+2)(x-1).
-    $$
-
-    Els zeros són $x=-2$ i $x=1$. El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Per tant,
-
-    $$
-    f(x)=
-    \begin{cases}
-    x^2+x-2, & x\leq-2,\\[2pt]
-    -x^2-x+2, & -2<x<1,\\[2pt]
-    x^2+x-2, & x\geq1.
-    \end{cases}
-    $$
-
-    Derivem cada tros:
-
-    $$
-    f'(x)=
-    \begin{cases}
-    2x+1, & x<-2,\\[2pt]
-    -2x-1, & -2<x<1,\\[2pt]
-    2x+1, & x>1.
-    \end{cases}
-    $$
-
-    En $x=-2$ i en $x=1$ les derivades laterals no coincideixen. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en aquests dos punts.
-
-## 5. Estudi analític de la derivabilitat
+## 4. Estudi analític de la derivabilitat
 
 En una funció definida a trossos, estudiem primer si els dos trossos enllacen i després si ho fan amb la mateixa pendent.
 
@@ -278,3 +219,62 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     $$
 
     i en aquest cas $f'(2)=4$.
+
+## 5. Del valor absolut a una funció a trossos
+
+Per estudiar la derivabilitat d'una funció amb valor absolut, primer l'hem d'escriure com una funció a trossos. Si l'expressió interior és $g(x)$, aleshores
+
+$$
+|g(x)|=
+\begin{cases}
+g(x), & g(x)\geq0,\\[2pt]
+-g(x), & g(x)<0.
+\end{cases}
+$$
+
+El procediment és el següent:
+
+1. Resolem $g(x)=0$ per trobar els punts on l'expressió interior pot canviar de signe.
+2. Estudiem el signe de $g(x)$ en cadascun dels intervals determinats per aquests punts.
+3. Substituïm $|g(x)|$ per $g(x)$ en els intervals on $g(x)\geq0$ i per $-g(x)$ on $g(x)<0$.
+4. Derivem cada tros i comparem les derivades laterals en els punts d'unió.
+
+!!! note "Recorda"
+    Una funció de la forma $f(x)=|g(x)|$ és contínua en tots els punts on $g$ és contínua. Els zeros de $g$ són els punts que cal estudiar per decidir si $f$ és derivable. Un zero no implica sempre un punt angulós: cal comprovar les derivades laterals.
+
+!!! example "Exemple. Funció amb valor absolut"
+    Escriu com una funció a trossos i estudia la derivabilitat de
+
+    $$
+    f(x)=|x^2+x-2|.
+    $$
+
+    Factoritzem l'expressió interior:
+
+    $$
+    x^2+x-2=(x+2)(x-1).
+    $$
+
+    Els zeros són $x=-2$ i $x=1$. El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Per tant,
+
+    $$
+    f(x)=
+    \begin{cases}
+    x^2+x-2, & x\leq-2,\\[2pt]
+    -x^2-x+2, & -2<x<1,\\[2pt]
+    x^2+x-2, & x\geq1.
+    \end{cases}
+    $$
+
+    Derivem cada tros:
+
+    $$
+    f'(x)=
+    \begin{cases}
+    2x+1, & x<-2,\\[2pt]
+    -2x-1, & -2<x<1,\\[2pt]
+    2x+1, & x>1.
+    \end{cases}
+    $$
+
+    En $x=-2$ i en $x=1$ les derivades laterals no coincideixen. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en aquests dos punts.
