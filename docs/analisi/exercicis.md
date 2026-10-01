@@ -383,7 +383,7 @@ $$
 
 | | |
 |:--|:--|
-| **a)** $f(x)=\lvert x+4\rvert$ | **b)** $g(x)=\lvert x^2+x-6\rvert$ |
+| **a)** $f(x)=\lvert x+4\rvert$ | **b)** $f(x)=\lvert -2x+4\rvert$ |
 | **c)** $h(x)=2x+\lvert x-1\rvert$ | **d)** $p(x)=x^2+\lvert x+2\rvert$ |
 
 **2.16.** Escriu cada funció com una funció a trossos i indica en quins punts no és derivable.
@@ -391,7 +391,7 @@ $$
 | | |
 |:--|:--|
 | **a)** $f(x)=\lvert x^2-9\rvert$ | **b)** $g(x)=\lvert 3x+6\rvert$ |
-| **c)** $h(x)=\lvert x^2-5x+6\rvert$ | |
+| **c)** $h(x)=\lvert x^2-5x+6\rvert$ | **d)** $f(x)=\lvert x^2+x-6\rvert$ |
 
 ### Creixement, decreixement i extrems
 
