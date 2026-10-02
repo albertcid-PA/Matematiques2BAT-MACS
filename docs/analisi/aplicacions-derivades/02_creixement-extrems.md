@@ -85,18 +85,7 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
 | No canvia de signe | No és un extrem relatiu |
 
 !!! warning "Un punt amb derivada zero no sempre és un extrem"
-    En $f(x)=x^3$ tenim $f'(0)=0$, però la funció és creixent a tots dos costats de $0$. El punt $(0,0)$ és un punt d'inflexió amb tangent horitzontal, no un màxim ni un mínim.
-
-Si $f'(a)=0$ i existeix $f''(a)$, també podem usar el criteri de la segona derivada:
-
-$$
-\begin{aligned}
-f''(a)<0&\quad\Longrightarrow\quad\text{màxim relatiu},\\
-f''(a)>0&\quad\Longrightarrow\quad\text{mínim relatiu}.
-\end{aligned}
-$$
-
-Si $f''(a)=0$, aquest criteri no decideix res i cal estudiar el signe de $f'$.
+    En $f(x)=x^3$ tenim $f'(0)=0$, però la funció és creixent a tots dos costats de $0$. Per tant, $(0,0)$ no és ni un màxim ni un mínim. Sempre cal comprovar el canvi de signe de $f'$.
 
 !!! example "Exemple 2. Producte d'un polinomi i una exponencial"
     Estudiem els extrems de
@@ -126,67 +115,15 @@ Si $f''(a)=0$, aquest criteri no decideix res i cal estudiar el signe de $f'$.
 
     és un màxim relatiu.
 
-## 3. Curvatura i punts d'inflexió
+## 3. Esquema d'un estudi complet
 
-La segona derivada descriu com canvia el pendent de la funció. En aquests apunts farem servir la terminologia del llibre:
-
-| Signe de $f''$ | Forma de la gràfica |
-|:---:|:---|
-| $f''(x)>0$ | **Còncava** o corbada cap amunt. |
-| $f''(x)<0$ | **Convexa** o corbada cap avall. |
-
-Un punt $(a,f(a))$ és un **punt d'inflexió** quan la funció és contínua en $a$ i la curvatura canvia en travessar-lo. Els candidats apareixen quan
-
-$$
-f''(a)=0
-\qquad\text{o bé}\qquad
-f''(a)\text{ no existeix}.
-$$
-
-!!! note "Condició que cal comprovar"
-    L'equació $f''(a)=0$ només dona candidats. Per confirmar un punt d'inflexió, $f''$ ha de canviar de signe a banda i banda de $a$.
-
-!!! example "Exemple 3. Curvatura i punts d'inflexió"
-    Considerem
-
-    $$
-    f(x)=x^4-4x^3.
-    $$
-
-    Calculem les dues primeres derivades:
-
-    $$
-    f'(x)=4x^3-12x^2,
-    \qquad
-    f''(x)=12x^2-24x=12x(x-2).
-    $$
-
-    Els candidats són $x=0$ i $x=2$. El signe de $f''$ és:
-
-    | Interval | $(-\infty,0)$ | $(0,2)$ | $(2,+\infty)$ |
-    |:---:|:---:|:---:|:---:|
-    | Signe de $f''$ | $+$ | $-$ | $+$ |
-    | Curvatura | còncava | convexa | còncava |
-
-    La curvatura canvia en tots dos valors. Per tant, els punts d'inflexió són
-
-    $$
-    (0,f(0))=(0,0)
-    \qquad\text{i}\qquad
-    (2,f(2))=(2,-16).
-    $$
-
-## 4. Esquema d'un estudi complet
-
-Per estudiar creixement, extrems i curvatura d'una funció:
+Per estudiar el creixement i els extrems d'una funció:
 
 1. Troba el **domini**.
 2. Calcula $f'$ i localitza els punts crítics.
 3. Fes la taula de signes de $f'$.
 4. Escriu els intervals de creixement i decreixement i classifica els extrems.
-5. Calcula $f''$ i localitza els candidats a punt d'inflexió.
-6. Fes la taula de signes de $f''$ i determina la curvatura.
-7. Calcula les ordenades dels extrems i dels punts d'inflexió substituint en la funció original.
+5. Calcula les ordenades dels extrems substituint els valors de $x$ en la funció original.
 
 !!! tip "En funcions definides a trossos"
-    Cal afegir a la taula tots els punts d'unió. Un extrem o un punt d'inflexió també pot aparèixer en un punt on $f'$ o $f''$ no existeixen, sempre que la funció hi sigui contínua i es produeixi el canvi corresponent.
+    Cal afegir a la taula tots els punts d'unió. Un extrem també pot aparèixer en un punt on $f'$ no existeix, sempre que el valor pertanyi al domini i es produeixi el canvi de creixement corresponent.
