@@ -403,14 +403,7 @@ $$
 | **c)** $f(x)=\dfrac{x^2+2}{x-1}$ | **d)** $f(x)=(x-1)e^{-x}$ |
 | **e)** $f(x)=\dfrac{\ln x}{x^2}$ | **f)** $f(x)=\dfrac{x^3}{x^2+1}$ |
 
-**2.18.** Estudia la curvatura i troba els punts d'inflexió de cada funció:
-
-| | |
-|:--|:--|
-| **a)** $f(x)=x^4-4x^3+2$ | **b)** $f(x)=2x^4-12x^2+1$ |
-| **c)** $f(x)=x^5-5x^3+x$ | **d)** $f(x)=(x-1)e^x$ |
-
-**2.19.** Fes un estudi complet del creixement, els extrems relatius, la curvatura i els punts d'inflexió de les funcions següents:
+**2.18.** Fes un estudi complet del creixement, el decreixement i els extrems relatius de les funcions següents:
 
 | | |
 |:--|:--|
@@ -421,7 +414,7 @@ $$
 
 #### Funcions polinòmiques
 
-**2.20.** Estudia i representa les funcions polinòmiques següents. Indica el domini, els talls amb els eixos, les branques a l'infinit, els intervals de creixement i decreixement, els extrems i els punts d'inflexió.
+**2.19.** Estudia i representa les funcions polinòmiques següents. Indica el domini, els talls amb els eixos, les branques a l'infinit, els intervals de creixement i decreixement i els extrems.
 
 | | |
 |:--|:--|
@@ -431,7 +424,7 @@ $$
 
 #### Funcions racionals
 
-**2.21.** Estudia i representa les funcions racionals següents. Determina també totes les asímptotes i la posició de la corba respecte de les asímptotes horitzontals o obliqües.
+**2.20.** Estudia i representa les funcions racionals següents. Determina també totes les asímptotes i la posició de la corba respecte de les asímptotes horitzontals o obliqües.
 
 | | |
 |:--|:--|
@@ -442,7 +435,7 @@ $$
 
 #### Funcions a trossos
 
-**2.22.** Estudia la continuïtat, la derivabilitat, el creixement, els extrems i la curvatura de cada funció i representa-la. Recorda que cada expressió només es dibuixa dins del seu interval.
+**2.21.** Estudia la continuïtat, la derivabilitat, el creixement i els extrems de cada funció i representa-la. Recorda que cada expressió només es dibuixa dins del seu interval.
 
 **a)**
 
@@ -486,14 +479,14 @@ $$
 
 #### Funcions amb valor absolut
 
-**2.23.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
+**2.22.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
 
 | | |
 |:--|:--|
 | **a)** $f(x)=x+\lvert x-2\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
 | **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
 
-**2.24.** Estudia i representa les funcions següents:
+**2.23.** Estudia i representa les funcions següents:
 
 | | |
 |:--|:--|
@@ -501,7 +494,7 @@ $$
 
 #### Funcions irracionals, exponencials i logarítmiques
 
-**2.25.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
+**2.24.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
 
 - **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
 - **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.

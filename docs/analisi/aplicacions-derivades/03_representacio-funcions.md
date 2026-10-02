@@ -108,7 +108,7 @@ $$
 
 El canvi de signe de $f'$ permet decidir si hi ha un màxim, un mínim o cap extrem.
 
-### Pas 8. Creixement, decreixement i curvatura
+### Pas 8. Creixement i decreixement
 
 Fem la taula de signes de $f'$:
 
@@ -118,16 +118,14 @@ f'(x)>0\Longrightarrow f\text{ creix},
 f'(x)<0\Longrightarrow f\text{ decreix}.
 $$
 
-Si l'exercici també demana la curvatura, calculem $f''$, estudiem-ne el signe i comprovem els candidats a punt d'inflexió.
-
 !!! tip "Abans de dibuixar"
-    Situa primer els talls, les discontinuïtats, les asímptotes, els extrems i els punts d'inflexió. Després uneix la informació respectant el creixement i la curvatura de cada interval.
+    Situa primer els talls, les discontinuïtats, les asímptotes i els extrems. Després uneix la informació respectant el creixement o decreixement de cada interval.
 
 ## 2. Què cal mirar segons el tipus de funció?
 
 | Tipus | Informació especialment útil |
 |:---|:---|
-| Polinòmica | Domini $\mathbb{R}$, talls, comportament del terme de grau més alt, extrems i inflexions. No té asímptotes. |
+| Polinòmica | Domini $\mathbb{R}$, talls, comportament del terme de grau més alt i extrems. No té asímptotes. |
 | Racional | Zeros del denominador, simplificacions, asímptotes verticals, horitzontals o obliqües i intervals separats pel domini. |
 | Irracional | Condició del radicand, extrems del domini i possibles tangents verticals. |
 | Exponencial | El factor exponencial és sempre positiu; els límits depenen del signe de l'exponent. |
@@ -174,14 +172,6 @@ Si l'exercici també demana la curvatura, calculem $f''$, estudiem-ne el signe i
     | $f$ | creix | decreix | creix |
 
     Hi ha un màxim relatiu en $(-1,32)$ i un mínim relatiu en $(3,0)$.
-
-    **Curvatura.**
-
-    $$
-    f''(x)=6x-6=6(x-1).
-    $$
-
-    La curvatura canvia en $x=1$, de manera que $(1,16)$ és un punt d'inflexió.
 
 ## 4. Exemple complet: funció racional
 
