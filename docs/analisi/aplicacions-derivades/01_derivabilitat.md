@@ -124,6 +124,11 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
 
     Les derivades laterals no coincideixen. Per tant, $f$ **no és derivable** en $x=1$ i la gràfica té un punt angulós.
 
+    <figure markdown="span">
+      ![Gràfica d'una funció a trossos contínua amb un punt angulós en x igual a u](../../img/analisi/fig_2_3_exemple_continua_no_derivable.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_3_exemple_continua_no_derivable.tex">Figura 2.3.</a></strong> Funció contínua però no derivable en $x=1$.</figcaption>
+    </figure>
+
 !!! example "Exemple 2. Funció contínua i derivable"
     Estudia la derivabilitat de la funció en $x=-1$:
 
@@ -160,6 +165,11 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     $$
 
     Les derivades laterals coincideixen. Per tant, $f$ **és derivable** en $x=-1$ i $f'(-1)=-3$.
+
+    <figure markdown="span">
+      ![Gràfica d'una funció a trossos amb una unió suau en x igual a menys u](../../img/analisi/fig_2_4_exemple_continua_derivable.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_4_exemple_continua_derivable.tex">Figura 2.4.</a></strong> Funció contínua i derivable en $x=-1$.</figcaption>
+    </figure>
 
 !!! example "Exemple 3. Càlcul de paràmetres"
     Calcula $m$ i $n$ perquè la funció sigui derivable en $x=2$:
@@ -224,6 +234,11 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     $$
 
     i en aquest cas $f'(2)=4$.
+
+    <figure markdown="span">
+      ![Gràfica de la funció a trossos obtinguda amb m igual a u i n igual a quatre](../../img/analisi/fig_2_5_exemple_parametres.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_5_exemple_parametres.tex">Figura 2.5.</a></strong> Funció derivable obtinguda amb $m=1$ i $n=4$.</figcaption>
+    </figure>
 
 ## 5. Del valor absolut a una funció a trossos
 
@@ -290,8 +305,8 @@ El procediment és el següent:
     En $x=2$, les derivades laterals són $f'(2^-)=-1$ i $f'(2^+)=1$. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en $x=2$.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/analisi/fig_2_3_valor_absolut_lineal.svg){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_3_valor_absolut_lineal.tex">Figura 2.3.</a></strong> Gràfica de $f(x)=|x-2|$.</figcaption>
+      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/analisi/fig_2_6_valor_absolut_lineal.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_6_valor_absolut_lineal.tex">Figura 2.6.</a></strong> Gràfica de $f(x)=|x-2|$.</figcaption>
     </figure>
 
 !!! example "Exemple 2. Valor absolut d'una funció quadràtica"
@@ -341,6 +356,6 @@ El procediment és el següent:
     En $x=-2$ i en $x=1$ les derivades laterals no coincideixen. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en aquests dos punts.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de x al quadrat més x menys dos, amb punts angulosos en x igual a menys dos i x igual a u](../../img/analisi/fig_2_4_valor_absolut_quadratica.svg){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_4_valor_absolut_quadratica.tex">Figura 2.4.</a></strong> Gràfica de $f(x)=|x^2+x-2|$.</figcaption>
+      ![Gràfica de la funció valor absolut de x al quadrat més x menys dos, amb punts angulosos en x igual a menys dos i x igual a u](../../img/analisi/fig_2_7_valor_absolut_quadratica.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_7_valor_absolut_quadratica.tex">Figura 2.7.</a></strong> Gràfica de $f(x)=|x^2+x-2|$.</figcaption>
     </figure>
