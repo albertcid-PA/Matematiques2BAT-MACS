@@ -122,3 +122,9 @@
   justify-content: center;
   width: 100%;
 }
+
+/* Manté juntes les expressions algebraiques de les taules de signes. */
+.md-typeset .formula-nowrap {
+  display: inline-block;
+  white-space: nowrap;
+}
