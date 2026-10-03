@@ -9,7 +9,7 @@ En els problemes d'optimització sovint cal expressar longituds, àrees o volums
 En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar el **perímetre**. En qualsevol figura poligonal, el perímetre és la **suma de les longituds de tots els costats**.
 
 <figure markdown="span">
-  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/analisi/fig_2_16_repas_geometria_plana.svg?v=2){ width="900" }
+  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/analisi/fig_2_16_repas_geometria_plana.svg?v=3){ width="900" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_16_repas_geometria_plana.tex">Figura 2.16.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
 </figure>
 
@@ -26,21 +26,25 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 
 ### 1.2 Geometria de l'espai
 
-En els cossos geomètrics només necessitarem les fórmules del **volum**. Escriurem $A_b$ per indicar l'àrea de la base i $h$ per indicar l'altura.
+En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ per indicar el **volum**. L'àrea total és la suma de les àrees de totes les superfícies que formen el cos.
 
 <figure markdown="span">
-  ![Volum dels prismes i cilindres, dels cossos acabats en punta i de l'esfera](../../img/analisi/fig_2_17_repas_geometria_espai.svg?v=2){ width="960" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Cossos geomètrics, desplegaments i fórmules generals del volum.</figcaption>
+  ![Prisma rectangular, cilindre, piràmide, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/analisi/fig_2_17_repas_geometria_espai.svg?v=3){ width="960" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
 </figure>
 
-| Tipus de cos | Volum |
-|:---|:---:|
-| Prisma o cilindre | $V=A_bh$ |
-| Piràmide o con acabat en punta | $V=\dfrac{A_bh}{3}$ |
-| Esfera de radi $r$ | $V=\dfrac{4}{3}\pi r^3$ |
+| Cos geomètric | Àrea total | Volum |
+|:---|:---:|:---:|
+| Prisma rectangular de costats $a,b,h$ | $A_T=2(ab+ah+bh)$ | $V=abh$ |
+| Cilindre de radi $r$ i altura $h$ | $A_T=2\pi r^2+2\pi rh$ | $V=\pi r^2h$ |
+| Piràmide regular | $A_T=A_b+\dfrac{P_ba_p}{2}$ | $V=\dfrac{A_bh}{3}$ |
+| Con de radi $r$, altura $h$ i generatriu $g$ | $A_T=\pi r^2+\pi rg$ | $V=\dfrac{\pi r^2h}{3}$ |
+| Esfera de radi $r$ | $A_T=4\pi r^2$ | $V=\dfrac{4}{3}\pi r^3$ |
 
-!!! note "Àrea de la base"
-    La fórmula concreta depèn de la forma de la base. Per exemple, si la base és un cercle de radi $r$, aleshores $A_b=\pi r^2$.
+!!! note "Símbols de les fórmules"
+    $A_b$ és l'**àrea de la base**, $P_b$ és el **perímetre de la base**, $a_p$ és l'**apotema de la piràmide**, $g$ és la **generatriu del con** i $h$ és l'**altura** del cos.
+
+    En el cilindre i el con, la base és un cercle; per tant, $A_b=\pi r^2$ i $P_b=2\pi r$.
 
 ## 2. Procediment general d'un problema d'optimització
 

@@ -4,60 +4,75 @@
 \definecolor{corba}{HTML}{365FB3}
 \definecolor{mesura}{HTML}{B91C1C}
 \definecolor{fons}{HTML}{F4F7FC}
+\definecolor{accent}{HTML}{7C3AED}
 
 \tikzset{
-  panell/.style={draw=black!18, rounded corners=4pt, fill=fons, line width=.6pt},
-  figura/.style={draw=corba, very thick, fill=corba!8},
+  panell/.style={draw=black!18, rounded corners=5pt, fill=fons, line width=.65pt},
+  figura/.style={draw=corba, very thick, fill=corba!9, line join=round},
   guia/.style={draw=black!45, densely dashed},
-  etiqueta/.style={text=mesura, font=\small},
+  cota/.style={<->, >=stealth, draw=mesura, semithick},
+  etiqueta/.style={text=mesura, font=\small, fill=fons, inner sep=1pt},
   titol/.style={font=\bfseries},
+  centre/.style={fill=accent, draw=white, line width=.4pt},
 }
 
 \begin{document}
 \begin{tikzpicture}[x=1cm,y=1cm]
+  % Quadrat
   \begin{scope}[shift={(0,8.5)}]
     \draw[panell] (0,0) rectangle (5.8,4.4);
     \node[titol] at (2.9,4.02) {Quadrat};
     \draw[figura] (2.05,1.35) rectangle (3.75,3.05);
-    \node[etiqueta, below] at (2.9,1.35) {$a$};
-    \node[etiqueta, right] at (3.75,2.2) {$a$};
-    \node at (2.9,.55) {$A=a^2\qquad P=4a$};
+    \draw[cota] (2.05,1.08)--(3.75,1.08);
+    \node[etiqueta] at (2.9,1.08) {$a$};
+    \draw[cota] (4.02,1.35)--(4.02,3.05);
+    \node[etiqueta] at (4.02,2.2) {$a$};
+    \node at (2.9,.48) {$A=a^2\qquad P=4a$};
   \end{scope}
 
+  % Rectangle
   \begin{scope}[shift={(6.2,8.5)}]
     \draw[panell] (0,0) rectangle (5.8,4.4);
     \node[titol] at (2.9,4.02) {Rectangle};
-    \draw[figura] (1.35,1.45) rectangle (4.45,2.95);
-    \node[etiqueta, below] at (2.9,1.45) {$b$};
-    \node[etiqueta, right] at (4.45,2.2) {$h$};
-    \node at (2.9,.55) {$A=bh\qquad P=2(b+h)$};
+    \draw[figura] (1.25,1.5) rectangle (4.55,2.95);
+    \draw[cota] (1.25,1.2)--(4.55,1.2);
+    \node[etiqueta] at (2.9,1.2) {$b$};
+    \draw[cota] (4.82,1.5)--(4.82,2.95);
+    \node[etiqueta] at (4.82,2.22) {$h$};
+    \node at (2.9,.48) {$A=bh\qquad P=2(b+h)$};
   \end{scope}
 
+  % Triangle
   \begin{scope}[shift={(0,3.7)}]
     \draw[panell] (0,0) rectangle (5.8,4.4);
     \node[titol] at (2.9,4.02) {Triangle};
-    \coordinate (A) at (1.35,1.35);
-    \coordinate (B) at (4.5,1.35);
-    \coordinate (C) at (3.5,3.15);
+    \coordinate (A) at (1.05,1.38);
+    \coordinate (B) at (4.75,1.38);
+    \coordinate (C) at (3.45,3.18);
+    \coordinate (H) at (3.45,1.38);
     \draw[figura] (A)--(B)--(C)--cycle;
-    \draw[guia] (C)--(3.5,1.35);
-    \node[etiqueta, below] at (2.9,1.35) {$b$};
-    \node[etiqueta, right] at (3.5,2.25) {$h$};
-    \node[etiqueta, left] at (2.38,2.3) {$a$};
-    \node[etiqueta, right] at (4.03,2.3) {$c$};
-    \node at (2.9,.55) {$A=\dfrac{bh}{2}\qquad P=a+b+c$};
+    \draw[guia] (C)--(H);
+    \draw[black!45] (H) rectangle ++(.16,.16);
+    \draw[cota] (1.05,1.08)--(4.75,1.08);
+    \node[etiqueta] at (2.9,1.08) {$b$};
+    \node[etiqueta, left] at (3.45,2.28) {$h$};
+    \node[etiqueta] at (2.08,2.45) {$a$};
+    \node[etiqueta] at (4.22,2.42) {$c$};
+    \node at (2.9,.48) {$A=\dfrac{bh}{2}\qquad P=a+b+c$};
   \end{scope}
 
+  % Cercle
   \begin{scope}[shift={(6.2,3.7)}]
     \draw[panell] (0,0) rectangle (5.8,4.4);
     \node[titol] at (2.9,4.02) {Cercle};
-    \draw[figura] (2.9,2.25) circle (1.05);
-    \fill[corba] (2.9,2.25) circle (1.5pt);
-    \draw[mesura, thick] (2.9,2.25)--(3.95,2.25);
-    \node[etiqueta, above] at (3.43,2.25) {$r$};
-    \node at (2.9,.55) {$A=\pi r^2\qquad P=2\pi r$};
+    \draw[figura] (2.9,2.27) circle (1.1);
+    \fill[centre] (2.9,2.27) circle (2.2pt);
+    \draw[cota, ->] (2.9,2.27)--(4.0,2.27);
+    \node[etiqueta, above] at (3.46,2.27) {$r$};
+    \node at (2.9,.48) {$A=\pi r^2\qquad P=2\pi r$};
   \end{scope}
 
+  % Polígon regular
   \begin{scope}[shift={(0,0)}]
     \draw[panell] (0,0) rectangle (12,3.3);
     \node[titol] at (6,2.98) {Polígon regular};
@@ -65,10 +80,12 @@
       \draw[figura]
         (0:1.18) -- (60:1.18) -- (120:1.18) --
         (180:1.18) -- (240:1.18) -- (300:1.18) -- cycle;
-      \fill[corba] (0,0) circle (1.5pt);
+      \fill[centre] (0,0) circle (2.2pt);
       \draw[guia] (0,0)--(90:1.02);
+      \draw[black!45] (90:1.02)--++(-.14,0)--++(0,-.14);
       \node[etiqueta, right] at (90:.52) {$a_p$};
-      \node[etiqueta, below right] at (-60:1.02) {$l$};
+      \draw[cota] (300:1.34)--(360:1.34);
+      \node[etiqueta, below right] at (330:1.34) {$l$};
     \end{scope}
     \node[align=left] at (8.0,1.72)
       {$P=n\,l$\\[5pt]$A=\dfrac{P\,a_p}{2}$};
