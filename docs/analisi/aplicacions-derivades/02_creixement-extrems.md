@@ -171,6 +171,11 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
 
     és un màxim relatiu.
 
+    <figure markdown="span">
+      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/analisi/fig_2_10_creixement_polinomi_exponencial.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_10_creixement_polinomi_exponencial.tex">Figura 2.10.</a></strong> Creixement, decreixement i extrems de $f(x)=x^2e^{-x}$.</figcaption>
+    </figure>
+
 ## 3. Esquema d'un estudi complet
 
 Per estudiar el creixement i els extrems d'una funció:
