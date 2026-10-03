@@ -13,7 +13,7 @@ Seguirem sempre el mateix ordre per representar funcions **polinòmiques, racion
     5. Estudiar les altres **discontinuïtats**, especialment en funcions a trossos, i classificar-les.
     6. Calcular els límits quan $x\to-\infty$ i $x\to+\infty$ per trobar asímptotes horitzontals o branques infinites.
     7. Localitzar els candidats a **extrem relatiu** resolent $f'(x)=0$ i considerant els punts on $f'$ no existeix.
-    8. Estudiar el signe de $f'$ per determinar la monotonia i decidir si cada candidat és un màxim, un mínim o no és un extrem.
+    8. Construir la **taula de monotonia** situant-hi tots els punts importants: discontinuïtats —incloses les asímptotes verticals—, extrems del domini, punts d'unió de les funcions a trossos i candidats a extrems relatius. Després, estudiar el signe de $f'$ en cada interval per determinar on la funció creix o decreix.
 
 ## 1. Esquema general
 
@@ -129,13 +129,22 @@ El canvi de signe de $f'$ permet decidir si hi ha un màxim, un mínim o cap ext
 
 ### Pas 8. Creixement i decreixement
 
-Fem la taula de signes de $f'$:
+Abans d'estudiar el signe de $f'$, situem ordenadament a la taula de monotonia **tots els punts que poden separar intervals**:
+
+- les discontinuïtats, incloses les **asímptotes verticals**;
+- els extrems del domini;
+- els punts d'unió o de canvi d'expressió de les **funcions a trossos**;
+- els punts on $f'(x)=0$ i els punts del domini on $f'$ no existeix, que són els candidats a **extrems relatius**.
+
+Aquests punts divideixen el domini en intervals. En cadascun estudiem el signe de $f'$:
 
 $$
 f'(x)>0\Longrightarrow f\text{ creix},
 \qquad
 f'(x)<0\Longrightarrow f\text{ decreix}.
 $$
+
+El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha un màxim relatiu i de $-$ a $+$ hi ha un mínim relatiu. Una discontinuïtat o una asímptota vertical separa intervals de monotonia, encara que el punt no pertanyi al domini i, per tant, no pugui ser un extrem relatiu.
 
 !!! tip "Abans de dibuixar"
     Situa primer els talls, les discontinuïtats, les asímptotes i els extrems. Després uneix la informació respectant el creixement o decreixement de cada interval.
