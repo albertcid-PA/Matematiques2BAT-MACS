@@ -3,9 +3,10 @@
 !!! abstract "Definició: representació d'una funció"
     Representar una funció consisteix a reunir la informació algebraica, els límits i les derivades per dibuixar-ne una gràfica coherent.
 
-Seguirem sempre el mateix ordre per representar funcions **polinòmiques, racionals, irracionals, exponencials, logarítmiques i funcions a trossos**.
+    Seguirem sempre el mateix ordre per representar funcions **polinòmiques, racionals, irracionals, exponencials, logarítmiques i funcions a trossos**.
 
-!!! abstract "Formes algebraiques dels tipus de funcions"
+    **Formes algebraiques dels tipus de funcions**
+
     | Tipus de funció | Forma general |
     |:---|:---:|
     | **Polinòmica** | $\displaystyle f(x)=\sum_{i=0}^{n}a_i x^i$, amb $a_n\neq0$ |
