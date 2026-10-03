@@ -29,7 +29,7 @@ En aquest apartat repassarem com s'interpreta un límit a partir de la gràfica 
 
 En particular:
 
-- a $x=-4$, el límit existeix, però a la gràfica hi ha un forat;
+- a $x=-4$, el límit existeix, però a la gràfica hi ha un forat: el valor $f(-4)$ no està definit;
 - a $x=-1$, el límit existeix, però el valor de la funció està desplaçat;
 - a $x=0$, es compleix $\displaystyle\lim_{x\to0}f(x)=f(0)=3$;
 - a $x=2$, els límits laterals són diferents i, per tant, el límit no existeix;
