@@ -1,0 +1,60 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{amsmath}
+
+\definecolor{corba}{HTML}{365FB3}
+\definecolor{mesura}{HTML}{B91C1C}
+\definecolor{fons}{HTML}{F4F7FC}
+
+\tikzset{
+  panell/.style={draw=black!18, rounded corners=4pt, fill=fons, line width=.6pt},
+  figura/.style={draw=corba, very thick, fill=corba!8},
+  aresta/.style={draw=corba, very thick},
+  oculta/.style={draw=corba!55, densely dashed},
+  guia/.style={draw=black!45, densely dashed},
+  etiqueta/.style={text=mesura, font=\small},
+  titol/.style={font=\bfseries},
+}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \begin{scope}[shift={(0,0)}]
+    \draw[panell] (0,0) rectangle (4.8,5.0);
+    \node[titol, align=center] at (2.4,4.55) {Prismes i\\cilindres};
+    \draw[figura] (1.15,1.65) rectangle (2.45,3.15);
+    \draw[aresta] (2.45,1.65)--(3.05,2.05)--(3.05,3.55)--(2.45,3.15);
+    \draw[aresta] (1.15,3.15)--(1.75,3.55)--(3.05,3.55);
+    \draw[oculta] (1.15,1.65)--(1.75,2.05)--(3.05,2.05);
+    \draw[oculta] (1.75,2.05)--(1.75,3.55);
+    \node[etiqueta, right] at (3.05,2.8) {$h$};
+    \node[etiqueta] at (1.8,1.35) {$A_b$};
+    \node at (2.4,.6) {$V=A_bh$};
+  \end{scope}
+
+  \begin{scope}[shift={(5.15,0)}]
+    \draw[panell] (0,0) rectangle (4.8,5.0);
+    \node[titol, align=center] at (2.4,4.55) {Piràmides i cons\\acabats en punta};
+    \coordinate (C) at (2.4,1.55);
+    \coordinate (V) at (2.4,3.65);
+    \draw[figura] (1.2,1.55) arc[start angle=180,end angle=360,x radius=1.2,y radius=.34] -- (V) -- cycle;
+    \draw[aresta] (1.2,1.55)--(V)--(3.6,1.55);
+    \draw[aresta] (1.2,1.55) arc[start angle=180,end angle=360,x radius=1.2,y radius=.34];
+    \draw[oculta] (1.2,1.55) arc[start angle=180,end angle=0,x radius=1.2,y radius=.34];
+    \draw[guia] (V)--(C);
+    \node[etiqueta, left] at (2.4,2.6) {$h$};
+    \node[etiqueta] at (2.4,1.15) {$A_b$};
+    \node at (2.4,.6) {$V=\dfrac{A_bh}{3}$};
+  \end{scope}
+
+  \begin{scope}[shift={(10.3,0)}]
+    \draw[panell] (0,0) rectangle (4.8,5.0);
+    \node[titol] at (2.4,4.55) {Esfera};
+    \draw[figura] (2.4,2.55) circle (1.2);
+    \draw[aresta] (1.2,2.55) arc[start angle=180,end angle=360,x radius=1.2,y radius=.35];
+    \draw[oculta] (1.2,2.55) arc[start angle=180,end angle=0,x radius=1.2,y radius=.35];
+    \fill[corba] (2.4,2.55) circle (1.5pt);
+    \draw[mesura, thick] (2.4,2.55)--(3.6,2.55);
+    \node[etiqueta, above] at (3.0,2.55) {$r$};
+    \node at (2.4,.6) {$V=\dfrac{4}{3}\pi r^3$};
+  \end{scope}
+\end{tikzpicture}
+\end{document}
