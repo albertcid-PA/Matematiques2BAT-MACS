@@ -1,6 +1,7 @@
 # Derivabilitat
 
-La **derivabilitat** ens indica si una funció té una taxa de variació instantània ben definida en un punt. Gràficament, significa que podem dibuixar-hi una única recta tangent amb pendent finit.
+!!! abstract "Definició: derivabilitat"
+    La **derivabilitat** ens indica si una funció té una taxa de variació instantània ben definida en un punt. Gràficament, significa que podem dibuixar-hi una única recta tangent amb pendent finit.
 
 Per estudiar si una funció és derivable en $x=a$, comprovarem dues condicions:
 
@@ -9,7 +10,10 @@ Per estudiar si una funció és derivable en $x=a$, comprovarem dues condicions:
 
 ## 1. Continuïtat en un punt
 
-Una funció $f$ és contínua en $x=a$ si es compleixen les tres condicions següents:
+!!! abstract "Definició: continuïtat en un punt"
+    Una funció $f$ és **contínua** en $x=a$ quan el límit de la funció en aquest punt existeix i coincideix amb el valor $f(a)$.
+
+Per comprovar-ho, s'han de complir les tres condicions següents:
 
 1. Els límits laterals de la funció són finits i coincideixen:
 
@@ -30,17 +34,18 @@ Una funció $f$ és contínua en $x=a$ si es compleixen les tres condicions seg�
 
 ## 2. Derivades laterals
 
-La **derivada per l'esquerra** de $f$ en $a$ es calcula fent que l'increment $h$ s'apropi a zero per valors negatius:
+!!! abstract "Definició: derivades laterals"
+    La **derivada per l'esquerra** de $f$ en $a$ es calcula fent que l'increment $h$ s'apropi a zero per valors negatius:
 
-$$
-\boxed{f'(a^{-})=\lim_{h\to0^-}\frac{f(a+h)-f(a)}{h}}.
-$$
+    $$
+    \boxed{f'(a^{-})=\lim_{h\to0^-}\frac{f(a+h)-f(a)}{h}}.
+    $$
 
-La **derivada per la dreta** de $f$ en $a$ es calcula fent que $h$ s'apropi a zero per valors positius:
+    La **derivada per la dreta** de $f$ en $a$ es calcula fent que $h$ s'apropi a zero per valors positius:
 
-$$
-\boxed{f'(a^{+})=\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h}}.
-$$
+    $$
+    \boxed{f'(a^{+})=\lim_{h\to0^+}\frac{f(a+h)-f(a)}{h}}.
+    $$
 
 !!! note "Recorda"
     $h\to0^-$ significa que $h$ pren valors negatius cada vegada més pròxims a zero. En canvi, $h\to0^+$ significa que pren valors positius cada vegada més pròxims a zero.
