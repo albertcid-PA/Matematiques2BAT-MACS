@@ -72,6 +72,16 @@ El procediment és:
     f(3)=-22\quad\Longrightarrow\quad(3,-22).
     $$
 
+    Ho podem comprovar amb la segona derivada:
+
+    $$
+    f''(x)=6x-6,
+    \qquad
+    f''(-1)=-12<0\ \Longrightarrow\ \text{màxim},
+    \qquad
+    f''(3)=12>0\ \Longrightarrow\ \text{mínim}.
+    $$
+
 ## 2. Màxims i mínims relatius
 
 !!! abstract "Definició: màxim i mínim relatius"
@@ -85,10 +95,53 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
 | $-\longrightarrow+$ | Mínim relatiu |
 | No canvia de signe | No és un extrem relatiu |
 
+!!! note "Comprovació amb la segona derivada"
+    Si $f'(a)=0$ i existeix $f''(a)$, podem comprovar el tipus d'extrem amb el signe de la segona derivada:
+
+    - si $f''(a)<0$, la funció té un **màxim relatiu** en $x=a$;
+    - si $f''(a)>0$, la funció té un **mínim relatiu** en $x=a$;
+    - si $f''(a)=0$, el criteri **no permet decidir** i cal estudiar el canvi de signe de $f'$.
+
 !!! warning "Un punt amb derivada zero no sempre és un extrem"
     En $f(x)=x^3$ tenim $f'(0)=0$, però la funció és creixent a tots dos costats de $0$. Per tant, $(0,0)$ no és ni un màxim ni un mínim. Sempre cal comprovar el canvi de signe de $f'$.
 
-!!! example "Exemple 2. Producte d'un polinomi i una exponencial"
+!!! example "Exemple 2. Lectura conjunta del creixement i els extrems"
+    Considerem la funció
+
+    $$
+    f(x)=x^3-3x.
+    $$
+
+    Les dues primeres derivades són
+
+    $$
+    f'(x)=3x^2-3=3(x+1)(x-1),
+    \qquad
+    f''(x)=6x.
+    $$
+
+    Els punts crítics són $x=-1$ i $x=1$. A més,
+
+    $$
+    f''(-1)=-6<0,
+    \qquad
+    f''(1)=6>0,
+    $$
+
+    de manera que $(-1,2)$ és un màxim relatiu i $(1,-2)$ és un mínim relatiu.
+
+    <figure markdown="span">
+      ![Gràfica d'una funció cúbica que creix fins a un màxim, decreix fins a un mínim i torna a créixer](../../img/analisi/fig_2_9_creixement_maxim_minim.svg){ width="740" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_9_creixement_maxim_minim.tex">Figura 2.9.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x$.</figcaption>
+    </figure>
+
+    | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,1)$ | $1$ | $(1,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $f'$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+    | Comportament de $f$ | creix | màxim $(-1,2)$ | decreix | mínim $(1,-2)$ | creix |
+    | Comprovació amb $f''$ | — | $f''(-1)=-6<0$ | — | $f''(1)=6>0$ | — |
+
+!!! example "Exemple 3. Producte d'un polinomi i una exponencial"
     Estudiem els extrems de
 
     $$
@@ -124,7 +177,8 @@ Per estudiar el creixement i els extrems d'una funció:
 2. Calcula $f'$ i localitza els punts crítics.
 3. Fes la taula de signes de $f'$.
 4. Escriu els intervals de creixement i decreixement i classifica els extrems.
-5. Calcula les ordenades dels extrems substituint els valors de $x$ en la funció original.
+5. Si existeix $f''$ en els punts amb $f'(x)=0$, comprova la classificació amb el signe de la segona derivada.
+6. Calcula les ordenades dels extrems substituint els valors de $x$ en la funció original.
 
 !!! tip "En funcions definides a trossos"
     Cal afegir a la taula tots els punts d'unió. Un extrem també pot aparèixer en un punt on $f'$ no existeix, sempre que el valor pertanyi al domini i es produeixi el canvi de creixement corresponent.
