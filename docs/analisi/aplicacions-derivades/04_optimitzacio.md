@@ -6,10 +6,10 @@ En els problemes d'optimització sovint cal expressar longituds, àrees o volums
 
 ### 1.1 Geometria plana
 
-En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar el **perímetre**.
+En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar el **perímetre**. En qualsevol figura poligonal, el perímetre és la **suma de les longituds de tots els costats**.
 
 <figure markdown="span">
-  ![Quadrat, rectangle, triangle i cercle amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/analisi/fig_2_16_repas_geometria_plana.svg){ width="900" }
+  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/analisi/fig_2_16_repas_geometria_plana.svg?v=2){ width="900" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_16_repas_geometria_plana.tex">Figura 2.16.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
 </figure>
 
@@ -19,6 +19,7 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 | Rectangle de base $b$ i altura $h$ | $A=bh$ | $P=2(b+h)$ |
 | Triangle de base $b$, altura $h$ i costats $a,b,c$ | $A=\dfrac{bh}{2}$ | $P=a+b+c$ |
 | Cercle de radi $r$ | $A=\pi r^2$ | $P=2\pi r$ |
+| Polígon regular de $n$ costats de longitud $l$ i apotema $a_p$ | $A=\dfrac{P\,a_p}{2}$ | $P=n\,l$ |
 
 !!! note "Perímetre o longitud de la circumferència"
     En el cercle, $2\pi r$ és la longitud de la **circumferència**, és a dir, la frontera del cercle.
