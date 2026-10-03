@@ -247,7 +247,49 @@ El procediment és el següent:
 !!! note "Recorda"
     Una funció de la forma $f(x)=|g(x)|$ és contínua en tots els punts on $g$ és contínua. Els zeros de $g$ són els punts que cal estudiar per decidir si $f$ és derivable. Un zero no implica sempre un punt angulós: cal comprovar les derivades laterals.
 
-!!! example "Exemple. Funció amb valor absolut"
+!!! example "Exemple 1. Valor absolut d'una funció lineal"
+    Escriu com una funció a trossos i estudia la derivabilitat de
+
+    $$
+    f(x)=|x-2|.
+    $$
+
+    L'expressió interior és $g(x)=x-2$. Primer en trobem el zero:
+
+    $$
+    x-2=0\quad\Longrightarrow\quad x=2.
+    $$
+
+    Comprovem el signe de $g(x)$ a cada costat de $2$:
+
+    | Valor de $x$ | $x<2$ | $x=2$ | $x>2$ |
+    |:---:|:---:|:---:|:---:|
+    | Signe de $x-2$ | $-$ | $0$ | $+$ |
+    | Expressió de $\lvert x-2\rvert$ | $-(x-2)$ | $0$ | $x-2$ |
+
+    Per tant,
+
+    $$
+    f(x)=
+    \begin{cases}
+    2-x, & x<2,\\[2pt]
+    x-2, & x\geq2.
+    \end{cases}
+    $$
+
+    Derivem cada tros:
+
+    $$
+    f'(x)=
+    \begin{cases}
+    -1, & x<2,\\[2pt]
+    1, & x>2.
+    \end{cases}
+    $$
+
+    En $x=2$, les derivades laterals són $f'(2^-)=-1$ i $f'(2^+)=1$. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en $x=2$.
+
+!!! example "Exemple 2. Valor absolut d'una funció quadràtica"
     Escriu com una funció a trossos i estudia la derivabilitat de
 
     $$
@@ -260,7 +302,16 @@ El procediment és el següent:
     x^2+x-2=(x+2)(x-1).
     $$
 
-    Els zeros són $x=-2$ i $x=1$. El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Per tant,
+    Els zeros són $x=-2$ i $x=1$. Comprovem el signe de cada factor i del producte en els intervals que determinen aquests dos punts:
+
+    | Valor de $x$ | $x<-2$ | $x=-2$ | $-2<x<1$ | $x=1$ | $x>1$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $x+2$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+    | Signe de $x-1$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+    | Signe de $(x+2)(x-1)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+    | Expressió de $\lvert x^2+x-2\rvert$ | $x^2+x-2$ | $0$ | $-x^2-x+2$ | $0$ | $x^2+x-2$ |
+
+    El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Per tant,
 
     $$
     f(x)=
