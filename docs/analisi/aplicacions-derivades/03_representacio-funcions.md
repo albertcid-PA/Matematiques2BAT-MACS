@@ -426,14 +426,14 @@ $$
     x-3=0\Longrightarrow x=3.
     $$
 
-    Construïm una taula per decidir si cal conservar o canviar el signe de cada expressió:
+    Per abreujar la taula, escrivim $g(x)=-2x+4$ i $h(x)=x-3$. Construïm una taula per decidir si cal conservar o canviar el signe de cada expressió:
 
     | | $(-\infty,2)$ | $2$ | $(2,3)$ | $3$ | $(3,+\infty)$ |
     |:---|:---:|:---:|:---:|:---:|:---:|
-    | Signe de $-2x+4$ | $+$ | $0$ | $-$ | $-$ | $-$ |
-    | $\lvert-2x+4\rvert$ | $+(-2x+4)$ | $0$ | $-(-2x+4)$ | $-(-2x+4)$ | $-(-2x+4)$ |
-    | Signe de $x-3$ | $-$ | $-$ | $-$ | $0$ | $+$ |
-    | $-\lvert x-3\rvert$ | $+(x-3)$ | $+(x-3)$ | $+(x-3)$ | $0$ | $-(x-3)$ |
+    | Signe de $g(x)$ | $+$ | $0$ | $-$ | $-$ | $-$ |
+    | $\lvert g(x)\rvert$ | $+g(x)$ | $0$ | $-g(x)$ | $-g(x)$ | $-g(x)$ |
+    | Signe de $h(x)$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+    | $-\lvert h(x)\rvert$ | $+h(x)$ | $+h(x)$ | $+h(x)$ | $0$ | $-h(x)$ |
 
     Per tant,
 
