@@ -1,12 +1,26 @@
 # Representació de funcions
 
-Representar una funció consisteix a reunir la informació algebraica, els límits i les derivades per dibuixar-ne una gràfica coherent. Seguirem sempre el mateix ordre perquè cap dada important quedi fora de l'estudi.
+!!! abstract "Definició: representació d'una funció"
+    Representar una funció consisteix a reunir la informació algebraica, els límits i les derivades per dibuixar-ne una gràfica coherent.
+
+Seguirem sempre el mateix ordre per representar funcions **polinòmiques, racionals, irracionals, exponencials, logarítmiques i funcions a trossos**.
+
+!!! note "Guió general: vuit passos per representar una funció"
+    1. Determinar el **domini**, tenint en compte els denominadors, les arrels d'índex parell i els logaritmes.
+    2. Trobar el tall amb l'eix $Y$ calculant $f(0)$.
+    3. Trobar els talls amb l'eix $X$ resolent $f(x)=0$.
+    4. Buscar les **asímptotes verticals** als extrems finits del domini mitjançant els límits laterals.
+    5. Estudiar les altres **discontinuïtats**, especialment en funcions a trossos, i classificar-les.
+    6. Calcular els límits quan $x\to-\infty$ i $x\to+\infty$ per trobar asímptotes horitzontals o branques infinites.
+    7. Localitzar els candidats a **extrem relatiu** resolent $f'(x)=0$ i considerant els punts on $f'$ no existeix.
+    8. Estudiar el signe de $f'$ per determinar la monotonia i decidir si cada candidat és un màxim, un mínim o no és un extrem.
 
 ## 1. Esquema general
 
 ### Pas 1. Domini
 
-El **domini** és el conjunt de valors de $x$ per als quals la funció està definida.
+!!! abstract "Definició: domini"
+    El **domini** és el conjunt de valors de $x$ per als quals la funció està definida.
 
 | Tipus de funció | Condició del domini |
 |:---|:---|
@@ -20,16 +34,6 @@ El **domini** és el conjunt de valors de $x$ per als quals la funció està def
 
 !!! note "Recorda"
     No es pot dividir entre zero. Tampoc es pot calcular, en els nombres reals, una arrel d'índex parell d'un nombre negatiu ni el logaritme d'un nombre menor o igual que zero.
-
-Després del domini, convé comprovar si hi ha **simetria**:
-
-$$
-f(-x)=f(x)\Longrightarrow f\text{ és parella},
-\qquad
-f(-x)=-f(x)\Longrightarrow f\text{ és imparella}.
-$$
-
-Una funció parella és simètrica respecte de l'eix $Y$ i una funció imparella, respecte de l'origen.
 
 ### Pas 2. Tall amb l'eix d'ordenades
 
@@ -61,18 +65,20 @@ $$
 \lim_{x\to c^+}f(x).
 $$
 
-Si almenys un dels límits laterals és $+\infty$ o $-\infty$, la recta $x=c$ és una **asímptota vertical**.
+!!! abstract "Definició: asímptota vertical"
+    La recta $x=c$ és una **asímptota vertical** si almenys un dels límits laterals de $f(x)$ quan $x\to c$ és $+\infty$ o $-\infty$.
 
 !!! warning "Un zero del denominador no sempre és una asímptota"
     Si el mateix factor es pot simplificar en el numerador i el denominador i el límit és finit, hi ha una discontinuïtat evitable, no una asímptota vertical.
 
 ### Pas 5. Altres discontinuïtats
 
-En funcions a trossos i en punts exclosos del domini, comparem els límits laterals i el valor de la funció. La discontinuïtat pot ser:
+En funcions a trossos i en punts exclosos del domini, comparem els límits laterals i el valor de la funció.
 
-- **evitable**, si el límit existeix i és finit però el valor de la funció falta o és diferent;
-- de **salt finit**, si els dos límits laterals són finits però diferents;
-- de **salt infinit**, si almenys un límit lateral és infinit.
+!!! abstract "Definició: tipus de discontinuïtat"
+    - **Evitable:** el límit existeix i és finit, però el valor de la funció no existeix o és diferent.
+    - De **salt finit:** els dos límits laterals són finits, però diferents.
+    - De **salt infinit:** almenys un dels límits laterals és infinit.
 
 ### Pas 6. Comportament a l'infinit i asímptotes
 
@@ -84,9 +90,19 @@ $$
 \lim_{x\to+\infty}f(x).
 $$
 
-Si algun límit és un nombre real $L$, la recta $y=L$ és una **asímptota horitzontal** en aquell extrem.
+!!! abstract "Definició: asímptota horitzontal"
+    La recta $y=L$ és una **asímptota horitzontal** si
 
-Si la funció creix aproximadament com una recta, busquem una **asímptota obliqua** $y=mx+n$:
+    $$
+    \lim_{x\to-\infty}f(x)=L
+    \qquad\text{o}\qquad
+    \lim_{x\to+\infty}f(x)=L.
+    $$
+
+!!! abstract "Definició: asímptota obliqua"
+    Una recta $y=mx+n$, amb $m\neq0$, és una **asímptota obliqua** si la diferència entre la funció i la recta tendeix a zero quan $x\to-\infty$ o $x\to+\infty$.
+
+Si la funció creix aproximadament com una recta, calculem:
 
 $$
 m=\lim_{x\to\pm\infty}\frac{f(x)}{x},
@@ -94,9 +110,12 @@ m=\lim_{x\to\pm\infty}\frac{f(x)}{x},
 n=\lim_{x\to\pm\infty}\bigl(f(x)-mx\bigr),
 $$
 
-amb $m\neq0$. En funcions racionals també es pot obtenir fent la divisió de polinomis.
+En funcions racionals també es pot obtenir l'asímptota obliqua fent la divisió de polinomis.
 
 ### Pas 7. Extrems relatius
+
+!!! abstract "Definició: màxim i mínim relatius"
+    Una funció té un **màxim relatiu** en $x=a$ si $f(a)$ és més gran que els valors propers. Té un **mínim relatiu** si $f(a)$ és més petit que els valors propers.
 
 Calculem $f'(x)$ i estudiem els punts del domini on
 

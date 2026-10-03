@@ -66,12 +66,17 @@
   padding-block: 0;
 }
 
-/* Unifica els recordatoris i els exemples de tot el web. */
+/* Unifica les definicions, els recordatoris i els exemples de tot el web. */
+.md-typeset .admonition.abstract,
 .md-typeset .admonition.note,
 .md-typeset .admonition.example {
   border-color: transparent;
   border-radius: 0.65rem;
   box-shadow: none;
+}
+
+.md-typeset .admonition.abstract {
+  background-color: #e4f6ff;
 }
 
 .md-typeset .admonition.note {
@@ -82,9 +87,14 @@
   background-color: #f2edff;
 }
 
+.md-typeset .admonition.abstract > .admonition-title,
 .md-typeset .admonition.note > .admonition-title,
 .md-typeset .admonition.example > .admonition-title {
   background-color: transparent;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.abstract {
+  background-color: rgba(0, 176, 255, 0.14);
 }
 
 [data-md-color-scheme="slate"] .md-typeset .admonition.note {

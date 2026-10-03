@@ -4,24 +4,24 @@ La derivada ens permet descriure com varia una funció. El signe de $f'(x)$ indi
 
 ## 1. Relació entre el signe de la derivada i el creixement
 
-En un interval on la funció és derivable:
+!!! abstract "Definició: creixement i decreixement"
+    En un interval on la funció és derivable:
 
-| Signe de la derivada | Comportament de la funció |
-|:---:|:---|
-| $f'(x)>0$ | $f$ és **creixent**. |
-| $f'(x)<0$ | $f$ és **decreixent**. |
-| $f'(x)=0$ en tot l'interval | $f$ és **constant**. |
+    - si $f'(x)>0$, la funció és **creixent**;
+    - si $f'(x)<0$, la funció és **decreixent**;
+    - si $f'(x)=0$ en tot l'interval, la funció és **constant**.
 
 !!! note "Recorda"
     Per determinar els intervals de creixement i decreixement no n'hi ha prou amb resoldre $f'(x)=0$. Cal estudiar el **signe** de $f'$ en els intervals que determinen els punts crítics i els punts on la funció o la derivada no existeixen.
 
-Anomenem **punt crític** qualsevol valor $x=a$ del domini en què
+!!! abstract "Definició: punt crític"
+    Anomenem **punt crític** qualsevol valor $x=a$ del domini en què
 
-$$
-f'(a)=0
-\qquad\text{o bé}\qquad
-f'(a)\text{ no existeix}.
-$$
+    $$
+    f'(a)=0
+    \qquad\text{o bé}\qquad
+    f'(a)\text{ no existeix}.
+    $$
 
 El procediment és:
 
@@ -74,7 +74,8 @@ El procediment és:
 
 ## 2. Màxims i mínims relatius
 
-Una funció té un **màxim relatiu** en $x=a$ si, a prop d'aquest punt, $f(a)$ és més gran que els valors veïns. Té un **mínim relatiu** si $f(a)$ és més petit que els valors veïns.
+!!! abstract "Definició: màxim i mínim relatius"
+    Una funció té un **màxim relatiu** en $x=a$ si, a prop d'aquest punt, $f(a)$ és més gran que els valors veïns. Té un **mínim relatiu** si $f(a)$ és més petit que els valors veïns.
 
 La classificació més segura es fa amb el canvi de signe de $f'$:
 

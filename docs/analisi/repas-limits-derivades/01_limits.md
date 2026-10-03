@@ -4,12 +4,13 @@ En aquest apartat repassarem com s'interpreta un límit a partir de la gràfica 
 
 ## 1. Interpretació gràfica
 
-Quan $x$ s'apropa a un punt $a$, podem observar la funció des dels dos costats:
+!!! abstract "Definició: límit en un punt"
+    Quan $x$ s'apropa a un punt $a$, podem observar la funció des dels dos costats:
 
-- el **límit per l'esquerra**, $\displaystyle\lim_{x\to a^-}f(x)$;
-- el **límit per la dreta**, $\displaystyle\lim_{x\to a^+}f(x)$.
+    - el **límit per l'esquerra**, $\displaystyle\lim_{x\to a^-}f(x)$;
+    - el **límit per la dreta**, $\displaystyle\lim_{x\to a^+}f(x)$.
 
-El límit $\displaystyle\lim_{x\to a}f(x)$ existeix quan els dos límits laterals coincideixen. El valor $f(a)$ és una informació diferent: pot coincidir amb el límit, ser diferent o no estar definit.
+    El límit $\displaystyle\lim_{x\to a}f(x)$ existeix quan els dos límits laterals coincideixen. El valor $f(a)$ és una informació diferent: pot coincidir amb el límit, ser diferent o no estar definit.
 
 <figure markdown="span">
   ![Gràfica d'una funció amb continuïtat, discontinuïtats evitables, un salt finit, una asímptota vertical i dues asímptotes horitzontals](../../img/analisi/fig_1_1_interpretacio_grafica_limits.svg){ width="900" }
