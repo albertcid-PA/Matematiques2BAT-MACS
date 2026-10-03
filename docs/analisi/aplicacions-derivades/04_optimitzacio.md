@@ -28,8 +28,8 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 En els cossos geomètrics només necessitarem les fórmules del **volum**. Escriurem $A_b$ per indicar l'àrea de la base i $h$ per indicar l'altura.
 
 <figure markdown="span">
-  ![Volum dels prismes i cilindres, dels cossos acabats en punta i de l'esfera](../../img/analisi/fig_2_17_repas_geometria_espai.svg){ width="960" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Fórmules generals del volum.</figcaption>
+  ![Volum dels prismes i cilindres, dels cossos acabats en punta i de l'esfera](../../img/analisi/fig_2_17_repas_geometria_espai.svg?v=2){ width="960" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Cossos geomètrics, desplegaments i fórmules generals del volum.</figcaption>
 </figure>
 
 | Tipus de cos | Volum |
@@ -41,10 +41,131 @@ En els cossos geomètrics només necessitarem les fórmules del **volum**. Escri
 !!! note "Àrea de la base"
     La fórmula concreta depèn de la forma de la base. Per exemple, si la base és un cercle de radi $r$, aleshores $A_b=\pi r^2$.
 
-## 2. Contingut que treballarem
+## 2. Procediment general d'un problema d'optimització
 
-- Elecció de la variable i traducció de l'enunciat.
-- Funció que cal optimitzar i domini del problema.
-- Obtenció i comprovació del màxim o del mínim.
-- Interpretació de la solució en el context de l'enunciat.
-- Problemes PAU.
+!!! abstract "Definició: funció objectiu i restricció"
+    La **funció objectiu** és la magnitud que volem fer màxima o mínima: una àrea, un volum, un perímetre, un cost, un benefici o una distància.
+
+    La **restricció** és la relació que han de complir les variables del problema. Serveix per expressar la funció objectiu en funció d'una sola variable.
+
+### Pas 1. Fer un esquema i triar les variables
+
+1. Dibuixa la situació i escriu-hi totes les dades conegudes.
+2. Assigna una lletra a cada magnitud desconeguda i indica'n les unitats.
+3. Decideix quina serà la variable principal, habitualment $x$.
+
+!!! note "Les variables han de tenir significat"
+    Si $x$ representa una longitud, caldrà exigir $x>0$. Si una altra longitud és, per exemple, $12-2x$, també haurem d'exigir $12-2x>0$.
+
+### Pas 2. Identificar la funció objectiu
+
+Busca què demana exactament l'enunciat i escriu primer la seva fórmula natural, encara que depengui de més d'una variable.
+
+| Què demana el problema? | Funció objectiu habitual |
+|:---|:---:|
+| Àrea màxima | $A=$ fórmula de l'àrea |
+| Volum màxim | $V=$ fórmula del volum |
+| Perímetre mínim | $P=$ fórmula del perímetre |
+| Cost mínim | $C=$ suma de tots els costos |
+| Benefici màxim | $B=I-C$ |
+| Distància mínima | $d=$ fórmula de la distància |
+
+Per exemple, si volem maximitzar l'àrea d'un rectangle de costats $x$ i $y$, comencem amb
+
+$$
+A=xy.
+$$
+
+Aquesta encara no és la funció final perquè depèn de dues variables.
+
+### Pas 3. Escriure la restricció
+
+Tradueix la informació que es manté fixa en una equació. Pot provenir d'un perímetre donat, una quantitat limitada de material, una suma de longituds, un pressupost o qualsevol altra condició de l'enunciat.
+
+En l'exemple del rectangle, si el perímetre és $20$, la restricció és
+
+$$
+2x+2y=20.
+$$
+
+### Pas 4. Obtenir una funció d'una sola variable
+
+Aïlla una variable en la restricció i substitueix-la en la funció objectiu. En l'exemple,
+
+$$
+y=10-x
+$$
+
+i, per tant,
+
+$$
+A(x)=x(10-x)=10x-x^2.
+$$
+
+!!! tip "Com reconèixer que la funció objectiu ja està preparada"
+    Abans de derivar, la magnitud que volem optimitzar ha d'estar escrita en funció d'**una sola variable**:
+
+    $$
+    F(x).
+    $$
+
+### Pas 5. Determinar el domini del problema
+
+El domini no depèn només de la fórmula, sinó també del context. Cal imposar que:
+
+- les longituds, les àrees, els volums, les quantitats i els temps siguin positius;
+- els denominadors no siguin zero;
+- els radicands d'arrels d'índex parell siguin no negatius;
+- totes les expressions que representen mesures tinguin sentit.
+
+En l'exemple del rectangle,
+
+$$
+x>0,\qquad 10-x>0
+\quad\Longrightarrow\quad
+0<x<10.
+$$
+
+### Pas 6. Trobar els candidats a màxim o mínim
+
+1. Calcula la derivada $F'(x)$.
+2. Resol $F'(x)=0$.
+3. Afegeix els punts del domini on $F'$ no existeix.
+4. Si el domini és un interval tancat, considera també els seus extrems.
+
+Només conservem els candidats que pertanyen al domini del problema.
+
+### Pas 7. Comprovar el màxim o el mínim
+
+La comprovació principal es pot fer estudiant el canvi de signe de $F'$:
+
+| Canvi de signe de $F'$ | Conclusió |
+|:---:|:---|
+| $+\longrightarrow-$ | Màxim |
+| $-\longrightarrow+$ | Mínim |
+
+També podem utilitzar la segona derivada en un candidat $x=a$:
+
+$$
+F''(a)<0\Longrightarrow\text{màxim},
+\qquad
+F''(a)>0\Longrightarrow\text{mínim}.
+$$
+
+Si hi ha diversos candidats o extrems del domini, calcula el valor de $F$ en cadascun i compara'ls.
+
+### Pas 8. Interpretar i redactar la resposta
+
+1. Recupera les altres variables mitjançant la restricció.
+2. Comprova que totes les mesures siguin possibles i compleixin l'enunciat.
+3. Respon exactament què es demana, amb les unitats corresponents.
+
+!!! warning "Errors habituals"
+    - Derivar una expressió que encara depèn de dues variables.
+    - Oblidar el domini imposat pel context.
+    - Donar només el valor de $x$ quan es demanen totes les dimensions.
+    - No comprovar si el candidat correspon realment a un màxim o a un mínim.
+    - Confondre el valor de la variable amb el valor màxim o mínim de la funció objectiu.
+
+!!! note "Esquema resum"
+    **Dibuix i variables** $\longrightarrow$ **funció objectiu** $\longrightarrow$ **restricció** $\longrightarrow$ **funció d'una variable** $\longrightarrow$ **domini** $\longrightarrow$ **derivada i candidats** $\longrightarrow$ **comprovació** $\longrightarrow$ **resposta contextualitzada**.
