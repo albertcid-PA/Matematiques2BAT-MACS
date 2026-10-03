@@ -99,19 +99,6 @@ $$
     \lim_{x\to+\infty}f(x)=L.
     $$
 
-!!! abstract "Definició: asímptota obliqua"
-    Una recta $y=mx+n$, amb $m\neq0$, és una **asímptota obliqua** si la diferència entre la funció i la recta tendeix a zero quan $x\to-\infty$ o $x\to+\infty$.
-
-Si la funció creix aproximadament com una recta, calculem:
-
-$$
-m=\lim_{x\to\pm\infty}\frac{f(x)}{x},
-\qquad
-n=\lim_{x\to\pm\infty}\bigl(f(x)-mx\bigr),
-$$
-
-En funcions racionals també es pot obtenir l'asímptota obliqua fent la divisió de polinomis.
-
 ### Pas 7. Extrems relatius
 
 !!! abstract "Definició: màxim i mínim relatius"
@@ -154,7 +141,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 | Tipus | Informació especialment útil |
 |:---|:---|
 | Polinòmica | Domini $\mathbb{R}$, talls, comportament del terme de grau més alt i extrems. No té asímptotes. |
-| Racional | Zeros del denominador, simplificacions, asímptotes verticals, horitzontals o obliqües i intervals separats pel domini. |
+| Racional | Zeros del denominador, simplificacions, asímptotes verticals o horitzontals i intervals separats pel domini. |
 | Irracional | Condició del radicand, extrems del domini i possibles tangents verticals. |
 | Exponencial | El factor exponencial és sempre positiu; els límits depenen del signe de l'exponent. |
 | Logarítmica | L'argument ha de ser positiu i acostuma a haver-hi una asímptota vertical quan l'argument tendeix a $0^+$. |
@@ -212,48 +199,72 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     Estudiem
 
     $$
-    f(x)=\frac{x^2-x-6}{x-1}.
+    f(x)=\frac{x^2-x-2}{x^2-3x+2}.
     $$
 
     **Domini i talls.**
 
     $$
-    D_f=\mathbb{R}\setminus\{1\},
+    f(x)=\frac{(x-2)(x+1)}{(x-2)(x-1)},
     \qquad
-    x^2-x-6=(x-3)(x+2).
+    D_f=\mathbb{R}\setminus\{1,2\}.
     $$
 
-    Els talls amb l'eix $X$ són $(-2,0)$ i $(3,0)$, i el tall amb l'eix $Y$ és $(0,6)$.
-
-    **Asímptota vertical.** Com que el numerador no s'anul·la en $x=1$,
+    Per als valors del domini podem simplificar el factor $x-2$:
 
     $$
-    \lim_{x\to1^-}f(x)=+\infty,
+    f(x)=\frac{x+1}{x-1},
+    \qquad x\neq1,2.
+    $$
+
+    El tall amb l'eix $X$ és $(-1,0)$ i el tall amb l'eix $Y$ és $(0,-1)$.
+
+    **Discontinuïtat evitable en $x=2$.** Tot i que $f(2)$ no existeix, el factor que provoca la indeterminació es pot simplificar i
+
+    $$
+    \lim_{x\to2}f(x)=\frac{2+1}{2-1}=3.
+    $$
+
+    Per tant, la gràfica té un forat en el punt $(2,3)$.
+
+    **Discontinuïtat asimptòtica en $x=1$.** El factor $x-1$ no es pot simplificar i
+
+    $$
+    \lim_{x\to1^-}f(x)=-\infty,
     \qquad
-    \lim_{x\to1^+}f(x)=-\infty.
+    \lim_{x\to1^+}f(x)=+\infty.
     $$
 
     Per tant, $x=1$ és una asímptota vertical.
 
-    **Asímptota obliqua.** Dividim els polinomis:
+    **Comportament a l'infinit.** Com que el numerador i el denominador tenen el mateix grau,
 
     $$
-    \frac{x^2-x-6}{x-1}=x-\frac{6}{x-1}.
+    \lim_{x\to-\infty}f(x)=1,
+    \qquad
+    \lim_{x\to+\infty}f(x)=1.
     $$
 
-    Com que $-6/(x-1)\to0$ quan $x\to\pm\infty$, l'asímptota obliqua és $y=x$.
+    Així, $y=1$ és una asímptota horitzontal.
 
     **Creixement i extrems.**
 
     $$
-    f'(x)=1+\frac{6}{(x-1)^2}>0
+    f'(x)=\frac{-2}{(x-1)^2}<0
     $$
 
-    en tot el domini. Així, la funció és creixent en $(-\infty,1)$ i en $(1,+\infty)$ i no té extrems relatius.
+    en tot el domini. La taula de monotonia ha d'incloure tant l'asímptota vertical $x=1$ com la discontinuïtat evitable $x=2$:
+
+    | Interval | $(-\infty,1)$ | $(1,2)$ | $(2,+\infty)$ |
+    |:---:|:---:|:---:|:---:|
+    | $f'$ | $-$ | $-$ | $-$ |
+    | $f$ | decreix | decreix | decreix |
+
+    La funció no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica de la funció racional amb una asímptota vertical i una asímptota obliqua](../../img/analisi/fig_2_6_representacio_racional.svg){ width="820" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_6_representacio_racional.tex">Figura 2.6.</a></strong> Representació de la funció racional i de les seves asímptotes.</figcaption>
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/analisi/fig_2_6_representacio_racional.svg){ width="820" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_6_representacio_racional.tex">Figura 2.6.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat asimptòtica.</figcaption>
     </figure>
 
 ## 5. Funcions irracionals, exponencials i logarítmiques
