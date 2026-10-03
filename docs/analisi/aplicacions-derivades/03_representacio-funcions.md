@@ -487,9 +487,9 @@ $$
     -1,\qquad 3\qquad\text{i}\qquad1.
     $$
 
-    Com que el pendent canvia, $f$ **no és derivable en $x=2$ ni en $x=3$**. La gràfica té un mínim relatiu en $(2,-1)$ i un màxim relatiu en $(3,2)$.
+    Com que el pendent canvia, $f$ **no és derivable en $x=2$ ni en $x=3$**. En $x=2$ el pendent passa de negatiu a positiu, de manera que $(2,-1)$ és un mínim relatiu. En canvi, en $x=3$ els pendents dels dos costats són positius: la funció continua creixent i $(3,2)$ és un punt angulós, però **no és un extrem relatiu**.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/analisi/fig_2_15_representacio_dos_valors_absoluts.svg){ width="760" }
+      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/analisi/fig_2_15_representacio_dos_valors_absoluts.svg?v=2){ width="760" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_15_representacio_dos_valors_absoluts.tex">Figura 2.15.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
     </figure>
