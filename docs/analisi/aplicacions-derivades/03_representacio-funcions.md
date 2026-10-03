@@ -11,7 +11,7 @@
     |:---|:---:|
     | **Polinòmica** | $\displaystyle f(x)=\sum_{i=0}^{n}a_i x^i$, amb $a_n\neq0$ |
     | **Racional** | $\displaystyle f(x)=\frac{P(x)}{Q(x)}$, amb $Q(x)\neq0$ |
-    | **Irracional** | $\displaystyle f(x)=\sqrt[n]{g(x)}$ |
+    | **Irracional** | $\displaystyle f(x)=\sqrt[n]{g(x)}$, amb $g(x)\geq0$ si $n$ és parell |
     | **Exponencial** | $\displaystyle f(x)=a^{g(x)}$, amb $a>0$ i $a\neq1$ |
     | **Logarítmica** | $\displaystyle f(x)=\log_a(g(x))$, amb $a>0$, $a\neq1$ i $g(x)>0$ |
     | **A trossos** | $\displaystyle f(x)=\begin{cases}f_1(x),&x\in I_1,\\ f_2(x),&x\in I_2,\\ \cdots&\cdots,\\ f_k(x),&x\in I_k.\end{cases}$ |
