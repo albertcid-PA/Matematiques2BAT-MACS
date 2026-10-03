@@ -359,6 +359,20 @@ $$
 
     Així, $f$ és **contínua en $x=1$**.
 
+    **Comportament a l'infinit.** Quan $x\to-\infty$ s'aplica la branca racional, mentre que quan $x\to+\infty$ s'aplica la branca quadràtica:
+
+    $$
+    \lim_{x\to-\infty}f(x)
+    =\lim_{x\to-\infty}\left(1+\frac{2}{x+1}\right)=1,
+    $$
+
+    $$
+    \lim_{x\to+\infty}f(x)
+    =\lim_{x\to+\infty}\left((x-3)^2-2\right)=+\infty.
+    $$
+
+    Per tant, $y=1$ és una **asímptota horitzontal quan $x\to-\infty$**. Cap a $+\infty$, la branca quadràtica creix indefinidament.
+
     **Derivabilitat en el punt d'unió.** Derivem cada tros:
 
     $$
@@ -431,6 +445,20 @@ $$
     x-1, & x\geq3.
     \end{cases}
     $$
+
+    **Comportament a l'infinit.** Als extrems utilitzem el primer i el tercer tros, respectivament:
+
+    $$
+    \lim_{x\to-\infty}f(x)
+    =\lim_{x\to-\infty}(-x+1)=+\infty,
+    $$
+
+    $$
+    \lim_{x\to+\infty}f(x)
+    =\lim_{x\to+\infty}(x-1)=+\infty.
+    $$
+
+    Per tant, la funció creix sense límit als dos extrems i no té asímptotes horitzontals.
 
     Els tres trossos són rectes. En els punts de canvi,
 

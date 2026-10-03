@@ -31,6 +31,7 @@
     clip=true,
   ]
     \addplot[assimptota, dashed, thick] coordinates {(-1,-4.5) (-1,7.5)};
+    \addplot[assimptota, dashed, thick, domain=-4.5:-1.18, samples=2] {1};
 
     \addplot[
       racional,
@@ -59,6 +60,8 @@
 
     \node[anchor=south east, text=assimptota, fill=white, inner sep=1.5pt]
       at (axis cs:-1.15,6.15) {$x=-1$};
+    \node[anchor=south west, text=assimptota, fill=white, inner sep=1.5pt]
+      at (axis cs:-4.35,1.08) {$y=1$};
     \node[anchor=south west, text=punt, fill=white, inner sep=1.5pt]
       at (axis cs:1.15,3.25) {uni\'o cont\'inua $(1,2)$};
     \node[anchor=north west, text=punt, fill=white, inner sep=1.5pt]
