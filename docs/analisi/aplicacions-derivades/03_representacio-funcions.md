@@ -5,6 +5,16 @@
 
 Seguirem sempre el mateix ordre per representar funcions **polinòmiques, racionals, irracionals, exponencials, logarítmiques i funcions a trossos**.
 
+!!! abstract "Formes algebraiques dels tipus de funcions"
+    | Tipus de funció | Forma general |
+    |:---|:---:|
+    | **Polinòmica** | $\displaystyle f(x)=\sum_{i=0}^{n}a_i x^i$, amb $a_n\neq0$ |
+    | **Racional** | $\displaystyle f(x)=\frac{P(x)}{Q(x)}$, amb $Q(x)\neq0$ |
+    | **Irracional** | $\displaystyle f(x)=\sqrt[n]{g(x)}$ |
+    | **Exponencial** | $\displaystyle f(x)=a^{g(x)}$, amb $a>0$ i $a\neq1$ |
+    | **Logarítmica** | $\displaystyle f(x)=\log_a(g(x))$, amb $a>0$ i $a\neq1$ |
+    | **A trossos** | $\displaystyle f(x)=\begin{cases}f_1(x),&x\in I_1,\\ f_2(x),&x\in I_2,\\ \cdots&\cdots,\\ f_k(x),&x\in I_k.\end{cases}$ |
+
 !!! note "Guió general: vuit passos per representar una funció"
     1. Determinar el **domini**, tenint en compte els denominadors, les arrels d'índex parell i els logaritmes.
     2. Trobar el tall amb l'eix $Y$ calculant $f(0)$.
