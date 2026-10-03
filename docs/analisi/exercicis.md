@@ -204,8 +204,8 @@ on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en 
 **2.1.** Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
 
 <figure markdown="span">
-  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/analisi/fig_2_5_exercici_punts_no_derivables.svg){ width="920" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_5_exercici_punts_no_derivables.tex">Figura 2.5.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/analisi/fig_2_8_exercici_punts_no_derivables.svg){ width="920" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_8_exercici_punts_no_derivables.tex">Figura 2.8.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
 </figure>
 
 **2.2.** La figura representa una funció $y=f(x)$.
@@ -214,8 +214,8 @@ on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en 
 - **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
 
 <figure markdown="span">
-  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/analisi/fig_2_6_exercici_derivades_grafica.svg){ width="700" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_6_exercici_derivades_grafica.tex">Figura 2.6.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/analisi/fig_2_9_exercici_derivades_grafica.svg){ width="700" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_9_exercici_derivades_grafica.tex">Figura 2.9.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
 </figure>
 
 #### Estudi en els punts d'unió

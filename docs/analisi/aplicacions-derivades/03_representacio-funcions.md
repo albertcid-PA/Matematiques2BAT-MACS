@@ -192,6 +192,11 @@ $$
 
     Hi ha un màxim relatiu en $(-1,32)$ i un mínim relatiu en $(3,0)$.
 
+    <figure markdown="span">
+      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/analisi/fig_2_5_representacio_polinomica.svg){ width="820" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_5_representacio_polinomica.tex">Figura 2.5.</a></strong> Representació de la funció polinòmica.</figcaption>
+    </figure>
+
 ## 4. Exemple complet: funció racional
 
 !!! example "Exemple 2. Representació d'una funció racional"
@@ -237,6 +242,11 @@ $$
 
     en tot el domini. Així, la funció és creixent en $(-\infty,1)$ i en $(1,+\infty)$ i no té extrems relatius.
 
+    <figure markdown="span">
+      ![Gràfica de la funció racional amb una asímptota vertical i una asímptota obliqua](../../img/analisi/fig_2_6_representacio_racional.svg){ width="820" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_6_representacio_racional.tex">Figura 2.6.</a></strong> Representació de la funció racional i de les seves asímptotes.</figcaption>
+    </figure>
+
 ## 5. Funcions irracionals, exponencials i logarítmiques
 
 En aquestes funcions el domini i els límits acostumen a determinar bona part de la gràfica.
@@ -261,6 +271,11 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     $$
 
     de manera que $x=2$ és una asímptota vertical.
+
+    <figure markdown="span">
+      ![Gràfiques d'una funció irracional, una funció exponencial i una funció logarítmica](../../img/analisi/fig_2_7_representacio_irracional_exponencial_logaritmica.svg){ width="960" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_7_representacio_irracional_exponencial_logaritmica.tex">Figura 2.7.</a></strong> Representació de les funcions irracional, exponencial i logarítmica de l'exemple.</figcaption>
+    </figure>
 
 ## 6. Funcions a trossos i amb valor absolut
 
