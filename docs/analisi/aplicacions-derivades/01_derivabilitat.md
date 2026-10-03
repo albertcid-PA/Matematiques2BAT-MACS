@@ -125,7 +125,7 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     Les derivades laterals no coincideixen. Per tant, $f$ **no és derivable** en $x=1$ i la gràfica té un punt angulós.
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos contínua amb un punt angulós en x igual a u](../../img/analisi/fig_2_3_exemple_continua_no_derivable.svg){ width="720" }
+      ![Gràfica d'una funció a trossos contínua amb un punt angulós en x igual a u](../../img/analisi/fig_2_3_exemple_continua_no_derivable.svg?v=2){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_3_exemple_continua_no_derivable.tex">Figura 2.3.</a></strong> Funció contínua però no derivable en $x=1$.</figcaption>
     </figure>
 
