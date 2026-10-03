@@ -407,7 +407,7 @@ $$
     | Comportament | decreix | decreix | decreix | creix |
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/analisi/fig_2_8_representacio_funcio_trossos.svg){ width="680" }
+      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/analisi/fig_2_8_representacio_funcio_trossos.svg){ width="560" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_8_representacio_funcio_trossos.tex">Figura 2.8.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
     </figure>
 
