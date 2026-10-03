@@ -48,6 +48,8 @@ El procediment és:
 
     | Interval | $(-\infty,-1)$ | $(-1,3)$ | $(3,+\infty)$ |
     |:---:|:---:|:---:|:---:|
+    | Valor de prova | $x=-2$ | $x=0$ | $x=4$ |
+    | Càlcul de la derivada | $f'(-2)=15$ | $f'(0)=-9$ | $f'(4)=15$ |
     | Signe de $f'$ | $+$ | $-$ | $+$ |
     | Comportament de $f$ | creix | decreix | creix |
 
