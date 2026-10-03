@@ -499,11 +499,11 @@ $$
 - **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
 - **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.
 - **c)** Per a $h(x)=\ln(x^2-4)$, troba el domini, els talls i les asímptotes verticals.
-- **d)** Per a $p(x)=\dfrac{x}{\ln(x^2+2)}$, estudia el domini, les simetries i els talls amb els eixos.
-- **e)** Per a $q(x)=e^{-x^2}$, estudia les simetries, els límits a l'infinit, el creixement i els extrems.
+- **d)** Per a $p(x)=\dfrac{x}{\ln(x^2+2)}$, estudia el domini i els talls amb els eixos.
+- **e)** Per a $q(x)=e^{-x^2}$, estudia els límits a l'infinit, el creixement i els extrems.
 - **f)** Per a $r(x)=x^2e^{-2x}$, estudia les branques a l'infinit, el creixement i els extrems.
 - **g)** Per a $s(x)=\dfrac{x^2}{\ln x}$, determina el domini, les asímptotes i els intervals de creixement i decreixement.
-- **h)** Per a $t(x)=\ln(x^2-9)$, estudia el domini, les simetries, les asímptotes i els extrems.
+- **h)** Per a $t(x)=\ln(x^2-9)$, estudia el domini, les asímptotes i els extrems.
 
 ### Optimització
 
