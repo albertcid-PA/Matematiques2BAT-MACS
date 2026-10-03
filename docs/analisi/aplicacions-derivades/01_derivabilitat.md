@@ -94,7 +94,7 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     f(x)=
     \begin{cases}
     x^2+1, & x<1,\\
-    3x-1, & x\geq 1.
+    -x+3, & x\geq 1.
     \end{cases}
     $$
 
@@ -103,7 +103,7 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     $$
     \lim_{x\to1^-}f(x)=1^2+1=2,
     \qquad
-    \lim_{x\to1^+}f(x)=3\cdot1-1=2,
+    \lim_{x\to1^+}f(x)=-1+3=2,
     \qquad
     f(1)=2.
     $$
@@ -116,10 +116,10 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     f'(x)=
     \begin{cases}
     2x, & x<1,\\
-    3, & x>1,
+    -1, & x>1,
     \end{cases}
     \qquad
-    f'(1^-)=2,\qquad f'(1^+)=3.
+    f'(1^-)=2,\qquad f'(1^+)=-1.
     $$
 
     Les derivades laterals no coincideixen. Per tant, $f$ **no és derivable** en $x=1$ i la gràfica té un punt angulós.
