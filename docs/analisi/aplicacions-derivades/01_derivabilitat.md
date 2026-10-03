@@ -265,7 +265,7 @@ El procediment és el següent:
     | Valor de $x$ | $x<2$ | $x=2$ | $x>2$ |
     |:---:|:---:|:---:|:---:|
     | Signe de $x-2$ | $-$ | $0$ | $+$ |
-    | Expressió de $\lvert x-2\rvert$ | $-(x-2)$ | $0$ | $x-2$ |
+    | Expressió de $f(x)$ | $-(g(x))$ | $0$ | $+(g(x))$ |
 
     Per tant,
 
@@ -301,10 +301,10 @@ El procediment és el següent:
     f(x)=|x^2+x-2|.
     $$
 
-    Factoritzem l'expressió interior:
+    Anomenem $g(x)$ l'expressió interior i la factoritzem:
 
     $$
-    x^2+x-2=(x+2)(x-1).
+    g(x)=x^2+x-2=(x+2)(x-1).
     $$
 
     Els zeros són $x=-2$ i $x=1$. Comprovem el signe de cada factor i del producte en els intervals que determinen aquests dos punts:
@@ -314,7 +314,7 @@ El procediment és el següent:
     | Signe de $x+2$ | $-$ | $0$ | $+$ | $+$ | $+$ |
     | Signe de $x-1$ | $-$ | $-$ | $-$ | $0$ | $+$ |
     | Signe de $(x+2)(x-1)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
-    | Expressió de $\lvert x^2+x-2\rvert$ | $x^2+x-2$ | $0$ | $-x^2-x+2$ | $0$ | $x^2+x-2$ |
+    | Expressió de $f(x)$ | $+(g(x))$ | $0$ | $-(g(x))$ | $0$ | $+(g(x))$ |
 
     El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Per tant,
 
