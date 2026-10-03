@@ -317,3 +317,140 @@ $$
 
 !!! note "Dibuix final"
     Els cercles buits indiquen que el punt no pertany al tros corresponent; els punts plens indiquen el valor real de la funció. La gràfica no s'ha de prolongar fora de l'interval assignat a cada expressió.
+
+!!! example "Exemple 4. Funció a trossos amb una discontinuïtat asimptòtica"
+    Representem la funció
+
+    $$
+    f(x)=
+    \begin{cases}
+    1+\dfrac{2}{x+1}, & x<1,\\[6pt]
+    (x-3)^2-2, & x\geq1.
+    \end{cases}
+    $$
+
+    **Domini i discontinuïtat asimptòtica.** La branca racional no està definida en $x=-1$. Com que
+
+    $$
+    \lim_{x\to-1^-}\left(1+\frac{2}{x+1}\right)=-\infty
+    \qquad\text{i}\qquad
+    \lim_{x\to-1^+}\left(1+\frac{2}{x+1}\right)=+\infty,
+    $$
+
+    la funció té una **discontinuïtat asimptòtica** i una asímptota vertical en $x=-1$. Per tant,
+
+    $$
+    D_f=\mathbb{R}\setminus\{-1\}.
+    $$
+
+    **Talls amb els eixos.** El tall amb l'eix $Y$ és $(0,3)$. Els talls amb l'eix $X$ són
+
+    $$
+    (-3,0),\qquad (3-\sqrt2,0)\qquad\text{i}\qquad(3+\sqrt2,0).
+    $$
+
+    **Continuïtat en el punt d'unió.** En $x=1$, els dos trossos coincideixen:
+
+    $$
+    \lim_{x\to1^-}f(x)=1+\frac{2}{1+1}=2,
+    \qquad
+    \lim_{x\to1^+}f(x)=(1-3)^2-2=2=f(1).
+    $$
+
+    Així, $f$ és **contínua en $x=1$**.
+
+    **Derivabilitat en el punt d'unió.** Derivem cada tros:
+
+    $$
+    f'(x)=
+    \begin{cases}
+    -\dfrac{2}{(x+1)^2}, & x<1,\\[6pt]
+    2(x-3), & x>1.
+    \end{cases}
+    $$
+
+    Les derivades laterals en $x=1$ són
+
+    $$
+    f'(1^-)=-\frac12
+    \qquad\text{i}\qquad
+    f'(1^+)=-4.
+    $$
+
+    Com que no coincideixen, $f$ és **contínua però no derivable en $x=1$**: la gràfica presenta un punt angulós en $(1,2)$.
+
+    **Vèrtex i monotonia.** La branca quadràtica està escrita en forma canònica,
+
+    $$
+    (x-3)^2-2,
+    $$
+
+    i té el vèrtex en $(3,-2)$, que és un mínim relatiu. Per estudiar la monotonia situem a la taula l'asímptota $x=-1$, el punt d'unió $x=1$ i el vèrtex $x=3$:
+
+    | Interval | $(-\infty,-1)$ | $(-1,1)$ | $(1,3)$ | $(3,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|
+    | Signe de $f'(x)$ | $-$ | $-$ | $-$ | $+$ |
+    | Comportament | decreix | decreix | decreix | creix |
+
+    <figure markdown="span">
+      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/analisi/fig_2_8_representacio_funcio_trossos.svg){ width="780" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_8_representacio_funcio_trossos.tex">Figura 2.8.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
+    </figure>
+
+!!! example "Exemple 5. Representació d'una funció amb dos valors absoluts"
+    Representem la funció
+
+    $$
+    f(x)=|-2x+4|-|x-3|.
+    $$
+
+    Els canvis de signe de les expressions interiors es produeixen en
+
+    $$
+    -2x+4=0\Longrightarrow x=2,
+    \qquad
+    x-3=0\Longrightarrow x=3.
+    $$
+
+    Construïm una taula per decidir si cal conservar o canviar el signe de cada expressió:
+
+    | | $(-\infty,2)$ | $2$ | $(2,3)$ | $3$ | $(3,+\infty)$ |
+    |:---|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $-2x+4$ | $+$ | $0$ | $-$ | $-$ | $-$ |
+    | $\lvert-2x+4\rvert$ | $+(-2x+4)$ | $0$ | $-(-2x+4)$ | $-(-2x+4)$ | $-(-2x+4)$ |
+    | Signe de $x-3$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+    | $-\lvert x-3\rvert$ | $+(x-3)$ | $+(x-3)$ | $+(x-3)$ | $0$ | $-(x-3)$ |
+
+    Per tant,
+
+    $$
+    f(x)=
+    \begin{cases}
+    -x+1, & x<2,\\
+    3x-7, & 2\leq x<3,\\
+    x-1, & x\geq3.
+    \end{cases}
+    $$
+
+    Els tres trossos són rectes. En els punts de canvi,
+
+    $$
+    f(2)=-1
+    \qquad\text{i}\qquad
+    f(3)=2,
+    $$
+
+    i les expressions dels dos costats donen el mateix valor. Així, la funció és contínua en tot $\mathbb{R}$.
+
+    En canvi, els pendents són
+
+    $$
+    -1,\qquad 3\qquad\text{i}\qquad1.
+    $$
+
+    Com que el pendent canvia, $f$ **no és derivable en $x=2$ ni en $x=3$**. La gràfica té un mínim relatiu en $(2,-1)$ i un màxim relatiu en $(3,2)$.
+
+    <figure markdown="span">
+      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/analisi/fig_2_9_representacio_dos_valors_absoluts.svg){ width="760" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_9_representacio_dos_valors_absoluts.tex">Figura 2.9.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
+    </figure>
