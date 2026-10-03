@@ -289,6 +289,11 @@ El procediment és el següent:
 
     En $x=2$, les derivades laterals són $f'(2^-)=-1$ i $f'(2^+)=1$. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en $x=2$.
 
+    <figure markdown="span">
+      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/analisi/fig_2_3_valor_absolut_lineal.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_3_valor_absolut_lineal.tex">Figura 2.3.</a></strong> Gràfica de $f(x)=|x-2|$.</figcaption>
+    </figure>
+
 !!! example "Exemple 2. Valor absolut d'una funció quadràtica"
     Escriu com una funció a trossos i estudia la derivabilitat de
 
@@ -334,3 +339,8 @@ El procediment és el següent:
     $$
 
     En $x=-2$ i en $x=1$ les derivades laterals no coincideixen. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en aquests dos punts.
+
+    <figure markdown="span">
+      ![Gràfica de la funció valor absolut de x al quadrat més x menys dos, amb punts angulosos en x igual a menys dos i x igual a u](../../img/analisi/fig_2_4_valor_absolut_quadratica.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_4_valor_absolut_quadratica.tex">Figura 2.4.</a></strong> Gràfica de $f(x)=|x^2+x-2|$.</figcaption>
+    </figure>
