@@ -30,11 +30,12 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
 
 ### Funció constant
 
-Si $f(x)=k$, on $k$ és una constant, aleshores
+!!! abstract "Definició: funció constant"
+    Si $f(x)=k$, on $k$ és una constant, aleshores
 
-$$
-f'(x)=0.
-$$
+    $$
+    f'(x)=0.
+    $$
 
 !!! example "Exemple"
     Si $f(x)=5$, aleshores
@@ -45,11 +46,12 @@ $$
 
 ### Funció potència
 
-Si $f(x)=x^n$, aleshores
+!!! abstract "Definició: funció potència"
+    Si $f(x)=x^n$, aleshores
 
-$$
-f'(x)=nx^{n-1}.
-$$
+    $$
+    f'(x)=nx^{n-1}.
+    $$
 
 !!! example "Exemples"
     **Potència amb exponent natural**
@@ -78,11 +80,12 @@ $$
 
 ### Funció exponencial
 
-Si $f(x)=a^x$, aleshores
+!!! abstract "Definició: funció exponencial"
+    Si $f(x)=a^x$, aleshores
 
-$$
-f'(x)=\ln(a)\,a^x.
-$$
+    $$
+    f'(x)=\ln(a)\,a^x.
+    $$
 
 !!! example "Exemples"
     $$
@@ -101,11 +104,12 @@ $$
 
 ### Funció logarítmica
 
-Si $f(x)=\log_a(x)$, aleshores
+!!! abstract "Definició: funció logarítmica"
+    Si $f(x)=\log_a(x)$, aleshores
 
-$$
-f'(x)=\frac{1}{\ln(a)}\cdot\frac{1}{x}.
-$$
+    $$
+    f'(x)=\frac{1}{\ln(a)}\cdot\frac{1}{x}.
+    $$
 
 !!! example "Exemples"
     $$
@@ -126,11 +130,12 @@ $$
 
 ### Suma i resta
 
-Si $h(x)=f(x)\pm g(x)$, aleshores
+!!! abstract "Regla de derivació: suma i resta"
+    Si $h(x)=f(x)\pm g(x)$, aleshores
 
-$$
-h'(x)=f'(x)\pm g'(x).
-$$
+    $$
+    h'(x)=f'(x)\pm g'(x).
+    $$
 
 !!! example "Exemple"
     $$
@@ -145,11 +150,12 @@ $$
 
 ### Multiplicació per una constant
 
-Si $h(x)=k f(x)$, aleshores
+!!! abstract "Regla de derivació: multiplicació per una constant"
+    Si $h(x)=k f(x)$, aleshores
 
-$$
-h'(x)=k f'(x).
-$$
+    $$
+    h'(x)=k f'(x).
+    $$
 
 !!! example "Exemple"
     $$
@@ -164,11 +170,12 @@ $$
 
 ### Producte
 
-Si $h(x)=f(x)g(x)$, aleshores
+!!! abstract "Regla de derivació: producte"
+    Si $h(x)=f(x)g(x)$, aleshores
 
-$$
-h'(x)=f'(x)g(x)+f(x)g'(x).
-$$
+    $$
+    h'(x)=f'(x)g(x)+f(x)g'(x).
+    $$
 
 !!! example "Exemple"
     $$
@@ -186,22 +193,23 @@ $$
     \end{aligned}
     $$
 
-    !!! note
+    !!! nota
         Ens agrada sempre posar les constants al davant.
 
 ### Divisió
 
-Si
+!!! abstract "Regla de derivació: divisió"
+    Si
 
-$$
-h(x)=\frac{f(x)}{g(x)},
-$$
+    $$
+    h(x)=\frac{f(x)}{g(x)},
+    $$
 
-aleshores
+    aleshores
 
-$$
-h'(x)=\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}.
-$$
+    $$
+    h'(x)=\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}.
+    $$
 
 !!! example "Exemple"
     $$
@@ -231,13 +239,14 @@ $$
 
 ## 4. Composició: regla de la cadena
 
-Si $h(x)=f(g(x))$, aleshores
+!!! abstract "Regla de derivació: composició"
+    Si $h(x)=f(g(x))$, aleshores
 
-$$
-h'(x)=f'(g(x))g'(x).
-$$
+    $$
+    h'(x)=f'(g(x))g'(x).
+    $$
 
-També podem escriure la composició com $f(g(x))=(f\circ g)(x)$.
+    També podem escriure la composició com $f(g(x))=(f\circ g)(x)$.
 
 !!! example "Exemple 1"
     $$
