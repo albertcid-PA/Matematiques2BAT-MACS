@@ -13,48 +13,113 @@
   guia/.style={draw=black!45, densely dashed},
   etiqueta/.style={text=mesura, font=\small},
   titol/.style={font=\bfseries},
+  subtitol/.style={font=\scriptsize\bfseries, text=black!60},
+  fletxa/.style={->, >=stealth, draw=black!40, thick},
 }
 
 \begin{document}
 \begin{tikzpicture}[x=1cm,y=1cm]
+  % Prisma rectangular
+  \begin{scope}[shift={(0,9.4)}]
+    \draw[panell] (0,0) rectangle (7,4.3);
+    \node[titol] at (3.5,3.93) {Prisma rectangular};
+    \node[subtitol] at (1.65,3.48) {Sòlid};
+    \node[subtitol] at (5.25,3.48) {Desplegament};
+    \draw[figura] (.75,1.35) rectangle (2.25,2.65);
+    \draw[aresta] (2.25,1.35)--(2.85,1.78)--(2.85,3.08)--(2.25,2.65);
+    \draw[aresta] (.75,2.65)--(1.35,3.08)--(2.85,3.08);
+    \draw[oculta] (.75,1.35)--(1.35,1.78)--(2.85,1.78);
+    \draw[oculta] (1.35,1.78)--(1.35,3.08);
+    \node[etiqueta, right] at (2.85,2.42) {$h$};
+    \node[etiqueta] at (1.48,1.08) {$A_b$};
+    \draw[fletxa] (3.15,2.2)--(3.75,2.2);
+    \foreach \x in {3.9,4.55,5.2,5.85}
+      \draw[figura] (\x,1.85) rectangle ++(.65,.85);
+    \draw[figura] (4.55,2.7) rectangle ++(.65,.65);
+    \draw[figura] (4.55,1.2) rectangle ++(.65,.65);
+    \node at (3.5,.48) {$V=A_bh$};
+  \end{scope}
+
+  % Cilindre
+  \begin{scope}[shift={(7.4,9.4)}]
+    \draw[panell] (0,0) rectangle (7,4.3);
+    \node[titol] at (3.5,3.93) {Cilindre};
+    \node[subtitol] at (1.65,3.48) {Sòlid};
+    \node[subtitol] at (5.25,3.48) {Desplegament};
+    \draw[figura] (.75,1.35) arc[start angle=180,end angle=360,x radius=.95,y radius=.28]
+      -- (2.65,2.85) arc[start angle=0,end angle=-180,x radius=.95,y radius=.28] -- cycle;
+    \draw[aresta] (1.7,2.85) ellipse (.95 and .28);
+    \draw[aresta] (.75,1.35) arc[start angle=180,end angle=360,x radius=.95,y radius=.28];
+    \draw[oculta] (.75,1.35) arc[start angle=180,end angle=0,x radius=.95,y radius=.28];
+    \node[etiqueta, right] at (2.68,2.12) {$h$};
+    \node[etiqueta] at (1.7,1.03) {$A_b$};
+    \draw[fletxa] (3.0,2.2)--(3.6,2.2);
+    \draw[figura] (4.15,1.55) rectangle (6.2,2.75);
+    \draw[figura] (3.8,2.15) circle (.34);
+    \draw[figura] (6.55,2.15) circle (.34);
+    \node at (3.5,.48) {$V=A_bh$};
+  \end{scope}
+
+  % Piràmide
+  \begin{scope}[shift={(0,4.7)}]
+    \draw[panell] (0,0) rectangle (7,4.3);
+    \node[titol] at (3.5,3.93) {Piràmide};
+    \node[subtitol] at (1.65,3.48) {Sòlid};
+    \node[subtitol] at (5.25,3.48) {Desplegament};
+    \coordinate (V) at (1.7,3.12);
+    \coordinate (A) at (.65,1.45);
+    \coordinate (B) at (2.3,1.25);
+    \coordinate (C) at (2.85,1.78);
+    \coordinate (D) at (1.2,1.98);
+    \draw[figura] (A)--(B)--(C)--(D)--cycle;
+    \draw[aresta] (V)--(A) (V)--(B) (V)--(C);
+    \draw[oculta] (V)--(D);
+    \draw[guia] (V)--(1.75,1.68);
+    \node[etiqueta, left] at (1.73,2.35) {$h$};
+    \node[etiqueta] at (1.67,1.05) {$A_b$};
+    \draw[fletxa] (3.1,2.2)--(3.7,2.2);
+    \draw[figura] (4.55,1.7) rectangle (5.55,2.7);
+    \draw[figura] (4.55,2.7)--(5.05,3.45)--(5.55,2.7)--cycle;
+    \draw[figura] (4.55,1.7)--(5.05,.95)--(5.55,1.7)--cycle;
+    \draw[figura] (4.55,1.7)--(3.8,2.2)--(4.55,2.7)--cycle;
+    \draw[figura] (5.55,1.7)--(6.3,2.2)--(5.55,2.7)--cycle;
+    \node at (3.5,.48) {$V=\dfrac{A_bh}{3}$};
+  \end{scope}
+
+  % Con
+  \begin{scope}[shift={(7.4,4.7)}]
+    \draw[panell] (0,0) rectangle (7,4.3);
+    \node[titol] at (3.5,3.93) {Con};
+    \node[subtitol] at (1.65,3.48) {Sòlid};
+    \node[subtitol] at (5.25,3.48) {Desplegament};
+    \coordinate (CC) at (1.7,1.45);
+    \coordinate (VV) at (1.7,3.2);
+    \draw[figura] (.65,1.45) arc[start angle=180,end angle=360,x radius=1.05,y radius=.3] -- (VV) -- cycle;
+    \draw[aresta] (.65,1.45)--(VV)--(2.75,1.45);
+    \draw[aresta] (.65,1.45) arc[start angle=180,end angle=360,x radius=1.05,y radius=.3];
+    \draw[oculta] (.65,1.45) arc[start angle=180,end angle=0,x radius=1.05,y radius=.3];
+    \draw[guia] (VV)--(CC);
+    \node[etiqueta, left] at (1.7,2.33) {$h$};
+    \node[etiqueta] at (1.7,1.05) {$A_b$};
+    \draw[fletxa] (3.05,2.2)--(3.65,2.2);
+    \draw[figura] (5.2,2.15)--++(125:1.15) arc[start angle=125,end angle=415,radius=1.15]--cycle;
+    \draw[figura] (6.15,1.05) circle (.38);
+    \node at (3.5,.48) {$V=\dfrac{A_bh}{3}$};
+  \end{scope}
+
+  % Esfera
   \begin{scope}[shift={(0,0)}]
-    \draw[panell] (0,0) rectangle (4.8,5.0);
-    \node[titol, align=center] at (2.4,4.55) {Prismes i\\cilindres};
-    \draw[figura] (1.15,1.65) rectangle (2.45,3.15);
-    \draw[aresta] (2.45,1.65)--(3.05,2.05)--(3.05,3.55)--(2.45,3.15);
-    \draw[aresta] (1.15,3.15)--(1.75,3.55)--(3.05,3.55);
-    \draw[oculta] (1.15,1.65)--(1.75,2.05)--(3.05,2.05);
-    \draw[oculta] (1.75,2.05)--(1.75,3.55);
-    \node[etiqueta, right] at (3.05,2.8) {$h$};
-    \node[etiqueta] at (1.8,1.35) {$A_b$};
-    \node at (2.4,.6) {$V=A_bh$};
-  \end{scope}
-
-  \begin{scope}[shift={(5.15,0)}]
-    \draw[panell] (0,0) rectangle (4.8,5.0);
-    \node[titol, align=center] at (2.4,4.55) {Piràmides i cons\\acabats en punta};
-    \coordinate (C) at (2.4,1.55);
-    \coordinate (V) at (2.4,3.65);
-    \draw[figura] (1.2,1.55) arc[start angle=180,end angle=360,x radius=1.2,y radius=.34] -- (V) -- cycle;
-    \draw[aresta] (1.2,1.55)--(V)--(3.6,1.55);
-    \draw[aresta] (1.2,1.55) arc[start angle=180,end angle=360,x radius=1.2,y radius=.34];
-    \draw[oculta] (1.2,1.55) arc[start angle=180,end angle=0,x radius=1.2,y radius=.34];
-    \draw[guia] (V)--(C);
-    \node[etiqueta, left] at (2.4,2.6) {$h$};
-    \node[etiqueta] at (2.4,1.15) {$A_b$};
-    \node at (2.4,.6) {$V=\dfrac{A_bh}{3}$};
-  \end{scope}
-
-  \begin{scope}[shift={(10.3,0)}]
-    \draw[panell] (0,0) rectangle (4.8,5.0);
-    \node[titol] at (2.4,4.55) {Esfera};
-    \draw[figura] (2.4,2.55) circle (1.2);
-    \draw[aresta] (1.2,2.55) arc[start angle=180,end angle=360,x radius=1.2,y radius=.35];
-    \draw[oculta] (1.2,2.55) arc[start angle=180,end angle=0,x radius=1.2,y radius=.35];
-    \fill[corba] (2.4,2.55) circle (1.5pt);
-    \draw[mesura, thick] (2.4,2.55)--(3.6,2.55);
-    \node[etiqueta, above] at (3.0,2.55) {$r$};
-    \node at (2.4,.6) {$V=\dfrac{4}{3}\pi r^3$};
+    \draw[panell] (0,0) rectangle (14.4,4.3);
+    \node[titol] at (7.2,3.93) {Esfera};
+    \draw[figura] (3.25,2.15) circle (1.2);
+    \draw[aresta] (2.05,2.15) arc[start angle=180,end angle=360,x radius=1.2,y radius=.35];
+    \draw[oculta] (2.05,2.15) arc[start angle=180,end angle=0,x radius=1.2,y radius=.35];
+    \fill[corba] (3.25,2.15) circle (1.5pt);
+    \draw[mesura, thick] (3.25,2.15)--(4.45,2.15);
+    \node[etiqueta, above] at (3.85,2.15) {$r$};
+    \node[align=center, font=\small] at (9.1,2.3)
+      {L'esfera no té un\\desplegament pla exacte.};
+    \node at (9.1,1.18) {$V=\dfrac{4}{3}\pi r^3$};
   \end{scope}
 \end{tikzpicture}
 \end{document}
