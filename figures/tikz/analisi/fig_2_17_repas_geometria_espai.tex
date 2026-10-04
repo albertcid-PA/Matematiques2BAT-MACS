@@ -88,24 +88,24 @@
     \node[subtitol] at (1.55,4.25) {Sòlid};
     \node[subtitol] at (5.3,4.25) {Desplegament};
     \coordinate (V) at (1.50,3.62);
-    \coordinate (A) at (.78,1.80);
-    \coordinate (B) at (1.50,1.08);
-    \coordinate (C) at (2.22,1.80);
-    \coordinate (D) at (1.50,2.52);
+    \coordinate (A) at (.82,1.12);
+    \coordinate (B) at (2.18,1.12);
+    \coordinate (C) at (2.18,2.48);
+    \coordinate (D) at (.82,2.48);
     \draw[base] (A)--(B)--(C)--(D)--cycle;
-    \draw[aresta] (V)--(A) (V)--(B) (V)--(C);
-    \draw[oculta] (V)--(D);
+    \draw[aresta] (V)--(A) (V)--(B);
+    \draw[oculta] (V)--(C) (V)--(D);
     \draw[guia] (V)--(1.50,1.80);
     \draw[black!45] (1.50,1.80) rectangle ++(.13,.13);
     \node[etiqueta, left] at (1.50,2.72) {$h$};
-    \node[etiqueta, fill=none] at (1.02,1.30) {$a$};
+    \node[etiqueta, fill=none] at (1.50,.92) {$a$};
     \draw[base] (4.52,1.98) rectangle (5.58,3.04);
     \draw[figura] (4.52,3.04)--(5.05,3.85)--(5.58,3.04)--cycle;
     \draw[figura] (4.52,1.98)--(5.05,1.17)--(5.58,1.98)--cycle;
     \draw[figura] (4.52,1.98)--(3.72,2.51)--(4.52,3.04)--cycle;
     \draw[figura] (5.58,1.98)--(6.38,2.51)--(5.58,3.04)--cycle;
     \draw[guia] (5.05,3.04)--(5.05,3.85);
-    \node[etiqueta, right] at (5.05,3.45) {$a_p$};
+    \node[etiqueta, right, fill=none] at (5.05,3.45) {$a_p$};
     \node[etiqueta, fill=none] at (5.05,2.10) {$a$};
     \node[font=\small] at (3.5,.52)
       {$A_T=a^2+2aa_p\qquad V=\dfrac{a^2h}{3}$};
@@ -127,7 +127,7 @@
     \draw[black!45] (CC) rectangle ++(.13,.13);
     \node[etiqueta, left] at (1.6,2.65) {$h$};
     \draw[cota, ->] (CC)--(2.68,1.62);
-    \node[etiqueta, above] at (2.15,1.62) {$r$};
+    \node[etiqueta, above, fill=none] at (2.15,1.62) {$r$};
     \node[etiqueta] at (2.22,2.85) {$g$};
     \draw[figura] (5.15,2.55)--++(125:1.17) arc[start angle=125,end angle=415,radius=1.17]--cycle;
     \draw[base] (6.15,1.25) circle (.39);
@@ -149,7 +149,7 @@
     \draw[oculta] (1.97,2.55) arc[start angle=180,end angle=0,x radius=1.28,y radius=.37];
     \fill[centre] (3.25,2.55) circle (2.2pt);
     \draw[cota, ->] (3.25,2.55)--(4.53,2.55);
-    \node[etiqueta, above] at (3.9,2.55) {$r$};
+    \node[etiqueta, above, fill=none] at (3.9,2.55) {$r$};
     \node[align=center, font=\small] at (9.25,3.15)
       {L'esfera no té un\\desplegament pla exacte.};
     \node at (9.25,1.75) {$A_T=4\pi r^2$};

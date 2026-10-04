@@ -343,17 +343,17 @@
 <use x='-19.928932' y='378.344179' xlink:href='#g4-110'/>
 <use x='-15.167627' y='378.344179' xlink:href='#g4-116'/>
 </g>
-<path d='M-44.5859 175.668L-24.1758 196.074L-3.7656 175.668L-24.1758 155.258Z' fill='#eee5fd'/>
-<path d='M-44.5859 175.668L-24.1758 196.074L-3.7656 175.668L-24.1758 155.258Z' stroke='#7c3aed' fill='none' stroke-width='1.19553' stroke-miterlimit='10' stroke-linejoin='bevel'/>
-<path d='M-24.1758 124.078L-44.5859 175.668M-24.1758 124.078V196.074M-24.1758 124.078L-3.7656 175.668' stroke='#365fb3' fill='none' stroke-width='1.19553' stroke-miterlimit='10' stroke-linejoin='bevel'/>
-<path d='M-24.1758 124.078V155.258' stroke='#9aafd9' fill='none' stroke-width='.39851' stroke-miterlimit='10' stroke-dasharray='2.9888 1.99254'/>
+<path d='M-43.4492 194.941H-4.8984V156.391H-43.4492Z' fill='#eee5fd'/>
+<path d='M-43.4492 194.941H-4.8984V156.391H-43.4492Z' stroke='#7c3aed' fill='none' stroke-width='1.19553' stroke-miterlimit='10' stroke-linejoin='bevel'/>
+<path d='M-24.1758 124.078L-43.4492 194.941M-24.1758 124.078L-4.8984 194.941' stroke='#365fb3' fill='none' stroke-width='1.19553' stroke-miterlimit='10' stroke-linejoin='bevel'/>
+<path d='M-24.1758 124.078L-4.8984 156.391M-24.1758 124.078L-43.4492 156.391' stroke='#9aafd9' fill='none' stroke-width='.39851' stroke-miterlimit='10' stroke-dasharray='2.9888 1.99254'/>
 <path d='M-24.1758 124.078V175.668' stroke='#8c8c8c' fill='none' stroke-width='.39851' stroke-miterlimit='10' stroke-dasharray='2.9888 1.99254'/>
 <path d='M-24.1758 175.668V171.98H-20.4883V175.668Z' stroke='#8c8c8c' fill='none' stroke-width='.39851' stroke-miterlimit='10'/>
 <path d='M-31.0312 153.004H-24.375V146.172H-31.0312Z' fill='#f4f7fc'/>
 <g fill='#b91c1c' transform='matrix(1 0 0 1 36.6599 -226.335)'>
 <use x='-66.694901' y='378.344179' xlink:href='#g7-104'/>
 </g>
-<g fill='#b91c1c' transform='matrix(1 0 0 1 26.7528 -187.003)'>
+<g fill='#b91c1c' transform='matrix(1 0 0 1 40.359 -176.231)'>
 <use x='-66.694901' y='378.344179' xlink:href='#g7-97'/>
 </g>
 <path d='M61.4301 170.566V140.516H91.4761V170.566Z' fill='#eee5fd'/>
@@ -367,7 +367,6 @@
 <path d='M91.4761 170.566L114.1561 155.539L91.4761 140.516Z' fill='#eff2f9'/>
 <path d='M91.4761 170.566L114.1561 155.539L91.4761 140.516Z' stroke='#365fb3' fill='none' stroke-width='1.19553' stroke-miterlimit='10' stroke-linejoin='bevel'/>
 <path d='M76.4531 140.516V117.555' stroke='#8c8c8c' fill='none' stroke-width='.39851' stroke-miterlimit='10' stroke-dasharray='2.9888 1.99254'/>
-<path d='M76.6521 132.375H87.1521V125.414H76.6521Z' fill='#f4f7fc'/>
 <g fill='#b91c1c' transform='matrix(1 0 0 1 144.3451 -248.93)'>
 <use x='-66.694901' y='378.344179' xlink:href='#g7-97'/>
 <use x='-62.373458' y='379.340443' xlink:href='#g8-112'/>
@@ -438,7 +437,6 @@
 </g>
 <path d='M188.4221 180.77H216.7461' stroke='#b91c1c' fill='none' stroke-width='.59778' stroke-miterlimit='10'/>
 <path d='M219.03466 180.76929L215.3706 178.93726L216.745595 180.76929L215.3706 182.60132'/>
-<path d='M201.0581 180.57H206.9651V175.574H201.0581Z' fill='#f4f7fc'/>
 <g fill='#b91c1c' transform='matrix(1 0 0 1 268.7519 -198.77)'>
 <use x='-66.694901' y='378.344179' xlink:href='#g7-114'/>
 </g>
@@ -503,7 +501,6 @@
 <path d='M27.6211 306.0586C27.6211 304.8516 26.6406 303.8672 25.4297 303.8672S23.2383 304.8516 23.2383 306.0586C23.2383 307.2695 24.2188 308.2539 25.4297 308.2539S27.6211 307.2695 27.6211 306.0586Z' stroke='#fff' fill='none' stroke-width='.39851' stroke-miterlimit='10'/>
 <path d='M25.4297 306.0586H59.4221' stroke='#b91c1c' fill='none' stroke-width='.59778' stroke-miterlimit='10'/>
 <path d='M61.71485 306.058108L58.04688 304.22608L59.421879 306.058108L58.04688 307.89405'/>
-<path d='M40.9021 305.8594H46.8081V300.8672H40.9021Z' fill='#f4f7fc'/>
 <g fill='#b91c1c' transform='matrix(1 0 0 1 108.5942 -73.479)'>
 <use x='-66.694901' y='378.344179' xlink:href='#g7-114'/>
 </g>
