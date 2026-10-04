@@ -477,16 +477,24 @@ p(x)=
 \end{cases}
 $$
 
+#### Dominis
+
+**2.22.** Troba el domini de les funcions següents i expressa'l mitjançant intervals:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\sqrt{x+4}$ | **b)** $g(x)=\log(x^2-4x+3)$ |
+
 #### Funcions amb valor absolut
 
-**2.22.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
+**2.23.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
 
 | | |
 |:--|:--|
 | **a)** $f(x)=x+\lvert x-2\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
 | **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
 
-**2.23.** Estudia i representa les funcions següents:
+**2.24.** Estudia i representa les funcions següents:
 
 | | |
 |:--|:--|
@@ -494,7 +502,7 @@ $$
 
 #### Funcions irracionals, exponencials i logarítmiques
 
-**2.24.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
+**2.25.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
 
 - **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
 - **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.
@@ -507,7 +515,7 @@ $$
 
 ### Exercicis de síntesi i preparació de la prova
 
-**2.25.** Calcula la derivada de cadascuna de les funcions següents. Simplifica el resultat quan sigui possible.
+**2.26.** Calcula la derivada de cadascuna de les funcions següents. Simplifica el resultat quan sigui possible.
 
 | | |
 |:--|:--|
@@ -515,7 +523,7 @@ $$
 | **c)** $h(x)=2^x+\log_3 x$ | **d)** $p(x)=x^3\left(2x+e^x\right)$ |
 | **e)** $q(x)=\ln(2x^2+7)$ | **f)** $r(x)=e^{(x^2-1)^3}$ |
 
-**2.26.** Fes l'estudi complet de la funció
+**2.27.** Fes l'estudi complet de la funció
 
 $$
 f(x)=\frac{3x^2-6}{x^2-9}.
@@ -523,7 +531,7 @@ $$
 
 Determina'n el domini, els talls amb els eixos, les asímptotes verticals i horitzontals, els límits laterals, els extrems relatius i els intervals de creixement i decreixement. Finalment, fes-ne un esbós.
 
-**2.27.** Considera la funció
+**2.28.** Considera la funció
 
 $$
 g(x)=\frac{e^x}{x-1}.
@@ -531,7 +539,7 @@ $$
 
 Troba les asímptotes verticals i horitzontals, calcula els límits laterals en els punts que no pertanyen al domini, deriva la funció i estudia'n la monotonia i els extrems relatius. Fes-ne un esbós amb la informació obtinguda.
 
-**2.28.** Considera la funció
+**2.29.** Considera la funció
 
 $$
 p(x)=\lvert x-1\rvert+\lvert 2x+4\rvert.
@@ -540,12 +548,6 @@ $$
 - **a)** Construeix una taula de signes per a les expressions interiors dels valors absoluts.
 - **b)** Escriu $p$ com una funció a trossos.
 - **c)** Indica en quins punts no és derivable i representa-la.
-
-**2.29.** Troba el domini de les funcions següents i expressa'l mitjançant intervals:
-
-| | |
-|:--|:--|
-| **a)** $f(x)=\sqrt{x+4}$ | **b)** $g(x)=\log(x^2-4x+3)$ |
 
 ### Optimització
 
