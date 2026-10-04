@@ -25,8 +25,6 @@
     \draw[figura] (2.05,1.35) rectangle (3.75,3.05);
     \draw[cota] (2.05,1.08)--(3.75,1.08);
     \node[etiqueta] at (2.9,1.08) {$a$};
-    \draw[cota] (4.02,1.35)--(4.02,3.05);
-    \node[etiqueta] at (4.02,2.2) {$a$};
     \node at (2.9,.48) {$A=a^2\qquad P=4a$};
   \end{scope}
 
@@ -83,7 +81,7 @@
       \fill[centre] (0,0) circle (2.2pt);
       \draw[guia] (0,0)--(90:1.02);
       \draw[black!45] (90:1.02)--++(-.14,0)--++(0,-.14);
-      \node[etiqueta, right] at (90:.52) {$a_p$};
+      \node[etiqueta, right, fill=none] at (90:.52) {$a_p$};
       \draw[cota] (300:1.34)--(360:1.34);
       \node[etiqueta, below right] at (330:1.34) {$l$};
     \end{scope}
