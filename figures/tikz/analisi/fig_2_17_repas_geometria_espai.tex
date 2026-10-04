@@ -17,7 +17,6 @@
   etiqueta/.style={text=mesura, font=\scriptsize, fill=fons, inner sep=1pt},
   titol/.style={font=\bfseries},
   subtitol/.style={font=\scriptsize\bfseries, text=black!60},
-  fletxa/.style={->, >=stealth, draw=black!40, thick},
   centre/.style={fill=accent, draw=white, line width=.4pt},
 }
 
@@ -39,7 +38,6 @@
     \draw[cota] (2.3,1.55)--(2.3,3.05);
     \node[etiqueta, fill=none] at (2.55,2.3) {$h$};
     \node[etiqueta, fill=none] at (2.48,3.76) {$b$};
-    \draw[fletxa] (2.95,2.55)--(3.48,2.55);
     \draw[figura] (3.55,2.02) rectangle ++(.55,1.08);
     \draw[figura] (4.10,2.02) rectangle ++(.80,1.08);
     \draw[figura] (4.90,2.02) rectangle ++(.55,1.08);
@@ -71,7 +69,6 @@
     \node[etiqueta] at (2.78,2.43) {$h$};
     \draw[cota, ->] (1.57,3.25)--(2.5,3.25);
     \node[etiqueta, above] at (2.05,3.25) {$r$};
-    \draw[fletxa] (3.05,2.55)--(3.58,2.55);
     \draw[figura] (4.15,1.82) rectangle (6.2,3.08);
     \draw[base] (3.78,2.45) circle (.34);
     \draw[base] (6.57,2.45) circle (.34);
@@ -100,7 +97,6 @@
     \node[etiqueta, left] at (1.68,2.72) {$h$};
     \node[etiqueta, fill=none] at (1.55,1.22) {$a$};
     \node[etiqueta, fill=none] at (2.50,1.58) {$a$};
-    \draw[fletxa] (3.02,2.55)--(3.55,2.55);
     \draw[base] (4.52,1.98) rectangle (5.58,3.04);
     \draw[figura] (4.52,3.04)--(5.05,3.85)--(5.58,3.04)--cycle;
     \draw[figura] (4.52,1.98)--(5.05,1.17)--(5.58,1.98)--cycle;
@@ -131,7 +127,6 @@
     \draw[cota, ->] (CC)--(2.68,1.62);
     \node[etiqueta, above] at (2.15,1.62) {$r$};
     \node[etiqueta] at (2.22,2.85) {$g$};
-    \draw[fletxa] (3.0,2.55)--(3.52,2.55);
     \draw[figura] (5.15,2.55)--++(125:1.17) arc[start angle=125,end angle=415,radius=1.17]--cycle;
     \draw[base] (6.15,1.25) circle (.39);
     \draw[cota, ->] (5.15,2.55)--++(125:1.12);

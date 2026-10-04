@@ -29,7 +29,7 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ per indicar el **volum**. L'àrea total és la suma de les àrees de totes les superfícies que formen el cos.
 
 <figure markdown="span">
-  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/analisi/fig_2_17_repas_geometria_espai.svg?v=5){ width="960" }
+  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/analisi/fig_2_17_repas_geometria_espai.svg?v=6){ width="960" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
 </figure>
 
