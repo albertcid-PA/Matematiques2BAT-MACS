@@ -67,11 +67,14 @@
     \draw[oculta] (.62,1.62) arc[start angle=180,end angle=0,x radius=.95,y radius=.27];
     \draw[cota] (2.78,1.62)--(2.78,3.25);
     \node[etiqueta, fill=none] at (3.02,2.43) {$h$};
-    \draw[cota, ->] (1.57,3.25)--(2.5,3.25);
-    \node[etiqueta, fill=none] at (2.035,3.40) {$r$};
+    \draw[cota, ->] (1.57,3.25)--(.64,3.25);
+    \node[etiqueta, fill=none] at (1.105,3.40) {$r$};
     \draw[figura] (4.15,1.82) rectangle (6.2,3.08);
     \draw[base] (3.78,2.45) circle (.34);
     \draw[base] (6.57,2.45) circle (.34);
+    \fill[centre] (3.78,2.45) circle (1.8pt);
+    \draw[cota, ->] (3.78,2.45)--(3.44,2.45);
+    \node[etiqueta, fill=none] at (3.61,2.65) {$r$};
     \node[etiqueta, fill=none] at (5.94,2.45) {$h$};
     \node[etiqueta, fill=none] at (5.18,1.55) {$2\pi r$};
     \node[font=\small] at (3.5,.52)
@@ -81,22 +84,21 @@
   % Piràmide regular
   \begin{scope}[shift={(0,5.35)}]
     \draw[panell] (0,0) rectangle (7,5);
-    \node[titol] at (3.5,4.66) {Piràmide regular de base quadrada};
+    \node[titol] at (3.5,4.66) {Piràmide regular};
     \node[subtitol] at (1.55,4.25) {Sòlid};
     \node[subtitol] at (5.3,4.25) {Desplegament};
-    \coordinate (V) at (1.62,3.62);
-    \coordinate (A) at (.52,1.58);
-    \coordinate (B) at (2.18,1.35);
-    \coordinate (C) at (2.75,1.92);
-    \coordinate (D) at (1.1,2.14);
+    \coordinate (V) at (1.50,3.62);
+    \coordinate (A) at (.78,1.80);
+    \coordinate (B) at (1.50,1.08);
+    \coordinate (C) at (2.22,1.80);
+    \coordinate (D) at (1.50,2.52);
     \draw[base] (A)--(B)--(C)--(D)--cycle;
     \draw[aresta] (V)--(A) (V)--(B) (V)--(C);
     \draw[oculta] (V)--(D);
-    \draw[guia] (V)--(1.68,1.85);
-    \draw[black!45] (1.68,1.85) rectangle ++(.13,.13);
-    \node[etiqueta, left] at (1.68,2.72) {$h$};
-    \node[etiqueta, fill=none] at (1.55,1.22) {$a$};
-    \node[etiqueta, fill=none] at (2.50,1.58) {$a$};
+    \draw[guia] (V)--(1.50,1.80);
+    \draw[black!45] (1.50,1.80) rectangle ++(.13,.13);
+    \node[etiqueta, left] at (1.50,2.72) {$h$};
+    \node[etiqueta, fill=none] at (1.02,1.30) {$a$};
     \draw[base] (4.52,1.98) rectangle (5.58,3.04);
     \draw[figura] (4.52,3.04)--(5.05,3.85)--(5.58,3.04)--cycle;
     \draw[figura] (4.52,1.98)--(5.05,1.17)--(5.58,1.98)--cycle;
@@ -129,6 +131,9 @@
     \node[etiqueta] at (2.22,2.85) {$g$};
     \draw[figura] (5.15,2.55)--++(125:1.17) arc[start angle=125,end angle=415,radius=1.17]--cycle;
     \draw[base] (6.15,1.25) circle (.39);
+    \fill[centre] (6.15,1.25) circle (1.8pt);
+    \draw[cota, ->] (6.15,1.25)--(6.54,1.25);
+    \node[etiqueta, fill=none] at (6.345,1.43) {$r$};
     \draw[cota, ->] (5.15,2.55)--++(125:1.12);
     \node[etiqueta] at (4.73,3.15) {$g$};
     \node[font=\small] at (3.5,.52)
