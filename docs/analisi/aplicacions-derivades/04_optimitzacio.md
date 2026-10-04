@@ -29,7 +29,7 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ per indicar el **volum**. L'àrea total és la suma de les àrees de totes les superfícies que formen el cos.
 
 <figure markdown="span">
-  ![Prisma rectangular, cilindre, piràmide, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/analisi/fig_2_17_repas_geometria_espai.svg?v=3){ width="960" }
+  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/analisi/fig_2_17_repas_geometria_espai.svg?v=4){ width="960" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
 </figure>
 
@@ -37,12 +37,12 @@ En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ 
 |:---|:---:|:---:|
 | Prisma rectangular de costats $a,b,h$ | $A_T=2(ab+ah+bh)$ | $V=abh$ |
 | Cilindre de radi $r$ i altura $h$ | $A_T=2\pi r^2+2\pi rh$ | $V=\pi r^2h$ |
-| Piràmide regular | $A_T=A_b+\dfrac{P_ba_p}{2}$ | $V=\dfrac{A_bh}{3}$ |
+| Piràmide regular de base quadrada i costat $a$ | $A_T=a^2+2aa_p$ | $V=\dfrac{a^2h}{3}$ |
 | Con de radi $r$, altura $h$ i generatriu $g$ | $A_T=\pi r^2+\pi rg$ | $V=\dfrac{\pi r^2h}{3}$ |
 | Esfera de radi $r$ | $A_T=4\pi r^2$ | $V=\dfrac{4}{3}\pi r^3$ |
 
 !!! note "Símbols de les fórmules"
-    $A_b$ és l'**àrea de la base**, $P_b$ és el **perímetre de la base**, $a_p$ és l'**apotema de la piràmide**, $g$ és la **generatriu del con** i $h$ és l'**altura** del cos.
+    $A_b$ és l'**àrea de la base**, $a_p$ és l'**apotema de la piràmide**, $g$ és la **generatriu del con** i $h$ és l'**altura** del cos.
 
     En el cilindre i el con, la base és un cercle; per tant, $A_b=\pi r^2$ i $P_b=2\pi r$.
 

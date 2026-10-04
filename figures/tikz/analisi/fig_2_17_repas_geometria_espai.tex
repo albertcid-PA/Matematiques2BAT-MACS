@@ -35,15 +35,23 @@
     \draw[oculta] (.55,1.55)--(1.15,2.02)--(2.65,2.02);
     \draw[oculta] (1.15,2.02)--(1.15,3.52);
     \draw[cota] (.55,1.28)--(2.05,1.28);
-    \node[etiqueta] at (1.3,1.28) {$a$};
+    \node[etiqueta, fill=none] at (1.3,1.28) {$a$};
     \draw[cota] (2.3,1.55)--(2.3,3.05);
-    \node[etiqueta] at (2.3,2.3) {$h$};
-    \node[etiqueta] at (2.45,3.4) {$b$};
+    \node[etiqueta, fill=none] at (2.3,2.3) {$h$};
+    \node[etiqueta, fill=none] at (2.45,3.4) {$b$};
     \draw[fletxa] (2.95,2.55)--(3.48,2.55);
-    \foreach \x in {3.65,4.3,4.95,5.6}
-      \draw[figura] (\x,2.02) rectangle ++(.65,1.05);
-    \draw[base] (4.3,3.07) rectangle ++(.65,.68);
-    \draw[base] (4.3,1.34) rectangle ++(.65,.68);
+    \draw[figura] (3.55,2.02) rectangle ++(.55,1.08);
+    \draw[figura] (4.10,2.02) rectangle ++(.80,1.08);
+    \draw[figura] (4.90,2.02) rectangle ++(.55,1.08);
+    \draw[figura] (5.45,2.02) rectangle ++(.80,1.08);
+    \draw[base] (4.10,3.10) rectangle ++(.80,.55);
+    \draw[base] (4.10,1.47) rectangle ++(.80,.55);
+    \draw[cota] (3.34,2.02)--(3.34,3.10);
+    \node[etiqueta, fill=none] at (3.34,2.56) {$h$};
+    \draw[cota] (4.10,1.22)--(4.90,1.22);
+    \node[etiqueta, fill=none] at (4.50,1.22) {$a$};
+    \draw[cota] (5.08,3.10)--(5.08,3.65);
+    \node[etiqueta, fill=none] at (5.08,3.38) {$b$};
     \node[font=\small] at (3.5,.52)
       {$A_T=2(ab+ah+bh)\qquad V=abh$};
   \end{scope}
@@ -76,7 +84,7 @@
   % Piràmide regular
   \begin{scope}[shift={(0,5.35)}]
     \draw[panell] (0,0) rectangle (7,5);
-    \node[titol] at (3.5,4.66) {Piràmide regular};
+    \node[titol] at (3.5,4.66) {Piràmide regular de base quadrada};
     \node[subtitol] at (1.55,4.25) {Sòlid};
     \node[subtitol] at (5.3,4.25) {Desplegament};
     \coordinate (V) at (1.62,3.62);
@@ -90,7 +98,8 @@
     \draw[guia] (V)--(1.68,1.85);
     \draw[black!45] (1.68,1.85) rectangle ++(.13,.13);
     \node[etiqueta, left] at (1.68,2.72) {$h$};
-    \node[etiqueta] at (1.55,1.22) {$A_b$};
+    \node[etiqueta, fill=none] at (1.55,1.22) {$a$};
+    \node[etiqueta, fill=none] at (2.50,1.58) {$a$};
     \draw[fletxa] (3.02,2.55)--(3.55,2.55);
     \draw[base] (4.52,1.98) rectangle (5.58,3.04);
     \draw[figura] (4.52,3.04)--(5.05,3.85)--(5.58,3.04)--cycle;
@@ -99,8 +108,9 @@
     \draw[figura] (5.58,1.98)--(6.38,2.51)--(5.58,3.04)--cycle;
     \draw[guia] (5.05,3.04)--(5.05,3.85);
     \node[etiqueta, right] at (5.05,3.45) {$a_p$};
+    \node[etiqueta, fill=none] at (5.05,2.10) {$a$};
     \node[font=\small] at (3.5,.52)
-      {$A_T=A_b+\dfrac{P_ba_p}{2}\qquad V=\dfrac{A_bh}{3}$};
+      {$A_T=a^2+2aa_p\qquad V=\dfrac{a^2h}{3}$};
   \end{scope}
 
   % Con
