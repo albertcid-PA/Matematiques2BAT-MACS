@@ -485,24 +485,9 @@ $$
 |:--|:--|
 | **a)** $f(x)=\sqrt{x+4}$ | **b)** $g(x)=\log(x^2-4x+3)$ |
 
-#### Funcions amb valor absolut
-
-**2.23.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
-
-| | |
-|:--|:--|
-| **a)** $f(x)=x+\lvert x-2\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
-| **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
-
-**2.24.** Estudia i representa les funcions següents:
-
-| | |
-|:--|:--|
-| **a)** $f(x)=\lvert x^2-4x+3\rvert$ | **b)** $g(x)=\lvert -x^2+2x+8\rvert$ |
-
 #### Funcions irracionals, exponencials i logarítmiques
 
-**2.25.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
+**2.23.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
 
 - **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
 - **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.
@@ -512,6 +497,21 @@ $$
 - **f)** Per a $r(x)=x^2e^{-2x}$, estudia les branques a l'infinit, el creixement i els extrems.
 - **g)** Per a $s(x)=\dfrac{x^2}{\ln x}$, determina el domini, les asímptotes i els intervals de creixement i decreixement.
 - **h)** Per a $t(x)=\ln(x^2-9)$, estudia el domini, les asímptotes i els extrems.
+
+#### Funcions amb valor absolut
+
+**2.24.** Estudia i representa les funcions següents:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\lvert x^2-4x+3\rvert$ | **b)** $g(x)=\lvert -x^2+2x+8\rvert$ |
+
+**2.25.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=x+\lvert x-2\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
+| **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
 
 ### Exercicis de síntesi i preparació de la prova
 
