@@ -477,7 +477,7 @@ p(x)=
 \end{cases}
 $$
 
-#### Dominis
+#### Funcions irracionals, exponencials i logarítmiques
 
 **2.22.** Troba el domini de les funcions següents i expressa'l mitjançant intervals:
 
@@ -485,7 +485,7 @@ $$
 |:--|:--|
 | **a)** $f(x)=\sqrt{x+4}$ | **b)** $g(x)=\log(x^2-4x+3)$ |
 
-#### Funcions irracionals, exponencials i logarítmiques
+
 
 **2.23.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
 
