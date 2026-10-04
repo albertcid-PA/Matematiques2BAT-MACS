@@ -9,7 +9,7 @@ En els problemes d'optimització sovint cal expressar longituds, àrees o volums
 En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar el **perímetre**. En qualsevol figura poligonal, el perímetre és la **suma de les longituds de tots els costats**.
 
 <figure markdown="span">
-  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/analisi/fig_2_16_repas_geometria_plana.svg?v=5){ width="900" }
+  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/analisi/fig_2_16_repas_geometria_plana.svg?v=6){ width="900" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_16_repas_geometria_plana.tex">Figura 2.16.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
 </figure>
 
