@@ -36,11 +36,11 @@
 | Tipus de funció | Condició | Domini |
 |:---|:---|:---|
 | Polinòmica | No imposa cap restricció. | $D_f=\mathbb{R}$. |
-| Racional $\dfrac{P(x)}{Q(x)}$ | $Q(x)\neq0$. | $D_f=\{x\in\mathbb{R}\mid Q(x)\neq0\}$. |
-| Arrel d'índex parell $\sqrt[n]{g(x)}$ | $g(x)\geq0$. | $D_f=\{x\in D_g\mid g(x)\geq0\}$. |
-| Arrel d'índex senar $\sqrt[n]{g(x)}$ | No imposa cap restricció addicional. | $D_f=D_g$; si $D_g=\mathbb{R}$, aleshores $D_f=\mathbb{R}$. |
-| Logarítmica $\log_a(g(x))$ | $g(x)>0$, amb $a>0$ i $a\neq1$. | $D_f=\{x\in D_g\mid g(x)>0\}$. |
-| Exponencial $a^{g(x)}$ | No imposa cap restricció addicional, amb $a>0$ i $a\neq1$. | $D_f=D_g$; si $D_g=\mathbb{R}$, aleshores $D_f=\mathbb{R}$. |
+| Racional $\dfrac{P(x)}{Q(x)}$ | El denominador no pot ser zero: $Q(x)\neq0$. | $D_f=\mathbb{R}$ menys els zeros de $Q(x)$. |
+| Arrel d'índex parell $\sqrt[n]{g(x)}$ | El radicand ha de ser positiu o zero: $g(x)\geq0$. | Els valors de $x$ que compleixen $g(x)\geq0$. |
+| Arrel d'índex senar $\sqrt[n]{g(x)}$ | El radicand pot ser positiu, zero o negatiu. | $D_f=\mathbb{R}$ si $g(x)$ és polinòmica. |
+| Logarítmica $\log_a(g(x))$ | L'argument ha de ser positiu: $g(x)>0$, amb $a>0$ i $a\neq1$. | Els valors de $x$ que compleixen $g(x)>0$. |
+| Exponencial $a^{g(x)}$ | L'exponent pot ser qualsevol nombre real, amb $a>0$ i $a\neq1$. | $D_f=\mathbb{R}$ si $g(x)$ és polinòmica. |
 | Funció a trossos | Cal respectar l'interval i el domini de cada expressió. | $D_f$ és la unió dels dominis de tots els trossos. |
 
 !!! note "Recorda"
