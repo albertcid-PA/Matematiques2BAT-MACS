@@ -41,7 +41,7 @@
 | Arrel d'índex senar $\sqrt[n]{g(x)}$ | El radicand pot ser positiu, zero o negatiu. | $D_f=\mathbb{R}$ si $g(x)$ és polinòmica. |
 | Logarítmica $\log_a(g(x))$ | L'argument ha de ser positiu: $g(x)>0$, amb $a>0$ i $a\neq1$. | Els valors de $x$ que compleixen $g(x)>0$. |
 | Exponencial $a^{g(x)}$ | L'exponent pot ser qualsevol nombre real, amb $a>0$ i $a\neq1$. | $D_f=\mathbb{R}$ si $g(x)$ és polinòmica. |
-| Funció a trossos | Cal respectar l'interval i el domini de cada expressió. | $D_f$ és la unió dels dominis de tots els trossos. |
+| Funció a trossos | Cal respectar <u>l'interval</u> i el domini de cada expressió. | $D_f$ és la unió dels dominis de tots els trossos. |
 
 !!! note "Recorda"
     No es pot dividir entre zero. Tampoc es pot calcular, en els nombres reals, una arrel d'índex parell d'un nombre negatiu ni el logaritme d'un nombre menor o igual que zero.
