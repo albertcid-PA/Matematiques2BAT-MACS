@@ -33,15 +33,15 @@
 !!! abstract "Definició: domini"
     El **domini** és el conjunt de valors de $x$ per als quals la funció està definida.
 
-| Tipus de funció | Condició del domini |
-|:---|:---|
-| Polinòmica | $D_f=\mathbb{R}$. |
-| Racional $\dfrac{P(x)}{Q(x)}$ | $Q(x)\neq0$. |
-| Arrel d'índex parell $\sqrt[n]{g(x)}$ | $g(x)\geq0$. |
-| Arrel d'índex senar | No imposa cap restricció. |
-| Logarítmica $\log_a(g(x))$ | $g(x)>0$. |
-| Exponencial $a^{g(x)}$ | Està definida sempre que ho estigui $g(x)$. |
-| Funció a trossos | S'uneixen els dominis de cada expressió dins del seu interval. |
+| Tipus de funció | Condició | Domini |
+|:---|:---|:---|
+| Polinòmica | No imposa cap restricció. | $D_f=\mathbb{R}$. |
+| Racional $\dfrac{P(x)}{Q(x)}$ | $Q(x)\neq0$. | $D_f=\{x\in\mathbb{R}\mid Q(x)\neq0\}$. |
+| Arrel d'índex parell $\sqrt[n]{g(x)}$ | $g(x)\geq0$. | $D_f=\{x\in D_g\mid g(x)\geq0\}$. |
+| Arrel d'índex senar $\sqrt[n]{g(x)}$ | No imposa cap restricció addicional. | $D_f=D_g$; si $D_g=\mathbb{R}$, aleshores $D_f=\mathbb{R}$. |
+| Logarítmica $\log_a(g(x))$ | $g(x)>0$, amb $a>0$ i $a\neq1$. | $D_f=\{x\in D_g\mid g(x)>0\}$. |
+| Exponencial $a^{g(x)}$ | No imposa cap restricció addicional, amb $a>0$ i $a\neq1$. | $D_f=D_g$; si $D_g=\mathbb{R}$, aleshores $D_f=\mathbb{R}$. |
+| Funció a trossos | Cal respectar l'interval i el domini de cada expressió. | $D_f$ és la unió dels dominis de tots els trossos. |
 
 !!! note "Recorda"
     No es pot dividir entre zero. Tampoc es pot calcular, en els nombres reals, una arrel d'índex parell d'un nombre negatiu ni el logaritme d'un nombre menor o igual que zero.
