@@ -424,12 +424,12 @@ $$
 
 #### Funcions racionals
 
-**2.20.** Estudia i representa les funcions racionals següents. Determina també totes les asímptotes i la posició de la corba respecte de les asímptotes horitzontals o obliqües.
+**2.20.** Estudia i representa les funcions racionals següents. Determina també les asímptotes verticals i horitzontals i la posició de la corba respecte de les asímptotes horitzontals.
 
 | | |
 |:--|:--|
-| **a)** $f(x)=\dfrac{x^3}{4-x^2}$ | **b)** $f(x)=\dfrac{x^2-4}{x^2-1}$ |
-| **c)** $f(x)=\dfrac{x^2+x-6}{x}$ | **d)** $f(x)=\dfrac{x^3+x}{x^2-4}$ |
+| **a)** $f(x)=\dfrac{x^2-1}{x^2-x-2}$ | **b)** $f(x)=\dfrac{x^2-4}{x^2-1}$ |
+| **c)** $f(x)=\dfrac{x^2+x-6}{x^2-4}$ | **d)** $f(x)=\dfrac{x^2+x}{x^2-4}$ |
 | **e)** $f(x)=\dfrac{1}{(x+1)(x-2)}$ | **f)** $f(x)=\dfrac{x+2}{x(x-1)(x+3)}$ |
 | **g)** $f(x)=\dfrac{6-2x}{x(x-3)}$ | |
 
@@ -504,6 +504,48 @@ $$
 - **f)** Per a $r(x)=x^2e^{-2x}$, estudia les branques a l'infinit, el creixement i els extrems.
 - **g)** Per a $s(x)=\dfrac{x^2}{\ln x}$, determina el domini, les asímptotes i els intervals de creixement i decreixement.
 - **h)** Per a $t(x)=\ln(x^2-9)$, estudia el domini, les asímptotes i els extrems.
+
+### Exercicis de síntesi i preparació de la prova
+
+**2.25.** Calcula la derivada de cadascuna de les funcions següents. Simplifica el resultat quan sigui possible.
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^4}{4}+3x^{5/2}-2$ | **b)** $g(x)=\sqrt[3]{x^4}-\dfrac{2}{x^2}$ |
+| **c)** $h(x)=2^x+\log_3 x$ | **d)** $p(x)=x^3\left(2x+e^x\right)$ |
+| **e)** $q(x)=\ln(2x^2+7)$ | **f)** $r(x)=e^{(x^2-1)^3}$ |
+
+**2.26.** Fes l'estudi complet de la funció
+
+$$
+f(x)=\frac{3x^2-6}{x^2-9}.
+$$
+
+Determina'n el domini, els talls amb els eixos, les asímptotes verticals i horitzontals, els límits laterals, els extrems relatius i els intervals de creixement i decreixement. Finalment, fes-ne un esbós.
+
+**2.27.** Considera la funció
+
+$$
+g(x)=\frac{e^x}{x-1}.
+$$
+
+Troba les asímptotes verticals i horitzontals, calcula els límits laterals en els punts que no pertanyen al domini, deriva la funció i estudia'n la monotonia i els extrems relatius. Fes-ne un esbós amb la informació obtinguda.
+
+**2.28.** Considera la funció
+
+$$
+p(x)=\lvert x-1\rvert+\lvert 2x+4\rvert.
+$$
+
+- **a)** Construeix una taula de signes per a les expressions interiors dels valors absoluts.
+- **b)** Escriu $p$ com una funció a trossos.
+- **c)** Indica en quins punts no és derivable i representa-la.
+
+**2.29.** Troba el domini de les funcions següents i expressa'l mitjançant intervals:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\sqrt{x+4}$ | **b)** $g(x)=\log(x^2-4x+3)$ |
 
 ### Optimització
 
