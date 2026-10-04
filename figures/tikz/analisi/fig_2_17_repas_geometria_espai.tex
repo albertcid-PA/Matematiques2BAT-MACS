@@ -93,8 +93,7 @@
     \coordinate (C) at (2.18,2.48);
     \coordinate (D) at (.82,2.48);
     \draw[base] (A)--(B)--(C)--(D)--cycle;
-    \draw[aresta] (V)--(A) (V)--(B);
-    \draw[oculta] (V)--(C) (V)--(D);
+    \draw[aresta] (V)--(A) (V)--(B) (V)--(C) (V)--(D);
     \draw[guia] (V)--(1.50,1.80);
     \draw[black!45] (1.50,1.80) rectangle ++(.13,.13);
     \node[etiqueta, left] at (1.50,2.72) {$h$};
