@@ -500,18 +500,18 @@ $$
 
 #### Funcions amb valor absolut
 
-**2.24.** Estudia i representa les funcions següents:
+**2.24.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
+
+| | |
+|:--|:--|
+| **a)** $f(x)=\lvert 2x-6\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
+| **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
+
+**2.25.** Estudia i representa les funcions següents:
 
 | | |
 |:--|:--|
 | **a)** $f(x)=\lvert x^2-4x+3\rvert$ | **b)** $g(x)=\lvert -x^2+2x+8\rvert$ |
-
-**2.25.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
-
-| | |
-|:--|:--|
-| **a)** $f(x)=x+\lvert x-2\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
-| **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
 
 ### Exercicis de síntesi i preparació de la prova
 
@@ -551,5 +551,199 @@ $$
 
 ### Optimització
 
-!!! note "En preparació"
-    Aquí incorporarem problemes contextualitzats i exercicis de PAU recents.
+En cada problema, defineix les variables, escriu la restricció, construeix una funció objectiu d'una sola variable i determina'n el domini. Després, calcula'n els candidats a extrem, comprova si donen un màxim o un mínim i interpreta el resultat amb les unitats corresponents.
+
+#### Geometria plana
+
+**2.30. Hort urbà al costat d'un mur.** Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo.
+
+- **a)** Anomena $x$ la longitud de cadascun dels costats perpendiculars al mur i $y$ la del costat paral·lel. Escriu la restricció que relaciona $x$ i $y$.
+- **b)** Expressa l'àrea de l'hort només en funció de $x$ i indica el domini físic de la variable.
+- **c)** Calcula les dimensions que fan màxima l'àrea i determina aquesta àrea màxima.
+- **d)** Comprova el màxim mitjançant el signe de la derivada o la derivada segona.
+
+**2.31. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre.
+
+- **a)** Si $x$ és l'amplària i $y$ l'altura, expressa $y$ en funció de $x$.
+- **b)** Troba la funció que dona el cost total del perfil en funció de $x$ i indica'n el domini.
+- **c)** Calcula les dimensions de l'aparador perquè el cost sigui mínim.
+- **d)** Determina el cost mínim del perfil.
+
+#### Geometria a l'espai
+
+**2.32. Llauna cilíndrica.** Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$.
+
+- **a)** Escriu la restricció que relaciona el radi $r$ i l'altura $h$.
+- **b)** Expressa el volum $V$ només en funció de $r$ i indica els valors admissibles de $r$.
+- **c)** Calcula el radi i l'altura que fan màxim el volum.
+- **d)** Determina el volum màxim de la llauna.
+
+**2.33. Recipient cònic.** Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
+
+$$
+r^2+h^2=15^2.
+$$
+
+- **a)** Expressa $h$ en funció de $r$ i determina el domini físic de $r$.
+- **b)** Escriu el volum del con com una funció de $r$.
+- **c)** Troba el radi i l'altura perquè la capacitat sigui màxima.
+- **d)** Calcula la capacitat màxima i comprova que la solució correspon a un màxim.
+
+#### Temps mínim
+
+**2.34. Rescat a la platja.** Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
+
+El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. Anomena $x=OP$.
+
+- **a)** Justifica que la distància recorreguda corrent és $100-x$ i que la distància nedada és $\sqrt{x^2+60^2}$.
+- **b)** Escriu la funció $T(x)$ que dona el temps total del rescat i indica'n el domini.
+- **c)** Determina on ha de començar a nedar perquè el temps sigui mínim.
+- **d)** Calcula el temps mínim i compara'l amb els temps corresponents a $x=0$ i $x=100$.
+
+#### Ingressos i beneficis
+
+**2.35. Entrades d'un espectacle.** Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$.
+
+- **a)** Si $x$ és el nombre d'euros que s'augmenta el preu inicial, expressa el preu i el nombre d'entrades venudes en funció de $x$.
+- **b)** Construeix la funció de benefici $B(x)$ i determina el domini que té sentit en el context.
+- **c)** Troba el preu que proporciona el benefici màxim.
+- **d)** Calcula el nombre d'entrades venudes i el benefici màxim.
+
+**2.36. Producció d'una cooperativa.** El cost de produir $x$ unitats d'un article és
+
+$$
+C(x)=0{,}03x^2+4x+180,
+$$
+
+i el preu de venda de cada unitat depèn de la producció segons
+
+$$
+p(x)=50-0{,}04x.
+$$
+
+La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fabricades.
+
+- **a)** Escriu la funció d'ingressos $I(x)$.
+- **b)** Obté la funció de benefici $B(x)=I(x)-C(x)$.
+- **c)** Determina la producció que maximitza el benefici si $x$ es considera una variable real.
+- **d)** Com que només es poden fabricar unitats senceres, compara els dos enters més propers i dona la decisió final.
+
+#### Cost mitjà
+
+**2.37. Cost mitjà de fabricació.** El cost total, en euros, de fabricar $x$ unitats d'un producte és
+
+$$
+C(x)=0{,}4x^2+12x+3.600, \qquad x>0.
+$$
+
+- **a)** Escriu la funció de cost mitjà per unitat $C_m(x)=\dfrac{C(x)}{x}$.
+- **b)** Determina quina producció fa mínim el cost mitjà si $x$ es considera una variable real.
+- **c)** Decideix quantes unitats s'han de fabricar si la producció ha de ser entera.
+- **d)** Calcula el cost mitjà mínim aproximat.
+
+#### Optimització d'una funció a trossos
+
+**2.38. Campanya publicitària.** Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
+
+$$
+B(x)=
+\begin{cases}
+-x^2+8x+20, & 0\leq x\leq4,\\[4pt]
+-2x^2+20x-12, & 4<x\leq8.
+\end{cases}
+$$
+
+- **a)** Estudia la continuïtat i la derivabilitat del model en el punt on canvia l'expressió.
+- **b)** Troba tots els candidats a extrem, inclosos els extrems del domini i el punt d'unió.
+- **c)** Construeix una taula de monotonia i determina quina inversió proporciona el benefici màxim i quin és aquest benefici.
+- **d)** Representa gràficament la funció i interpreta el resultat en el context del problema.
+
+### Problemes tipus PAU
+
+En aquests problemes cal justificar els passos, escriure els resultats amb les unitats corresponents i interpretar-los dins del context. La indicació de la convocatòria permet identificar el model en què es basa cada exercici.
+
+**2.39. Evolució dels seguidors d'un divulgador** *(basat en l'exercici 1 de la convocatòria ordinària de 2026, sèrie 1)*. Un metge comença a divulgar continguts sobre salut a les xarxes socials. El nombre de seguidors que té al cap de $t$ setmanes és
+
+$$
+f(t)=10t^3-120t^2+450t+700, \qquad t\in[0,10].
+$$
+
+- **a)** Calcula quants seguidors té inicialment i al cap de deu setmanes.
+- **b)** Estudia els intervals de creixement i decreixement i determina els extrems relatius.
+- **c)** Fes un esbós de la gràfica utilitzant la informació obtinguda.
+- **d)** Interpreta en quin moment publica un vídeo polèmic que provoca una pèrdua de seguidors i en quin moment publica un vídeo d'èxit a partir del qual torna a créixer.
+- **e)** Determina en quin instant assoleix el nombre màxim absolut de seguidors durant les deu setmanes i calcula aquest nombre.
+
+**2.40. Demanda d'un accessori tecnològic** *(basat en l'exercici 1 de la convocatòria extraordinària de 2026, sèrie 2)*. La demanda setmanal d'un accessori tecnològic depèn del seu preu $p$, expressat en euros, segons
+
+$$
+d(p)=500-10p-p^2, \qquad 0<p<15.
+$$
+
+Els ingressos setmanals són $I(p)=p\,d(p)$.
+
+- **a)** Escriu i simplifica la funció $I(p)$.
+- **b)** Determina el preu que maximitza els ingressos setmanals.
+- **c)** Calcula la demanda corresponent i els ingressos màxims.
+- **d)** L'elasticitat de la demanda respecte del preu es defineix, per a aquest exercici, com
+
+$$
+E(p)=-\frac{p\,d'(p)}{d(p)}.
+$$
+
+Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i quan és de $10\,€$. No cal memoritzar aquesta fórmula.
+
+**2.41. Microorganismes en una mostra** *(basat en l'exercici 3 de la convocatòria ordinària de 2025, sèrie 4)*. El nombre de microorganismes vius d'una mostra de laboratori, mesurat en desenes, és
+
+$$
+f(x)=\frac{15x}{9+x^2}+k, \qquad x\geq0,
+$$
+
+on $x$ és el temps transcorregut, en hores.
+
+- **a)** Determina $k$ sabent que inicialment hi havia $50$ microorganismes.
+- **b)** Troba l'instant en què el nombre de microorganismes és màxim i calcula aquest màxim.
+- **c)** Calcula el límit quan $x\to+\infty$ i interpreta el resultat en el context.
+- **d)** Fes un esbós de la gràfica tenint en compte el valor inicial, el màxim i el comportament a llarg termini.
+
+**2.42. Tarifes de dues companyies de taxi** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
+
+$$
+g(x)=0{,}01x^2+0{,}1x+10,
+$$
+
+on $x\geq0$ és la distància recorreguda en quilòmetres.
+
+- **a)** Escriu la funció $f(x)$ que dona el preu de la companyia A.
+- **b)** Compara el preu de les dues companyies per a un recorregut de $10\,\text{km}$ i per a un de $80\,\text{km}$.
+- **c)** Interpreta el valor $g(0)$ i determina si la companyia B cobra un cost fix.
+- **d)** Calcula la distància positiva per a la qual les dues tarifes coincideixen.
+- **e)** Considerant només els trajectes des de $0\,\text{km}$ fins a la distància trobada, determina quan és màxima la diferència de preu entre les dues tarifes i calcula aquesta diferència.
+
+**2.43. Tarifa d'una empresa de paqueteria** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
+
+- fins a $2\,\text{kg}$, el preu és fix i val $30\,€$;
+- si el paquet pesa més de $2\,\text{kg}$ però menys d'$11\,\text{kg}$, els primers $2\,\text{kg}$ costen $15\,€$ per quilogram i la resta, $12\,€$ per quilogram;
+- si pesa entre $11\,\text{kg}$ i $25\,\text{kg}$, ambdós inclosos, els primers $11\,\text{kg}$ costen $13\,€$ per quilogram i la resta, $15\,€$ per quilogram.
+
+- **a)** Calcula el preu d'enviar un paquet de $9{,}5\,\text{kg}$ i un de $13\,\text{kg}$.
+- **b)** Construeix la funció a trossos $P(x)$ que dona el preu de l'enviament en funció del pes $x$.
+- **c)** Estudia la continuïtat de $P$ en els punts on canvia la tarifa i classifica les discontinuïtats, si n'hi ha.
+- **d)** Representa gràficament la funció per a $0<x\leq25$.
+- **e)** Si un enviament ha costat $162\,€$, calcula el pes del paquet i comprova a quin tram pertany la solució.
+
+**2.44. Evolució del preu d'un producte** *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
+
+$$
+P(t)=
+\begin{cases}
+5(t+1)^2-5, & 0\leq t\leq2,\\[4pt]
+-4t+48, & 2<t\leq10.
+\end{cases}
+$$
+
+- **a)** Estudia la continuïtat de la funció en el punt d'unió.
+- **b)** Determina els intervals en què el preu va créixer i aquells en què va disminuir.
+- **c)** Calcula el preu màxim assolit i l'any en què es va assolir.
+- **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
+- **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
