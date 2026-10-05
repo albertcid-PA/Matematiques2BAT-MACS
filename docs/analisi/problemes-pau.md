@@ -1,6 +1,6 @@
 # Problemes PAU d'anàlisi
 
-Aquest recull conté problemes d'anàlisi basats directament en les PAU de Catalunya del període **2020–2026**. Estan agrupats per contingut i cada enunciat indica l'any, la convocatòria i la sèrie de procedència.
+Aquest recull conté problemes d'anàlisi procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials** del període **2020–2026**. Estan agrupats per contingut i cada enunciat indica l'any, la convocatòria i la sèrie de procedència. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*.
 
 En tots els problemes cal justificar els passos, escriure els resultats amb les unitats corresponents i interpretar-los dins del context. Per practicar separadament cada tècnica, consulta els [exercicis dels temes 1 i 2](exercicis.md).
 
@@ -139,3 +139,18 @@ $$
 - **c)** Calcula el preu màxim assolit i l'any en què es va assolir.
 - **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
 - **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
+
+!!! info "Recursos per continuar practicant"
+
+    **PAU de Catalunya**
+
+    - [Examenselectivitat — Matemàtiques CC.SS.](https://examenselectivitat.cat/selectivitat/Matem%C3%A0tiques%20CC.SS./): problemes classificats per temes.
+    - [Selecat](https://www.selecat.cat/): exàmens classificats per anys i convocatòries.
+    - [Canal Universitats](https://universitats.gencat.cat/ca/pau/models-examen-anys-anteriors/matematiques-aplicades-cc/): models d'examen i criteris de correcció oficials.
+
+    **Proves d'altres comunitats**
+
+    - [Toomates](https://www.toomates.net/): recopilatoris de proves PAU de diferents comunitats.
+    - [Exámenes de PAU](https://www.examenesdepau.com/): cercador de proves per comunitat, assignatura, any i convocatòria.
+
+    Les proves d'altres comunitats són útils per practicar, però els continguts, l'estructura i els criteris de correcció poden diferir dels de les PAU de Catalunya.
