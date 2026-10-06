@@ -19,15 +19,15 @@ $$
 $$
 
 <figure markdown="span">
-  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../img/analisi/fig_1_5_exercici_limits_dues_grafiques.svg){ width="850" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_1_5_exercici_limits_dues_grafiques.tex">Figura 1.5.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
+  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../img/calcul/fig_1_5_exercici_limits_dues_grafiques.svg){ width="850" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_5_exercici_limits_dues_grafiques.tex">Figura 1.5.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
 </figure>
 
 **1.2.** A partir de la gràfica, calcula els valors següents:
 
 <figure markdown="span">
-  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../img/analisi/fig_1_6_exercici_lectura_limits.svg){ width="820" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_1_6_exercici_lectura_limits.tex">Figura 1.6.</a></strong> Gràfica de l'exercici 1.2.</figcaption>
+  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../img/calcul/fig_1_6_exercici_lectura_limits.svg){ width="820" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_6_exercici_lectura_limits.tex">Figura 1.6.</a></strong> Gràfica de l'exercici 1.2.</figcaption>
 </figure>
 
 | | | |
@@ -244,8 +244,8 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 **2.1.** Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
 
 <figure markdown="span">
-  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/analisi/fig_2_18_exercici_punts_no_derivables.svg){ width="920" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_18_exercici_punts_no_derivables.tex">Figura 2.18.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/calcul/fig_2_18_exercici_punts_no_derivables.svg){ width="920" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_18_exercici_punts_no_derivables.tex">Figura 2.18.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
 </figure>
 
 **2.2.** La figura representa una funció $y=f(x)$.
@@ -254,8 +254,8 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 - **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
 
 <figure markdown="span">
-  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/analisi/fig_2_19_exercici_derivades_grafica.svg){ width="700" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_19_exercici_derivades_grafica.tex">Figura 2.19.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/calcul/fig_2_19_exercici_derivades_grafica.svg){ width="700" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_19_exercici_derivades_grafica.tex">Figura 2.19.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
 </figure>
 
 #### Estudi en els punts d'unió

@@ -9,8 +9,8 @@ En els problemes d'optimització sovint cal expressar longituds, àrees o volums
 En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar el **perímetre**. En qualsevol figura poligonal, el perímetre és la **suma de les longituds de tots els costats**.
 
 <figure markdown="span">
-  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/analisi/fig_2_16_repas_geometria_plana.svg?v=7){ width="900" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_16_repas_geometria_plana.tex">Figura 2.16.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
+  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/calcul/fig_2_16_repas_geometria_plana.svg?v=7){ width="900" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_16_repas_geometria_plana.tex">Figura 2.16.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
 </figure>
 
 | Figura | Àrea | Perímetre |
@@ -29,8 +29,8 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ per indicar el **volum**. L'àrea total és la suma de les àrees de totes les superfícies que formen el cos.
 
 <figure markdown="span">
-  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/analisi/fig_2_17_repas_geometria_espai.svg?v=11){ width="960" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
+  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/calcul/fig_2_17_repas_geometria_espai.svg?v=11){ width="960" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
 </figure>
 
 | Cos geomètric | Àrea total | Volum |
@@ -209,8 +209,8 @@ Si hi ha diversos candidats o extrems del domini, calcula el valor de $F$ en cad
     - $y$: altura de la capsa, en centímetres.
 
     <figure markdown="span">
-      ![Capsa oberta de base quadrada amb el costat x i l'altura y](../../img/analisi/fig_2_20_capsa_oberta.svg?v=6){ width="520" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_20_capsa_oberta.tex">Figura 2.20.</a></strong> Variables de la capsa de base quadrada i sense tapa.</figcaption>
+      ![Capsa oberta de base quadrada amb el costat x i l'altura y](../../img/calcul/fig_2_20_capsa_oberta.svg?v=6){ width="520" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_20_capsa_oberta.tex">Figura 2.20.</a></strong> Variables de la capsa de base quadrada i sense tapa.</figcaption>
     </figure>
 
 
@@ -494,8 +494,8 @@ Si hi ha diversos candidats o extrems del domini, calcula el valor de $F$ en cad
     Com que $f(x)$ està expressada en desenes de persones, el model preveu que, amb el pas del temps, el nombre setmanal de visitants **s'aproximarà a zero**. Això no vol dir que en una setmana concreta hagi de ser exactament zero, sinó que l'afluència prevista serà cada vegada més petita.
 
     <figure markdown="span">
-      ![Gràfica del nombre setmanal de visitants amb un màxim a la segona setmana](../../img/analisi/fig_2_21_visitants_exposicio.svg?v=1){ width="700" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_21_visitants_exposicio.tex">Figura 2.21.</a></strong> Evolució prevista del nombre setmanal de visitants, expressat en desenes de persones.</figcaption>
+      ![Gràfica del nombre setmanal de visitants amb un màxim a la segona setmana](../../img/calcul/fig_2_21_visitants_exposicio.svg?v=1){ width="700" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_21_visitants_exposicio.tex">Figura 2.21.</a></strong> Evolució prevista del nombre setmanal de visitants, expressat en desenes de persones.</figcaption>
     </figure>
 ### 3.3 Benefici màxim d'una empresa de joguines
 
@@ -675,8 +675,8 @@ Si hi ha diversos candidats o extrems del domini, calcula el valor de $F$ en cad
     - Entre $10$ i $18$ milers de nines, el benefici **decreix** fins a $20$ milers d'euros.
 
     <figure markdown="span">
-      ![Gràfica del benefici de Joguines Pallaresos en funció dels milers de nines](../../img/analisi/fig_2_22_benefici_empresa.svg?v=3){ width="700" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_22_benefici_empresa.tex">Figura 2.22.</a></strong> Benefici en funció dels milers de nines fabricades.</figcaption>
+      ![Gràfica del benefici de Joguines Pallaresos en funció dels milers de nines](../../img/calcul/fig_2_22_benefici_empresa.svg?v=3){ width="700" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_22_benefici_empresa.tex">Figura 2.22.</a></strong> Benefici en funció dels milers de nines fabricades.</figcaption>
     </figure>
 
 ### 3.4 Contractació de venedors i ingressos màxims
@@ -806,8 +806,8 @@ Si hi ha diversos candidats o extrems del domini, calcula el valor de $F$ en cad
     Per tant, la secció ha de tenir **$18$ venedors en total** i obtindrà uns ingressos mensuals màxims de **$64\,800$ €**.
 
     <figure markdown="span">
-      ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/analisi/fig_2_23_ingressos_venedors.svg?v=1){ width="700" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_23_ingressos_venedors.tex">Figura 2.23.</a></strong> Ingressos mensuals en funció del nombre de venedors nous contractats.</figcaption>
+      ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/calcul/fig_2_23_ingressos_venedors.svg?v=1){ width="700" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_23_ingressos_venedors.tex">Figura 2.23.</a></strong> Ingressos mensuals en funció del nombre de venedors nous contractats.</figcaption>
     </figure>
 
 ### 3.5 Estudi i optimització d'una funció a trossos
@@ -999,8 +999,8 @@ Si hi ha diversos candidats o extrems del domini, calcula el valor de $F$ en cad
     **Apartat f. Representem la funció**
 
     <figure markdown="span">
-      ![Gràfica del preu d'un producte definit mitjançant una funció a trossos](../../img/analisi/fig_2_24_preu_producte_trossos.svg?v=1){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_24_preu_producte_trossos.tex">Figura 2.24.</a></strong> Evolució del preu del producte, expressat en centenars d'euros.</figcaption>
+      ![Gràfica del preu d'un producte definit mitjançant una funció a trossos](../../img/calcul/fig_2_24_preu_producte_trossos.svg?v=1){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_24_preu_producte_trossos.tex">Figura 2.24.</a></strong> Evolució del preu del producte, expressat en centenars d'euros.</figcaption>
     </figure>
 
     **Apartat g. Estudiem el comportament a llarg termini**
