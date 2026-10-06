@@ -50,7 +50,7 @@ nav = [
   ] },
   { "Preparació d'exàmens" = [
     { "Índex" = "preparacio-examens/index.md" },
-    { "PP1.1" = "preparacio-examens/pp1-1.md" },
+    { "Prova parcial del 1r trimestre núm. 1: Càlcul" = "preparacio-examens/pp1-1.md" },
   ] },
 ]
 
@@ -72,7 +72,6 @@ features = [
   "content.footnote.tooltips",
   "navigation.footer",
   "navigation.indexes",
-  "navigation.instant",
   "navigation.path",
   "navigation.sections",
   "navigation.tabs",
