@@ -20,7 +20,7 @@
     1. Determinar el **domini**, tenint en compte els denominadors, les arrels d'índex parell i els logaritmes.
     2. Trobar el tall amb l'eix $Y$ calculant $f(0)$.
     3. Trobar els talls amb l'eix $X$ resolent $f(x)=0$.
-    4. Buscar les **asímptotes verticals** als extrems finits del domini mitjançant els límits laterals.
+    4. Estudiar amb límits laterals els punts exclosos del domini —els zeros del denominador en les funcions racionals i els extrems del domini en les logarítmiques— per determinar si hi ha **asímptotes verticals** o **discontinuïtats evitables**.
     5. Estudiar les altres **discontinuïtats**, especialment en funcions a trossos, i classificar-les.
     6. Calcular els límits quan $x\to-\infty$ i $x\to+\infty$ per trobar asímptotes horitzontals o branques infinites.
     7. Localitzar els candidats a **extrem relatiu** resolent $f'(x)=0$ i considerant els punts on $f'$ no existeix.
