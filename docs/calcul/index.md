@@ -12,6 +12,6 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 - [**Exercicis per temes**](exercicis.md) — col·lecció completa d'exercicis de càlcul i optimització, agrupats segons la teoria.
 - [**Problemes PAU**](problemes-pau.md) — problemes de càlcul de convocatòries reals i d'entrenament de tipus PAU, agrupats per contingut.
 
-## Preparació del primer examen
+## Preparació de la PP1.1
 
-- [**Derivades i representació de funcions**](../preparacio-examens/01_derivades-representacio.md) — recorregut de preparació de la prova, amb tot el bloc de càlcul excepte optimització i problemes PAU.
+- [**PP1.1**](../preparacio-examens/pp1-1.md) — recorregut de preparació de la prova, amb tot el bloc de càlcul excepte optimització i problemes PAU.

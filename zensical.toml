@@ -27,10 +27,6 @@ nav = [
       { "Problemes PAU" = "calcul/problemes-pau.md" },
     ] },
   ] },
-  { "Preparació d'exàmens" = [
-    { "Índex" = "preparacio-examens/index.md" },
-    { "Primer examen" = "preparacio-examens/01_derivades-representacio.md" },
-  ] },
   { "Àlgebra lineal" = [
     { "Introducció" = "algebra-lineal/index.md" },
     { "3. Sistemes i mètode de Gauss" = "algebra-lineal/sistemes-gauss/index.md" },
@@ -51,6 +47,10 @@ nav = [
       { "Exercicis dels temes 5, 6 i 7" = "probabilitat-estadistica/exercicis.md" },
       { "Problemes PAU" = "probabilitat-estadistica/problemes-pau.md" },
     ] },
+  ] },
+  { "Preparació d'exàmens" = [
+    { "Índex" = "preparacio-examens/index.md" },
+    { "PP1.1" = "preparacio-examens/pp1-1.md" },
   ] },
 ]
 

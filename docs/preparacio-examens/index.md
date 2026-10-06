@@ -6,7 +6,7 @@ En aquest bloc trobaràs, per a cada examen, el **temari que entra**, un **itine
 
 | Prova | Continguts | Preparació |
 |:--|:--|:--|
-| **Primer examen** | Límits, derivades, derivabilitat, monotonia, extrems i representació de funcions. | [Comença la preparació](01_derivades-representacio.md) |
+| **PP1.1** | Límits, derivades, derivabilitat, monotonia, extrems i representació de funcions. | [Comença la preparació](pp1-1.md) |
 
 !!! note "Com has de treballar"
     Resol els exercicis **en paper i mostrant tots els passos**. Consulta la teoria o demana una pista només després d'haver intentat plantejar el problema.
