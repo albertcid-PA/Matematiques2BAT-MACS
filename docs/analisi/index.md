@@ -10,4 +10,4 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 ## Per practicar
 
 - [**Exercicis per temes**](exercicis.md) — col·lecció completa d'exercicis d'anàlisi i optimització, agrupats segons la teoria.
-- [**Problemes PAU 2020–2026**](problemes-pau.md) — problemes d'anàlisi de convocatòries reals, agrupats per contingut i identificats amb l'any i la sèrie.
+- [**Problemes PAU**](problemes-pau.md) — problemes d'anàlisi de convocatòries reals, agrupats per contingut i identificats amb l'any i la sèrie.

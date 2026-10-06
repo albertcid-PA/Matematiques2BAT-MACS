@@ -24,7 +24,7 @@ nav = [
     { "Per practicar" = [
       { "Índex" = "analisi/per-practicar/index.md" },
       { "Exercicis per temes" = "analisi/exercicis.md" },
-      { "Problemes PAU 2020–2026" = "analisi/problemes-pau.md" },
+      { "Problemes PAU" = "analisi/problemes-pau.md" },
     ] },
   ] },
   { "Àlgebra lineal" = [

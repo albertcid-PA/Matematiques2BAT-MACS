@@ -659,4 +659,4 @@ $$
 - **d)** Representa gràficament la funció i interpreta el resultat en el context del problema.
 
 !!! info "Preparació de les PAU"
-    Continua amb el recull de [problemes PAU d'anàlisi](problemes-pau.md), ordenat per continguts i amb exercicis de totes les convocatòries del període 2020–2026.
+    Continua amb el recull de [problemes PAU d'anàlisi](problemes-pau.md), ordenat per continguts i amb exercicis de convocatòries reals.

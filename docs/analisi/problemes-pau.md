@@ -1,6 +1,6 @@
 # Problemes PAU d'anàlisi
 
-Aquest recull conté problemes d'anàlisi procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials** del període **2020–2026**. Estan agrupats per contingut i cada enunciat indica l'any, la convocatòria i la sèrie de procedència. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*.
+Aquest recull conté problemes d'anàlisi procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials**. Estan agrupats per contingut i cada enunciat indica l'any, la convocatòria i la sèrie de procedència. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*.
 
 En tots els problemes cal justificar els passos, escriure els resultats amb les unitats corresponents i interpretar-los dins del context. Per practicar separadament cada tècnica, consulta els [exercicis dels temes 1 i 2](exercicis.md).
 
