@@ -58,11 +58,13 @@ El punt és $(0,f(0))$, sempre que $0$ pertanyi al domini.
 
 ### Pas 3. Talls amb l'eix d'abscisses
 
-Per trobar els talls amb l'eix $X$, imposem $y=0$ i resolem
+Per trobar els talls amb l'eix $X$, imposem $y=0$ i resolem:
 
 $$
 f(x)=0.
 $$
+
+Cada solució $x=a$ que pertanyi al domini dona un punt de tall $(a,0)$. Una funció pot tenir **diversos talls** amb l'eix $X$ o no tenir-ne cap.
 
 En una funció racional, els zeros són els del numerador que també pertanyen al domini.
 
