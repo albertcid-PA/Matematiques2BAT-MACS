@@ -8,23 +8,23 @@ repo_name = "albertcid-PA/Matematiques2BAT-MACS"
 nav = [
   { "Inici" = "index.md" },
   { "Càlcul" = [
-    { "Introducció" = "analisi/index.md" },
+    { "Introducció" = "calcul/index.md" },
     { "1. Repàs de límits i derivades" = [
-      { "Índex" = "analisi/repas-limits-derivades/index.md" },
-      { "Repàs de límits" = "analisi/repas-limits-derivades/01_limits.md" },
-      { "Repàs de derivades" = "analisi/repas-limits-derivades/02_derivades.md" },
+      { "Índex" = "calcul/repas-limits-derivades/index.md" },
+      { "Repàs de límits" = "calcul/repas-limits-derivades/01_limits.md" },
+      { "Repàs de derivades" = "calcul/repas-limits-derivades/02_derivades.md" },
     ] },
     { "2. Aplicacions de les derivades" = [
-      { "Índex" = "analisi/aplicacions-derivades/index.md" },
-      { "Derivabilitat" = "analisi/aplicacions-derivades/01_derivabilitat.md" },
-      { "Creixement i extrems" = "analisi/aplicacions-derivades/02_creixement-extrems.md" },
-      { "Representació de funcions" = "analisi/aplicacions-derivades/03_representacio-funcions.md" },
-      { "Optimització" = "analisi/aplicacions-derivades/04_optimitzacio.md" },
+      { "Índex" = "calcul/aplicacions-derivades/index.md" },
+      { "Derivabilitat" = "calcul/aplicacions-derivades/01_derivabilitat.md" },
+      { "Creixement i extrems" = "calcul/aplicacions-derivades/02_creixement-extrems.md" },
+      { "Representació de funcions" = "calcul/aplicacions-derivades/03_representacio-funcions.md" },
+      { "Optimització" = "calcul/aplicacions-derivades/04_optimitzacio.md" },
     ] },
     { "Per practicar" = [
-      { "Índex" = "analisi/per-practicar/index.md" },
-      { "Exercicis per temes" = "analisi/exercicis.md" },
-      { "Problemes PAU" = "analisi/problemes-pau.md" },
+      { "Índex" = "calcul/per-practicar/index.md" },
+      { "Exercicis per temes" = "calcul/exercicis.md" },
+      { "Problemes PAU" = "calcul/problemes-pau.md" },
     ] },
   ] },
   { "Àlgebra lineal" = [

@@ -57,8 +57,8 @@ $$
 $$
 
 <figure markdown="span">
-  ![Comparació gràfica entre un punt suau, on les derivades laterals coincideixen, i un punt angulós, on són diferents](../../img/analisi/fig_2_1_derivades_laterals.svg){ width="900" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_1_derivades_laterals.tex">Figura 2.1.</a></strong> Derivades laterals en un punt suau i en un punt angulós.</figcaption>
+  ![Comparació gràfica entre un punt suau, on les derivades laterals coincideixen, i un punt angulós, on són diferents](../../img/calcul/fig_2_1_derivades_laterals.svg){ width="900" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_1_derivades_laterals.tex">Figura 2.1.</a></strong> Derivades laterals en un punt suau i en un punt angulós.</figcaption>
 </figure>
 
 En el primer gràfic, la pendent s'apropa al mateix valor des dels dos costats: la funció és derivable en $a$. En el segon, les pendents laterals són diferents: la funció és contínua, però no és derivable en $a$.
@@ -76,8 +76,8 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 | Discontinuïtat | No es compleixen les tres condicions de continuïtat. | No |
 
 <figure markdown="span">
-  ![Tres situacions en què una funció no és derivable: discontinuïtat, cúspide i tangent vertical](../../img/analisi/fig_2_2_casos_no_derivables.svg){ width="960" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_2_casos_no_derivables.tex">Figura 2.2.</a></strong> Casos en què una funció no és derivable.</figcaption>
+  ![Tres situacions en què una funció no és derivable: discontinuïtat, cúspide i tangent vertical](../../img/calcul/fig_2_2_casos_no_derivables.svg){ width="960" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_2_casos_no_derivables.tex">Figura 2.2.</a></strong> Casos en què una funció no és derivable.</figcaption>
 </figure>
 
 !!! tip "Ordre de comprovació"
@@ -125,8 +125,8 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     Tota funció derivable en un punt ha de ser contínua en aquell punt. Com que $f$ no és contínua en $x=1$, podem concloure directament que $f$ **no és derivable** en $x=1$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable en x igual a u i una asímptota vertical en x igual a menys dos](../../img/analisi/fig_2_3_exemple_discontinuitat_evitable.svg){ width="740" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_3_exemple_discontinuitat_evitable.tex">Figura 2.3.</a></strong> Discontinuïtat evitable en $x=1$ i asímptota vertical en $x=-2$.</figcaption>
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable en x igual a u i una asímptota vertical en x igual a menys dos](../../img/calcul/fig_2_3_exemple_discontinuitat_evitable.svg){ width="740" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_3_exemple_discontinuitat_evitable.tex">Figura 2.3.</a></strong> Discontinuïtat evitable en $x=1$ i asímptota vertical en $x=-2$.</figcaption>
     </figure>
 
 !!! example "Exemple 2. Funció contínua però no derivable"
@@ -167,8 +167,8 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     Les derivades laterals no coincideixen. Per tant, $f$ **no és derivable** en $x=1$ i la gràfica té un punt angulós.
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos contínua amb un punt angulós en x igual a u](../../img/analisi/fig_2_4_exemple_continua_no_derivable.svg?v=2){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_4_exemple_continua_no_derivable.tex">Figura 2.4.</a></strong> Funció contínua però no derivable en $x=1$.</figcaption>
+      ![Gràfica d'una funció a trossos contínua amb un punt angulós en x igual a u](../../img/calcul/fig_2_4_exemple_continua_no_derivable.svg?v=2){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_4_exemple_continua_no_derivable.tex">Figura 2.4.</a></strong> Funció contínua però no derivable en $x=1$.</figcaption>
     </figure>
 
 !!! example "Exemple 3. Funció contínua i derivable"
@@ -209,8 +209,8 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     Les derivades laterals coincideixen. Per tant, $f$ **és derivable** en $x=-1$ i $f'(-1)=-3$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb una unió suau en x igual a menys u](../../img/analisi/fig_2_5_exemple_continua_derivable.svg){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_5_exemple_continua_derivable.tex">Figura 2.5.</a></strong> Funció contínua i derivable en $x=-1$.</figcaption>
+      ![Gràfica d'una funció a trossos amb una unió suau en x igual a menys u](../../img/calcul/fig_2_5_exemple_continua_derivable.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_5_exemple_continua_derivable.tex">Figura 2.5.</a></strong> Funció contínua i derivable en $x=-1$.</figcaption>
     </figure>
 
 !!! example "Exemple 4. Càlcul de paràmetres"
@@ -278,8 +278,8 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     i en aquest cas $f'(2)=4$.
 
     <figure markdown="span">
-      ![Gràfica de la funció a trossos obtinguda amb m igual a u i n igual a quatre](../../img/analisi/fig_2_6_exemple_parametres.svg){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_6_exemple_parametres.tex">Figura 2.6.</a></strong> Funció derivable obtinguda amb $m=1$ i $n=4$.</figcaption>
+      ![Gràfica de la funció a trossos obtinguda amb m igual a u i n igual a quatre](../../img/calcul/fig_2_6_exemple_parametres.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_6_exemple_parametres.tex">Figura 2.6.</a></strong> Funció derivable obtinguda amb $m=1$ i $n=4$.</figcaption>
     </figure>
 
 ## 5. Del valor absolut a una funció a trossos
@@ -347,8 +347,8 @@ El procediment és el següent:
     En $x=2$, les derivades laterals són $f'(2^-)=-1$ i $f'(2^+)=1$. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en $x=2$.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/analisi/fig_2_7_valor_absolut_lineal.svg){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_7_valor_absolut_lineal.tex">Figura 2.7.</a></strong> Gràfica de $f(x)=|x-2|$.</figcaption>
+      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/calcul/fig_2_7_valor_absolut_lineal.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_7_valor_absolut_lineal.tex">Figura 2.7.</a></strong> Gràfica de $f(x)=|x-2|$.</figcaption>
     </figure>
 
 !!! example "Exemple 2. Valor absolut d'una funció quadràtica"
@@ -398,6 +398,6 @@ El procediment és el següent:
     En $x=-2$ i en $x=1$ les derivades laterals no coincideixen. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en aquests dos punts.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de x al quadrat més x menys dos, amb punts angulosos en x igual a menys dos i x igual a u](../../img/analisi/fig_2_8_valor_absolut_quadratica.svg){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_8_valor_absolut_quadratica.tex">Figura 2.8.</a></strong> Gràfica de $f(x)=|x^2+x-2|$.</figcaption>
+      ![Gràfica de la funció valor absolut de x al quadrat més x menys dos, amb punts angulosos en x igual a menys dos i x igual a u](../../img/calcul/fig_2_8_valor_absolut_quadratica.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_8_valor_absolut_quadratica.tex">Figura 2.8.</a></strong> Gràfica de $f(x)=|x^2+x-2|$.</figcaption>
     </figure>

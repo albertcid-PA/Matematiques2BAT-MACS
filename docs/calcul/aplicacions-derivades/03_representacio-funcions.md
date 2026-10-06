@@ -202,8 +202,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     Hi ha un màxim relatiu en $(-1,32)$ i un mínim relatiu en $(3,0)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/analisi/fig_2_11_representacio_polinomica.svg){ width="820" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_11_representacio_polinomica.tex">Figura 2.11.</a></strong> Representació de la funció polinòmica.</figcaption>
+      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_11_representacio_polinomica.svg){ width="820" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_polinomica.tex">Figura 2.11.</a></strong> Representació de la funció polinòmica.</figcaption>
     </figure>
 
 ## 4. Exemple complet: funció racional
@@ -276,8 +276,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/analisi/fig_2_12_representacio_racional.svg){ width="820" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_12_representacio_racional.tex">Figura 2.12.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat asimptòtica.</figcaption>
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/calcul/fig_2_12_representacio_racional.svg){ width="820" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_12_representacio_racional.tex">Figura 2.12.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat asimptòtica.</figcaption>
     </figure>
 
 ## 5. Funcions irracionals, exponencials i logarítmiques
@@ -306,8 +306,8 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     de manera que $x=2$ és una asímptota vertical.
 
     <figure markdown="span">
-      ![Gràfiques d'una funció irracional, una funció exponencial i una funció logarítmica](../../img/analisi/fig_2_13_representacio_irracional_exponencial_logaritmica.svg){ width="960" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_13_representacio_irracional_exponencial_logaritmica.tex">Figura 2.13.</a></strong> Representació de les funcions irracional, exponencial i logarítmica de l'exemple.</figcaption>
+      ![Gràfiques d'una funció irracional, una funció exponencial i una funció logarítmica](../../img/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.svg){ width="960" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.tex">Figura 2.13.</a></strong> Representació de les funcions irracional, exponencial i logarítmica de l'exemple.</figcaption>
     </figure>
 
 ## 6. Funcions a trossos i amb valor absolut
@@ -420,8 +420,8 @@ $$
     | Comportament | decreix | decreix | decreix | creix |
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/analisi/fig_2_14_representacio_funcio_trossos.svg){ width="560" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_14_representacio_funcio_trossos.tex">Figura 2.14.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
+      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/calcul/fig_2_14_representacio_funcio_trossos.svg){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_14_representacio_funcio_trossos.tex">Figura 2.14.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
     </figure>
 
 !!! example "Exemple 5. Representació d'una funció amb dos valors absoluts"
@@ -492,6 +492,6 @@ $$
     Com que el pendent canvia, $f$ **no és derivable en $x=2$ ni en $x=3$**. En $x=2$ el pendent passa de negatiu a positiu, de manera que $(2,-1)$ és un mínim relatiu. En canvi, en $x=3$ els pendents dels dos costats són positius: la funció continua creixent i $(3,2)$ és un punt angulós, però **no és un extrem relatiu**.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/analisi/fig_2_15_representacio_dos_valors_absoluts.svg?v=4){ width="760" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_15_representacio_dos_valors_absoluts.tex">Figura 2.15.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
+      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_15_representacio_dos_valors_absoluts.svg?v=4){ width="760" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_15_representacio_dos_valors_absoluts.tex">Figura 2.15.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
     </figure>

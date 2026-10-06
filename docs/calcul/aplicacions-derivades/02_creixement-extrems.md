@@ -133,8 +133,8 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     de manera que $(-1,2)$ és un màxim relatiu i $(1,-2)$ és un mínim relatiu.
 
     <figure markdown="span">
-      ![Gràfica d'una funció cúbica que creix fins a un màxim, decreix fins a un mínim i torna a créixer](../../img/analisi/fig_2_9_creixement_maxim_minim.svg){ width="740" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_9_creixement_maxim_minim.tex">Figura 2.9.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x$.</figcaption>
+      ![Gràfica d'una funció cúbica que creix fins a un màxim, decreix fins a un mínim i torna a créixer](../../img/calcul/fig_2_9_creixement_maxim_minim.svg){ width="740" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_maxim_minim.tex">Figura 2.9.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x$.</figcaption>
     </figure>
 
     | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,1)$ | $1$ | $(1,+\infty)$ |
@@ -172,8 +172,8 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     és un màxim relatiu.
 
     <figure markdown="span">
-      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/analisi/fig_2_10_creixement_polinomi_exponencial.svg){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/analisi/fig_2_10_creixement_polinomi_exponencial.tex">Figura 2.10.</a></strong> Creixement, decreixement i extrems de $f(x)=x^2e^{-x}$.</figcaption>
+      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/calcul/fig_2_10_creixement_polinomi_exponencial.svg){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_10_creixement_polinomi_exponencial.tex">Figura 2.10.</a></strong> Creixement, decreixement i extrems de $f(x)=x^2e^{-x}$.</figcaption>
     </figure>
 
 ## 3. Esquema d'un estudi complet
