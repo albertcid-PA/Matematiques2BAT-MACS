@@ -2,11 +2,13 @@
 
 Aquest recull conté problemes de càlcul procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials** i propostes d'entrenament amb el mateix estil. Estan agrupats per contingut i cada enunciat procedent d'una prova indica l'any, la convocatòria i la sèrie. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*. Els problemes nous s'identifiquen com a *problemes d'entrenament de tipus PAU*.
 
+Els problemes tenen numeració contínua amb el format **PAU.C.n**, on **C** identifica el bloc de **Càlcul**.
+
 En tots els problemes cal justificar els passos, escriure els resultats amb les unitats corresponents i interpretar-los dins del context. Per practicar separadament cada tècnica, consulta els [exercicis dels temes 1 i 2](exercicis.md).
 
 ## Estudi i interpretació d'una funció
 
-**PAU 1. Evolució dels seguidors d'un divulgador** *(basat en l'exercici 1 de la convocatòria ordinària de 2026, sèrie 1)*. Un metge comença a divulgar continguts sobre salut a les xarxes socials. El nombre de seguidors que té al cap de $t$ setmanes és
+**PAU.C.1. Evolució dels seguidors d'un divulgador** *(basat en l'exercici 1 de la convocatòria ordinària de 2026, sèrie 1)*. Un metge comença a divulgar continguts sobre salut a les xarxes socials. El nombre de seguidors que té al cap de $t$ setmanes és
 
 $$
 f(t)=10t^3-120t^2+450t+700, \qquad t\in[0,10].
@@ -18,7 +20,7 @@ $$
 - **d)** Interpreta en quin moment publica un vídeo polèmic que provoca una pèrdua de seguidors i en quin moment publica un vídeo d'èxit a partir del qual torna a créixer.
 - **e)** Determina en quin instant assoleix el nombre màxim absolut de seguidors durant les deu setmanes i calcula aquest nombre.
 
-**PAU 2. Microorganismes en una mostra** *(basat en l'exercici 3 de la convocatòria ordinària de 2025, sèrie 4)*. El nombre de microorganismes vius d'una mostra de laboratori, mesurat en desenes, és
+**PAU.C.2. Microorganismes en una mostra** *(basat en l'exercici 3 de la convocatòria ordinària de 2025, sèrie 4)*. El nombre de microorganismes vius d'una mostra de laboratori, mesurat en desenes, és
 
 $$
 f(x)=\frac{15x}{9+x^2}+k, \qquad x\geq0,
@@ -31,7 +33,7 @@ on $x$ és el temps transcorregut, en hores.
 - **c)** Calcula el límit quan $x\to+\infty$ i interpreta el resultat en el context.
 - **d)** Fes un esbós de la gràfica tenint en compte el valor inicial, el màxim i el comportament a llarg termini.
 
-**PAU 3. Visitants d'una exposició** *(basat en el problema 3 de la convocatòria extraordinària de 2022, sèrie 3)*. El nombre de visitants setmanals d'una exposició, expressat en desenes de persones, és
+**PAU.C.3. Visitants d'una exposició** *(basat en el problema 3 de la convocatòria extraordinària de 2022, sèrie 3)*. El nombre de visitants setmanals d'una exposició, expressat en desenes de persones, és
 
 $$
 f(x)=\frac{240x}{x^2-2x+4}, \qquad x\geq1,
@@ -44,7 +46,7 @@ on $x$ és el nombre de setmanes que fa que l'exposició està oberta.
 - **c)** Estudia la monotonia de la funció dins del seu domini temporal.
 - **d)** Determina la setmana en què es preveu la màxima afluència i el nombre de visitants corresponent.
 
-**PAU 4. Evolució dels clients d'una empresa** *(basat en el problema 4 de la convocatòria extraordinària de 2021, sèrie 1)*. Una empresa que ha entrat en crisi modelitza el nombre de clients, expressat en milers, mitjançant
+**PAU.C.4. Evolució dels clients d'una empresa** *(basat en el problema 4 de la convocatòria extraordinària de 2021, sèrie 1)*. Una empresa que ha entrat en crisi modelitza el nombre de clients, expressat en milers, mitjançant
 
 $$
 C(t)=3-\frac{1}{t^2-4t+5}, \qquad t\geq0,
@@ -60,7 +62,7 @@ on $t$ és el temps transcorregut, en anys.
 
 ## Funcions exponencials i logarítmiques
 
-**Entrenament 1. Impacte d'una campanya publicitària** *(problema d'entrenament de tipus PAU)*. Una empresa acaba de llançar una aplicació mòbil i inicia una campanya publicitària. El nombre de descàrregues diàries de l'aplicació, expressat en centenars, es modelitza mitjançant
+**PAU.C.5. Impacte d'una campanya publicitària** *(problema d'entrenament de tipus PAU)*. Una empresa acaba de llançar una aplicació mòbil i inicia una campanya publicitària. El nombre de descàrregues diàries de l'aplicació, expressat en centenars, es modelitza mitjançant
 
 $$
 D(t)=20+10(t+1)e^{-t/2}, \qquad t\geq0,
@@ -74,7 +76,7 @@ on $t$ és el temps transcorregut, en mesos, des de l'inici de la campanya.
 - **d)** Quan hagi passat molt de temps, quantes descàrregues diàries preveu el model que es mantindran? Justifica la resposta a partir del comportament de l'expressió exponencial.
 - **e)** Fes un esbós de la gràfica i assenyala-hi el valor inicial, el màxim i el valor al qual tendeix el nombre de descàrregues.
 
-**Entrenament 2. Cost mitjà de producció** *(problema d'entrenament de tipus PAU)*. Una empresa fabrica un component electrònic. El cost mitjà de producció, expressat en euros per unitat, depèn de la quantitat fabricada segons la funció
+**PAU.C.6. Cost mitjà de producció** *(problema d'entrenament de tipus PAU)*. Una empresa fabrica un component electrònic. El cost mitjà de producció, expressat en euros per unitat, depèn de la quantitat fabricada segons la funció
 
 $$
 C(x)=20+x-4\ln x, \qquad x>0,
@@ -92,22 +94,22 @@ on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ c
 
 ### Construcció de la funció a partir de l'enunciat
 
-**PAU 5. Reserves d'un hotel** *(basat en l'exercici 4, opció B, de la convocatòria ordinària de 2025, sèrie 1)*. Un hotel cobra $80\,€$ per una habitació doble i, amb aquest preu, preveu tenir $100$ reserves. Un estudi indica que, per cada euro de descompte, s'aconseguiran dues reserves més.
+**PAU.C.7. Reserves d'un hotel** *(basat en l'exercici 4, opció B, de la convocatòria ordinària de 2025, sèrie 1)*. Un hotel cobra $80\,€$ per una habitació doble i, amb aquest preu, preveu tenir $100$ reserves. Un estudi indica que, per cada euro de descompte, s'aconseguiran dues reserves més.
 
 - **a)** Si $x$ és el descompte aplicat, determina la funció que expressa els ingressos de l'hotel en funció de $x$. Indica els valors admissibles de $x$.
 - **b)** Quin ha de ser el preu de l'habitació perquè els ingressos siguin màxims? Calcula també el nombre de reserves i els ingressos màxims.
 
-**Entrenament 3. Contractació de venedors** *(problema d'entrenament de tipus PAU)*. Una botiga en línia disposa de $10$ venedors i cadascun genera unes vendes mensuals de $5\,400\,€$. S'estima que, per cada venedor nou que es contracti, les vendes mensuals gestionades per cadascun dels venedors disminuiran en $180\,€$.
+**PAU.C.8. Contractació de venedors** *(problema d'entrenament de tipus PAU)*. Una botiga en línia disposa de $10$ venedors i cadascun genera unes vendes mensuals de $5\,400\,€$. S'estima que, per cada venedor nou que es contracti, les vendes mensuals gestionades per cadascun dels venedors disminuiran en $180\,€$.
 
 - **a)** Determina la funció que expressa els ingressos mensuals totals si es contracten $x$ venedors nous. Indica el domini de la funció dins del context.
 - **b)** Quants venedors ha de tenir en total la botiga perquè els ingressos siguin màxims? Quins seran aquests ingressos?
 
-**Entrenament 4. Venda de motxilles** *(problema d'entrenament de tipus PAU)*. Una empresa ven mensualment $40$ motxilles a un preu de $80\,€$ cadascuna. Per cada euro que es redueixi el preu, es preveu que es vendran dues motxilles més. L'empresa té uns costos fixos mensuals de $800\,€$, i fabricar cada motxilla costa $20\,€$.
+**PAU.C.9. Venda de motxilles** *(problema d'entrenament de tipus PAU)*. Una empresa ven mensualment $40$ motxilles a un preu de $80\,€$ cadascuna. Per cada euro que es redueixi el preu, es preveu que es vendran dues motxilles més. L'empresa té uns costos fixos mensuals de $800\,€$, i fabricar cada motxilla costa $20\,€$.
 
 - **a)** Si $x$ és la reducció del preu, determina la funció que expressa el benefici mensual de l'empresa en funció de $x$.
 - **b)** Quina reducció de preu permet obtenir el benefici màxim? Calcula el preu de venda, el nombre de motxilles venudes i el benefici màxim.
 
-**PAU 6. Demanda d'un accessori tecnològic** *(basat en l'exercici 1 de la convocatòria extraordinària de 2026, sèrie 2)*. La demanda setmanal d'un accessori tecnològic depèn del seu preu $p$, expressat en euros, segons
+**PAU.C.10. Demanda d'un accessori tecnològic** *(basat en l'exercici 1 de la convocatòria extraordinària de 2026, sèrie 2)*. La demanda setmanal d'un accessori tecnològic depèn del seu preu $p$, expressat en euros, segons
 
 $$
 d(p)=500-10p-p^2, \qquad 0<p<15.
@@ -126,7 +128,7 @@ $$
 
 Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i quan és de $10\,€$. No cal memoritzar aquesta fórmula.
 
-**PAU 7. Tarifes de dues companyies de taxi** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
+**PAU.C.11. Tarifes de dues companyies de taxi** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
 
 $$
 g(x)=0{,}01x^2+0{,}1x+10,
@@ -142,7 +144,7 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 
 ## Funcions a trossos
 
-**PAU 8. Tarifa d'una empresa de paqueteria** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
+**PAU.C.12. Tarifa d'una empresa de paqueteria** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
 
 - fins a $2\,\text{kg}$, el preu és fix i val $30\,€$;
 - si el paquet pesa més de $2\,\text{kg}$ però menys d'$11\,\text{kg}$, els primers $2\,\text{kg}$ costen $15\,€$ per quilogram i la resta, $12\,€$ per quilogram;
@@ -154,7 +156,7 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 - **d)** Representa gràficament la funció per a $0<x\leq25$.
 - **e)** Si un enviament ha costat $162\,€$, calcula el pes del paquet i comprova a quin tram pertany la solució.
 
-**PAU 9. Cost de neteja d'una empresa** *(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
+**PAU.C.13. Cost de neteja d'una empresa** *(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
 
 $$
 C(t)=
@@ -171,7 +173,7 @@ on $t$ és el nombre d'anys transcorreguts des de l'obertura.
 - **c)** Estudia la monotonia de cada tram i representa gràficament la funció.
 - **d)** Determina en quin moment el cost va ser màxim i calcula aquest cost en euros.
 
-**PAU 10. Evolució del preu d'un producte** *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
+**PAU.C.14. Evolució del preu d'un producte** *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
 
 $$
 P(t)=
