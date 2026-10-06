@@ -27,6 +27,10 @@ nav = [
       { "Problemes PAU" = "calcul/problemes-pau.md" },
     ] },
   ] },
+  { "Preparació d'exàmens" = [
+    { "Índex" = "preparacio-examens/index.md" },
+    { "Primer examen" = "preparacio-examens/01_derivades-representacio.md" },
+  ] },
   { "Àlgebra lineal" = [
     { "Introducció" = "algebra-lineal/index.md" },
     { "3. Sistemes i mètode de Gauss" = "algebra-lineal/sistemes-gauss/index.md" },
@@ -105,3 +109,4 @@ toc = { permalink = true }
 pymdownx.arithmatex = { generic = true }
 pymdownx.details = {}
 pymdownx.superfences = {}
+pymdownx.tasklist = { custom_checkbox = true }

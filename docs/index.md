@@ -10,6 +10,10 @@ Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicac
 - [**Àlgebra lineal**](algebra-lineal/index.md) — sistemes d'equacions, mètode de Gauss, matrius i problemes contextualitzats.
 - [**Probabilitat i estadística**](probabilitat-estadistica/index.md) — probabilitat condicionada, teorema de Bayes, distribucions de probabilitat i inferència estadística.
 
+## Preparació d'exàmens
+
+- [**Primer examen: derivades i representació de funcions**](preparacio-examens/01_derivades-representacio.md) — temari, itinerari de pràctica, comprovació final i instruccions per treballar amb el tutor d'IA.
+
 ## Autoria i eines
 
 Aquests apunts han estat elaborats per **Albert Cid**. Durant la preparació s'utilitzen **Markdown**, **Zensical**, **Visual Studio Code**, **Git**, **GitHub**, **LaTeX**, **TikZ**, **PGFPlots** i **MiKTeX**, amb l'assistència d'**OpenAI Codex**. L'autor revisa i valida el contingut final.
