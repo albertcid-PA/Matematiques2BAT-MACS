@@ -12,7 +12,7 @@ Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicac
 
 ## Preparació d'exàmens
 
-- [**Primer examen: derivades i representació de funcions**](preparacio-examens/01_derivades-representacio.md) — temari, itinerari de pràctica, comprovació final i instruccions per treballar amb el tutor d'IA.
+- [**PP1.1**](preparacio-examens/pp1-1.md) — temari, itinerari de pràctica, comprovació final i instruccions per treballar amb el tutor d'IA.
 
 ## Autoria i eines
 
