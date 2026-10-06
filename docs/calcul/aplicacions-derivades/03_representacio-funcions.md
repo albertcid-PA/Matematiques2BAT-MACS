@@ -68,15 +68,18 @@ Cada solució $x=a$ que pertanyi al domini dona un punt de tall $(a,0)$. Una fun
 
 En una funció racional, els zeros són els del numerador que també pertanyen al domini.
 
-### Pas 4. Asímptotes verticals
+### Pas 4. Asímptotes verticals i discontinuïtats evitables
 
-Els candidats són els extrems finits del domini, sovint els zeros del denominador o els punts on l'argument d'un logaritme s'apropa a zero. Per a cada candidat $x=c$, calculem
+Els candidats són els punts exclosos del domini: en les funcions racionals, els zeros del denominador; i en les logarítmiques, els extrems finits del domini. Per a cada candidat $x=c$, calculem els límits laterals:
 
 $$
 \lim_{x\to c^-}f(x)
 \qquad\text{i}\qquad
 \lim_{x\to c^+}f(x).
 $$
+
+- Si almenys un dels límits és $+\infty$ o $-\infty$, $x=c$ és una **asímptota vertical**.
+- Si els dos límits coincideixen i són finits, però $f(c)$ no existeix, hi ha una **discontinuïtat evitable**.
 
 !!! abstract "Definició: asímptota vertical"
     La recta $x=c$ és una **asímptota vertical** si almenys un dels límits laterals de $f(x)$ quan $x\to c$ és $+\infty$ o $-\infty$.
