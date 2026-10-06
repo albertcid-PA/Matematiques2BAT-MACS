@@ -6,7 +6,7 @@ Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicac
 
 ## Blocs del curs
 
-- [**Anàlisi**](analisi/index.md) — repàs de límits i derivades, aplicacions de les derivades, representació de funcions i optimització.
+- [**Càlcul**](analisi/index.md) — repàs de límits i derivades, aplicacions de les derivades, representació de funcions i optimització.
 - [**Àlgebra lineal**](algebra-lineal/index.md) — sistemes d'equacions, mètode de Gauss, matrius i problemes contextualitzats.
 - [**Probabilitat i estadística**](probabilitat-estadistica/index.md) — probabilitat condicionada, teorema de Bayes, distribucions de probabilitat i inferència estadística.
 

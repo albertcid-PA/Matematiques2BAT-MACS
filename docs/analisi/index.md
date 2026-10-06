@@ -1,4 +1,4 @@
-# Anàlisi
+# Càlcul
 
 En aquest bloc repassarem les eines de càlcul diferencial de primer de batxillerat i les aplicarem a l'estudi de funcions i als problemes d'optimització.
 
@@ -9,5 +9,5 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 
 ## Per practicar
 
-- [**Exercicis per temes**](exercicis.md) — col·lecció completa d'exercicis d'anàlisi i optimització, agrupats segons la teoria.
-- [**Problemes PAU**](problemes-pau.md) — problemes d'anàlisi de convocatòries reals, agrupats per contingut i identificats amb l'any i la sèrie.
+- [**Exercicis per temes**](exercicis.md) — col·lecció completa d'exercicis de càlcul i optimització, agrupats segons la teoria.
+- [**Problemes PAU**](problemes-pau.md) — problemes de càlcul de convocatòries reals i d'entrenament de tipus PAU, agrupats per contingut.
