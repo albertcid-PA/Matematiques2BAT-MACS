@@ -527,7 +527,7 @@ $$
 
 
 
-**2.23.** Fes els estudis indicats. No cal representar tota la funció si no es demana explícitament.
+**2.23.** Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós de la informació obtinguda. No cal estudiar els aspectes de la funció que no es demanen.
 
 - **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
 - **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.
