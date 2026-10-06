@@ -197,6 +197,46 @@ on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en 
 | **c)** $f(x)=(x-2)e^x$ | **d)** $f(x)=\ln(x+3)$ |
 | **e)** $f(x)=\dfrac{1}{x+2}$ | |
 
+### Càlcul de coeficients a partir de $f(a)$ i $f'(a)$
+
+Cada condició sobre el valor de la funció o de la derivada es transforma en una equació. Calcula primer $f'(x)$, substitueix-hi els valors indicats i resol el sistema obtingut.
+
+**1.18.** Sigui
+
+$$
+f(x)=ax^2+bx+1.
+$$
+
+Calcula $a$ i $b$ sabent que $f(1)=4$ i $f'(1)=5$.
+
+**1.19.** Considera la funció
+
+$$
+g(x)=ax^3+bx^2-2x+1.
+$$
+
+Determina $a$ i $b$ perquè $g(1)=2$ i $g'(1)=5$.
+
+**1.20.** Sigui
+
+$$
+h(x)=ax^2+bx+3.
+$$
+
+La recta tangent a la gràfica d'$h$ en $x=2$ és $y=6x-5$. Determina els coeficients $a$ i $b$ i escriu la funció obtinguda.
+
+**1.21.** Considera la funció
+
+$$
+p(x)=x^3+ax^2+bx+c.
+$$
+
+La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=(1,0)$.
+
+- **a)** Escriu les tres equacions que expressen aquestes condicions.
+- **b)** Determina els coeficients $a$, $b$ i $c$.
+- **c)** Classifica l'extrem relatiu mitjançant la derivada segona.
+
 ## Tema 2. Aplicacions de les derivades
 
 ### Derivabilitat
