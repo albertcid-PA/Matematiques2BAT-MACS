@@ -1,6 +1,6 @@
 # Problemes PAU d'anàlisi
 
-Aquest recull conté problemes d'anàlisi procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials**. Estan agrupats per contingut i cada enunciat indica l'any, la convocatòria i la sèrie de procedència. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*.
+Aquest recull conté problemes d'anàlisi procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials** i propostes d'entrenament amb el mateix estil. Estan agrupats per contingut i cada enunciat procedent d'una prova indica l'any, la convocatòria i la sèrie. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*. Els problemes nous s'identifiquen com a *problemes d'entrenament de tipus PAU*.
 
 En tots els problemes cal justificar els passos, escriure els resultats amb les unitats corresponents i interpretar-los dins del context. Per practicar separadament cada tècnica, consulta els [exercicis dels temes 1 i 2](exercicis.md).
 
@@ -57,6 +57,36 @@ on $t$ és el temps transcorregut, en anys.
 - **c)** Comprova que l'instant trobat correspon a un mínim.
 - **d)** Calcula quant temps ha de passar perquè l'empresa recuperi el nombre inicial de clients.
 - **e)** Estudia el comportament a llarg termini de l'empresa.
+
+## Funcions exponencials i logarítmiques
+
+**Entrenament 1. Impacte d'una campanya publicitària** *(problema d'entrenament de tipus PAU)*. Una empresa acaba de llançar una aplicació mòbil i inicia una campanya publicitària. El nombre de descàrregues diàries de l'aplicació, expressat en centenars, es modelitza mitjançant
+
+$$
+D(t)=20+10(t+1)e^{-t/2}, \qquad t\geq0,
+$$
+
+on $t$ és el temps transcorregut, en mesos, des de l'inici de la campanya.
+
+- **a)** Quantes descàrregues diàries es produeixen en el moment d'iniciar la campanya?
+- **b)** L'empresa vol saber durant quant temps augmentarà l'efecte de la campanya. Estudia el creixement i el decreixement de $D(t)$.
+- **c)** Determina en quin moment s'assoleix el nombre màxim de descàrregues diàries i calcula aquest màxim.
+- **d)** Quan hagi passat molt de temps, quantes descàrregues diàries preveu el model que es mantindran? Justifica la resposta a partir del comportament de l'expressió exponencial.
+- **e)** Fes un esbós de la gràfica i assenyala-hi el valor inicial, el màxim i el valor al qual tendeix el nombre de descàrregues.
+
+**Entrenament 2. Cost mitjà de producció** *(problema d'entrenament de tipus PAU)*. Una empresa fabrica un component electrònic. El cost mitjà de producció, expressat en euros per unitat, depèn de la quantitat fabricada segons la funció
+
+$$
+C(x)=20+x-4\ln x, \qquad x>0,
+$$
+
+on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ correspon a una producció de $300$ unitats.
+
+- **a)** Justifica per què el domini del model és $x>0$. Quin és el cost mitjà per unitat quan l'empresa fabrica $100$ unitats?
+- **b)** L'empresa vol saber fins a quin nivell de producció l'augment de la quantitat fabricada permet reduir el cost mitjà. Estudia els intervals de creixement i decreixement de $C(x)$.
+- **c)** Determina quantes unitats s'han de fabricar perquè el cost mitjà sigui mínim i calcula aquest cost.
+- **d)** L'empresa s'ha proposat aconseguir un cost mitjà inferior a $18\,€$ per unitat. Justifica si aquest objectiu és possible segons el model.
+- **e)** Estudia què passa amb el cost mitjà quan la producció s'apropa a zero i quan augmenta indefinidament. Fes un esbós de la gràfica que reflecteixi aquest comportament i el mínim obtingut.
 
 ## Modelització, comparació i optimització
 
