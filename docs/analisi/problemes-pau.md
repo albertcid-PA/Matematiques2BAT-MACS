@@ -90,7 +90,24 @@ on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ c
 
 ## Modelització, comparació i optimització
 
-**PAU 5. Demanda d'un accessori tecnològic** *(basat en l'exercici 1 de la convocatòria extraordinària de 2026, sèrie 2)*. La demanda setmanal d'un accessori tecnològic depèn del seu preu $p$, expressat en euros, segons
+### Construcció de la funció a partir de l'enunciat
+
+**PAU 5. Reserves d'un hotel** *(basat en l'exercici 4, opció B, de la convocatòria ordinària de 2025, sèrie 1)*. Un hotel cobra $80\,€$ per una habitació doble i, amb aquest preu, preveu tenir $100$ reserves. Un estudi indica que, per cada euro de descompte, s'aconseguiran dues reserves més.
+
+- **a)** Si $x$ és el descompte aplicat, determina la funció que expressa els ingressos de l'hotel en funció de $x$. Indica els valors admissibles de $x$.
+- **b)** Quin ha de ser el preu de l'habitació perquè els ingressos siguin màxims? Calcula també el nombre de reserves i els ingressos màxims.
+
+**Entrenament 3. Contractació de venedors** *(problema d'entrenament de tipus PAU)*. Una botiga en línia disposa de $10$ venedors i cadascun genera unes vendes mensuals de $5\,400\,€$. S'estima que, per cada venedor nou que es contracti, les vendes mensuals gestionades per cadascun dels venedors disminuiran en $180\,€$.
+
+- **a)** Determina la funció que expressa els ingressos mensuals totals si es contracten $x$ venedors nous. Indica el domini de la funció dins del context.
+- **b)** Quants venedors ha de tenir en total la botiga perquè els ingressos siguin màxims? Quins seran aquests ingressos?
+
+**Entrenament 4. Venda de motxilles** *(problema d'entrenament de tipus PAU)*. Una empresa ven mensualment $40$ motxilles a un preu de $80\,€$ cadascuna. Per cada euro que es redueixi el preu, es preveu que es vendran dues motxilles més. L'empresa té uns costos fixos mensuals de $800\,€$, i fabricar cada motxilla costa $20\,€$.
+
+- **a)** Si $x$ és la reducció del preu, determina la funció que expressa el benefici mensual de l'empresa en funció de $x$.
+- **b)** Quina reducció de preu permet obtenir el benefici màxim? Calcula el preu de venda, el nombre de motxilles venudes i el benefici màxim.
+
+**PAU 6. Demanda d'un accessori tecnològic** *(basat en l'exercici 1 de la convocatòria extraordinària de 2026, sèrie 2)*. La demanda setmanal d'un accessori tecnològic depèn del seu preu $p$, expressat en euros, segons
 
 $$
 d(p)=500-10p-p^2, \qquad 0<p<15.
@@ -109,7 +126,7 @@ $$
 
 Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i quan és de $10\,€$. No cal memoritzar aquesta fórmula.
 
-**PAU 6. Tarifes de dues companyies de taxi** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
+**PAU 7. Tarifes de dues companyies de taxi** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
 
 $$
 g(x)=0{,}01x^2+0{,}1x+10,
@@ -125,7 +142,7 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 
 ## Funcions a trossos
 
-**PAU 7. Tarifa d'una empresa de paqueteria** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
+**PAU 8. Tarifa d'una empresa de paqueteria** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
 
 - fins a $2\,\text{kg}$, el preu és fix i val $30\,€$;
 - si el paquet pesa més de $2\,\text{kg}$ però menys d'$11\,\text{kg}$, els primers $2\,\text{kg}$ costen $15\,€$ per quilogram i la resta, $12\,€$ per quilogram;
@@ -137,7 +154,7 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 - **d)** Representa gràficament la funció per a $0<x\leq25$.
 - **e)** Si un enviament ha costat $162\,€$, calcula el pes del paquet i comprova a quin tram pertany la solució.
 
-**PAU 8. Cost de neteja d'una empresa** *(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
+**PAU 9. Cost de neteja d'una empresa** *(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
 
 $$
 C(t)=
@@ -154,7 +171,7 @@ on $t$ és el nombre d'anys transcorreguts des de l'obertura.
 - **c)** Estudia la monotonia de cada tram i representa gràficament la funció.
 - **d)** Determina en quin moment el cost va ser màxim i calcula aquest cost en euros.
 
-**PAU 9. Evolució del preu d'un producte** *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
+**PAU 10. Evolució del preu d'un producte** *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
 
 $$
 P(t)=
