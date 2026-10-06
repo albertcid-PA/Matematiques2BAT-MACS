@@ -1,6 +1,6 @@
 # Per practicar
 
-Aquest és el punt d'accés únic a tota la pràctica del bloc d'anàlisi.
+Aquest és el punt d'accés únic a tota la pràctica del bloc de càlcul.
 
 | Recull | Què hi trobaràs | Numeració |
 |:--|:--|:--|

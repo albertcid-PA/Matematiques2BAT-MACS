@@ -7,7 +7,7 @@ repo_name = "albertcid-PA/Matematiques2BAT-MACS"
 
 nav = [
   { "Inici" = "index.md" },
-  { "Anàlisi" = [
+  { "Càlcul" = [
     { "Introducció" = "analisi/index.md" },
     { "1. Repàs de límits i derivades" = [
       { "Índex" = "analisi/repas-limits-derivades/index.md" },

@@ -1,6 +1,6 @@
-# Exercicis d'anàlisi
+# Exercicis de càlcul
 
-En aquesta pàgina es reuneixen tots els exercicis del bloc d'anàlisi. La primera xifra identifica el tema i la segona, l'exercici: per exemple, l'exercici **1.3** és el tercer exercici del tema 1.
+En aquesta pàgina es reuneixen tots els exercicis del bloc de càlcul. La primera xifra identifica el tema i la segona, l'exercici: per exemple, l'exercici **1.3** és el tercer exercici del tema 1.
 
 ## Tema 1. Repàs de límits i derivades
 
@@ -699,4 +699,4 @@ $$
 - **d)** Representa gràficament la funció i interpreta el resultat en el context del problema.
 
 !!! info "Preparació de les PAU"
-    Continua amb el recull de [problemes PAU d'anàlisi](problemes-pau.md), ordenat per continguts i amb exercicis de convocatòries reals.
+    Continua amb el recull de [problemes PAU de càlcul](problemes-pau.md), ordenat per continguts i amb exercicis de convocatòries reals i d'entrenament de tipus PAU.

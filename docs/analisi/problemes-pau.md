@@ -1,6 +1,6 @@
-# Problemes PAU d'anàlisi
+# Problemes PAU de càlcul
 
-Aquest recull conté problemes d'anàlisi procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials** i propostes d'entrenament amb el mateix estil. Estan agrupats per contingut i cada enunciat procedent d'una prova indica l'any, la convocatòria i la sèrie. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*. Els problemes nous s'identifiquen com a *problemes d'entrenament de tipus PAU*.
+Aquest recull conté problemes de càlcul procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials** i propostes d'entrenament amb el mateix estil. Estan agrupats per contingut i cada enunciat procedent d'una prova indica l'any, la convocatòria i la sèrie. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*. Els problemes nous s'identifiquen com a *problemes d'entrenament de tipus PAU*.
 
 En tots els problemes cal justificar els passos, escriure els resultats amb les unitats corresponents i interpretar-los dins del context. Per practicar separadament cada tècnica, consulta els [exercicis dels temes 1 i 2](exercicis.md).
 
