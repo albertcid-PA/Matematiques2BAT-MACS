@@ -223,7 +223,7 @@ $$
 h(x)=ax^2+bx+3.
 $$
 
-La recta tangent a la gràfica d'$h$ en $x=2$ és $y=6x-5$. Determina els coeficients $a$ i $b$ i escriu la funció obtinguda.
+Determina els coeficients $a$ i $b$ sabent que $h(-1)=7$ i $h'(2)=6$. Escriu la funció obtinguda.
 
 **1.21.** Considera la funció
 
