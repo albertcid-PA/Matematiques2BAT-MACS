@@ -287,8 +287,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     Hi ha un màxim relatiu en $(-1,32)$ i un mínim relatiu en $(3,0)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_11_representacio_polinomica.svg?v=1){ width="820" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_polinomica.tex">Figura 2.11.</a></strong> Representació de la funció polinòmica.</figcaption>
+      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_10_representacio_polinomica.svg?v=1){ width="820" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_10_representacio_polinomica.tex">Figura 2.10.</a></strong> Representació de la funció polinòmica.</figcaption>
     </figure>
 
 ## 4. Exemple complet: funció racional
@@ -448,8 +448,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/calcul/fig_2_12_representacio_racional.svg?v=1){ width="820" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_12_representacio_racional.tex">Figura 2.12.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat asimptòtica.</figcaption>
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/calcul/fig_2_11_representacio_racional.svg?v=1){ width="820" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_racional.tex">Figura 2.11.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat asimptòtica.</figcaption>
     </figure>
 
 ## 5. Funcions irracionals, exponencials i logarítmiques
@@ -520,8 +520,8 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     La funció creix en tot el seu domini i té un mínim absolut en $(-2,0)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció irracional arrel quadrada de x més dos](../../img/calcul/fig_2_13_representacio_irracional.svg?v=1){ width="680" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_irracional.tex">Figura 2.13.</a></strong> Representació de $f(x)=\sqrt{x+2}$.</figcaption>
+      ![Gràfica de la funció irracional arrel quadrada de x més dos](../../img/calcul/fig_2_12_representacio_irracional.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_12_representacio_irracional.tex">Figura 2.12.</a></strong> Representació de $f(x)=\sqrt{x+2}$.</figcaption>
     </figure>
 
 !!! example "Exemple 4. Representació d'una funció exponencial"
@@ -571,8 +571,8 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     La funció decreix en tot $\mathbb{R}$ i no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica de la funció exponencial e elevat a menys x](../../img/calcul/fig_2_14_representacio_exponencial.svg?v=1){ width="680" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_14_representacio_exponencial.tex">Figura 2.14.</a></strong> Representació de $g(x)=e^{-x}$.</figcaption>
+      ![Gràfica de la funció exponencial e elevat a menys x](../../img/calcul/fig_2_13_representacio_exponencial.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_exponencial.tex">Figura 2.13.</a></strong> Representació de $g(x)=e^{-x}$.</figcaption>
     </figure>
 
 !!! example "Exemple 5. Representació d'una funció logarítmica"
@@ -635,8 +635,8 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     La funció creix en tot el seu domini i no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica de la funció logarítmica logaritme neperià de x menys dos](../../img/calcul/fig_2_15_representacio_logaritmica.svg?v=1){ width="680" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_15_representacio_logaritmica.tex">Figura 2.15.</a></strong> Representació de $h(x)=\ln(x-2)$.</figcaption>
+      ![Gràfica de la funció logarítmica logaritme neperià de x menys dos](../../img/calcul/fig_2_14_representacio_logaritmica.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_14_representacio_logaritmica.tex">Figura 2.14.</a></strong> Representació de $h(x)=\ln(x-2)$.</figcaption>
     </figure>
 
 ## 6. Funcions a trossos i amb valor absolut
@@ -760,8 +760,8 @@ $$
     | Comportament de $f$ | decreix | asímptota vertical | decreix | punt angulós $(1,2)$, no és un extrem | decreix | mínim $(3,-2)$ | creix |
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/calcul/fig_2_16_representacio_funcio_trossos.svg?v=1){ width="560" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_16_representacio_funcio_trossos.tex">Figura 2.16.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
+      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/calcul/fig_2_15_representacio_funcio_trossos.svg?v=1){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_15_representacio_funcio_trossos.tex">Figura 2.15.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
     </figure>
 
 !!! example "Exemple 7. Representació d'una funció amb dos valors absoluts"
@@ -838,6 +838,127 @@ $$
     Com que el pendent canvia, $f$ **no és derivable en $x=2$ ni en $x=3$**. En $x=2$ el pendent passa de negatiu a positiu, de manera que $(2,-1)$ és un mínim relatiu. En canvi, en $x=3$ els pendents dels dos costats són positius: la funció continua creixent i $(3,2)$ és un punt angulós, però **no és un extrem relatiu**.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=4){ width="760" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_17_representacio_dos_valors_absoluts.tex">Figura 2.17.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
+      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_16_representacio_dos_valors_absoluts.svg?v=4){ width="760" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_16_representacio_dos_valors_absoluts.tex">Figura 2.16.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
+    </figure>
+
+!!! example "Exemple 8. Representació del valor absolut d'una funció quadràtica"
+    Representem la funció
+
+    $$
+    f(x)=|x^2+x-2|.
+    $$
+
+    **Domini.** El polinomi $x^2+x-2$ està definit per a qualsevol nombre real i el valor absolut no hi afegeix cap restricció. Per tant,
+
+    $$
+    D_f=\mathbb{R}.
+    $$
+
+    **Talls amb els eixos.** Per trobar el tall amb l'eix $Y$, calculem
+
+    $$
+    f(0)=|0^2+0-2|=2.
+    $$
+
+    Així, el tall amb l'eix $Y$ és $(0,2)$. Per trobar els talls amb l'eix $X$, imposem $f(x)=0$:
+
+    $$
+    0=|x^2+x-2|
+    \quad\Longleftrightarrow\quad
+    x^2+x-2=0.
+    $$
+
+    Factoritzem el polinomi:
+
+    $$
+    x^2+x-2=(x+2)(x-1).
+    $$
+
+    Per tant, $x=-2$ o bé $x=1$, i els talls amb l'eix $X$ són $(-2,0)$ i $(1,0)$.
+
+    **Funció a trossos.** Comprovem el signe de cada factor i del producte en els intervals determinats pels seus zeros:
+
+    | Valor de $x$ | $x<-2$ | $x=-2$ | $-2<x<1$ | $x=1$ | $x>1$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $x+2$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+    | Signe de $x-1$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+    | Signe de $(x+2)(x-1)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+    | Expressió de $f(x)$ | $+(x^2+x-2)$ | $0$ | $-(x^2+x-2)$ | $0$ | $+(x^2+x-2)$ |
+
+    El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Per tant,
+
+    $$
+    f(x)=
+    \begin{cases}
+    x^2+x-2, & x\leq-2,\\[2pt]
+    -x^2-x+2, & -2<x<1,\\[2pt]
+    x^2+x-2, & x\geq1.
+    \end{cases}
+    $$
+
+    **Comportament a l'infinit.** Als dos extrems domina el terme $x^2$:
+
+    $$
+    \begin{aligned}
+    \lim_{x\to-\infty}|x^2+x-2|
+    &=\lim_{x\to-\infty}|x^2|=+\infty,\\[4pt]
+    \lim_{x\to+\infty}|x^2+x-2|
+    &=\lim_{x\to+\infty}|x^2|=+\infty.
+    \end{aligned}
+    $$
+
+    Per tant, la funció no té asímptotes horitzontals.
+
+    **Derivabilitat.** Derivem cada tros:
+
+    $$
+    f'(x)=
+    \begin{cases}
+    2x+1, & x<-2,\\[2pt]
+    -2x-1, & -2<x<1,\\[2pt]
+    2x+1, & x>1.
+    \end{cases}
+    $$
+
+    En $x=-2$ les derivades laterals són
+
+    $$
+    f'(-2^-)=-3
+    \qquad\text{i}\qquad
+    f'(-2^+)=3.
+    $$
+
+    En $x=1$ són
+
+    $$
+    f'(1^-)=-3
+    \qquad\text{i}\qquad
+    f'(1^+)=3.
+    $$
+
+    Com que les derivades laterals no coincideixen, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en $x=-2$ ni en $x=1$. Tots dos són punts angulosos.
+
+    **Creixement i extrems.** En el tros central, igualem la derivada a zero:
+
+    $$
+    -2x-1=0
+    \quad\Longrightarrow\quad
+    x=-\frac12.
+    $$
+
+    La solució pertany a $(-2,1)$. En els trossos exteriors, l'equació $2x+1=0$ dona el mateix valor, però $-\frac12$ no pertany a cap dels seus intervals. Els punts importants són, doncs, $x=-2$, $x=-\frac12$ i $x=1$.
+
+    | Valor de $x$ | $(-\infty,-2)$ | $-2$ | $\left(-2,-\frac12\right)$ | $-\frac12$ | $\left(-\frac12,1\right)$ | $1$ | $(1,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    | Valor de prova | $x=-3$ | — | $x=-1$ | — | $x=0$ | — | $x=2$ |
+    | Càlcul de la derivada | $f'(-3)=-5$ | no existeix | $f'(-1)=1$ | $f'\!\left(-\frac12\right)=0$ | $f'(0)=-1$ | no existeix | $f'(2)=5$ |
+    | Signe de $f'$ | $-$ | no existeix | $+$ | $0$ | $-$ | no existeix | $+$ |
+    | Comportament de $f$ | decreix | mínim $(-2,0)$ | creix | màxim $\left(-\frac12,\frac94\right)$ | decreix | mínim $(1,0)$ | creix |
+
+    La funció té mínims relatius i absoluts en $(-2,0)$ i $(1,0)$, i un màxim relatiu en $\left(-\frac12,\frac94\right)$.
+
+    <figure markdown="span">
+      ![Gràfica de la funció valor absolut de x al quadrat més x menys dos, amb punts angulosos en x igual a menys dos i x igual a u](../../img/calcul/fig_2_17_valor_absolut_quadratica.svg?v=1){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_17_valor_absolut_quadratica.tex">Figura 2.17.</a></strong> Representació de $f(x)=|x^2+x-2|$.</figcaption>
     </figure>
