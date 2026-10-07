@@ -134,7 +134,7 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     $$
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica amb un màxim i un mínim relatius](../../img/calcul/fig_2_9_creixement_maxim_minim.svg){ width="740" }
+      ![Gràfica de la funció polinòmica amb un màxim i un mínim relatius](../../img/calcul/fig_2_9_creixement_maxim_minim.svg?v=2){ width="740" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_maxim_minim.tex">Figura 2.9.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x^2-9x+5$.</figcaption>
     </figure>
 
