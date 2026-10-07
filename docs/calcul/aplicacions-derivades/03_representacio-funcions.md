@@ -230,10 +230,10 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     f'(x)=3x^2-6x-9=3(x+1)(x-3).
     $$
 
-    | Interval | $(-\infty,-1)$ | $(-1,3)$ | $(3,+\infty)$ |
-    |:---:|:---:|:---:|:---:|
-    | $f'$ | $+$ | $-$ | $+$ |
-    | $f$ | creix | decreix | creix |
+    | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,3)$ | $3$ | $(3,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $f'$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+    | Comportament de $f$ | creix | màxim $(-1,32)$ | decreix | mínim $(3,0)$ | creix |
 
     Hi ha un màxim relatiu en $(-1,32)$ i un mínim relatiu en $(3,0)$.
 
@@ -304,10 +304,10 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     en tot el domini. La taula de monotonia ha d'incloure tant l'asímptota vertical $x=1$ com la discontinuïtat evitable $x=2$:
 
-    | Interval | $(-\infty,1)$ | $(1,2)$ | $(2,+\infty)$ |
-    |:---:|:---:|:---:|:---:|
-    | $f'$ | $-$ | $-$ | $-$ |
-    | $f$ | decreix | decreix | decreix |
+    | Valor de $x$ | $(-\infty,1)$ | $1$ | $(1,2)$ | $2$ | $(2,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $f'$ | $-$ | no existeix | $-$ | no existeix | $-$ |
+    | Comportament de $f$ | decreix | asímptota vertical | decreix | discontinuïtat evitable en $(2,3)$ | decreix |
 
     La funció no té extrems relatius.
 
@@ -450,10 +450,10 @@ $$
 
     i té el vèrtex en $(3,-2)$, que és un mínim relatiu. Per estudiar la monotonia situem a la taula l'asímptota $x=-1$, el punt d'unió $x=1$ i el vèrtex $x=3$:
 
-    | Interval | $(-\infty,-1)$ | $(-1,1)$ | $(1,3)$ | $(3,+\infty)$ |
-    |:---:|:---:|:---:|:---:|:---:|
-    | Signe de $f'(x)$ | $-$ | $-$ | $-$ | $+$ |
-    | Comportament | decreix | decreix | decreix | creix |
+    | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,1)$ | $1$ | $(1,3)$ | $3$ | $(3,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $f'(x)$ | $-$ | no existeix | $-$ | no existeix | $-$ | $0$ | $+$ |
+    | Comportament de $f$ | decreix | asímptota vertical | decreix | punt angulós $(1,2)$, no és un extrem | decreix | mínim $(3,-2)$ | creix |
 
     <figure markdown="span">
       ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/calcul/fig_2_14_representacio_funcio_trossos.svg){ width="560" }

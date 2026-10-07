@@ -46,6 +46,7 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
   - `warning`: errors habituals o restriccions.
 - Conserva el mateix estil visual i la mida de text del web. Reutilitza les classes de `extra.css` abans de crear-ne de noves.
 - Els passos d'un procediment han de ser concrets i ordenats. En l'estudi de la monotonia, inclou tots els punts importants: discontinuïtats, extrems del domini, punts d'unió i candidats a extrem.
+- A les taules de monotonia, posa els punts importants en columnes pròpies entre els intervals. Indica-hi si cada punt és un màxim, un mínim, una discontinuïtat o un punt d'unió sense extrem, segons correspongui.
 
 ## Exercicis i problemes
 
