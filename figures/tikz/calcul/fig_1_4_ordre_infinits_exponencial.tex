@@ -13,12 +13,12 @@
     axis lines=middle,
     xmin=-5,
     xmax=74,
-    ymin=-70,
-    ymax=930,
+    ymin=-930,
+    ymax=70,
     xlabel={$x$},
     ylabel={$y$},
     xtick={20,40,60},
-    ytick={200,400,600,800},
+    ytick={-800,-600,-400,-200},
     axis line style={black!65},
     tick style={black!65},
     grid=major,
@@ -32,12 +32,12 @@
       domain=-3:71,
       samples=240
     ]
-      {1.1^x};
+      {-(1.1^x)};
 
-    \node[anchor=south east, text=corba]
-      at (axis cs:58,300) {$f(x)=(1{,}1)^x$};
-    \node[anchor=south west, text=corba]
-      at (axis cs:67,790) {$+\infty$};
+    \node[anchor=north east, text=corba]
+      at (axis cs:58,-300) {$f(x)=-(1{,}1)^x$};
+    \node[anchor=east, text=corba]
+      at (axis cs:66,-800) {$-\infty$};
   \end{axis}
 \end{tikzpicture}
 \end{document}
