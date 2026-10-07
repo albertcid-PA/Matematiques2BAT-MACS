@@ -114,14 +114,14 @@ Les funcions polinòmiques i les funcions racionals són contínues en els punts
 
 En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els dos límits laterals. El límit existeix si coincideixen.
 
-!!! example "Exemple 2. Límits laterals en un punt d'unió"
+!!! example "Exemple 2. Límits laterals diferents"
     Sigui
 
     $$
     f(x)=
     \begin{cases}
     2x+1, & x<1,\\
-    x^2+2, & x\geq1.
+    -x+2, & x\geq1.
     \end{cases}
     $$
 
@@ -134,18 +134,20 @@ En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els d
 
     $$
     \lim_{x\to1^+}f(x)
-    =\lim_{x\to1^+}(x^2+2)=3.
+    =\lim_{x\to1^+}(-x+2)=1.
     $$
 
-    Com que els límits laterals coincideixen,
+    Com que els límits laterals són diferents,
 
     $$
-    \boxed{\displaystyle\lim_{x\to1}f(x)=3.}
+    \boxed{\displaystyle\lim_{x\to1}f(x)\text{ no existeix}.}
     $$
+
+    La funció presenta una **discontinuïtat de salt finit** en $x=1$. A més, $f(1)=1$ perquè el punt $x=1$ pertany al segon tros.
 
     <figure markdown="span">
-      ![Gràfica de la funció a trossos amb els dos trams units en el punt 1 coma 3](../../img/calcul/fig_1_5_limit_funcio_trossos.svg?v=1){ width="680" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_5_limit_funcio_trossos.tex">Figura 1.5.</a></strong> Els dos trossos s'apropen al punt $(1,3)$.</figcaption>
+      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_5_limit_funcio_trossos.svg?v=2){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_5_limit_funcio_trossos.tex">Figura 1.5.</a></strong> Els límits laterals diferents originen un salt finit en $x=1$.</figcaption>
     </figure>
 
 #### Quocient del tipus $\dfrac{k}{0}$, amb $k\neq0$
