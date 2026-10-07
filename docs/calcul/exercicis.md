@@ -430,16 +430,9 @@ $$
 | **a)** $f(x)=\lvert x+4\rvert$ | **b)** $f(x)=\lvert -2x+4\rvert$ |
 | **c)** $h(x)=2x+\lvert x-1\rvert$ | |
 
-**2.16.** Escriu cada funció com una funció a trossos i indica en quins punts no és derivable.
-
-| | |
-|:--|:--|
-| **a)** $f(x)=\lvert x^2-9\rvert$ | **b)** $h(x)=\lvert x^2-5x+6\rvert$ |
-| **c)** $p(x)=\lvert -x^2-x+6\rvert$ | |
-
 ### Creixement, decreixement i extrems
 
-**2.17.** Determina els intervals de creixement i de decreixement i calcula els màxims i els mínims relatius de les funcions següents. Justifica si cada solució de $f'(x)=0$ correspon realment a un extrem.
+**2.16.** Determina els intervals de creixement i de decreixement i calcula els màxims i els mínims relatius de les funcions següents. Justifica si cada solució de $f'(x)=0$ correspon realment a un extrem.
 
 | | |
 |:--|:--|
@@ -448,7 +441,7 @@ $$
 | **e)** $f(x)=\dfrac{\ln x}{x^2}$ | **f)** $f(x)=\dfrac{x^3}{x^2+1}$ |
 | **g)** $f(x)=x^3-3x^2+3x$ | |
 
-**2.18.** Fes un estudi complet del creixement, el decreixement i els extrems relatius de les funcions següents:
+**2.17.** Fes un estudi complet del creixement, el decreixement i els extrems relatius de les funcions següents:
 
 | | |
 |:--|:--|
@@ -459,7 +452,7 @@ $$
 
 #### Funcions polinòmiques
 
-**2.19.** Estudia i representa les funcions polinòmiques següents. Indica el domini, els talls amb els eixos, les branques a l'infinit, els intervals de creixement i decreixement i els extrems.
+**2.18.** Estudia i representa les funcions polinòmiques següents. Indica el domini, els talls amb els eixos, les branques a l'infinit, els intervals de creixement i decreixement i els extrems.
 
 | | |
 |:--|:--|
@@ -469,7 +462,7 @@ $$
 
 #### Funcions racionals
 
-**2.20.** Estudia i representa les funcions racionals següents. Determina també les asímptotes verticals i horitzontals i la posició de la corba respecte de les asímptotes horitzontals.
+**2.19.** Estudia i representa les funcions racionals següents. Determina també les asímptotes verticals i horitzontals i la posició de la corba respecte de les asímptotes horitzontals.
 
 | | |
 |:--|:--|
@@ -480,7 +473,7 @@ $$
 
 #### Funcions a trossos
 
-**2.21.** Estudia la continuïtat, la derivabilitat, el creixement i els extrems de cada funció i representa-la. Recorda que cada expressió només es dibuixa dins del seu interval.
+**2.20.** Estudia la continuïtat, la derivabilitat, el creixement i els extrems de cada funció i representa-la. Recorda que cada expressió només es dibuixa dins del seu interval.
 
 **a)**
 
@@ -524,7 +517,7 @@ $$
 
 #### Funcions irracionals, exponencials i logarítmiques
 
-**2.22.** Troba el domini de les funcions següents i expressa'l mitjançant intervals:
+**2.21.** Troba el domini de les funcions següents i expressa'l mitjançant intervals:
 
 | | |
 |:--|:--|
@@ -532,7 +525,7 @@ $$
 
 
 
-**2.23.** Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós de la informació obtinguda. No cal estudiar els aspectes de la funció que no es demanen.
+**2.22.** Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós de la informació obtinguda. No cal estudiar els aspectes de la funció que no es demanen.
 
 - **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
 - **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.
@@ -545,22 +538,23 @@ $$
 
 #### Funcions amb valor absolut
 
-**2.24.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
+**2.23.** Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
 
 | | |
 |:--|:--|
 | **a)** $f(x)=\lvert 2x-6\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
 | **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
 
-**2.25.** Estudia i representa les funcions següents:
+**2.24.** Estudia i representa les funcions següents:
 
 | | |
 |:--|:--|
 | **a)** $f(x)=\lvert x^2-4x+3\rvert$ | **b)** $g(x)=\lvert -x^2+2x+8\rvert$ |
+| **c)** $h(x)=\lvert x^2-9\rvert$ | **d)** $p(x)=\lvert x^2-5x+6\rvert$ |
 
 ### Exercicis de síntesi i preparació de la prova
 
-**2.26.** Calcula la derivada de cadascuna de les funcions següents. Simplifica el resultat quan sigui possible.
+**2.25.** Calcula la derivada de cadascuna de les funcions següents. Simplifica el resultat quan sigui possible.
 
 | | |
 |:--|:--|
@@ -568,7 +562,7 @@ $$
 | **c)** $h(x)=2^x+\log_3 x$ | **d)** $p(x)=x^3\left(2x+e^x\right)$ |
 | **e)** $q(x)=\ln(2x^2+7)$ | **f)** $r(x)=e^{(x^2-1)^3}$ |
 
-**2.27.** Fes l'estudi complet de la funció
+**2.26.** Fes l'estudi complet de la funció
 
 $$
 f(x)=\frac{3x^2-6}{x^2-9}.
@@ -576,7 +570,7 @@ $$
 
 Determina'n el domini, els talls amb els eixos, les asímptotes verticals i horitzontals, els límits laterals, els extrems relatius i els intervals de creixement i decreixement. Finalment, fes-ne un esbós.
 
-**2.28.** Considera la funció
+**2.27.** Considera la funció
 
 $$
 g(x)=\frac{e^x}{x-1}.
@@ -584,7 +578,7 @@ $$
 
 Troba les asímptotes verticals i horitzontals, calcula els límits laterals en els punts que no pertanyen al domini, deriva la funció i estudia'n la monotonia i els extrems relatius. Fes-ne un esbós amb la informació obtinguda.
 
-**2.29.** Considera la funció
+**2.28.** Considera la funció
 
 $$
 p(x)=\lvert x-1\rvert+\lvert 2x+4\rvert.
@@ -600,14 +594,14 @@ En cada problema, defineix les variables, escriu la restricció, construeix una 
 
 #### Geometria plana
 
-**2.30. Hort urbà al costat d'un mur.** Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo.
+**2.29. Hort urbà al costat d'un mur.** Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo.
 
 - **a)** Anomena $x$ la longitud de cadascun dels costats perpendiculars al mur i $y$ la del costat paral·lel. Escriu la restricció que relaciona $x$ i $y$.
 - **b)** Expressa l'àrea de l'hort només en funció de $x$ i indica el domini físic de la variable.
 - **c)** Calcula les dimensions que fan màxima l'àrea i determina aquesta àrea màxima.
 - **d)** Comprova el màxim mitjançant el signe de la derivada o la derivada segona.
 
-**2.31. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre.
+**2.30. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre.
 
 - **a)** Si $x$ és l'amplària i $y$ l'altura, expressa $y$ en funció de $x$.
 - **b)** Troba la funció que dona el cost total del perfil en funció de $x$ i indica'n el domini.
@@ -616,14 +610,14 @@ En cada problema, defineix les variables, escriu la restricció, construeix una 
 
 #### Geometria a l'espai
 
-**2.32. Llauna cilíndrica.** Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$.
+**2.31. Llauna cilíndrica.** Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$.
 
 - **a)** Escriu la restricció que relaciona el radi $r$ i l'altura $h$.
 - **b)** Expressa el volum $V$ només en funció de $r$ i indica els valors admissibles de $r$.
 - **c)** Calcula el radi i l'altura que fan màxim el volum.
 - **d)** Determina el volum màxim de la llauna.
 
-**2.33. Recipient cònic.** Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
+**2.32. Recipient cònic.** Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
 
 $$
 r^2+h^2=15^2.
@@ -636,7 +630,7 @@ $$
 
 #### Temps mínim
 
-**2.34. Rescat a la platja.** Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
+**2.33. Rescat a la platja.** Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
 
 El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. Anomena $x=OP$.
 
@@ -647,14 +641,14 @@ El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des 
 
 #### Ingressos i beneficis
 
-**2.35. Entrades d'un espectacle.** Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$.
+**2.34. Entrades d'un espectacle.** Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$.
 
 - **a)** Si $x$ és el nombre d'euros que s'augmenta el preu inicial, expressa el preu i el nombre d'entrades venudes en funció de $x$.
 - **b)** Construeix la funció de benefici $B(x)$ i determina el domini que té sentit en el context.
 - **c)** Troba el preu que proporciona el benefici màxim.
 - **d)** Calcula el nombre d'entrades venudes i el benefici màxim.
 
-**2.36. Producció d'una cooperativa.** El cost de produir $x$ unitats d'un article és
+**2.35. Producció d'una cooperativa.** El cost de produir $x$ unitats d'un article és
 
 $$
 C(x)=0{,}03x^2+4x+180,
@@ -675,7 +669,7 @@ La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fab
 
 #### Cost mitjà
 
-**2.37. Cost mitjà de fabricació.** El cost total, en euros, de fabricar $x$ unitats d'un producte és
+**2.36. Cost mitjà de fabricació.** El cost total, en euros, de fabricar $x$ unitats d'un producte és
 
 $$
 C(x)=0{,}4x^2+12x+3.600, \qquad x>0.
@@ -688,7 +682,7 @@ $$
 
 #### Optimització d'una funció a trossos
 
-**2.38. Campanya publicitària.** Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
+**2.37. Campanya publicitària.** Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
 
 $$
 B(x)=
