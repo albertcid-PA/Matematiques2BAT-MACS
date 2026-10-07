@@ -462,14 +462,14 @@ $$
 
 #### Funcions racionals
 
-**2.19.** Estudia i representa les funcions racionals següents. Determina també les asímptotes verticals i horitzontals i la posició de la corba respecte de les asímptotes horitzontals.
+**2.19.** Estudia i representa les funcions racionals següents. Calcula els límits quan $x\to-\infty$ i $x\to+\infty$ i determina si hi ha una asímptota horitzontal o una branca infinita. Troba també les asímptotes verticals i, quan hi hagi asímptota horitzontal, estudia la posició de la corba respecte d'aquesta.
 
 | | |
 |:--|:--|
-| **a)** $f(x)=\dfrac{x^2-1}{x^2-x-2}$ | **b)** $f(x)=\dfrac{x^2-4}{x^2-1}$ |
-| **c)** $f(x)=\dfrac{x^2+x-6}{x^2-4}$ | **d)** $f(x)=\dfrac{x^2+x}{x^2-4}$ |
-| **e)** $f(x)=\dfrac{1}{(x+1)(x-2)}$ | **f)** $f(x)=\dfrac{x+2}{x(x-1)(x+3)}$ |
-| **g)** $f(x)=\dfrac{6-2x}{x(x-3)}$ | |
+| **a)** $f(x)=\dfrac{x^2-1}{x^2-x-2}$ | **b)** $f(x)=\dfrac{2x^2-4}{x^2-1}$ |
+| **c)** $f(x)=\dfrac{-x^2+x+6}{x^2-4}$ | **d)** $f(x)=\dfrac{3x^2+4}{x^2-4}$ |
+| **e)** $f(x)=\dfrac{1}{(x+1)(x-2)}$ | **f)** $f(x)=\dfrac{x^2}{x-1}$ |
+| **g)** $f(x)=\dfrac{-x^2}{x+1}$ | |
 
 #### Funcions a trossos
 
