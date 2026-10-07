@@ -135,35 +135,71 @@
   font-weight: 600;
 }
 
-/* Maquetació compacta del dossier PDF generat des de la pàgina d'exercicis. */
+/*
+ * Tipografia comuna dels reculls d'exercicis en PDF.
+ * Les fonts queden dins del projecte perquè la impressió sigui reproduïble.
+ */
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("../assets/fonts/latin-modern/lmroman10-regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("../assets/fonts/latin-modern/lmroman10-bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("../assets/fonts/latin-modern/lmroman10-italic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("../assets/fonts/latin-modern/lmroman10-bolditalic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Maquetació compacta comuna dels reculls d'exercicis en PDF. */
 @media print {
   @page {
     size: A4;
-    margin: 12mm 13mm 16mm;
+    margin: 10mm 11mm 14mm;
   }
 
-  body:has(#exercicis-de-calcul) {
+  body:has(.pdf-exercise-collection) {
     background: #fff;
     color: #111;
   }
 
-  body:has(#exercicis-de-calcul) .md-header,
-  body:has(#exercicis-de-calcul) .md-tabs,
-  body:has(#exercicis-de-calcul) .md-sidebar,
-  body:has(#exercicis-de-calcul) .md-path,
-  body:has(#exercicis-de-calcul) .md-footer,
-  body:has(#exercicis-de-calcul) .md-top,
-  body:has(#exercicis-de-calcul) .md-content__button,
-  body:has(#exercicis-de-calcul) .md-typeset .headerlink,
-  body:has(#exercicis-de-calcul) .md-typeset .admonition.info,
-  body:has(#exercicis-de-calcul) .download-pdf {
+  body:has(.pdf-exercise-collection) .md-header,
+  body:has(.pdf-exercise-collection) .md-tabs,
+  body:has(.pdf-exercise-collection) .md-sidebar,
+  body:has(.pdf-exercise-collection) .md-path,
+  body:has(.pdf-exercise-collection) .md-footer,
+  body:has(.pdf-exercise-collection) .md-top,
+  body:has(.pdf-exercise-collection) .md-content__button,
+  body:has(.pdf-exercise-collection) .md-typeset .headerlink,
+  body:has(.pdf-exercise-collection) .md-typeset .admonition.info,
+  body:has(.pdf-exercise-collection) .download-pdf {
     display: none !important;
   }
 
-  body:has(#exercicis-de-calcul) .md-main,
-  body:has(#exercicis-de-calcul) .md-main__inner,
-  body:has(#exercicis-de-calcul) .md-content,
-  body:has(#exercicis-de-calcul) .md-content__inner {
+  body:has(.pdf-exercise-collection) .md-main,
+  body:has(.pdf-exercise-collection) .md-main__inner,
+  body:has(.pdf-exercise-collection) .md-content,
+  body:has(.pdf-exercise-collection) .md-content__inner {
     display: block;
     width: 100%;
     max-width: none;
@@ -171,80 +207,95 @@
     padding: 0;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset {
+  body:has(.pdf-exercise-collection) .md-typeset {
     color: #111;
-    font-size: 9.4pt;
-    line-height: 1.28;
+    font-family: "Latin Modern Roman", "Times New Roman", serif;
+    font-size: 9pt;
+    line-height: 1.18;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset h1 {
-    margin: 0 0 0.45rem;
-    font-size: 20pt;
+  body:has(.pdf-exercise-collection) .md-typeset h1 {
+    margin: 0 0 0.25rem;
+    font-size: 17pt;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset h2 {
-    margin: 1rem 0 0.45rem;
-    padding-bottom: 0.2rem;
+  body:has(.pdf-exercise-collection) .md-typeset h2 {
+    margin: 0.6rem 0 0.22rem;
+    padding-bottom: 0.1rem;
     border-bottom: 0.5pt solid #222;
-    font-size: 15pt;
+    font-size: 13pt;
     break-after: avoid;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset h3 {
-    margin: 0.8rem 0 0.3rem;
-    font-size: 11.5pt;
+  body:has(.pdf-exercise-collection) .md-typeset h3 {
+    margin: 0.48rem 0 0.18rem;
+    font-size: 10.5pt;
     break-after: avoid;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset h4 {
-    margin: 0.65rem 0 0.25rem;
-    font-size: 10pt;
+  body:has(.pdf-exercise-collection) .md-typeset h4 {
+    margin: 0.4rem 0 0.15rem;
+    font-size: 9.4pt;
     break-after: avoid;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset p,
-  body:has(#exercicis-de-calcul) .md-typeset ul,
-  body:has(#exercicis-de-calcul) .md-typeset ol,
-  body:has(#exercicis-de-calcul) .md-typeset div.arithmatex {
-    margin-block: 0.28rem;
+  body:has(.pdf-exercise-collection) .md-typeset p,
+  body:has(.pdf-exercise-collection) .md-typeset ul,
+  body:has(.pdf-exercise-collection) .md-typeset ol,
+  body:has(.pdf-exercise-collection) .md-typeset div.arithmatex {
+    margin-block: 0.14rem;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset ul,
-  body:has(#exercicis-de-calcul) .md-typeset ol {
-    padding-left: 1.25rem;
+  body:has(.pdf-exercise-collection) .md-typeset ul,
+  body:has(.pdf-exercise-collection) .md-typeset ol {
+    padding-left: 1.05rem;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset li {
-    margin-block: 0.08rem;
+  body:has(.pdf-exercise-collection) .md-typeset li {
+    margin-block: 0.03rem;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset table,
-  body:has(#exercicis-de-calcul) .md-typeset figure,
-  body:has(#exercicis-de-calcul) .md-typeset div.arithmatex,
-  body:has(#exercicis-de-calcul) .md-typeset .admonition {
+  body:has(.pdf-exercise-collection) .md-typeset table,
+  body:has(.pdf-exercise-collection) .md-typeset figure,
+  body:has(.pdf-exercise-collection) .md-typeset div.arithmatex,
+  body:has(.pdf-exercise-collection) .md-typeset .admonition {
     break-inside: avoid;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset table {
-    font-size: 8.8pt;
+  body:has(.pdf-exercise-collection) .md-typeset div.arithmatex,
+  body:has(.pdf-exercise-collection) .md-typeset .katex-display,
+  body:has(.pdf-exercise-collection) .md-typeset .katex-display > .katex {
+    margin-block: 0.08rem;
+    overflow: visible !important;
+    padding-block: 0;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset figure {
-    margin-block: 0.4rem;
+  body:has(.pdf-exercise-collection) .md-typeset div.arithmatex::-webkit-scrollbar,
+  body:has(.pdf-exercise-collection) .md-typeset .katex-display::-webkit-scrollbar,
+  body:has(.pdf-exercise-collection) .md-typeset .katex-display > .katex::-webkit-scrollbar {
+    display: none;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset figure img {
+  body:has(.pdf-exercise-collection) .md-typeset table {
+    font-size: 8.4pt;
+  }
+
+  body:has(.pdf-exercise-collection) .md-typeset figure {
+    margin-block: 0.2rem;
+  }
+
+  body:has(.pdf-exercise-collection) .md-typeset figure img {
     max-width: 100%;
-    max-height: 88mm;
-    padding: 0.2rem;
+    max-height: 76mm;
+    padding: 0.08rem;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset figure figcaption {
-    margin-top: 0.15rem;
-    font-size: 7.8pt;
+  body:has(.pdf-exercise-collection) .md-typeset figure figcaption {
+    margin-top: 0.06rem;
+    font-size: 7.4pt;
   }
 
-  body:has(#exercicis-de-calcul) .md-typeset a {
+  body:has(.pdf-exercise-collection) .md-typeset a {
     color: inherit;
     text-decoration: none;
   }
