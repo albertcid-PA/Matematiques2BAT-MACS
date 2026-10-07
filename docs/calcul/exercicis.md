@@ -241,31 +241,6 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 - **b)** Determina els coeficients $a$, $b$ i $c$.
 - **c)** Classifica l'extrem relatiu mitjançant la derivada segona.
 
-### Taxa de variació i definició de derivada
-
-**1.22.** Durant una campanya de recollida selectiva, la quantitat acumulada de material recuperat ve donada per
-
-$$
-Q(t)=120+18t-0{,}6t^2, \qquad 0\leq t\leq20,
-$$
-
-on $t$ és el temps en dies i $Q(t)$ s'expressa en quilograms.
-
-- **a)** Calcula la taxa de variació mitjana entre els dies $4$ i $10$.
-- **b)** Calcula la taxa de variació instantània en el dia $10$.
-- **c)** Interpreta els dos resultats i indica'n les unitats.
-
-**1.23.** Calcula les derivades indicades utilitzant la definició
-
-$$
-f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}.
-$$
-
-Escriu i simplifica el quocient incremental abans de calcular el límit. Després, comprova el resultat amb les regles de derivació.
-
-- **a)** $f(x)=x^2-3x$, en $a=2$.
-- **b)** $g(x)=\dfrac1x$, en $a=1$.
-
 ## Tema 2. Aplicacions de les derivades
 
 ### Derivabilitat
