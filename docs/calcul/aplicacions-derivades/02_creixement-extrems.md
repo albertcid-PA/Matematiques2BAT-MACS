@@ -38,10 +38,36 @@ El procediment és:
     f(x)=x^3-3x^2-9x+5.
     $$
 
-    El domini és $\mathbb{R}$ i
+    El domini és $\mathbb{R}$ i la derivada és
 
     $$
-    f'(x)=3x^2-6x-9=3(x+1)(x-3).
+    f'(x)=3x^2-6x-9.
+    $$
+
+    Per trobar els candidats a extrems relatius, igualem la derivada a zero i traiem factor comú $3$:
+
+    $$
+    3x^2-6x-9=0
+    \quad\Longrightarrow\quad
+    3(x^2-2x-3)=0
+    \quad\Longrightarrow\quad
+    x^2-2x-3=0.
+    $$
+
+    Ara apliquem la fórmula general a l'equació de segon grau:
+
+    $$
+    x=\frac{-(-2)\pm\sqrt{(-2)^2-4\cdot1\cdot(-3)}}{2\cdot1}
+    =\frac{2\pm\sqrt{16}}{2}
+    =\frac{2\pm4}{2}.
+    $$
+
+    Per tant,
+
+    $$
+    x=-1
+    \qquad\text{o bé}\qquad
+    x=3.
     $$
 
     Els punts crítics són $x=-1$ i $x=3$. Estudiem el signe de $f'$:
