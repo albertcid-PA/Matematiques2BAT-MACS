@@ -134,8 +134,8 @@ $$
     $$
 
     <figure markdown="span">
-      ![Comparació en escala logarítmica entre el creixement de 50x elevat a 7 i 1 coma 1 elevat a x](../../img/calcul/fig_1_4_ordre_infinits_exponencial.svg?v=1){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_4_ordre_infinits_exponencial.tex">Figura 1.4.</a></strong> L'exponencial acaba superant el terme polinòmic; com que apareix amb signe negatiu, determina el límit.</figcaption>
+      ![Gràfica cartesiana de la funció exponencial 1 coma 1 elevat a x, que creix cap a més infinit](../../img/calcul/fig_1_4_ordre_infinits_exponencial.svg?v=2){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_4_ordre_infinits_exponencial.tex">Figura 1.4.</a></strong> $(1{,}1)^x$ tendeix a $+\infty$; com que en l'exemple apareix amb signe negatiu, determina que el límit sigui $-\infty$.</figcaption>
     </figure>
 
 !!! example "Exemple 2. Funció polinòmica"
