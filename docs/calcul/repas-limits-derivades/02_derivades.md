@@ -22,8 +22,8 @@ En aquest apartat recordarem les derivades de les funcions elementals i les regl
 Geomètricament, la taxa de variació mitjana és el pendent de la recta secant que passa pels punts $A=(a,f(a))$ i $B=(a+h,f(a+h))$. Quan $h$ s'apropa a zero, el punt $B$ s'apropa a $A$ i la recta secant s'apropa a la recta tangent.
 
 <figure markdown="span">
-  ![Interpretació geomètrica de la derivada mitjançant una recta secant que s'apropa a la tangent](../../img/calcul/fig_1_8_definicio_derivada.svg?v=1){ width="720" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_8_definicio_derivada.tex">Figura 1.8.</a></strong> Definició de derivada.</figcaption>
+  ![Interpretació geomètrica de la derivada mitjançant una recta secant que s'apropa a la tangent](../../img/calcul/fig_1_11_definicio_derivada.svg?v=1){ width="720" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_11_definicio_derivada.tex">Figura 1.11.</a></strong> Definició de derivada.</figcaption>
 </figure>
 
 ## 2. Derivades de funcions elementals
