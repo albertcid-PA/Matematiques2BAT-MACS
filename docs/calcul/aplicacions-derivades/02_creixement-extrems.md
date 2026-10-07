@@ -31,6 +31,29 @@ El procediment és:
 4. Dividir el domini en intervals i estudiar-hi el signe de $f'(x)$.
 5. Escriure els intervals de creixement i decreixement.
 
+## 2. Màxims i mínims relatius
+
+!!! abstract "Definició: màxim i mínim relatius"
+    Una funció té un **màxim relatiu** en $x=a$ si, a prop d'aquest punt, $f(a)$ és més gran que els valors veïns. Té un **mínim relatiu** si $f(a)$ és més petit que els valors veïns.
+
+La classificació més segura es fa amb el canvi de signe de $f'$:
+
+| Canvi de signe de $f'$ en $a$ | Classificació |
+|:---:|:---|
+| $+\longrightarrow-$ | Màxim relatiu |
+| $-\longrightarrow+$ | Mínim relatiu |
+| No canvia de signe | No és un extrem relatiu |
+
+!!! note "Comprovació amb la segona derivada"
+    Si $f'(a)=0$ i existeix $f''(a)$, podem comprovar el tipus d'extrem amb el signe de la segona derivada:
+
+    - si $f''(a)<0$, la funció té un **màxim relatiu** en $x=a$;
+    - si $f''(a)>0$, la funció té un **mínim relatiu** en $x=a$;
+    - si $f''(a)=0$, el criteri **no permet decidir** i cal estudiar el canvi de signe de $f'$.
+
+!!! warning "Un punt amb derivada zero no sempre és un extrem"
+    En $f(x)=x^3$ tenim $f'(0)=0$, però la funció és creixent a tots dos costats de $0$. Per tant, $(0,0)$ no és ni un màxim ni un mínim. Sempre cal comprovar el canvi de signe de $f'$.
+
 !!! example "Exemple 1. Creixement, decreixement i extrems d'una funció polinòmica"
     Estudiem
 
@@ -114,29 +137,6 @@ El procediment és:
       ![Gràfica de la funció polinòmica amb un màxim i un mínim relatius](../../img/calcul/fig_2_9_creixement_maxim_minim.svg){ width="740" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_maxim_minim.tex">Figura 2.9.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x^2-9x+5$.</figcaption>
     </figure>
-
-## 2. Màxims i mínims relatius
-
-!!! abstract "Definició: màxim i mínim relatius"
-    Una funció té un **màxim relatiu** en $x=a$ si, a prop d'aquest punt, $f(a)$ és més gran que els valors veïns. Té un **mínim relatiu** si $f(a)$ és més petit que els valors veïns.
-
-La classificació més segura es fa amb el canvi de signe de $f'$:
-
-| Canvi de signe de $f'$ en $a$ | Classificació |
-|:---:|:---|
-| $+\longrightarrow-$ | Màxim relatiu |
-| $-\longrightarrow+$ | Mínim relatiu |
-| No canvia de signe | No és un extrem relatiu |
-
-!!! note "Comprovació amb la segona derivada"
-    Si $f'(a)=0$ i existeix $f''(a)$, podem comprovar el tipus d'extrem amb el signe de la segona derivada:
-
-    - si $f''(a)<0$, la funció té un **màxim relatiu** en $x=a$;
-    - si $f''(a)>0$, la funció té un **mínim relatiu** en $x=a$;
-    - si $f''(a)=0$, el criteri **no permet decidir** i cal estudiar el canvi de signe de $f'$.
-
-!!! warning "Un punt amb derivada zero no sempre és un extrem"
-    En $f(x)=x^3$ tenim $f'(0)=0$, però la funció és creixent a tots dos costats de $0$. Per tant, $(0,0)$ no és ni un màxim ni un mínim. Sempre cal comprovar el canvi de signe de $f'$.
 
 !!! example "Exemple 2. Producte d'un polinomi i una exponencial"
     Estudiem els extrems de
