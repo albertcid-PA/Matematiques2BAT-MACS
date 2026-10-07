@@ -38,7 +38,7 @@ $$
 
 ### Càlcul de límits
 
-**1.3.** Calcula els límits següents quan $x\to+\infty$:
+**1.3.** Calcula els límits següents aplicant l'ordre dels infinits:
 
 | | |
 |:--|:--|
@@ -46,6 +46,8 @@ $$
 | **c)** $\displaystyle\lim_{x\to+\infty}\frac{5+3^x}{2\cdot3^x+1}$ | **d)** $\displaystyle\lim_{x\to+\infty}\frac{4\cdot2^x}{2^x+3}$ |
 | **e)** $\displaystyle\lim_{x\to+\infty}\frac{x^2-4}{x^3+1}$ | **f)** $\displaystyle\lim_{x\to+\infty}\frac{3x-1}{\sqrt{4x^2+5}}$ |
 | **g)** $\displaystyle\lim_{x\to+\infty}\left(5^x-4x^6\right)$ | **h)** $\displaystyle\lim_{x\to+\infty}\left(\frac{x^2}{x-1}-\frac{x^3}{x^2+2}\right)$ |
+| **i)** $\displaystyle\lim_{x\to-\infty}\left(4x^6-3x^4+x\right)$ | **j)** $\displaystyle\lim_{x\to-\infty}\left(-2x^5+7x^2\right)$ |
+| **k)** $\displaystyle\lim_{x\to-\infty}\frac{3x^3-2}{x^3+5x}$ | **l)** $\displaystyle\lim_{x\to-\infty}\left(2^x+x^3\right)$ |
 
 **1.4.** Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si obtens un nombre real, un quocient del tipus $\dfrac{k}{0}$ o una indeterminació $\dfrac{0}{0}$. Si el límit és infinit, calcula'n també els límits laterals.
 
@@ -187,7 +189,7 @@ on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en 
 |:--|:--|
 | **a)** $f(x)=\ln(x^2+3)$ | **b)** $f(x)=\ln\sqrt{2-x}$ |
 | **c)** $f(x)=\dfrac{\ln x}{e^{2x}}$ | **d)** $f(x)=e^{3x^2-2}$ |
-| **f)** $f(x)=\ln\left(\ln\dfrac{2}{x}\right)$ | |
+| **e)** $f(x)=\log_3(x^2+1)$ | **f)** $f(x)=\ln\left(\ln\dfrac{2}{x}\right)$ |
 
 ### Derivades successives
 
@@ -238,6 +240,31 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 - **a)** Escriu les tres equacions que expressen aquestes condicions.
 - **b)** Determina els coeficients $a$, $b$ i $c$.
 - **c)** Classifica l'extrem relatiu mitjançant la derivada segona.
+
+### Taxa de variació i definició de derivada
+
+**1.22.** Durant una campanya de recollida selectiva, la quantitat acumulada de material recuperat ve donada per
+
+$$
+Q(t)=120+18t-0{,}6t^2, \qquad 0\leq t\leq20,
+$$
+
+on $t$ és el temps en dies i $Q(t)$ s'expressa en quilograms.
+
+- **a)** Calcula la taxa de variació mitjana entre els dies $4$ i $10$.
+- **b)** Calcula la taxa de variació instantània en el dia $10$.
+- **c)** Interpreta els dos resultats i indica'n les unitats.
+
+**1.23.** Calcula les derivades indicades utilitzant la definició
+
+$$
+f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}.
+$$
+
+Escriu i simplifica el quocient incremental abans de calcular el límit. Després, comprova el resultat amb les regles de derivació.
+
+- **a)** $f(x)=x^2-3x$, en $a=2$.
+- **b)** $g(x)=\dfrac1x$, en $a=1$.
 
 ## Tema 2. Aplicacions de les derivades
 
@@ -437,13 +464,14 @@ $$
 
 ### Creixement, decreixement i extrems
 
-**2.17.** Determina els intervals de creixement i de decreixement i calcula els màxims i els mínims relatius de les funcions següents:
+**2.17.** Determina els intervals de creixement i de decreixement i calcula els màxims i els mínims relatius de les funcions següents. Justifica si cada solució de $f'(x)=0$ correspon realment a un extrem.
 
 | | |
 |:--|:--|
 | **a)** $f(x)=x^3-3x^2-9x+4$ | **b)** $f(x)=x^4-10x^2+9$ |
 | **c)** $f(x)=\dfrac{x^2+2}{x-1}$ | **d)** $f(x)=(x-1)e^{-x}$ |
 | **e)** $f(x)=\dfrac{\ln x}{x^2}$ | **f)** $f(x)=\dfrac{x^3}{x^2+1}$ |
+| **g)** $f(x)=x^3-3x^2+3x$ | |
 
 **2.18.** Fes un estudi complet del creixement, el decreixement i els extrems relatius de les funcions següents:
 
