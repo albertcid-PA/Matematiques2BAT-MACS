@@ -242,8 +242,36 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     **Creixement i extrems.**
 
     $$
-    f'(x)=3x^2-6x-9=3(x+1)(x-3).
+    f'(x)=3x^2-6x-9.
     $$
+
+    Per trobar els candidats a extrem relatiu, igualem la derivada a zero i traiem factor comú $3$:
+
+    $$
+    3x^2-6x-9=0
+    \quad\Longrightarrow\quad
+    3(x^2-2x-3)=0
+    \quad\Longrightarrow\quad
+    x^2-2x-3=0.
+    $$
+
+    Resolem l'equació de segon grau amb la fórmula general:
+
+    $$
+    x=\frac{-(-2)\pm\sqrt{(-2)^2-4\cdot1\cdot(-3)}}{2\cdot1}
+    =\frac{2\pm\sqrt{16}}{2}
+    =\frac{2\pm4}{2}.
+    $$
+
+    Per tant,
+
+    $$
+    x=-1
+    \qquad\text{o bé}\qquad
+    x=3.
+    $$
+
+    Aquests dos valors divideixen el domini en els intervals de la taula de monotonia:
 
     | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,3)$ | $3$ | $(3,+\infty)$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|
