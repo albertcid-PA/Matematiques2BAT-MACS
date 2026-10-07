@@ -24,8 +24,9 @@ Les figures es numeren amb el número del tema i el seu ordre d'aparició dins d
 
 - tema 1: **Figura 1.1**, **Figura 1.2**, **Figura 1.3**...
 - tema 2: **Figura 2.1**, **Figura 2.2**, **Figura 2.3**...
+- problemes PAU de càlcul: **Figura PAU.C.1**, **Figura PAU.C.2**, **Figura PAU.C.3**...
 
-La numeració i el títol s'escriuen al peu de la figura dins del document Markdown. El text **Figura tema.número** enllaça amb el fitxer `.tex` corresponent del repositori. El fitxer font es modifica a l'ordinador, dins de `figures/tikz`, amb VS Code.
+La numeració i el títol s'escriuen al peu de la figura dins del document Markdown. El text **Figura tema.número** o **Figura PAU.C.número** enllaça amb el fitxer `.tex` corresponent del repositori. El fitxer font es modifica a l'ordinador, dins de `figures/tikz`, amb VS Code.
 
 ## Publicació
 
