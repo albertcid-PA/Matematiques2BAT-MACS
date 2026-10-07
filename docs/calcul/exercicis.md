@@ -550,7 +550,7 @@ $$
 | | |
 |:--|:--|
 | **a)** $f(x)=\lvert x^2-4x+3\rvert$ | **b)** $g(x)=\lvert -x^2+2x+8\rvert$ |
-| **c)** $h(x)=\lvert x^2-9\rvert$ | **d)** $p(x)=\lvert x^2-5x+6\rvert$ |
+| **c)** $h(x)=\lvert x^2-9\rvert$ | **d)** $p(x)=\lvert -x^2+5x-6\rvert$ |
 
 ### Exercicis de síntesi i preparació de la prova
 
