@@ -1,4 +1,8 @@
-# Problemes PAU de càlcul
+# Problemes PAU de càlcul {.pdf-exercise-collection}
+
+<p class="download-pdf"><a href="../assets/exercicis/problemes_pau_calcul.pdf?v=1">Descarrega el llistat en PDF</a></p>
+
+---
 
 ## Estudi i interpretació d'una funció
 
