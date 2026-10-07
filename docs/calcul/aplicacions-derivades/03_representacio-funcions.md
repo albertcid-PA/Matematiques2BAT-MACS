@@ -432,30 +432,166 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
 En aquestes funcions el domini i els límits acostumen a determinar bona part de la gràfica.
 
-!!! example "Exemple 3. Tres comprovacions essencials"
-    **Funció irracional:** per a $f(x)=\sqrt{x+2}$, el domini és $[-2,+\infty)$ i la gràfica comença en $(-2,0)$.
-
-    **Funció exponencial:** per a $g(x)=e^{-x}$,
+!!! example "Exemple 3. Representació d'una funció irracional"
+    Estudiem
 
     $$
-    \lim_{x\to-\infty}g(x)=+\infty,
+    f(x)=\sqrt{x+2}.
+    $$
+
+    **Domini.** Com que l'arrel té índex parell, el radicand ha de ser positiu o zero:
+
+    $$
+    x+2\geq0\Longrightarrow x\geq-2.
+    $$
+
+    Per tant, $D_f=[-2,+\infty)$.
+
+    **Talls amb els eixos.** Per trobar el tall amb l'eix $Y$, calculem
+
+    $$
+    f(0)=\sqrt{0+2}=\sqrt2.
+    $$
+
+    Per trobar el tall amb l'eix $X$, resolem
+
+    $$
+    \sqrt{x+2}=0\Longrightarrow x=-2.
+    $$
+
+    Així, els talls són $(0,\sqrt2)$ i $(-2,0)$.
+
+    **Extrem del domini i comportament a l'infinit.** En l'extrem esquerre,
+
+    $$
+    \lim_{x\to-2^+}\sqrt{x+2}=0=f(-2),
+    $$
+
+    de manera que la funció és contínua en $x=-2$ i no hi ha cap asímptota vertical. A més,
+
+    $$
+    \lim_{x\to+\infty}\sqrt{x+2}=+\infty,
+    $$
+
+    i, per tant, no hi ha cap asímptota horitzontal.
+
+    **Creixement i extrems.** Derivem:
+
+    $$
+    f'(x)=\frac{1}{2\sqrt{x+2}}>0
+    \qquad\text{si }x>-2.
+    $$
+
+    | Valor de $x$ | $-2$ | $(-2,+\infty)$ |
+    |:---:|:---:|:---:|
+    | Valor de prova | — | $x=-1$ |
+    | Càlcul de la derivada | $f'(-2)$ no existeix | $f'(-1)=\dfrac12$ |
+    | Signe de $f'$ | no existeix | $+$ |
+    | Comportament de $f$ | mínim absolut $(-2,0)$ | creix |
+
+    La funció creix en tot el seu domini i té un mínim absolut en $(-2,0)$.
+
+!!! example "Exemple 4. Representació d'una funció exponencial"
+    Estudiem
+
+    $$
+    g(x)=e^{-x}.
+    $$
+
+    **Domini.** L'exponent pot prendre qualsevol valor real. Per tant, $D_g=\mathbb{R}$.
+
+    **Talls amb els eixos.** Calculem
+
+    $$
+    g(0)=e^0=1,
+    $$
+
+    i el tall amb l'eix $Y$ és $(0,1)$. Com que $e^{-x}>0$ per a tot $x\in\mathbb{R}$, la funció no talla l'eix $X$.
+
+    **Discontinuïtats i comportament a l'infinit.** La funció és contínua en tot $\mathbb{R}$ i no té asímptotes verticals. Als extrems,
+
+    $$
+    \lim_{x\to-\infty}e^{-x}=+\infty,
     \qquad
-    \lim_{x\to+\infty}g(x)=0,
+    \lim_{x\to+\infty}e^{-x}=0.
     $$
 
-    de manera que $y=0$ és una asímptota horitzontal cap a $+\infty$.
+    Així, $y=0$ és una asímptota horitzontal quan $x\to+\infty$.
 
-    **Funció logarítmica:** per a $h(x)=\ln(x-2)$, el domini és $(2,+\infty)$ i
+    **Creixement i extrems.** Derivem:
+
+    $$
+    g'(x)=-e^{-x}<0
+    \qquad\text{per a tot }x\in\mathbb{R}.
+    $$
+
+    | Valor de $x$ | $(-\infty,+\infty)$ |
+    |:---:|:---:|
+    | Valor de prova | $x=0$ |
+    | Càlcul de la derivada | $g'(0)=-1$ |
+    | Signe de $g'$ | $-$ |
+    | Comportament de $g$ | decreix |
+
+    La funció decreix en tot $\mathbb{R}$ i no té extrems relatius.
+
+!!! example "Exemple 5. Representació d'una funció logarítmica"
+    Estudiem
+
+    $$
+    h(x)=\ln(x-2).
+    $$
+
+    **Domini.** L'argument del logaritme ha de ser positiu:
+
+    $$
+    x-2>0\Longrightarrow x>2.
+    $$
+
+    Per tant, $D_h=(2,+\infty)$.
+
+    **Talls amb els eixos.** La funció no talla l'eix $Y$, perquè $0$ no pertany al domini. Per trobar el tall amb l'eix $X$, resolem
+
+    $$
+    \ln(x-2)=0
+    \Longrightarrow x-2=e^0=1
+    \Longrightarrow x=3.
+    $$
+
+    Per tant, el tall amb l'eix $X$ és $(3,0)$.
+
+    **Asímptota vertical i comportament a l'infinit.** En l'extrem esquerre del domini,
 
     $$
     \lim_{x\to2^+}\ln(x-2)=-\infty,
     $$
 
-    de manera que $x=2$ és una asímptota vertical.
+    de manera que $x=2$ és una asímptota vertical. D'altra banda,
+
+    $$
+    \lim_{x\to+\infty}\ln(x-2)=+\infty,
+    $$
+
+    i no hi ha cap asímptota horitzontal.
+
+    **Creixement i extrems.** Derivem:
+
+    $$
+    h'(x)=\frac{1}{x-2}>0
+    \qquad\text{si }x>2.
+    $$
+
+    | Valor de $x$ | $2$ | $(2,+\infty)$ |
+    |:---:|:---:|:---:|
+    | Valor de prova | — | $x=3$ |
+    | Càlcul de la derivada | $h'(2)$ no existeix | $h'(3)=1$ |
+    | Signe de $h'$ | no existeix | $+$ |
+    | Comportament de $h$ | asímptota vertical | creix |
+
+    La funció creix en tot el seu domini i no té extrems relatius.
 
     <figure markdown="span">
       ![Gràfiques d'una funció irracional, una funció exponencial i una funció logarítmica](../../img/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.svg?v=1){ width="960" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.tex">Figura 2.13.</a></strong> Representació de les funcions irracional, exponencial i logarítmica de l'exemple.</figcaption>
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.tex">Figura 2.13.</a></strong> Representació de les funcions irracional, exponencial i logarítmica dels exemples 3, 4 i 5.</figcaption>
     </figure>
 
 ## 6. Funcions a trossos i amb valor absolut
@@ -479,7 +615,7 @@ $$
 !!! note "Dibuix final"
     Els cercles buits indiquen que el punt no pertany al tros corresponent; els punts plens indiquen el valor real de la funció. La gràfica no s'ha de prolongar fora de l'interval assignat a cada expressió.
 
-!!! example "Exemple 4. Funció a trossos amb una discontinuïtat asimptòtica"
+!!! example "Exemple 6. Funció a trossos amb una discontinuïtat asimptòtica"
     Representem la funció
 
     $$
@@ -574,7 +710,7 @@ $$
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_14_representacio_funcio_trossos.tex">Figura 2.14.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
     </figure>
 
-!!! example "Exemple 5. Representació d'una funció amb dos valors absoluts"
+!!! example "Exemple 7. Representació d'una funció amb dos valors absoluts"
     Representem la funció
 
     $$
