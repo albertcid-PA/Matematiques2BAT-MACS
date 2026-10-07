@@ -57,6 +57,16 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - Evita sèries repetitives: combina càlcul, interpretació, justificació i representació.
 - Les solucions han de valorar el procediment, no només el resultat.
 
+## Reculls d'exercicis en PDF
+
+- Presenta al començament de cada pàgina d'exercicis un enllaç al recull complet en PDF.
+- Afegeix `?v=n` a l'enllaç del PDF i incrementa'n el número cada vegada que regeneris el recull, per evitar que el navegador mostri una versió antiga.
+- Marca el títol principal de la pàgina amb la classe `.pdf-exercise-collection` perquè s'hi apliqui la maquetació d'impressió comuna definida a `docs/stylesheets/extra.css`.
+- Els reculls utilitzen Latin Modern Roman, cos de 9 pt, interlineat compacte, marges A4 reduïts i títols proporcionats. Conserva aquesta configuració en els futurs blocs.
+- Inclou fórmules, taules i figures necessàries, però evita espais sobrers i salts de pàgina innecessaris. No redueixis les figures fins al punt que les etiquetes deixin de ser llegibles.
+- Desa el PDF publicable a `docs/assets/exercicis/` i una còpia de treball a `output/pdf/`.
+- Després de generar-lo, renderitza totes les pàgines i revisa visualment que no hi hagi text tallat, encavalcaments, pàgines buides ni fórmules o figures il·legibles.
+
 ## Preparació d'exàmens
 
 - Desa aquestes pàgines dins de `docs/preparacio-examens/`.

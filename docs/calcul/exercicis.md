@@ -1,8 +1,8 @@
-# Exercicis de càlcul
+# Exercicis de càlcul {.pdf-exercise-collection}
 
 En aquesta pàgina es reuneixen tots els exercicis del bloc de càlcul. La primera xifra identifica el tema i la segona, l'exercici: per exemple, l'exercici **1.3** és el tercer exercici del tema 1.
 
-<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf">Descarrega el llistat complet en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=2">Descarrega el llistat complet en PDF</a></p>
 
 ## Tema 1. Repàs de límits i derivades
 
