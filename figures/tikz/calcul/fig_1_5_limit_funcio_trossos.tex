@@ -1,0 +1,55 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\definecolor{trosA}{HTML}{365FB3}
+\definecolor{trosB}{HTML}{7C3AED}
+\definecolor{punt}{HTML}{C2415D}
+\definecolor{guia}{HTML}{6B7280}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=10.8cm,
+    height=6.4cm,
+    axis lines=middle,
+    xmin=-1.7,
+    xmax=3.25,
+    ymin=-2.7,
+    ymax=7.4,
+    xlabel={$x$},
+    ylabel={$y$},
+    xtick={-1,1,2,3},
+    ytick={-2,1,3,5,7},
+    axis line style={black!65},
+    tick style={black!65},
+    grid=major,
+    grid style={black!10},
+    clip=false,
+  ]
+    \addplot[trosA, very thick, domain=-1.45:1, samples=100]
+      {2*x+1};
+    \addplot[trosB, very thick, domain=1:2.3, samples=100]
+      {x^2+2};
+
+    \addplot[guia, dashed, thick] coordinates {(1,0) (1,3)};
+    \addplot[guia, dashed, thick] coordinates {(0,3) (1,3)};
+    \addplot[
+      only marks,
+      mark=o,
+      mark size=3.4pt,
+      trosA,
+      mark options={draw=trosA, fill=white, line width=1.1pt}
+    ] coordinates {(1,3)};
+    \addplot[only marks, mark=*, mark size=2.3pt, trosB]
+      coordinates {(1,3)};
+
+    \node[anchor=south west, text=trosA]
+      at (axis cs:-1.25,0.5) {$2x+1$};
+    \node[anchor=south west, text=trosB]
+      at (axis cs:1.55,4.15) {$x^2+2$};
+    \node[anchor=north west, text=punt]
+      at (axis cs:1.08,2.88) {$(1,3)$};
+  \end{axis}
+\end{tikzpicture}
+\end{document}
