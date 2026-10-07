@@ -491,10 +491,14 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     \lim_{x\to-2^+}\sqrt{x+2}=0=f(-2),
     $$
 
-    de manera que la funció és contínua en $x=-2$ i no hi ha cap asímptota vertical. A més,
+    de manera que la funció és contínua en $x=-2$ i no hi ha cap asímptota vertical. Quan $x\to+\infty$, dins de l'arrel domina el terme $x$:
 
     $$
-    \lim_{x\to+\infty}\sqrt{x+2}=+\infty,
+    \begin{aligned}
+    \lim_{x\to+\infty}\sqrt{x+2}
+    &=\lim_{x\to+\infty}\sqrt{x}\\
+    &=\sqrt{+\infty}=+\infty.
+    \end{aligned}
     $$
 
     i, per tant, no hi ha cap asímptota horitzontal.
@@ -537,12 +541,15 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
 
     i el tall amb l'eix $Y$ és $(0,1)$. Com que $e^{-x}>0$ per a tot $x\in\mathbb{R}$, la funció no talla l'eix $X$.
 
-    **Discontinuïtats i comportament a l'infinit.** La funció és contínua en tot $\mathbb{R}$ i no té asímptotes verticals. Als extrems,
+    **Discontinuïtats i comportament a l'infinit.** La funció és contínua en tot $\mathbb{R}$ i no té asímptotes verticals. Estudiem què passa amb l'exponent $-x$ a cada extrem:
 
     $$
-    \lim_{x\to-\infty}e^{-x}=+\infty,
-    \qquad
-    \lim_{x\to+\infty}e^{-x}=0.
+    \begin{aligned}
+    \lim_{x\to-\infty}e^{-x}
+    &=e^{-(-\infty)}=e^{+\infty}=+\infty,\\[4pt]
+    \lim_{x\to+\infty}e^{-x}
+    &=e^{-(+\infty)}=e^{-\infty}=0.
+    \end{aligned}
     $$
 
     Així, $y=0$ és una asímptota horitzontal quan $x\to+\infty$.
@@ -593,16 +600,20 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
 
     Per tant, el tall amb l'eix $X$ és $(3,0)$.
 
-    **Asímptota vertical i comportament a l'infinit.** En l'extrem esquerre del domini,
+    **Asímptota vertical i comportament a l'infinit.** En l'extrem esquerre del domini, $x-2\to0^+$ i, per tant,
 
     $$
-    \lim_{x\to2^+}\ln(x-2)=-\infty,
+    \lim_{x\to2^+}\ln(x-2)=\ln(0^+)=-\infty,
     $$
 
-    de manera que $x=2$ és una asímptota vertical. D'altra banda,
+    de manera que $x=2$ és una asímptota vertical. Quan $x\to+\infty$, dins del logaritme domina el terme $x$:
 
     $$
-    \lim_{x\to+\infty}\ln(x-2)=+\infty,
+    \begin{aligned}
+    \lim_{x\to+\infty}\ln(x-2)
+    &=\lim_{x\to+\infty}\ln x\\
+    &=\ln(+\infty)=+\infty.
+    \end{aligned}
     $$
 
     i no hi ha cap asímptota horitzontal.
@@ -690,16 +701,25 @@ $$
 
     Així, $f$ és **contínua en $x=1$**.
 
-    **Comportament a l'infinit.** Quan $x\to-\infty$ s'aplica la branca racional, mentre que quan $x\to+\infty$ s'aplica la branca quadràtica:
+    **Comportament a l'infinit.** Quan $x\to-\infty$ s'aplica la branca racional. En el denominador $x+1$ domina el terme $x$:
 
     $$
+    \begin{aligned}
     \lim_{x\to-\infty}f(x)
-    =\lim_{x\to-\infty}\left(1+\frac{2}{x+1}\right)=1,
+    &=\lim_{x\to-\infty}\left(1+\frac{2}{x+1}\right)\\
+    &=1+\lim_{x\to-\infty}\frac{2}{x}=1+0=1.
+    \end{aligned}
     $$
 
+    Quan $x\to+\infty$ s'aplica la branca quadràtica. Desenvolupem el quadrat i conservem el terme dominant $x^2$:
+
     $$
+    \begin{aligned}
     \lim_{x\to+\infty}f(x)
-    =\lim_{x\to+\infty}\left((x-3)^2-2\right)=+\infty.
+    &=\lim_{x\to+\infty}\left((x-3)^2-2\right)\\
+    &=\lim_{x\to+\infty}\left(x^2-6x+7\right)\\
+    &=\lim_{x\to+\infty}x^2=(+\infty)^2=+\infty.
+    \end{aligned}
     $$
 
     Per tant, $y=1$ és una **asímptota horitzontal quan $x\to-\infty$**. Cap a $+\infty$, la branca quadràtica creix indefinidament.
@@ -779,16 +799,22 @@ $$
     \end{cases}
     $$
 
-    **Comportament a l'infinit.** Als extrems utilitzem el primer i el tercer tros, respectivament:
+    **Comportament a l'infinit.** Als extrems utilitzem el primer i el tercer tros, respectivament. En tots dos casos domina el terme de primer grau:
 
     $$
+    \begin{aligned}
     \lim_{x\to-\infty}f(x)
-    =\lim_{x\to-\infty}(-x+1)=+\infty,
+    &=\lim_{x\to-\infty}(-x+1)\\
+    &=\lim_{x\to-\infty}(-x)=-(-\infty)=+\infty.
+    \end{aligned}
     $$
 
     $$
+    \begin{aligned}
     \lim_{x\to+\infty}f(x)
-    =\lim_{x\to+\infty}(x-1)=+\infty.
+    &=\lim_{x\to+\infty}(x-1)\\
+    &=\lim_{x\to+\infty}x=+\infty.
+    \end{aligned}
     $$
 
     Per tant, la funció creix sense límit als dos extrems i no té asímptotes horitzontals.
