@@ -279,6 +279,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,3)$ | $3$ | $(3,+\infty)$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Valor de prova | $x=-2$ | — | $x=0$ | — | $x=4$ |
+    | Càlcul de la derivada | $f'(-2)=15$ | $f'(-1)=0$ | $f'(0)=-9$ | $f'(3)=0$ | $f'(4)=15$ |
     | Signe de $f'$ | $+$ | $0$ | $-$ | $0$ | $+$ |
     | Comportament de $f$ | creix | màxim $(-1,32)$ | decreix | mínim $(3,0)$ | creix |
 
@@ -414,6 +416,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     | Valor de $x$ | $(-\infty,1)$ | $1$ | $(1,2)$ | $2$ | $(2,+\infty)$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Valor de prova | $x=0$ | — | $x=\dfrac{3}{2}$ | — | $x=3$ |
+    | Càlcul de la derivada | $f'(0)=-2$ | no existeix | $f'\!\left(\dfrac{3}{2}\right)=-8$ | no existeix | $f'(3)=-\dfrac{1}{2}$ |
     | Signe de $f'$ | $-$ | no existeix | $-$ | no existeix | $-$ |
     | Comportament de $f$ | decreix | asímptota vertical | decreix | discontinuïtat evitable en $(2,3)$ | decreix |
 
@@ -560,6 +564,8 @@ $$
 
     | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,1)$ | $1$ | $(1,3)$ | $3$ | $(3,+\infty)$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    | Valor de prova | $x=-2$ | — | $x=0$ | — | $x=2$ | — | $x=4$ |
+    | Càlcul de la derivada | $f'(-2)=-2$ | no existeix | $f'(0)=-2$ | no existeix | $f'(2)=-2$ | $f'(3)=0$ | $f'(4)=2$ |
     | Signe de $f'(x)$ | $-$ | no existeix | $-$ | no existeix | $-$ | $0$ | $+$ |
     | Comportament de $f$ | decreix | asímptota vertical | decreix | punt angulós $(1,2)$, no és un extrem | decreix | mínim $(3,-2)$ | creix |
 
