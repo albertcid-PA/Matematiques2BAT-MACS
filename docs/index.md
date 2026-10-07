@@ -16,7 +16,7 @@ Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicac
 
 ## Autoria i eines
 
-Aquests apunts han estat elaborats per **Albert Cid**. Durant la preparació s'utilitzen **Markdown**, **Zensical**, **Visual Studio Code**, **Git**, **GitHub**, **LaTeX**, **TikZ**, **PGFPlots** i **MiKTeX**, amb l'assistència d'**OpenAI Codex**. L'autor revisa i valida el contingut final.
+Aquests apunts han estat elaborats per **Albert Cid**. Durant la preparació s'utilitzen **Markdown**, **Python**, **Zensical**, **Visual Studio Code**, **Git**, **GitHub**, **LaTeX**, **TikZ**, **PGFPlots** i **MiKTeX**, amb l'assistència d'**OpenAI Codex**. L'autor revisa i valida el contingut final.
 
 L'estructura del lloc pren com a referència el [recull de Matemàtiques I de Jordi Irazuzta i Ignasi Irazuzta](https://irazuzta.github.io/Matematiques1BAT/).
 
