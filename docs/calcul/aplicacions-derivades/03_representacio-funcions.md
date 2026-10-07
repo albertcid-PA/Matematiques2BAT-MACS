@@ -241,7 +241,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     Hi ha un màxim relatiu en $(-1,32)$ i un mínim relatiu en $(3,0)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_11_representacio_polinomica.svg){ width="820" }
+      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_11_representacio_polinomica.svg?v=1){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_polinomica.tex">Figura 2.11.</a></strong> Representació de la funció polinòmica.</figcaption>
     </figure>
 
@@ -315,7 +315,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/calcul/fig_2_12_representacio_racional.svg){ width="820" }
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/calcul/fig_2_12_representacio_racional.svg?v=1){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_12_representacio_racional.tex">Figura 2.12.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat asimptòtica.</figcaption>
     </figure>
 
@@ -345,7 +345,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     de manera que $x=2$ és una asímptota vertical.
 
     <figure markdown="span">
-      ![Gràfiques d'una funció irracional, una funció exponencial i una funció logarítmica](../../img/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.svg){ width="960" }
+      ![Gràfiques d'una funció irracional, una funció exponencial i una funció logarítmica](../../img/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.svg?v=1){ width="960" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.tex">Figura 2.13.</a></strong> Representació de les funcions irracional, exponencial i logarítmica de l'exemple.</figcaption>
     </figure>
 
@@ -459,7 +459,7 @@ $$
     | Comportament de $f$ | decreix | asímptota vertical | decreix | punt angulós $(1,2)$, no és un extrem | decreix | mínim $(3,-2)$ | creix |
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/calcul/fig_2_14_representacio_funcio_trossos.svg){ width="560" }
+      ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/calcul/fig_2_14_representacio_funcio_trossos.svg?v=1){ width="560" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_14_representacio_funcio_trossos.tex">Figura 2.14.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
     </figure>
 

@@ -76,6 +76,7 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - Mantén una escala coherent, etiquetes llegibles i cap text a sobre de les corbes o de les acotacions.
 - En figures geomètriques, dibuixa amb línia discontínua només les arestes realment ocultes.
 - Regenera una figura amb `scripts/compila_figures.ps1` i revisa visualment el resultat abans de publicar.
+- Totes les referències a SVG dins del Markdown han d'incloure `?v=n`. Quan regeneris una figura, incrementa aquest número perquè el navegador no reutilitzi una versió antiga de la memòria cau.
 
 ## Comprovació local
 

@@ -13,7 +13,7 @@ En aquest apartat repassarem com s'interpreta un límit a partir de la gràfica 
     El límit $\displaystyle\lim_{x\to a}f(x)$ existeix quan els dos límits laterals coincideixen. El valor $f(a)$ és una informació diferent: pot coincidir amb el límit, ser diferent o no estar definit.
 
 <figure markdown="span">
-  ![Gràfica d'una funció amb continuïtat, discontinuïtats evitables, un salt finit, una asímptota vertical i dues asímptotes horitzontals](../../img/calcul/fig_1_1_interpretacio_grafica_limits.svg){ width="900" }
+  ![Gràfica d'una funció amb continuïtat, discontinuïtats evitables, un salt finit, una asímptota vertical i dues asímptotes horitzontals](../../img/calcul/fig_1_1_interpretacio_grafica_limits.svg?v=1){ width="900" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_1_interpretacio_grafica_limits.tex">Figura 1.1.</a></strong> Interpretació gràfica dels límits.</figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ $$
 $$
 
 <figure markdown="span">
-  ![Gràfica de menys x al cub, que creix cap a infinit quan x tendeix a menys infinit i decreix cap a menys infinit quan x tendeix a infinit](../../img/calcul/fig_1_2_comportament_infinits_menys_x_cub.svg){ width="700" }
+  ![Gràfica de menys x al cub, que creix cap a infinit quan x tendeix a menys infinit i decreix cap a menys infinit quan x tendeix a infinit](../../img/calcul/fig_1_2_comportament_infinits_menys_x_cub.svg?v=1){ width="700" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_2_comportament_infinits_menys_x_cub.tex">Figura 1.2.</a></strong> Comportament de $f(x)=-x^3$ als infinits.</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ $$
     No totes les funcions s'apropen a un valor concret ni creixen cap a $+\infty$ o $-\infty$. Per exemple, $f(x)=\sin x$ oscil·la indefinidament entre $-1$ i $1$. Per això, $\displaystyle\lim_{x\to+\infty}\sin x$ i $\displaystyle\lim_{x\to-\infty}\sin x$ no existeixen.
 
     <figure markdown="span">
-      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/calcul/fig_1_3_limit_inexistent_sinus.svg){ width="720" }
+      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/calcul/fig_1_3_limit_inexistent_sinus.svg?v=1){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_3_limit_inexistent_sinus.tex">Figura 1.3.</a></strong> Exemple de límit a l'infinit que no existeix.</figcaption>
     </figure>
 
