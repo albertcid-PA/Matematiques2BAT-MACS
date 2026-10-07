@@ -248,8 +248,8 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 **2.1.** Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
 
 <figure markdown="span">
-  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/calcul/fig_2_18_exercici_punts_no_derivables.svg?v=1){ width="920" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_18_exercici_punts_no_derivables.tex">Figura 2.18.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/calcul/fig_2_25_exercici_punts_no_derivables.svg?v=1){ width="920" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_25_exercici_punts_no_derivables.tex">Figura 2.25.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
 </figure>
 
 **2.2.** La figura representa una funció $y=f(x)$.
@@ -258,8 +258,8 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 - **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
 
 <figure markdown="span">
-  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/calcul/fig_2_19_exercici_derivades_grafica.svg?v=1){ width="700" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_19_exercici_derivades_grafica.tex">Figura 2.19.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/calcul/fig_2_26_exercici_derivades_grafica.svg?v=1){ width="700" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_exercici_derivades_grafica.tex">Figura 2.26.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
 </figure>
 
 #### Estudi en els punts d'unió
