@@ -491,6 +491,11 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
 
     La funció creix en tot el seu domini i té un mínim absolut en $(-2,0)$.
 
+    <figure markdown="span">
+      ![Gràfica de la funció irracional arrel quadrada de x més dos](../../img/calcul/fig_2_13a_representacio_irracional.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13a_representacio_irracional.tex">Figura 2.13a.</a></strong> Representació de $f(x)=\sqrt{x+2}$.</figcaption>
+    </figure>
+
 !!! example "Exemple 4. Representació d'una funció exponencial"
     Estudiem
 
@@ -533,6 +538,11 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     | Comportament de $g$ | decreix |
 
     La funció decreix en tot $\mathbb{R}$ i no té extrems relatius.
+
+    <figure markdown="span">
+      ![Gràfica de la funció exponencial e elevat a menys x](../../img/calcul/fig_2_13b_representacio_exponencial.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13b_representacio_exponencial.tex">Figura 2.13b.</a></strong> Representació de $g(x)=e^{-x}$.</figcaption>
+    </figure>
 
 !!! example "Exemple 5. Representació d'una funció logarítmica"
     Estudiem
@@ -590,8 +600,8 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     La funció creix en tot el seu domini i no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfiques d'una funció irracional, una funció exponencial i una funció logarítmica](../../img/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.svg?v=1){ width="960" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_irracional_exponencial_logaritmica.tex">Figura 2.13.</a></strong> Representació de les funcions irracional, exponencial i logarítmica dels exemples 3, 4 i 5.</figcaption>
+      ![Gràfica de la funció logarítmica logaritme neperià de x menys dos](../../img/calcul/fig_2_13c_representacio_logaritmica.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13c_representacio_logaritmica.tex">Figura 2.13c.</a></strong> Representació de $h(x)=\ln(x-2)$.</figcaption>
     </figure>
 
 ## 6. Funcions a trossos i amb valor absolut

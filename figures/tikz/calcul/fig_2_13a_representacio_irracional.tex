@@ -1,0 +1,43 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\definecolor{corba}{HTML}{365FB3}
+\definecolor{punt}{HTML}{B91C1C}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=8cm,
+    height=5.6cm,
+    scale only axis,
+    axis equal image,
+    axis lines=middle,
+    grid=major,
+    grid style={black!10},
+    axis line style={black!65},
+    tick style={black!65},
+    tick label style={font=\scriptsize},
+    xlabel={$x$},
+    ylabel={$y$},
+    xmin=-3, xmax=6,
+    ymin=-1, ymax=4,
+    xtick={-3,-2,-1,0,1,2,3,4,5,6},
+    ytick={-1,0,1,2,3,4},
+    clip=false,
+  ]
+    \addplot[corba, very thick, domain=-2:6, samples=220]
+      {sqrt(x+2)};
+    \addplot[only marks, mark=*, mark size=2.5pt, punt]
+      coordinates {(-2,0) (0,{sqrt(2)})};
+    \node[anchor=north east, font=\scriptsize]
+      at (axis cs:0,0) {$0$};
+    \node[anchor=south west, text=punt, font=\scriptsize]
+      at (axis cs:-1.95,0.12) {$(-2,0)$};
+    \node[anchor=south east, text=punt, font=\scriptsize]
+      at (axis cs:0,{sqrt(2)}) {$(0,\sqrt2)$};
+    \node[anchor=south east, text=corba]
+      at (axis cs:5.7,3.25) {$f(x)=\sqrt{x+2}$};
+  \end{axis}
+\end{tikzpicture}
+\end{document}
