@@ -298,40 +298,93 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     f(x)=\frac{x^2-x-2}{x^2-3x+2}.
     $$
 
-    **Domini i talls.**
+    **Domini.** El denominador no pot ser zero. Per tant, resolem
 
     $$
-    f(x)=\frac{(x-2)(x+1)}{(x-2)(x-1)},
-    \qquad
+    x^2-3x+2=0.
+    $$
+
+    Apliquem la fórmula general:
+
+    $$
+    x=\frac{-(-3)\pm\sqrt{(-3)^2-4\cdot1\cdot2}}{2\cdot1}
+    =\frac{3\pm\sqrt{1}}{2}
+    =\frac{3\pm1}{2}.
+    $$
+
+    Així, $x=1$ o bé $x=2$ i
+
+    $$
     D_f=\mathbb{R}\setminus\{1,2\}.
     $$
 
-    Per als valors del domini podem simplificar el factor $x-2$:
+    **Tall amb l'eix $Y$.** Calculem
+
+    $$
+    f(0)=\frac{0^2-0-2}{0^2-3\cdot0+2}=\frac{-2}{2}=-1.
+    $$
+
+    El tall amb l'eix $Y$ és $(0,-1)$.
+
+    **Tall amb l'eix $X$.** Igualem el numerador a zero:
+
+    $$
+    x^2-x-2=0.
+    $$
+
+    Resolem l'equació amb la fórmula general:
+
+    $$
+    x=\frac{-(-1)\pm\sqrt{(-1)^2-4\cdot1\cdot(-2)}}{2\cdot1}
+    =\frac{1\pm\sqrt{9}}{2}
+    =\frac{1\pm3}{2}.
+    $$
+
+    Les solucions són $x=-1$ i $x=2$, però $x=2$ no pertany al domini. Per tant, l'únic tall amb l'eix $X$ és $(-1,0)$.
+
+    **Discontinuïtat asimptòtica en $x=1$.** Substituint $x=1$ obtenim
+
+    $$
+    \frac{1^2-1-2}{1^2-3\cdot1+2}=\frac{-2}{0}.
+    $$
+
+    No és una indeterminació. Calculem els límits laterals tenint en compte el signe amb què el denominador s'apropa a zero:
+
+    $$
+    \lim_{x\to1^-}\frac{x^2-x-2}{x^2-3x+2}
+    =\frac{-2}{0^+}=-\infty,
+    $$
+
+    $$
+    \lim_{x\to1^+}\frac{x^2-x-2}{x^2-3x+2}
+    =\frac{-2}{0^-}=+\infty.
+    $$
+
+    Per tant, $x=1$ és una asímptota vertical.
+
+    **Discontinuïtat evitable en $x=2$.** Substituint $x=2$ obtenim la indeterminació
+
+    $$
+    \frac{2^2-2-2}{2^2-3\cdot2+2}=\frac{0}{0}.
+    $$
+
+    Ara sí que factoritzem el numerador i el denominador i simplifiquem el factor comú $x-2$:
+
+    $$
+    \begin{aligned}
+    \lim_{x\to2}\frac{x^2-x-2}{x^2-3x+2}
+    &=\lim_{x\to2}\frac{(x-2)(x+1)}{(x-2)(x-1)}\\
+    &=\lim_{x\to2}\frac{x+1}{x-1}
+    =\frac{2+1}{2-1}=3.
+    \end{aligned}
+    $$
+
+    Per tant, la gràfica té un forat en el punt $(2,3)$. Per als altres valors del domini podem utilitzar l'expressió simplificada
 
     $$
     f(x)=\frac{x+1}{x-1},
     \qquad x\neq1,2.
     $$
-
-    El tall amb l'eix $X$ és $(-1,0)$ i el tall amb l'eix $Y$ és $(0,-1)$.
-
-    **Discontinuïtat evitable en $x=2$.** Tot i que $f(2)$ no existeix, el factor que provoca la indeterminació es pot simplificar i
-
-    $$
-    \lim_{x\to2}f(x)=\frac{2+1}{2-1}=3.
-    $$
-
-    Per tant, la gràfica té un forat en el punt $(2,3)$.
-
-    **Discontinuïtat asimptòtica en $x=1$.** El factor $x-1$ no es pot simplificar i
-
-    $$
-    \lim_{x\to1^-}f(x)=-\infty,
-    \qquad
-    \lim_{x\to1^+}f(x)=+\infty.
-    $$
-
-    Per tant, $x=1$ és una asímptota vertical.
 
     **Comportament a l'infinit.** Com que el numerador i el denominador tenen el mateix grau,
 
