@@ -19,15 +19,15 @@ $$
 $$
 
 <figure markdown="span">
-  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../img/calcul/fig_1_9_exercici_limits_dues_grafiques.svg?v=1){ width="850" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_9_exercici_limits_dues_grafiques.tex">Figura 1.9.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
+  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=1){ width="850" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_12_exercici_limits_dues_grafiques.tex">Figura 1.12.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
 </figure>
 
 **1.2.** A partir de la gràfica, calcula els valors següents:
 
 <figure markdown="span">
-  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../img/calcul/fig_1_10_exercici_lectura_limits.svg?v=1){ width="820" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_10_exercici_lectura_limits.tex">Figura 1.10.</a></strong> Gràfica de l'exercici 1.2.</figcaption>
+  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../img/calcul/fig_1_13_exercici_lectura_limits.svg?v=1){ width="820" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_13_exercici_lectura_limits.tex">Figura 1.13.</a></strong> Gràfica de l'exercici 1.2.</figcaption>
 </figure>
 
 | | | |
