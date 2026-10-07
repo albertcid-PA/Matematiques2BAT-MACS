@@ -334,10 +334,16 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     0=\frac{x^2-x-2}{x^2-3x+2}.
     $$
 
-    Una fracció és igual a zero quan el numerador és zero i el denominador no ho és. Com que ja hem determinat el domini, podem aïllar la condició següent:
+    Una fracció és igual a zero quan el numerador és zero i el denominador no ho és. Com que $x\in D_f$, el denominador no és zero i podem multiplicar els dos membres per $x^2-3x+2$:
 
     $$
-    x^2-x-2=0,\qquad x\in D_f.
+    0\left(x^2-3x+2\right)=x^2-x-2.
+    $$
+
+    Com que el producte de zero per qualsevol nombre és zero, obtenim
+
+    $$
+    0=x^2-x-2.
     $$
 
     Resolem l'equació amb la fórmula general:
