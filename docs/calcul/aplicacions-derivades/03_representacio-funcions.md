@@ -173,13 +173,46 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     f(x)=x^3-3x^2-9x+27.
     $$
 
-    **Domini i talls.** El domini és $\mathbb{R}$. Factoritzem:
+    **Domini.** Com que és una funció polinòmica, el domini és $D_f=\mathbb{R}$.
+
+    **Tall amb l'eix $Y$.** Calculem $f(0)$:
 
     $$
-    f(x)=(x-3)^2(x+3).
+    f(0)=0^3-3\cdot0^2-9\cdot0+27=27.
     $$
 
-    Per tant, talla l'eix $X$ en $(-3,0)$ i $(3,0)$, i l'eix $Y$ en $(0,27)$. En $x=3$ l'arrel és doble: la gràfica toca l'eix però no el travessa.
+    Per tant, el tall amb l'eix $Y$ és $(0,27)$.
+
+    **Talls amb l'eix $X$.** Igualem la funció a zero:
+
+    $$
+    x^3-3x^2-9x+27=0.
+    $$
+
+    Provem els divisors del terme independent. Com que $f(3)=0$, apliquem Ruffini amb $x=3$:
+
+    $$
+    \begin{array}{r|rrrr}
+    3 & 1 & -3 & -9 & 27\\
+      &   & 3  & 0  & -27\\ \hline
+      & 1 & 0  & -9 & 0
+    \end{array}
+    $$
+
+    Així, una solució és $x=3$ i queda l'equació de segon grau
+
+    $$
+    x^2-9=0.
+    $$
+
+    Apliquem la fórmula general:
+
+    $$
+    x=\frac{-0\pm\sqrt{0^2-4\cdot1\cdot(-9)}}{2\cdot1}
+    =\frac{\pm6}{2}=\pm3.
+    $$
+
+    Per tant, les solucions són $x=-3$ i $x=3$; aquesta última apareix dues vegades. Els talls amb l'eix $X$ són $(-3,0)$ i $(3,0)$. En $x=3$ l'arrel és doble: la gràfica toca l'eix però no el travessa.
 
     **Comportament a l'infinit.** El terme dominant és $x^3$:
 
