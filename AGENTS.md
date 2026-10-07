@@ -63,6 +63,7 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - Presenta el temari vigent i permet preparar qualsevol contingut inclòs. No reprodueixis l'estructura d'un examen anterior llevat que el professor ho demani explícitament.
 - Separa amb claredat què entra i què no entra.
 - Les instruccions d'un tutor d'IA han de fer que proposi una pregunta cada vegada, esperi el procediment de l'alumne i ofereixi pistes graduals abans de mostrar la solució.
+- Quan una pàgina d'examen inclogui NotebookLM, dona a l'alumnat unes instruccions breus per crear el quadern, afegir-hi les fonts del web i començar l'entrenament amb un compte personal.
 - No publiquis un enllaç de NotebookLM fins que s'hagi comprovat que el quadern és accessible amb un compte personal d'alumne.
 
 ## Figures i gràfiques
