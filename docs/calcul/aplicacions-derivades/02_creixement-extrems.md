@@ -110,6 +110,11 @@ El procediment és:
     f''(3)=12>0\ \Longrightarrow\ \text{mínim}.
     $$
 
+    <figure markdown="span">
+      ![Gràfica de la funció polinòmica amb un màxim i un mínim relatius](../../img/calcul/fig_2_9_creixement_maxim_minim.svg){ width="740" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_maxim_minim.tex">Figura 2.9.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x^2-9x+5$.</figcaption>
+    </figure>
+
 ## 2. Màxims i mínims relatius
 
 !!! abstract "Definició: màxim i mínim relatius"
@@ -133,56 +138,34 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
 !!! warning "Un punt amb derivada zero no sempre és un extrem"
     En $f(x)=x^3$ tenim $f'(0)=0$, però la funció és creixent a tots dos costats de $0$. Per tant, $(0,0)$ no és ni un màxim ni un mínim. Sempre cal comprovar el canvi de signe de $f'$.
 
-!!! example "Exemple 2. Lectura conjunta del creixement i els extrems"
-    Considerem la funció
-
-    $$
-    f(x)=x^3-3x.
-    $$
-
-    Les dues primeres derivades són
-
-    $$
-    f'(x)=3x^2-3=3(x+1)(x-1),
-    \qquad
-    f''(x)=6x.
-    $$
-
-    Els punts crítics són $x=-1$ i $x=1$. A més,
-
-    $$
-    f''(-1)=-6<0,
-    \qquad
-    f''(1)=6>0,
-    $$
-
-    de manera que $(-1,2)$ és un màxim relatiu i $(1,-2)$ és un mínim relatiu.
-
-    <figure markdown="span">
-      ![Gràfica d'una funció cúbica que creix fins a un màxim, decreix fins a un mínim i torna a créixer](../../img/calcul/fig_2_9_creixement_maxim_minim.svg){ width="740" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_maxim_minim.tex">Figura 2.9.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x$.</figcaption>
-    </figure>
-
-    | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,1)$ | $1$ | $(1,+\infty)$ |
-    |:---:|:---:|:---:|:---:|:---:|:---:|
-    | Signe de $f'$ | $+$ | $0$ | $-$ | $0$ | $+$ |
-    | Comportament de $f$ | creix | màxim $(-1,2)$ | decreix | mínim $(1,-2)$ | creix |
-    | Comprovació amb $f''$ | — | $f''(-1)=-6<0$ | — | $f''(1)=6>0$ | — |
-
-!!! example "Exemple 3. Producte d'un polinomi i una exponencial"
+!!! example "Exemple 2. Producte d'un polinomi i una exponencial"
     Estudiem els extrems de
 
     $$
     f(x)=x^2e^{-x}.
     $$
 
-    Com que $e^{-x}>0$ per a tot $x$,
+    La derivada és
 
     $$
-    f'(x)=2xe^{-x}-x^2e^{-x}=xe^{-x}(2-x)
+    f'(x)=2xe^{-x}-x^2e^{-x}=xe^{-x}(2-x).
     $$
 
-    té el mateix signe que $x(2-x)$. Els punts crítics són $x=0$ i $x=2$:
+    Per trobar els candidats a extrems relatius, igualem la derivada a zero:
+
+    $$
+    xe^{-x}(2-x)=0.
+    $$
+
+    Com que $e^{-x}>0$ per a tot $x$, aquest factor no es pot anul·lar. Per tant,
+
+    $$
+    x=0
+    \qquad\text{o bé}\qquad
+    2-x=0\ \Longrightarrow\ x=2.
+    $$
+
+    Els punts crítics són $x=0$ i $x=2$. Com que $e^{-x}>0$, $f'$ té el mateix signe que $x(2-x)$:
 
     | Valor de $x$ | $(-\infty,0)$ | $0$ | $(0,2)$ | $2$ | $(2,+\infty)$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -195,7 +178,17 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     \left(2,\frac{4}{e^2}\right)
     $$
 
-    és un màxim relatiu.
+    és un màxim relatiu. Ho comprovem amb la segona derivada:
+
+    $$
+    f''(x)=e^{-x}(x^2-4x+2),
+    $$
+
+    $$
+    f''(0)=2>0\ \Longrightarrow\ \text{mínim},
+    \qquad
+    f''(2)=-\frac{2}{e^2}<0\ \Longrightarrow\ \text{màxim}.
+    $$
 
     <figure markdown="span">
       ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/calcul/fig_2_10_creixement_polinomi_exponencial.svg){ width="720" }
