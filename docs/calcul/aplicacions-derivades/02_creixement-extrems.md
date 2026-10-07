@@ -134,8 +134,8 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     $$
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica amb un màxim i un mínim relatius](../../img/calcul/fig_2_9_creixement_maxim_minim.svg?v=2){ width="740" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_maxim_minim.tex">Figura 2.9.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x^2-9x+5$.</figcaption>
+      ![Gràfica de la funció polinòmica amb un màxim i un mínim relatius](../../img/calcul/fig_2_8_creixement_maxim_minim.svg?v=2){ width="740" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_8_creixement_maxim_minim.tex">Figura 2.8.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x^2-9x+5$.</figcaption>
     </figure>
 
 !!! example "Exemple 2. Producte d'un polinomi i una exponencial"
@@ -191,8 +191,8 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     $$
 
     <figure markdown="span">
-      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/calcul/fig_2_10_creixement_polinomi_exponencial.svg?v=1){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_10_creixement_polinomi_exponencial.tex">Figura 2.10.</a></strong> Creixement, decreixement i extrems de $f(x)=x^2e^{-x}$.</figcaption>
+      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/calcul/fig_2_9_creixement_polinomi_exponencial.svg?v=1){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_polinomi_exponencial.tex">Figura 2.9.</a></strong> Creixement, decreixement i extrems de $f(x)=x^2e^{-x}$.</figcaption>
     </figure>
 
 ## 3. Esquema d'un estudi complet
