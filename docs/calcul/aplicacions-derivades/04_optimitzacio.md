@@ -9,8 +9,8 @@ En els problemes d'optimització sovint cal expressar longituds, àrees o volums
 En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar el **perímetre**. En qualsevol figura poligonal, el perímetre és la **suma de les longituds de tots els costats**.
 
 <figure markdown="span">
-  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/calcul/fig_2_16_repas_geometria_plana.svg?v=7){ width="900" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_16_repas_geometria_plana.tex">Figura 2.16.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
+  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/calcul/fig_2_18_repas_geometria_plana.svg?v=7){ width="900" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_18_repas_geometria_plana.tex">Figura 2.18.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
 </figure>
 
 | Figura | Àrea | Perímetre |
@@ -29,8 +29,8 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ per indicar el **volum**. L'àrea total és la suma de les àrees de totes les superfícies que formen el cos.
 
 <figure markdown="span">
-  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/calcul/fig_2_17_repas_geometria_espai.svg?v=11){ width="960" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_17_repas_geometria_espai.tex">Figura 2.17.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
+  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/calcul/fig_2_19_repas_geometria_espai.svg?v=11){ width="960" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_19_repas_geometria_espai.tex">Figura 2.19.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
 </figure>
 
 | Cos geomètric | Àrea total | Volum |

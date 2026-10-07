@@ -28,6 +28,8 @@ Les figures es numeren amb el número del tema i el seu ordre d'aparició dins d
 - problemes PAU d'àlgebra lineal: **Figura PAU.AL.1**, **Figura PAU.AL.2**, **Figura PAU.AL.3**...
 - problemes PAU de probabilitat i estadística: **Figura PAU.PE.1**, **Figura PAU.PE.2**, **Figura PAU.PE.3**...
 
+La numeració és consecutiva i utilitza només nombres enters. Si una figura es divideix en diverses figures independents, cal assignar un número nou a cadascuna i renumerar les figures posteriors; no s'hi afegeixen lletres com ara `2.13a` o `2.13b`.
+
 La numeració i el títol s'escriuen al peu de la figura dins del document Markdown. El text **Figura tema.número**, **Figura PAU.C.número**, **Figura PAU.AL.número** o **Figura PAU.PE.número** enllaça amb el fitxer `.tex` corresponent del repositori. El fitxer font es modifica a l'ordinador, dins de `figures/tikz`, amb VS Code.
 
 ## Publicació
