@@ -12,14 +12,14 @@
     width=11cm,
     height=7cm,
     axis lines=middle,
-    xmin=-2.5,
-    xmax=2.5,
-    ymin=-5,
-    ymax=5,
+    xmin=-3,
+    xmax=5,
+    ymin=-30,
+    ymax=20,
     xlabel={$x$},
     ylabel={$y$},
-    xtick={-2,-1,1,2},
-    ytick={-4,-3,-2,-1,1,2,3,4},
+    xtick={-2,-1,0,1,2,3,4},
+    ytick={-20,-10,10},
     grid=major,
     grid style={black!10},
     axis line style={black!65},
@@ -27,21 +27,21 @@
     tick label style={font=\small},
     clip=false,
   ]
-    \addplot[corba, very thick, domain=-2.18:2.18, samples=180]
-      {x^3-3*x};
+    \addplot[corba, very thick, domain=-2.35:4.75, samples=220]
+      {x^3-3*x^2-9*x+5};
 
     \draw[guia, densely dashed]
-      (axis cs:-1,0) -- (axis cs:-1,2) -- (axis cs:0,2);
+      (axis cs:-1,0) -- (axis cs:-1,10) -- (axis cs:0,10);
     \draw[guia, densely dashed]
-      (axis cs:1,0) -- (axis cs:1,-2) -- (axis cs:0,-2);
+      (axis cs:3,0) -- (axis cs:3,-22) -- (axis cs:0,-22);
 
     \addplot[only marks, mark=*, mark size=2.6pt, punt]
-      coordinates {(-1,2) (1,-2)};
+      coordinates {(-1,10) (3,-22)};
 
-    \node[anchor=south east, text=punt, fill=white, inner sep=1.5pt]
-      at (axis cs:-1.08,2.12) {màxim $(-1,2)$};
-    \node[anchor=north west, text=punt, fill=white, inner sep=1.5pt]
-      at (axis cs:1.08,-2.12) {mínim $(1,-2)$};
+    \node[anchor=west, text=punt, inner sep=1.5pt]
+      at (axis cs:-2.6,15) {màxim $(-1,10)$};
+    \node[anchor=north west, text=punt, inner sep=1.5pt]
+      at (axis cs:3.08,-23.5) {mínim $(3,-22)$};
   \end{axis}
 \end{tikzpicture}
 \end{document}
