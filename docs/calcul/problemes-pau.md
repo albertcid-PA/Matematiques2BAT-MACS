@@ -1,11 +1,5 @@
 # Problemes PAU de càlcul
 
-Aquest recull conté problemes de càlcul procedents de les **PAU de Catalunya de Matemàtiques Aplicades a les Ciències Socials** i propostes d'entrenament amb el mateix estil. Estan agrupats per contingut i cada enunciat procedent d'una prova indica l'any, la convocatòria i la sèrie. Quan se n'ha adaptat el context o se n'han ampliat les preguntes, s'indica amb l'expressió *basat en*. Els problemes nous s'identifiquen com a *problemes d'entrenament de tipus PAU*.
-
-Els problemes tenen numeració contínua amb el format **PAU.C.n**, on **C** identifica el bloc de **Càlcul**.
-
-En tots els problemes cal justificar els passos, escriure els resultats amb les unitats corresponents i interpretar-los dins del context. Per practicar separadament cada tècnica, consulta els [exercicis dels temes 1 i 2](exercicis.md).
-
 ## Estudi i interpretació d'una funció
 
 **PAU.C.1. Evolució dels seguidors d'un divulgador** *(basat en l'exercici 1 de la convocatòria ordinària de 2026, sèrie 1)*. Un metge comença a divulgar continguts sobre salut a les xarxes socials. El nombre de seguidors que té al cap de $t$ setmanes és
