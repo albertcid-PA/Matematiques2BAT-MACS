@@ -328,10 +328,16 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     El tall amb l'eix $Y$ és $(0,-1)$.
 
-    **Tall amb l'eix $X$.** Igualem el numerador a zero:
+    **Tall amb l'eix $X$.** En un punt de l'eix $X$ tenim $y=0$. Per tant, imposem $f(x)=0$:
 
     $$
-    x^2-x-2=0.
+    0=\frac{x^2-x-2}{x^2-3x+2}.
+    $$
+
+    Una fracció és igual a zero quan el numerador és zero i el denominador no ho és. Com que ja hem determinat el domini, podem aïllar la condició següent:
+
+    $$
+    x^2-x-2=0,\qquad x\in D_f.
     $$
 
     Resolem l'equació amb la fórmula general:
