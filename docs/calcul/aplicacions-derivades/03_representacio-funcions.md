@@ -205,11 +205,14 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     x^2-9=0.
     $$
 
-    Apliquem la fórmula general:
+    És una equació de segon grau incompleta. Aïllem $x^2$ i extraiem l'arrel quadrada:
 
     $$
-    x=\frac{-0\pm\sqrt{0^2-4\cdot1\cdot(-9)}}{2\cdot1}
-    =\frac{\pm6}{2}=\pm3.
+    x^2-9=0
+    \quad\Longrightarrow\quad
+    x^2=9
+    \quad\Longrightarrow\quad
+    x=\pm\sqrt{9}=\pm3.
     $$
 
     Per tant, les solucions són $x=-3$ i $x=3$; aquesta última apareix dues vegades. Els talls amb l'eix $X$ són $(-3,0)$ i $(3,0)$. En $x=3$ l'arrel és doble: la gràfica toca l'eix però no el travessa.
