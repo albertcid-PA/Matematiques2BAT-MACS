@@ -46,12 +46,12 @@ El procediment és:
 
     Els punts crítics són $x=-1$ i $x=3$. Estudiem el signe de $f'$:
 
-    | Interval | $(-\infty,-1)$ | $(-1,3)$ | $(3,+\infty)$ |
-    |:---:|:---:|:---:|:---:|
-    | Valor de prova | $x=-2$ | $x=0$ | $x=4$ |
-    | Càlcul de la derivada | $f'(-2)=15$ | $f'(0)=-9$ | $f'(4)=15$ |
-    | Signe de $f'$ | $+$ | $-$ | $+$ |
-    | Comportament de $f$ | creix | decreix | creix |
+    | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,3)$ | $3$ | $(3,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Valor de prova | $x=-2$ | — | $x=0$ | — | $x=4$ |
+    | Càlcul de la derivada | $f'(-2)=15$ | $f'(-1)=0$ | $f'(0)=-9$ | $f'(3)=0$ | $f'(4)=15$ |
+    | Signe de $f'$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+    | Comportament de $f$ | creix | màxim $(-1,10)$ | decreix | mínim $(3,-22)$ | creix |
 
     Per tant,
 
@@ -158,10 +158,10 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
 
     té el mateix signe que $x(2-x)$. Els punts crítics són $x=0$ i $x=2$:
 
-    | Interval | $(-\infty,0)$ | $(0,2)$ | $(2,+\infty)$ |
-    |:---:|:---:|:---:|:---:|
-    | Signe de $f'$ | $-$ | $+$ | $-$ |
-    | Comportament | decreix | creix | decreix |
+    | Valor de $x$ | $(-\infty,0)$ | $0$ | $(0,2)$ | $2$ | $(2,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $f'$ | $-$ | $0$ | $+$ | $0$ | $-$ |
+    | Comportament de $f$ | decreix | mínim $(0,0)$ | creix | màxim $\left(2,\dfrac{4}{e^2}\right)$ | decreix |
 
     Així, $(0,0)$ és un mínim relatiu i
 
