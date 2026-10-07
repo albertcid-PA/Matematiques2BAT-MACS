@@ -4,6 +4,8 @@ En aquesta pàgina es reuneixen tots els exercicis del bloc de càlcul. La prime
 
 <p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=2">Descarrega el llistat complet en PDF</a></p>
 
+<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=1">Consulta el llistat de resultats en PDF</a></p>
+
 ## Tema 1. Repàs de límits i derivades
 
 ### Interpretació gràfica dels límits
