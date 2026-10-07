@@ -237,7 +237,7 @@ Si el numerador i el denominador tendeixen a zero, encara no podem saber el valo
     La funció original no està definida en $x=2$, però el límit existeix i és finit: hi ha una discontinuïtat evitable en el punt $\left(2,\frac34\right)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_7_limit_discontinuitat_evitable.svg?v=1){ width="680" }
+      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_7_limit_discontinuitat_evitable.svg?v=2){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_7_limit_discontinuitat_evitable.tex">Figura 1.7.</a></strong> El forat en $\left(2,\frac34\right)$ representa una discontinuïtat evitable.</figcaption>
     </figure>
 
