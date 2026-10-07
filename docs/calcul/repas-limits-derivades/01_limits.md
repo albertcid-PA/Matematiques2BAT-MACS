@@ -121,7 +121,7 @@ En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els d
     f(x)=
     \begin{cases}
     2x+1, & x<1,\\
-    -x+2, & x\geq1.
+    x^2-4x+4, & x\geq1.
     \end{cases}
     $$
 
@@ -134,7 +134,7 @@ En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els d
 
     $$
     \lim_{x\to1^+}f(x)
-    =\lim_{x\to1^+}(-x+2)=1.
+    =\lim_{x\to1^+}(x^2-4x+4)=1.
     $$
 
     Com que els límits laterals són diferents,
@@ -146,7 +146,7 @@ En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els d
     La funció presenta una **discontinuïtat de salt finit** en $x=1$. A més, $f(1)=1$ perquè el punt $x=1$ pertany al segon tros.
 
     <figure markdown="span">
-      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_5_limit_funcio_trossos.svg?v=2){ width="560" }
+      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_5_limit_funcio_trossos.svg?v=3){ width="330" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_5_limit_funcio_trossos.tex">Figura 1.5.</a></strong> Els límits laterals diferents originen un salt finit en $x=1$.</figcaption>
     </figure>
 
