@@ -590,32 +590,26 @@ $$
 
 ### Optimització
 
-En cada problema, defineix les variables, escriu la restricció, construeix una funció objectiu d'una sola variable i determina'n el domini. Després, calcula'n els candidats a extrem, comprova si donen un màxim o un mínim i interpreta el resultat amb les unitats corresponents.
+En cada problema, identifica les dades i defineix les variables necessàries. Construeix una funció d'una sola variable que representi la magnitud que es vol maximitzar o minimitzar, determina'n el domini i resol el problema. Justifica l'òptim i expressa el resultat amb les unitats corresponents.
 
 #### Geometria plana
 
-**2.29. Hort urbà al costat d'un mur.** Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo.
+**2.29. Hort urbà al costat d'un mur.** Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo. **Determina les dimensions de l'hort perquè l'àrea sigui màxima i calcula aquesta àrea.**
 
-- **a)** Anomena $x$ la longitud de cadascun dels costats perpendiculars al mur i $y$ la del costat paral·lel. Escriu la restricció que relaciona $x$ i $y$.
-- **b)** Expressa l'àrea de l'hort només en funció de $x$ i indica el domini físic de la variable.
-- **c)** Calcula les dimensions que fan màxima l'àrea i determina aquesta àrea màxima.
-- **d)** Comprova el màxim mitjançant el signe de la derivada o la derivada segona.
+- **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
+- **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-**2.30. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre.
+**2.30. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
 
-- **a)** Si $x$ és l'amplària i $y$ l'altura, expressa $y$ en funció de $x$.
-- **b)** Troba la funció que dona el cost total del perfil en funció de $x$ i indica'n el domini.
-- **c)** Calcula les dimensions de l'aparador perquè el cost sigui mínim.
-- **d)** Determina el cost mínim del perfil.
+- **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
+- **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un mínim.
 
 #### Geometria a l'espai
 
-**2.31. Llauna cilíndrica.** Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$.
+**2.31. Llauna cilíndrica.** Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$. **Determina el radi i l'altura de la llauna perquè el volum sigui màxim i calcula aquest volum.**
 
-- **a)** Escriu la restricció que relaciona el radi $r$ i l'altura $h$.
-- **b)** Expressa el volum $V$ només en funció de $r$ i indica els valors admissibles de $r$.
-- **c)** Calcula el radi i l'altura que fan màxim el volum.
-- **d)** Determina el volum màxim de la llauna.
+- **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
+- **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
 **2.32. Recipient cònic.** Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
 
@@ -623,30 +617,26 @@ $$
 r^2+h^2=15^2.
 $$
 
-- **a)** Expressa $h$ en funció de $r$ i determina el domini físic de $r$.
-- **b)** Escriu el volum del con com una funció de $r$.
-- **c)** Troba el radi i l'altura perquè la capacitat sigui màxima.
-- **d)** Calcula la capacitat màxima i comprova que la solució correspon a un màxim.
+**Determina el radi i l'altura del recipient perquè la capacitat sigui màxima i calcula aquesta capacitat.**
+
+- **a)** Construeix la funció que cal optimitzar a partir de la relació donada i indica'n el domini.
+- **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
 #### Temps mínim
 
 **2.33. Rescat a la platja.** Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
 
-El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. Anomena $x=OP$.
+El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. **Determina en quin punt de la costa ha de començar a nedar perquè el temps total del rescat sigui mínim i calcula aquest temps.**
 
-- **a)** Justifica que la distància recorreguda corrent és $100-x$ i que la distància nedada és $\sqrt{x^2+60^2}$.
-- **b)** Escriu la funció $T(x)$ que dona el temps total del rescat i indica'n el domini.
-- **c)** Determina on ha de començar a nedar perquè el temps sigui mínim.
-- **d)** Calcula el temps mínim i compara'l amb els temps corresponents a $x=0$ i $x=100$.
+- **a)** Defineix una variable que situï el punt $P$ i construeix la funció que cal optimitzar, indicant-ne el domini.
+- **b)** Resol el problema, justifica el mínim i compara'l amb les opcions de fer tot el trajecte possible corrent o començar a nedar immediatament.
 
 #### Ingressos i beneficis
 
-**2.34. Entrades d'un espectacle.** Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$.
+**2.34. Entrades d'un espectacle.** Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$. **Determina el preu de l'entrada que maximitza el benefici i calcula el nombre d'entrades venudes i el benefici màxim.**
 
-- **a)** Si $x$ és el nombre d'euros que s'augmenta el preu inicial, expressa el preu i el nombre d'entrades venudes en funció de $x$.
-- **b)** Construeix la funció de benefici $B(x)$ i determina el domini que té sentit en el context.
-- **c)** Troba el preu que proporciona el benefici màxim.
-- **d)** Calcula el nombre d'entrades venudes i el benefici màxim.
+- **a)** Defineix la variable i construeix la funció de benefici, indicant el domini que té sentit en el context.
+- **b)** Resol el problema i interpreta el resultat.
 
 **2.35. Producció d'una cooperativa.** El cost de produir $x$ unitats d'un article és
 
@@ -660,12 +650,10 @@ $$
 p(x)=50-0{,}04x.
 $$
 
-La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fabricades.
+La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fabricades. **Determina quantes unitats ha de fabricar perquè el benefici sigui màxim i calcula aquest benefici.**
 
-- **a)** Escriu la funció d'ingressos $I(x)$.
-- **b)** Obté la funció de benefici $B(x)=I(x)-C(x)$.
-- **c)** Determina la producció que maximitza el benefici si $x$ es considera una variable real.
-- **d)** Com que només es poden fabricar unitats senceres, compara els dos enters més propers i dona la decisió final.
+- **a)** Construeix la funció de benefici a partir dels ingressos i els costos i indica'n el domini.
+- **b)** Resol primer el problema considerant $x$ una variable real. Després, com que només es poden fabricar unitats senceres, compara els enters necessaris i dona la decisió final.
 
 #### Cost mitjà
 
@@ -675,14 +663,14 @@ $$
 C(x)=0{,}4x^2+12x+3.600, \qquad x>0.
 $$
 
-- **a)** Escriu la funció de cost mitjà per unitat $C_m(x)=\dfrac{C(x)}{x}$.
-- **b)** Determina quina producció fa mínim el cost mitjà si $x$ es considera una variable real.
-- **c)** Decideix quantes unitats s'han de fabricar si la producció ha de ser entera.
-- **d)** Calcula el cost mitjà mínim aproximat.
+**Determina quantes unitats s'han de fabricar perquè el cost mitjà per unitat sigui mínim i calcula aquest cost.**
+
+- **a)** Construeix la funció de cost mitjà i indica'n el domini.
+- **b)** Resol primer el problema considerant $x$ una variable real. Després, si la producció ha de ser entera, compara els enters necessaris i dona la decisió final.
 
 #### Optimització d'una funció a trossos
 
-**2.37. Campanya publicitària.** Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
+**2.37. Campanya publicitària.** Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Vol determinar quina inversió proporciona el benefici màxim i calcular aquest benefici. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
 
 $$
 B(x)=
@@ -692,10 +680,8 @@ B(x)=
 \end{cases}
 $$
 
-- **a)** Estudia la continuïtat i la derivabilitat del model en el punt on canvia l'expressió.
-- **b)** Troba tots els candidats a extrem, inclosos els extrems del domini i el punt d'unió.
-- **c)** Construeix una taula de monotonia i determina quina inversió proporciona el benefici màxim i quin és aquest benefici.
-- **d)** Representa gràficament la funció i interpreta el resultat en el context del problema.
+- **a)** Estudia la funció en tot el domini i determina la inversió que proporciona el benefici màxim. Justifica el resultat tenint en compte el punt d'unió i els extrems del domini.
+- **b)** Representa gràficament la funció i interpreta el resultat en el context del problema.
 
 !!! info "Preparació de les PAU"
     Continua amb el recull de [problemes PAU de càlcul](problemes-pau.md), ordenat per continguts i amb exercicis de convocatòries reals i d'entrenament de tipus PAU.
