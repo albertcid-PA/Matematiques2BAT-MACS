@@ -72,7 +72,7 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - Edita el fitxer `.tex` de `figures/tikz/`; no modifiquis l'SVG manualment.
 - Mantén el `.tex` i l'SVG corresponent sincronitzats.
 - Numera les figures amb el tema i l'ordre d'aparició: `Figura 1.1`, `Figura 2.17`...
-- Les figures dels problemes PAU tenen una numeració pròpia i consecutiva segons el bloc: `Figura PAU.C.1`, `Figura PAU.C.2`... per al bloc de càlcul.
+- Les figures dels problemes PAU tenen una numeració pròpia i consecutiva dins de cada bloc: `Figura PAU.C.n` per a càlcul, `Figura PAU.AL.n` per a àlgebra lineal i `Figura PAU.PE.n` per a probabilitat i estadística.
 - El peu de figura ha d'enllaçar amb el `.tex` del repositori.
 - Mantén una escala coherent, etiquetes llegibles i cap text a sobre de les corbes o de les acotacions.
 - En figures geomètriques, dibuixa amb línia discontínua només les arestes realment ocultes.
