@@ -217,24 +217,28 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     Per tant, les solucions són $x=-3$ i $x=3$; aquesta última apareix dues vegades. Els talls amb l'eix $X$ són $(-3,0)$ i $(3,0)$. En $x=3$ l'arrel és doble: la gràfica toca l'eix però no el travessa.
 
-    **Comportament a l'infinit.** Traiem factor comú $x^3$, que és el terme de grau més alt:
+    **Comportament a l'infinit.** Segons l'ordre dels infinits, el terme de grau més alt creix més de pressa:
 
     $$
-    \begin{aligned}
-    \lim_{x\to+\infty}f(x)
-    &=\lim_{x\to+\infty}x^3
-    \left(1-\frac{3}{x}-\frac{9}{x^2}+\frac{27}{x^3}\right)\\
-    &=(+\infty)\left(1-0-0+0\right)=+\infty,
-    \end{aligned}
+    x^3>x^2>x>k,
+    $$
+
+    on $k$ representa qualsevol constant real. Per tant, domina el terme $x^3$:
+
+    $$
+    \boxed{\begin{aligned}
+    \lim_{x\to+\infty}\left(x^3-3x^2-9x+27\right)
+    &=\lim_{x\to+\infty}x^3\\
+    &=(+\infty)^3=+\infty.
+    \end{aligned}}
     $$
 
     $$
-    \begin{aligned}
-    \lim_{x\to-\infty}f(x)
-    &=\lim_{x\to-\infty}x^3
-    \left(1-\frac{3}{x}-\frac{9}{x^2}+\frac{27}{x^3}\right)\\
-    &=(-\infty)\left(1-0-0+0\right)=-\infty.
-    \end{aligned}
+    \boxed{\begin{aligned}
+    \lim_{x\to-\infty}\left(x^3-3x^2-9x+27\right)
+    &=\lim_{x\to-\infty}x^3\\
+    &=(-\infty)^3=-\infty.
+    \end{aligned}}
     $$
 
     Una funció polinòmica no té asímptotes.
