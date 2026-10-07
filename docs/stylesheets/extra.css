@@ -135,6 +135,10 @@
   font-weight: 600;
 }
 
+.md-typeset .download-pdf a:visited {
+  color: var(--md-typeset-a-color);
+}
+
 /*
  * Tipografia comuna dels reculls d'exercicis en PDF.
  * Les fonts queden dins del projecte perquè la impressió sigui reproduïble.
