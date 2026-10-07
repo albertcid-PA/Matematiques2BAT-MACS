@@ -345,7 +345,11 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     **Discontinuïtat asimptòtica en $x=1$.** Substituint $x=1$ obtenim
 
     $$
-    \frac{1^2-1-2}{1^2-3\cdot1+2}=\frac{-2}{0}.
+    \lim_{x\to1}f(x)
+    =\lim_{x\to1}\frac{x^2-x-2}{x^2-3x+2}
+    \longrightarrow
+    \frac{1^2-1-2}{1^2-3\cdot1+2}
+    =\frac{-2}{0}.
     $$
 
     No és una indeterminació. Calculem els límits laterals tenint en compte el signe amb què el denominador s'apropa a zero:
@@ -365,7 +369,11 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     **Discontinuïtat evitable en $x=2$.** Substituint $x=2$ obtenim la indeterminació
 
     $$
-    \frac{2^2-2-2}{2^2-3\cdot2+2}=\frac{0}{0}.
+    \lim_{x\to2}f(x)
+    =\lim_{x\to2}\frac{x^2-x-2}{x^2-3x+2}
+    \longrightarrow
+    \frac{2^2-2-2}{2^2-3\cdot2+2}
+    =\frac{0}{0}.
     $$
 
     Ara sí que factoritzem el numerador i el denominador i simplifiquem el factor comú $x-2$:
