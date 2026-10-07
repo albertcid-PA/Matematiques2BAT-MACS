@@ -3,6 +3,7 @@
 /site/
 /.cache/
 /tmp/
+/output/
 
 # Fitxers auxiliars generats en compilar les figures LaTeX.
 figures/tikz/**/*.aux
