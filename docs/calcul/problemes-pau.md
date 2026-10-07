@@ -1,6 +1,6 @@
 # Problemes PAU de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/problemes_pau_calcul.pdf?v=1">Descarrega el llistat en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/problemes_pau_calcul.pdf?v=1" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
 
 ---
 
