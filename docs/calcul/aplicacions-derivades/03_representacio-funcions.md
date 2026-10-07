@@ -408,16 +408,13 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     \qquad x\neq1,2.
     $$
 
-    **Comportament a l'infinit.** Com que el numerador i el denominador tenen el mateix grau, dividim tots els termes per $x^2$, que és la potència de grau més alt:
+    **Comportament a l'infinit.** Apliquem el criteri d'ordre d'infinits. Tant al numerador com al denominador domina el terme de segon grau $x^2$:
 
     $$
     \begin{aligned}
     \lim_{x\to-\infty}f(x)
     &=\lim_{x\to-\infty}\frac{x^2-x-2}{x^2-3x+2}\\
-    &=\lim_{x\to-\infty}
-      \frac{1-\frac{1}{x}-\frac{2}{x^2}}
-           {1-\frac{3}{x}+\frac{2}{x^2}}\\
-    &=\frac{1-0-0}{1-0+0}=1.
+    &=\lim_{x\to-\infty}\frac{x^2}{x^2}=1.
     \end{aligned}
     $$
 
@@ -427,10 +424,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     \begin{aligned}
     \lim_{x\to+\infty}f(x)
     &=\lim_{x\to+\infty}\frac{x^2-x-2}{x^2-3x+2}\\
-    &=\lim_{x\to+\infty}
-      \frac{1-\frac{1}{x}-\frac{2}{x^2}}
-           {1-\frac{3}{x}+\frac{2}{x^2}}\\
-    &=\frac{1-0-0}{1-0+0}=1.
+    &=\lim_{x\to+\infty}\frac{x^2}{x^2}=1.
     \end{aligned}
     $$
 
