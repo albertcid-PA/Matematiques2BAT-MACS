@@ -105,6 +105,11 @@ Les funcions polinòmiques i les funcions racionals són contínues en els punts
     =2^2-3\cdot2+5=3.}
     $$
 
+    <figure markdown="span">
+      ![Gràfica de la funció polinòmica x al quadrat menys 3x més 5 amb el punt 2 coma 3 destacat](../../img/calcul/fig_1_4_limit_substitucio_directa.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_4_limit_substitucio_directa.tex">Figura 1.4.</a></strong> El límit en $x=2$ coincideix amb el valor $f(2)=3$.</figcaption>
+    </figure>
+
 #### Punt d'unió d'una funció a trossos
 
 En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els dos límits laterals. El límit existeix si coincideixen.
@@ -138,6 +143,11 @@ En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els d
     \boxed{\displaystyle\lim_{x\to1}f(x)=3.}
     $$
 
+    <figure markdown="span">
+      ![Gràfica de la funció a trossos amb els dos trams units en el punt 1 coma 3](../../img/calcul/fig_1_5_limit_funcio_trossos.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_5_limit_funcio_trossos.tex">Figura 1.5.</a></strong> Els dos trossos s'apropen al punt $(1,3)$.</figcaption>
+    </figure>
+
 #### Quocient del tipus $\dfrac{k}{0}$, amb $k\neq0$
 
 Si el numerador tendeix a un nombre diferent de zero i el denominador tendeix a zero, els límits laterals presenten un comportament infinit. Per determinar-ne el signe, estudiem si el denominador s'apropa a zero per valors positius o negatius.
@@ -168,6 +178,11 @@ Si el numerador tendeix a un nombre diferent de zero i el denominador tendeix a 
     $$
 
     Els límits laterals són diferents i, per tant, el límit en $x=1$ no existeix. La recta $x=1$ és una asímptota vertical.
+
+    <figure markdown="span">
+      ![Gràfica de la funció x més 2 dividit entre x menys 1 amb una asímptota vertical en x igual a 1](../../img/calcul/fig_1_6_limit_assimptota_vertical.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_6_limit_assimptota_vertical.tex">Figura 1.6.</a></strong> Els límits laterals en $x=1$ són infinits de signe contrari.</figcaption>
+    </figure>
 
 !!! note "Regla de signes amb zero"
     Tractem $0^+$ com un nombre positiu molt petit i $0^-$ com un nombre negatiu molt petit. Apliquem les regles habituals dels signes:
@@ -218,6 +233,11 @@ Si el numerador i el denominador tendeixen a zero, encara no podem saber el valo
     $$
 
     La funció original no està definida en $x=2$, però el límit existeix i és finit: hi ha una discontinuïtat evitable en el punt $\left(2,\frac34\right)$.
+
+    <figure markdown="span">
+      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_7_limit_discontinuitat_evitable.svg?v=1){ width="680" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_7_limit_discontinuitat_evitable.tex">Figura 1.7.</a></strong> El forat en $\left(2,\frac34\right)$ representa una discontinuïtat evitable.</figcaption>
+    </figure>
 
 ### 2.2 Ordre dels infinits
 
