@@ -1,8 +1,8 @@
 # Exercicis de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=3" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=4" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
 
-<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=2" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=3" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
 
 ---
 
@@ -539,6 +539,7 @@ $$
 - **f)** Per a $r(x)=x^2e^{-2x}$, estudia les branques a l'infinit, el creixement i els extrems.
 - **g)** Per a $s(x)=\dfrac{x^2}{\ln x}$, determina el domini, les asímptotes i els intervals de creixement i decreixement.
 - **h)** Per a $t(x)=\ln(x^2-9)$, estudia el domini, les asímptotes i els extrems.
+- **i)** Per a $u(x)=(x-1)^2e^x$, estudia els límits a l'infinit, les asímptotes, el creixement i els extrems.
 
 #### Funcions amb valor absolut
 

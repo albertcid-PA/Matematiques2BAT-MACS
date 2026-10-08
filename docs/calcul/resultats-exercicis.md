@@ -248,6 +248,7 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 - **f)** $\lim_{x\to-\infty}r(x)=+\infty$ i $\lim_{x\to+\infty}r(x)=0$; decreix a $(-\infty,0)\cup(1,+\infty)$ i creix a $(0,1)$; mínim $(0,0)$ i màxim $(1,e^{-2})$.
 - **g)** $D=(0,1)\cup(1,+\infty)$; AV $x=1$; decreix a $(0,1)\cup(1,\sqrt e)$ i creix a $(\sqrt e,+\infty)$; mínim $(\sqrt e,2e)$.
 - **h)** $D=(-\infty,-3)\cup(3,+\infty)$; AV $x=\pm3$; decreix al primer interval i creix al segon; no té extrems relatius.
+- **i)** $\lim_{x\to-\infty}u(x)=0$ i $\lim_{x\to+\infty}u(x)=+\infty$; té l'asímptota horitzontal $y=0$ només quan $x\to-\infty$. Com que $u'(x)=e^x(x-1)(x+1)$, creix a $(-\infty,-1)\cup(1,+\infty)$ i decreix a $(-1,1)$; màxim $(-1,4/e)$ i mínim $(1,0)$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
   ![Representacions dels quatre primers apartats de l'exercici 2.22](../img/calcul/fig_2_33_resultat_exercici_2_22_1.svg?v=1){ width="100%" }
@@ -255,8 +256,8 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 </figure>
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions dels quatre darrers apartats de l'exercici 2.22](../img/calcul/fig_2_34_resultat_exercici_2_22_2.svg?v=1){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_22_2.tex">Figura 2.34.</a></strong> Representacions dels apartats e–h de l'exercici 2.22.</figcaption>
+  ![Representacions dels cinc darrers apartats de l'exercici 2.22](../img/calcul/fig_2_34_resultat_exercici_2_22_2.svg?v=2){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_22_2.tex">Figura 2.34.</a></strong> Representacions dels apartats e–i de l'exercici 2.22.</figcaption>
 </figure>
 
 **2.23.**
