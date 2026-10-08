@@ -294,6 +294,10 @@
     padding: 0.08rem;
   }
 
+  body:has(.pdf-exercise-collection) .md-typeset figure.pau-solution-figure img {
+    max-height: 60mm;
+  }
+
   body:has(.pdf-exercise-collection) .md-typeset figure figcaption {
     margin-top: 0.06rem;
     font-size: 7.4pt;
