@@ -447,16 +447,146 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     La funció no té extrems relatius.
 
+!!! example "Exemple 3. Funció racional amb branques infinites"
+    Estudiem
+
+    $$
+    g(x)=\frac{-x^2}{x-2}.
+    $$
+
+    **Domini.** El denominador no pot ser zero. Per tant,
+
+    $$
+    x-2=0\Longrightarrow x=2,
+    $$
+
+    i el domini és
+
+    $$
+    D_g=\mathbb{R}\setminus\{2\}.
+    $$
+
+    **Tall amb l'eix $Y$.** Calculem
+
+    $$
+    g(0)=\frac{-0^2}{0-2}=0.
+    $$
+
+    Per tant, el tall amb l'eix $Y$ és $(0,0)$.
+
+    **Tall amb l'eix $X$.** Imposant $g(x)=0$ obtenim
+
+    $$
+    0=\frac{-x^2}{x-2}.
+    $$
+
+    Com que $x\in D_g$, podem multiplicar els dos membres per $x-2$:
+
+    $$
+    0(x-2)=-x^2
+    \quad\Longrightarrow\quad
+    0=-x^2
+    \quad\Longrightarrow\quad
+    x=0.
+    $$
+
+    El tall amb l'eix $X$ també és $(0,0)$.
+
+    **Discontinuïtat asimptòtica en $x=2$.** Substituint $x=2$ obtenim
+
+    $$
+    \lim_{x\to2}g(x)
+    =\lim_{x\to2}\frac{-x^2}{x-2}
+    \longrightarrow
+    \frac{-4}{0}.
+    $$
+
+    No és una indeterminació. Estudiem els límits laterals:
+
+    $$
+    \lim_{x\to2^-}\frac{-x^2}{x-2}
+    =\frac{-4}{0^-}=+\infty,
+    $$
+
+    $$
+    \lim_{x\to2^+}\frac{-x^2}{x-2}
+    =\frac{-4}{0^+}=-\infty.
+    $$
+
+    Per tant, $x=2$ és una asímptota vertical.
+
+    **Comportament a l'infinit.** Apliquem el criteri d'ordre d'infinits. Al numerador domina $-x^2$ i al denominador domina $x$:
+
+    $$
+    \begin{aligned}
+    \lim_{x\to-\infty}g(x)
+    &=\lim_{x\to-\infty}\frac{-x^2}{x-2}\\
+    &=\lim_{x\to-\infty}\frac{-x^2}{x}
+    =\lim_{x\to-\infty}(-x)=+\infty,
+    \end{aligned}
+    $$
+
+    $$
+    \begin{aligned}
+    \lim_{x\to+\infty}g(x)
+    &=\lim_{x\to+\infty}\frac{-x^2}{x-2}\\
+    &=\lim_{x\to+\infty}\frac{-x^2}{x}
+    =\lim_{x\to+\infty}(-x)=-\infty.
+    \end{aligned}
+    $$
+
+    Així, la funció té una **branca infinita** a cadascun dels dos extrems i no té cap asímptota horitzontal.
+
+    **Creixement i extrems.** Derivem amb la regla del quocient:
+
+    $$
+    \begin{aligned}
+    g'(x)
+    &=\frac{(-2x)(x-2)-(-x^2)\cdot1}{(x-2)^2}\\
+    &=\frac{-2x^2+4x+x^2}{(x-2)^2}
+    =\frac{-x(x-4)}{(x-2)^2}.
+    \end{aligned}
+    $$
+
+    Busquem els candidats a extrem relatiu:
+
+    $$
+    g'(x)=0
+    \quad\Longrightarrow\quad
+    -x(x-4)=0
+    \quad\Longrightarrow\quad
+    x=0\quad\text{o bé}\quad x=4.
+    $$
+
+    Els valors de la funció són
+
+    $$
+    g(0)=0,
+    \qquad
+    g(4)=\frac{-4^2}{4-2}=-8.
+    $$
+
+    La taula de monotonia també ha d'incloure l'asímptota vertical $x=2$:
+
+    | Valor de $x$ | $(-\infty,0)$ | $0$ | $(0,2)$ | $2$ | $(2,4)$ | $4$ | $(4,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    | Valor de prova | $x=-1$ | — | $x=1$ | — | $x=3$ | — | $x=5$ |
+    | Càlcul de la derivada | $g'(-1)=-\dfrac59$ | $g'(0)=0$ | $g'(1)=3$ | no existeix | $g'(3)=3$ | $g'(4)=0$ | $g'(5)=-\dfrac59$ |
+    | Signe de $g'$ | $-$ | $0$ | $+$ | no existeix | $+$ | $0$ | $-$ |
+    | Comportament de $g$ | decreix | mínim $(0,0)$ | creix | asímptota vertical | creix | màxim $(4,-8)$ | decreix |
+
+    La funció té un mínim relatiu en $(0,0)$ i un màxim relatiu en $(4,-8)$.
+
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/calcul/fig_2_11_representacio_racional.svg?v=1){ width="820" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_racional.tex">Figura 2.11.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat asimptòtica.</figcaption>
+      ![Representacions de dues funcions racionals: una amb discontinuïtat evitable i asímptota horitzontal, i una altra amb branques infinites](../../img/calcul/fig_2_11_representacio_racional.svg?v=2){ width="940" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_racional.tex">Figura 2.11.</a></strong> Representacions dels exemples racionals: <strong>a)</strong> discontinuïtat evitable i asímptotes; <strong>b)</strong> asímptota vertical, branques infinites i extrems relatius.</figcaption>
     </figure>
 
 ## 5. Funcions irracionals, exponencials i logarítmiques
 
 En aquestes funcions el domini i els límits acostumen a determinar bona part de la gràfica.
 
-!!! example "Exemple 3. Representació d'una funció irracional"
+!!! example "Exemple 4. Representació d'una funció irracional"
     Estudiem
 
     $$
@@ -524,7 +654,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_12_representacio_irracional.tex">Figura 2.12.</a></strong> Representació de $f(x)=\sqrt{x+2}$.</figcaption>
     </figure>
 
-!!! example "Exemple 4. Representació d'una funció exponencial"
+!!! example "Exemple 5. Representació d'una funció exponencial"
     Estudiem
 
     $$
@@ -575,7 +705,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_exponencial.tex">Figura 2.13.</a></strong> Representació de $g(x)=e^{-x}$.</figcaption>
     </figure>
 
-!!! example "Exemple 5. Representació d'una funció logarítmica"
+!!! example "Exemple 6. Representació d'una funció logarítmica"
     Estudiem
 
     $$
@@ -660,7 +790,7 @@ $$
 !!! note "Dibuix final"
     Els cercles buits indiquen que el punt no pertany al tros corresponent; els punts plens indiquen el valor real de la funció. La gràfica no s'ha de prolongar fora de l'interval assignat a cada expressió.
 
-!!! example "Exemple 6. Funció a trossos amb una discontinuïtat asimptòtica"
+!!! example "Exemple 7. Funció a trossos amb una discontinuïtat asimptòtica"
     Representem la funció
 
     $$
@@ -764,7 +894,7 @@ $$
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_15_representacio_funcio_trossos.tex">Figura 2.15.</a></strong> Funció a trossos contínua però no derivable en el punt d'unió.</figcaption>
     </figure>
 
-!!! example "Exemple 7. Representació d'una funció amb dos valors absoluts"
+!!! example "Exemple 8. Representació d'una funció amb dos valors absoluts"
     Representem la funció
 
     $$
@@ -842,7 +972,7 @@ $$
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_16_representacio_dos_valors_absoluts.tex">Figura 2.16.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
     </figure>
 
-!!! example "Exemple 8. Representació del valor absolut d'una funció quadràtica"
+!!! example "Exemple 9. Representació del valor absolut d'una funció quadràtica"
     Representem la funció
 
     $$
