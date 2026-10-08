@@ -1,0 +1,20 @@
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage{pgfplots}\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\definecolor{corba}{HTML}{365FB3}\definecolor{guia}{HTML}{7C3AED}\definecolor{punt}{HTML}{B91C1C}
+\begin{document}\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 2,horizontal sep=1cm,vertical sep=0.9cm},
+ width=7cm,height=5.1cm,axis lines=middle,grid=major,grid style={black!8},tick label style={font=\tiny},title style={font=\small},samples=120,unbounded coords=jump]
+\nextgroupplot[title={a)},xmin=-5,xmax=5,ymin=-5,ymax=7]
+ \addplot[corba,very thick,domain=-5:-1.03]{(x-1)/(x-2)};\addplot[corba,very thick,domain=-.97:1.97]{(x-1)/(x-2)};\addplot[corba,very thick,domain=2.03:5]{(x-1)/(x-2)};
+ \addplot[guia,densely dashed] coordinates {(2,-5)(2,7)};\addplot[guia,densely dashed,domain=-5:5]{1};\addplot[only marks,mark=o,mark size=2.3pt,punt,fill=white] coordinates {(-1,.6667)};
+\nextgroupplot[title={b)},xmin=-4,xmax=4,ymin=-8,ymax=10]
+ \addplot[corba,very thick,domain=-4:-1.03]{(2*x^2-4)/(x^2-1)};\addplot[corba,very thick,domain=-.97:.97]{(2*x^2-4)/(x^2-1)};\addplot[corba,very thick,domain=1.03:4]{(2*x^2-4)/(x^2-1)};
+ \addplot[guia,densely dashed] coordinates {(-1,-8)(-1,10)};\addplot[guia,densely dashed] coordinates {(1,-8)(1,10)};\addplot[guia,densely dashed,domain=-4:4]{2};
+\nextgroupplot[title={c)},xmin=-6,xmax=6,ymin=-7,ymax=6]
+ \addplot[corba,very thick,domain=-6:-2.03]{-(x-3)/(x-2)};\addplot[corba,very thick,domain=-1.97:1.97]{-(x-3)/(x-2)};\addplot[corba,very thick,domain=2.03:6]{-(x-3)/(x-2)};
+ \addplot[guia,densely dashed] coordinates {(2,-7)(2,6)};\addplot[guia,densely dashed,domain=-6:6]{-1};\addplot[only marks,mark=o,mark size=2.3pt,punt,fill=white] coordinates {(-2,-1.25)};
+\nextgroupplot[title={d)},xmin=-6,xmax=6,ymin=-8,ymax=9]
+ \addplot[corba,very thick,domain=-6:-2.03]{(3*x^2+4)/(x^2-4)};\addplot[corba,very thick,domain=-1.97:1.97]{(3*x^2+4)/(x^2-4)};\addplot[corba,very thick,domain=2.03:6]{(3*x^2+4)/(x^2-4)};
+ \addplot[guia,densely dashed] coordinates {(-2,-8)(-2,9)};\addplot[guia,densely dashed] coordinates {(2,-8)(2,9)};\addplot[guia,densely dashed,domain=-6:6]{3};
+\end{groupplot}\end{tikzpicture}\end{document}
