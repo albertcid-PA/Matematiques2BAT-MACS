@@ -1,0 +1,26 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\definecolor{tramU}{HTML}{365FB3}
+\definecolor{tramDos}{HTML}{0F766E}
+\definecolor{tramTres}{HTML}{D97706}
+\definecolor{punt}{HTML}{B91C1C}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+  width=10.8cm,height=6.5cm,axis lines=left,
+  xmin=0,xmax=26,ymin=0,ymax=380,
+  xlabel={$x$ (kg)},ylabel={$P(x)$ (euros)},
+  xtick={0,2,5,8,11,15,20,25},ytick={0,30,100,200,300,353},
+  grid=major,grid style={black!10},tick label style={font=\small},label style={font=\small},clip=false]
+  \addplot[tramU,very thick,domain=0.05:2]{30};
+  \addplot[tramDos,very thick,domain=2:10.99]{12*x+6};
+  \addplot[tramTres,very thick,domain=11:25]{15*x-22};
+  \addplot[only marks,mark=*,mark size=2.5pt,tramU] coordinates {(2,30)};
+  \addplot[only marks,mark=o,mark size=2.8pt,very thick,tramDos,fill=white] coordinates {(2,30) (11,138)};
+  \addplot[only marks,mark=*,mark size=2.5pt,punt] coordinates {(11,143)};
+  \node[anchor=north east,font=\small,text=tramDos] at (axis cs:10.8,133) {$(11,138)$};
+  \node[anchor=south west,font=\small,text=punt] at (axis cs:11.2,148) {$(11,143)$: salt finit};
+\end{axis}
+\end{tikzpicture}
+\end{document}
