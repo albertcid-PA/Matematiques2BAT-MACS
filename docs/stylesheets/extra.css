@@ -259,6 +259,10 @@
     margin-block: 0.03rem;
   }
 
+  body:has(.pdf-exercise-collection) .md-typeset .exercise-result-lead {
+    break-after: avoid;
+  }
+
   body:has(.pdf-exercise-collection) .md-typeset table,
   body:has(.pdf-exercise-collection) .md-typeset figure,
   body:has(.pdf-exercise-collection) .md-typeset div.arithmatex,
@@ -296,6 +300,14 @@
 
   body:has(.pdf-exercise-collection) .md-typeset figure.pau-solution-figure img {
     max-height: 60mm;
+  }
+
+  body:has(.pdf-exercise-collection) .md-typeset figure.exercise-solution-figure img {
+    max-height: 62mm;
+  }
+
+  body:has(.pdf-exercise-collection) .md-typeset figure.exercise-solution-figure--multi img {
+    max-height: 88mm;
   }
 
   body:has(.pdf-exercise-collection) .md-typeset figure figcaption {
