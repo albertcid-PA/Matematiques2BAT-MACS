@@ -1,8 +1,8 @@
 # Exercicis de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=5" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=6" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
 
-<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=4" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=5" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
 
 ---
 
@@ -632,6 +632,11 @@ $$
 **2.33. Rescat a la platja.** Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
 
 El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. **Determina en quin punt de la costa ha de començar a nedar perquè el temps total del rescat sigui mínim i calcula aquest temps.**
+
+<figure markdown="span">
+  ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../img/calcul/fig_2_28_rescat_platja.svg?v=1){ width="650" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_rescat_platja.tex">Figura 2.28.</a></strong> Esquema del recorregut del socorrista en l'exercici 2.33.</figcaption>
+</figure>
 
 - **a)** Defineix una variable que situï el punt $P$ i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema, justifica el mínim i compara'l amb les opcions de fer tot el trajecte possible corrent o començar a nedar immediatament.
