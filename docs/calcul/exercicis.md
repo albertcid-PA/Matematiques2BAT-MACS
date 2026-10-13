@@ -1,8 +1,8 @@
 # Exercicis de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=6" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=7" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
 
-<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=5" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=6" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
 
 ---
 
@@ -460,9 +460,9 @@ $$
 
 | | |
 |:--|:--|
-| **a)** $f(x)=x^4-6x^2+5$ | **b)** $f(x)=x^3+3x^2-9x-2$ |
-| **c)** $f(x)=x^4-4x^3+4$ | **d)** $f(x)=x^5-10x^3+9x$ |
-| **e)** $f(x)=(x-2)^3-3(x-2)$ | **f)** $f(x)=x^2(x-3)^2$ |
+| **a)** $f(x)=x^4-6x^2+5$ | **b)** $f(x)=x^3-12x-16$ |
+| **c)** $f(x)=x^4-4x^3$ | **d)** $f(x)=x^5-15x^4+75x^3-125x^2$ |
+| **e)** $f(x)=4x^3-12x^2+9x-2$ | **f)** $f(x)=x^2(x-4)^2$ |
 
 #### Funcions racionals
 
