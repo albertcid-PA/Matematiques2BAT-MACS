@@ -191,14 +191,14 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 | Apartat | Talls i comportament | Monotonia i extrems |
 |:--|:--|:--|
 | **a)** | Talls $x=\pm1,\pm\sqrt5$; tall $Y=5$; $f(x)\to+\infty$ als dos infinits. | Decreix a $(-\infty,-\sqrt3)\cup(0,\sqrt3)$; creix a $(-\sqrt3,0)\cup(\sqrt3,+\infty)$. Mínims $(\pm\sqrt3,-4)$ i màxim $(0,5)$. |
-| **b)** | Talls $x\approx-3{,}262,-1{,}340,1{,}602$; tall $Y=-2$; branques $-\infty$ i $+\infty$. | Creix a $(-\infty,-3)\cup(1,+\infty)$ i decreix a $(-3,1)$. Màxim $(-3,25)$ i mínim $(1,-7)$. |
-| **c)** | Talls $x=-1,1,2\pm\sqrt3$; tall $Y=4$; $f(x)\to+\infty$ als dos infinits. | Decreix a $(-\infty,3)$ i creix a $(3,+\infty)$; mínim $(3,-23)$. $x=0$ és estacionari, però no és un extrem. |
-| **d)** | Talls $x=-3,-1,0,1,3$; tall $Y=0$; branques $-\infty$ i $+\infty$. | Posem $\alpha\approx0{,}563$ i $\beta\approx2{,}384$. Creix a $(-\infty,-\beta)\cup(-\alpha,\alpha)\cup(\beta,+\infty)$ i decreix a $(-\beta,-\alpha)\cup(\alpha,\beta)$. Màxims $(-\beta,-21{,}880)$ i $(\alpha,3{,}880)$; mínims $(-\alpha,3{,}880)$ i $(\beta,-21{,}880)$. |
-| **e)** | Talls $x=2-\sqrt3,2,2+\sqrt3$; tall $Y=-2$; branques $-\infty$ i $+\infty$. | Creix a $(-\infty,1)\cup(3,+\infty)$ i decreix a $(1,3)$. Màxim $(1,2)$ i mínim $(3,-2)$. |
-| **f)** | Talls $x=0$ i $x=3$; tall $Y=0$; $f(x)\to+\infty$ als dos infinits. | Decreix a $(-\infty,0)\cup(\frac32,3)$ i creix a $(0,\frac32)\cup(3,+\infty)$. Mínims $(0,0)$ i $(3,0)$; màxim $(\frac32,\frac{81}{16})$. |
+| **b)** | Talls $x=-2$ (doble) i $x=4$; tall $Y=-16$; branques $-\infty$ i $+\infty$. | Creix a $(-\infty,-2)\cup(2,+\infty)$ i decreix a $(-2,2)$. Màxim $(-2,0)$ i mínim $(2,-32)$. |
+| **c)** | Talls $x=0$ (triple) i $x=4$; tall $Y=0$; $f(x)\to+\infty$ als dos infinits. | Decreix a $(-\infty,3)$ i creix a $(3,+\infty)$; mínim $(3,-27)$. $x=0$ és estacionari, però no és un extrem. |
+| **d)** | Talls $x=0$ (doble) i $x=5$ (triple); tall $Y=0$; branques $-\infty$ i $+\infty$. | Creix a $(-\infty,0)\cup(2,+\infty)$ i decreix a $(0,2)$. Màxim $(0,0)$ i mínim $(2,-108)$. $x=5$ és estacionari, però no és un extrem. |
+| **e)** | Talls $x=\frac12$ (doble) i $x=2$; tall $Y=-2$; branques $-\infty$ i $+\infty$. | Creix a $(-\infty,\frac12)\cup(\frac32,+\infty)$ i decreix a $(\frac12,\frac32)$. Màxim $(\frac12,0)$ i mínim $(\frac32,-2)$. |
+| **f)** | Talls $x=0$ i $x=4$; tall $Y=0$; $f(x)\to+\infty$ als dos infinits. | Decreix a $(-\infty,0)\cup(2,4)$ i creix a $(0,2)\cup(4,+\infty)$. Mínims $(0,0)$ i $(4,0)$; màxim $(2,16)$. |
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=1){ width="100%" }
+  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=2){ width="100%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_18.tex">Figura 2.31.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
 </figure>
 
