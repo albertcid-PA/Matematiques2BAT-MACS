@@ -1,8 +1,8 @@
 # Exercicis de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=7" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=8" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
 
-<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=6" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=7" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
 
 ---
 
@@ -526,6 +526,7 @@ $$
 | | |
 |:--|:--|
 | **a)** $f(x)=\sqrt{x+4}$ | **b)** $g(x)=\log(x^2-4x+3)$ |
+| **c)** $h(x)=\sqrt{x^2-5x+6}$ | **d)** $p(x)=\log(2x-6)$ |
 
 
 

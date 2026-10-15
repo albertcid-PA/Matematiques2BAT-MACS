@@ -236,7 +236,7 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_20.tex">Figura 2.34.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
 </figure>
 
-**2.21.** **a)** $[-4,+\infty)$; **b)** $(-\infty,1)\cup(3,+\infty)$.
+**2.21.** **a)** $[-4,+\infty)$; **b)** $(-\infty,1)\cup(3,+\infty)$; **c)** $(-\infty,2]\cup[3,+\infty)$; **d)** $(3,+\infty)$.
 
 **2.22.**
 
