@@ -330,6 +330,11 @@
     max-height: 45mm;
   }
 
+  body:has(.pdf-exercise-collection) .md-typeset figure.exercise-statement-figure--compact img {
+    width: 62% !important;
+    max-height: 52mm;
+  }
+
   body:has(.pdf-exercise-collection) .md-typeset figure figcaption {
     margin-top: 0.06rem;
     font-size: 7.4pt;
