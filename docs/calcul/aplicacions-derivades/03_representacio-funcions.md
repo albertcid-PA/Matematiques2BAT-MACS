@@ -772,7 +772,7 @@ En una funció a trossos, cada expressió només es dibuixa dins del seu interva
 2. el valor de la funció;
 3. les derivades laterals, si s'estudia la derivabilitat.
 
-Per a una funció amb valor absolut, primer localitzem els zeros de l'expressió interior i l'escrivim a trossos:
+Per representar una funció amb valor absolut, **abans de començar l'estudi gràfic** localitzem els zeros de les expressions interiors. Aquests punts separen els intervals on els valors absoluts poden canviar d'expressió. Estudiem el signe en cada interval i escrivim la funció a trossos:
 
 $$
 |g(x)|=
@@ -781,6 +781,8 @@ g(x), & g(x)\geq0,\\
 -g(x), & g(x)<0.
 \end{cases}
 $$
+
+Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del seu interval. Si tots els trossos són funcions lineals, no cal repetir els vuit passos: n'hi ha prou amb identificar la pendent, situar dos punts de cada recta i comprovar els punts d'unió. Si els trossos no són lineals, seguim els vuit passos habituals a partir de la funció a trossos.
 
 !!! note "Dibuix final"
     Els cercles buits indiquen que el punt no pertany al tros corresponent; els punts plens indiquen el valor real de la funció. La gràfica no s'ha de prolongar fora de l'interval assignat a cada expressió.
@@ -930,47 +932,7 @@ $$
     f(x)=|-2x+4|-|x-3|.
     $$
 
-    **Pas 1. Domini.** Les dues expressions lineals estan definides per a qualsevol nombre real i els valors absoluts no hi afegeixen cap restricció. Per tant,
-
-    $$
-    D_f=\mathbb{R}.
-    $$
-
-    **Pas 2. Tall amb l'eix $Y$.** Calculem
-
-    $$
-    f(0)=|-2\cdot0+4|-|0-3|=4-3=1.
-    $$
-
-    El tall amb l'eix $Y$ és $(0,1)$.
-
-    **Pas 3. Talls amb l'eix $X$.** Imposant $f(x)=0$ obtenim
-
-    $$
-    |-2x+4|=|x-3|.
-    $$
-
-    Elevem els dos membres al quadrat i utilitzem una diferència de quadrats:
-
-    $$
-    \begin{aligned}
-    (-2x+4)^2&=(x-3)^2,\\
-    \bigl((-2x+4)-(x-3)\bigr)\bigl((-2x+4)+(x-3)\bigr)&=0,\\
-    (-3x+7)(-x+1)&=0.
-    \end{aligned}
-    $$
-
-    Per tant,
-
-    $$
-    x=1
-    \qquad\text{o bé}\qquad
-    x=\frac73,
-    $$
-
-    i els talls amb l'eix $X$ són $(1,0)$ i $\left(\frac73,0\right)$.
-
-    Per continuar l'estudi, escrivim la funció a trossos. Els canvis de signe de les expressions interiors es produeixen en
+    **Pas previ. Localització dels canvis d'expressió.** Primer busquem els zeros de les dues expressions interiors, perquè són els punts on la funció pot canviar de comportament:
 
     $$
     -2x+4=0\Longrightarrow x=2,
@@ -978,7 +940,7 @@ $$
     x-3=0\Longrightarrow x=3.
     $$
 
-    Construïm una taula per decidir si cal conservar o canviar el signe de cada expressió:
+    Aquests dos valors divideixen la recta real en tres intervals. Estudiem el signe de cada expressió per decidir si cal conservar-ne o canviar-ne el signe:
 
     | | $(-\infty,2)$ | $2$ | $(2,3)$ | $3$ | $(3,+\infty)$ |
     |:---|:---:|:---:|:---:|:---:|:---:|
@@ -998,69 +960,23 @@ $$
     \end{cases}
     $$
 
-    **Pas 4. Asímptotes verticals i discontinuïtats evitables.** No hi ha cap punt exclòs del domini. Per tant, la funció no té asímptotes verticals ni discontinuïtats evitables.
+    **Construcció de la gràfica.** Els tres trossos són funcions lineals. Per tant, no cal aplicar-hi els vuit passos ni calcular derivades: la pendent i dos punts de cada recta permeten dibuixar cada tram dins del seu interval.
 
-    **Pas 5. Altres discontinuïtats.** Els punts d'unió dels trossos són $x=2$ i $x=3$. En $x=2$,
+    | Interval | Expressió | Pendent | Punts útils |
+    |:---:|:---:|:---:|:---:|
+    | $x<2$ | $y=-x+1$ | $-1$ | $(0,1)$, $(1,0)$ i s'apropa a $(2,-1)$ |
+    | $2\leq x<3$ | $y=3x-7$ | $3$ | $(2,-1)$, $\left(\dfrac73,0\right)$ i s'apropa a $(3,2)$ |
+    | $x\geq3$ | $y=x-1$ | $1$ | $(3,2)$ i $(4,3)$ |
+
+    En els punts d'unió, els trams coincideixen:
 
     $$
-    \lim_{x\to2^-}f(x)=-2+1=-1,
+    -2+1=3\cdot2-7=-1,
     \qquad
-    \lim_{x\to2^+}f(x)=3\cdot2-7=-1=f(2).
+    3\cdot3-7=3-1=2.
     $$
 
-    En $x=3$,
-
-    $$
-    \lim_{x\to3^-}f(x)=3\cdot3-7=2,
-    \qquad
-    \lim_{x\to3^+}f(x)=3-1=2=f(3).
-    $$
-
-    Així, la funció és contínua en $x=2$ i en $x=3$ i, per tant, és contínua en tot $\mathbb{R}$.
-
-    **Pas 6. Comportament a l'infinit.** Als extrems utilitzem el primer i el tercer tros, respectivament. En tots dos casos domina el terme de primer grau:
-
-    $$
-    \begin{aligned}
-    \lim_{x\to-\infty}f(x)
-    &=\lim_{x\to-\infty}(-x+1)\\
-    &=\lim_{x\to-\infty}(-x)=-(-\infty)=+\infty.
-    \end{aligned}
-    $$
-
-    $$
-    \begin{aligned}
-    \lim_{x\to+\infty}f(x)
-    &=\lim_{x\to+\infty}(x-1)\\
-    &=\lim_{x\to+\infty}x=+\infty.
-    \end{aligned}
-    $$
-
-    Per tant, la funció té una **branca infinita** a cadascun dels dos extrems.
-
-    **Pas 7. Extrems relatius.** Derivem cada tros:
-
-    $$
-    f'(x)=
-    \begin{cases}
-    -1, & x<2,\\
-    3, & 2<x<3,\\
-    1, & x>3.
-    \end{cases}
-    $$
-
-    La derivada no s'anul·la en cap dels tres intervals. També cal considerar els punts d'unió $x=2$ i $x=3$, on la derivada no existeix perquè els pendents laterals no coincideixen. Per tant, els candidats a extrem relatiu són $x=2$ i $x=3$.
-
-    **Pas 8. Creixement i decreixement.** Situem els dos punts d'unió a la taula de monotonia:
-
-    | Valor de $x$ | $(-\infty,2)$ | $2$ | $(2,3)$ | $3$ | $(3,+\infty)$ |
-    |:---:|:---:|:---:|:---:|:---:|:---:|
-    | Valor de prova | $x=0$ | — | $x=\dfrac52$ | — | $x=4$ |
-    | Càlcul de la derivada | $f'(0)=-1$ | no existeix | $f'\!\left(\dfrac52\right)=3$ | no existeix | $f'(4)=1$ |
-    | Signe de $f'$ | $-$ | no existeix | $+$ | no existeix | $+$ |
-    | Comportament de $f$ | decreix | mínim $(2,-1)$ | creix | punt angulós $(3,2)$, no és un extrem | creix |
-
-    En $x=2$ el signe de la derivada passa de negatiu a positiu, de manera que $(2,-1)$ és un mínim relatiu. En canvi, en $x=3$ els pendents dels dos costats són positius: la funció continua creixent i $(3,2)$ és un punt angulós, però **no és un extrem relatiu**.
+    Així, la gràfica és contínua en $x=2$ i en $x=3$. La pendent passa de $-1$ a $3$ en $x=2$, de manera que $(2,-1)$ és un mínim. En $x=3$, les dues pendents són positives: $(3,2)$ és un punt angulós, però no és un extrem. Els talls amb els eixos són $(0,1)$, $(1,0)$ i $\left(\frac73,0\right)$.
 
     <figure markdown="span">
       ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=4){ width="760" }
@@ -1074,35 +990,13 @@ $$
     f(x)=|x^2+x-2|.
     $$
 
-    **Domini.** El polinomi $x^2+x-2$ està definit per a qualsevol nombre real i el valor absolut no hi afegeix cap restricció. Per tant,
-
-    $$
-    D_f=\mathbb{R}.
-    $$
-
-    **Talls amb els eixos.** Per trobar el tall amb l'eix $Y$, calculem
-
-    $$
-    f(0)=|0^2+0-2|=2.
-    $$
-
-    Així, el tall amb l'eix $Y$ és $(0,2)$. Per trobar els talls amb l'eix $X$, imposem $f(x)=0$:
-
-    $$
-    0=|x^2+x-2|
-    \quad\Longleftrightarrow\quad
-    x^2+x-2=0.
-    $$
-
-    Factoritzem el polinomi:
+    **Pas previ. Localització dels canvis d'expressió.** Primer trobem els zeros de l'expressió interior, perquè són els punts on el valor absolut pot canviar de comportament. Factoritzem:
 
     $$
     x^2+x-2=(x+2)(x-1).
     $$
 
-    Per tant, $x=-2$ o bé $x=1$, i els talls amb l'eix $X$ són $(-2,0)$ i $(1,0)$.
-
-    **Funció a trossos.** Comprovem el signe de cada factor i del producte en els intervals determinats pels seus zeros:
+    Per tant, els possibles punts de canvi són $x=-2$ i $x=1$. Comprovem el signe de cada factor i del producte en els intervals que determinen:
 
     | Valor de $x$ | $x<-2$ | $x=-2$ | $-2<x<1$ | $x=1$ | $x>1$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -1122,20 +1016,60 @@ $$
     \end{cases}
     $$
 
-    **Comportament a l'infinit.** Als dos extrems domina el terme $x^2$:
+    A partir d'aquesta funció a trossos fem l'estudi gràfic.
+
+    **Pas 1. Domini.** Els tres trossos són polinomis i cobreixen tota la recta real. Per tant,
+
+    $$
+    D_f=\mathbb{R}.
+    $$
+
+    **Pas 2. Tall amb l'eix $Y$.** Com que $0\in(-2,1)$, utilitzem el tros central:
+
+    $$
+    f(0)=-0^2-0+2=2.
+    $$
+
+    El tall amb l'eix $Y$ és $(0,2)$.
+
+    **Pas 3. Talls amb l'eix $X$.** Els zeros que hem trobat en construir la funció a trossos són $x=-2$ i $x=1$. Per tant, els talls amb l'eix $X$ són $(-2,0)$ i $(1,0)$.
+
+    **Pas 4. Asímptotes verticals i discontinuïtats evitables.** No hi ha cap punt exclòs del domini. Per tant, no hi ha asímptotes verticals ni discontinuïtats evitables.
+
+    **Pas 5. Altres discontinuïtats.** Cal comprovar els punts d'unió $x=-2$ i $x=1$. En $x=-2$,
+
+    $$
+    \lim_{x\to-2^-}f(x)=0,
+    \qquad
+    \lim_{x\to-2^+}f(x)=0=f(-2).
+    $$
+
+    En $x=1$,
+
+    $$
+    \lim_{x\to1^-}f(x)=0,
+    \qquad
+    \lim_{x\to1^+}f(x)=0=f(1).
+    $$
+
+    Així, la funció és contínua en els dos punts d'unió i, per tant, en tot $\mathbb{R}$.
+
+    **Pas 6. Comportament a l'infinit.** Als dos extrems s'aplica el tros $x^2+x-2$ i hi domina el terme $x^2$:
 
     $$
     \begin{aligned}
-    \lim_{x\to-\infty}|x^2+x-2|
-    &=\lim_{x\to-\infty}|x^2|=+\infty,\\[4pt]
-    \lim_{x\to+\infty}|x^2+x-2|
-    &=\lim_{x\to+\infty}|x^2|=+\infty.
+    \lim_{x\to-\infty}f(x)
+    &=\lim_{x\to-\infty}(x^2+x-2)
+    =\lim_{x\to-\infty}x^2=+\infty,\\[4pt]
+    \lim_{x\to+\infty}f(x)
+    &=\lim_{x\to+\infty}(x^2+x-2)
+    =\lim_{x\to+\infty}x^2=+\infty.
     \end{aligned}
     $$
 
     Per tant, la funció té una **branca infinita** a cadascun dels dos extrems.
 
-    **Derivabilitat.** Derivem cada tros:
+    **Pas 7. Extrems relatius.** Derivem cada tros:
 
     $$
     f'(x)=
@@ -1146,7 +1080,17 @@ $$
     \end{cases}
     $$
 
-    En $x=-2$ les derivades laterals són
+    En el tros central,
+
+    $$
+    -2x-1=0
+    \Longrightarrow
+    x=-\frac12,
+    $$
+
+    i la solució pertany a $(-2,1)$. En els trossos exteriors, l'equació $2x+1=0$ dona el mateix valor, però $-\frac12$ no pertany als intervals corresponents.
+
+    També cal considerar els punts d'unió $x=-2$ i $x=1$, on la derivada no existeix. En $x=-2$, les derivades laterals són
 
     $$
     f'(-2^-)=-3
@@ -1162,17 +1106,9 @@ $$
     f'(1^+)=3.
     $$
 
-    Com que les derivades laterals no coincideixen, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en $x=-2$ ni en $x=1$. Tots dos són punts angulosos.
+    Com que les derivades laterals no coincideixen, $x=-2$ i $x=1$ són punts angulosos. Els candidats a extrem relatiu són, doncs, $x=-2$, $x=-\frac12$ i $x=1$.
 
-    **Creixement i extrems.** En el tros central, igualem la derivada a zero:
-
-    $$
-    -2x-1=0
-    \quad\Longrightarrow\quad
-    x=-\frac12.
-    $$
-
-    La solució pertany a $(-2,1)$. En els trossos exteriors, l'equació $2x+1=0$ dona el mateix valor, però $-\frac12$ no pertany a cap dels seus intervals. Els punts importants són, doncs, $x=-2$, $x=-\frac12$ i $x=1$.
+    **Pas 8. Creixement i decreixement.** Situem els tres candidats a la taula de monotonia:
 
     | Valor de $x$ | $(-\infty,-2)$ | $-2$ | $\left(-2,-\frac12\right)$ | $-\frac12$ | $\left(-\frac12,1\right)$ | $1$ | $(1,+\infty)$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
