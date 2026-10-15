@@ -21,7 +21,7 @@
     2. Trobar el tall amb l'eix $Y$ calculant $f(0)$.
     3. Trobar els talls amb l'eix $X$ resolent $f(x)=0$.
     4. Estudiar amb límits laterals els punts exclosos del domini —els zeros del denominador en les funcions racionals i els extrems del domini en les logarítmiques— per determinar si hi ha **asímptotes verticals** o **discontinuïtats evitables**.
-    5. Estudiar les altres **discontinuïtats**, especialment en funcions a trossos, i classificar-les.
+    5. Trobar les altres **discontinuïtats** en les funcions a trossos i classificar-les.
     6. Calcular els límits quan $x\to-\infty$ i $x\to+\infty$ per estudiar el **comportament a l'infinit**: la funció pot convergir a un nombre o tenir una branca infinita.
     7. Localitzar els candidats a **extrem relatiu** resolent $f'(x)=0$ i considerant els punts on $f'$ no existeix.
     8. Construir la **taula de monotonia** situant-hi tots els punts importants: discontinuïtats —incloses les asímptotes verticals—, extrems del domini, punts d'unió de les funcions a trossos i candidats a extrems relatius. Després, estudiar el signe de $f'$ en cada interval per determinar on la funció creix o decreix.
@@ -89,7 +89,7 @@ $$
 
 ### Pas 5. Altres discontinuïtats
 
-En funcions a trossos i en punts exclosos del domini, comparem els límits laterals i el valor de la funció.
+En les funcions a trossos, busquem les altres discontinuïtats en els punts d'unió o de canvi d'expressió. En cadascun comparem els límits laterals i el valor de la funció.
 
 !!! abstract "Definició: tipus de discontinuïtat"
     - **Evitable:** el límit existeix i és finit, però el valor de la funció no existeix o és diferent.
