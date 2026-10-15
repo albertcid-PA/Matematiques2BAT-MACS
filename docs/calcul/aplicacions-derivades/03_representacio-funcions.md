@@ -1008,39 +1008,39 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     Representem la funció
 
     $$
-    f(x)=|x^2+x-2|.
+    f(x)=|x^2+2x-3|.
     $$
 
     **Pas previ. Localització dels canvis d'expressió.** Primer trobem els zeros de l'expressió interior, perquè són els punts on el valor absolut pot canviar de comportament. Factoritzem:
 
     $$
-    x^2+x-2=(x+2)(x-1).
+    x^2+2x-3=(x+3)(x-1).
     $$
 
-    Per tant, els possibles punts de canvi són $x=-2$ i $x=1$. Comprovem el signe de cada factor i del producte en els intervals que determinen:
+    Per tant, els possibles punts de canvi són $x=-3$ i $x=1$. Comprovem el signe de cada factor i del producte en els intervals que determinen:
 
-    | Valor de $x$ | $x<-2$ | $x=-2$ | $-2<x<1$ | $x=1$ | $x>1$ |
+    | Valor de $x$ | $x<-3$ | $x=-3$ | $-3<x<1$ | $x=1$ | $x>1$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|
-    | Signe de $x+2$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+    | Signe de $x+3$ | $-$ | $0$ | $+$ | $+$ | $+$ |
     | Signe de $x-1$ | $-$ | $-$ | $-$ | $0$ | $+$ |
-    | Signe de $(x+2)(x-1)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
-    | Expressió de $f(x)$ | $+(x^2+x-2)$ | $0$ | $-(x^2+x-2)$ | $0$ | $+(x^2+x-2)$ |
+    | Signe de $(x+3)(x-1)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+    | Expressió de $f(x)$ | $+(x^2+2x-3)$ | $0$ | $-(x^2+2x-3)$ | $0$ | $+(x^2+2x-3)$ |
 
-    El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Amb aquests signes, escrivim primer la funció a trossos **sense simplificar**:
+    El polinomi és positiu fora de l'interval $[-3,1]$ i negatiu a l'interior. Amb aquests signes, escrivim primer la funció a trossos **sense simplificar**:
 
     $$
     f(x)=
     \begin{cases}
-    +(x^2+x-2), & x\leq-2,\\[2pt]
-    -(x^2+x-2), & -2<x<1,\\[2pt]
-    +(x^2+x-2), & x\geq1.
+    +(x^2+2x-3), & x\leq-3,\\[2pt]
+    -(x^2+2x-3), & -3<x<1,\\[2pt]
+    +(x^2+2x-3), & x\geq1.
     \end{cases}
     $$
 
     Desenvolupem l'expressió del tros central:
 
     $$
-    -(x^2+x-2)=-x^2-x+2.
+    -(x^2+2x-3)=-x^2-2x+3.
     $$
 
     Per tant, la funció a trossos simplificada és
@@ -1048,9 +1048,9 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     $$
     f(x)=
     \begin{cases}
-    x^2+x-2, & x\leq-2,\\[2pt]
-    -x^2-x+2, & -2<x<1,\\[2pt]
-    x^2+x-2, & x\geq1.
+    x^2+2x-3, & x\leq-3,\\[2pt]
+    -x^2-2x+3, & -3<x<1,\\[2pt]
+    x^2+2x-3, & x\geq1.
     \end{cases}
     $$
 
@@ -1062,24 +1062,24 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     D_f=\mathbb{R}.
     $$
 
-    **Pas 2. Tall amb l'eix $Y$.** Com que $0\in(-2,1)$, utilitzem el tros central:
+    **Pas 2. Tall amb l'eix $Y$.** Com que $0\in(-3,1)$, utilitzem el tros central:
 
     $$
-    f(0)=-0^2-0+2=2.
+    f(0)=-0^2-2\cdot0+3=3.
     $$
 
-    El tall amb l'eix $Y$ és $(0,2)$.
+    El tall amb l'eix $Y$ és $(0,3)$.
 
-    **Pas 3. Talls amb l'eix $X$.** Els zeros que hem trobat en construir la funció a trossos són $x=-2$ i $x=1$. Per tant, els talls amb l'eix $X$ són $(-2,0)$ i $(1,0)$.
+    **Pas 3. Talls amb l'eix $X$.** Els zeros que hem trobat en construir la funció a trossos són $x=-3$ i $x=1$. Per tant, els talls amb l'eix $X$ són $(-3,0)$ i $(1,0)$.
 
     **Pas 4. Asímptotes verticals i discontinuïtats evitables.** No hi ha cap punt exclòs del domini. Per tant, no hi ha asímptotes verticals ni discontinuïtats evitables.
 
-    **Pas 5. Altres discontinuïtats.** Cal comprovar els punts d'unió $x=-2$ i $x=1$. En $x=-2$,
+    **Pas 5. Altres discontinuïtats.** Cal comprovar els punts d'unió $x=-3$ i $x=1$. En $x=-3$,
 
     $$
-    \lim_{x\to-2^-}f(x)=0,
+    \lim_{x\to-3^-}f(x)=0,
     \qquad
-    \lim_{x\to-2^+}f(x)=0=f(-2).
+    \lim_{x\to-3^+}f(x)=0=f(-3).
     $$
 
     En $x=1$,
@@ -1092,15 +1092,15 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
 
     Així, la funció és contínua en els dos punts d'unió i, per tant, en tot $\mathbb{R}$.
 
-    **Pas 6. Comportament a l'infinit.** Als dos extrems s'aplica el tros $x^2+x-2$ i hi domina el terme $x^2$:
+    **Pas 6. Comportament a l'infinit.** Als dos extrems s'aplica el tros $x^2+2x-3$ i hi domina el terme $x^2$:
 
     $$
     \begin{aligned}
     \lim_{x\to-\infty}f(x)
-    &=\lim_{x\to-\infty}(x^2+x-2)
+    &=\lim_{x\to-\infty}(x^2+2x-3)
     =\lim_{x\to-\infty}x^2=+\infty,\\[4pt]
     \lim_{x\to+\infty}f(x)
-    &=\lim_{x\to+\infty}(x^2+x-2)
+    &=\lim_{x\to+\infty}(x^2+2x-3)
     =\lim_{x\to+\infty}x^2=+\infty.
     \end{aligned}
     $$
@@ -1112,52 +1112,52 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     $$
     f'(x)=
     \begin{cases}
-    2x+1, & x<-2,\\[2pt]
-    -2x-1, & -2<x<1,\\[2pt]
-    2x+1, & x>1.
+    2x+2, & x<-3,\\[2pt]
+    -2x-2, & -3<x<1,\\[2pt]
+    2x+2, & x>1.
     \end{cases}
     $$
 
     En el tros central,
 
     $$
-    -2x-1=0
+    -2x-2=0
     \Longrightarrow
-    x=-\frac12,
+    x=-1,
     $$
 
-    i la solució pertany a $(-2,1)$. En els trossos exteriors, l'equació $2x+1=0$ dona el mateix valor, però $-\frac12$ no pertany als intervals corresponents.
+    i la solució pertany a $(-3,1)$. En els trossos exteriors, l'equació $2x+2=0$ dona el mateix valor, però $-1$ no pertany als intervals corresponents.
 
-    També cal considerar els punts d'unió $x=-2$ i $x=1$, on la derivada no existeix. En $x=-2$, les derivades laterals són
+    També cal considerar els punts d'unió $x=-3$ i $x=1$, on la derivada no existeix. En $x=-3$, les derivades laterals són
 
     $$
-    f'(-2^-)=-3
+    f'(-3^-)=-4
     \qquad\text{i}\qquad
-    f'(-2^+)=3.
+    f'(-3^+)=4.
     $$
 
     En $x=1$ són
 
     $$
-    f'(1^-)=-3
+    f'(1^-)=-4
     \qquad\text{i}\qquad
-    f'(1^+)=3.
+    f'(1^+)=4.
     $$
 
-    Com que les derivades laterals no coincideixen, $x=-2$ i $x=1$ són punts angulosos. Els candidats a extrem relatiu són, doncs, $x=-2$, $x=-\frac12$ i $x=1$.
+    Com que les derivades laterals no coincideixen, $x=-3$ i $x=1$ són punts angulosos. Els candidats a extrem relatiu són, doncs, $x=-3$, $x=-1$ i $x=1$.
 
     **Pas 8. Creixement i decreixement.** Situem els tres candidats a la taula de monotonia:
 
-    | Valor de $x$ | $(-\infty,-2)$ | $-2$ | $\left(-2,-\frac12\right)$ | $-\frac12$ | $\left(-\frac12,1\right)$ | $1$ | $(1,+\infty)$ |
+    | Valor de $x$ | $(-\infty,-3)$ | $-3$ | $(-3,-1)$ | $-1$ | $(-1,1)$ | $1$ | $(1,+\infty)$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-    | Valor de prova | $x=-3$ | — | $x=-1$ | — | $x=0$ | — | $x=2$ |
-    | Càlcul de la derivada | $f'(-3)=-5$ | no existeix | $f'(-1)=1$ | $f'\!\left(-\frac12\right)=0$ | $f'(0)=-1$ | no existeix | $f'(2)=5$ |
+    | Valor de prova | $x=-4$ | — | $x=-2$ | — | $x=0$ | — | $x=2$ |
+    | Càlcul de la derivada | $f'(-4)=-6$ | no existeix | $f'(-2)=2$ | $f'(-1)=0$ | $f'(0)=-2$ | no existeix | $f'(2)=6$ |
     | Signe de $f'$ | $-$ | no existeix | $+$ | $0$ | $-$ | no existeix | $+$ |
-    | Comportament de $f$ | decreix | mínim $(-2,0)$ | creix | màxim $\left(-\frac12,\frac94\right)$ | decreix | mínim $(1,0)$ | creix |
+    | Comportament de $f$ | decreix | mínim $(-3,0)$ | creix | màxim $(-1,4)$ | decreix | mínim $(1,0)$ | creix |
 
-    La funció té mínims relatius i absoluts en $(-2,0)$ i $(1,0)$, i un màxim relatiu en $\left(-\frac12,\frac94\right)$.
+    La funció té mínims relatius i absoluts en $(-3,0)$ i $(1,0)$, i un màxim relatiu en $(-1,4)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de x al quadrat més x menys dos, amb punts angulosos en x igual a menys dos i x igual a u](../../img/calcul/fig_2_18_valor_absolut_quadratica.svg?v=1){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_18_valor_absolut_quadratica.tex">Figura 2.18.</a></strong> Representació de $f(x)=|x^2+x-2|$.</figcaption>
+      ![Gràfica de la funció valor absolut de x al quadrat més dos x menys tres, amb punts angulosos en x igual a menys tres i x igual a u](../../img/calcul/fig_2_18_valor_absolut_quadratica.svg?v=2){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_18_valor_absolut_quadratica.tex">Figura 2.18.</a></strong> Representació de $f(x)=|x^2+2x-3|$.</figcaption>
     </figure>
