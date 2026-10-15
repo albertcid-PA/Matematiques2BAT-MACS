@@ -802,7 +802,47 @@ $$
     \end{cases}
     $$
 
-    **Domini i discontinuïtat asimptòtica.** La branca racional no està definida en $x=-1$. Com que
+    **Pas 1. Domini.** La branca racional, que s'aplica quan $x<1$, no està definida en $x=-1$. La branca quadràtica està definida per a tot $x\geq1$. Per tant,
+
+    $$
+    D_f=\mathbb{R}\setminus\{-1\}.
+    $$
+
+    **Pas 2. Tall amb l'eix $Y$.** Com que $0<1$, utilitzem la branca racional:
+
+    $$
+    f(0)=1+\frac{2}{0+1}=3.
+    $$
+
+    El tall amb l'eix $Y$ és $(0,3)$.
+
+    **Pas 3. Talls amb l'eix $X$.** Resolem $f(x)=0$ en cadascun dels trossos. En la branca racional,
+
+    $$
+    1+\frac{2}{x+1}=0
+    \Longrightarrow
+    \frac{x+3}{x+1}=0
+    \Longrightarrow
+    x=-3,
+    $$
+
+    que compleix $x<1$. En la branca quadràtica,
+
+    $$
+    (x-3)^2-2=0
+    \Longrightarrow
+    (x-3)^2=2
+    \Longrightarrow
+    x=3\pm\sqrt2.
+    $$
+
+    Les dues solucions compleixen $x\geq1$. Així, els talls amb l'eix $X$ són
+
+    $$
+    (-3,0),\qquad (3-\sqrt2,0)\qquad\text{i}\qquad(3+\sqrt2,0).
+    $$
+
+    **Pas 4. Asímptotes verticals i discontinuïtats evitables.** L'únic punt exclòs del domini és $x=-1$. Calculem els límits laterals:
 
     $$
     \lim_{x\to-1^-}\left(1+\frac{2}{x+1}\right)=-\infty
@@ -810,19 +850,9 @@ $$
     \lim_{x\to-1^+}\left(1+\frac{2}{x+1}\right)=+\infty,
     $$
 
-    la funció té una **discontinuïtat asimptòtica** i una asímptota vertical en $x=-1$. Per tant,
+    Per tant, la funció té una **discontinuïtat asimptòtica** i una asímptota vertical en $x=-1$.
 
-    $$
-    D_f=\mathbb{R}\setminus\{-1\}.
-    $$
-
-    **Talls amb els eixos.** El tall amb l'eix $Y$ és $(0,3)$. Els talls amb l'eix $X$ són
-
-    $$
-    (-3,0),\qquad (3-\sqrt2,0)\qquad\text{i}\qquad(3+\sqrt2,0).
-    $$
-
-    **Continuïtat en el punt d'unió.** En $x=1$, els dos trossos coincideixen:
+    **Pas 5. Altres discontinuïtats.** L'únic punt d'unió dels dos trossos és $x=1$. Hi comparem els límits laterals i el valor de la funció:
 
     $$
     \lim_{x\to1^-}f(x)=1+\frac{2}{1+1}=2,
@@ -832,7 +862,7 @@ $$
 
     Així, $f$ és **contínua en $x=1$**.
 
-    **Comportament a l'infinit.** Quan $x\to-\infty$ s'aplica la branca racional. En el denominador $x+1$ domina el terme $x$:
+    **Pas 6. Comportament a l'infinit.** Quan $x\to-\infty$ s'aplica la branca racional. En el denominador $x+1$ domina el terme $x$:
 
     $$
     \begin{aligned}
@@ -853,19 +883,27 @@ $$
     \end{aligned}
     $$
 
-    Per tant, $y=1$ és una **asímptota horitzontal quan $x\to-\infty$**. Cap a $+\infty$, la branca quadràtica creix indefinidament.
+    Per tant, quan $x\to-\infty$ la funció **convergeix a $1$** i, quan $x\to+\infty$, té una **branca infinita**.
 
-    **Derivabilitat en el punt d'unió.** Derivem cada tros:
+    **Pas 7. Extrems relatius.** Derivem cada tros:
 
     $$
     f'(x)=
     \begin{cases}
-    -\dfrac{2}{(x+1)^2}, & x<1,\\[6pt]
+    -\dfrac{2}{(x+1)^2}, & x<1,\ x\neq-1,\\[6pt]
     2(x-3), & x>1.
     \end{cases}
     $$
 
-    Les derivades laterals en $x=1$ són
+    La derivada de la branca racional no s'anul·la. En la branca quadràtica,
+
+    $$
+    2(x-3)=0
+    \Longrightarrow
+    x=3.
+    $$
+
+    També cal considerar el punt d'unió $x=1$, on la derivada no existeix. Les derivades laterals són
 
     $$
     f'(1^-)=-\frac12
@@ -873,15 +911,9 @@ $$
     f'(1^+)=-4.
     $$
 
-    Com que no coincideixen, $f$ és **contínua però no derivable en $x=1$**: la gràfica presenta un punt angulós en $(1,2)$.
+    Com que no coincideixen, la gràfica presenta un punt angulós en $(1,2)$. Els candidats a extrem relatiu són, doncs, $x=1$ i $x=3$.
 
-    **Vèrtex i monotonia.** La branca quadràtica està escrita en forma canònica,
-
-    $$
-    (x-3)^2-2,
-    $$
-
-    i té el vèrtex en $(3,-2)$, que és un mínim relatiu. Per estudiar la monotonia situem a la taula l'asímptota $x=-1$, el punt d'unió $x=1$ i el vèrtex $x=3$:
+    **Pas 8. Creixement i decreixement.** Situem a la taula l'asímptota vertical $x=-1$, el punt d'unió $x=1$ i els dos candidats a extrem relatiu:
 
     | Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,1)$ | $1$ | $(1,3)$ | $3$ | $(3,+\infty)$ |
     |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -889,6 +921,8 @@ $$
     | Càlcul de la derivada | $f'(-2)=-2$ | no existeix | $f'(0)=-2$ | no existeix | $f'(2)=-2$ | $f'(3)=0$ | $f'(4)=2$ |
     | Signe de $f'(x)$ | $-$ | no existeix | $-$ | no existeix | $-$ | $0$ | $+$ |
     | Comportament de $f$ | decreix | asímptota vertical | decreix | punt angulós $(1,2)$, no és un extrem | decreix | mínim $(3,-2)$ | creix |
+
+    La funció decreix a banda i banda de $x=1$; per tant, aquest punt no és un extrem relatiu. En $x=3$, el signe de la derivada passa de negatiu a positiu i hi ha un mínim relatiu en $(3,-2)$.
 
     <figure markdown="span">
       ![Gràfica d'una funció a trossos amb una branca racional, una branca quadràtica, una asímptota vertical i un punt d'unió continu però no derivable](../../img/calcul/fig_2_16_representacio_funcio_trossos.svg?v=1){ width="560" }
