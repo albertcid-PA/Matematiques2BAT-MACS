@@ -167,15 +167,70 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 
 **2.16.**
 
-| Apartat | Creixement i decreixement | Extrems relatius |
-|:--|:--|:--|
-| **a)** | Creix a $(-\infty,-1)\cup(3,+\infty)$; decreix a $(-1,3)$. | Màxim $(-1,9)$; mínim $(3,-23)$. |
-| **b)** | Decreix a $(-\infty,-\sqrt5)\cup(0,\sqrt5)$; creix a $(-\sqrt5,0)\cup(\sqrt5,+\infty)$. | Mínims $(\pm\sqrt5,-16)$; màxim $(0,9)$. |
-| **c)** | Creix a $(-\infty,1-\sqrt3)\cup(1+\sqrt3,+\infty)$; decreix a $(1-\sqrt3,1)\cup(1,1+\sqrt3)$. | Màxim $(1-\sqrt3,2-2\sqrt3)$; mínim $(1+\sqrt3,2+2\sqrt3)$. |
-| **d)** | Creix a $(-\infty,2)$; decreix a $(2,+\infty)$. | Màxim $(2,e^{-2})$. |
-| **e)** | Creix a $(0,\sqrt e)$; decreix a $(\sqrt e,+\infty)$. | Màxim $(\sqrt e,\frac1{2e})$. |
-| **f)** | Creix en tot $\mathbb{R}$. | $f'(0)=0$, però no hi ha cap extrem. |
-| **g)** | Creix en tot $\mathbb{R}$. | $f'(1)=0$, però no hi ha cap extrem. |
+**a)** $f'(x)=3(x+1)(x-3)$.
+
+| Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,3)$ | $3$ | $(3,+\infty)$ |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| Signe de $f'$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+| Comportament de $f$ | creix | màxim $(-1,9)$ | decreix | mínim $(3,-23)$ | creix |
+
+**b)** $f'(x)=4x(x^2-5)$.
+
+| Valor de $x$ | $(-\infty,-\sqrt5)$ | $-\sqrt5$ | $(-\sqrt5,0)$ | $0$ | $(0,\sqrt5)$ | $\sqrt5$ | $(\sqrt5,+\infty)$ |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Signe de $f'$ | $-$ | $0$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+| Comportament de $f$ | decreix | mínim $(-\sqrt5,-16)$ | creix | màxim $(0,9)$ | decreix | mínim $(\sqrt5,-16)$ | creix |
+
+**c)** $D_f=\mathbb{R}\setminus\{1\}$ i
+
+$$
+f'(x)=\frac{x^2-2x-2}{(x-1)^2}.
+$$
+
+| Valor de $x$ | $(-\infty,1-\sqrt3)$ | $1-\sqrt3$ | $(1-\sqrt3,1)$ | $1$ | $(1,1+\sqrt3)$ | $1+\sqrt3$ | $(1+\sqrt3,+\infty)$ |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Signe de $f'$ | $+$ | $0$ | $-$ | no existeix | $-$ | $0$ | $+$ |
+| Comportament de $f$ | creix | màxim $(1-\sqrt3,2-2\sqrt3)$ | decreix | asímptota vertical | decreix | mínim $(1+\sqrt3,2+2\sqrt3)$ | creix |
+
+**d)** $f'(x)=e^{-x}(2-x)$.
+
+| Valor de $x$ | $(-\infty,2)$ | $2$ | $(2,+\infty)$ |
+|:---:|:---:|:---:|:---:|
+| Signe de $f'$ | $+$ | $0$ | $-$ |
+| Comportament de $f$ | creix | màxim $(2,e^{-2})$ | decreix |
+
+**e)** $D_f=(0,+\infty)$ i
+
+$$
+f'(x)=\frac{1-2\ln x}{x^3}.
+$$
+
+| Valor de $x$ | $0$ | $(0,\sqrt e)$ | $\sqrt e$ | $(\sqrt e,+\infty)$ |
+|:---:|:---:|:---:|:---:|:---:|
+| Signe de $f'$ | no existeix | $+$ | $0$ | $-$ |
+| Comportament de $f$ | extrem del domini no inclòs | creix | màxim $\left(\sqrt e,\frac1{2e}\right)$ | decreix |
+
+**f)**
+
+$$
+f'(x)=\frac{x^2(x^2+3)}{(x^2+1)^2}.
+$$
+
+| Valor de $x$ | $(-\infty,0)$ | $0$ | $(0,+\infty)$ |
+|:---:|:---:|:---:|:---:|
+| Signe de $f'$ | $+$ | $0$ | $+$ |
+| Comportament de $f$ | creix | punt estacionari $(0,0)$, sense extrem | creix |
+
+Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(0)=0$.
+
+**g)** $f'(x)=3(x-1)^2$.
+
+| Valor de $x$ | $(-\infty,1)$ | $1$ | $(1,+\infty)$ |
+|:---:|:---:|:---:|:---:|
+| Signe de $f'$ | $+$ | $0$ | $+$ |
+| Comportament de $f$ | creix | punt estacionari $(1,1)$, sense extrem | creix |
+
+Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 
 **2.17.**
 
