@@ -1,8 +1,8 @@
 # Exercicis de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=8" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=9" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
 
-<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=8" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=9" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
 
 ---
 
@@ -441,7 +441,7 @@ $$
 | | |
 |:--|:--|
 | **a)** $f(x)=x^3-3x^2-9x+4$ | **b)** $f(x)=x^4-10x^2+9$ |
-| **c)** $f(x)=\dfrac{x^2+2}{x-1}$ | **d)** $f(x)=(x-1)e^{-x}$ |
+| **c)** $f(x)=\dfrac{x^2+3}{x-1}$ | **d)** $f(x)=(x-1)e^{-x}$ |
 | **e)** $f(x)=\dfrac{\ln x}{x^2}$ | **f)** $f(x)=\dfrac{x^3}{x^2+1}$ |
 | **g)** $f(x)=x^3-3x^2+3x$ | |
 
@@ -634,7 +634,7 @@ $$
 
 El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. **Determina en quin punt de la costa ha de començar a nedar perquè el temps total del rescat sigui mínim i calcula aquest temps.**
 
-<figure markdown="span">
+<figure markdown="span" class="exercise-statement-figure--compact">
   ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../img/calcul/fig_2_28_rescat_platja.svg?v=1){ width="650" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_rescat_platja.tex">Figura 2.28.</a></strong> Esquema del recorregut del socorrista en l'exercici 2.33.</figcaption>
 </figure>

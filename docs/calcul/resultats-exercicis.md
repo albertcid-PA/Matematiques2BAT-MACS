@@ -186,13 +186,13 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 **c)** $D_f=\mathbb{R}\setminus\{1\}$ i
 
 $$
-f'(x)=\frac{x^2-2x-2}{(x-1)^2}.
+f'(x)=\frac{x^2-2x-3}{(x-1)^2}=\frac{(x+1)(x-3)}{(x-1)^2}.
 $$
 
-| Valor de $x$ | $(-\infty,1-\sqrt3)$ | $1-\sqrt3$ | $(1-\sqrt3,1)$ | $1$ | $(1,1+\sqrt3)$ | $1+\sqrt3$ | $(1+\sqrt3,+\infty)$ |
+| Valor de $x$ | $(-\infty,-1)$ | $-1$ | $(-1,1)$ | $1$ | $(1,3)$ | $3$ | $(3,+\infty)$ |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Signe de $f'$ | $+$ | $0$ | $-$ | no existeix | $-$ | $0$ | $+$ |
-| Comportament de $f$ | creix | màxim $(1-\sqrt3,2-2\sqrt3)$ | decreix | asímptota vertical | decreix | mínim $(1+\sqrt3,2+2\sqrt3)$ | creix |
+| Comportament de $f$ | creix | màxim $(-1,-2)$ | decreix | asímptota vertical | decreix | mínim $(3,6)$ | creix |
 
 **d)** $f'(x)=e^{-x}(2-x)$.
 
