@@ -949,7 +949,28 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     | Signe de $x-3$ | $-$ | $-$ | $-$ | $0$ | $+$ |
     | $-\lvert x-3\rvert$ | <span class="formula-nowrap">$+(x-3)$</span> | <span class="formula-nowrap">$+(x-3)$</span> | <span class="formula-nowrap">$+(x-3)$</span> | $0$ | <span class="formula-nowrap">$-(x-3)$</span> |
 
-    Per tant,
+    Amb els signes obtinguts, escrivim primer la funció a trossos **sense simplificar**:
+
+    $$
+    f(x)=
+    \begin{cases}
+    +(-2x+4)+(x-3), & x<2,\\[2pt]
+    -(-2x+4)+(x-3), & 2\leq x<3,\\[2pt]
+    -(-2x+4)-(x-3), & x\geq3.
+    \end{cases}
+    $$
+
+    Ara desenvolupem cada expressió:
+
+    $$
+    \begin{aligned}
+    +(-2x+4)+(x-3)&=-x+1,\\
+    -(-2x+4)+(x-3)&=3x-7,\\
+    -(-2x+4)-(x-3)&=x-1.
+    \end{aligned}
+    $$
+
+    Per tant, la funció a trossos simplificada és
 
     $$
     f(x)=
@@ -1005,7 +1026,24 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     | Signe de $(x+2)(x-1)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
     | Expressió de $f(x)$ | $+(x^2+x-2)$ | $0$ | $-(x^2+x-2)$ | $0$ | $+(x^2+x-2)$ |
 
-    El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Per tant,
+    El polinomi és positiu fora de l'interval $[-2,1]$ i negatiu a l'interior. Amb aquests signes, escrivim primer la funció a trossos **sense simplificar**:
+
+    $$
+    f(x)=
+    \begin{cases}
+    +(x^2+x-2), & x\leq-2,\\[2pt]
+    -(x^2+x-2), & -2<x<1,\\[2pt]
+    +(x^2+x-2), & x\geq1.
+    \end{cases}
+    $$
+
+    Desenvolupem l'expressió del tros central:
+
+    $$
+    -(x^2+x-2)=-x^2-x+2.
+    $$
+
+    Per tant, la funció a trossos simplificada és
 
     $$
     f(x)=
