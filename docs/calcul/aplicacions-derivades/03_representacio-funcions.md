@@ -22,7 +22,7 @@
     3. Trobar els talls amb l'eix $X$ resolent $f(x)=0$.
     4. Estudiar amb límits laterals els punts exclosos del domini —els zeros del denominador en les funcions racionals i els extrems del domini en les logarítmiques— per determinar si hi ha **asímptotes verticals** o **discontinuïtats evitables**.
     5. Estudiar les altres **discontinuïtats**, especialment en funcions a trossos, i classificar-les.
-    6. Calcular els límits quan $x\to-\infty$ i $x\to+\infty$ per trobar asímptotes horitzontals o branques infinites.
+    6. Calcular els límits quan $x\to-\infty$ i $x\to+\infty$ per estudiar el **comportament a l'infinit**: la funció pot convergir a un nombre o tenir una branca infinita.
     7. Localitzar els candidats a **extrem relatiu** resolent $f'(x)=0$ i considerant els punts on $f'$ no existeix.
     8. Construir la **taula de monotonia** situant-hi tots els punts importants: discontinuïtats —incloses les asímptotes verticals—, extrems del domini, punts d'unió de les funcions a trossos i candidats a extrems relatius. Després, estudiar el signe de $f'$ en cada interval per determinar on la funció creix o decreix.
 
@@ -96,7 +96,7 @@ En funcions a trossos i en punts exclosos del domini, comparem els límits later
     - De **salt finit:** els dos límits laterals són finits, però diferents.
     - De **salt infinit:** almenys un dels límits laterals és infinit.
 
-### Pas 6. Comportament a l'infinit i asímptotes
+### Pas 6. Comportament a l'infinit
 
 Calculem
 
@@ -106,14 +106,10 @@ $$
 \lim_{x\to+\infty}f(x).
 $$
 
-!!! abstract "Definició: asímptota horitzontal"
-    La recta $y=L$ és una **asímptota horitzontal** si
+Interpretem separadament el resultat de cada límit:
 
-    $$
-    \lim_{x\to-\infty}f(x)=L
-    \qquad\text{o}\qquad
-    \lim_{x\to+\infty}f(x)=L.
-    $$
+- Si el límit és un nombre real $L$, la funció **convergeix a $L$** en aquell extrem.
+- Si el límit és $+\infty$ o $-\infty$, la funció té una **branca infinita** en aquell extrem.
 
 ### Pas 7. Extrems relatius
 
