@@ -152,8 +152,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
 | Tipus | Informació especialment útil |
 |:---|:---|
-| Polinòmica | Domini $\mathbb{R}$, talls, comportament del terme de grau més alt i extrems. No té asímptotes. |
-| Racional | Zeros del denominador, simplificacions, asímptotes verticals o horitzontals i intervals separats pel domini. |
+| Polinòmica | Domini $\mathbb{R}$, talls, comportament del terme de grau més alt i extrems. |
+| Racional | Zeros del denominador, simplificacions, asímptotes verticals, comportament a l'infinit i intervals separats pel domini. |
 | Irracional | Condició del radicand, extrems del domini i possibles tangents verticals. |
 | Exponencial | El factor exponencial és sempre positiu; els límits depenen del signe de l'exponent. |
 | Logarítmica | L'argument ha de ser positiu i acostuma a haver-hi una asímptota vertical quan l'argument tendeix a $0^+$. |
@@ -213,13 +213,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     Per tant, les solucions són $x=-3$ i $x=3$; aquesta última apareix dues vegades. Els talls amb l'eix $X$ són $(-3,0)$ i $(3,0)$. En $x=3$ l'arrel és doble: la gràfica toca l'eix però no el travessa.
 
-    **Comportament a l'infinit.** Segons l'ordre dels infinits, el terme de grau més alt creix més de pressa:
-
-    $$
-    x^3>x^2>x>k,
-    $$
-
-    on $k$ representa qualsevol constant real. Per tant, domina el terme $x^3$:
+    **Comportament a l'infinit.** En una funció polinòmica, el terme de grau més alt domina en valor absolut quan $|x|\to\infty$. En aquest cas, domina el terme $x^3$:
 
     $$
     \boxed{\begin{aligned}
@@ -237,7 +231,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     \end{aligned}}
     $$
 
-    Una funció polinòmica no té asímptotes.
+    Per tant, la funció té una **branca infinita** a cadascun dels dos extrems.
 
     **Creixement i extrems.**
 
@@ -352,7 +346,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     Les solucions són $x=-1$ i $x=2$, però $x=2$ no pertany al domini. Per tant, l'únic tall amb l'eix $X$ és $(-1,0)$.
 
-    **Discontinuïtat asimptòtica en $x=1$.** Substituint $x=1$ obtenim
+    **Discontinuïtat de salt infinit en $x=1$.** Substituint $x=1$ obtenim
 
     $$
     \lim_{x\to1}f(x)
@@ -424,7 +418,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     \end{aligned}
     $$
 
-    Així, $y=1$ és una asímptota horitzontal.
+    Així, la funció **convergeix a $1$** als dos extrems.
 
     **Creixement i extrems.**
 
@@ -444,8 +438,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i una asímptota horitzontal](../../img/calcul/fig_2_11_representacio_racional.svg?v=3){ width="820" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_racional.tex">Figura 2.11.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat asimptòtica.</figcaption>
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i convergència a 1 als dos extrems](../../img/calcul/fig_2_11_representacio_racional.svg?v=3){ width="820" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_racional.tex">Figura 2.11.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat de salt infinit.</figcaption>
     </figure>
 
 !!! example "Exemple 3. Funció racional amb branques infinites"
@@ -493,7 +487,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     El tall amb l'eix $X$ també és $(0,0)$.
 
-    **Discontinuïtat asimptòtica en $x=2$.** Substituint $x=2$ obtenim
+    **Discontinuïtat de salt infinit en $x=2$.** Substituint $x=2$ obtenim
 
     $$
     \lim_{x\to2}g(x)
@@ -536,7 +530,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     \end{aligned}
     $$
 
-    Així, la funció té una **branca infinita** a cadascun dels dos extrems i no té cap asímptota horitzontal.
+    Així, la funció té una **branca infinita** a cadascun dels dos extrems.
 
     **Creixement i extrems.** Derivem amb la regla del quocient:
 
@@ -632,7 +626,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     \end{aligned}
     $$
 
-    i, per tant, no hi ha cap asímptota horitzontal.
+    Per tant, la funció té una **branca infinita** quan $x\to+\infty$.
 
     **Creixement i extrems.** Derivem:
 
@@ -683,7 +677,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     \end{aligned}
     $$
 
-    Així, $y=0$ és una asímptota horitzontal quan $x\to+\infty$.
+    Així, la funció té una **branca infinita** quan $x\to-\infty$ i **convergeix a $0$** quan $x\to+\infty$.
 
     **Creixement i extrems.** Derivem:
 
@@ -747,7 +741,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     \end{aligned}
     $$
 
-    i no hi ha cap asímptota horitzontal.
+    Per tant, la funció té una **branca infinita** quan $x\to+\infty$.
 
     **Creixement i extrems.** Derivem:
 
@@ -791,7 +785,7 @@ $$
 !!! note "Dibuix final"
     Els cercles buits indiquen que el punt no pertany al tros corresponent; els punts plens indiquen el valor real de la funció. La gràfica no s'ha de prolongar fora de l'interval assignat a cada expressió.
 
-!!! example "Exemple 7. Funció a trossos amb una discontinuïtat asimptòtica"
+!!! example "Exemple 7. Funció a trossos amb una discontinuïtat de salt infinit"
     Representem la funció
 
     $$
@@ -850,7 +844,7 @@ $$
     \lim_{x\to-1^+}\left(1+\frac{2}{x+1}\right)=+\infty,
     $$
 
-    Per tant, la funció té una **discontinuïtat asimptòtica** i una asímptota vertical en $x=-1$.
+    Per tant, la funció té una **discontinuïtat de salt infinit** i una asímptota vertical en $x=-1$.
 
     **Pas 5. Altres discontinuïtats.** L'únic punt d'unió dels dos trossos és $x=1$. Hi comparem els límits laterals i el valor de la funció:
 
@@ -936,7 +930,47 @@ $$
     f(x)=|-2x+4|-|x-3|.
     $$
 
-    Els canvis de signe de les expressions interiors es produeixen en
+    **Pas 1. Domini.** Les dues expressions lineals estan definides per a qualsevol nombre real i els valors absoluts no hi afegeixen cap restricció. Per tant,
+
+    $$
+    D_f=\mathbb{R}.
+    $$
+
+    **Pas 2. Tall amb l'eix $Y$.** Calculem
+
+    $$
+    f(0)=|-2\cdot0+4|-|0-3|=4-3=1.
+    $$
+
+    El tall amb l'eix $Y$ és $(0,1)$.
+
+    **Pas 3. Talls amb l'eix $X$.** Imposant $f(x)=0$ obtenim
+
+    $$
+    |-2x+4|=|x-3|.
+    $$
+
+    Elevem els dos membres al quadrat i utilitzem una diferència de quadrats:
+
+    $$
+    \begin{aligned}
+    (-2x+4)^2&=(x-3)^2,\\
+    \bigl((-2x+4)-(x-3)\bigr)\bigl((-2x+4)+(x-3)\bigr)&=0,\\
+    (-3x+7)(-x+1)&=0.
+    \end{aligned}
+    $$
+
+    Per tant,
+
+    $$
+    x=1
+    \qquad\text{o bé}\qquad
+    x=\frac73,
+    $$
+
+    i els talls amb l'eix $X$ són $(1,0)$ i $\left(\frac73,0\right)$.
+
+    Per continuar l'estudi, escrivim la funció a trossos. Els canvis de signe de les expressions interiors es produeixen en
 
     $$
     -2x+4=0\Longrightarrow x=2,
@@ -964,7 +998,27 @@ $$
     \end{cases}
     $$
 
-    **Comportament a l'infinit.** Als extrems utilitzem el primer i el tercer tros, respectivament. En tots dos casos domina el terme de primer grau:
+    **Pas 4. Asímptotes verticals i discontinuïtats evitables.** No hi ha cap punt exclòs del domini. Per tant, la funció no té asímptotes verticals ni discontinuïtats evitables.
+
+    **Pas 5. Altres discontinuïtats.** Els punts d'unió dels trossos són $x=2$ i $x=3$. En $x=2$,
+
+    $$
+    \lim_{x\to2^-}f(x)=-2+1=-1,
+    \qquad
+    \lim_{x\to2^+}f(x)=3\cdot2-7=-1=f(2).
+    $$
+
+    En $x=3$,
+
+    $$
+    \lim_{x\to3^-}f(x)=3\cdot3-7=2,
+    \qquad
+    \lim_{x\to3^+}f(x)=3-1=2=f(3).
+    $$
+
+    Així, la funció és contínua en $x=2$ i en $x=3$ i, per tant, és contínua en tot $\mathbb{R}$.
+
+    **Pas 6. Comportament a l'infinit.** Als extrems utilitzem el primer i el tercer tros, respectivament. En tots dos casos domina el terme de primer grau:
 
     $$
     \begin{aligned}
@@ -982,25 +1036,31 @@ $$
     \end{aligned}
     $$
 
-    Per tant, la funció creix sense límit als dos extrems i no té asímptotes horitzontals.
+    Per tant, la funció té una **branca infinita** a cadascun dels dos extrems.
 
-    Els tres trossos són rectes. En els punts de canvi,
-
-    $$
-    f(2)=-1
-    \qquad\text{i}\qquad
-    f(3)=2,
-    $$
-
-    i les expressions dels dos costats donen el mateix valor. Així, la funció és contínua en tot $\mathbb{R}$.
-
-    En canvi, els pendents són
+    **Pas 7. Extrems relatius.** Derivem cada tros:
 
     $$
-    -1,\qquad 3\qquad\text{i}\qquad1.
+    f'(x)=
+    \begin{cases}
+    -1, & x<2,\\
+    3, & 2<x<3,\\
+    1, & x>3.
+    \end{cases}
     $$
 
-    Com que el pendent canvia, $f$ **no és derivable en $x=2$ ni en $x=3$**. En $x=2$ el pendent passa de negatiu a positiu, de manera que $(2,-1)$ és un mínim relatiu. En canvi, en $x=3$ els pendents dels dos costats són positius: la funció continua creixent i $(3,2)$ és un punt angulós, però **no és un extrem relatiu**.
+    La derivada no s'anul·la en cap dels tres intervals. També cal considerar els punts d'unió $x=2$ i $x=3$, on la derivada no existeix perquè els pendents laterals no coincideixen. Per tant, els candidats a extrem relatiu són $x=2$ i $x=3$.
+
+    **Pas 8. Creixement i decreixement.** Situem els dos punts d'unió a la taula de monotonia:
+
+    | Valor de $x$ | $(-\infty,2)$ | $2$ | $(2,3)$ | $3$ | $(3,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Valor de prova | $x=0$ | — | $x=\dfrac52$ | — | $x=4$ |
+    | Càlcul de la derivada | $f'(0)=-1$ | no existeix | $f'\!\left(\dfrac52\right)=3$ | no existeix | $f'(4)=1$ |
+    | Signe de $f'$ | $-$ | no existeix | $+$ | no existeix | $+$ |
+    | Comportament de $f$ | decreix | mínim $(2,-1)$ | creix | punt angulós $(3,2)$, no és un extrem | creix |
+
+    En $x=2$ el signe de la derivada passa de negatiu a positiu, de manera que $(2,-1)$ és un mínim relatiu. En canvi, en $x=3$ els pendents dels dos costats són positius: la funció continua creixent i $(3,2)$ és un punt angulós, però **no és un extrem relatiu**.
 
     <figure markdown="span">
       ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=4){ width="760" }
@@ -1073,7 +1133,7 @@ $$
     \end{aligned}
     $$
 
-    Per tant, la funció no té asímptotes horitzontals.
+    Per tant, la funció té una **branca infinita** a cadascun dels dos extrems.
 
     **Derivabilitat.** Derivem cada tros:
 
