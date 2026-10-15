@@ -288,6 +288,21 @@
     font-size: 8.4pt;
   }
 
+  body:has(.pdf-exercise-collection) .md-typeset .exercise-monotonia-tables table {
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    table-layout: auto;
+    overflow: visible;
+    font-size: 7pt;
+  }
+
+  body:has(.pdf-exercise-collection) .md-typeset .exercise-monotonia-tables table th,
+  body:has(.pdf-exercise-collection) .md-typeset .exercise-monotonia-tables table td {
+    min-width: 0;
+    padding: 0.3em 0.35em;
+  }
+
   body:has(.pdf-exercise-collection) .md-typeset figure {
     margin-block: 0.2rem;
   }
@@ -308,6 +323,11 @@
 
   body:has(.pdf-exercise-collection) .md-typeset figure.exercise-solution-figure--multi img {
     max-height: 88mm;
+  }
+
+  body:has(.pdf-exercise-collection) .md-typeset figure.exercise-solution-figure--compact img {
+    width: 52% !important;
+    max-height: 45mm;
   }
 
   body:has(.pdf-exercise-collection) .md-typeset figure figcaption {

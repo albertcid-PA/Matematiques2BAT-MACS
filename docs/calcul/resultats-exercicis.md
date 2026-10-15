@@ -165,6 +165,8 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 
 ### Creixement i extrems
 
+<div class="exercise-monotonia-tables" markdown="1">
+
 **2.16.**
 
 **a)** $f'(x)=3(x+1)(x-3)$.
@@ -232,6 +234,8 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(0)=0$.
 
 Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 
+</div>
+
 **2.17.**
 
 - **a)** Creix a $(-\infty,-2)\cup(2,+\infty)$ i decreix a $(-2,2)$; màxim $(-2,17)$ i mínim $(2,-15)$.
@@ -262,7 +266,7 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 | Apartat | Domini, discontinuïtats i asímptotes | Monotonia i punts destacats |
 |:--|:--|:--|
 | **a)** | $D=\mathbb{R}\setminus\{-1,2\}$; forat $(-1,\frac23)$; AV $x=2$; AH $y=1$. Tall $X$: $x=1$; tall $Y$: $\frac12$. | Decreix en cada interval del domini; sota $y=1$ si $x<2$ i damunt si $x>2$. |
-| **b)** | $D=\mathbb{R}\setminus\{-1,1\}$; AV $x=\pm1$; AH $y=2$. Talls $X$: $x=\pm\sqrt2$; tall $Y=4$. | Decreix si $x<0$ i creix si $x>0$; mínim $(0,4)$ en $(-1,1)$. Damunt $y=2$ si $|x|<1$. |
+| **b)** | $D=\mathbb{R}\setminus\{-1,1\}$; AV $x=\pm1$; AH $y=2$. Talls $X$: $x=\pm\sqrt2$; tall $Y=4$. | Decreix si $x<0$ i creix si $x>0$; mínim $(0,4)$ en $(-1,1)$. Damunt $y=2$ si $\lvert x\rvert<1$. |
 | **c)** | $D=\mathbb{R}\setminus\{-2,2\}$; forat $(-2,-\frac54)$; AV $x=2$; AH $y=-1$. Tall $X$: $x=3$; tall $Y=-\frac32$. | Decreix en cada interval; sota $y=-1$ si $x<2$ i damunt si $x>2$. |
 | **d)** | $D=\mathbb{R}\setminus\{-2,2\}$; AV $x=\pm2$; AH $y=3$. No talla l'eix $X$; tall $Y=-1$. | Creix si $x<0$ i decreix si $x>0$; màxim $(0,-1)$ en $(-2,2)$. |
 | **e)** | $D=\mathbb{R}\setminus\{-1,2\}$; AV $x=-1,2$; AH $y=0$; tall $Y=-\frac12$. | Creix fins a $x=\frac12$ i decreix després, separant pels punts exclosos; màxim $(\frac12,-\frac49)$. |
@@ -351,14 +355,14 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 
 **2.26.** $D_f=\mathbb{R}\setminus\{-3,3\}$. Talls $x=\pm\sqrt2$ i $y=\frac23$. AV $x=\pm3$ i AH $y=3$. Límits: a $-3$, $+\infty$ per l'esquerra i $-\infty$ per la dreta; a $3$, $-\infty$ per l'esquerra i $+\infty$ per la dreta. Creix per $x<0$ i decreix per $x>0$, separant pels punts exclosos; màxim relatiu $(0,\frac23)$.
 
-<figure markdown="span" class="exercise-solution-figure">
+<figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
   ![Representació completa de la funció racional de l'exercici 2.26](../img/calcul/fig_2_39_resultat_exercici_2_26.svg?v=1){ width="62%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_39_resultat_exercici_2_26.tex">Figura 2.39.</a></strong> Representació completa de la funció de l'exercici 2.26.</figcaption>
 </figure>
 
 **2.27.** $D_g=\mathbb{R}\setminus\{1\}$. AV $x=1$, amb límits $-\infty$ i $+\infty$; AH $y=0$ quan $x\to-\infty$, mentre que $g(x)\to+\infty$ quan $x\to+\infty$. $g'(x)=\frac{e^x(x-2)}{(x-1)^2}$: decreix a $(-\infty,1)\cup(1,2)$ i creix a $(2,+\infty)$; mínim $(2,e^2)$. Tall amb l'eix $Y$: $(0,-1)$; no talla l'eix $X$.
 
-<figure markdown="span" class="exercise-solution-figure">
+<figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
   ![Representació completa de la funció exponencial racional de l'exercici 2.27](../img/calcul/fig_2_40_resultat_exercici_2_27.svg?v=1){ width="62%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_40_resultat_exercici_2_27.tex">Figura 2.40.</a></strong> Representació completa de la funció de l'exercici 2.27.</figcaption>
 </figure>
@@ -376,7 +380,7 @@ $$
 
 És contínua en tot $\mathbb{R}$ i no és derivable a $x=-2$ ni a $x=1$.
 
-<figure markdown="span" class="exercise-solution-figure">
+<figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
   ![Representació de la funció amb valor absolut de l'exercici 2.28](../img/calcul/fig_2_41_resultat_exercici_2_28.svg?v=1){ width="62%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_41_resultat_exercici_2_28.tex">Figura 2.41.</a></strong> Representació de la funció de l'exercici 2.28.</figcaption>
 </figure>
@@ -401,7 +405,7 @@ $$
 
 **2.37.** El benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. Al punt d'unió, $B(4)=36$; als extrems, $B(0)=B(8)=20$.
 
-<figure markdown="span" class="exercise-solution-figure">
+<figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
   ![Representació de la funció de benefici a trossos de l'exercici 2.37](../img/calcul/fig_2_42_resultat_exercici_2_37.svg?v=1){ width="62%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_42_resultat_exercici_2_37.tex">Figura 2.42.</a></strong> Representació del benefici de l'exercici 2.37.</figcaption>
 </figure>
