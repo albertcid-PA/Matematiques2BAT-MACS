@@ -1260,7 +1260,7 @@
   function buildStep6(analysis) {
     const first = analysis.model.branches[0];
     const last = analysis.model.branches[analysis.model.branches.length - 1];
-    return `<h4>Quan $x\\to-\\infty$</h4>${infinityExplanation(analysis.minusInfinity, -1, first)}<h4>Quan $x\\to+\\infty$</h4>${infinityExplanation(analysis.plusInfinity, 1, last)}`;
+    return `<h4>Quan ${formula("x\\to-\\infty", false)}</h4>${infinityExplanation(analysis.minusInfinity, -1, first)}<h4>Quan ${formula("x\\to+\\infty", false)}</h4>${infinityExplanation(analysis.plusInfinity, 1, last)}`;
   }
 
   function polynomialDerivativeCalculationTex(coefficients) {
