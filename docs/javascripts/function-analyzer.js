@@ -240,10 +240,10 @@
     if (degree === 1) return [-p[0] / p[1]];
     if (degree === 2) {
       const [c, b, a] = p;
-      const discriminant = b * b - 4 * a * c;
-      if (discriminant < -EPS) return [];
-      if (Math.abs(discriminant) < EPS) return [-b / (2 * a)];
-      const root = Math.sqrt(discriminant);
+      const radicand = b * b - 4 * a * c;
+      if (radicand < -EPS) return [];
+      if (Math.abs(radicand) < EPS) return [-b / (2 * a)];
+      const root = Math.sqrt(radicand);
       return uniqueNumbers([(-b - root) / (2 * a), (-b + root) / (2 * a)]);
     }
     const leading = Math.abs(p[degree]);
@@ -518,18 +518,19 @@
 
   function quadraticEquationExplanation(coefficients) {
     const [c, b, a] = coefficients;
-    const delta = b * b - 4 * a * c;
-    let html = `<p>És una equació de segon grau, amb ${formula(`a=${texNumber(a, false)},\\quad b=${texNumber(b, false)},\\quad c=${texNumber(c, false)}`, false)}. Calculem el discriminant:</p>`;
-    html += formula(`\\Delta=b^2-4ac=${signedTexNumber(b)}^2-4\\cdot${signedTexNumber(a)}\\cdot${signedTexNumber(c)}=${texNumber(delta, false)}`);
-    if (delta < -EPS) return `${html}<p>Com que ${formula("\\Delta<0", false)}, l'equació no té solucions reals.</p>`;
-    if (Math.abs(delta) < EPS) {
+    const radicand = b * b - 4 * a * c;
+    let html = `<p>És una equació de segon grau, amb ${formula(`a=${texNumber(a, false)},\\quad b=${texNumber(b, false)},\\quad c=${texNumber(c, false)}`, false)}. Apliquem directament la fórmula general:</p>`;
+    html += formula(`x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}=\\frac{${texNumber(-b, false)}\\pm\\sqrt{${signedTexNumber(b)}^2-4\\cdot${signedTexNumber(a)}\\cdot${signedTexNumber(c)}}}{${texNumber(2 * a, false)}}`);
+    if (radicand < -EPS) return `${html}<p>El nombre que queda dins de l'arrel és ${formula(texNumber(radicand), false)}. Com que no té arrel quadrada real, l'equació no té solucions reals.</p>`;
+    html += formula(`x=\\frac{${texNumber(-b, false)}\\pm\\sqrt{${texNumber(radicand, false)}}}{${texNumber(2 * a, false)}}`);
+    if (Math.abs(radicand) < EPS) {
       const root = -b / (2 * a);
-      return `${html}<p>Hi ha una arrel doble:</p>${formula(`x=\\frac{-b}{2a}=\\frac{${texNumber(-b, false)}}{${texNumber(2 * a, false)}}=${texNumber(root)}`)}`;
+      return `${html}<p>Hi ha una única solució, que és doble:</p>${formula(`x=${texNumber(root)}`)}`;
     }
-    const sqrtDelta = Math.sqrt(delta);
-    const root1 = (-b - sqrtDelta) / (2 * a);
-    const root2 = (-b + sqrtDelta) / (2 * a);
-    return `${html}<p>Apliquem la fórmula general:</p>${formula(`x=\\frac{-b\\pm\\sqrt{\\Delta}}{2a}=\\frac{${texNumber(-b, false)}\\pm\\sqrt{${texNumber(delta, false)}}}{${texNumber(2 * a, false)}}`)}${formula(`x_1=${texNumber(root1)},\\qquad x_2=${texNumber(root2)}`)}`;
+    const squareRoot = Math.sqrt(radicand);
+    const root1 = (-b - squareRoot) / (2 * a);
+    const root2 = (-b + squareRoot) / (2 * a);
+    return `${html}<p>Separem els dos signes:</p>${formula(`x_1=${texNumber(root1)},\\qquad x_2=${texNumber(root2)}`)}`;
   }
 
   function polynomialEquationExplanation(coefficients, label) {
