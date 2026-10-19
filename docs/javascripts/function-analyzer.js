@@ -479,32 +479,85 @@
     return uniqueNumbers(candidates).find((x) => Math.abs(evaluatePolynomial(coefficients, x)) < 1e-7) ?? null;
   }
 
-  function polynomialEquationExplanation(coefficients, label) {
-    const degree = coefficients.length - 1;
-    if (degree <= 0) return "";
-    const roots = polynomialRealRoots(coefficients);
-    let html = "";
-    if (degree === 1) {
-      html += `<p>És una equació de primer grau i s'aïlla la incògnita.</p>`;
-    } else if (degree === 2) {
-      const [c, b, a] = coefficients;
-      const delta = b * b - 4 * a * c;
-      html += `<p>Apliquem la fórmula general de l'equació de segon grau. El discriminant és ${formula(`\\Delta=${texNumber(delta, false)}`, false)}.</p>`;
-    } else {
-      const ruffiniRoot = rationalRootCandidate(coefficients);
-      if (ruffiniRoot !== null) {
-        const division = syntheticDivision(coefficients, ruffiniRoot);
-        html += `<p>Provem els divisors del terme independent. Com que ${formula(`${label}(${texNumber(ruffiniRoot, false)})=0`, false)}, podem aplicar <strong>Ruffini</strong> amb ${formula(`x=${texNumber(ruffiniRoot, false)}`, false)}.</p>`;
-        const top = division.descending.map((value) => `<td>${formula(texNumber(value, false), false)}</td>`).join("");
-        const bottom = division.bottom.map((value) => `<td>${formula(texNumber(value, false), false)}</td>`).join("");
-        html += `<div class="fa-table-scroll"><table><tbody><tr><th>${formula(texNumber(ruffiniRoot, false), false)}</th>${top}</tr><tr><th></th>${bottom}</tr></tbody></table></div>`;
-        html += `<p>El residu és zero. El quocient té grau ${degree - 1} i es continua factoritzant amb els procediments treballats.</p>`;
-      } else {
-        html += `<p>No hi ha cap arrel racional que permeti aplicar Ruffini directament. Els zeros reals que apareixen a continuació s'han obtingut numèricament i es marquen com a aproximacions.</p>`;
-      }
+  function signedTexNumber(value) {
+    const tex = texNumber(value, false);
+    return value < 0 ? `(${tex})` : tex;
+  }
+
+  function rootFactorTex(root) {
+    if (Math.abs(root) < EPS) return "x";
+    return root > 0 ? `(x-${texNumber(root, false)})` : `(x+${texNumber(-root, false)})`;
+  }
+
+  function dividePolynomialByRoot(coefficients, root) {
+    const division = syntheticDivision(coefficients, root);
+    if (Math.abs(division.bottom[division.bottom.length - 1]) > 1e-6) return null;
+    return trimPolynomial(division.bottom.slice(0, -1).reverse());
+  }
+
+  function removeRootMultiplicity(coefficients, root) {
+    let reduced = trimPolynomial(coefficients);
+    let multiplicity = 0;
+    while (reduced.length > 1) {
+      const quotient = dividePolynomialByRoot(reduced, root);
+      if (!quotient) break;
+      reduced = quotient;
+      multiplicity += 1;
     }
-    if (!roots.length) html += "<p>L'equació no té solucions reals.</p>";
-    return html;
+    return { multiplicity, reduced };
+  }
+
+  function linearEquationExplanation(coefficients) {
+    const [b, a] = coefficients;
+    const root = -b / a;
+    const steps = Math.abs(a - 1) < EPS
+      ? `${polynomialToTex(coefficients)}=0\\;\\Longrightarrow\\;x=${texNumber(root)}`
+      : `${polynomialToTex(coefficients)}=0\\;\\Longrightarrow\\;${polynomialToTex([0, a])}=${texNumber(-b, false)}\\;\\Longrightarrow\\;x=${texNumber(root)}`;
+    return `<p>És una equació de primer grau. Aïllem la incògnita:</p>${formula(steps)}`;
+  }
+
+  function quadraticEquationExplanation(coefficients) {
+    const [c, b, a] = coefficients;
+    const delta = b * b - 4 * a * c;
+    let html = `<p>És una equació de segon grau, amb ${formula(`a=${texNumber(a, false)},\\quad b=${texNumber(b, false)},\\quad c=${texNumber(c, false)}`, false)}. Calculem el discriminant:</p>`;
+    html += formula(`\\Delta=b^2-4ac=${signedTexNumber(b)}^2-4\\cdot${signedTexNumber(a)}\\cdot${signedTexNumber(c)}=${texNumber(delta, false)}`);
+    if (delta < -EPS) return `${html}<p>Com que ${formula("\\Delta<0", false)}, l'equació no té solucions reals.</p>`;
+    if (Math.abs(delta) < EPS) {
+      const root = -b / (2 * a);
+      return `${html}<p>Hi ha una arrel doble:</p>${formula(`x=\\frac{-b}{2a}=\\frac{${texNumber(-b, false)}}{${texNumber(2 * a, false)}}=${texNumber(root)}`)}`;
+    }
+    const sqrtDelta = Math.sqrt(delta);
+    const root1 = (-b - sqrtDelta) / (2 * a);
+    const root2 = (-b + sqrtDelta) / (2 * a);
+    return `${html}<p>Apliquem la fórmula general:</p>${formula(`x=\\frac{-b\\pm\\sqrt{\\Delta}}{2a}=\\frac{${texNumber(-b, false)}\\pm\\sqrt{${texNumber(delta, false)}}}{${texNumber(2 * a, false)}}`)}${formula(`x_1=${texNumber(root1)},\\qquad x_2=${texNumber(root2)}`)}`;
+  }
+
+  function polynomialEquationExplanation(coefficients, label) {
+    const normalized = trimPolynomial(coefficients);
+    const degree = normalized.length - 1;
+    if (degree <= 0) return "";
+    if (degree === 1) return linearEquationExplanation(normalized);
+    if (degree === 2) return quadraticEquationExplanation(normalized);
+
+    const ruffiniRoot = rationalRootCandidate(normalized);
+    if (ruffiniRoot === null) {
+      const roots = polynomialRealRoots(normalized);
+      return roots.length
+        ? `<p>No hi ha cap arrel racional que permeti aplicar Ruffini directament. Amb els mètodes algebraics del curs no es pot continuar la factorització; els zeros ${roots.map((root) => formula(`x\\simeq${texNumber(root)}`, false)).join(", ")} són aproximacions numèriques.</p>`
+        : "<p>No hi ha cap arrel racional per aplicar Ruffini ni cap solució real.</p>";
+    }
+
+    const division = syntheticDivision(normalized, ruffiniRoot);
+    const quotient = trimPolynomial(division.bottom.slice(0, -1).reverse());
+    let html = `<p>Provem els divisors del terme independent. Com que ${formula(`${label}(${texNumber(ruffiniRoot, false)})=0`, false)}, ${formula(`${rootFactorTex(ruffiniRoot)}=0`, false)} és un factor i apliquem <strong>Ruffini</strong> amb ${formula(`x=${texNumber(ruffiniRoot, false)}`, false)}.</p>`;
+    const top = division.descending.map((value) => `<td>${formula(texNumber(value, false), false)}</td>`).join("");
+    const products = [`<td></td>`, ...division.products.map((value) => `<td>${formula(texNumber(value, false), false)}</td>`)].join("");
+    const bottom = division.bottom.map((value) => `<td>${formula(texNumber(value, false), false)}</td>`).join("");
+    html += `<div class="fa-table-scroll"><table class="fa-ruffini"><tbody><tr><th rowspan="3">${formula(texNumber(ruffiniRoot, false), false)}</th>${top}</tr><tr>${products}</tr><tr>${bottom}</tr></tbody></table></div>`;
+    html += `<p>El residu és ${formula("0", false)} i el quocient és ${formula(`Q(x)=${polynomialToTex(quotient)}`, false)}. Per tant:</p>`;
+    html += formula(`${label}(x)=${rootFactorTex(ruffiniRoot)}\\,(${polynomialToTex(quotient)})`);
+    html += `<p>Ja tenim la solució ${formula(`x=${texNumber(ruffiniRoot)}`, false)}. Ara resolem ${formula(`${polynomialToTex(quotient)}=0`, false)}:</p>`;
+    return html + polynomialEquationExplanation(quotient, "Q");
   }
 
   function makeBranch(node, interval, label) {
@@ -722,6 +775,13 @@
     const last = finite[finite.length - 1];
     if (Math.abs(last) > 1e5 || (finite.length >= 3 && Math.abs(last) > 20 * Math.abs(finite[finite.length - 3]) && Math.abs(last) > 100)) {
       return { kind: "infinite", value: Math.sign(last) * Infinity };
+    }
+    if (finite.length >= 4) {
+      const differences = finite.slice(1).map((value, index) => value - finite[index]);
+      const sameDirection = differences.every((difference) => Math.sign(difference) === Math.sign(differences[0]));
+      const notConverging = Math.abs(differences[2]) > 0.6 * Math.abs(differences[1])
+        && Math.abs(differences[1]) > 0.6 * Math.abs(differences[0]);
+      if (sameDirection && notConverging && Math.abs(last) > 8) return { kind: "infinite", value: Math.sign(last) * Infinity };
     }
     const previous = finite.length > 1 ? finite[finite.length - 2] : last;
     const extrapolated = (10 * last - previous) / 9;
@@ -949,8 +1009,35 @@
     return `<ul>${constraints.join("")}</ul>`;
   }
 
+  function polynomialRationalParts(model) {
+    if (model.mode !== "standard" || model.branches.length !== 1) return null;
+    const fraction = fractionParts(model.branches[0].node);
+    if (!fraction) return null;
+    const numerator = polynomialCoefficients(fraction.numerator);
+    const denominator = polynomialCoefficients(fraction.denominator);
+    if (!numerator || !denominator) return null;
+    return { fraction, numerator, denominator };
+  }
+
+  function excludedRealSetTex(values) {
+    if (!values.length) return "\\mathbb{R}";
+    return `\\mathbb{R}\\setminus\\{${values.map((value) => texNumber(value)).join(",")}\\}`;
+  }
+
   function buildStep1(analysis) {
-    return `${domainConditionHtml(analysis.model)}${formula(`D_f=${texDomain(analysis.domain)}`)}`;
+    const rational = polynomialRationalParts(analysis.model);
+    if (!rational) return `${domainConditionHtml(analysis.model)}${formula(`D_f=${texDomain(analysis.domain)}`)}`;
+
+    const excluded = polynomialRealRoots(rational.denominator);
+    let html = `<p>En una funció racional, el denominador no pot ser zero. Per tant, busquem els valors que anul·len el denominador:</p>`;
+    html += formula(`${toTex(rational.fraction.denominator)}=0`);
+    html += polynomialEquationExplanation(rational.denominator, "Q");
+    if (excluded.length) {
+      html += `<p>Aquests valors no pertanyen al domini. Així, el domini és el conjunt de tots els nombres reals menys els que converteixen el denominador en zero:</p>`;
+    } else {
+      html += `<p>El denominador no s'anul·la per a cap nombre real; per tant, el domini és tot ${formula("\\mathbb{R}", false)}.</p>`;
+    }
+    return `${html}${formula(`D_f=${excludedRealSetTex(excluded)}`)}`;
   }
 
   function buildStep2(analysis) {
@@ -989,10 +1076,25 @@
         html += "<p>Una exponencial és estrictament positiva. Per tant, no pot ser igual a zero.</p>";
       } else if (functionName === "log") {
         html += `<p>Utilitzem que ${formula("\\log_a(u)=0\\Longleftrightarrow u=1", false)} i resolem ${formula(`${toTex(node.args[0])}=1`, false)} dins del domini.</p>`;
+        const argument = polynomialCoefficients(node.args[0]);
+        if (argument) {
+          const equation = argument.slice();
+          equation[0] -= 1;
+          html += polynomialEquationExplanation(equation, "P");
+        }
       } else if (["sqrt", "cbrt"].includes(functionName)) {
         html += `<p>Una arrel és zero quan ho és el radicand. Resolem ${formula(`${toTex(node.args[0])}=0`, false)}.</p>`;
+        const radicand = polynomialCoefficients(node.args[0]);
+        if (radicand) html += polynomialEquationExplanation(radicand, "P");
       } else if (polynomial) {
-        html += polynomialEquationExplanation(polynomial, "f");
+        html += polynomialEquationExplanation(polynomial, fraction ? "P" : "f");
+        if (fraction) {
+          const algebraicRoots = polynomialRealRoots(polynomial);
+          const discarded = algebraicRoots.filter((root) => !model.branches.some((branch) => branchContains(branch, root, false)));
+          if (discarded.length) {
+            html += `<p>Cal comprovar les solucions en el denominador. ${discarded.map((root) => `${formula(`x=${texNumber(root)}`, false)} s'ha de descartar perquè anul·la el denominador`).join("; ")}.</p>`;
+          }
+        }
       } else {
         const factor = nonconstantPolynomialFactor(node);
         if (factor && containsNode(node, (entry) => nodeFunctionName(entry) === "exp")) {
@@ -1011,9 +1113,74 @@
     return `${formula(`\\lim_{x\\to ${texNumber(point.x, false)}^-}f(x)=${limitTex(point.left)}`, false)} i ${formula(`\\lim_{x\\to ${texNumber(point.x, false)}^+}f(x)=${limitTex(point.right)}`, false)}`;
   }
 
+  function factorPowerTex(root, multiplicity) {
+    if (multiplicity <= 0) return "";
+    const factor = rootFactorTex(root);
+    return multiplicity === 1 ? factor : `${factor}^{${multiplicity}}`;
+  }
+
+  function divideByRootTimes(coefficients, root, times) {
+    let result = trimPolynomial(coefficients);
+    for (let i = 0; i < times; i += 1) result = dividePolynomialByRoot(result, root) || result;
+    return result;
+  }
+
+  function signedZeroTex(value) {
+    return value < 0 ? "0^-" : "0^+";
+  }
+
+  function verticalLimitWork(numerator, denominator, point) {
+    const x = point.x;
+    const h = 1e-5 * Math.max(1, Math.abs(x));
+    const numeratorAtPoint = evaluatePolynomial(numerator, x);
+    const denominatorLeft = evaluatePolynomial(denominator, x - h);
+    const denominatorRight = evaluatePolynomial(denominator, x + h);
+    return `<p>Estudiem el signe del denominador a cada costat de ${formula(`x=${texNumber(x)}`, false)}:</p>`
+      + formula(`\\lim_{x\\to ${texNumber(x, false)}^-}f(x)=\\frac{${texNumber(numeratorAtPoint, false)}}{${signedZeroTex(denominatorLeft)}}=${limitTex(point.left)}`)
+      + formula(`\\lim_{x\\to ${texNumber(x, false)}^+}f(x)=\\frac{${texNumber(numeratorAtPoint, false)}}{${signedZeroTex(denominatorRight)}}=${limitTex(point.right)}`);
+  }
+
+  function rationalSpecialPointExplanation(rational, point) {
+    const x = point.x;
+    const numeratorValue = evaluatePolynomial(rational.numerator, x);
+    const denominatorValue = evaluatePolynomial(rational.denominator, x);
+    let html = `<h4>Candidat ${formula(`x=${texNumber(x)}`, false)}</h4>`;
+    html += `<p>Substituïm el valor al numerador i al denominador:</p>`;
+    html += formula(`P(${texNumber(x, false)})=${texNumber(numeratorValue, false)},\\qquad Q(${texNumber(x, false)})=${texNumber(denominatorValue, false)}`);
+
+    if (Math.abs(numeratorValue) > 1e-6) {
+      html += `<p>Obtenim una expressió del tipus ${formula(`\\frac{${texNumber(numeratorValue, false)}}{0}`, false)}. No és una indeterminació: cal calcular els dos límits laterals.</p>`;
+      html += verticalLimitWork(rational.numerator, rational.denominator, point);
+      return `${html}<p>Per tant, ${formula(`x=${texNumber(x)}`, false)} és una <strong>asímptota vertical</strong>.</p>`;
+    }
+
+    html += `<p>Obtenim la indeterminació ${formula("\\frac{0}{0}", false)}. Factoritzem numerador i denominador per trobar el factor comú.</p>`;
+    const numeratorFactors = removeRootMultiplicity(rational.numerator, x);
+    const denominatorFactors = removeRootMultiplicity(rational.denominator, x);
+    const commonMultiplicity = Math.min(numeratorFactors.multiplicity, denominatorFactors.multiplicity);
+    const numeratorCancelled = divideByRootTimes(rational.numerator, x, commonMultiplicity);
+    const denominatorCancelled = divideByRootTimes(rational.denominator, x, commonMultiplicity);
+    html += formula(`P(x)=${factorPowerTex(x, numeratorFactors.multiplicity)}\\,(${polynomialToTex(numeratorFactors.reduced)}),\\qquad Q(x)=${factorPowerTex(x, denominatorFactors.multiplicity)}\\,(${polynomialToTex(denominatorFactors.reduced)})`);
+    html += `<p>Simplifiquem ${commonMultiplicity === 1 ? "el factor comú" : `els ${commonMultiplicity} factors comuns`} només per calcular el límit, mantenint la restricció ${formula(`x\\ne${texNumber(x)}`, false)}:</p>`;
+    html += formula(`f(x)=\\frac{${polynomialToTex(numeratorCancelled)}}{${polynomialToTex(denominatorCancelled)}},\\qquad x\\ne${texNumber(x, false)}`);
+
+    const reducedDenominatorValue = evaluatePolynomial(denominatorCancelled, x);
+    if (Math.abs(reducedDenominatorValue) > 1e-7) {
+      const limit = evaluatePolynomial(numeratorCancelled, x) / reducedDenominatorValue;
+      html += formula(`\\lim_{x\\to ${texNumber(x, false)}}f(x)=\\frac{${texNumber(evaluatePolynomial(numeratorCancelled, x), false)}}{${texNumber(reducedDenominatorValue, false)}}=${texNumber(limit)}`);
+      return `${html}<p>El límit és finit, però el punt no pertany al domini. Per tant, hi ha una <strong>discontinuïtat evitable</strong> (un forat) a ${formula(formatPoint(x, limit), false)}.</p>`;
+    }
+
+    html += `<p>Després de simplificar encara queda el denominador igual a zero. Per tant, estudiem els límits laterals de l'expressió reduïda.</p>`;
+    html += verticalLimitWork(numeratorCancelled, denominatorCancelled, point);
+    return `${html}<p>Per tant, ${formula(`x=${texNumber(x)}`, false)} és una <strong>asímptota vertical</strong>.</p>`;
+  }
+
   function buildStep4(analysis) {
     const candidates = analysis.specialPoints.filter((point) => !point.isJoin || point.type === "asímptota vertical" || point.type === "discontinuïtat evitable");
     if (!candidates.length) return "<p>No hi ha punts exclosos del domini que calgui estudiar en aquest pas.</p>";
+    const rational = polynomialRationalParts(analysis.model);
+    if (rational) return `<p>Partim dels valors exclosos del domini i estudiem cada cas algebraicament.</p>${candidates.map((point) => rationalSpecialPointExplanation(rational, point)).join("")}`;
     const items = candidates.map((point) => `<li>En ${formula(`x=${texNumber(point.x)}`, false)}, ${limitLine(point)}. Per tant, és una <strong>${escapeHtml(point.type)}</strong>.</li>`).join("");
     return `<p>Calculem els límits laterals dels punts candidats:</p><ul>${items}</ul>`;
   }
@@ -1029,8 +1196,50 @@
     return `<p>En cada punt d'unió comparem els dos límits laterals i el valor de la funció.</p><ul>${items}</ul>`;
   }
 
+  function rationalInfinityExplanation(result, side, numerator, denominator) {
+    const destination = side < 0 ? "-\\infty" : "+\\infty";
+    const numeratorDegree = numerator.length - 1;
+    const denominatorDegree = denominator.length - 1;
+    const numeratorLeading = numerator[numeratorDegree];
+    const denominatorLeading = denominator[denominatorDegree];
+    let html = `<p>Els graus són ${formula(`\\deg P=${numeratorDegree}`, false)} i ${formula(`\\deg Q=${denominatorDegree}`, false)}.</p>`;
+
+    if (numeratorDegree < denominatorDegree) {
+      html += `<p>Dividim numerador i denominador per ${formula(`x^{${denominatorDegree}}`, false)}.</p>`;
+      html += formula(`\\lim_{x\\to${destination}}\\frac{P(x)}{Q(x)}=\\lim_{x\\to${destination}}\\frac{${texNumber(numeratorLeading, false)}x^{${numeratorDegree}}+\\cdots}{${texNumber(denominatorLeading, false)}x^{${denominatorDegree}}+\\cdots}=\\lim_{x\\to${destination}}\\frac{${texNumber(numeratorLeading, false)}}{${texNumber(denominatorLeading, false)}x^{${denominatorDegree - numeratorDegree}}}=0`);
+    } else if (numeratorDegree === denominatorDegree) {
+      html += `<p>Dividim numerador i denominador per ${formula(`x^{${denominatorDegree}}`, false)}.</p>`;
+      html += formula(`\\lim_{x\\to${destination}}\\frac{P(x)}{Q(x)}=\\lim_{x\\to${destination}}\\frac{${texNumber(numeratorLeading, false)}+\\frac{\\cdots}{x}}{${texNumber(denominatorLeading, false)}+\\frac{\\cdots}{x}}=\\frac{${texNumber(numeratorLeading, false)}}{${texNumber(denominatorLeading, false)}}=${texNumber(numeratorLeading / denominatorLeading)}`);
+    } else {
+      const division = polynomialLongDivision(numerator, denominator);
+      html += `<p>Com que el grau del numerador és més gran, fem la divisió de polinomis:</p>`;
+      html += formula(`${polynomialToTex(numerator)}=(${polynomialToTex(denominator)})\\,(${polynomialToTex(division.quotient)})+(${polynomialToTex(division.remainder)})`);
+      html += formula(`\\frac{P(x)}{Q(x)}=${polynomialToTex(division.quotient)}+\\frac{${polynomialToTex(division.remainder)}}{${polynomialToTex(denominator)}}`);
+      html += `<p>La fracció del residu tendeix a zero, de manera que domina el quocient:</p>`;
+      html += formula(`\\lim_{x\\to${destination}}f(x)=\\lim_{x\\to${destination}}(${polynomialToTex(division.quotient)})=${limitTex(result)}`);
+      if (division.quotient.length === 2) html += `<p>L'asímptota obliqua és ${formula(`y=${polynomialToTex(division.quotient)}`, false)}.</p>`;
+    }
+
+    if (numeratorDegree <= denominatorDegree) {
+      html += `<p>Per tant, ${formula(`\\lim_{x\\to${destination}}f(x)=${limitTex(result)}`, false)}.</p>`;
+    }
+    return html;
+  }
+
   function infinityExplanation(result, side, branch) {
     const destination = side < 0 ? "-\\infty" : "+\\infty";
+    const fraction = fractionParts(branch.node);
+    if (fraction) {
+      const numerator = polynomialCoefficients(fraction.numerator);
+      const denominator = polynomialCoefficients(fraction.denominator);
+      if (numerator && denominator) return rationalInfinityExplanation(result, side, numerator, denominator);
+    }
+    const polynomial = polynomialCoefficients(branch.node);
+    if (polynomial && polynomial.length > 1) {
+      const degree = polynomial.length - 1;
+      const leadingTerm = `${texNumber(polynomial[degree], false)}x^{${degree}}`;
+      return `<p>Quan ${formula(`x\\to${destination}`, false)}, el terme de grau més alt domina la resta:</p>${formula(`\\lim_{x\\to${destination}}f(x)=\\lim_{x\\to${destination}}${leadingTerm}=${limitTex(result)}`)}`;
+    }
     let method = "";
     if (result.method && result.method.startsWith("term:")) {
       const [, coefficient, degree] = result.method.split(":");
@@ -1051,19 +1260,137 @@
   function buildStep6(analysis) {
     const first = analysis.model.branches[0];
     const last = analysis.model.branches[analysis.model.branches.length - 1];
-    return `<h4>Quan $x\to-\infty$</h4>${infinityExplanation(analysis.minusInfinity, -1, first)}<h4>Quan $x\to+\infty$</h4>${infinityExplanation(analysis.plusInfinity, 1, last)}`;
+    return `<h4>Quan $x\\to-\\infty$</h4>${infinityExplanation(analysis.minusInfinity, -1, first)}<h4>Quan $x\\to+\\infty$</h4>${infinityExplanation(analysis.plusInfinity, 1, last)}`;
+  }
+
+  function polynomialDerivativeCalculationTex(coefficients) {
+    const terms = [];
+    for (let degree = coefficients.length - 1; degree >= 1; degree -= 1) {
+      const coefficient = coefficients[degree];
+      if (Math.abs(coefficient) < EPS) continue;
+      const sign = coefficient < 0 ? "-" : "+";
+      const absolute = Math.abs(coefficient);
+      const coefficientTex = Math.abs(absolute - 1) < EPS ? "" : `${texNumber(absolute, false)}\\cdot`;
+      const variable = degree === 1 ? "" : degree === 2 ? "x" : `x^{${degree - 1}}`;
+      terms.push({ sign, text: `${coefficientTex}${degree}${variable}` });
+    }
+    if (!terms.length) return "0";
+    return terms.map((term, index) => `${index === 0 && term.sign === "+" ? "" : term.sign}${term.text}`).join("");
+  }
+
+  function rationalDerivativeData(branch) {
+    const fraction = fractionParts(branch.node);
+    if (!fraction) return null;
+    const numerator = polynomialCoefficients(fraction.numerator);
+    const denominator = polynomialCoefficients(fraction.denominator);
+    if (!numerator || !denominator) return null;
+    const numeratorDerivative = derivativePolynomial(numerator);
+    const denominatorDerivative = derivativePolynomial(denominator);
+    const derivativeNumerator = trimPolynomial(addPolynomials(
+      multiplyPolynomials(numeratorDerivative, denominator),
+      multiplyPolynomials(numerator, denominatorDerivative),
+      -1,
+    ));
+    return { fraction, numerator, denominator, numeratorDerivative, denominatorDerivative, derivativeNumerator };
+  }
+
+  function rationalDerivativeTex(data) {
+    return `\\frac{${polynomialToTex(data.derivativeNumerator)}}{(${polynomialToTex(data.denominator)})^2}`;
+  }
+
+  function derivativeProcedureHtml(branch, index, branchCount) {
+    const title = branchCount > 1 ? `Tram ${index + 1}` : "Càlcul de la derivada";
+    const rationalData = rationalDerivativeData(branch);
+    const finalDerivative = rationalData ? rationalDerivativeTex(rationalData) : branch.derivative ? toTex(branch.derivative) : "\\text{no disponible}";
+    let html = `<h4>${title}</h4>`;
+    const fraction = fractionParts(branch.node);
+    if (fraction) {
+      const u = fraction.numerator;
+      const v = fraction.denominator;
+      const du = derivativeNode(u);
+      const dv = derivativeNode(v);
+      if (du && dv) {
+        html += `<p>Apliquem la regla del quocient. Prenem ${formula(`u=${toTex(u)}`, false)} i ${formula(`v=${toTex(v)}`, false)}:</p>`;
+        html += formula(`u'=${rationalData ? polynomialToTex(rationalData.numeratorDerivative) : toTex(du)},\\qquad v'=${rationalData ? polynomialToTex(rationalData.denominatorDerivative) : toTex(dv)}`);
+        html += formula(`f'(x)=\\frac{u'v-uv'}{v^2}`);
+        html += formula(`f'(x)=\\frac{(${rationalData ? polynomialToTex(rationalData.numeratorDerivative) : toTex(du)})(${toTex(v)})-(${toTex(u)})(${rationalData ? polynomialToTex(rationalData.denominatorDerivative) : toTex(dv)})}{(${toTex(v)})^2}`);
+        return `${html}<p>Desenvolupem i simplifiquem:</p>${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
+      }
+    }
+
+    if (branch.node.isOperatorNode && branch.node.op === "*" && branch.node.args.length === 2) {
+      const [u, v] = branch.node.args;
+      const du = derivativeNode(u);
+      const dv = derivativeNode(v);
+      if (du && dv) {
+        html += `<p>Apliquem la regla del producte. Prenem ${formula(`u=${toTex(u)}`, false)} i ${formula(`v=${toTex(v)}`, false)}:</p>`;
+        html += formula(`u'=${toTex(du)},\\qquad v'=${toTex(dv)}`);
+        html += formula(`f'(x)=u'v+uv'=(${toTex(du)})(${toTex(v)})+(${toTex(u)})(${toTex(dv)})`);
+        return `${html}<p>Simplifiquem:</p>${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
+      }
+    }
+
+    const functionName = nodeFunctionName(branch.node);
+    if (functionName && branch.node.args && branch.node.args.length) {
+      const inner = branch.node.args[0];
+      const innerDerivative = derivativeNode(inner);
+      if (innerDerivative) {
+        const rules = {
+          log: branch.node.args.length > 1 ? `(\\log_a u)'=\\frac{u'}{u\\ln a}` : `(\\ln u)'=\\frac{u'}{u}`,
+          exp: `(e^u)'=e^u\\,u'`,
+          sqrt: `(\\sqrt{u})'=\\frac{u'}{2\\sqrt{u}}`,
+          cbrt: `(\\sqrt[3]{u})'=\\frac{u'}{3\\sqrt[3]{u^2}}`,
+        };
+        if (rules[functionName]) {
+          html += `<p>Apliquem la regla de la cadena amb ${formula(`u=${toTex(inner)}`, false)} i ${formula(`u'=${toTex(innerDerivative)}`, false)}:</p>`;
+          html += formula(rules[functionName]);
+          return `${html}<p>Substituïm i simplifiquem:</p>${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
+        }
+      }
+    }
+
+    if (isExponentialPower(branch.node)) {
+      const exponent = branch.node.args[1];
+      const exponentDerivative = derivativeNode(exponent);
+      if (exponentDerivative) {
+        html += `<p>Apliquem ${formula(`(a^{u})'=a^u\\ln(a)\\,u'`, false)}, amb ${formula(`u=${toTex(exponent)}`, false)} i ${formula(`u'=${toTex(exponentDerivative)}`, false)}.</p>`;
+        return `${html}${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
+      }
+    }
+
+    const polynomial = polynomialCoefficients(branch.node);
+    if (polynomial) {
+      html += `<p>Derivem terme a terme amb ${formula(`(ax^n)'=anx^{n-1}`, false)} i ${formula(`c'=0`, false)}:</p>`;
+      html += formula(`f'(x)=${polynomialDerivativeCalculationTex(polynomial)}=${finalDerivative}`);
+      return `${html}${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
+    }
+
+    return `${html}<p>Apliquem les regles de derivació corresponents i simplifiquem el resultat:</p>${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
   }
 
   function buildStep7(analysis) {
+    const procedures = analysis.model.branches.map((branch, index) => derivativeProcedureHtml(branch, index, analysis.model.branches.length)).join("");
     const rows = analysis.model.branches.map((branch, index) => {
       const interval = domainIntervalsForBranch(branch).map(texInterval).join("\\cup");
-      const derivative = branch.derivative ? toTex(branch.derivative) : "\\text{no disponible}";
+      const rationalData = rationalDerivativeData(branch);
+      const derivative = rationalData ? rationalDerivativeTex(rationalData) : branch.derivative ? toTex(branch.derivative) : "\\text{no disponible}";
       return `<tr><th>${analysis.model.branches.length > 1 ? `Tram ${index + 1}` : "Funció"}</th><td>${formula(`x\\in${interval}`, false)}</td><td>${formula(`f'(x)=${derivative}`, false)}</td></tr>`;
     }).join("");
     const methods = [];
     const seenMethods = new Set();
     analysis.model.branches.forEach((branch) => {
       if (!branch.derivative) return;
+      const rationalData = rationalDerivativeData(branch);
+      if (rationalData && rationalData.derivativeNumerator.length > 1) {
+        const key = rationalData.derivativeNumerator.join(":");
+        if (seenMethods.has(key)) return;
+        seenMethods.add(key);
+        methods.push(`<p>Una fracció és zero quan ho és el numerador i el denominador no ho és. Per trobar els punts estacionaris resolem ${formula(`${polynomialToTex(rationalData.derivativeNumerator)}=0`, false)}.</p>`);
+        methods.push(polynomialEquationExplanation(rationalData.derivativeNumerator, "P'"));
+        const discarded = polynomialRealRoots(rationalData.derivativeNumerator).filter((root) => !branchContains(branch, root, false));
+        if (discarded.length) methods.push(`<p>Descartem ${discarded.map((root) => formula(`x=${texNumber(root)}`, false)).join(", ")} perquè no pertany al domini de la funció.</p>`);
+        return;
+      }
       const fraction = fractionParts(branch.derivative);
       const equationNode = fraction ? fraction.numerator : branch.derivative;
       const directCoefficients = polynomialCoefficients(equationNode);
@@ -1084,7 +1411,7 @@
     const candidateText = candidates.length
       ? candidates.map((x) => formula(`x=${texNumber(x)}`, false)).join(", ")
       : "cap";
-    return `<p>Derivem cada expressió dins del seu interval:</p><div class="fa-table-scroll"><table><thead><tr><th></th><th>Interval</th><th>Derivada</th></tr></thead><tbody>${rows}</tbody></table></div>${methods.join("")}<p>Resolem ${formula("f'(x)=0", false)} i afegim els punts on la derivada no existeix, els extrems del domini i els punts d'unió. Els candidats són: ${candidateText}.</p>`;
+    return `<p>Derivem cada expressió dins del seu interval, indicant la regla utilitzada i les substitucions:</p>${procedures}<h4>Derivades finals i intervals</h4><div class="fa-table-scroll"><table><thead><tr><th></th><th>Interval</th><th>Derivada</th></tr></thead><tbody>${rows}</tbody></table></div>${methods.join("")}<p>Resolem ${formula("f'(x)=0", false)} i afegim els punts on la derivada no existeix, els extrems del domini i els punts d'unió. Els candidats són: ${candidateText}.</p>`;
   }
 
   function buildStep8(analysis) {
