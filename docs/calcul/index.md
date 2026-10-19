@@ -11,6 +11,7 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 
 - [**Exercicis per temes**](exercicis.md) — col·lecció completa d'exercicis de càlcul i optimització, agrupats segons la teoria.
 - [**Problemes PAU**](problemes-pau.md) — problemes de càlcul de convocatòries reals i d'entrenament de tipus PAU, agrupats per contingut.
+- [**Analitzador de funcions**](per-practicar/analitzador-funcions.md) — estudi guiat de funcions ordinàries, a trossos i amb valor absolut segons els vuit passos dels apunts.
 
 ## Preparació de la prova
 
