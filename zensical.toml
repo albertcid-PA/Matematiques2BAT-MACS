@@ -25,6 +25,7 @@ nav = [
       { "Índex" = "calcul/per-practicar/index.md" },
       { "Exercicis per temes" = "calcul/exercicis.md" },
       { "Problemes PAU" = "calcul/problemes-pau.md" },
+      { "Analitzador de funcions" = "calcul/per-practicar/analitzador-funcions.md" },
     ] },
   ] },
   { "Àlgebra lineal" = [
@@ -58,6 +59,7 @@ extra_javascript = [
   "javascripts/katex.js",
   "https://unpkg.com/katex@0/dist/katex.min.js",
   "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
+  "javascripts/function-analyzer-loader.js",
 ]
 
 extra_css = [
