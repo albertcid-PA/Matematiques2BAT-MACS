@@ -123,6 +123,10 @@
           <label>$x_{\min}$ <input id="fa-x-min" type="number" value="-10" step="1"></label>
           <label>$x_{\max}$ <input id="fa-x-max" type="number" value="10" step="1"></label>
           <button id="fa-redraw" type="button">Actualitza</button>
+          <div class="fa-zoom-controls" role="group" aria-label="Zoom del gràfic">
+            <button id="fa-zoom-out" class="fa-zoom-button" type="button" aria-label="Allunya el gràfic" title="Allunya">−</button>
+            <button id="fa-zoom-in" class="fa-zoom-button" type="button" aria-label="Apropa el gràfic" title="Apropa">+</button>
+          </div>
         </div>
       </div>
       <div class="fa-canvas-wrap">
