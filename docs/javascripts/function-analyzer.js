@@ -1658,6 +1658,100 @@
       .filter((point) => Number.isFinite(point.y));
   }
 
+  function graphCoordinateText(value) {
+    if (!Number.isFinite(value)) return "";
+    const absolute = Math.abs(value);
+    if (absolute >= 1e5 || (absolute > 0 && absolute < 1e-3)) {
+      return value.toExponential(3).replace(".", ",");
+    }
+    const normalized = absolute < 5e-10 ? 0 : Number(value.toFixed(3));
+    return String(normalized).replace(".", ",");
+  }
+
+  function clearGraphTracking(canvas) {
+    const overlay = canvas.parentElement.querySelector("#fa-graph-overlay");
+    const tooltip = canvas.parentElement.querySelector("#fa-graph-tooltip");
+    if (overlay) {
+      const context = overlay.getContext("2d");
+      context.setTransform(1, 0, 0, 1, 0, 0);
+      context.clearRect(0, 0, overlay.width, overlay.height);
+    }
+    if (tooltip) tooltip.hidden = true;
+  }
+
+  function trackGraphPoint(canvas, event) {
+    const state = canvas._functionAnalyzerGraph;
+    if (!state) return;
+    const rect = canvas.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const pointerX = (event.clientX - rect.left) * state.width / rect.width;
+    const pointerY = (event.clientY - rect.top) * state.height / rect.height;
+    const { margin, plotWidth, plotHeight } = state;
+    if (pointerX < margin.left || pointerX > margin.left + plotWidth || pointerY < margin.top || pointerY > margin.top + plotHeight) {
+      clearGraphTracking(canvas);
+      return;
+    }
+
+    const x = state.xMin + ((pointerX - margin.left) / plotWidth) * (state.xMax - state.xMin);
+    let nearest = null;
+    state.analysis.model.branches.forEach((branch, branchIndex) => {
+      if (!branchContains(branch, x, true)) return;
+      const y = branch.fn(x);
+      if (!Number.isFinite(y) || y < state.yMin || y > state.yMax) return;
+      const pointY = margin.top + ((state.yMax - y) / (state.yMax - state.yMin)) * plotHeight;
+      const distance = Math.abs(pointerY - pointY);
+      if (!nearest || distance < nearest.distance) nearest = { x, y, pointY, branchIndex, distance };
+    });
+
+    const threshold = 22 * state.width / rect.width;
+    if (!nearest || nearest.distance > threshold) {
+      clearGraphTracking(canvas);
+      return;
+    }
+
+    const overlay = canvas.parentElement.querySelector("#fa-graph-overlay");
+    const tooltip = canvas.parentElement.querySelector("#fa-graph-tooltip");
+    if (!overlay || !tooltip) return;
+    const context = overlay.getContext("2d");
+    context.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+    context.clearRect(0, 0, state.width, state.height);
+    context.save();
+    context.beginPath();
+    context.rect(margin.left, margin.top, plotWidth, plotHeight);
+    context.clip();
+    context.strokeStyle = "rgba(38, 50, 56, 0.42)";
+    context.lineWidth = 1;
+    context.setLineDash([4, 4]);
+    context.beginPath();
+    context.moveTo(pointerX, margin.top);
+    context.lineTo(pointerX, margin.top + plotHeight);
+    context.moveTo(margin.left, nearest.pointY);
+    context.lineTo(margin.left + plotWidth, nearest.pointY);
+    context.stroke();
+    context.setLineDash([]);
+    context.beginPath();
+    context.arc(pointerX, nearest.pointY, 5.5, 0, Math.PI * 2);
+    context.fillStyle = "#ffffff";
+    context.strokeStyle = COLORS[nearest.branchIndex % COLORS.length];
+    context.lineWidth = 3;
+    context.fill();
+    context.stroke();
+    context.restore();
+
+    const branchLabel = state.analysis.model.branches.length > 1 ? `Tram ${nearest.branchIndex + 1} · ` : "";
+    tooltip.textContent = `${branchLabel}x = ${graphCoordinateText(nearest.x)} · y = ${graphCoordinateText(nearest.y)}`;
+    tooltip.hidden = false;
+    const pointCssX = pointerX * rect.width / state.width;
+    const pointCssY = nearest.pointY * rect.height / state.height;
+    const gap = 12;
+    let left = pointCssX + gap;
+    let top = pointCssY - tooltip.offsetHeight - gap;
+    if (left + tooltip.offsetWidth > rect.width - 8) left = pointCssX - tooltip.offsetWidth - gap;
+    if (top < 8) top = pointCssY + gap;
+    tooltip.style.left = `${Math.max(8, left)}px`;
+    tooltip.style.top = `${Math.min(rect.height - tooltip.offsetHeight - 8, top)}px`;
+  }
+
   function drawGraph(analysis, canvas, xMin, xMax) {
     if (!(xMin < xMax)) throw new Error("El valor mínim de x ha de ser menor que el màxim.");
     const wrapper = canvas.parentElement;
@@ -1668,6 +1762,14 @@
     canvas.height = Math.round(height * dpr);
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
+    const overlay = wrapper.querySelector("#fa-graph-overlay");
+    if (overlay) {
+      overlay.width = Math.round(width * dpr);
+      overlay.height = Math.round(height * dpr);
+      overlay.style.width = `${width}px`;
+      overlay.style.height = `${height}px`;
+    }
+    clearGraphTracking(canvas);
     const context = canvas.getContext("2d");
     context.setTransform(dpr, 0, 0, dpr, 0, 0);
 
@@ -1848,6 +1950,19 @@
     }
     canvas.dataset.yMin = String(yMin);
     canvas.dataset.yMax = String(yMax);
+    canvas._functionAnalyzerGraph = {
+      analysis,
+      xMin,
+      xMax,
+      yMin,
+      yMax,
+      margin,
+      plotWidth,
+      plotHeight,
+      width,
+      height,
+      dpr,
+    };
   }
 
   function renderLegend(analysis, container) {
@@ -1994,6 +2109,10 @@
         message.hidden = false;
       }
     });
+    canvas.addEventListener("pointermove", (event) => trackGraphPoint(canvas, event));
+    canvas.addEventListener("pointerdown", (event) => trackGraphPoint(canvas, event));
+    canvas.addEventListener("pointerleave", () => clearGraphTracking(canvas));
+    canvas.addEventListener("pointercancel", () => clearGraphTracking(canvas));
     root.querySelector("#fa-expand-all").addEventListener("click", function (event) {
       const details = Array.from(root.querySelectorAll(".fa-step"));
       const shouldOpen = details.some((detail) => !detail.open);
@@ -2012,6 +2131,8 @@
       message.hidden = true;
       status.textContent = "";
       currentAnalysis = null;
+      canvas._functionAnalyzerGraph = null;
+      clearGraphTracking(canvas);
       setMode("standard");
     });
     root.querySelectorAll('input[type="text"]').forEach((input) => input.addEventListener("keydown", (event) => {

@@ -126,8 +126,11 @@
         </div>
       </div>
       <div class="fa-canvas-wrap">
-        <canvas id="fa-graph" width="960" height="540" role="img" aria-label="Representació gràfica de la funció analitzada"></canvas>
+        <canvas id="fa-graph" width="960" height="540" role="img" aria-label="Representació gràfica interactiva de la funció analitzada"></canvas>
+        <canvas id="fa-graph-overlay" class="fa-graph-overlay" width="960" height="540" aria-hidden="true"></canvas>
+        <div id="fa-graph-tooltip" class="fa-graph-tooltip" hidden></div>
       </div>
+      <p class="fa-graph-help">Passa el cursor per sobre d'una corba per consultar les coordenades del punt.</p>
       <div id="fa-legend" class="fa-legend"></div>
     </section>
   </section>
