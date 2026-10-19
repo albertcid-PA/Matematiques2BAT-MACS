@@ -670,6 +670,22 @@
   padding: 0.25rem 0.4rem;
 }
 
+.md-typeset .fa-zoom-controls {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.md-typeset .fa-tool .fa-zoom-button {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  place-items: center;
+  font-size: 1.15rem;
+  font-weight: 750;
+  line-height: 1;
+}
+
 .md-typeset .fa-canvas-wrap {
   position: relative;
   width: 100%;

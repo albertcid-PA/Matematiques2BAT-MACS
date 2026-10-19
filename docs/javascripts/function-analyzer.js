@@ -1654,8 +1654,51 @@
   function graphExtrema(analysis) {
     return analysis.monotonicity.columns
       .filter((column) => column.kind === "point" && /^(màxim|mínim)/.test(column.classification))
-      .map((column) => ({ x: column.x, y: evaluateModel(analysis.model, column.x) }))
+      .map((column) => ({ x: column.x, y: evaluateModel(analysis.model, column.x), label: column.classification }))
       .filter((point) => Number.isFinite(point.y));
+  }
+
+  function graphMarkedPoints(analysis) {
+    const points = [];
+    function add(point) {
+      if (!Number.isFinite(point.x) || !Number.isFinite(point.y)) return;
+      const existing = points.find((entry) => Math.abs(entry.x - point.x) < ROOT_EPS && Math.abs(entry.y - point.y) < ROOT_EPS);
+      if (existing) {
+        if (!existing.labels.includes(point.label)) existing.labels.push(point.label);
+        if (!point.open) {
+          existing.open = false;
+          existing.color = point.color;
+        }
+        return;
+      }
+      points.push({ ...point, labels: [point.label] });
+    }
+
+    analysis.roots.forEach((x) => add({ x, y: 0, label: "Tall amb l'eix X", color: "#1565c0", open: false }));
+    const yIntercept = evaluateModel(analysis.model, 0);
+    if (Number.isFinite(yIntercept)) add({ x: 0, y: yIntercept, label: "Tall amb l'eix Y", color: "#1565c0", open: false });
+    graphExtrema(analysis).forEach((point) => add({ ...point, color: "#ef6c00", open: false }));
+    analysis.specialPoints.filter((point) => point.type === "discontinuïtat evitable").forEach((point) => {
+      const finiteSide = point.left.kind === "finite" ? point.left.value : point.right.value;
+      add({ x: point.x, y: finiteSide, label: "Discontinuïtat evitable", color: "#c62828", open: true });
+    });
+    if (analysis.model.mode === "piecewise") {
+      analysis.model.joins.forEach((join) => {
+        analysis.model.branches.forEach((branch, index) => {
+          if (Math.abs(branch.interval.lower - join) >= EPS && Math.abs(branch.interval.upper - join) >= EPS) return;
+          const y = branch.fn(join);
+          const closed = (Math.abs(branch.interval.lower - join) < EPS && branch.interval.lowerClosed)
+            || (Math.abs(branch.interval.upper - join) < EPS && branch.interval.upperClosed);
+          add({ x: join, y, label: `Punt d'unió · Tram ${index + 1}`, color: COLORS[index % COLORS.length], open: !closed });
+        });
+      });
+    }
+    return points.map((point) => {
+      const axisX = point.labels.includes("Tall amb l'eix X");
+      const axisY = point.labels.includes("Tall amb l'eix Y");
+      const label = axisX && axisY ? "Tall amb els eixos X i Y" : point.labels.join(" · ");
+      return { ...point, label };
+    });
   }
 
   function graphCoordinateText(value) {
@@ -1694,16 +1737,30 @@
 
     const x = state.xMin + ((pointerX - margin.left) / plotWidth) * (state.xMax - state.xMin);
     let nearest = null;
-    state.analysis.model.branches.forEach((branch, branchIndex) => {
-      if (!branchContains(branch, x, true)) return;
-      const y = branch.fn(x);
-      if (!Number.isFinite(y) || y < state.yMin || y > state.yMax) return;
-      const pointY = margin.top + ((state.yMax - y) / (state.yMax - state.yMin)) * plotHeight;
-      const distance = Math.abs(pointerY - pointY);
-      if (!nearest || distance < nearest.distance) nearest = { x, y, pointY, branchIndex, distance };
+    state.markedPoints.forEach((point) => {
+      if (point.x < state.xMin || point.x > state.xMax || point.y < state.yMin || point.y > state.yMax) return;
+      const pointX = margin.left + ((point.x - state.xMin) / (state.xMax - state.xMin)) * plotWidth;
+      const pointY = margin.top + ((state.yMax - point.y) / (state.yMax - state.yMin)) * plotHeight;
+      const distance = Math.hypot(pointerX - pointX, pointerY - pointY);
+      if (!nearest || distance < nearest.distance) nearest = { ...point, pointX, pointY, distance, marked: true };
     });
 
-    const threshold = 22 * state.width / rect.width;
+    const markerThreshold = 18 * state.width / rect.width;
+    if (!nearest || nearest.distance > markerThreshold) {
+      nearest = null;
+      state.analysis.model.branches.forEach((branch, branchIndex) => {
+        if (!branchContains(branch, x, true)) return;
+        const y = branch.fn(x);
+        if (!Number.isFinite(y) || y < state.yMin || y > state.yMax) return;
+        const pointY = margin.top + ((state.yMax - y) / (state.yMax - state.yMin)) * plotHeight;
+        const distance = Math.abs(pointerY - pointY);
+        if (!nearest || distance < nearest.distance) {
+          nearest = { x, y, pointX: pointerX, pointY, branchIndex, color: COLORS[branchIndex % COLORS.length], distance, marked: false };
+        }
+      });
+    }
+
+    const threshold = nearest && nearest.marked ? markerThreshold : 22 * state.width / rect.width;
     if (!nearest || nearest.distance > threshold) {
       clearGraphTracking(canvas);
       return;
@@ -1723,25 +1780,26 @@
     context.lineWidth = 1;
     context.setLineDash([4, 4]);
     context.beginPath();
-    context.moveTo(pointerX, margin.top);
-    context.lineTo(pointerX, margin.top + plotHeight);
+    context.moveTo(nearest.pointX, margin.top);
+    context.lineTo(nearest.pointX, margin.top + plotHeight);
     context.moveTo(margin.left, nearest.pointY);
     context.lineTo(margin.left + plotWidth, nearest.pointY);
     context.stroke();
     context.setLineDash([]);
     context.beginPath();
-    context.arc(pointerX, nearest.pointY, 5.5, 0, Math.PI * 2);
+    context.arc(nearest.pointX, nearest.pointY, 5.5, 0, Math.PI * 2);
     context.fillStyle = "#ffffff";
-    context.strokeStyle = COLORS[nearest.branchIndex % COLORS.length];
+    context.strokeStyle = nearest.color;
     context.lineWidth = 3;
     context.fill();
     context.stroke();
     context.restore();
 
-    const branchLabel = state.analysis.model.branches.length > 1 ? `Tram ${nearest.branchIndex + 1} · ` : "";
-    tooltip.textContent = `${branchLabel}x = ${graphCoordinateText(nearest.x)} · y = ${graphCoordinateText(nearest.y)}`;
+    const branchLabel = !nearest.marked && state.analysis.model.branches.length > 1 ? `Tram ${nearest.branchIndex + 1}` : "";
+    const pointLabel = nearest.marked ? nearest.label : branchLabel;
+    tooltip.textContent = `${pointLabel ? `${pointLabel} · ` : ""}x = ${graphCoordinateText(nearest.x)} · y = ${graphCoordinateText(nearest.y)}`;
     tooltip.hidden = false;
-    const pointCssX = pointerX * rect.width / state.width;
+    const pointCssX = nearest.pointX * rect.width / state.width;
     const pointCssY = nearest.pointY * rect.height / state.height;
     const gap = 12;
     let left = pointCssX + gap;
@@ -1929,25 +1987,8 @@
       context.stroke();
     }
 
-    analysis.roots.forEach((x) => drawPoint({ x, y: 0 }, "#1565c0", false));
-    const yIntercept = evaluateModel(analysis.model, 0);
-    if (Number.isFinite(yIntercept)) drawPoint({ x: 0, y: yIntercept }, "#1565c0", false);
-    graphExtrema(analysis).forEach((point) => drawPoint(point, "#ef6c00", false));
-    analysis.specialPoints.filter((point) => point.type === "discontinuïtat evitable").forEach((point) => {
-      const finiteSide = point.left.kind === "finite" ? point.left.value : point.right.value;
-      drawPoint({ x: point.x, y: finiteSide }, "#c62828", true);
-    });
-    if (analysis.model.mode === "piecewise") {
-      analysis.model.joins.forEach((join) => {
-        analysis.model.branches.forEach((branch, index) => {
-          if (Math.abs(branch.interval.lower - join) < EPS || Math.abs(branch.interval.upper - join) < EPS) {
-            const y = branch.fn(join);
-            const closed = (Math.abs(branch.interval.lower - join) < EPS && branch.interval.lowerClosed) || (Math.abs(branch.interval.upper - join) < EPS && branch.interval.upperClosed);
-            drawPoint({ x: join, y }, COLORS[index % COLORS.length], !closed);
-          }
-        });
-      });
-    }
+    const markedPoints = graphMarkedPoints(analysis);
+    markedPoints.forEach((point) => drawPoint(point, point.color, point.open));
     canvas.dataset.yMin = String(yMin);
     canvas.dataset.yMax = String(yMax);
     canvas._functionAnalyzerGraph = {
@@ -1962,6 +2003,7 @@
       width,
       height,
       dpr,
+      markedPoints,
     };
   }
 
@@ -1999,6 +2041,8 @@
     const legend = root.querySelector("#fa-legend");
     const xMinInput = root.querySelector("#fa-x-min");
     const xMaxInput = root.querySelector("#fa-x-max");
+    const zoomInButton = root.querySelector("#fa-zoom-in");
+    const zoomOutButton = root.querySelector("#fa-zoom-out");
     let activeMode = "standard";
     let currentAnalysis = null;
 
@@ -2066,6 +2110,19 @@
       drawGraph(currentAnalysis, canvas, Number(xMinInput.value), Number(xMaxInput.value));
     }
 
+    function zoomGraph(factor) {
+      if (!currentAnalysis) return;
+      const xMin = Number(xMinInput.value);
+      const xMax = Number(xMaxInput.value);
+      if (!(xMin < xMax)) return;
+      const center = (xMin + xMax) / 2;
+      const span = Math.min(1e7, Math.max(1e-4, (xMax - xMin) * factor));
+      xMinInput.value = String(Number((center - span / 2).toPrecision(8)));
+      xMaxInput.value = String(Number((center + span / 2).toPrecision(8)));
+      redraw();
+      message.hidden = true;
+    }
+
     function analyze() {
       status.textContent = "Calculant…";
       root.querySelector("#fa-analyze").disabled = true;
@@ -2109,6 +2166,8 @@
         message.hidden = false;
       }
     });
+    zoomInButton.addEventListener("click", () => zoomGraph(0.6));
+    zoomOutButton.addEventListener("click", () => zoomGraph(1.6));
     canvas.addEventListener("pointermove", (event) => trackGraphPoint(canvas, event));
     canvas.addEventListener("pointerdown", (event) => trackGraphPoint(canvas, event));
     canvas.addEventListener("pointerleave", () => clearGraphTracking(canvas));
