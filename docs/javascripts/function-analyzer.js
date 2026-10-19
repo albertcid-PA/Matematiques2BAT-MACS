@@ -857,6 +857,169 @@
     return terms.map((term, index) => `${index === 0 && term.sign === "+" ? "" : term.sign}${term.text}`).join("");
   }
 
+  function unwrapParentheses(node) {
+    let current = node;
+    while (current && current.isParenthesisNode) current = current.content;
+    return current;
+  }
+
+  function additiveTerms(node, sign) {
+    const current = unwrapParentheses(node);
+    const currentSign = sign === undefined ? 1 : sign;
+    if (current && current.isOperatorNode && current.isUnary()) {
+      return additiveTerms(current.args[0], current.op === "-" ? -currentSign : currentSign);
+    }
+    if (current && current.isOperatorNode && current.op === "+") {
+      return [...additiveTerms(current.args[0], currentSign), ...additiveTerms(current.args[1], currentSign)];
+    }
+    if (current && current.isOperatorNode && current.op === "-") {
+      return [...additiveTerms(current.args[0], currentSign), ...additiveTerms(current.args[1], -currentSign)];
+    }
+    return [{ node: current, sign: currentSign }];
+  }
+
+  function multiplicativeFactors(node, sign) {
+    const current = unwrapParentheses(node);
+    const currentSign = sign === undefined ? 1 : sign;
+    if (current && current.isOperatorNode && current.isUnary()) {
+      return multiplicativeFactors(current.args[0], current.op === "-" ? -currentSign : currentSign);
+    }
+    if (current && current.isOperatorNode && current.op === "*") {
+      const left = multiplicativeFactors(current.args[0], currentSign);
+      const right = multiplicativeFactors(current.args[1], 1);
+      return { sign: left.sign * right.sign, factors: [...left.factors, ...right.factors] };
+    }
+    return { sign: currentSign, factors: [current] };
+  }
+
+  function exponentialScale(node) {
+    const current = unwrapParentheses(node);
+    let base;
+    let exponent;
+    if (nodeFunctionName(current) === "exp") {
+      base = Math.E;
+      exponent = current.args[0];
+    } else if (isExponentialPower(current)) {
+      const baseNode = current.args[0];
+      base = baseNode.isSymbolNode && baseNode.name === "e" ? Math.E : Number(baseNode.value);
+      exponent = current.args[1];
+    } else return null;
+    if (!Number.isFinite(base) || base <= 0) return null;
+    const exponentPolynomial = polynomialCoefficients(exponent);
+    if (!exponentPolynomial || exponentPolynomial.length > 2) return null;
+    const constant = exponentPolynomial[0] || 0;
+    const linear = exponentPolynomial[1] || 0;
+    return {
+      coefficient: Math.pow(base, constant),
+      rate: linear * Math.log(base),
+    };
+  }
+
+  function polynomialScale(node) {
+    const current = unwrapParentheses(node);
+    if (current && current.isOperatorNode && current.op === "^") {
+      const base = unwrapParentheses(current.args[0]);
+      const exponent = current.args[1];
+      const value = exponent && exponent.isConstantNode ? Number(exponent.value) : NaN;
+      if (base && base.isSymbolNode && base.name === "x" && Number.isInteger(value) && value >= 0) {
+        return { coefficient: 1, degree: value };
+      }
+    }
+    const polynomial = polynomialCoefficients(current);
+    if (!polynomial) return null;
+    const degree = polynomial.length - 1;
+    return { coefficient: polynomial[degree], degree };
+  }
+
+  function asymptoticTermData(term, side) {
+    const product = multiplicativeFactors(term.node);
+    let coefficient = term.sign * product.sign;
+    let rate = 0;
+    let degree = 0;
+    for (const factor of product.factors) {
+      const exponential = exponentialScale(factor);
+      if (exponential) {
+        coefficient *= exponential.coefficient;
+        rate += exponential.rate;
+        continue;
+      }
+      const polynomial = polynomialScale(factor);
+      if (!polynomial) return null;
+      coefficient *= polynomial.coefficient;
+      degree += polynomial.degree;
+    }
+    if (side < 0 && degree % 2) coefficient *= -1;
+    return { ...term, coefficient, rate, degree };
+  }
+
+  function compareAsymptoticScale(first, second, side) {
+    const rateDifference = side * (first.rate - second.rate);
+    if (Math.abs(rateDifference) > EPS) return Math.sign(rateDifference);
+    return Math.sign(first.degree - second.degree);
+  }
+
+  function termsToTex(terms) {
+    return terms.map((term, index) => {
+      const tex = toTex(term.node);
+      if (index === 0) return term.sign < 0 ? `-${tex}` : tex;
+      return `${term.sign < 0 ? "-" : "+"}${tex}`;
+    }).join("");
+  }
+
+  function asymptoticExpressionData(node, side) {
+    const data = additiveTerms(node).map((term) => asymptoticTermData(term, side));
+    if (!data.length || data.some((term) => !term)) return null;
+    const ordered = data.slice().sort((first, second) => compareAsymptoticScale(second, first, side));
+    while (ordered.length) {
+      const reference = ordered[0];
+      const selected = ordered.filter((term) => compareAsymptoticScale(term, reference, side) === 0);
+      const coefficient = selected.reduce((total, term) => total + term.coefficient, 0);
+      if (Math.abs(coefficient) > EPS) {
+        return {
+          coefficient,
+          rate: reference.rate,
+          degree: reference.degree,
+          tex: termsToTex(selected),
+        };
+      }
+      ordered.splice(0, selected.length);
+    }
+    return null;
+  }
+
+  function simplifiedFractionInfinityData(fraction, side) {
+    const numerator = asymptoticExpressionData(fraction.numerator, side);
+    const denominator = asymptoticExpressionData(fraction.denominator, side);
+    if (!numerator || !denominator) return null;
+    const comparison = compareAsymptoticScale(numerator, denominator, side);
+    if (comparison < 0) return { kind: "finite", value: 0, numerator, denominator, comparison };
+    if (comparison > 0) {
+      const sign = Math.sign(numerator.coefficient / denominator.coefficient);
+      return { kind: "infinite", value: sign * Infinity, numerator, denominator, comparison };
+    }
+    return {
+      kind: "finite",
+      value: numerator.coefficient / denominator.coefficient,
+      numerator,
+      denominator,
+      comparison,
+    };
+  }
+
+  function simplifiedExpressionInfinityData(node, side) {
+    const expression = asymptoticExpressionData(node, side);
+    if (!expression) return null;
+    const exponentialDirection = side * expression.rate;
+    if (exponentialDirection > EPS) {
+      return { kind: "infinite", value: Math.sign(expression.coefficient) * Infinity, expression };
+    }
+    if (exponentialDirection < -EPS) return { kind: "finite", value: 0, expression };
+    if (expression.degree > 0) {
+      return { kind: "infinite", value: Math.sign(expression.coefficient) * Infinity, expression };
+    }
+    return { kind: "finite", value: expression.coefficient, expression };
+  }
+
   function infinityBehaviorForBranch(branch, side) {
     const polynomial = polynomialCoefficients(branch.node);
     if (polynomial) return asymptoticPolynomial(polynomial, side);
@@ -873,7 +1036,11 @@
         const leadingBehavior = asymptoticPolynomial(division.quotient, side);
         return { ...leadingBehavior, method: "division", quotient: division.quotient };
       }
+      const simplifiedFraction = simplifiedFractionInfinityData(fraction, side);
+      if (simplifiedFraction) return { ...simplifiedFraction, method: "simplified-fraction" };
     }
+    const simplifiedExpression = simplifiedExpressionInfinityData(branch.node, side);
+    if (simplifiedExpression) return { ...simplifiedExpression, method: "simplified-expression" };
     const samples = [10, 30, 100, 300, 1000, 10000, 1000000].map((magnitude) => branch.fn(side * magnitude)).filter(Number.isFinite);
     if (!samples.length) return { kind: "absent", value: NaN, method: "numeric" };
     const last = samples[samples.length - 1];
@@ -1197,34 +1364,53 @@
     return `<p>En cada punt d'unió comparem els dos límits laterals i el valor de la funció.</p><ul>${items}</ul>`;
   }
 
-  function rationalInfinityExplanation(result, side, numerator, denominator) {
+  function rationalInfinityExplanation(result, side, numerator, denominator, fraction) {
     const destination = side < 0 ? "-\\infty" : "+\\infty";
     const numeratorDegree = numerator.length - 1;
     const denominatorDegree = denominator.length - 1;
     const numeratorLeading = numerator[numeratorDegree];
     const denominatorLeading = denominator[denominatorDegree];
-    let html = `<p>Els graus són ${formula(`\\deg P=${numeratorDegree}`, false)} i ${formula(`\\deg Q=${denominatorDegree}`, false)}.</p>`;
+    const numeratorTerm = polynomialToTex([...Array(numeratorDegree).fill(0), numeratorLeading]);
+    const denominatorTerm = polynomialToTex([...Array(denominatorDegree).fill(0), denominatorLeading]);
+    const original = `\\frac{${toTex(fraction.numerator)}}{${toTex(fraction.denominator)}}`;
+    let steps = `\\lim_{x\\to${destination}}${original}=\\lim_{x\\to${destination}}\\frac{${numeratorTerm}}{${denominatorTerm}}`;
+    let html = "";
 
     if (numeratorDegree < denominatorDegree) {
-      html += `<p>Dividim numerador i denominador per ${formula(`x^{${denominatorDegree}}`, false)}.</p>`;
-      html += formula(`\\lim_{x\\to${destination}}\\frac{P(x)}{Q(x)}=\\lim_{x\\to${destination}}\\frac{${texNumber(numeratorLeading, false)}x^{${numeratorDegree}}+\\cdots}{${texNumber(denominatorLeading, false)}x^{${denominatorDegree}}+\\cdots}=\\lim_{x\\to${destination}}\\frac{${texNumber(numeratorLeading, false)}}{${texNumber(denominatorLeading, false)}x^{${denominatorDegree - numeratorDegree}}}=0`);
+      const difference = denominatorDegree - numeratorDegree;
+      const remainingDenominator = polynomialToTex([...Array(difference).fill(0), denominatorLeading]);
+      steps += `=\\lim_{x\\to${destination}}\\frac{${texNumber(numeratorLeading, false)}}{${remainingDenominator}}=0`;
+      html += formula(steps);
     } else if (numeratorDegree === denominatorDegree) {
-      html += `<p>Dividim numerador i denominador per ${formula(`x^{${denominatorDegree}}`, false)}.</p>`;
-      html += formula(`\\lim_{x\\to${destination}}\\frac{P(x)}{Q(x)}=\\lim_{x\\to${destination}}\\frac{${texNumber(numeratorLeading, false)}+\\frac{\\cdots}{x}}{${texNumber(denominatorLeading, false)}+\\frac{\\cdots}{x}}=\\frac{${texNumber(numeratorLeading, false)}}{${texNumber(denominatorLeading, false)}}=${texNumber(numeratorLeading / denominatorLeading)}`);
+      steps += `=\\frac{${texNumber(numeratorLeading, false)}}{${texNumber(denominatorLeading, false)}}=${texNumber(numeratorLeading / denominatorLeading)}`;
+      html += formula(steps);
     } else {
-      const division = polynomialLongDivision(numerator, denominator);
-      html += `<p>Com que el grau del numerador és més gran, fem la divisió de polinomis:</p>`;
-      html += formula(`${polynomialToTex(numerator)}=(${polynomialToTex(denominator)})\\,(${polynomialToTex(division.quotient)})+(${polynomialToTex(division.remainder)})`);
-      html += formula(`\\frac{P(x)}{Q(x)}=${polynomialToTex(division.quotient)}+\\frac{${polynomialToTex(division.remainder)}}{${polynomialToTex(denominator)}}`);
-      html += `<p>La fracció del residu tendeix a zero, de manera que domina el quocient:</p>`;
-      html += formula(`\\lim_{x\\to${destination}}f(x)=\\lim_{x\\to${destination}}(${polynomialToTex(division.quotient)})=${limitTex(result)}`);
-      if (division.quotient.length === 2) html += `<p>L'asímptota obliqua és ${formula(`y=${polynomialToTex(division.quotient)}`, false)}.</p>`;
-    }
-
-    if (numeratorDegree <= denominatorDegree) {
-      html += `<p>Per tant, ${formula(`\\lim_{x\\to${destination}}f(x)=${limitTex(result)}`, false)}.</p>`;
+      const difference = numeratorDegree - denominatorDegree;
+      const quotientLeading = numeratorLeading / denominatorLeading;
+      const simplifiedTerm = polynomialToTex([...Array(difference).fill(0), quotientLeading]);
+      steps += `=\\lim_{x\\to${destination}}${simplifiedTerm}=${limitTex(result)}`;
+      html += formula(steps);
+      if (difference === 1) {
+        const division = polynomialLongDivision(numerator, denominator);
+        html += `<p>Per trobar l'asímptota obliqua, fem la divisió de polinomis:</p>`;
+        html += formula(`${polynomialToTex(numerator)}=(${polynomialToTex(denominator)})\\,(${polynomialToTex(division.quotient)})+(${polynomialToTex(division.remainder)})`);
+        html += formula(`${original}=${polynomialToTex(division.quotient)}+\\frac{${polynomialToTex(division.remainder)}}{${polynomialToTex(denominator)}}`);
+        html += `<p>L'asímptota obliqua és ${formula(`y=${polynomialToTex(division.quotient)}`, false)}.</p>`;
+      }
     }
     return html;
+  }
+
+  function simplifiedFractionInfinityExplanation(result, side, fraction) {
+    const destination = side < 0 ? "-\\infty" : "+\\infty";
+    const data = simplifiedFractionInfinityData(fraction, side);
+    if (!data) return "";
+    const original = `\\frac{${toTex(fraction.numerator)}}{${toTex(fraction.denominator)}}`;
+    let steps = `\\lim_{x\\to${destination}}${original}=\\lim_{x\\to${destination}}\\frac{${data.numerator.tex}}{${data.denominator.tex}}`;
+    if (data.comparison === 0) {
+      steps += `=\\frac{${texNumber(data.numerator.coefficient, false)}}{${texNumber(data.denominator.coefficient, false)}}=${limitTex(result)}`;
+    } else steps += `=${limitTex(result)}`;
+    return formula(steps);
   }
 
   function infinityExplanation(result, side, branch) {
@@ -1233,24 +1419,27 @@
     if (fraction) {
       const numerator = polynomialCoefficients(fraction.numerator);
       const denominator = polynomialCoefficients(fraction.denominator);
-      if (numerator && denominator) return rationalInfinityExplanation(result, side, numerator, denominator);
+      if (numerator && denominator) return rationalInfinityExplanation(result, side, numerator, denominator, fraction);
+      const simplifiedFraction = simplifiedFractionInfinityExplanation(result, side, fraction);
+      if (simplifiedFraction) return simplifiedFraction;
     }
     const polynomial = polynomialCoefficients(branch.node);
     if (polynomial && polynomial.length > 1) {
       const degree = polynomial.length - 1;
       const leadingTerm = `${texNumber(polynomial[degree], false)}x^{${degree}}`;
-      return `<p>Quan ${formula(`x\\to${destination}`, false)}, el terme de grau més alt domina la resta:</p>${formula(`\\lim_{x\\to${destination}}f(x)=\\lim_{x\\to${destination}}${leadingTerm}=${limitTex(result)}`)}`;
+      return formula(`\\lim_{x\\to${destination}}f(x)=\\lim_{x\\to${destination}}(${toTex(branch.node)})=\\lim_{x\\to${destination}}${leadingTerm}=${limitTex(result)}`);
+    }
+    if (result.method === "simplified-expression" && result.expression) {
+      return formula(`\\lim_{x\\to${destination}}f(x)=\\lim_{x\\to${destination}}(${toTex(branch.node)})=\\lim_{x\\to${destination}}${result.expression.tex}=${limitTex(result)}`);
     }
     let method = "";
     if (result.method && result.method.startsWith("term:")) {
       const [, coefficient, degree] = result.method.split(":");
-      method = `<p>En aquest extrem domina el terme de grau més alt, ${formula(`${texNumber(Number(coefficient), false)}x^{${degree}}`, false)}.</p>`;
-    } else if (result.method === "rational-order") {
-      method = "<p>Comparem els graus i els coeficients principals del numerador i del denominador.</p>";
+      method = formula(`\\lim_{x\\to${destination}}f(x)=\\lim_{x\\to${destination}}${texNumber(Number(coefficient), false)}x^{${degree}}=${limitTex(result)}`);
     } else if (result.method === "division" && result.quotient) {
-      method = `<p>La divisió de polinomis dona com a part principal ${formula(`y=${polynomialToTex(result.quotient)}`, false)}.</p>`;
+      method = formula(`\\lim_{x\\to${destination}}f(x)=\\lim_{x\\to${destination}}(${polynomialToTex(result.quotient)})=${limitTex(result)}`);
     } else if (result.method && result.method.startsWith("numeric")) {
-      method = "<p>El comportament s'ha estimat amb valors progressivament més grans en valor absolut; el resultat és orientatiu.</p>";
+      method = "<p>El resultat s'ha estimat amb valors progressivament més grans en valor absolut i és orientatiu.</p>";
     }
     const conclusion = result.kind === "absent"
       ? `<p>No hi ha cap branca del domini quan ${formula(`x\\to${destination}`, false)}.</p>`
