@@ -90,7 +90,7 @@
     </section>
 
     <p id="fa-syntax-help" class="fa-help">
-      Utilitza <code>^</code> per a les potències i <code>*</code> per multiplicar. Pots escriure <code>sqrt(x)</code>, <code>cbrt(x)</code>, <code>exp(x)</code>, <code>ln(x)</code>, <code>log(x,3)</code> i <code>abs(x)</code>.
+      Utilitza <code>^</code> per a les potències i <code>*</code> per multiplicar. Pots escriure <code>sqrt(x)</code>, <code>cbrt(x)</code>, <code>root(5,x)</code>, <code>exp(x)</code>, <code>ln(x)</code>, <code>log(x,3)</code> i <code>abs(x)</code>.
     </p>
 
     <div class="fa-actions">

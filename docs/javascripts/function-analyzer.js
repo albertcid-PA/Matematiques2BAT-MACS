@@ -4,7 +4,7 @@
   const EPS = 1e-8;
   const ROOT_EPS = 1e-6;
   const MAX_ABS_BREAKS = 6;
-  const ALLOWED_FUNCTIONS = new Set(["abs", "sqrt", "cbrt", "exp", "log"]);
+  const ALLOWED_FUNCTIONS = new Set(["abs", "sqrt", "cbrt", "root", "exp", "log"]);
   const COLORS = ["#1565c0", "#7b1fa2", "#00897b"];
 
   function normalizeExpression(value) {
@@ -16,6 +16,55 @@
       .replace(/\bln\s*\(/gi, "log(")
       .replace(/\bln\s+([a-zA-Z0-9.]+)/gi, "log($1)")
       .replace(/\be\s*\^/g, "e^");
+  }
+
+  function unwrapParentheses(node) {
+    let current = node;
+    while (current && current.isParenthesisNode) current = current.content;
+    return current;
+  }
+
+  function constantInteger(node) {
+    const current = unwrapParentheses(node);
+    if (!current || !current.isConstantNode) return null;
+    const value = Number(current.value);
+    return Number.isInteger(value) ? value : null;
+  }
+
+  function rootIndexFromPower(node) {
+    if (!node || !node.isOperatorNode || node.op !== "^" || node.args.length !== 2) return null;
+    const exponent = unwrapParentheses(node.args[1]);
+    if (!exponent || !exponent.isOperatorNode || exponent.op !== "/") return null;
+    const numerator = unwrapParentheses(exponent.args[0]);
+    const denominator = constantInteger(exponent.args[1]);
+    if (!numerator || !numerator.isConstantNode || Number(numerator.value) !== 1) return null;
+    return denominator && denominator >= 2 ? denominator : null;
+  }
+
+  function normalizeRootPowers(node) {
+    return node.transform(function (child) {
+      const index = rootIndexFromPower(child);
+      if (!index) return child;
+      return new math.FunctionNode("root", [new math.ConstantNode(index), child.args[0]]);
+    });
+  }
+
+  function radicalParts(node) {
+    const name = nodeFunctionName(node);
+    if (name === "sqrt") return { index: 2, radicand: node.args[0] };
+    if (name === "cbrt") return { index: 3, radicand: node.args[0] };
+    if (name !== "root" || !node.args || node.args.length !== 2) return null;
+    const index = constantInteger(node.args[0]);
+    return index && index >= 2 ? { index, radicand: node.args[1] } : null;
+  }
+
+  function realRoot(index, value) {
+    const n = Number(index);
+    const radicand = Number(value);
+    if (!Number.isInteger(n) || n < 2 || !Number.isFinite(radicand)) return NaN;
+    if (radicand < 0 && n % 2 === 0) return NaN;
+    if (radicand < 0) return -Math.pow(-radicand, 1 / n);
+    return Math.pow(radicand, 1 / n);
   }
 
   function assertMath() {
@@ -37,6 +86,12 @@
         if (name === "log" && ![1, 2].includes(child.args.length)) {
           throw new Error("Escriu el logaritme com ln(x) o log(x,base). ");
         }
+        if (name === "root") {
+          const index = child.args.length === 2 ? constantInteger(child.args[0]) : null;
+          if (!index || index < 2) {
+            throw new Error("Escriu l'arrel com root(índex,radicand), amb un índex enter més gran o igual que 2.");
+          }
+        }
       }
       if (child.isOperatorNode && !["+", "-", "*", "/", "^"].includes(child.op)) {
         throw new Error(`L'operador «${child.op}» no està admès.`);
@@ -53,7 +108,7 @@
     if (!normalized) throw new Error("Escriu una funció abans de començar l'estudi.");
     let node;
     try {
-      node = math.parse(normalized);
+      node = normalizeRootPowers(math.parse(normalized));
     } catch (error) {
       throw new Error("No s'ha pogut interpretar l'expressió. Comprova els parèntesis i els signes d'operació.");
     }
@@ -71,6 +126,9 @@
 
   function derivativeNode(node) {
     try {
+      if (containsNode(node, (child) => nodeFunctionName(child) === "root")) {
+        return simplifyNode(derivativeWithRealRoots(node));
+      }
       return simplifyNode(math.derivative(node, "x"));
     } catch (_error) {
       return null;
@@ -81,7 +139,7 @@
     const compiled = node.compile();
     return function (x) {
       try {
-        const value = compiled.evaluate({ x });
+        const value = compiled.evaluate({ x, root: realRoot });
         if (typeof value === "number" && Number.isFinite(value)) return value;
         if (value && typeof value.re === "number" && Math.abs(value.im || 0) < EPS && Number.isFinite(value.re)) {
           return value.re;
@@ -105,12 +163,71 @@
     return node && node.isFunctionNode && node.fn ? node.fn.name : "";
   }
 
+  function parsedOperation(expression) {
+    return math.parse(expression);
+  }
+
+  function derivativeWithRealRoots(node) {
+    const current = unwrapParentheses(node);
+    if (current.isConstantNode) return new math.ConstantNode(0);
+    if (current.isSymbolNode) return new math.ConstantNode(current.name === "x" ? 1 : 0);
+
+    if (current.isOperatorNode) {
+      const args = current.args;
+      if (current.isUnary()) {
+        const derivative = derivativeWithRealRoots(args[0]);
+        return current.op === "-" ? parsedOperation(`-(${derivative.toString()})`) : derivative;
+      }
+      const left = args[0];
+      const right = args[1];
+      const leftDerivative = derivativeWithRealRoots(left);
+      const rightDerivative = derivativeWithRealRoots(right);
+      if (current.op === "+" || current.op === "-") {
+        return parsedOperation(`(${leftDerivative.toString()})${current.op}(${rightDerivative.toString()})`);
+      }
+      if (current.op === "*") {
+        return parsedOperation(`(${leftDerivative.toString()})*(${right.toString()})+(${left.toString()})*(${rightDerivative.toString()})`);
+      }
+      if (current.op === "/") {
+        return parsedOperation(`(((${leftDerivative.toString()})*(${right.toString()}))-(( ${left.toString()} )*(${rightDerivative.toString()})))/((${right.toString()})^2)`);
+      }
+      if (current.op === "^") {
+        const exponent = unwrapParentheses(right);
+        if (exponent && exponent.isConstantNode) {
+          return parsedOperation(`(${right.toString()})*(${left.toString()})^((${right.toString()})-1)*(${leftDerivative.toString()})`);
+        }
+        return parsedOperation(`(${current.toString()})*((${rightDerivative.toString()})*log(${left.toString()})+(${right.toString()})*(${leftDerivative.toString()})/(${left.toString()}))`);
+      }
+    }
+
+    if (current.isFunctionNode) {
+      const radical = radicalParts(current);
+      if (radical && nodeFunctionName(current) === "root") {
+        const innerDerivative = derivativeWithRealRoots(radical.radicand);
+        return parsedOperation(`(${innerDerivative.toString()})/(${radical.index}*root(${radical.index},${radical.radicand.toString()})^${radical.index - 1})`);
+      }
+      const inner = current.args[0];
+      const innerDerivative = derivativeWithRealRoots(inner);
+      const name = nodeFunctionName(current);
+      if (name === "sqrt") return parsedOperation(`(${innerDerivative.toString()})/(2*sqrt(${inner.toString()}))`);
+      if (name === "cbrt") return parsedOperation(`(${innerDerivative.toString()})/(3*cbrt(${inner.toString()})^2)`);
+      if (name === "exp") return parsedOperation(`exp(${inner.toString()})*(${innerDerivative.toString()})`);
+      if (name === "log") {
+        if (current.args.length === 1) return parsedOperation(`(${innerDerivative.toString()})/(${inner.toString()})`);
+        return parsedOperation(`(${innerDerivative.toString()})/((${inner.toString()})*log(${current.args[1].toString()}))`);
+      }
+      if (name === "abs") return parsedOperation(`(${inner.toString()})/abs(${inner.toString()})*(${innerDerivative.toString()})`);
+    }
+
+    return math.derivative(current, "x");
+  }
+
   function classifyNode(node) {
     if (containsNode(node, (n) => nodeFunctionName(n) === "abs")) return "amb valor absolut";
     const fraction = fractionParts(node);
     if (fraction && polynomialCoefficients(fraction.numerator) && polynomialCoefficients(fraction.denominator)) return "racional";
     if (polynomialCoefficients(node)) return "polinòmica";
-    if (containsNode(node, (n) => ["sqrt", "cbrt"].includes(nodeFunctionName(n)))) return "irracional";
+    if (containsNode(node, (n) => Boolean(radicalParts(n)))) return "irracional";
     if (containsNode(node, (n) => nodeFunctionName(n) === "log")) return "logarítmica o combinada amb logaritmes";
     if (containsNode(node, (n) => nodeFunctionName(n) === "exp") || containsNode(node, isExponentialPower)) {
       return "exponencial o combinada amb exponencials";
@@ -315,7 +432,8 @@
       }
       const name = nodeFunctionName(child);
       if (name === "log") constraints.push({ kind: "positive", node: child.args[0], source: "logaritme" });
-      if (name === "sqrt") constraints.push({ kind: "nonnegative", node: child.args[0], source: "arrel quadrada" });
+      const radical = radicalParts(child);
+      if (radical && radical.index % 2 === 0) constraints.push({ kind: "nonnegative", node: radical.radicand, source: "arrel d'índex parell" });
     });
     const seen = new Set();
     return constraints.filter((constraint) => {
@@ -422,7 +540,12 @@
 
   function toTex(node) {
     try {
-      return node.toTex({ parenthesis: "keep", implicit: "show" }).replace(/\\log(?=\\left)/g, "\\ln");
+      const handler = {
+        root: function (current, options) {
+          return `\\sqrt[${current.args[0].toTex(options)}]{${current.args[1].toTex(options)}}`;
+        },
+      };
+      return node.toTex({ parenthesis: "keep", implicit: "show", handler }).replace(/\\log(?=\\left)/g, "\\ln");
     } catch (_error) {
       return node.toString();
     }
@@ -759,7 +882,8 @@
     const fraction = fractionParts(branch.node);
     if (fraction) rootNode = fraction.numerator;
     const functionName = nodeFunctionName(branch.node);
-    if (["sqrt", "cbrt"].includes(functionName)) rootNode = branch.node.args[0];
+    const radical = radicalParts(branch.node);
+    if (radical) rootNode = radical.radicand;
     if (functionName === "log") rootNode = math.parse(`(${branch.node.args[0].toString()})-1`);
     return findRootsNumeric(rootNode).filter((x) => branchContains(branch, x, true) && Math.abs(branch.fn(x)) < 1e-4);
   }
@@ -1075,7 +1199,8 @@
   function derivativeSingularitiesForBranch(branch) {
     const singularities = [];
     branch.node.traverse(function (node) {
-      if (nodeFunctionName(node) === "cbrt") singularities.push(...findRootsNumeric(node.args[0]));
+      const radical = radicalParts(node);
+      if (radical && radical.index % 2 === 1) singularities.push(...findRootsNumeric(radical.radicand));
     });
     return uniqueNumbers(singularities).filter((x) => branchContains(branch, x, true));
   }
@@ -1240,6 +1365,7 @@
       const polynomial = polynomialCoefficients(fraction ? fraction.numerator : node);
       if (fraction) html += `<p>Una fracció és zero quan el numerador és zero i el denominador no ho és. Resolem ${formula(`${toTex(fraction.numerator)}=0`, false)}.</p>`;
       const functionName = nodeFunctionName(node);
+      const radical = radicalParts(node);
       if (functionName === "exp" || isExponentialPower(node)) {
         html += "<p>Una exponencial és estrictament positiva. Per tant, no pot ser igual a zero.</p>";
       } else if (functionName === "log") {
@@ -1250,9 +1376,9 @@
           equation[0] -= 1;
           html += polynomialEquationExplanation(equation, "P");
         }
-      } else if (["sqrt", "cbrt"].includes(functionName)) {
-        html += `<p>Una arrel és zero quan ho és el radicand. Resolem ${formula(`${toTex(node.args[0])}=0`, false)}.</p>`;
-        const radicand = polynomialCoefficients(node.args[0]);
+      } else if (radical) {
+        html += `<p>Una arrel és zero quan ho és el radicand. Resolem ${formula(`${toTex(radical.radicand)}=0`, false)}.</p>`;
+        const radicand = polynomialCoefficients(radical.radicand);
         if (radicand) html += polynomialEquationExplanation(radicand, "P");
       } else if (polynomial) {
         html += polynomialEquationExplanation(polynomial, fraction ? "P" : "f");
@@ -1522,7 +1648,8 @@
 
     const functionName = nodeFunctionName(branch.node);
     if (functionName && branch.node.args && branch.node.args.length) {
-      const inner = branch.node.args[0];
+      const radical = radicalParts(branch.node);
+      const inner = radical ? radical.radicand : branch.node.args[0];
       const innerDerivative = derivativeNode(inner);
       if (innerDerivative) {
         const rules = {
@@ -1530,6 +1657,7 @@
           exp: `(e^u)'=e^u\\,u'`,
           sqrt: `(\\sqrt{u})'=\\frac{u'}{2\\sqrt{u}}`,
           cbrt: `(\\sqrt[3]{u})'=\\frac{u'}{3\\sqrt[3]{u^2}}`,
+          root: radical ? `(\\sqrt[${radical.index}]{u})'=\\frac{u'}{${radical.index}(\\sqrt[${radical.index}]{u})^{${radical.index - 1}}}` : "",
         };
         if (rules[functionName]) {
           html += `<p>Apliquem la regla de la cadena amb ${formula(`u=${toTex(inner)}`, false)} i ${formula(`u'=${toTex(innerDerivative)}`, false)}:</p>`;
