@@ -2235,7 +2235,8 @@
       if (!nearest || distance < nearest.distance) nearest = { ...point, pointX, pointY, distance, marked: true };
     });
 
-    const markerThreshold = 18 * state.width / rect.width;
+    const touchInteraction = event.pointerType === "touch";
+    const markerThreshold = (touchInteraction ? 28 : 18) * state.width / rect.width;
     if (!nearest || nearest.distance > markerThreshold) {
       nearest = null;
       state.analysis.model.branches.forEach((branch, branchIndex) => {
@@ -2250,7 +2251,7 @@
       });
     }
 
-    const threshold = nearest && nearest.marked ? markerThreshold : 22 * state.width / rect.width;
+    const threshold = nearest && nearest.marked ? markerThreshold : (touchInteraction ? 36 : 22) * state.width / rect.width;
     if (!nearest || nearest.distance > threshold) {
       clearGraphTracking(canvas);
       return;
@@ -2300,14 +2301,14 @@
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
     const overlay = wrapper.querySelector("#fa-graph-overlay");
     if (overlay) {
       overlay.width = Math.round(width * dpr);
       overlay.height = Math.round(height * dpr);
-      overlay.style.width = `${width}px`;
-      overlay.style.height = `${height}px`;
+      overlay.style.width = "100%";
+      overlay.style.height = "100%";
     }
     clearGraphTracking(canvas);
     const context = canvas.getContext("2d");
@@ -2579,6 +2580,8 @@
     let currentAnalysis = null;
     let graphView = { xMin: -10, xMax: 10, yMin: null, yMax: null };
     let graphDrag = null;
+    const graphTouches = new Map();
+    let touchGesture = null;
 
     function setMode(mode) {
       activeMode = mode;
@@ -2684,16 +2687,119 @@
       };
     }
 
+    function captureGraphPointer(event) {
+      try {
+        canvas.setPointerCapture(event.pointerId);
+      } catch (_error) {
+        // Alguns navegadors antics no permeten capturar punters tàctils sintètics.
+      }
+    }
+
+    function releaseGraphPointer(event) {
+      try {
+        if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+      } catch (_error) {
+        // La captura ja pot haver acabat si el sistema ha cancel·lat el gest.
+      }
+    }
+
+    function graphTouchMetrics() {
+      const touches = Array.from(graphTouches.values()).slice(0, 2);
+      if (touches.length < 2) return null;
+      return {
+        centerX: (touches[0].clientX + touches[1].clientX) / 2,
+        centerY: (touches[0].clientY + touches[1].clientY) / 2,
+        distance: Math.max(1, Math.hypot(touches[1].clientX - touches[0].clientX, touches[1].clientY - touches[0].clientY)),
+      };
+    }
+
+    function rememberGraphTouch(event) {
+      graphTouches.set(event.pointerId, {
+        pointerId: event.pointerId,
+        pointerType: "touch",
+        clientX: event.clientX,
+        clientY: event.clientY,
+      });
+    }
+
     function startGraphDrag(event) {
       if (!currentAnalysis || !canvas._functionAnalyzerGraph || event.button !== 0) return;
       event.preventDefault();
       graphDrag = { pointerId: event.pointerId, clientX: event.clientX, clientY: event.clientY };
-      canvas.setPointerCapture(event.pointerId);
+      captureGraphPointer(event);
       canvas.classList.add("is-dragging");
       clearGraphTracking(canvas);
     }
 
+    function startGraphInteraction(event) {
+      if (!currentAnalysis || !canvas._functionAnalyzerGraph || event.button !== 0) return;
+      if (event.pointerType !== "touch") {
+        startGraphDrag(event);
+        return;
+      }
+      event.preventDefault();
+      rememberGraphTouch(event);
+      captureGraphPointer(event);
+      if (graphTouches.size === 1) {
+        touchGesture = null;
+        canvas.classList.add("is-tracking");
+        trackGraphPoint(canvas, event);
+        return;
+      }
+      touchGesture = graphTouchMetrics();
+      canvas.classList.remove("is-tracking");
+      canvas.classList.add("is-dragging");
+      clearGraphTracking(canvas);
+    }
+
+    function moveGraphTouch(event) {
+      if (!graphTouches.has(event.pointerId)) return false;
+      event.preventDefault();
+      rememberGraphTouch(event);
+      if (graphTouches.size === 1) {
+        touchGesture = null;
+        canvas.classList.remove("is-dragging");
+        canvas.classList.add("is-tracking");
+        trackGraphPoint(canvas, event);
+        return true;
+      }
+
+      const nextGesture = graphTouchMetrics();
+      const state = canvas._functionAnalyzerGraph;
+      const rect = canvas.getBoundingClientRect();
+      if (!nextGesture || !state || !rect.width || !rect.height) return true;
+      if (!touchGesture) {
+        touchGesture = nextGesture;
+        return true;
+      }
+
+      const focus = graphPointFromEvent({ clientX: touchGesture.centerX, clientY: touchGesture.centerY }, state);
+      if (!focus) {
+        touchGesture = nextGesture;
+        return true;
+      }
+      const factor = Math.min(2, Math.max(0.5, touchGesture.distance / nextGesture.distance));
+      const horizontal = scaledInterval(state.xMin, state.xMax, focus.x, factor, 1e-4, 1e7);
+      const vertical = scaledInterval(state.yMin, state.yMax, focus.y, factor, 1e-4, 1e9);
+      const cssPlotWidth = state.plotWidth * rect.width / state.width;
+      const cssPlotHeight = state.plotHeight * rect.height / state.height;
+      const deltaX = nextGesture.centerX - touchGesture.centerX;
+      const deltaY = nextGesture.centerY - touchGesture.centerY;
+      const xShift = -deltaX * (horizontal.maximum - horizontal.minimum) / cssPlotWidth;
+      const yShift = deltaY * (vertical.maximum - vertical.minimum) / cssPlotHeight;
+      graphView = {
+        xMin: horizontal.minimum + xShift,
+        xMax: horizontal.maximum + xShift,
+        yMin: vertical.minimum + yShift,
+        yMax: vertical.maximum + yShift,
+      };
+      touchGesture = nextGesture;
+      redraw();
+      return true;
+    }
+
     function moveGraph(event) {
+      if (event.pointerType === "touch" && moveGraphTouch(event)) return;
       if (!graphDrag || graphDrag.pointerId !== event.pointerId) {
         trackGraphPoint(canvas, event);
         return;
@@ -2719,9 +2825,32 @@
 
     function endGraphDrag(event) {
       if (!graphDrag || graphDrag.pointerId !== event.pointerId) return;
-      if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
       graphDrag = null;
+      releaseGraphPointer(event);
       canvas.classList.remove("is-dragging");
+    }
+
+    function endGraphInteraction(event, cancelled) {
+      if (event.pointerType !== "touch" || !graphTouches.has(event.pointerId)) {
+        endGraphDrag(event);
+        return;
+      }
+      graphTouches.delete(event.pointerId);
+      releaseGraphPointer(event);
+      if (graphTouches.size >= 2) {
+        touchGesture = graphTouchMetrics();
+        return;
+      }
+      canvas.classList.remove("is-dragging");
+      touchGesture = null;
+      if (graphTouches.size === 1 && !cancelled) {
+        const remainingTouch = Array.from(graphTouches.values())[0];
+        canvas.classList.add("is-tracking");
+        trackGraphPoint(canvas, remainingTouch);
+        return;
+      }
+      canvas.classList.remove("is-tracking");
+      if (cancelled) clearGraphTracking(canvas);
     }
 
     function analyze() {
@@ -2769,16 +2898,19 @@
       event.preventDefault();
       zoomGraph(event.deltaY < 0 ? 0.84 : 1.19, focus);
     }, { passive: false });
-    canvas.addEventListener("pointerdown", startGraphDrag);
+    canvas.addEventListener("pointerdown", startGraphInteraction);
     canvas.addEventListener("pointermove", moveGraph);
-    canvas.addEventListener("pointerup", endGraphDrag);
-    canvas.addEventListener("pointercancel", endGraphDrag);
-    canvas.addEventListener("lostpointercapture", function () {
-      graphDrag = null;
-      canvas.classList.remove("is-dragging");
+    canvas.addEventListener("pointerup", (event) => endGraphInteraction(event, false));
+    canvas.addEventListener("pointercancel", (event) => endGraphInteraction(event, true));
+    canvas.addEventListener("lostpointercapture", function (event) {
+      if (event.pointerType === "touch" && graphTouches.has(event.pointerId)) {
+        graphTouches.delete(event.pointerId);
+        touchGesture = graphTouchMetrics();
+      } else if (graphDrag && graphDrag.pointerId === event.pointerId) graphDrag = null;
+      if (!graphDrag && graphTouches.size < 2) canvas.classList.remove("is-dragging");
     });
-    canvas.addEventListener("pointerleave", () => {
-      if (!graphDrag) clearGraphTracking(canvas);
+    canvas.addEventListener("pointerleave", (event) => {
+      if (event.pointerType !== "touch" && !graphDrag) clearGraphTracking(canvas);
     });
     root.querySelector("#fa-expand-all").addEventListener("click", function (event) {
       const details = Array.from(root.querySelectorAll(".fa-step"));
@@ -2794,7 +2926,9 @@
       root.querySelector("[data-piece-example='exercise-a']").click();
       graphView = { xMin: -10, xMax: 10, yMin: null, yMax: null };
       graphDrag = null;
-      canvas.classList.remove("is-dragging");
+      graphTouches.clear();
+      touchGesture = null;
+      canvas.classList.remove("is-dragging", "is-tracking");
       results.hidden = true;
       message.hidden = true;
       status.textContent = "";

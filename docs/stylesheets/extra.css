@@ -888,6 +888,13 @@
     margin-top: 0.6rem;
   }
 
+  .md-typeset .fa-graph-tooltip {
+    width: calc(100% - 1rem);
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
   .md-typeset .dt-progress {
     display: inline-block;
     margin-bottom: 0.6rem;
