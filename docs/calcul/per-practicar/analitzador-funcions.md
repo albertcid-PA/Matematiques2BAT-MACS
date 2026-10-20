@@ -27,7 +27,7 @@
         <span>Prova:</span>
         <button type="button" data-example="x^3-3*x^2-9*x+27">polinòmica</button>
         <button type="button" data-example="(x^2-x-2)/(x^2-3*x+2)">racional</button>
-        <button type="button" data-example="root(4,x+2)">irracional</button>
+        <button type="button" data-example="root(4,x-16)">irracional</button>
         <button type="button" data-example="exp(-x)">exponencial</button>
         <button type="button" data-example="ln(x-2)">logarítmica</button>
       </div>
