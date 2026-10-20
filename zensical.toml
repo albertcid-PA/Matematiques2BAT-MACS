@@ -59,12 +59,12 @@ extra_javascript = [
   "javascripts/katex.js",
   "https://unpkg.com/katex@0/dist/katex.min.js",
   "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
-  "javascripts/function-analyzer-loader.js",
+  "javascripts/function-analyzer-loader.js?v=2",
 ]
 
 extra_css = [
   "https://unpkg.com/katex@0/dist/katex.min.css",
-  "stylesheets/extra.css",
+  "stylesheets/extra.css?v=2",
 ]
 
 [project.theme]
