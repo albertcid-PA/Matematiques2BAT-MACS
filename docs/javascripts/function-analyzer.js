@@ -1929,14 +1929,6 @@
     context.moveTo(margin.left, nearest.pointY);
     context.lineTo(margin.left + plotWidth, nearest.pointY);
     context.stroke();
-    context.setLineDash([]);
-    context.beginPath();
-    context.arc(nearest.pointX, nearest.pointY, 5.5, 0, Math.PI * 2);
-    context.fillStyle = "#ffffff";
-    context.strokeStyle = nearest.color;
-    context.lineWidth = 3;
-    context.fill();
-    context.stroke();
     context.restore();
 
     const branchLabel = !nearest.marked && state.analysis.model.branches.length > 1 ? `Tram ${nearest.branchIndex + 1}` : "";
