@@ -25,29 +25,38 @@
     });
   }
 
-  function initializeAnalyzer() {
-    const root = document.getElementById("function-analyzer");
-    if (!root || root.dataset.loading === "true" || root.dataset.initialized === "true") return;
-    root.dataset.loading = "true";
-    const engineUrl = new URL(root.dataset.engineUrl, document.baseURI).href;
+  function showLoadError(root) {
+    const message = root.querySelector(".fa-message");
+    if (!message) return;
+    message.textContent = "No s'ha pogut carregar el motor matemàtic. Comprova la connexió i recarrega la pàgina.";
+    message.hidden = false;
+  }
+
+  function initializeTools() {
+    const analyzerRoot = document.getElementById("function-analyzer");
+    const derivativeRoot = document.getElementById("derivative-tool");
+    const roots = [analyzerRoot, derivativeRoot].filter(Boolean);
+    if (!roots.length || roots.some((root) => root.dataset.loading === "true")) return;
+    roots.forEach((root) => { root.dataset.loading = "true"; });
+    const primaryRoot = analyzerRoot || derivativeRoot;
+    const engineUrl = new URL(primaryRoot.dataset.engineUrl, document.baseURI).href;
     const mathReady = window.math ? Promise.resolve() : loadScript(MATHJS_URL, "mathjs");
     mathReady
       .then(() => window.FunctionAnalyzer ? undefined : loadScript(engineUrl, "engine"))
-      .catch(() => {
-        const message = root.querySelector("#fa-message");
-        if (message) {
-          message.textContent = "No s'ha pogut carregar el motor matemàtic. Comprova la connexió i recarrega la pàgina.";
-          message.hidden = false;
-        }
+      .then(() => {
+        if (!derivativeRoot || window.DerivativeTool) return undefined;
+        const toolUrl = new URL(derivativeRoot.dataset.toolUrl, document.baseURI).href;
+        return loadScript(toolUrl, "derivative-tool");
       })
-      .finally(() => { root.dataset.loading = "false"; });
+      .catch(() => { roots.forEach(showLoadError); })
+      .finally(() => { roots.forEach((root) => { root.dataset.loading = "false"; }); });
   }
 
   if (window.document$ && typeof window.document$.subscribe === "function") {
-    window.document$.subscribe(initializeAnalyzer);
+    window.document$.subscribe(initializeTools);
   } else if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initializeAnalyzer, { once: true });
+    document.addEventListener("DOMContentLoaded", initializeTools, { once: true });
   } else {
-    initializeAnalyzer();
+    initializeTools();
   }
 }());

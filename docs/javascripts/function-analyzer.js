@@ -1834,6 +1834,32 @@
     });
   }
 
+  function simplifyExactRadicalPowers(node) {
+    let current = node;
+    for (let pass = 0; pass < 3; pass += 1) {
+      current = simplifyNode(current).transform(function (child) {
+        const unwrapped = unwrapParentheses(child);
+        if (!unwrapped || !unwrapped.isOperatorNode || unwrapped.op !== "^") return child;
+        const radical = radicalParts(unwrapParentheses(unwrapped.args[0]));
+        const exponent = constantInteger(unwrapped.args[1]);
+        return radical && exponent === radical.index ? radical.radicand : child;
+      });
+    }
+    return simplifyNode(current);
+  }
+
+  function directRadicalDerivativeTex(node) {
+    const radical = radicalParts(unwrapParentheses(node));
+    if (!radical) return "";
+    const innerDerivative = derivativeNode(radical.radicand);
+    if (!innerDerivative) return "";
+    const radicalTex = toTex(unwrapParentheses(node));
+    const denominator = radical.index === 2
+      ? `2\\sqrt{${toTex(radical.radicand)}}`
+      : `${radical.index}\\left(${radicalTex}\\right)^{${radical.index - 1}}`;
+    return `\\frac{${toTex(innerDerivative)}}{${denominator}}`;
+  }
+
   function displayedDerivativeTex(branch, steps) {
     const rationalData = rationalDerivativeData(branch);
     if (rationalData) return rationalDerivativeTex(rationalData);
@@ -1848,12 +1874,92 @@
     if ((keepsSymbolicDerivativeConstants(branch.node) || ruleExpansionIsFinal) && calculationSteps.length) {
       return calculationSteps[calculationSteps.length - 1];
     }
-    return toTex(branch.derivative);
+    const directRadical = directRadicalDerivativeTex(current);
+    if (directRadical) return directRadical;
+    return toTex(simplifyExactRadicalPowers(branch.derivative));
   }
 
   function derivativeAlignedTex(steps) {
     if (!steps.length) return "f'(x)=\\text{no disponible}";
     return `\\begin{aligned}f'(x)&=${steps[0]}${steps.slice(1).map((step) => `\\\\&=${step}`).join("")}\\end{aligned}`;
+  }
+
+  function derivativeRuleLabels(node, labels) {
+    const result = labels || [];
+    const add = (label) => { if (!result.includes(label)) result.push(label); };
+    const current = unwrapParentheses(node);
+    const polynomial = polynomialCoefficients(current);
+    if (polynomial && isDirectPolynomialSyntax(current)) {
+      add("Derivació terme a terme");
+      return result;
+    }
+
+    if (current.isOperatorNode) {
+      if (current.isUnary()) {
+        derivativeRuleLabels(current.args[0], result);
+        return result;
+      }
+      const [left, right] = current.args;
+      if (current.op === "+" || current.op === "-") {
+        add("Regla de la suma o la resta");
+        derivativeRuleLabels(left, result);
+        derivativeRuleLabels(right, result);
+      } else if (current.op === "*") {
+        const variableArguments = current.args.filter(dependsOnX);
+        add(variableArguments.length === 2 ? "Regla del producte" : "Multiplicació per una constant");
+        variableArguments.forEach((argument) => derivativeRuleLabels(argument, result));
+      } else if (current.op === "/") {
+        add(dependsOnX(right) ? "Regla de la divisió" : "Multiplicació per una constant");
+        derivativeRuleLabels(left, result);
+        if (dependsOnX(right)) derivativeRuleLabels(right, result);
+      } else if (current.op === "^") {
+        if (isExponentialPower(current)) {
+          if (!isVariableX(right)) add("Regla de la cadena");
+          add("Derivada d'una exponencial");
+          if (!isVariableX(right)) derivativeRuleLabels(right, result);
+        } else {
+          if (!isVariableX(left)) add("Regla de la cadena");
+          add("Derivada d'una potència");
+          if (!isVariableX(left)) derivativeRuleLabels(left, result);
+        }
+      }
+      return result;
+    }
+
+    const functionName = nodeFunctionName(current);
+    if (functionName && current.args && current.args.length) {
+      const radical = radicalParts(current);
+      const inner = radical ? radical.radicand : current.args[0];
+      if (!isVariableX(inner)) add("Regla de la cadena");
+      if (radical) add("Derivada d'una arrel");
+      else if (functionName === "log") add("Derivada d'un logaritme");
+      else if (functionName === "exp") add("Derivada de l'exponencial neperiana");
+      if (!isVariableX(inner)) derivativeRuleLabels(inner, result);
+      return result;
+    }
+
+    add("Regla de derivació corresponent");
+    return result;
+  }
+
+  function deriveExpressionStudy(value) {
+    const parsed = parseExpression(value);
+    if (containsNode(parsed.node, (current) => nodeFunctionName(current) === "abs")) {
+      throw new Error("Per derivar una funció amb valor absolut, transforma-la primer en una funció a trossos i deriva cada tram.");
+    }
+    const node = simplifyNode(parsed.node);
+    const derivative = derivativeNode(node);
+    if (!derivative) throw new Error("No s'ha pogut calcular la derivada amb les regles admeses.");
+    const branch = { node, derivative };
+    const steps = derivativeCalculationSteps(node);
+    const finalDerivative = displayedDerivativeTex(branch, steps);
+    if (steps[steps.length - 1] !== finalDerivative) steps.push(finalDerivative);
+    return {
+      sourceTex: toTex(node),
+      derivativeTex: finalDerivative,
+      rules: derivativeRuleLabels(node),
+      steps,
+    };
   }
 
   function rationalDerivativeData(branch) {
@@ -2711,6 +2817,7 @@
   const publicApi = {
     normalizeExpression,
     parseExpression,
+    deriveExpressionStudy,
     polynomialCoefficients,
     polynomialRealRoots,
     makeStandardModel,

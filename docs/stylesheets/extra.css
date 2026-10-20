@@ -492,6 +492,12 @@
   filter: brightness(1.08);
 }
 
+.md-typeset .fa-tool button:disabled {
+  cursor: default;
+  filter: none;
+  opacity: 0.6;
+}
+
 .md-typeset .fa-status {
   min-height: 1.3em;
   color: var(--md-default-fg-color--light);
@@ -780,6 +786,92 @@
   height: 0.55rem;
 }
 
+/* Derivador pas a pas. */
+.md-typeset .dt-input-card {
+  border-radius: 0.75rem;
+}
+
+.md-typeset .dt-progress {
+  padding: 0.25rem 0.55rem;
+  color: var(--md-default-fg-color--light);
+  border: 1px solid var(--fa-border);
+  border-radius: 999px;
+  background: var(--fa-surface);
+  font-size: 0.82em;
+  white-space: nowrap;
+}
+
+.md-typeset .dt-rules {
+  margin-block: 0.85rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--fa-accent) 25%, transparent);
+  border-radius: 0.6rem;
+  background: var(--fa-accent-soft);
+}
+
+.md-typeset .dt-rules h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1em;
+}
+
+.md-typeset .dt-rule-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.md-typeset .dt-rule {
+  padding: 0.24rem 0.55rem;
+  color: var(--fa-accent);
+  border: 1px solid color-mix(in srgb, var(--fa-accent) 35%, transparent);
+  border-radius: 999px;
+  background: var(--md-default-bg-color);
+  font-size: 0.84em;
+  font-weight: 700;
+}
+
+.md-typeset .dt-step-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset .dt-step-card {
+  position: relative;
+  margin-block: 0.65rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--fa-border);
+  border-left: 0.22rem solid var(--fa-accent);
+  border-radius: 0.6rem;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 0.15rem 0.5rem rgb(0 0 0 / 4%);
+}
+
+.md-typeset .dt-step-card h3 {
+  margin: 0.12rem 0 0.35rem;
+  font-size: 1rem;
+}
+
+.md-typeset .dt-step-card .fa-formula {
+  margin-top: 0.25rem;
+}
+
+.md-typeset .dt-reveal-actions {
+  position: sticky;
+  bottom: 0.4rem;
+  z-index: 2;
+  padding: 0.65rem;
+  border: 1px solid var(--fa-border);
+  border-radius: 0.6rem;
+  background: color-mix(in srgb, var(--md-default-bg-color) 92%, transparent);
+  box-shadow: 0 0.2rem 0.7rem rgb(0 0 0 / 8%);
+  backdrop-filter: blur(0.35rem);
+}
+
+.md-typeset .dt-reveal-actions[hidden] {
+  display: none;
+}
+
 @media (max-width: 44rem) {
   .md-typeset .fa-piece-grid,
   .md-typeset .fa-third-piece:not([hidden]),
@@ -794,5 +886,10 @@
 
   .md-typeset .fa-window-controls {
     margin-top: 0.6rem;
+  }
+
+  .md-typeset .dt-progress {
+    display: inline-block;
+    margin-bottom: 0.6rem;
   }
 }
