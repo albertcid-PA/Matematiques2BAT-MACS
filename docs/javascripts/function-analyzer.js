@@ -1827,7 +1827,7 @@
     analysis.roots.forEach((x) => add({ x, y: 0, label: "Tall amb l'eix X", color: "#1565c0", open: false }));
     const yIntercept = evaluateModel(analysis.model, 0);
     if (Number.isFinite(yIntercept)) add({ x: 0, y: yIntercept, label: "Tall amb l'eix Y", color: "#1565c0", open: false });
-    graphExtrema(analysis).forEach((point) => add({ ...point, color: "#ef6c00", open: false }));
+    graphExtrema(analysis).forEach((point) => add({ ...point, color: "#d32f2f", open: false }));
     analysis.specialPoints.filter((point) => point.type === "discontinuïtat evitable").forEach((point) => {
       const finiteSide = point.left.kind === "finite" ? point.left.value : point.right.value;
       add({ x: point.x, y: finiteSide, label: "Discontinuïtat evitable", color: "#c62828", open: true });
@@ -2178,7 +2178,7 @@
     const items = analysis.model.branches.map((branch, index) => `<span class="fa-legend-item" style="--legend-color:${COLORS[index % COLORS.length]}">${analysis.model.branches.length > 1 ? `Tram ${index + 1}: ` : ""}${formula(`y=${branch.tex}`, false)}</span>`);
     if (analysis.specialPoints.some((point) => point.type === "asímptota vertical")) items.push('<span class="fa-legend-item" style="--legend-color:#c62828">Asímptota vertical</span>');
     graphHorizontalAsymptotes(analysis).forEach((y) => items.push(`<span class="fa-legend-item" style="--legend-color:#c62828">Asímptota horitzontal ${formula(`y=${texNumber(y)}`, false)}</span>`));
-    if (graphExtrema(analysis).length) items.push('<span class="fa-legend-item" style="--legend-color:#ef6c00">Extrem relatiu</span>');
+    if (graphExtrema(analysis).length) items.push('<span class="fa-legend-item" style="--legend-color:#d32f2f">Extrem relatiu</span>');
     container.innerHTML = items.join("");
   }
 
