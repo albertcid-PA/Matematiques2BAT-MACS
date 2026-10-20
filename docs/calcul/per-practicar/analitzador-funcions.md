@@ -5,7 +5,7 @@
 
     L'analitzador és una ajuda per revisar una resolució. Cal justificar els passos i saber interpretar la informació obtinguda.
 
-<div id="function-analyzer" class="fa-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=2">
+<div id="function-analyzer" class="fa-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=5">
   <noscript>
     <p class="fa-message fa-message--error">Cal activar el JavaScript del navegador per utilitzar l'analitzador.</p>
   </noscript>
@@ -120,9 +120,7 @@
           <h3 id="fa-graph-title">Gràfica de la funció</h3>
         </div>
         <div class="fa-window-controls" aria-label="Finestra del gràfic">
-          <label>$x_{\min}$ <input id="fa-x-min" type="number" value="-10" step="1"></label>
-          <label>$x_{\max}$ <input id="fa-x-max" type="number" value="10" step="1"></label>
-          <button id="fa-redraw" type="button">Actualitza</button>
+          <span class="fa-zoom-label">Zoom</span>
           <div class="fa-zoom-controls" role="group" aria-label="Zoom del gràfic">
             <button id="fa-zoom-out" class="fa-zoom-button" type="button" aria-label="Allunya el gràfic" title="Allunya">−</button>
             <button id="fa-zoom-in" class="fa-zoom-button" type="button" aria-label="Apropa el gràfic" title="Apropa">+</button>
@@ -134,7 +132,7 @@
         <canvas id="fa-graph-overlay" class="fa-graph-overlay" width="960" height="540" aria-hidden="true"></canvas>
         <div id="fa-graph-tooltip" class="fa-graph-tooltip" hidden></div>
       </div>
-      <p class="fa-graph-help">Passa el cursor per sobre d'una corba per consultar les coordenades del punt.</p>
+      <p class="fa-graph-help">Arrossega el gràfic per desplaçar-lo. Fes servir la rodeta o els botons de zoom per apropar-lo i allunyar-lo. Passa el cursor per sobre d'una corba per consultar les coordenades del punt.</p>
       <div id="fa-legend" class="fa-legend"></div>
     </section>
   </section>
