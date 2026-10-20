@@ -552,8 +552,19 @@
         root: function (current, options) {
           return `\\sqrt[${current.args[0].toTex(options)}]{${current.args[1].toTex(options)}}`;
         },
+        exp: function (current, options) {
+          return `e^{${current.args[0].toTex(options)}}`;
+        },
+        log: function (current, options) {
+          const argument = current.args[0].toTex(options);
+          if (current.args.length === 1) return `\\ln\\left(${argument}\\right)`;
+          return `\\log_{${current.args[1].toTex(options)}}\\left(${argument}\\right)`;
+        },
+        abs: function (current, options) {
+          return `\\left|${current.args[0].toTex(options)}\\right|`;
+        },
       };
-      return node.toTex({ parenthesis: "keep", implicit: "show", handler }).replace(/\\log(?=\\left)/g, "\\ln");
+      return node.toTex({ parenthesis: "keep", implicit: "show", handler });
     } catch (_error) {
       return node.toString();
     }
@@ -1618,6 +1629,233 @@
     return terms.map((term, index) => `${index === 0 && term.sign === "+" ? "" : term.sign}${term.text}`).join("");
   }
 
+  function dependsOnX(node) {
+    return containsNode(node, (child) => child.isSymbolNode && child.name === "x");
+  }
+
+  function isDirectPolynomialSyntax(node) {
+    const current = unwrapParentheses(node);
+    if (!current) return false;
+    if (current.isConstantNode) return true;
+    if (current.isSymbolNode) return current.name === "x" || current.name === "e" || current.name === "pi";
+    if (!current.isOperatorNode) return false;
+    if (current.isUnary()) return isDirectPolynomialSyntax(current.args[0]);
+    if (current.op === "+" || current.op === "-") {
+      return current.args.every(isDirectPolynomialSyntax);
+    }
+    if (current.op === "*") {
+      return current.args.every(isDirectPolynomialSyntax) && !current.args.every(dependsOnX);
+    }
+    if (current.op === "/") {
+      return isDirectPolynomialSyntax(current.args[0]) && !dependsOnX(current.args[1]);
+    }
+    if (current.op === "^") {
+      const exponent = constantInteger(current.args[1]);
+      const base = unwrapParentheses(current.args[0]);
+      return Boolean(base && base.isSymbolNode && base.name === "x" && exponent !== null && exponent >= 0);
+    }
+    return false;
+  }
+
+  function derivativePrimeTex(node) {
+    return `\\left(${toTex(node)}\\right)'`;
+  }
+
+  function derivativeFactorTex(node) {
+    const current = unwrapParentheses(node);
+    if (current && current.isOperatorNode && ["+", "-"].includes(current.op)) {
+      return `\\left(${toTex(current)}\\right)`;
+    }
+    return toTex(current || node);
+  }
+
+  function derivativeProductTex(parts) {
+    return parts.filter(Boolean).join("\\,");
+  }
+
+  function isVariableX(node) {
+    const current = unwrapParentheses(node);
+    return Boolean(current && current.isSymbolNode && current.name === "x");
+  }
+
+  function derivativeExpansion(node, depth) {
+    const current = unwrapParentheses(node);
+    if (depth <= 0) return { tex: derivativePrimeTex(current), hasPrime: true };
+    if (current.isConstantNode || (current.isSymbolNode && current.name !== "x")) {
+      return { tex: "0", hasPrime: false };
+    }
+    if (current.isSymbolNode && current.name === "x") return { tex: "1", hasPrime: false };
+
+    const polynomial = polynomialCoefficients(current);
+    if (polynomial && isDirectPolynomialSyntax(current)) {
+      return { tex: polynomialToTex(derivativePolynomial(polynomial)), hasPrime: false };
+    }
+
+    if (current.isOperatorNode) {
+      if (current.isUnary()) {
+        const child = derivativeExpansion(current.args[0], depth - 1);
+        return { tex: current.op === "-" ? `-${child.tex}` : child.tex, hasPrime: child.hasPrime };
+      }
+
+      const [left, right] = current.args;
+      if (current.op === "+" || current.op === "-") {
+        const leftDerivative = derivativeExpansion(left, depth - 1);
+        const rightDerivative = derivativeExpansion(right, depth - 1);
+        return {
+          tex: `${leftDerivative.tex}${current.op}${rightDerivative.tex}`,
+          hasPrime: leftDerivative.hasPrime || rightDerivative.hasPrime,
+        };
+      }
+
+      if (current.op === "*") {
+        const leftDepends = dependsOnX(left);
+        const rightDepends = dependsOnX(right);
+        if (!leftDepends || !rightDepends) {
+          const constant = leftDepends ? right : left;
+          const variable = leftDepends ? left : right;
+          const variableDerivative = derivativeExpansion(variable, depth - 1);
+          return {
+            tex: derivativeProductTex([derivativeFactorTex(constant), variableDerivative.tex]),
+            hasPrime: variableDerivative.hasPrime,
+          };
+        }
+        const leftDerivative = derivativeExpansion(left, depth - 1);
+        const rightDerivative = derivativeExpansion(right, depth - 1);
+        return {
+          tex: `${derivativeProductTex([leftDerivative.tex, derivativeFactorTex(right)])}+${derivativeProductTex([derivativeFactorTex(left), rightDerivative.tex])}`,
+          hasPrime: leftDerivative.hasPrime || rightDerivative.hasPrime,
+        };
+      }
+
+      if (current.op === "/") {
+        if (!dependsOnX(right)) {
+          const numeratorDerivative = derivativeExpansion(left, depth - 1);
+          return {
+            tex: `\\frac{${numeratorDerivative.tex}}{${toTex(right)}}`,
+            hasPrime: numeratorDerivative.hasPrime,
+          };
+        }
+        const numeratorDerivative = derivativeExpansion(left, depth - 1);
+        const denominatorDerivative = derivativeExpansion(right, depth - 1);
+        return {
+          tex: `\\frac{${derivativeProductTex([numeratorDerivative.tex, derivativeFactorTex(right)])}-${derivativeProductTex([derivativeFactorTex(left), denominatorDerivative.tex])}}{\\left(${toTex(right)}\\right)^2}`,
+          hasPrime: numeratorDerivative.hasPrime || denominatorDerivative.hasPrime,
+        };
+      }
+
+      if (current.op === "^") {
+        if (isExponentialPower(current)) {
+          const exponent = current.args[1];
+          const exponentDerivative = isVariableX(exponent)
+            ? { tex: "", hasPrime: false }
+            : derivativeExpansion(exponent, depth - 1);
+          const base = unwrapParentheses(current.args[0]);
+          const exponential = base.isSymbolNode && base.name === "e"
+            ? `e^{${toTex(exponent)}}`
+            : derivativeProductTex([`\\ln\\left(${toTex(base)}\\right)`, `${toTex(base)}^{${toTex(exponent)}}`]);
+          return {
+            tex: derivativeProductTex([exponential, exponentDerivative.tex]),
+            hasPrime: exponentDerivative.hasPrime,
+          };
+        }
+        const exponent = constantInteger(right);
+        if (exponent !== null) {
+          if (exponent === 0) return { tex: "0", hasPrime: false };
+          const baseDerivative = derivativeExpansion(left, depth - 1);
+          const power = exponent === 1 ? "" : `\\left(${toTex(left)}\\right)^{${exponent - 1}}`;
+          return {
+            tex: derivativeProductTex([texNumber(exponent, false), power, baseDerivative.tex]),
+            hasPrime: baseDerivative.hasPrime,
+          };
+        }
+      }
+    }
+
+    const functionName = nodeFunctionName(current);
+    if (functionName && current.args && current.args.length) {
+      const radical = radicalParts(current);
+      const inner = radical ? radical.radicand : current.args[0];
+      const innerDerivative = isVariableX(inner)
+        ? { tex: "", hasPrime: false }
+        : derivativeExpansion(inner, depth - 1);
+      if (radical) {
+        const radicalTex = toTex(current);
+        const denominator = radical.index === 2
+          ? `2\\sqrt{${toTex(inner)}}`
+          : `${radical.index}\\left(${radicalTex}\\right)^{${radical.index - 1}}`;
+        return {
+          tex: derivativeProductTex([`\\frac{1}{${denominator}}`, innerDerivative.tex]),
+          hasPrime: innerDerivative.hasPrime,
+        };
+      }
+      if (functionName === "log") {
+        const coefficient = current.args.length > 1
+          ? `\\frac{1}{\\ln\\left(${toTex(current.args[1])}\\right)}\\,`
+          : "";
+        return {
+          tex: derivativeProductTex([`${coefficient}\\frac{1}{${derivativeFactorTex(inner)}}`, innerDerivative.tex]),
+          hasPrime: innerDerivative.hasPrime,
+        };
+      }
+      if (functionName === "exp") {
+        return {
+          tex: derivativeProductTex([`e^{${toTex(inner)}}`, innerDerivative.tex]),
+          hasPrime: innerDerivative.hasPrime,
+        };
+      }
+      if (functionName === "abs") {
+        return {
+          tex: derivativeProductTex([`\\frac{${toTex(inner)}}{\\left|${toTex(inner)}\\right|}`, innerDerivative.tex]),
+          hasPrime: innerDerivative.hasPrime,
+        };
+      }
+    }
+
+    const derivative = derivativeNode(current);
+    return { tex: derivative ? toTex(derivative) : derivativePrimeTex(current), hasPrime: !derivative };
+  }
+
+  function derivativeCalculationSteps(node) {
+    const steps = [];
+    for (let depth = 1; depth <= 10; depth += 1) {
+      const expansion = derivativeExpansion(node, depth);
+      if (!steps.includes(expansion.tex)) steps.push(expansion.tex);
+      if (!expansion.hasPrime) break;
+    }
+    return steps;
+  }
+
+  function keepsSymbolicDerivativeConstants(node) {
+    return containsNode(node, (current) => {
+      if (nodeFunctionName(current) === "log" && current.args.length > 1) return true;
+      if (!isExponentialPower(current)) return false;
+      const base = unwrapParentheses(current.args[0]);
+      return !(base.isSymbolNode && base.name === "e");
+    });
+  }
+
+  function displayedDerivativeTex(branch, steps) {
+    const rationalData = rationalDerivativeData(branch);
+    if (rationalData) return rationalDerivativeTex(rationalData);
+    if (!branch.derivative) return "\\text{no disponible}";
+    const calculationSteps = steps || derivativeCalculationSteps(branch.node);
+    const current = unwrapParentheses(branch.node);
+    const ruleExpansionIsFinal = current.isOperatorNode && (
+      current.op === "+"
+      || current.op === "-"
+      || (current.op === "*" && current.args.every(dependsOnX))
+    );
+    if ((keepsSymbolicDerivativeConstants(branch.node) || ruleExpansionIsFinal) && calculationSteps.length) {
+      return calculationSteps[calculationSteps.length - 1];
+    }
+    return toTex(branch.derivative);
+  }
+
+  function derivativeAlignedTex(steps) {
+    if (!steps.length) return "f'(x)=\\text{no disponible}";
+    return `\\begin{aligned}f'(x)&=${steps[0]}${steps.slice(1).map((step) => `\\\\&=${step}`).join("")}\\end{aligned}`;
+  }
+
   function rationalDerivativeData(branch) {
     const fraction = fractionParts(branch.node);
     if (!fraction) return null;
@@ -1640,88 +1878,46 @@
 
   function derivativeProcedureHtml(branch, index, branchCount) {
     const title = branchCount > 1 ? `Tram ${index + 1}` : "Càlcul de la derivada";
-    const rationalData = rationalDerivativeData(branch);
-    const finalDerivative = rationalData ? rationalDerivativeTex(rationalData) : branch.derivative ? toTex(branch.derivative) : "\\text{no disponible}";
     let html = `<h4>${title}</h4>`;
-    const fraction = fractionParts(branch.node);
-    if (fraction) {
-      const u = fraction.numerator;
-      const v = fraction.denominator;
-      const du = derivativeNode(u);
-      const dv = derivativeNode(v);
-      if (du && dv) {
-        html += `<p>Apliquem la regla del quocient. Prenem ${formula(`u=${toTex(u)}`, false)} i ${formula(`v=${toTex(v)}`, false)}:</p>`;
-        html += formula(`u'=${rationalData ? polynomialToTex(rationalData.numeratorDerivative) : toTex(du)},\\qquad v'=${rationalData ? polynomialToTex(rationalData.denominatorDerivative) : toTex(dv)}`);
-        html += formula(`f'(x)=\\frac{u'v-uv'}{v^2}`);
-        html += formula(`f'(x)=\\frac{(${rationalData ? polynomialToTex(rationalData.numeratorDerivative) : toTex(du)})(${toTex(v)})-(${toTex(u)})(${rationalData ? polynomialToTex(rationalData.denominatorDerivative) : toTex(dv)})}{(${toTex(v)})^2}`);
-        return `${html}<p>Desenvolupem i simplifiquem:</p>${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
-      }
-    }
-
-    if (branch.node.isOperatorNode && branch.node.op === "*" && branch.node.args.length === 2) {
-      const [u, v] = branch.node.args;
-      const du = derivativeNode(u);
-      const dv = derivativeNode(v);
-      if (du && dv) {
-        html += `<p>Apliquem la regla del producte. Prenem ${formula(`u=${toTex(u)}`, false)} i ${formula(`v=${toTex(v)}`, false)}:</p>`;
-        html += formula(`u'=${toTex(du)},\\qquad v'=${toTex(dv)}`);
-        html += formula(`f'(x)=u'v+uv'=(${toTex(du)})(${toTex(v)})+(${toTex(u)})(${toTex(dv)})`);
-        return `${html}<p>Simplifiquem:</p>${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
-      }
-    }
-
-    const functionName = nodeFunctionName(branch.node);
-    if (functionName && branch.node.args && branch.node.args.length) {
-      const radical = radicalParts(branch.node);
-      const inner = radical ? radical.radicand : branch.node.args[0];
-      const innerDerivative = derivativeNode(inner);
-      if (innerDerivative) {
-        const rules = {
-          log: branch.node.args.length > 1 ? `(\\log_a u)'=\\frac{u'}{u\\ln a}` : `(\\ln u)'=\\frac{u'}{u}`,
-          exp: `(e^u)'=e^u\\,u'`,
-          sqrt: `(\\sqrt{u})'=\\frac{u'}{2\\sqrt{u}}`,
-          cbrt: `(\\sqrt[3]{u})'=\\frac{u'}{3\\sqrt[3]{u^2}}`,
-          root: radical ? `(\\sqrt[${radical.index}]{u})'=\\frac{u'}{${radical.index}(\\sqrt[${radical.index}]{u})^{${radical.index - 1}}}` : "",
-        };
-        if (rules[functionName]) {
-          html += `<p>Apliquem la regla de la cadena amb ${formula(`u=${toTex(inner)}`, false)} i ${formula(`u'=${toTex(innerDerivative)}`, false)}:</p>`;
-          html += formula(rules[functionName]);
-          return `${html}<p>Substituïm i simplifiquem:</p>${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
-        }
-      }
-    }
-
-    if (isExponentialPower(branch.node)) {
-      const exponent = branch.node.args[1];
-      const exponentDerivative = derivativeNode(exponent);
-      if (exponentDerivative) {
-        html += `<p>Apliquem ${formula(`(a^{u})'=a^u\\ln(a)\\,u'`, false)}, amb ${formula(`u=${toTex(exponent)}`, false)} i ${formula(`u'=${toTex(exponentDerivative)}`, false)}.</p>`;
-        return `${html}${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
-      }
-    }
-
     const polynomial = polynomialCoefficients(branch.node);
-    if (polynomial) {
+    if (polynomial && isDirectPolynomialSyntax(branch.node)) {
       html += `<p>Derivem terme a terme amb ${formula(`(ax^n)'=anx^{n-1}`, false)} i ${formula(`c'=0`, false)}:</p>`;
-      html += formula(`f'(x)=${polynomialDerivativeCalculationTex(polynomial)}=${finalDerivative}`);
-      return `${html}${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
+      const calculation = polynomialDerivativeCalculationTex(polynomial);
+      const finalDerivative = displayedDerivativeTex(branch);
+      const steps = calculation === finalDerivative ? [calculation] : [calculation, finalDerivative];
+      return `${html}${formula(derivativeAlignedTex(steps))}`;
     }
 
-    return `${html}<p>Apliquem les regles de derivació corresponents i simplifiquem el resultat:</p>${formula(`\\boxed{f'(x)=${finalDerivative}}`)}`;
+    const fraction = fractionParts(branch.node);
+    const current = unwrapParentheses(branch.node);
+    if (fraction && dependsOnX(fraction.denominator)) {
+      html += "<p>Apliquem la regla de la divisió directament sobre el numerador i el denominador:</p>";
+    } else if (current.isOperatorNode && current.op === "*" && current.args.every(dependsOnX)) {
+      html += "<p>Apliquem la regla del producte directament sobre els dos factors:</p>";
+    } else if ((nodeFunctionName(current) || (current.isOperatorNode && current.op === "^")) && dependsOnX(current)) {
+      html += "<p>Apliquem la regla de la cadena i mantenim indicada la derivada de la funció interior fins al pas següent:</p>";
+    } else {
+      html += "<p>Apliquem les regles de derivació corresponents i substituïm les derivades indicades pas a pas:</p>";
+    }
+
+    const steps = derivativeCalculationSteps(branch.node);
+    const finalDerivative = displayedDerivativeTex(branch, steps);
+    if (steps[steps.length - 1] !== finalDerivative) steps.push(finalDerivative);
+    return `${html}${formula(derivativeAlignedTex(steps))}`;
   }
 
   function buildStep7(analysis) {
     const procedures = analysis.model.branches.map((branch, index) => derivativeProcedureHtml(branch, index, analysis.model.branches.length)).join("");
     const rows = analysis.model.branches.map((branch, index) => {
       const interval = domainIntervalsForBranch(branch).map(texInterval).join("\\cup");
-      const rationalData = rationalDerivativeData(branch);
-      const derivative = rationalData ? rationalDerivativeTex(rationalData) : branch.derivative ? toTex(branch.derivative) : "\\text{no disponible}";
+      const derivative = displayedDerivativeTex(branch);
       return `<tr><th>${analysis.model.branches.length > 1 ? `Tram ${index + 1}` : "Funció"}</th><td>${formula(`x\\in${interval}`, false)}</td><td>${formula(`f'(x)=${derivative}`, false)}</td></tr>`;
     }).join("");
     const methods = [];
     const seenMethods = new Set();
     analysis.model.branches.forEach((branch) => {
       if (!branch.derivative) return;
+      if (keepsSymbolicDerivativeConstants(branch.node)) return;
       const rationalData = rationalDerivativeData(branch);
       if (rationalData && rationalData.derivativeNumerator.length > 1) {
         const key = rationalData.derivativeNumerator.join(":");
