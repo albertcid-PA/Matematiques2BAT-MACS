@@ -1802,6 +1802,12 @@
       .filter((point) => Number.isFinite(point.y));
   }
 
+  function graphHorizontalAsymptotes(analysis) {
+    return uniqueNumbers([analysis.minusInfinity, analysis.plusInfinity]
+      .filter((limit) => limit.kind === "finite" && Number.isFinite(limit.value))
+      .map((limit) => limit.value));
+  }
+
   function graphMarkedPoints(analysis) {
     const points = [];
     function add(point) {
@@ -1983,6 +1989,7 @@
       const highlighted = [
         ...analysis.roots.map((x) => ({ x, y: 0 })),
         ...graphExtrema(analysis),
+        ...graphHorizontalAsymptotes(analysis).map((y) => ({ x: (xMin + xMax) / 2, y })),
         { x: 0, y: evaluateModel(analysis.model, 0) },
       ].filter((point) => Number.isFinite(point.y) && point.x >= xMin && point.x <= xMax);
       highlighted.forEach((point) => {
@@ -2040,6 +2047,18 @@
       context.stroke();
     }
 
+    context.strokeStyle = "#263238";
+    context.fillStyle = "#263238";
+    context.lineWidth = 1.4;
+    const axisY = yMin <= 0 && yMax >= 0 ? mapY(0) : margin.top + plotHeight;
+    const axisX = xMin <= 0 && xMax >= 0 ? mapX(0) : margin.left;
+    context.beginPath();
+    context.moveTo(margin.left, axisY);
+    context.lineTo(margin.left + plotWidth, axisY);
+    context.moveTo(axisX, margin.top);
+    context.lineTo(axisX, margin.top + plotHeight);
+    context.stroke();
+
     analysis.specialPoints.filter((point) => point.type === "asímptota vertical" && point.x >= xMin && point.x <= xMax).forEach((point) => {
       const px = mapX(point.x);
       context.save();
@@ -2049,6 +2068,20 @@
       context.beginPath();
       context.moveTo(px, margin.top);
       context.lineTo(px, margin.top + plotHeight);
+      context.stroke();
+      context.restore();
+    });
+
+    const horizontalAsymptotes = graphHorizontalAsymptotes(analysis);
+    horizontalAsymptotes.filter((y) => y >= yMin && y <= yMax).forEach((y) => {
+      const py = mapY(y);
+      context.save();
+      context.setLineDash([7, 5]);
+      context.strokeStyle = "#c62828";
+      context.lineWidth = 1.5;
+      context.beginPath();
+      context.moveTo(margin.left, py);
+      context.lineTo(margin.left + plotWidth, py);
       context.stroke();
       context.restore();
     });
@@ -2083,17 +2116,6 @@
       context.stroke();
     });
 
-    context.strokeStyle = "#263238";
-    context.fillStyle = "#263238";
-    context.lineWidth = 1.4;
-    const axisY = yMin <= 0 && yMax >= 0 ? mapY(0) : margin.top + plotHeight;
-    const axisX = xMin <= 0 && xMax >= 0 ? mapX(0) : margin.left;
-    context.beginPath();
-    context.moveTo(margin.left, axisY);
-    context.lineTo(margin.left + plotWidth, axisY);
-    context.moveTo(axisX, margin.top);
-    context.lineTo(axisX, margin.top + plotHeight);
-    context.stroke();
     context.restore();
 
     context.fillStyle = "#455a64";
@@ -2133,6 +2155,7 @@
     canvas.dataset.xMax = String(xMax);
     canvas.dataset.yMin = String(yMin);
     canvas.dataset.yMax = String(yMax);
+    canvas.dataset.horizontalAsymptotes = horizontalAsymptotes.join(",");
     canvas._functionAnalyzerGraph = {
       analysis,
       xMin,
@@ -2146,6 +2169,7 @@
       height,
       dpr,
       markedPoints,
+      horizontalAsymptotes,
     };
     return canvas._functionAnalyzerGraph;
   }
@@ -2153,6 +2177,7 @@
   function renderLegend(analysis, container) {
     const items = analysis.model.branches.map((branch, index) => `<span class="fa-legend-item" style="--legend-color:${COLORS[index % COLORS.length]}">${analysis.model.branches.length > 1 ? `Tram ${index + 1}: ` : ""}${formula(`y=${branch.tex}`, false)}</span>`);
     if (analysis.specialPoints.some((point) => point.type === "asímptota vertical")) items.push('<span class="fa-legend-item" style="--legend-color:#c62828">Asímptota vertical</span>');
+    graphHorizontalAsymptotes(analysis).forEach((y) => items.push(`<span class="fa-legend-item" style="--legend-color:#c62828">Asímptota horitzontal ${formula(`y=${texNumber(y)}`, false)}</span>`));
     if (graphExtrema(analysis).length) items.push('<span class="fa-legend-item" style="--legend-color:#ef6c00">Extrem relatiu</span>');
     container.innerHTML = items.join("");
   }
