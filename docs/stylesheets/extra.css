@@ -639,6 +639,28 @@
   margin-inline: 0;
 }
 
+.md-typeset .fa-ruffini {
+  border-collapse: collapse;
+}
+
+.md-typeset .fa-ruffini th,
+.md-typeset .fa-ruffini td {
+  min-width: 3rem;
+  padding: 0.45rem 0.7rem;
+  text-align: center;
+  border: 0;
+  background: transparent;
+}
+
+.md-typeset .fa-ruffini th[rowspan] {
+  border-right: 2px solid var(--md-default-fg-color);
+  vertical-align: middle;
+}
+
+.md-typeset .fa-ruffini tr:last-child td {
+  border-top: 2px solid var(--md-default-fg-color);
+}
+
 .md-typeset .fa-formula {
   overflow-x: auto;
   padding-block: 0.18rem;
