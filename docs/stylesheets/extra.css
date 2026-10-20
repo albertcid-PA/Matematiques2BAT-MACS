@@ -679,17 +679,10 @@
   border-radius: 0.65rem;
 }
 
-.md-typeset .fa-window-controls label {
-  display: grid;
-  grid-template-columns: auto 4.2rem;
-  align-items: center;
-  gap: 0.25rem;
+.md-typeset .fa-zoom-label {
+  color: var(--md-default-fg-color--light);
   font-size: 0.86em;
-}
-
-.md-typeset .fa-window-controls input[type="number"] {
-  min-height: 1.9rem;
-  padding: 0.25rem 0.4rem;
+  font-weight: 700;
 }
 
 .md-typeset .fa-zoom-controls {
@@ -726,7 +719,13 @@
 }
 
 .md-typeset .fa-canvas-wrap #fa-graph {
-  cursor: crosshair;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.md-typeset .fa-canvas-wrap #fa-graph.is-dragging {
+  cursor: grabbing;
 }
 
 .md-typeset .fa-canvas-wrap .fa-graph-overlay {

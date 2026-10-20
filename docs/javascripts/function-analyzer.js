@@ -1946,7 +1946,7 @@
     tooltip.style.top = `${Math.min(rect.height - tooltip.offsetHeight - 8, top)}px`;
   }
 
-  function drawGraph(analysis, canvas, xMin, xMax) {
+  function drawGraph(analysis, canvas, xMin, xMax, yWindow) {
     if (!(xMin < xMax)) throw new Error("El valor mínim de x ha de ser menor que el màxim.");
     const wrapper = canvas.parentElement;
     const width = Math.max(480, Math.round(wrapper.clientWidth || 900));
@@ -1967,38 +1967,42 @@
     const context = canvas.getContext("2d");
     context.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    const samples = [];
     const sampleCount = Math.max(900, Math.round(width * 1.5));
-    for (let i = 0; i <= sampleCount; i += 1) {
-      const x = xMin + ((xMax - xMin) * i) / sampleCount;
-      const y = evaluateModel(analysis.model, x);
-      if (Number.isFinite(y) && Math.abs(y) < 1e8) samples.push({ x, y });
+    let yMin = Number(yWindow && yWindow.yMin);
+    let yMax = Number(yWindow && yWindow.yMax);
+    if (!(Number.isFinite(yMin) && Number.isFinite(yMax) && yMin < yMax)) {
+      const samples = [];
+      for (let i = 0; i <= sampleCount; i += 1) {
+        const x = xMin + ((xMax - xMin) * i) / sampleCount;
+        const y = evaluateModel(analysis.model, x);
+        if (Number.isFinite(y) && Math.abs(y) < 1e8) samples.push({ x, y });
+      }
+      const yValues = samples.map((sample) => sample.y).sort((a, b) => a - b);
+      yMin = quantile(yValues, 0.03);
+      yMax = quantile(yValues, 0.97);
+      const highlighted = [
+        ...analysis.roots.map((x) => ({ x, y: 0 })),
+        ...graphExtrema(analysis),
+        { x: 0, y: evaluateModel(analysis.model, 0) },
+      ].filter((point) => Number.isFinite(point.y) && point.x >= xMin && point.x <= xMax);
+      highlighted.forEach((point) => {
+        yMin = Math.min(yMin, point.y);
+        yMax = Math.max(yMax, point.y);
+      });
+      if (!Number.isFinite(yMin) || !Number.isFinite(yMax)) {
+        yMin = -5;
+        yMax = 5;
+      }
+      if (Math.abs(yMax - yMin) < 1e-6) {
+        yMin -= 1;
+        yMax += 1;
+      }
+      const yPadding = (yMax - yMin) * 0.12;
+      yMin -= yPadding;
+      yMax += yPadding;
+      if (yMin > 0 && yMin < 0.2 * yMax) yMin = 0;
+      if (yMax < 0 && yMax > 0.2 * yMin) yMax = 0;
     }
-    const yValues = samples.map((sample) => sample.y).sort((a, b) => a - b);
-    let yMin = quantile(yValues, 0.03);
-    let yMax = quantile(yValues, 0.97);
-    const highlighted = [
-      ...analysis.roots.map((x) => ({ x, y: 0 })),
-      ...graphExtrema(analysis),
-      { x: 0, y: evaluateModel(analysis.model, 0) },
-    ].filter((point) => Number.isFinite(point.y) && point.x >= xMin && point.x <= xMax);
-    highlighted.forEach((point) => {
-      yMin = Math.min(yMin, point.y);
-      yMax = Math.max(yMax, point.y);
-    });
-    if (!Number.isFinite(yMin) || !Number.isFinite(yMax)) {
-      yMin = -5;
-      yMax = 5;
-    }
-    if (Math.abs(yMax - yMin) < 1e-6) {
-      yMin -= 1;
-      yMax += 1;
-    }
-    const yPadding = (yMax - yMin) * 0.12;
-    yMin -= yPadding;
-    yMax += yPadding;
-    if (yMin > 0 && yMin < 0.2 * yMax) yMin = 0;
-    if (yMax < 0 && yMax > 0.2 * yMin) yMax = 0;
 
     const margin = { left: 58, right: 20, top: 20, bottom: 42 };
     const plotWidth = width - margin.left - margin.right;
@@ -2125,6 +2129,8 @@
 
     const markedPoints = graphMarkedPoints(analysis);
     markedPoints.forEach((point) => drawPoint(point, point.color, point.open));
+    canvas.dataset.xMin = String(xMin);
+    canvas.dataset.xMax = String(xMax);
     canvas.dataset.yMin = String(yMin);
     canvas.dataset.yMax = String(yMax);
     canvas._functionAnalyzerGraph = {
@@ -2141,6 +2147,7 @@
       dpr,
       markedPoints,
     };
+    return canvas._functionAnalyzerGraph;
   }
 
   function renderLegend(analysis, container) {
@@ -2163,6 +2170,22 @@
     });
   }
 
+  function initialGraphXWindow(analysis) {
+    const defaultWindow = { xMin: -10, xMax: 10 };
+    const relevant = [
+      ...analysis.roots,
+      ...analysis.model.joins,
+      ...analysis.specialPoints.map((point) => point.x),
+      ...graphExtrema(analysis).map((point) => point.x),
+    ].filter(Number.isFinite);
+    if (!relevant.length || relevant.some((x) => x >= defaultWindow.xMin && x <= defaultWindow.xMax)) return defaultWindow;
+    const minimum = Math.min(...relevant);
+    const maximum = Math.max(...relevant);
+    const center = (minimum + maximum) / 2;
+    const span = Math.max(20, (maximum - minimum) * 1.4 + 4);
+    return { xMin: center - span / 2, xMax: center + span / 2 };
+  }
+
   function initTool(root) {
     if (!root || root.dataset.initialized === "true") return;
     root.dataset.initialized = "true";
@@ -2175,12 +2198,12 @@
     const steps = root.querySelector("#fa-steps");
     const canvas = root.querySelector("#fa-graph");
     const legend = root.querySelector("#fa-legend");
-    const xMinInput = root.querySelector("#fa-x-min");
-    const xMaxInput = root.querySelector("#fa-x-max");
     const zoomInButton = root.querySelector("#fa-zoom-in");
     const zoomOutButton = root.querySelector("#fa-zoom-out");
     let activeMode = "standard";
     let currentAnalysis = null;
+    let graphView = { xMin: -10, xMax: 10, yMin: null, yMax: null };
+    let graphDrag = null;
 
     function setMode(mode) {
       activeMode = mode;
@@ -2243,20 +2266,87 @@
 
     function redraw() {
       if (!currentAnalysis) return;
-      drawGraph(currentAnalysis, canvas, Number(xMinInput.value), Number(xMaxInput.value));
+      const state = drawGraph(currentAnalysis, canvas, graphView.xMin, graphView.xMax, graphView);
+      graphView = { xMin: state.xMin, xMax: state.xMax, yMin: state.yMin, yMax: state.yMax };
     }
 
-    function zoomGraph(factor) {
-      if (!currentAnalysis) return;
-      const xMin = Number(xMinInput.value);
-      const xMax = Number(xMaxInput.value);
-      if (!(xMin < xMax)) return;
-      const center = (xMin + xMax) / 2;
-      const span = Math.min(1e7, Math.max(1e-4, (xMax - xMin) * factor));
-      xMinInput.value = String(Number((center - span / 2).toPrecision(8)));
-      xMaxInput.value = String(Number((center + span / 2).toPrecision(8)));
+    function scaledInterval(minimum, maximum, focus, factor, minSpan, maxSpan) {
+      const currentSpan = maximum - minimum;
+      const nextSpan = Math.min(maxSpan, Math.max(minSpan, currentSpan * factor));
+      const effectiveFactor = nextSpan / currentSpan;
+      return {
+        minimum: focus - (focus - minimum) * effectiveFactor,
+        maximum: focus + (maximum - focus) * effectiveFactor,
+      };
+    }
+
+    function zoomGraph(factor, focus) {
+      const state = canvas._functionAnalyzerGraph;
+      if (!currentAnalysis || !state) return;
+      const focusX = focus && Number.isFinite(focus.x) ? focus.x : (state.xMin + state.xMax) / 2;
+      const focusY = focus && Number.isFinite(focus.y) ? focus.y : (state.yMin + state.yMax) / 2;
+      const horizontal = scaledInterval(state.xMin, state.xMax, focusX, factor, 1e-4, 1e7);
+      const vertical = scaledInterval(state.yMin, state.yMax, focusY, factor, 1e-4, 1e9);
+      graphView = {
+        xMin: horizontal.minimum,
+        xMax: horizontal.maximum,
+        yMin: vertical.minimum,
+        yMax: vertical.maximum,
+      };
       redraw();
       message.hidden = true;
+    }
+
+    function graphPointFromEvent(event, state) {
+      const rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return null;
+      const pointerX = (event.clientX - rect.left) * state.width / rect.width;
+      const pointerY = (event.clientY - rect.top) * state.height / rect.height;
+      if (pointerX < state.margin.left || pointerX > state.margin.left + state.plotWidth || pointerY < state.margin.top || pointerY > state.margin.top + state.plotHeight) return null;
+      return {
+        x: state.xMin + ((pointerX - state.margin.left) / state.plotWidth) * (state.xMax - state.xMin),
+        y: state.yMax - ((pointerY - state.margin.top) / state.plotHeight) * (state.yMax - state.yMin),
+      };
+    }
+
+    function startGraphDrag(event) {
+      if (!currentAnalysis || !canvas._functionAnalyzerGraph || event.button !== 0) return;
+      event.preventDefault();
+      graphDrag = { pointerId: event.pointerId, clientX: event.clientX, clientY: event.clientY };
+      canvas.setPointerCapture(event.pointerId);
+      canvas.classList.add("is-dragging");
+      clearGraphTracking(canvas);
+    }
+
+    function moveGraph(event) {
+      if (!graphDrag || graphDrag.pointerId !== event.pointerId) {
+        trackGraphPoint(canvas, event);
+        return;
+      }
+      event.preventDefault();
+      const state = canvas._functionAnalyzerGraph;
+      const rect = canvas.getBoundingClientRect();
+      if (!state || !rect.width || !rect.height) return;
+      const deltaX = (event.clientX - graphDrag.clientX) * state.width / rect.width;
+      const deltaY = (event.clientY - graphDrag.clientY) * state.height / rect.height;
+      graphDrag.clientX = event.clientX;
+      graphDrag.clientY = event.clientY;
+      const xShift = -deltaX * (state.xMax - state.xMin) / state.plotWidth;
+      const yShift = deltaY * (state.yMax - state.yMin) / state.plotHeight;
+      graphView = {
+        xMin: state.xMin + xShift,
+        xMax: state.xMax + xShift,
+        yMin: state.yMin + yShift,
+        yMax: state.yMax + yShift,
+      };
+      redraw();
+    }
+
+    function endGraphDrag(event) {
+      if (!graphDrag || graphDrag.pointerId !== event.pointerId) return;
+      if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+      graphDrag = null;
+      canvas.classList.remove("is-dragging");
     }
 
     function analyze() {
@@ -2271,6 +2361,7 @@
           else if (activeMode === "piecewise") model = makePiecewiseModel(readPiecewiseConfig());
           else model = makeAbsoluteModel(root.querySelector("#fa-absolute-expression").value);
           currentAnalysis = createAnalysis(model);
+          graphView = { ...initialGraphXWindow(currentAnalysis), yMin: null, yMax: null };
           root.querySelector("#fa-result-title").innerHTML = `Estudi de ${formula(`f(x)=${model.sourceTex}`, false)}`;
           preliminary.innerHTML = model.preliminary;
           renderSteps(currentAnalysis, steps);
@@ -2293,21 +2384,27 @@
     }
 
     root.querySelector("#fa-analyze").addEventListener("click", analyze);
-    root.querySelector("#fa-redraw").addEventListener("click", function () {
-      try {
-        redraw();
-        message.hidden = true;
-      } catch (error) {
-        message.textContent = error.message;
-        message.hidden = false;
-      }
+    zoomInButton.addEventListener("click", () => zoomGraph(0.7));
+    zoomOutButton.addEventListener("click", () => zoomGraph(1.4));
+    canvas.addEventListener("wheel", function (event) {
+      const state = canvas._functionAnalyzerGraph;
+      if (!currentAnalysis || !state) return;
+      const focus = graphPointFromEvent(event, state);
+      if (!focus) return;
+      event.preventDefault();
+      zoomGraph(event.deltaY < 0 ? 0.84 : 1.19, focus);
+    }, { passive: false });
+    canvas.addEventListener("pointerdown", startGraphDrag);
+    canvas.addEventListener("pointermove", moveGraph);
+    canvas.addEventListener("pointerup", endGraphDrag);
+    canvas.addEventListener("pointercancel", endGraphDrag);
+    canvas.addEventListener("lostpointercapture", function () {
+      graphDrag = null;
+      canvas.classList.remove("is-dragging");
     });
-    zoomInButton.addEventListener("click", () => zoomGraph(0.6));
-    zoomOutButton.addEventListener("click", () => zoomGraph(1.6));
-    canvas.addEventListener("pointermove", (event) => trackGraphPoint(canvas, event));
-    canvas.addEventListener("pointerdown", (event) => trackGraphPoint(canvas, event));
-    canvas.addEventListener("pointerleave", () => clearGraphTracking(canvas));
-    canvas.addEventListener("pointercancel", () => clearGraphTracking(canvas));
+    canvas.addEventListener("pointerleave", () => {
+      if (!graphDrag) clearGraphTracking(canvas);
+    });
     root.querySelector("#fa-expand-all").addEventListener("click", function (event) {
       const details = Array.from(root.querySelectorAll(".fa-step"));
       const shouldOpen = details.some((detail) => !detail.open);
@@ -2320,8 +2417,9 @@
       root.querySelector('input[name="fa-piece-count"][value="2"]').checked = true;
       updatePieceCount(2);
       root.querySelector("[data-piece-example='exercise-a']").click();
-      xMinInput.value = -10;
-      xMaxInput.value = 10;
+      graphView = { xMin: -10, xMax: 10, yMin: null, yMax: null };
+      graphDrag = null;
+      canvas.classList.remove("is-dragging");
       results.hidden = true;
       message.hidden = true;
       status.textContent = "";
