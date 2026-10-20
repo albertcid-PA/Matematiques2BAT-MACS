@@ -6,6 +6,14 @@
   const MAX_ABS_BREAKS = 6;
   const ALLOWED_FUNCTIONS = new Set(["abs", "sqrt", "cbrt", "root", "exp", "log"]);
   const COLORS = ["#1565c0", "#7b1fa2", "#00897b"];
+  const POINT_COLORS = {
+    xIntercept: "#6d4c41",
+    yIntercept: "#546e7a",
+    bothIntercepts: "#3949ab",
+    maximum: "#ef6c00",
+    minimum: "#c2185b",
+    removable: "#c62828",
+  };
 
   function normalizeExpression(value) {
     return String(value || "")
@@ -1824,13 +1832,17 @@
       points.push({ ...point, labels: [point.label] });
     }
 
-    analysis.roots.forEach((x) => add({ x, y: 0, label: "Tall amb l'eix X", color: "#1565c0", open: false }));
+    analysis.roots.forEach((x) => add({ x, y: 0, label: "Tall amb l'eix X", color: POINT_COLORS.xIntercept, open: false }));
     const yIntercept = evaluateModel(analysis.model, 0);
-    if (Number.isFinite(yIntercept)) add({ x: 0, y: yIntercept, label: "Tall amb l'eix Y", color: "#1565c0", open: false });
-    graphExtrema(analysis).forEach((point) => add({ ...point, color: "#d32f2f", open: false }));
+    if (Number.isFinite(yIntercept)) add({ x: 0, y: yIntercept, label: "Tall amb l'eix Y", color: POINT_COLORS.yIntercept, open: false });
+    graphExtrema(analysis).forEach((point) => add({
+      ...point,
+      color: point.label.startsWith("màxim") ? POINT_COLORS.maximum : POINT_COLORS.minimum,
+      open: false,
+    }));
     analysis.specialPoints.filter((point) => point.type === "discontinuïtat evitable").forEach((point) => {
       const finiteSide = point.left.kind === "finite" ? point.left.value : point.right.value;
-      add({ x: point.x, y: finiteSide, label: "Discontinuïtat evitable", color: "#c62828", open: true });
+      add({ x: point.x, y: finiteSide, label: "Discontinuïtat evitable", color: POINT_COLORS.removable, open: true });
     });
     if (analysis.model.mode === "piecewise") {
       analysis.model.joins.forEach((join) => {
@@ -1846,8 +1858,34 @@
     return points.map((point) => {
       const axisX = point.labels.includes("Tall amb l'eix X");
       const axisY = point.labels.includes("Tall amb l'eix Y");
-      const label = axisX && axisY ? "Tall amb els eixos X i Y" : point.labels.join(" · ");
-      return { ...point, label };
+      const maximum = point.labels.some((label) => label.startsWith("màxim"));
+      const minimum = point.labels.some((label) => label.startsWith("mínim"));
+      const removable = point.labels.includes("Discontinuïtat evitable");
+      let kind = "join";
+      let color = point.color;
+      if (maximum) {
+        kind = "maximum";
+        color = POINT_COLORS.maximum;
+      } else if (minimum) {
+        kind = "minimum";
+        color = POINT_COLORS.minimum;
+      } else if (removable) {
+        kind = "removable";
+        color = POINT_COLORS.removable;
+      } else if (axisX && axisY) {
+        kind = "both-intercepts";
+        color = POINT_COLORS.bothIntercepts;
+      } else if (axisX) {
+        kind = "x-intercept";
+        color = POINT_COLORS.xIntercept;
+      } else if (axisY) {
+        kind = "y-intercept";
+        color = POINT_COLORS.yIntercept;
+      }
+      const otherLabels = point.labels.filter((label) => label !== "Tall amb l'eix X" && label !== "Tall amb l'eix Y");
+      const axisLabel = axisX && axisY ? "Tall amb els eixos X i Y" : axisX ? "Tall amb l'eix X" : axisY ? "Tall amb l'eix Y" : "";
+      const label = [axisLabel, ...otherLabels].filter(Boolean).join(" · ");
+      return { ...point, color, kind, label };
     });
   }
 
@@ -2178,7 +2216,17 @@
     const items = analysis.model.branches.map((branch, index) => `<span class="fa-legend-item" style="--legend-color:${COLORS[index % COLORS.length]}">${analysis.model.branches.length > 1 ? `Tram ${index + 1}: ` : ""}${formula(`y=${branch.tex}`, false)}</span>`);
     if (analysis.specialPoints.some((point) => point.type === "asímptota vertical")) items.push('<span class="fa-legend-item" style="--legend-color:#c62828">Asímptota vertical</span>');
     graphHorizontalAsymptotes(analysis).forEach((y) => items.push(`<span class="fa-legend-item" style="--legend-color:#c62828">Asímptota horitzontal ${formula(`y=${texNumber(y)}`, false)}</span>`));
-    if (graphExtrema(analysis).length) items.push('<span class="fa-legend-item" style="--legend-color:#d32f2f">Extrem relatiu</span>');
+    const markedPoints = graphMarkedPoints(analysis);
+    [
+      ["x-intercept", "Tall amb l'eix X", POINT_COLORS.xIntercept],
+      ["y-intercept", "Tall amb l'eix Y", POINT_COLORS.yIntercept],
+      ["both-intercepts", "Tall amb els eixos X i Y", POINT_COLORS.bothIntercepts],
+      ["maximum", "Màxim relatiu", POINT_COLORS.maximum],
+      ["minimum", "Mínim relatiu", POINT_COLORS.minimum],
+      ["removable", "Discontinuïtat evitable", POINT_COLORS.removable],
+    ].forEach(([kind, label, color]) => {
+      if (markedPoints.some((point) => point.kind === kind)) items.push(`<span class="fa-legend-item fa-legend-item--point" style="--legend-color:${color}">${label}</span>`);
+    });
     container.innerHTML = items.join("");
   }
 

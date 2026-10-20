@@ -775,6 +775,11 @@
   vertical-align: middle;
 }
 
+.md-typeset .fa-legend-item--point::before {
+  width: 0.55rem;
+  height: 0.55rem;
+}
+
 @media (max-width: 44rem) {
   .md-typeset .fa-piece-grid,
   .md-typeset .fa-third-piece:not([hidden]),
