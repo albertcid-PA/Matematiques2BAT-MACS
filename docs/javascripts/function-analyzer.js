@@ -1336,7 +1336,23 @@
   function buildStep2(analysis) {
     const y = evaluateModel(analysis.model, 0);
     if (!Number.isFinite(y)) return `<p>Com que ${formula(`0\\notin D_f`, false)}, la funció no talla l'eix d'ordenades.</p>`;
-    return `<p>Substituïm ${formula("x=0", false)} a l'expressió que correspon:</p>${formula(`f(0)=${texNumber(y)}`)}<p>El tall amb l'eix $Y$ és ${formula(formatPoint(0, y), false)}.</p>`;
+    const branch = analysis.model.branches.find((candidate) => branchContains(candidate, 0, true));
+    const expression = analysis.model.sourceNode || branch.node;
+    const substituted = expression.transform(function (node) {
+      return node.isSymbolNode && node.name === "x" ? new math.ConstantNode(0) : node;
+    });
+    const simplified = simplifyNode(substituted);
+    let lastExpression = toTex(substituted);
+    const calculation = [`f(0)=${lastExpression}`];
+    if (simplified.toString() !== substituted.toString()) {
+      lastExpression = toTex(simplified);
+      calculation.push(lastExpression);
+    }
+    const result = texNumber(y);
+    const simplifiedPolynomial = polynomialCoefficients(simplified);
+    const exactConstant = simplifiedPolynomial && simplifiedPolynomial.length === 1 && Math.abs(simplifiedPolynomial[0] - y) < EPS;
+    if (!exactConstant && lastExpression !== result) calculation.push(result);
+    return `<p>Per calcular ${formula("f(0)", false)}, canviem cada ${formula("x", false)} de l'expressió per ${formula("0", false)}:</p>${formula(calculation.join("="))}<p>El tall amb l'eix $Y$ és ${formula(formatPoint(0, y), false)}.</p>`;
   }
 
   function rootListHtml(roots) {
