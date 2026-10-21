@@ -5,7 +5,7 @@
 
     Utilitza-la després d'intentar la derivada en paper. Pots mostrar els passos d'un en un per comparar-los amb el teu procediment.
 
-<div id="derivative-tool" class="fa-tool dt-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=16" data-tool-url="../../../javascripts/derivative-tool.js?v=3">
+<div id="derivative-tool" class="fa-tool dt-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=17" data-tool-url="../../../javascripts/derivative-tool.js?v=4">
   <noscript>
     <p class="fa-message fa-message--error">Cal activar el JavaScript del navegador per utilitzar el derivador.</p>
   </noscript>
@@ -27,7 +27,7 @@
     </div>
 
     <p id="dt-syntax-help" class="fa-help">
-      Utilitza <code>^</code> per a les potències i <code>*</code> per multiplicar. Pots escriure <code>sqrt(x)</code>, <code>cbrt(x)</code>, <code>root(5,x)</code>, <code>exp(x)</code>, <code>ln(x)</code> i <code>log(x,3)</code>.
+      Utilitza <code>^</code> per a les potències i <code>*</code> per multiplicar. Pots escriure <code>sqrt(x)</code>, <code>cbrt(x)</code>, <code>root(5,x)</code> o <code>nroot(5,x)</code>, <code>exp(x)</code>, <code>ln(x)</code> i <code>log(x,3)</code>.
     </p>
 
     <div class="fa-actions">

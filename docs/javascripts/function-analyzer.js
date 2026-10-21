@@ -35,7 +35,7 @@
         const previous = value[index - 1] || "";
         const next = value[index + 1] || "";
         const currentFunction = frames[frames.length - 1] || "";
-        const isFunctionSeparator = currentFunction === "log" || currentFunction === "root";
+        const isFunctionSeparator = currentFunction === "log" || currentFunction === "root" || currentFunction === "nroot";
         result += /\d/.test(previous) && /\d/.test(next) && !isFunctionSeparator ? "." : ",";
         continue;
       }
@@ -48,6 +48,7 @@
     return normalizeDecimalCommas(String(value || "").trim())
       .replace(/[−–—]/g, "-")
       .replace(/[·×]/g, "*")
+      .replace(/\bnroot\s*\(/gi, "root(")
       .replace(/\bln\s*\(/gi, "log(")
       .replace(/\bln\s+([a-zA-Z0-9.]+)/gi, "log($1)")
       .replace(/\be\s*\^/g, "e^");
@@ -61,9 +62,40 @@
 
   function constantInteger(node) {
     const current = unwrapParentheses(node);
-    if (!current || !current.isConstantNode) return null;
+    if (!current) return null;
+    if (current.isOperatorNode && current.isUnary() && ["+", "-"].includes(current.op)) {
+      const value = constantInteger(current.args[0]);
+      if (value === null) return null;
+      return current.op === "-" ? -value : value;
+    }
+    if (!current.isConstantNode) return null;
     const value = Number(current.value);
     return Number.isInteger(value) ? value : null;
+  }
+
+  function constantRationalData(node) {
+    const current = unwrapParentheses(node);
+    if (!current) return null;
+    const integer = constantInteger(current);
+    if (integer !== null) return { numerator: integer, denominator: 1 };
+    if (current.isOperatorNode && current.op === "/") {
+      const numerator = constantInteger(current.args[0]);
+      const denominator = constantInteger(current.args[1]);
+      if (numerator === null || denominator === null || denominator === 0) return null;
+      const sign = denominator < 0 ? -1 : 1;
+      const divisor = greatestCommonInteger([numerator, denominator]);
+      return {
+        numerator: sign * numerator / divisor,
+        denominator: Math.abs(denominator) / divisor,
+      };
+    }
+    return null;
+  }
+
+  function rationalTex(rational) {
+    if (rational.denominator === 1) return String(rational.numerator);
+    const sign = rational.numerator < 0 ? "-" : "";
+    return `${sign}\\frac{${Math.abs(rational.numerator)}}{${rational.denominator}}`;
   }
 
   function rootIndexFromPower(node) {
@@ -1788,10 +1820,32 @@
         const exponent = constantInteger(right);
         if (exponent !== null) {
           if (exponent === 0) return { tex: "0", hasPrime: false };
-          const baseDerivative = derivativeExpansion(left, depth - 1);
+          const baseDerivative = isVariableX(left)
+            ? { tex: "", hasPrime: false }
+            : derivativeExpansion(left, depth - 1);
           const power = exponent === 1 ? "" : `\\left(${toTex(left)}\\right)^{${exponent - 1}}`;
           return {
             tex: derivativeProductTex([texNumber(exponent, false), power, baseDerivative.tex]),
+            hasPrime: baseDerivative.hasPrime,
+          };
+        }
+        const rationalExponent = constantRationalData(right);
+        if (rationalExponent) {
+          if (rationalExponent.numerator === 0) return { tex: "0", hasPrime: false };
+          const baseDerivative = isVariableX(left)
+            ? { tex: "", hasPrime: false }
+            : derivativeExpansion(left, depth - 1);
+          const differenceNumerator = rationalExponent.numerator - rationalExponent.denominator;
+          const divisor = greatestCommonInteger([differenceNumerator, rationalExponent.denominator]);
+          const reducedExponent = {
+            numerator: differenceNumerator / divisor,
+            denominator: rationalExponent.denominator / divisor,
+          };
+          const power = reducedExponent.numerator === 0
+            ? ""
+            : `\\left(${toTex(left)}\\right)^{${rationalTex(reducedExponent)}}`;
+          return {
+            tex: derivativeProductTex([rationalTex(rationalExponent), power, baseDerivative.tex]),
             hasPrime: baseDerivative.hasPrime,
           };
         }
@@ -1856,14 +1910,94 @@
     const stages = [];
     for (let depth = 1; depth <= 10; depth += 1) {
       const expansion = derivativeExpansion(node, depth);
-      if (!stages.some((stage) => stage.tex === expansion.tex)) stages.push(expansion);
+      if (!stages.some((stage) => stage.tex === expansion.tex)) stages.push({ ...expansion, depth });
       if (!expansion.hasPrime) break;
     }
     return stages;
   }
 
-  function derivativeStudyStep(title, explanation, tex) {
-    return { title, explanation, tex };
+  function derivativeStudyStep(title, explanation, tex, rule) {
+    return { title, explanation, tex, rule: rule || "Simplificació algebraica" };
+  }
+
+  function uniqueRuleLabels(labels) {
+    return labels.filter((label, index) => labels.indexOf(label) === index);
+  }
+
+  function immediateDerivativeRules(node) {
+    const current = unwrapParentheses(node);
+    const polynomial = polynomialCoefficients(current);
+    if (polynomial && isDirectPolynomialSyntax(current)) return ["Derivació terme a terme"];
+    if (current.isConstantNode || (current.isSymbolNode && current.name !== "x")) return ["Derivada d’una constant"];
+    if (isVariableX(current)) return ["Derivada de x"];
+    if (current.isOperatorNode) {
+      if (current.isUnary()) return ["Multiplicació per una constant"];
+      const [left, right] = current.args;
+      if (current.op === "+" || current.op === "-") return ["Regla de la suma o la resta"];
+      if (current.op === "*") {
+        return [current.args.every(dependsOnX) ? "Regla del producte" : "Multiplicació per una constant"];
+      }
+      if (current.op === "/") return [dependsOnX(right) ? "Regla de la divisió" : "Multiplicació per una constant"];
+      if (current.op === "^") {
+        if (isExponentialPower(current)) {
+          return uniqueRuleLabels(["Derivada d’una funció exponencial", ...(!isVariableX(right) ? ["Regla de la cadena"] : [])]);
+        }
+        return uniqueRuleLabels(["Derivada d’una potència", ...(!isVariableX(left) ? ["Regla de la cadena"] : [])]);
+      }
+    }
+    const name = nodeFunctionName(current);
+    if (name && current.args && current.args.length) {
+      const radical = radicalParts(current);
+      const inner = radical ? radical.radicand : current.args[0];
+      const mainRule = radical
+        ? "Derivada d’una arrel"
+        : name === "log"
+          ? "Derivada d’un logaritme"
+          : name === "exp"
+            ? "Derivada de l’exponencial neperiana"
+            : "Regla de derivació corresponent";
+      return uniqueRuleLabels([mainRule, ...(!isVariableX(inner) ? ["Regla de la cadena"] : [])]);
+    }
+    return ["Regla de derivació corresponent"];
+  }
+
+  function derivativeRulesAtDepth(node, depth) {
+    const current = unwrapParentheses(node);
+    const polynomial = polynomialCoefficients(current);
+    if (polynomial && isDirectPolynomialSyntax(current)) return depth === 1 ? immediateDerivativeRules(current) : [];
+    if (depth <= 1) return immediateDerivativeRules(current);
+    if (current.isOperatorNode) {
+      if (current.isUnary()) return derivativeRulesAtDepth(current.args[0], depth - 1);
+      const [left, right] = current.args;
+      if (current.op === "+" || current.op === "-") {
+        return uniqueRuleLabels([
+          ...derivativeRulesAtDepth(left, depth - 1),
+          ...derivativeRulesAtDepth(right, depth - 1),
+        ]);
+      }
+      if (current.op === "*") {
+        return uniqueRuleLabels(current.args
+          .filter(dependsOnX)
+          .flatMap((argument) => derivativeRulesAtDepth(argument, depth - 1)));
+      }
+      if (current.op === "/") {
+        return uniqueRuleLabels([
+          ...derivativeRulesAtDepth(left, depth - 1),
+          ...(dependsOnX(right) ? derivativeRulesAtDepth(right, depth - 1) : []),
+        ]);
+      }
+      if (current.op === "^") {
+        const inner = isExponentialPower(current) ? right : left;
+        return isVariableX(inner) ? [] : derivativeRulesAtDepth(inner, depth - 1);
+      }
+    }
+    const name = nodeFunctionName(current);
+    if (name && current.args && current.args.length) {
+      const radical = radicalParts(current);
+      const inner = radical ? radical.radicand : current.args[0];
+      return isVariableX(inner) ? [] : derivativeRulesAtDepth(inner, depth - 1);
+    }
+    return [];
   }
 
   function compositionOuterData(node) {
@@ -1873,26 +2007,41 @@
       if (isExponentialPower(current)) {
         const base = unwrapParentheses(current.args[0]);
         const baseTex = toTex(base);
-        const outerTex = base.isSymbolNode && base.name === "e" ? "e^t" : `${baseTex}^t`;
+        const outerTex = base.isSymbolNode && base.name === "e" ? "e^x" : `${baseTex}^x`;
         const derivativeTex = base.isSymbolNode && base.name === "e"
-          ? "e^t"
-          : `\\ln\\left(${baseTex}\\right)${baseTex}^t`;
+          ? "e^x"
+          : `\\ln\\left(${baseTex}\\right)${baseTex}^x`;
         return { inner: current.args[1], outerTex, derivativeTex };
       }
       const exponent = constantInteger(current.args[1]);
       if (exponent !== null) {
-        const power = exponent === 1 ? "" : `t^{${exponent - 1}}`;
-        return { inner: current.args[0], outerTex: `t^{${exponent}}`, derivativeTex: `${exponent}${power}` };
+        const power = exponent === 1 ? "" : `x^{${exponent - 1}}`;
+        return { inner: current.args[0], outerTex: `x^{${exponent}}`, derivativeTex: `${exponent}${power}` };
+      }
+      const rationalExponent = constantRationalData(current.args[1]);
+      if (rationalExponent) {
+        const differenceNumerator = rationalExponent.numerator - rationalExponent.denominator;
+        const divisor = greatestCommonInteger([differenceNumerator, rationalExponent.denominator]);
+        const reducedExponent = {
+          numerator: differenceNumerator / divisor,
+          denominator: rationalExponent.denominator / divisor,
+        };
+        const power = reducedExponent.numerator === 0 ? "" : `x^{${rationalTex(reducedExponent)}}`;
+        return {
+          inner: current.args[0],
+          outerTex: `x^{${rationalTex(rationalExponent)}}`,
+          derivativeTex: `${rationalTex(rationalExponent)}${power}`,
+        };
       }
     }
     const name = nodeFunctionName(current);
     if (!name || !current.args || !current.args.length) return null;
     const radical = radicalParts(current);
     if (radical) {
-      const rootTex = radical.index === 2 ? "\\sqrt{t}" : `\\sqrt[${radical.index}]{t}`;
+      const rootTex = radical.index === 2 ? "\\sqrt{x}" : `\\sqrt[${radical.index}]{x}`;
       const denominator = radical.index === 2
-        ? "2\\sqrt{t}"
-        : `${radical.index}\\left(\\sqrt[${radical.index}]{t}\\right)^{${radical.index - 1}}`;
+        ? "2\\sqrt{x}"
+        : `${radical.index}\\left(\\sqrt[${radical.index}]{x}\\right)^{${radical.index - 1}}`;
       return { inner: radical.radicand, outerTex: rootTex, derivativeTex: `\\frac{1}{${denominator}}` };
     }
     if (name === "log") {
@@ -1900,13 +2049,13 @@
         const baseTex = toTex(current.args[1]);
         return {
           inner: current.args[0],
-          outerTex: `\\log_{${baseTex}}(t)`,
-          derivativeTex: `\\frac{1}{\\ln\\left(${baseTex}\\right)}\\cdot\\frac{1}{t}`,
+          outerTex: `\\log_{${baseTex}}(x)`,
+          derivativeTex: `\\frac{1}{\\ln\\left(${baseTex}\\right)}\\cdot\\frac{1}{x}`,
         };
       }
-      return { inner: current.args[0], outerTex: "\\ln(t)", derivativeTex: "\\frac{1}{t}" };
+      return { inner: current.args[0], outerTex: "\\ln(x)", derivativeTex: "\\frac{1}{x}" };
     }
-    if (name === "exp") return { inner: current.args[0], outerTex: "e^t", derivativeTex: "e^t" };
+    if (name === "exp") return { inner: current.args[0], outerTex: "e^x", derivativeTex: "e^x" };
     return null;
   }
 
@@ -1917,7 +2066,8 @@
       return derivativeStudyStep(
         "Recordem les derivades elementals",
         "Derivem terme a terme. Multipliquem pel grau, restem una unitat a l’exponent i recordem que la derivada d’una constant és zero.",
-        "(ax^n)'=anx^{n-1},\\qquad c'=0",
+        "(ax^n)'=a\\cdot n x^{n-1},\\qquad c'=0",
+        "Derivada d’una potència i derivada d’una constant",
       );
     }
 
@@ -1929,6 +2079,7 @@
           "Identifiquem una suma o una resta",
           "Derivem cadascun dels termes per separat i conservem el signe que els uneix.",
           `\\begin{aligned}u(x)&=${toTex(left)},&v(x)&=${toTex(right)}\\\\(u${sign}v)'&=u'${sign}v'\\end{aligned}`,
+          "Regla de la suma o la resta",
         );
       }
       if (current.op === "*") {
@@ -1941,12 +2092,14 @@
             "Identifiquem la multiplicació per una constant",
             "La constant es conserva i derivem només la funció que depèn de x.",
             `\\begin{aligned}k&=${toTex(constant)},&u(x)&=${toTex(variable)}\\\\(ku)'&=ku'\\end{aligned}`,
+            "Multiplicació per una constant",
           );
         }
         return derivativeStudyStep(
           "Identifiquem els dos factors",
           "Com que tots dos factors depenen de x, apliquem la regla del producte.",
           `\\begin{aligned}u(x)&=${toTex(left)},&v(x)&=${toTex(right)}\\\\(uv)'&=u'v+uv'\\end{aligned}`,
+          "Regla del producte",
         );
       }
       if (current.op === "/") {
@@ -1955,12 +2108,14 @@
             "Identifiquem una divisió per una constant",
             "El denominador constant es conserva i derivem el numerador.",
             `\\left(\\frac{u}{k}\\right)'=\\frac{u'}{k}`,
+            "Multiplicació per una constant",
           );
         }
         return derivativeStudyStep(
           "Identifiquem el numerador i el denominador",
           "Apliquem la regla de la divisió. El quadrat del denominador afecta tota la fracció.",
           `\\begin{aligned}u(x)&=${toTex(left)},&v(x)&=${toTex(right)}\\\\\\left(\\frac{u}{v}\\right)'&=\\frac{u'v-uv'}{v^2}\\end{aligned}`,
+          "Regla de la divisió",
         );
       }
     }
@@ -1971,13 +2126,15 @@
         return derivativeStudyStep(
           "Recordem la derivada elemental",
           "La funció interior és x i la seva derivada és 1.",
-          `F(t)=${composition.outerTex}\\quad\\longrightarrow\\quad F'(t)=${composition.derivativeTex}`,
+          `f(x)=${composition.outerTex}\\quad\\longrightarrow\\quad f'(x)=${composition.derivativeTex}`,
+          immediateDerivativeRules(current).join(" + "),
         );
       }
       return derivativeStudyStep(
         "Identifiquem la funció exterior i la interior",
-        "És una composició. Derivem la funció exterior sense canviar la interior i multipliquem per la derivada de la funció interior.",
-        `\\begin{aligned}F(t)&=${composition.outerTex},&F'(t)&=${composition.derivativeTex}\\\\g(x)&=${toTex(composition.inner)}\\\\f'(x)&=F'\\left(g(x)\\right)g'(x)\\end{aligned}`,
+        "Tal com als apunts, escrivim la composició com h(x)=f(g(x)). Derivem la funció exterior sense canviar la interior i multipliquem per la derivada de la funció interior.",
+        `\\begin{aligned}h(x)&=f(g(x)),&h'(x)&=f'(g(x))g'(x)\\\\f(x)&=${composition.outerTex},&f'(x)&=${composition.derivativeTex}\\\\g(x)&=${toTex(composition.inner)}\\end{aligned}`,
+        "Regla de la cadena",
       );
     }
 
@@ -1985,6 +2142,7 @@
       "Identifiquem les regles necessàries",
       "Derivem primer l’operació exterior i mantenim indicades les derivades interiors fins que les calculem.",
       `f(x)=${toTex(current)}`,
+      immediateDerivativeRules(current).join(" + "),
     );
   }
 
@@ -2243,12 +2401,14 @@
         "Derivem terme a terme",
         "Apliquem la regla de la potència a cada terme; el terme independent deriva a zero.",
         `f'(x)=${calculation}`,
+        "Derivació terme a terme",
       ));
       if (calculation !== finalTex) {
         steps.push(derivativeStudyStep(
           "Fem les multiplicacions",
           "Calculem els coeficients i escrivim el resultat final ordenat.",
           `f'(x)=${finalTex}`,
+          "Simplificació algebraica",
         ));
       }
       return { steps, finalTex };
@@ -2268,7 +2428,13 @@
         title = "Calculem les derivades indicades";
         explanation = "Substituïm les últimes derivades elementals que quedaven pendents.";
       }
-      steps.push(derivativeStudyStep(title, explanation, `f'(x)=${stage.tex}`));
+      const rules = derivativeRulesAtDepth(node, stage.depth);
+      steps.push(derivativeStudyStep(
+        title,
+        explanation,
+        `f'(x)=${stage.tex}`,
+        rules.length ? rules.join(" + ") : "Derivada elemental",
+      ));
     });
 
     const simplification = derivativeSimplificationStudy(node, fallbackFinalTex);
@@ -2402,12 +2568,162 @@
     return result;
   }
 
+  function variablePowerExponent(node) {
+    const current = unwrapParentheses(node);
+    if (isVariableX(current)) return 1;
+    if (!current.isOperatorNode || current.op !== "^") return null;
+    if (!isVariableX(current.args[0])) return null;
+    const exponent = constantInteger(current.args[1]);
+    return exponent !== null && exponent > 0 ? exponent : null;
+  }
+
+  function reducedRational(numerator, denominator) {
+    const divisor = greatestCommonInteger([numerator, denominator]);
+    return { numerator: numerator / divisor, denominator: denominator / divisor };
+  }
+
+  function rationalPowerTex(baseTex, exponent) {
+    if (exponent.numerator === exponent.denominator) return baseTex;
+    return `${baseTex}^{${rationalTex(exponent)}}`;
+  }
+
+  function rationalPowerDerivativeTerm(baseTex, exponent, negative) {
+    const difference = reducedRational(exponent.numerator - exponent.denominator, exponent.denominator);
+    const coefficient = rationalTex(exponent);
+    const power = difference.numerator === 0 ? "" : rationalPowerTex(baseTex, difference);
+    return `${negative ? "-" : ""}${coefficient}${power ? `\\,${power}` : ""}`;
+  }
+
+  function evenRadicalPowerStudy(node) {
+    const current = unwrapParentheses(node);
+    const radical = radicalParts(current);
+    if (!radical || radical.index % 2 !== 0) return null;
+    const radicandExponent = variablePowerExponent(radical.radicand);
+    if (radicandExponent === null || radicandExponent % 2 !== 0) return null;
+    const exponent = reducedRational(radicandExponent, radical.index);
+    const exponentValue = exponent.numerator / exponent.denominator;
+    const rawExponent = { numerator: radicandExponent, denominator: radical.index };
+    const absolutePower = rationalPowerTex("\\left|x\\right|", exponent);
+    const negativePower = rationalPowerTex("(-x)", exponent);
+    const positivePower = rationalPowerTex("x", exponent);
+    const negativeDerivative = rationalPowerDerivativeTerm("(-x)", exponent, true);
+    const positiveDerivative = rationalPowerDerivativeTerm("x", exponent, false);
+    const steps = [
+      derivativeStudyStep(
+        "Pas previ: transformem l’arrel en una potència",
+        "Com que l’índex és parell i el radicand conté una potència parella de x, necessitem el valor absolut per conservar també la branca x<0.",
+        `f(x)=${toTex(current)}=\\left|x\\right|^{${rationalTex(rawExponent)}}=${absolutePower}`,
+        "Propietats de les potències",
+      ),
+      derivativeStudyStep(
+        "Transformem el valor absolut en una funció a trossos",
+        "Escrivim una expressió sense valor absolut a cada costat de zero.",
+        `f(x)=\\begin{cases}${negativePower},&x<0\\\\0,&x=0\\\\${positivePower},&x>0\\end{cases}`,
+        "Transformació del valor absolut",
+      ),
+      derivativeStudyStep(
+        "Derivem els dos trams",
+        "A l’esquerra també apliquem la regla de la cadena perquè la funció interior és -x.",
+        `\\begin{aligned}x<0:\\quad f'(x)&=${rationalTex(exponent)}\\,${rationalPowerTex("(-x)", reducedRational(exponent.numerator - exponent.denominator, exponent.denominator))}\\cdot(-1)=${negativeDerivative}\\\\x>0:\\quad f'(x)&=${positiveDerivative}\\end{aligned}`,
+        "Derivada d’una potència + regla de la cadena",
+      ),
+    ];
+    let zeroDerivativeTex = "\\text{no existeix}";
+    if (exponentValue > 1) {
+      zeroDerivativeTex = "0";
+      steps.push(derivativeStudyStep(
+        "Estudiem la derivada en x=0",
+        "Com que l’exponent és més gran que 1, el quocient incremental tendeix a zero pels dos costats.",
+        `f'(0)=\\lim_{h\\to0}\\frac{|h|^{${rationalTex(exponent)}}}{h}=0`,
+        "Definició de derivada en un punt",
+      ));
+    } else {
+      steps.push(derivativeStudyStep(
+        "Estudiem la derivada en x=0",
+        "Les derivades laterals no coincideixen o no són finites; per tant, la funció no és derivable en zero.",
+        "f'(0)=\\text{no existeix}",
+        "Derivades laterals",
+      ));
+    }
+    const finalTex = `\\begin{cases}${negativeDerivative},&x<0\\\\${zeroDerivativeTex},&x=0\\\\${positiveDerivative},&x>0\\end{cases}`;
+    steps.push(derivativeStudyStep(
+      "Escrivim la derivada completa",
+      "Reunim les derivades dels dos trams i el resultat obtingut en zero.",
+      `f'(x)=${finalTex}`,
+      "Derivació d’una funció a trossos",
+    ));
+    return {
+      derivativeTex: finalTex,
+      rules: [
+        "Propietats de les potències",
+        "Transformació del valor absolut",
+        "Derivada d’una potència",
+        "Regla de la cadena",
+        "Derivació d’una funció a trossos",
+      ],
+      steps,
+    };
+  }
+
+  function derivativeFriendlyTransformation(node) {
+    let changedDivision = false;
+    let changedRadical = false;
+    const transformed = node.transform(function (child) {
+      const current = unwrapParentheses(child);
+      if (current.isOperatorNode && current.op === "/" && !dependsOnX(current.args[0])) {
+        const denominatorExponent = variablePowerExponent(current.args[1]);
+        if (denominatorExponent !== null) {
+          changedDivision = true;
+          const numerator = unwrapParentheses(current.args[0]);
+          const numeratorSource = numerator.isConstantNode || numerator.isSymbolNode
+            ? numerator.toString()
+            : `(${numerator.toString()})`;
+          return math.parse(`${numeratorSource}*x^-${denominatorExponent}`);
+        }
+      }
+      const radical = radicalParts(current);
+      if (radical) {
+        const radicandExponent = variablePowerExponent(radical.radicand);
+        const needsAbsoluteValue = radical.index % 2 === 0 && radicandExponent !== null && radicandExponent % 2 === 0;
+        if (radicandExponent !== null && !needsAbsoluteValue) {
+          changedRadical = true;
+          return math.parse(`(${radical.radicand.toString()})^(1/${radical.index})`);
+        }
+      }
+      return child;
+    });
+    if (!changedDivision && !changedRadical) return { node, steps: [] };
+    const explanations = [];
+    if (changedDivision) explanations.push("transformem les divisions per una potència de x amb la propietat 1/x^n=x^{-n}");
+    if (changedRadical) explanations.push("escrivim cada arrel d’una potència com una potència d’exponent fraccionari");
+    return {
+      node: transformed,
+      steps: [derivativeStudyStep(
+        "Pas previ: escrivim la funció amb potències",
+        `Abans de derivar, ${explanations.join(" i ")}. En una arrel d’índex parell mantenim tot el radicand entre parèntesis per conservar el domini real original.`,
+        `f(x)=${toTex(node)}=${toTex(transformed)}`,
+        "Propietats de les potències",
+      )],
+    };
+  }
+
   function deriveExpressionStudy(value) {
     const parsed = parseExpression(value);
     if (containsNode(parsed.node, (current) => nodeFunctionName(current) === "abs")) {
       throw new Error("Per derivar una funció amb valor absolut, transforma-la primer en una funció a trossos i deriva cada tram.");
     }
-    const node = simplifyNode(parsed.node);
+    const sourceNode = simplifyNode(parsed.node);
+    const evenRadicalStudy = evenRadicalPowerStudy(sourceNode);
+    if (evenRadicalStudy) {
+      return {
+        sourceTex: toTex(sourceNode),
+        derivativeTex: evenRadicalStudy.derivativeTex,
+        rules: evenRadicalStudy.rules,
+        steps: evenRadicalStudy.steps,
+      };
+    }
+    const preparation = derivativeFriendlyTransformation(sourceNode);
+    const node = preparation.node;
     const derivative = derivativeNode(node);
     if (!derivative) throw new Error("No s'ha pogut calcular la derivada amb les regles admeses.");
     const branch = { node, derivative };
@@ -2415,10 +2731,13 @@
     const displayedDerivative = displayedDerivativeTex(branch, calculationSteps);
     const study = detailedDerivativeStudy(node, displayedDerivative);
     return {
-      sourceTex: toTex(node),
+      sourceTex: toTex(sourceNode),
       derivativeTex: study.finalTex,
-      rules: derivativeRuleLabels(node),
-      steps: study.steps,
+      rules: uniqueRuleLabels([
+        ...(preparation.steps.length ? ["Propietats de les potències"] : []),
+        ...derivativeRuleLabels(node),
+      ]),
+      steps: [...preparation.steps, ...study.steps],
     };
   }
 
@@ -2447,7 +2766,7 @@
     let html = `<h4>${title}</h4>`;
     const polynomial = polynomialCoefficients(branch.node);
     if (polynomial && isDirectPolynomialSyntax(branch.node)) {
-      html += `<p>Derivem terme a terme amb ${formula(`(ax^n)'=anx^{n-1}`, false)} i ${formula(`c'=0`, false)}:</p>`;
+      html += `<p>Derivem terme a terme amb ${formula(`(ax^n)'=a\\cdot n x^{n-1}`, false)} i ${formula(`c'=0`, false)}:</p>`;
       const calculation = polynomialDerivativeCalculationTex(polynomial);
       const finalDerivative = displayedDerivativeTex(branch);
       const steps = calculation === finalDerivative ? [calculation] : [calculation, finalDerivative];
