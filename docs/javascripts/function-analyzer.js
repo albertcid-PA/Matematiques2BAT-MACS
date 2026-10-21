@@ -2611,8 +2611,8 @@
     const steps = [
       derivativeStudyStep(
         "Pas previ: transformem l’arrel en una potència",
-        "Com que l’índex és parell i el radicand conté una potència parella de x, necessitem el valor absolut per conservar també la branca x<0.",
-        `f(x)=${toTex(current)}=\\left|x\\right|^{${rationalTex(rawExponent)}}=${absolutePower}`,
+        `Com que ${formula(`x^{${radicandExponent}}\\geq0`, false)} per a tot ${formula("x\\in\\mathbb{R}", false)}, el domini és tot ${formula("\\mathbb{R}", false)}. No podem imposar ${formula("x\\geq0", false)} i necessitem el valor absolut per conservar també la branca ${formula("x<0", false)}.`,
+        `\\begin{aligned}x&\\in\\mathbb{R},\\\\f(x)&=${toTex(current)}=\\left|x\\right|^{${rationalTex(rawExponent)}}=${absolutePower}\\end{aligned}`,
         "Propietats de les potències",
       ),
       derivativeStudyStep(
@@ -2668,6 +2668,7 @@
   function derivativeFriendlyTransformation(node) {
     let changedDivision = false;
     let changedRadical = false;
+    const nonnegativeRadicalPowers = [];
     const transformed = node.transform(function (child) {
       const current = unwrapParentheses(child);
       if (current.isOperatorNode && current.op === "/" && !dependsOnX(current.args[0])) {
@@ -2687,7 +2688,10 @@
         const needsAbsoluteValue = radical.index % 2 === 0 && radicandExponent !== null && radicandExponent % 2 === 0;
         if (radicandExponent !== null && !needsAbsoluteValue) {
           changedRadical = true;
-          return math.parse(`(${radical.radicand.toString()})^(1/${radical.index})`);
+          if (radical.index % 2 === 0) {
+            nonnegativeRadicalPowers.push({ index: radical.index, exponent: radicandExponent });
+          }
+          return math.parse(`x^(${radicandExponent}/${radical.index})`);
         }
       }
       return child;
@@ -2696,12 +2700,21 @@
     const explanations = [];
     if (changedDivision) explanations.push("transformem les divisions per una potència de x amb la propietat 1/x^n=x^{-n}");
     if (changedRadical) explanations.push("escrivim cada arrel d’una potència com una potència d’exponent fraccionari");
+    let domainExplanation = "";
+    let domainTex = "";
+    if (nonnegativeRadicalPowers.length) {
+      const conditions = nonnegativeRadicalPowers
+        .filter((item, index, items) => items.findIndex((other) => other.index === item.index && other.exponent === item.exponent) === index)
+        .map((item) => `${formula(`x^{${item.exponent}}\\geq0\\Longleftrightarrow x\\geq0`, false)}`);
+      domainExplanation = ` Com que l’índex és parell i l’exponent de x dins del radical és senar, la condició ${conditions.join(" i ")} forma part del domini. En aquest domini x no és negativa; per això podem escriure la potència fraccionària sense valor absolut.`;
+      domainTex = "x\\geq0,\\qquad ";
+    }
     return {
       node: transformed,
       steps: [derivativeStudyStep(
         "Pas previ: escrivim la funció amb potències",
-        `Abans de derivar, ${explanations.join(" i ")}. En una arrel d’índex parell mantenim tot el radicand entre parèntesis per conservar el domini real original.`,
-        `f(x)=${toTex(node)}=${toTex(transformed)}`,
+        `Abans de derivar, ${explanations.join(" i ")}.${domainExplanation}`,
+        `${domainTex}f(x)=${toTex(node)}=${toTex(transformed)}`,
         "Propietats de les potències",
       )],
     };
