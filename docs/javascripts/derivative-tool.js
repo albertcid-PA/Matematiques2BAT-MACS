@@ -18,13 +18,6 @@
     });
   }
 
-  function stepHeading(index, total) {
-    if (total === 1) return "Derivada directa";
-    if (index === 0) return "Apliquem les regles de derivació";
-    if (index === total - 1) return "Simplifiquem el resultat";
-    return "Substituïm les derivades indicades";
-  }
-
   function initDerivativeTool(root) {
     if (!root || root.dataset.initialized === "true") return;
     root.dataset.initialized = "true";
@@ -75,8 +68,11 @@
           title.innerHTML = `Derivada de ${formula(`f(x)=${study.sourceTex}`, false)}`;
           ruleList.innerHTML = study.rules.map((rule) => `<span class="dt-rule">${rule}</span>`).join("");
           stepList.innerHTML = study.steps.map((step, index) => {
-            const line = index === 0 ? `f'(x)&=${step}` : `&=${step}`;
-            return `<li class="dt-step-card"><p class="fa-step-number">Pas ${index + 1}</p><h3>${stepHeading(index, study.steps.length)}</h3>${formula(`\\begin{aligned}${line}\\end{aligned}`)}</li>`;
+            const detail = typeof step === "string"
+              ? { title: "Pas de càlcul", explanation: "", tex: `f'(x)=${step}` }
+              : step;
+            const explanation = detail.explanation ? `<p class="dt-step-explanation">${detail.explanation}</p>` : "";
+            return `<li class="dt-step-card"><p class="fa-step-number">Pas ${index + 1}</p><h3>${detail.title}</h3>${explanation}${formula(detail.tex)}</li>`;
           }).join("");
           revealedSteps = Math.min(1, study.steps.length);
           results.hidden = false;
