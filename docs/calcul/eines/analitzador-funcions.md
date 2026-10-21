@@ -5,7 +5,7 @@
 
     L'analitzador és una ajuda per revisar una resolució. Cal justificar els passos i saber interpretar la informació obtinguda.
 
-<div id="function-analyzer" class="fa-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=16">
+<div id="function-analyzer" class="fa-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=17">
   <noscript>
     <p class="fa-message fa-message--error">Cal activar el JavaScript del navegador per utilitzar l'analitzador.</p>
   </noscript>
@@ -90,7 +90,7 @@
     </section>
 
     <p id="fa-syntax-help" class="fa-help">
-      Utilitza <code>^</code> per a les potències i <code>*</code> per multiplicar. Pots escriure <code>sqrt(x)</code>, <code>cbrt(x)</code>, <code>root(5,x)</code>, <code>exp(x)</code>, <code>ln(x)</code>, <code>log(x,3)</code> i <code>abs(x)</code>.
+      Utilitza <code>^</code> per a les potències i <code>*</code> per multiplicar. Pots escriure <code>sqrt(x)</code>, <code>cbrt(x)</code>, <code>root(5,x)</code> o <code>nroot(5,x)</code>, <code>exp(x)</code>, <code>ln(x)</code>, <code>log(x,3)</code> i <code>abs(x)</code>.
     </p>
 
     <div class="fa-actions">

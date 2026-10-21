@@ -69,10 +69,11 @@
           ruleList.innerHTML = study.rules.map((rule) => `<span class="dt-rule">${rule}</span>`).join("");
           stepList.innerHTML = study.steps.map((step, index) => {
             const detail = typeof step === "string"
-              ? { title: "Pas de càlcul", explanation: "", tex: `f'(x)=${step}` }
+              ? { title: "Pas de càlcul", explanation: "", tex: `f'(x)=${step}`, rule: "Regla de derivació corresponent" }
               : step;
+            const rule = detail.rule ? `<p class="dt-step-rule"><strong>Regla utilitzada:</strong> ${detail.rule}</p>` : "";
             const explanation = detail.explanation ? `<p class="dt-step-explanation">${detail.explanation}</p>` : "";
-            return `<li class="dt-step-card"><p class="fa-step-number">Pas ${index + 1}</p><h3>${detail.title}</h3>${explanation}${formula(detail.tex)}</li>`;
+            return `<li class="dt-step-card"><p class="fa-step-number">Pas ${index + 1}</p><h3>${detail.title}</h3>${rule}${explanation}${formula(detail.tex)}</li>`;
           }).join("");
           revealedSteps = Math.min(1, study.steps.length);
           results.hidden = false;

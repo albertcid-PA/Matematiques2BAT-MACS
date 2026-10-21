@@ -852,6 +852,16 @@
   font-size: 1rem;
 }
 
+.md-typeset .dt-step-rule {
+  margin: 0.15rem 0 0.45rem;
+  color: var(--fa-accent);
+  font-size: 0.84em;
+}
+
+.md-typeset .dt-step-explanation {
+  margin-top: 0.35rem;
+}
+
 .md-typeset .dt-step-card .fa-formula {
   margin-top: 0.25rem;
 }
