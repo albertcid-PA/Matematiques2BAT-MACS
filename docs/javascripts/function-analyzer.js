@@ -13,6 +13,7 @@
     maximum: "#ef6c00",
     minimum: "#c2185b",
     removable: "#c62828",
+    angular: "#5e35b1",
   };
 
   function normalizeDecimalCommas(value) {
@@ -1007,10 +1008,10 @@
     const constraintPoints = uniqueNumbers(model.branches.flatMap((branch) => constraintBoundaries(branch.constraints).filter((x) => intervalContains(branch.interval, x, true))));
     const allPoints = uniqueNumbers([...constraintPoints, ...model.joins]);
     return allPoints.map((x) => {
-      const left = oneSidedValue(model, x, -1);
-      const right = oneSidedValue(model, x, 1);
-      const value = evaluateModel(model, x);
       const isJoin = model.joins.some((join) => Math.abs(join - x) < ROOT_EPS);
+      const left = isJoin ? oneSidedValueAtJoin(model, x, -1) : oneSidedValue(model, x, -1);
+      const right = isJoin ? oneSidedValueAtJoin(model, x, 1) : oneSidedValue(model, x, 1);
+      const value = evaluateModel(model, x);
       let type = "extrem del domini";
       if (left.kind === "infinite" || right.kind === "infinite") type = "asímptota vertical";
       else if (left.kind === "finite" && right.kind === "finite") {
@@ -1019,6 +1020,129 @@
         } else type = "discontinuïtat de salt finit";
       }
       return { x, left, right, value, type, isJoin };
+    });
+  }
+
+  function branchBesideJoin(model, point, side) {
+    return model.branches.find((branch) => {
+      const boundary = side < 0 ? branch.interval.upper : branch.interval.lower;
+      return Number.isFinite(boundary) && Math.abs(boundary - point) < ROOT_EPS;
+    }) || null;
+  }
+
+  function oneSidedValueAtJoin(model, point, side) {
+    const branch = branchBesideJoin(model, point, side);
+    if (!branch) return { kind: "absent", value: NaN };
+    const direct = branch.fn(point);
+    if (Number.isFinite(direct)) return { kind: "finite", value: direct };
+    if (direct === Infinity || direct === -Infinity) return { kind: "infinite", value: direct };
+    return oneSidedValue(model, point, side);
+  }
+
+  function oneSidedDerivativeAtJoin(model, point, side) {
+    const branch = branchBesideJoin(model, point, side);
+    if (!branch || !branch.derivative) return { kind: "absent", value: NaN, branch };
+
+    const symbolicDerivativeFn = safeCompile(branch.derivative);
+    const direct = symbolicDerivativeFn(point);
+    if (Number.isFinite(direct)) return { kind: "finite", value: direct, branch };
+    if (direct === Infinity || direct === -Infinity) return { kind: "infinite", value: direct, branch };
+
+    const scale = Math.max(1, Math.abs(point));
+    const pointValue = branch.fn(point);
+    if (!Number.isFinite(pointValue)) return { kind: "absent", value: NaN, branch };
+    const values = [1e-2, 1e-3, 1e-4, 1e-5, 1e-6]
+      .map((distance) => {
+        const increment = side * distance * scale;
+        const nearbyValue = branch.fn(point + increment);
+        return Number.isFinite(nearbyValue) ? (nearbyValue - pointValue) / increment : NaN;
+      })
+      .filter(Number.isFinite);
+    if (!values.length) return { kind: "absent", value: NaN, branch };
+
+    const last = values[values.length - 1];
+    const previous = values.length > 1 ? values[values.length - 2] : last;
+    const growing = Math.abs(last) > 2 * Math.max(1, Math.abs(previous));
+    if (Math.abs(last) > 100 && growing) {
+      return { kind: "infinite", value: Math.sign(last) * Infinity, branch };
+    }
+    return { kind: "finite", value: last, branch };
+  }
+
+  function sameFiniteDerivative(left, right) {
+    return left.kind === "finite"
+      && right.kind === "finite"
+      && Math.abs(left.value - right.value) < 1e-6 * Math.max(1, Math.abs(left.value), Math.abs(right.value));
+  }
+
+  function analyzeJoinDerivatives(model, specialPoints) {
+    return model.joins.map((x) => {
+      const point = specialPoints.find((entry) => Math.abs(entry.x - x) < ROOT_EPS);
+      const continuous = Boolean(point && point.type === "unió contínua");
+      if (!continuous) {
+        return {
+          x,
+          point,
+          continuous: false,
+          left: { kind: "absent", value: NaN, branch: branchBesideJoin(model, x, -1) },
+          right: { kind: "absent", value: NaN, branch: branchBesideJoin(model, x, 1) },
+          type: "no derivable",
+          derivative: NaN,
+          reason: "La funció no és contínua en el punt d'unió.",
+        };
+      }
+
+      const left = oneSidedDerivativeAtJoin(model, x, -1);
+      const right = oneSidedDerivativeAtJoin(model, x, 1);
+      if (sameFiniteDerivative(left, right)) {
+        return {
+          x,
+          point,
+          continuous: true,
+          left,
+          right,
+          type: "derivable",
+          derivative: (left.value + right.value) / 2,
+          reason: "Les dues derivades laterals són finites i coincideixen.",
+        };
+      }
+      if (left.kind === "finite" && right.kind === "finite") {
+        return {
+          x,
+          point,
+          continuous: true,
+          left,
+          right,
+          type: "punt angulós",
+          derivative: NaN,
+          reason: "Les dues derivades laterals són finites, però no coincideixen.",
+        };
+      }
+      if (left.kind === "infinite" && right.kind === "infinite") {
+        const sameDirection = left.value === right.value;
+        return {
+          x,
+          point,
+          continuous: true,
+          left,
+          right,
+          type: sameDirection ? "tangent vertical" : "cúspide",
+          derivative: NaN,
+          reason: sameDirection
+            ? "Les dues derivades laterals són infinites amb el mateix signe."
+            : "Les dues derivades laterals són infinites amb signes contraris.",
+        };
+      }
+      return {
+        x,
+        point,
+        continuous: true,
+        left,
+        right,
+        type: "no derivable",
+        derivative: NaN,
+        reason: "Les derivades laterals no són totes dues finites i iguals.",
+      };
     });
   }
 
@@ -1312,7 +1436,7 @@
     return `(${texNumber(left, false)},${texNumber(right, false)})`;
   }
 
-  function analyzeMonotonicity(model, specialPoints, criticalPoints, derivativeSingularities) {
+  function analyzeMonotonicity(model, specialPoints, criticalPoints, derivativeSingularities, joinDerivativeStudies) {
     const cuts = uniqueNumbers([...finiteDomainBoundaries(model), ...model.joins, ...criticalPoints, ...specialPoints.map((point) => point.x)]);
     const extended = [-Infinity, ...cuts, Infinity];
     const intervalInfo = [];
@@ -1335,6 +1459,7 @@
       const isCritical = criticalPoints.some((point) => Math.abs(point - x) < ROOT_EPS);
       const isDerivativeSingularity = derivativeSingularities.some((point) => Math.abs(point - x) < ROOT_EPS);
       const isJoin = model.joins.some((point) => Math.abs(point - x) < ROOT_EPS);
+      const joinStudy = joinDerivativeStudies.find((study) => Math.abs(study.x - x) < ROOT_EPS);
       if (!special && !isCritical && !isJoin && !Number.isFinite(evaluateModel(model, x))) return;
       let classification = special && special.type !== "punt regular" ? special.type : "punt important";
       const leftSign = before && before.allowed ? Math.sign(before.derivative) : 0;
@@ -1345,10 +1470,17 @@
       const isMinimum = (leftSign < 0 && rightSign >= 0) || (leftSign <= 0 && rightSign > 0);
       if (Number.isFinite(y) && isContinuousPoint && isMaximum) classification = `màxim ${formatPoint(x, y)}`;
       else if (Number.isFinite(y) && isContinuousPoint && isMinimum) classification = `mínim ${formatPoint(x, y)}`;
-      else if (isJoin && (!special || special.type === "unió contínua")) classification = "punt d'unió sense extrem";
+      else if (joinStudy && joinStudy.type === "punt angulós") classification = "punt angulós sense extrem";
+      else if (joinStudy && joinStudy.type === "cúspide") classification = "cúspide sense extrem";
+      else if (joinStudy && joinStudy.type === "tangent vertical") classification = "tangent vertical sense extrem";
+      else if (joinStudy && joinStudy.type === "derivable") classification = "punt d'unió derivable sense extrem";
+      else if (isJoin && (!special || special.type === "unió contínua")) classification = "punt d'unió no derivable sense extrem";
       else if (isDerivativeSingularity) classification = "punt no derivable sense extrem";
       else if (isCritical && (!special || special.type === "punt regular")) classification = "punt estacionari sense extrem";
-      columns.push({ kind: "point", x, classification, special, derivative: isDerivativeSingularity ? NaN : derivativeAt(model, x) });
+      const pointDerivative = joinStudy && joinStudy.type === "derivable"
+        ? joinStudy.derivative
+        : isJoin || isDerivativeSingularity ? NaN : derivativeAt(model, x);
+      columns.push({ kind: "point", x, classification, special, derivative: pointDerivative });
     });
     return { cuts, intervals: intervalInfo, columns };
   }
@@ -1357,12 +1489,13 @@
     const domain = globalDomain(model);
     const roots = modelRoots(model);
     const specialPoints = analyzeSpecialPoints(model);
+    const joinDerivativeStudies = analyzeJoinDerivatives(model, specialPoints);
     const criticalPoints = allCriticalPoints(model);
     const derivativeSingularities = allDerivativeSingularities(model);
-    const monotonicity = analyzeMonotonicity(model, specialPoints, criticalPoints, derivativeSingularities);
+    const monotonicity = analyzeMonotonicity(model, specialPoints, criticalPoints, derivativeSingularities, joinDerivativeStudies);
     const minusInfinity = infinityBehavior(model, -1);
     const plusInfinity = infinityBehavior(model, 1);
-    return { model, domain, roots, specialPoints, criticalPoints, derivativeSingularities, monotonicity, minusInfinity, plusInfinity };
+    return { model, domain, roots, specialPoints, joinDerivativeStudies, criticalPoints, derivativeSingularities, monotonicity, minusInfinity, plusInfinity };
   }
 
   function domainConditionHtml(model) {
@@ -1574,14 +1707,53 @@
   }
 
   function buildStep5(analysis) {
-    if (!analysis.model.joins.length) return "<p>La funció no està definida a trossos i no té altres punts d'unió.</p>";
-    const items = analysis.model.joins.map((join) => {
-      const point = analysis.specialPoints.find((entry) => Math.abs(entry.x - join) < ROOT_EPS);
+    if (!analysis.model.joins.length) return "<p>La funció no té punts d'unió on calgui comparar la continuïtat i les derivades laterals.</p>";
+    const studies = analysis.joinDerivativeStudies.map((study) => {
+      const point = study.point;
       if (!point) return "";
-      const value = Number.isFinite(point.value) ? formula(`f(${texNumber(join, false)})=${texNumber(point.value)}`, false) : formula(`f(${texNumber(join, false)})\\text{ no existeix}`, false);
-      return `<li>En ${formula(`x=${texNumber(join, false)}`, false)}, ${limitLine(point)} i ${value}. Classificació: <strong>${escapeHtml(point.type)}</strong>.</li>`;
+      const xTex = texNumber(study.x, false);
+      const valueTex = Number.isFinite(point.value)
+        ? `f(${xTex})=${texNumber(point.value)}`
+        : `f(${xTex})\\text{ no existeix}`;
+      let html = `<h4>Estudi en ${formula(`x=${xTex}`, false)}</h4>`;
+      html += "<p><strong>1. Continuïtat.</strong> Calculem els dos límits laterals i el valor de la funció:</p>";
+      const continuityRows = [
+        `\\lim_{x\\to ${xTex}^-}f(x)&=${limitTex(point.left)}`,
+        `\\lim_{x\\to ${xTex}^+}f(x)&=${limitTex(point.right)}`,
+        `${valueTex}`,
+      ];
+      html += formula(`\\begin{aligned}${continuityRows.join("\\\\")}\\end{aligned}`);
+      if (!study.continuous) {
+        html += `<p>Com que no es compleixen les condicions de continuïtat, la funció <strong>no és derivable</strong> en ${formula(`x=${xTex}`, false)}. No cal calcular les derivades laterals.</p>`;
+        return html;
+      }
+
+      html += `<p>Els dos límits laterals coincideixen amb ${formula(`f(${xTex})`, false)}; per tant, la funció és <strong>contínua</strong> en ${formula(`x=${xTex}`, false)}.</p>`;
+      html += "<p><strong>2. Derivabilitat.</strong> Derivem els dos trams i comparem les derivades laterals:</p>";
+      const leftLabel = study.left.branch && study.left.branch.label ? study.left.branch.label : "f_1";
+      const rightLabel = study.right.branch && study.right.branch.label ? study.right.branch.label : "f_2";
+      const leftDerivative = study.left.branch ? displayedDerivativeTex(study.left.branch) : "\\text{no disponible}";
+      const rightDerivative = study.right.branch ? displayedDerivativeTex(study.right.branch) : "\\text{no disponible}";
+      const derivativeRows = [
+        `${leftLabel}'(x)&=${leftDerivative},& f'(${xTex}^-)&=${leftLabel}'(${xTex})=${limitTex(study.left)}`,
+        `${rightLabel}'(x)&=${rightDerivative},& f'(${xTex}^+)&=${rightLabel}'(${xTex})=${limitTex(study.right)}`,
+      ];
+      html += formula(`\\begin{aligned}${derivativeRows.join("\\\\")}\\end{aligned}`);
+
+      if (study.type === "derivable") {
+        html += `<p>Les derivades laterals són finites i coincideixen. Per tant, la funció <strong>és derivable</strong> en ${formula(`x=${xTex}`, false)} i ${formula(`f'(${xTex})=${texNumber(study.derivative)}`, false)}.</p>`;
+      } else if (study.type === "punt angulós") {
+        html += `<p>Les derivades laterals són finites, però no coincideixen. Per tant, la funció <strong>no és derivable</strong> en ${formula(`x=${xTex}`, false)} i la gràfica té un <strong>punt angulós</strong>.</p>`;
+      } else if (study.type === "cúspide") {
+        html += `<p>Les derivades laterals són infinites i tenen signes contraris. Per tant, la funció <strong>no és derivable</strong> en ${formula(`x=${xTex}`, false)} i la gràfica té una <strong>cúspide</strong>.</p>`;
+      } else if (study.type === "tangent vertical") {
+        html += `<p>Les derivades laterals són infinites amb el mateix signe. Per tant, la funció <strong>no és derivable</strong> en ${formula(`x=${xTex}`, false)} i la gràfica té una <strong>tangent vertical</strong>.</p>`;
+      } else {
+        html += `<p>${escapeHtml(study.reason)} Per tant, la funció <strong>no és derivable</strong> en ${formula(`x=${xTex}`, false)}.</p>`;
+      }
+      return html;
     }).join("");
-    return `<p>En cada punt d'unió comparem els dos límits laterals i el valor de la funció.</p><ul>${items}</ul>`;
+    return `<p>Seguim l'ordre dels apunts: primer comprovem la continuïtat i només si la funció és contínua comparem ${formula("f'(a^-)", false)} i ${formula("f'(a^+)", false)}.</p>${studies}`;
   }
 
   function rationalInfinityExplanation(result, side, numerator, denominator, fraction) {
@@ -2961,7 +3133,7 @@
     ["Tall amb l'eix d'ordenades", buildStep2],
     ["Talls amb l'eix d'abscisses", buildStep3],
     ["Asímptotes verticals i discontinuïtats evitables", buildStep4],
-    ["Altres discontinuïtats", buildStep5],
+    ["Continuïtat i derivabilitat als punts d'unió", buildStep5],
     ["Comportament a l'infinit", buildStep6],
     ["Candidats a extrem relatiu", buildStep7],
     ["Taula de monotonia", buildStep8],
@@ -3033,7 +3205,7 @@
       const finiteSide = point.left.kind === "finite" ? point.left.value : point.right.value;
       add({ x: point.x, y: finiteSide, label: "Discontinuïtat evitable", color: POINT_COLORS.removable, open: true });
     });
-    if (analysis.model.mode === "piecewise") {
+    if (analysis.model.joins.length) {
       analysis.model.joins.forEach((join) => {
         analysis.model.branches.forEach((branch, index) => {
           if (Math.abs(branch.interval.lower - join) >= EPS && Math.abs(branch.interval.upper - join) >= EPS) return;
@@ -3044,15 +3216,23 @@
         });
       });
     }
+    analysis.joinDerivativeStudies.filter((study) => study.type === "punt angulós").forEach((study) => {
+      const y = evaluateModel(analysis.model, study.x);
+      add({ x: study.x, y, label: "Punt angulós", color: POINT_COLORS.angular, open: false });
+    });
     return points.map((point) => {
       const axisX = point.labels.includes("Tall amb l'eix X");
       const axisY = point.labels.includes("Tall amb l'eix Y");
       const maximum = point.labels.some((label) => label.startsWith("màxim"));
       const minimum = point.labels.some((label) => label.startsWith("mínim"));
       const removable = point.labels.includes("Discontinuïtat evitable");
+      const angular = point.labels.includes("Punt angulós");
       let kind = "join";
       let color = point.color;
-      if (maximum) {
+      if (angular) {
+        kind = "angular";
+        color = POINT_COLORS.angular;
+      } else if (maximum) {
         kind = "maximum";
         color = POINT_COLORS.maximum;
       } else if (minimum) {
@@ -3414,6 +3594,7 @@
       ["maximum", "Màxim relatiu", POINT_COLORS.maximum],
       ["minimum", "Mínim relatiu", POINT_COLORS.minimum],
       ["removable", "Discontinuïtat evitable", POINT_COLORS.removable],
+      ["angular", "Punt angulós", POINT_COLORS.angular],
     ].forEach(([kind, label, color]) => {
       if (markedPoints.some((point) => point.kind === kind)) items.push(`<span class="fa-legend-item fa-legend-item--point" style="--legend-color:${color}">${label}</span>`);
     });
