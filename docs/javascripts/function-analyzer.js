@@ -2582,6 +2582,79 @@
     return { numerator: numerator / divisor, denominator: denominator / divisor };
   }
 
+  function normalizedRational(numerator, denominator) {
+    if (!denominator) return null;
+    const sign = denominator < 0 ? -1 : 1;
+    const divisor = greatestCommonInteger([numerator, denominator]);
+    return {
+      numerator: sign * numerator / divisor,
+      denominator: Math.abs(denominator) / divisor,
+    };
+  }
+
+  function multiplyRationals(left, right) {
+    return normalizedRational(
+      left.numerator * right.numerator,
+      left.denominator * right.denominator,
+    );
+  }
+
+  function divideRationals(left, right) {
+    if (!right || right.numerator === 0) return null;
+    return normalizedRational(
+      left.numerator * right.denominator,
+      left.denominator * right.numerator,
+    );
+  }
+
+  function exactPolynomialTerms(node) {
+    const terms = additiveTerms(node);
+    const result = [];
+    for (const term of terms) {
+      const product = multiplicativeFactors(term.node);
+      let coefficient = { numerator: term.sign * product.sign, denominator: 1 };
+      let degree = 0;
+      for (const factor of product.factors) {
+        const rational = constantRationalData(factor);
+        if (rational) {
+          coefficient = multiplyRationals(coefficient, rational);
+          continue;
+        }
+        const exponent = variablePowerExponent(factor);
+        if (exponent !== null) {
+          degree += exponent;
+          continue;
+        }
+        return null;
+      }
+      result.push({ coefficient, degree });
+    }
+    return result;
+  }
+
+  function dividedPolynomialSource(terms, divisor) {
+    const parts = [];
+    terms.forEach((term) => {
+      const coefficient = divideRationals(term.coefficient, divisor);
+      if (!coefficient || coefficient.numerator === 0) return;
+      const negative = coefficient.numerator < 0;
+      const magnitude = {
+        numerator: Math.abs(coefficient.numerator),
+        denominator: coefficient.denominator,
+      };
+      const coefficientSource = magnitude.denominator === 1
+        ? String(magnitude.numerator)
+        : `(${magnitude.numerator}/${magnitude.denominator})`;
+      const variableSource = term.degree === 0 ? "" : term.degree === 1 ? "x" : `x^${term.degree}`;
+      const body = variableSource && magnitude.numerator === magnitude.denominator
+        ? variableSource
+        : variableSource ? `${coefficientSource}*${variableSource}` : coefficientSource;
+      const sign = negative ? "-" : "+";
+      parts.push(`${parts.length === 0 && sign === "+" ? "" : sign}${body}`);
+    });
+    return parts.join("") || "0";
+  }
+
   function rationalPowerTex(baseTex, exponent) {
     if (exponent.numerator === exponent.denominator) return baseTex;
     return `${baseTex}^{${rationalTex(exponent)}}`;
@@ -2667,10 +2740,22 @@
 
   function derivativeFriendlyTransformation(node) {
     let changedDivision = false;
+    let changedConstantDivision = false;
     let changedRadical = false;
     const nonnegativeRadicalPowers = [];
     const transformed = node.transform(function (child) {
       const current = unwrapParentheses(child);
+      if (current.isOperatorNode && current.op === "/" && !dependsOnX(current.args[1])) {
+        const divisor = constantRationalData(current.args[1]);
+        const polynomialTerms = exactPolynomialTerms(current.args[0]);
+        if (divisor && divisor.numerator !== 0 && polynomialTerms && polynomialTerms.some((term) => term.degree > 0)) {
+          const transformedSource = dividedPolynomialSource(polynomialTerms, divisor);
+          if (transformedSource) {
+            changedConstantDivision = true;
+            return math.parse(transformedSource);
+          }
+        }
+      }
       if (current.isOperatorNode && current.op === "/" && !dependsOnX(current.args[0])) {
         const denominatorExponent = variablePowerExponent(current.args[1]);
         if (denominatorExponent !== null) {
@@ -2696,9 +2781,10 @@
       }
       return child;
     });
-    if (!changedDivision && !changedRadical) return { node, steps: [] };
+    if (!changedDivision && !changedConstantDivision && !changedRadical) return { node, steps: [] };
     const explanations = [];
     if (changedDivision) explanations.push("transformem les divisions per una potència de x amb la propietat 1/x^n=x^{-n}");
+    if (changedConstantDivision) explanations.push(`passem la divisió per una constant al coeficient de cada terme amb la propietat ${formula("\\frac{ax^n}{b}=\\frac{a}{b}x^n", false)}`);
     if (changedRadical) explanations.push("escrivim cada arrel d’una potència com una potència d’exponent fraccionari");
     let domainExplanation = "";
     let domainTex = "";
@@ -2709,19 +2795,22 @@
       domainExplanation = ` Com que l’índex és parell i l’exponent de x dins del radical és senar, la condició ${conditions.join(" i ")} forma part del domini. En aquest domini x no és negativa; per això podem escriure la potència fraccionària sense valor absolut.`;
       domainTex = "x\\geq0,\\qquad ";
     }
-    const preparationTitle = changedRadical && !changedDivision
+    const preparationTitle = changedRadical && !changedDivision && !changedConstantDivision
       ? "Pas previ: transformem el radical en una potència"
-      : "Pas previ: escrivim la funció amb potències";
-    const preparationExplanation = changedRadical && !changedDivision
+      : "Pas previ: preparem la forma algebraica";
+    const preparationExplanation = changedRadical && !changedDivision && !changedConstantDivision
       ? `Encara no derivem. Primer ${explanations[0]} i deixem tota la funció escrita amb la nova potència.${domainExplanation}`
-      : `Abans de derivar, ${explanations.join(" i ")}.${domainExplanation}`;
+      : `Encara no derivem. Primer ${explanations.join(" i ")} i deixem la funció preparada.${domainExplanation}`;
+    const preparationRule = changedConstantDivision
+      ? (changedDivision || changedRadical ? "Propietats de les potències i de les fraccions" : "Propietats de les fraccions")
+      : "Propietats de les potències";
     return {
       node: transformed,
       steps: [derivativeStudyStep(
         preparationTitle,
         preparationExplanation,
         `${domainTex}f(x)=${toTex(node)}=${toTex(transformed)}`,
-        "Propietats de les potències",
+        preparationRule,
       )],
     };
   }
@@ -2741,8 +2830,8 @@
         steps: evenRadicalStudy.steps,
       };
     }
-    const preparation = derivativeFriendlyTransformation(sourceNode);
-    const node = preparation.node;
+    const preparation = derivativeFriendlyTransformation(parsed.node);
+    const node = preparation.steps.length ? preparation.node : sourceNode;
     const derivative = derivativeNode(node);
     if (!derivative) throw new Error("No s'ha pogut calcular la derivada amb les regles admeses.");
     const branch = { node, derivative };
@@ -2753,7 +2842,7 @@
       sourceTex: toTex(sourceNode),
       derivativeTex: study.finalTex,
       rules: uniqueRuleLabels([
-        ...(preparation.steps.length ? ["Propietats de les potències"] : []),
+        ...(preparation.steps.length ? [preparation.steps[0].rule] : []),
         ...derivativeRuleLabels(node),
       ]),
       steps: [...preparation.steps, ...study.steps],
