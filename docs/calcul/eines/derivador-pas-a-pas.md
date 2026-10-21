@@ -5,7 +5,7 @@
 
     Utilitza-la després d'intentar la derivada en paper. Pots mostrar els passos d'un en un per comparar-los amb el teu procediment.
 
-<div id="derivative-tool" class="fa-tool dt-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=18" data-tool-url="../../../javascripts/derivative-tool.js?v=4">
+<div id="derivative-tool" class="fa-tool dt-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=19" data-tool-url="../../../javascripts/derivative-tool.js?v=4">
   <noscript>
     <p class="fa-message fa-message--error">Cal activar el JavaScript del navegador per utilitzar el derivador.</p>
   </noscript>

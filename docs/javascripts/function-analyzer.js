@@ -2709,11 +2709,17 @@
       domainExplanation = ` Com que l’índex és parell i l’exponent de x dins del radical és senar, la condició ${conditions.join(" i ")} forma part del domini. En aquest domini x no és negativa; per això podem escriure la potència fraccionària sense valor absolut.`;
       domainTex = "x\\geq0,\\qquad ";
     }
+    const preparationTitle = changedRadical && !changedDivision
+      ? "Pas previ: transformem el radical en una potència"
+      : "Pas previ: escrivim la funció amb potències";
+    const preparationExplanation = changedRadical && !changedDivision
+      ? `Encara no derivem. Primer ${explanations[0]} i deixem tota la funció escrita amb la nova potència.${domainExplanation}`
+      : `Abans de derivar, ${explanations.join(" i ")}.${domainExplanation}`;
     return {
       node: transformed,
       steps: [derivativeStudyStep(
-        "Pas previ: escrivim la funció amb potències",
-        `Abans de derivar, ${explanations.join(" i ")}.${domainExplanation}`,
+        preparationTitle,
+        preparationExplanation,
         `${domainTex}f(x)=${toTex(node)}=${toTex(transformed)}`,
         "Propietats de les potències",
       )],
