@@ -573,7 +573,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció té un mínim relatiu en $(0,0)$ i un màxim relatiu en $(4,-8)$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una asímptota vertical, branques infinites, un mínim i un màxim relatius](../../img/calcul/fig_2_12_representacio_racional_branques_infinites.svg?v=4){ width="820" }
+      ![Gràfica d'una funció racional amb una asímptota vertical, branques infinites, un mínim i un màxim relatius](../../img/calcul/fig_2_12_representacio_racional_branques_infinites.svg?v=5){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_12_representacio_racional_branques_infinites.tex">Figura 2.12.</a></strong> Funció racional amb una asímptota vertical, branques infinites i dos extrems relatius.</figcaption>
     </figure>
 
