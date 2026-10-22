@@ -55,7 +55,100 @@ def exercise_marker(line: str) -> tuple[str, str] | None:
     return None
 
 
-def solution_details(path: Path, *, pau: bool = False) -> str:
+def statement_blocks(path: Path) -> dict[str, list[str]]:
+    lines = body_after_separator(path).splitlines()
+    statements: dict[str, list[str]] = {}
+    current_number: str | None = None
+    current_body: list[str] = []
+
+    def flush() -> None:
+        nonlocal current_number, current_body
+        if current_number is None:
+            return
+        while current_body and not current_body[0].strip():
+            current_body.pop(0)
+        while current_body and not current_body[-1].strip():
+            current_body.pop()
+        statements[current_number] = current_body
+        current_number = None
+        current_body = []
+
+    for line in lines:
+        marker = exercise_marker(line)
+        if marker:
+            flush()
+            label, remainder = marker
+            number_match = re.match(r"^(PAU\.C\.\d+|[12]\.\d+)", label)
+            if number_match is None:
+                raise ValueError(f"No s'ha pogut identificar l'exercici: {line}")
+            current_number = number_match.group(1)
+            title = label[len(current_number) :].lstrip(". ")
+            if title:
+                current_body.append(f"**{title}**")
+                current_body.append("")
+            if remainder:
+                current_body.append(remainder)
+            continue
+
+        if line.startswith("##"):
+            flush()
+            continue
+
+        if line.startswith('!!! info "Preparació') or line.startswith('!!! info "Recursos'):
+            flush()
+            continue
+
+        if current_number is not None:
+            current_body.append(line)
+
+    flush()
+    return statements
+
+
+def developed_solution_blocks(path: Path) -> dict[str, list[str]]:
+    lines = read(path).splitlines()
+    solutions: dict[str, list[str]] = {}
+    current_number: str | None = None
+    current_body: list[str] = []
+
+    def flush() -> None:
+        nonlocal current_number, current_body
+        if current_number is None:
+            return
+        while current_body and not current_body[0].strip():
+            current_body.pop(0)
+        while current_body and not current_body[-1].strip():
+            current_body.pop()
+        solutions[current_number] = current_body
+        current_number = None
+        current_body = []
+
+    for line in lines:
+        marker = exercise_marker(line)
+        if marker:
+            flush()
+            label, remainder = marker
+            number_match = re.match(r"^(PAU\.C\.\d+|[12]\.\d+)", label)
+            if number_match is None:
+                raise ValueError(f"No s'ha pogut identificar la solució desenvolupada: {line}")
+            current_number = number_match.group(1)
+            if remainder:
+                current_body.append(remainder)
+            continue
+        if current_number is not None:
+            current_body.append(line)
+
+    flush()
+    return solutions
+
+
+def solution_details(
+    path: Path,
+    statements: dict[str, list[str]],
+    developed: dict[str, list[str]],
+    *,
+    pau: bool = False,
+) -> str:
     lines = read(path).splitlines()
     output: list[str] = []
     current_label: str | None = None
@@ -73,9 +166,24 @@ def solution_details(path: Path, *, pau: bool = False) -> str:
             summary = f"Solució del problema {current_label}"
         else:
             summary = f"Solució de l'exercici {current_label.rstrip('.')}"
+        number_match = re.match(r"^(PAU\.C\.\d+|[12]\.\d+)", current_label)
+        if number_match is None:
+            raise ValueError(f"No s'ha pogut identificar la solució: {current_label}")
+        number = number_match.group(1)
+        if number not in statements:
+            raise ValueError(f"Falta l'enunciat de {number}")
         output.append(f'??? example "{summary}"')
-        if current_body:
-            output.extend(f"    {line}" if line else "" for line in current_body)
+        output.append('    !!! abstract "Enunciat"')
+        output.extend(
+            f"        {line}" if line else ""
+            for line in statements[number]
+        )
+        output.append("")
+        output.append("    **Resolució que cal justificar**")
+        output.append("")
+        solution_body = developed.get(number, current_body)
+        if solution_body:
+            output.extend(f"    {line}" if line else "" for line in solution_body)
         else:
             output.append("    Consulta el resultat i comprova el procediment escrit al quadern.")
         output.append("")
@@ -167,8 +275,20 @@ Els problemes següents combinen diversos continguts. S'indica si provenen d'una
 
 
 def generate_solution_page() -> str:
-    exercise_solutions = solution_details(CALCUL / "resultats-exercicis.md")
-    pau_solutions = solution_details(CALCUL / "resultats-problemes-pau.md", pau=True)
+    exercise_statements = statement_blocks(CALCUL / "exercicis.md")
+    pau_statements = statement_blocks(CALCUL / "problemes-pau.md")
+    developed = developed_solution_blocks(CALCUL / "solucions-pas-a-pas.md")
+    exercise_solutions = solution_details(
+        CALCUL / "resultats-exercicis.md",
+        exercise_statements,
+        developed,
+    )
+    pau_solutions = solution_details(
+        CALCUL / "resultats-problemes-pau.md",
+        pau_statements,
+        developed,
+        pau=True,
+    )
     return f"""# Solucionari desplegable
 
 Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, deixa escrit el teu procediment: en una prova, el resultat final sense justificació pot no ser suficient.
