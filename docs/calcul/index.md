@@ -9,8 +9,8 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 
 ## Per practicar
 
-- [**Exercicis per temes**](exercicis.md) — col·lecció completa d'exercicis de càlcul i optimització, agrupats segons la teoria.
-- [**Problemes PAU**](problemes-pau.md) — problemes de càlcul de convocatòries reals i d'entrenament de tipus PAU, agrupats per contingut.
+- [**Exercicis i problemes PAU**](per-practicar/index.md) — tots els enunciats de càlcul reunits en una sola pàgina, agrupats per temes, amb els PDF d'enunciats i de resultats.
+- [**Solucionari desplegable**](per-practicar/solucionari.md) — una única pàgina per consultar la solució de cada exercici i de cada problema PAU sense veure les altres.
 
 ## Laboratori de mates
 

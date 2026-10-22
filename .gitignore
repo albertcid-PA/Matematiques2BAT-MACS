@@ -4,6 +4,7 @@
 /.cache/
 /tmp/
 /output/
+__pycache__/
 
 # Fitxers auxiliars generats en compilar les figures LaTeX.
 figures/tikz/**/*.aux
