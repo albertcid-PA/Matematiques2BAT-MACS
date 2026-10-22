@@ -3343,6 +3343,14 @@
     context.moveTo(margin.left, nearest.pointY);
     context.lineTo(margin.left + plotWidth, nearest.pointY);
     context.stroke();
+    context.setLineDash([]);
+    context.beginPath();
+    context.arc(nearest.pointX, nearest.pointY, 3.5, 0, Math.PI * 2);
+    context.fillStyle = nearest.color || "#1565c0";
+    context.strokeStyle = "#ffffff";
+    context.lineWidth = 1.25;
+    context.fill();
+    context.stroke();
     context.restore();
 
     const branchLabel = !nearest.marked && state.analysis.model.branches.length > 1 ? `Tram ${nearest.branchIndex + 1}` : "";
