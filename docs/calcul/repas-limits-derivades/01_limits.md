@@ -320,7 +320,7 @@ Si el numerador tendeix a un nombre diferent de zero i el denominador tendeix a 
     Els límits laterals són diferents i, per tant, el límit en $x=1$ no existeix. La recta $x=1$ és una asímptota vertical.
 
     <figure markdown="span">
-      ![Gràfica de la funció x més 2 dividit entre x menys 1 amb una asímptota vertical en x igual a 1](../../img/calcul/fig_1_9_limit_assimptota_vertical.svg?v=2){ width="680" }
+      ![Gràfica de la funció x més 2 dividit entre x menys 1 amb una asímptota vertical en x igual a 1](../../img/calcul/fig_1_9_limit_assimptota_vertical.svg?v=3){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_9_limit_assimptota_vertical.tex">Figura 1.9.</a></strong> Els límits laterals en $x=1$ són infinits de signe contrari.</figcaption>
     </figure>
 
