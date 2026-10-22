@@ -494,7 +494,7 @@ Si hi ha diversos candidats o extrems del domini, calcula el valor de $F$ en cad
     Com que $f(x)$ està expressada en desenes de persones, el model preveu que, amb el pas del temps, el nombre setmanal de visitants **s'aproximarà a zero**. Això no vol dir que en una setmana concreta hagi de ser exactament zero, sinó que l'afluència prevista serà cada vegada més petita.
 
     <figure markdown="span">
-      ![Gràfica del nombre setmanal de visitants amb un màxim a la segona setmana](../../img/calcul/fig_2_22_visitants_exposicio.svg?v=2){ width="700" }
+      ![Gràfica del nombre setmanal de visitants amb un màxim a la segona setmana](../../img/calcul/fig_2_22_visitants_exposicio.svg?v=3){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_22_visitants_exposicio.tex">Figura 2.22.</a></strong> Evolució prevista del nombre setmanal de visitants, expressat en desenes de persones.</figcaption>
     </figure>
 ### 3.3 Benefici màxim d'una empresa de joguines

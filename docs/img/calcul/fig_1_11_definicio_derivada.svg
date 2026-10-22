@@ -77,7 +77,6 @@
 <path d='M50.8985 66.3593H136.8435' stroke='#595959' fill='none' stroke-width='.39851' stroke-miterlimit='10'/>
 <path d='M52.0937 67.95312C51.99604 67.355459 50.898388 66.460928 50.601513 66.359366C50.898388 66.261709 51.99604 65.363272 52.0937 64.76562' stroke='#595959' fill='none' stroke-width='.3188' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
 <path d='M135.6483 64.76562C135.74595 65.363272 136.84361 66.261709 137.140485 66.359366C136.84361 66.460928 135.74595 67.355459 135.6483 67.95312' stroke='#595959' fill='none' stroke-width='.3188' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/>
-<path d='M90.0035 70.8164H97.7385V61.9062H90.0035Z' fill='#fff'/>
 <g fill='#595959' transform='matrix(1 0 0 1 157.6216 -16.5471)'>
 <use x='-66.620185' y='86.367194' xlink:href='#g0-104'/>
 </g>
