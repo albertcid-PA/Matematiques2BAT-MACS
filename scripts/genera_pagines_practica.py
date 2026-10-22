@@ -162,30 +162,32 @@ def solution_details(
             current_body.pop(0)
         while current_body and not current_body[-1].strip():
             current_body.pop()
-        if current_label.startswith("PAU.C."):
-            summary = f"Solució del problema {current_label}"
-        else:
-            summary = f"Solució de l'exercici {current_label.rstrip('.')}"
         number_match = re.match(r"^(PAU\.C\.\d+|[12]\.\d+)", current_label)
         if number_match is None:
             raise ValueError(f"No s'ha pogut identificar la solució: {current_label}")
         number = number_match.group(1)
         if number not in statements:
             raise ValueError(f"Falta l'enunciat de {number}")
-        output.append(f'??? example "{summary}"')
-        output.append('    !!! abstract "Enunciat"')
+        if number.startswith("PAU.C."):
+            summary = f"Mostra la solució pas a pas del problema {number}"
+        else:
+            summary = f"Mostra la solució pas a pas de l'exercici {number}"
+        output.append(f"**{number}.**")
         output.extend(
-            f"        {line}" if line else ""
+            line
             for line in statements[number]
         )
         output.append("")
-        output.append("    **Resolució que cal justificar**")
+        output.append(f'??? example "{summary}"')
+        output.append("    **Resolució pas a pas**")
         output.append("")
         solution_body = developed.get(number, current_body)
         if solution_body:
             output.extend(f"    {line}" if line else "" for line in solution_body)
         else:
             output.append("    Consulta el resultat i comprova el procediment escrit al quadern.")
+        output.append("")
+        output.append("---")
         output.append("")
         current_label = None
         current_body = []
@@ -223,46 +225,16 @@ def solution_details(
     return fix_relative_assets("\n".join(output).strip())
 
 
-def generate_practice_page() -> str:
-    exercises = fix_relative_assets(body_after_separator(CALCUL / "exercicis.md"))
-    exercises = exercises.replace("(problemes-pau.md)", "(#problemes-pau)")
-    pau = demote_headings(fix_relative_assets(body_after_separator(CALCUL / "problemes-pau.md")))
-    return f"""# Per practicar
-
-En aquesta pàgina tens reunits els **exercicis per temes** i els **problemes PAU de càlcul**. Intenta resoldre cada activitat abans d'obrir-ne la solució.
-
-<div class="practice-actions" markdown="1">
-
-[Consulta el solucionari desplegable](solucionari.md){{ .md-button .md-button--primary }}
-
-</div>
-
-## Documents PDF
-
-<div class="practice-download-grid">
-  <section class="practice-download-card">
-    <h3>Exercicis per temes</h3>
-    <ul>
-      <li><a href="../../assets/exercicis/exercicis_calcul.pdf?v=9">Enunciats en PDF</a></li>
-      <li><a href="../../assets/exercicis/resultats_exercicis_calcul.pdf?v=9">Resultats en PDF</a></li>
-    </ul>
-  </section>
-  <section class="practice-download-card">
-    <h3>Problemes PAU</h3>
-    <ul>
-      <li><a href="../../assets/exercicis/problemes_pau_calcul.pdf?v=1">Enunciats en PDF</a></li>
-      <li><a href="../../assets/exercicis/resultats_problemes_pau_calcul.pdf?v=2">Resultats en PDF</a></li>
-    </ul>
-  </section>
-</div>
-
-!!! tip "Com treballar"
-
-    Resol l'exercici al quadern, justifica cada pas i consulta després el [solucionari desplegable](solucionari.md). Els PDF de resultats serveixen per fer una comprovació ràpida.
+def generate_pdf_collection_page() -> str:
+    exercises = body_after_separator(CALCUL / "exercicis.md")
+    pau = demote_headings(body_after_separator(CALCUL / "problemes-pau.md"))
+    return f"""# Recull d'enunciats de càlcul {{.pdf-exercise-collection}}
 
 ---
 
 {exercises}
+
+<div class="pdf-page-break"></div>
 
 ---
 
@@ -289,32 +261,19 @@ def generate_solution_page() -> str:
         developed,
         pau=True,
     )
-    return f"""# Solucionari desplegable
+    return f"""# Exercicis i problemes
 
-Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, deixa escrit el teu procediment: en una prova, el resultat final sense justificació pot no ser suficient.
+En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
 
 <div class="practice-actions" markdown="1">
 
-[Torna als enunciats](index.md){{ .md-button }}
+[Descarrega tots els enunciats en un sol PDF](../../assets/exercicis/recull_enunciats_calcul.pdf?v=1){{ .md-button .md-button--primary target="_blank" rel="noopener" }}
 
 </div>
 
-## Documents PDF de resultats
+!!! tip "Com treballar"
 
-<div class="practice-download-grid">
-  <section class="practice-download-card">
-    <h3>Exercicis per temes</h3>
-    <p><a href="../../assets/exercicis/resultats_exercicis_calcul.pdf?v=9">Resultats en PDF</a></p>
-  </section>
-  <section class="practice-download-card">
-    <h3>Problemes PAU</h3>
-    <p><a href="../../assets/exercicis/resultats_problemes_pau_calcul.pdf?v=2">Resultats en PDF</a></p>
-  </section>
-</div>
-
-!!! note "Ús del solucionari"
-
-    Les solucions estan tancades inicialment perquè puguis provar cada exercici sense veure'n el resultat. Obre només l'exercici que vulguis comprovar i compara'l amb els passos del teu quadern.
+    Els enunciats són visibles i les solucions estan tancades inicialment. En una prova, escriu els càlculs i les justificacions: el resultat final, tot sol, pot no ser suficient.
 
 {exercise_solutions}
 
@@ -326,8 +285,12 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
 def main() -> None:
     PRACTICA.mkdir(parents=True, exist_ok=True)
-    (PRACTICA / "index.md").write_text(generate_practice_page(), encoding="utf-8", newline="\n")
     (PRACTICA / "solucionari.md").write_text(generate_solution_page(), encoding="utf-8", newline="\n")
+    (CALCUL / "recull-enunciats-calcul.md").write_text(
+        generate_pdf_collection_page(),
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 if __name__ == "__main__":
