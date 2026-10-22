@@ -243,7 +243,7 @@ Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si
         =\lim_{x\to-1^+}\frac{x+2}{(x+1)^2}=+\infty.
         $$
 
-    - **e)** Obtenim $\frac00$ i factoritzem:
+    - **e)** La substitució $x=2$ dona $\frac00$, que és una **indeterminació**. Per resoldre-la, factoritzem:
 
         $$
         \frac{x^2-5x+6}{2-x}
@@ -252,14 +252,14 @@ Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si
 
         Per tant, el límit val $3-2=1$.
 
-    - **f)** Obtenim $\frac00$ i usem $x^3+1=(x+1)(x^2-x+1)$:
+    - **f)** La substitució $x=-1$ dona $\frac00$, que és una **indeterminació**. Per resoldre-la, usem $x^3+1=(x+1)(x^2-x+1)$:
 
         $$
         \frac{x^3+1}{(x+1)(x-2)}
         =\frac{x^2-x+1}{x-2}\longrightarrow\frac{1+1+1}{-3}=-1.
         $$
 
-    - **g)** Obtenim $\frac00$ i simplifiquem:
+    - **g)** La substitució $x=0$ dona $\frac00$, que és una **indeterminació**. Per resoldre-la, factoritzem i simplifiquem:
 
         $$
         \frac{x^3-4x^2}{2x^2+6x}
@@ -267,7 +267,7 @@ Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si
         =\frac{x(x-4)}{2(x+3)}\longrightarrow0.
         $$
 
-    - **h)** Obtenim $\frac00$. Factoritzem:
+    - **h)** La substitució $x=3$ dona $\frac00$, que és una **indeterminació**. Per resoldre-la, factoritzem:
 
         $$
         x^2+x-12=(x-3)(x+4),\qquad
@@ -324,7 +324,18 @@ $$
     - **Límits demanats:**
 
         $$
-        f(0)=-1,\qquad
+        f(0)=-1.
+        $$
+
+        En $x=-2$, la substitució en la funció original dona
+
+        $$
+        \frac{-2+2}{(-2)^2+(-2)-2}=\frac00,
+        $$
+
+        que és una **indeterminació**. La resolem amb l'expressió simplificada:
+
+        $$
         \lim_{x\to-2}f(x)=\frac1{-3}=-\frac13.
         $$
 
@@ -382,6 +393,14 @@ $$
         Per tant, $x=0$ és una asímptota vertical.
 
     - **En $x=4$:**
+
+        La substitució en la funció original dona
+
+        $$
+        \frac{4^2-16}{4^2-4\cdot4}=\frac00,
+        $$
+
+        que és una **indeterminació**. La resolem amb l'expressió simplificada:
 
         $$
         \lim_{x\to4}g(x)=\frac{4+4}{4}=2.
@@ -2054,7 +2073,25 @@ Estudia i representa les funcions racionals següents. Calcula els límits quan 
 
     En cada funció racional comencem pel domini, factoritzem si és possible i conservem sempre les exclusions de l'expressió original.
 
-    - **a)** $\displaystyle f(x)=\frac{(x-1)(x+1)}{(x-2)(x+1)}=\frac{x-1}{x-2}$, amb $D_f=\mathbb{R}\setminus\{-1,2\}$. Hi ha un forat a $\left(-1,\frac23\right)$ i una asímptota vertical $x=2$. Per l'ordre dels infinits, al numerador i al denominador domina $x$:
+    - **a)** $D_f=\mathbb{R}\setminus\{-1,2\}$. En $x=-1$, la substitució en la funció original dona
+
+        $$
+        \frac{(-1)^2-1}{(-1)^2-(-1)-2}=\frac00,
+        $$
+
+        que és una **indeterminació**. Per resoldre-la, factoritzem i simplifiquem:
+
+        $$
+        f(x)=\frac{(x-1)(x+1)}{(x-2)(x+1)}=\frac{x-1}{x-2},\qquad x\ne-1,2.
+        $$
+
+        Per tant,
+
+        $$
+        \lim_{x\to-1}f(x)=\frac{-1-1}{-1-2}=\frac23.
+        $$
+
+        Hi ha un forat a $\left(-1,\frac23\right)$ i una asímptota vertical $x=2$. Per l'ordre dels infinits, al numerador i al denominador domina $x$:
 
         $$
         \lim_{x\to\pm\infty}\frac{x-1}{x-2}
@@ -2092,7 +2129,25 @@ Estudia i representa les funcions racionals següents. Calcula els límits quan 
         $$
 
         Així, decreix per $x<0$ i creix per $x>0$, separant a $x=\pm1$. Té un mínim relatiu a $(0,4)$.
-    - **c)** $\displaystyle f(x)=\frac{-(x-3)(x+2)}{(x-2)(x+2)}=\frac{3-x}{x-2}$, amb $D_f=\mathbb{R}\setminus\{-2,2\}$. Hi ha un forat a $\left(-2,-\frac54\right)$ i una asímptota vertical $x=2$. Per l'ordre dels infinits, al numerador domina $-x$ i al denominador domina $x$:
+    - **c)** $D_f=\mathbb{R}\setminus\{-2,2\}$. En $x=-2$, la substitució en la funció original dona
+
+        $$
+        \frac{-(-2)^2+(-2)+6}{(-2)^2-4}=\frac00,
+        $$
+
+        que és una **indeterminació**. Per resoldre-la, factoritzem i simplifiquem:
+
+        $$
+        f(x)=\frac{-(x-3)(x+2)}{(x-2)(x+2)}=\frac{3-x}{x-2},\qquad x\ne-2,2.
+        $$
+
+        Per tant,
+
+        $$
+        \lim_{x\to-2}f(x)=\frac{3-(-2)}{-2-2}=-\frac54.
+        $$
+
+        Hi ha un forat a $\left(-2,-\frac54\right)$ i una asímptota vertical $x=2$. Per l'ordre dels infinits, al numerador domina $-x$ i al denominador domina $x$:
 
         $$
         \lim_{x\to\pm\infty}\frac{3-x}{x-2}
