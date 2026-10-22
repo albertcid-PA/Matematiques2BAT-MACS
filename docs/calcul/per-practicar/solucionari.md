@@ -1,54 +1,41 @@
-# Solucionari desplegable
+# Exercicis i problemes
 
-Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, deixa escrit el teu procediment: en una prova, el resultat final sense justificació pot no ser suficient.
+En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
 
 <div class="practice-actions" markdown="1">
 
-[Torna als enunciats](index.md){ .md-button }
+[Descarrega tots els enunciats en un sol PDF](../../assets/exercicis/recull_enunciats_calcul.pdf?v=1){ .md-button .md-button--primary target="_blank" rel="noopener" }
 
 </div>
 
-## Documents PDF de resultats
+!!! tip "Com treballar"
 
-<div class="practice-download-grid">
-  <section class="practice-download-card">
-    <h3>Exercicis per temes</h3>
-    <p><a href="../../assets/exercicis/resultats_exercicis_calcul.pdf?v=9">Resultats en PDF</a></p>
-  </section>
-  <section class="practice-download-card">
-    <h3>Problemes PAU</h3>
-    <p><a href="../../assets/exercicis/resultats_problemes_pau_calcul.pdf?v=2">Resultats en PDF</a></p>
-  </section>
-</div>
-
-!!! note "Ús del solucionari"
-
-    Les solucions estan tancades inicialment perquè puguis provar cada exercici sense veure'n el resultat. Obre només l'exercici que vulguis comprovar i compara'l amb els passos del teu quadern.
+    Els enunciats són visibles i les solucions estan tancades inicialment. En una prova, escriu els càlculs i les justificacions: el resultat final, tot sol, pot no ser suficient.
 
 ## Tema 1. Repàs de límits i derivades
 
 ### Límits i continuïtat
 
-??? example "Solució de l'exercici 1.1"
-    !!! abstract "Enunciat"
-        Observa les dues gràfiques i determina, en cada cas:
+**1.1.**
+Observa les dues gràfiques i determina, en cada cas:
 
-        $$
-        \lim_{x\to0^-}f(x),
-        \qquad
-        \lim_{x\to0^+}f(x),
-        \qquad
-        \lim_{x\to-\infty}f(x)
-        \qquad\text{i}\qquad
-        \lim_{x\to+\infty}f(x).
-        $$
+$$
+\lim_{x\to0^-}f(x),
+\qquad
+\lim_{x\to0^+}f(x),
+\qquad
+\lim_{x\to-\infty}f(x)
+\qquad\text{i}\qquad
+\lim_{x\to+\infty}f(x).
+$$
 
-        <figure markdown="span">
-          ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=1){ width="850" }
-          <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_12_exercici_limits_dues_grafiques.tex">Figura 1.12.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
-        </figure>
+<figure markdown="span">
+  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=1){ width="850" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_12_exercici_limits_dues_grafiques.tex">Figura 1.12.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
+</figure>
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas de l'exercici 1.1"
+    **Resolució pas a pas**
 
     En cada gràfica seguim la corba en el sentit que indica el límit. Els límits laterals descriuen el valor al qual s'acosta $f(x)$ quan $x$ s'apropa a $0$, sense mirar necessàriament el valor de $f(0)$.
 
@@ -70,22 +57,24 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         \lim_{x\to+\infty}f(x)=2.
         $$
 
-??? example "Solució de l'exercici 1.2"
-    !!! abstract "Enunciat"
-        A partir de la gràfica, calcula els valors següents:
+---
 
-        <figure markdown="span">
-          ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../../img/calcul/fig_1_13_exercici_lectura_limits.svg?v=1){ width="820" }
-          <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_13_exercici_lectura_limits.tex">Figura 1.13.</a></strong> Gràfica de l'exercici 1.2.</figcaption>
-        </figure>
+**1.2.**
+A partir de la gràfica, calcula els valors següents:
 
-        | | | |
-        |:--|:--|:--|
-        | **a)** $\displaystyle\lim_{x\to-\infty}f(x)$ | **b)** $\displaystyle\lim_{x\to-3^-}f(x)$ | **c)** $\displaystyle\lim_{x\to-3^+}f(x)$ |
-        | **d)** $\displaystyle\lim_{x\to-3}f(x)$ | **e)** $\displaystyle\lim_{x\to1}f(x)$ | **f)** $f(1)$ |
-        | **g)** $\displaystyle\lim_{x\to4^-}f(x)$ | **h)** $\displaystyle\lim_{x\to4^+}f(x)$ | **i)** $\displaystyle\lim_{x\to+\infty}f(x)$ |
+<figure markdown="span">
+  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../../img/calcul/fig_1_13_exercici_lectura_limits.svg?v=1){ width="820" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_13_exercici_lectura_limits.tex">Figura 1.13.</a></strong> Gràfica de l'exercici 1.2.</figcaption>
+</figure>
 
-    **Resolució que cal justificar**
+| | | |
+|:--|:--|:--|
+| **a)** $\displaystyle\lim_{x\to-\infty}f(x)$ | **b)** $\displaystyle\lim_{x\to-3^-}f(x)$ | **c)** $\displaystyle\lim_{x\to-3^+}f(x)$ |
+| **d)** $\displaystyle\lim_{x\to-3}f(x)$ | **e)** $\displaystyle\lim_{x\to1}f(x)$ | **f)** $f(1)$ |
+| **g)** $\displaystyle\lim_{x\to4^-}f(x)$ | **h)** $\displaystyle\lim_{x\to4^+}f(x)$ | **i)** $\displaystyle\lim_{x\to+\infty}f(x)$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.2"
+    **Resolució pas a pas**
 
     Llegim la gràfica d'esquerra a dreta i distingim sempre entre el límit i el valor de la funció.
 
@@ -98,20 +87,22 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
     - **g)** i **h)** Quan $x$ s'apropa a $4$ pels dos costats, la gràfica puja sense fita: els dos límits laterals són $+\infty$.
     - **i)** La branca dreta s'acosta a $y=-2$: $\displaystyle\lim_{x\to+\infty}f(x)=-2$.
 
-??? example "Solució de l'exercici 1.3"
-    !!! abstract "Enunciat"
-        Calcula els límits següents aplicant l'ordre dels infinits:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $\displaystyle\lim_{x\to+\infty}\frac{3x^2-2x+1}{(x-2)^2}$ | **b)** $\displaystyle\lim_{x\to+\infty}\frac{2x+\ln x}{\ln x}$ |
-        | **c)** $\displaystyle\lim_{x\to+\infty}\frac{5+3^x}{2\cdot3^x+1}$ | **d)** $\displaystyle\lim_{x\to+\infty}\frac{4\cdot2^x}{2^x+3}$ |
-        | **e)** $\displaystyle\lim_{x\to+\infty}\frac{x^2-4}{x^3+1}$ | **f)** $\displaystyle\lim_{x\to+\infty}\frac{3x-1}{\sqrt{4x^2+5}}$ |
-        | **g)** $\displaystyle\lim_{x\to+\infty}\left(5^x-4x^6\right)$ | **h)** $\displaystyle\lim_{x\to+\infty}\left(\frac{x^2}{x-1}-\frac{x^3}{x^2+2}\right)$ |
-        | **i)** $\displaystyle\lim_{x\to-\infty}\left(4x^6-3x^4+x\right)$ | **j)** $\displaystyle\lim_{x\to-\infty}\left(-2x^5+7x^2\right)$ |
-        | **k)** $\displaystyle\lim_{x\to-\infty}\frac{3x^3-2}{x^3+5x}$ | **l)** $\displaystyle\lim_{x\to-\infty}\left(2^x+x^3\right)$ |
+**1.3.**
+Calcula els límits següents aplicant l'ordre dels infinits:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $\displaystyle\lim_{x\to+\infty}\frac{3x^2-2x+1}{(x-2)^2}$ | **b)** $\displaystyle\lim_{x\to+\infty}\frac{2x+\ln x}{\ln x}$ |
+| **c)** $\displaystyle\lim_{x\to+\infty}\frac{5+3^x}{2\cdot3^x+1}$ | **d)** $\displaystyle\lim_{x\to+\infty}\frac{4\cdot2^x}{2^x+3}$ |
+| **e)** $\displaystyle\lim_{x\to+\infty}\frac{x^2-4}{x^3+1}$ | **f)** $\displaystyle\lim_{x\to+\infty}\frac{3x-1}{\sqrt{4x^2+5}}$ |
+| **g)** $\displaystyle\lim_{x\to+\infty}\left(5^x-4x^6\right)$ | **h)** $\displaystyle\lim_{x\to+\infty}\left(\frac{x^2}{x-1}-\frac{x^3}{x^2+2}\right)$ |
+| **i)** $\displaystyle\lim_{x\to-\infty}\left(4x^6-3x^4+x\right)$ | **j)** $\displaystyle\lim_{x\to-\infty}\left(-2x^5+7x^2\right)$ |
+| **k)** $\displaystyle\lim_{x\to-\infty}\frac{3x^3-2}{x^3+5x}$ | **l)** $\displaystyle\lim_{x\to-\infty}\left(2^x+x^3\right)$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.3"
+    **Resolució pas a pas**
 
     En cada cas conservem els termes dominants o dividim pel terme que creix més.
 
@@ -185,18 +176,20 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     - **l)** $2^x\to0$ i $x^3\to-\infty$ quan $x\to-\infty$; per tant, el límit és $-\infty$.
 
-??? example "Solució de l'exercici 1.4"
-    !!! abstract "Enunciat"
-        Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si obtens un nombre real, un quocient del tipus $\dfrac{k}{0}$ o una indeterminació $\dfrac{0}{0}$. Si el límit és infinit, calcula'n també els límits laterals.
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $\displaystyle\lim_{x\to2}(x^2-3x+5)$ | **b)** $\displaystyle\lim_{x\to0}\frac{x+4}{x-2}$ |
-        | **c)** $\displaystyle\lim_{x\to2}\frac{x+1}{x-2}$ | **d)** $\displaystyle\lim_{x\to-1}\frac{x+2}{(x+1)^2}$ |
-        | **e)** $\displaystyle\lim_{x\to2}\frac{x^2-5x+6}{2-x}$ | **f)** $\displaystyle\lim_{x\to-1}\frac{x^3+1}{(x+1)(x-2)}$ |
-        | **g)** $\displaystyle\lim_{x\to0}\frac{x^3-4x^2}{2x^2+6x}$ | **h)** $\displaystyle\lim_{x\to3}\frac{x^2+x-12}{x^3-5x^2+3x+9}$ |
+**1.4.**
+Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si obtens un nombre real, un quocient del tipus $\dfrac{k}{0}$ o una indeterminació $\dfrac{0}{0}$. Si el límit és infinit, calcula'n també els límits laterals.
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $\displaystyle\lim_{x\to2}(x^2-3x+5)$ | **b)** $\displaystyle\lim_{x\to0}\frac{x+4}{x-2}$ |
+| **c)** $\displaystyle\lim_{x\to2}\frac{x+1}{x-2}$ | **d)** $\displaystyle\lim_{x\to-1}\frac{x+2}{(x+1)^2}$ |
+| **e)** $\displaystyle\lim_{x\to2}\frac{x^2-5x+6}{2-x}$ | **f)** $\displaystyle\lim_{x\to-1}\frac{x^3+1}{(x+1)(x-2)}$ |
+| **g)** $\displaystyle\lim_{x\to0}\frac{x^3-4x^2}{2x^2+6x}$ | **h)** $\displaystyle\lim_{x\to3}\frac{x^2+x-12}{x^3-5x^2+3x+9}$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.4"
+    **Resolució pas a pas**
 
     - **a)** La substitució directa dona $2^2-3\cdot2+5=3$.
     - **b)** El denominador no s'anul·la:
@@ -268,19 +261,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         El límit no existeix.
 
-??? example "Solució de l'exercici 1.5"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        f(x)=\frac{x+2}{x^2+x-2}.
-        $$
+**1.5.**
+Considera la funció
 
-        - **a)** Calcula els límits de $f(x)$ quan $x\to0$, $x\to-2$, $x\to1$, $x\to+\infty$ i $x\to-\infty$. Quan calgui, estudia els límits laterals.
-        - **b)** Indica les asímptotes i les discontinuïtats de la funció.
-        - **c)** Representa gràficament els resultats.
+$$
+f(x)=\frac{x+2}{x^2+x-2}.
+$$
 
-    **Resolució que cal justificar**
+- **a)** Calcula els límits de $f(x)$ quan $x\to0$, $x\to-2$, $x\to1$, $x\to+\infty$ i $x\to-\infty$. Quan calgui, estudia els límits laterals.
+- **b)** Indica les asímptotes i les discontinuïtats de la funció.
+- **c)** Representa gràficament els resultats.
+
+??? example "Mostra la solució pas a pas de l'exercici 1.5"
+    **Resolució pas a pas**
 
     Factoritzem el denominador:
 
@@ -324,19 +319,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_14_resultat_exercici_1_5.tex">Figura 1.14.</a></strong> Representació de la funció de l'exercici 1.5.</figcaption>
     </figure>
 
-??? example "Solució de l'exercici 1.6"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        g(x)=\frac{x^2-16}{x^2-4x}.
-        $$
+**1.6.**
+Considera la funció
 
-        - **a)** Determina el domini i calcula els límits en els punts on la funció no està definida.
-        - **b)** Calcula els límits quan $x\to+\infty$ i quan $x\to-\infty$.
-        - **c)** Classifica les discontinuïtats, indica les asímptotes i representa la funció amb la informació obtinguda.
+$$
+g(x)=\frac{x^2-16}{x^2-4x}.
+$$
 
-    **Resolució que cal justificar**
+- **a)** Determina el domini i calcula els límits en els punts on la funció no està definida.
+- **b)** Calcula els límits quan $x\to+\infty$ i quan $x\to-\infty$.
+- **c)** Classifica les discontinuïtats, indica les asímptotes i representa la funció amb la informació obtinguda.
+
+??? example "Mostra la solució pas a pas de l'exercici 1.6"
+    **Resolució pas a pas**
 
     Factoritzem i simplifiquem sense oblidar el domini original:
 
@@ -375,22 +372,24 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_15_resultat_exercici_1_6.tex">Figura 1.15.</a></strong> Representació de la funció de l'exercici 1.6.</figcaption>
     </figure>
 
-??? example "Solució de l'exercici 1.7"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        \dfrac{x-2}{(x-3)(x-4)}, & x\leq2,\\[6pt]
-        \dfrac{x^2-5}{(x+2)(x-2)}, & x>2.
-        \end{cases}
-        $$
+**1.7.**
+Considera la funció
 
-        - **a)** Estudia'n la continuïtat en $x=2$ i classifica la discontinuïtat, si n'hi ha.
-        - **b)** Calcula $\displaystyle\lim_{x\to+\infty}f(x)$ i $\displaystyle\lim_{x\to-\infty}f(x)$.
+$$
+f(x)=
+\begin{cases}
+\dfrac{x-2}{(x-3)(x-4)}, & x\leq2,\\[6pt]
+\dfrac{x^2-5}{(x+2)(x-2)}, & x>2.
+\end{cases}
+$$
 
-    **Resolució que cal justificar**
+- **a)** Estudia'n la continuïtat en $x=2$ i classifica la discontinuïtat, si n'hi ha.
+- **b)** Calcula $\displaystyle\lim_{x\to+\infty}f(x)$ i $\displaystyle\lim_{x\to-\infty}f(x)$.
+
+??? example "Mostra la solució pas a pas de l'exercici 1.7"
+    **Resolució pas a pas**
 
     En el punt d'unió $x=2$ calculem el valor i els dos límits laterals amb el tram corresponent.
 
@@ -414,25 +413,27 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
     \lim_{x\to+\infty}\frac{x^2-5}{(x+2)(x-2)}=1.
     $$
 
-??? example "Solució de l'exercici 1.8"
-    !!! abstract "Enunciat"
-        En un institut s'inicia una campanya per reduir el consum d'aigua. L'estalvi acumulat ve donat per
+---
 
-        $$
-        A(t)=
-        \begin{cases}
-        e^{0{,}03t}, & 1\leq t\leq60,\\[4pt]
-        -\dfrac{t}{30}+8, & 60<t\leq180,
-        \end{cases}
-        $$
+**1.8.**
+En un institut s'inicia una campanya per reduir el consum d'aigua. L'estalvi acumulat ve donat per
 
-        on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en milers de litres.
+$$
+A(t)=
+\begin{cases}
+e^{0{,}03t}, & 1\leq t\leq60,\\[4pt]
+-\dfrac{t}{30}+8, & 60<t\leq180,
+\end{cases}
+$$
 
-        - **a)** Estudia la continuïtat d'$A(t)$.
-        - **b)** Explica què passa quan han transcorregut $60$ dies.
-        - **c)** En quins moments l'estalvi és de $4\,000$ litres?
+on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en milers de litres.
 
-    **Resolució que cal justificar**
+- **a)** Estudia la continuïtat d'$A(t)$.
+- **b)** Explica què passa quan han transcorregut $60$ dies.
+- **c)** En quins moments l'estalvi és de $4\,000$ litres?
+
+??? example "Mostra la solució pas a pas de l'exercici 1.8"
+    **Resolució pas a pas**
 
     L'únic punt on pot fallar la continuïtat és $t=60$.
 
@@ -461,18 +462,20 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     que pertany al segon tram. Per tant, l'estalvi és de $4.000$ litres aproximadament als $46{,}21$ dies i exactament als $120$ dies.
 
+---
+
 ### Derivades
 
-??? example "Solució de l'exercici 1.9"
-    !!! abstract "Enunciat"
-        Calcula la derivada de cada funció. Quan s'indiqui un punt, calcula també el valor de la derivada en aquest punt.
+**1.9.**
+Calcula la derivada de cada funció. Quan s'indiqui un punt, calcula també el valor de la derivada en aquest punt.
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=x^3$ | **b)** $f(x)=x^2-3x$, en $x=2$ |
-        | **c)** $f(x)=\sqrt{x+5}$, en $x=4$ | **d)** $f(x)=e^{2x}$, en $x=0$ |
+| | |
+|:--|:--|
+| **a)** $f(x)=x^3$ | **b)** $f(x)=x^2-3x$, en $x=2$ |
+| **c)** $f(x)=\sqrt{x+5}$, en $x=4$ | **d)** $f(x)=e^{2x}$, en $x=0$ |
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas de l'exercici 1.9"
+    **Resolució pas a pas**
 
     - **a)** Regla de la potència:
 
@@ -493,17 +496,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$f'(x)=e^{2x}\cdot(2x)'=2e^{2x},qquad f'(0)=2e^0=2.$$
 
-??? example "Solució de l'exercici 1.10"
-    !!! abstract "Enunciat"
-        Calcula la derivada de les funcions següents:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=5x^4-3x^2+7$ | **b)** $f(x)=\dfrac{4}{x^3}+2x$ |
-        | **c)** $f(x)=3\sqrt{x}-\dfrac{5}{x}$ | **d)** $f(x)=\dfrac{2}{3}x^6-\dfrac{4}{x^2}$ |
-        | **e)** $f(x)=7e^x-3\ln x$ | **f)** $f(x)=2\cdot5^x+\log_2x$ |
+**1.10.**
+Calcula la derivada de les funcions següents:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=5x^4-3x^2+7$ | **b)** $f(x)=\dfrac{4}{x^3}+2x$ |
+| **c)** $f(x)=3\sqrt{x}-\dfrac{5}{x}$ | **d)** $f(x)=\dfrac{2}{3}x^6-\dfrac{4}{x^2}$ |
+| **e)** $f(x)=7e^x-3\ln x$ | **f)** $f(x)=2\cdot5^x+\log_2x$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.10"
+    **Resolució pas a pas**
 
     Abans de derivar els quocients amb potències de $x$, els escrivim amb exponent negatiu.
 
@@ -522,17 +527,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$f'(x)=2\cdot5^x\ln5+\frac1{x\ln2}.$$
 
-??? example "Solució de l'exercici 1.11"
-    !!! abstract "Enunciat"
-        Calcula les derivades. Indica la regla que utilitzes en cada cas.
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=(x^2+1)e^x$ | **b)** $f(x)=x^3\ln x$ |
-        | **c)** $f(x)=(2x-1)(x^2+3)$ | **d)** $f(x)=\dfrac{x^2-4}{x+1}$ |
-        | **e)** $f(x)=\dfrac{3x+2}{x^2+1}$ | **f)** $f(x)=\dfrac{\ln x}{x^2}$ |
+**1.11.**
+Calcula les derivades. Indica la regla que utilitzes en cada cas.
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=(x^2+1)e^x$ | **b)** $f(x)=x^3\ln x$ |
+| **c)** $f(x)=(2x-1)(x^2+3)$ | **d)** $f(x)=\dfrac{x^2-4}{x+1}$ |
+| **e)** $f(x)=\dfrac{3x+2}{x^2+1}$ | **f)** $f(x)=\dfrac{\ln x}{x^2}$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.11"
+    **Resolució pas a pas**
 
     - **a)** Regla del producte:
 
@@ -573,18 +580,20 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         =\frac{1-2\ln x}{x^3}.
         $$
 
-??? example "Solució de l'exercici 1.12"
-    !!! abstract "Enunciat"
-        Deriva les funcions compostes següents:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=(2x-3)^7$ | **b)** $f(x)=\sqrt{x^2+5}$ |
-        | **c)** $f(x)=\dfrac{1}{(3x+1)^4}$ | **d)** $f(x)=e^{x^2-2x}$ |
-        | **e)** $f(x)=\ln(4x^2+1)$ | **f)** $f(x)=(x^3+1)^{-2}$ |
-        | **g)** $f(x)=\sqrt{1-e^x}$ | **h)** $f(x)=3^{2x+1}$ |
+**1.12.**
+Deriva les funcions compostes següents:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=(2x-3)^7$ | **b)** $f(x)=\sqrt{x^2+5}$ |
+| **c)** $f(x)=\dfrac{1}{(3x+1)^4}$ | **d)** $f(x)=e^{x^2-2x}$ |
+| **e)** $f(x)=\ln(4x^2+1)$ | **f)** $f(x)=(x^3+1)^{-2}$ |
+| **g)** $f(x)=\sqrt{1-e^x}$ | **h)** $f(x)=3^{2x+1}$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.12"
+    **Resolució pas a pas**
 
     En tots els apartats derivem la funció exterior i multipliquem per la derivada de l'expressió interior.
 
@@ -603,17 +612,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     - **h)** $f'(x)=3^{2x+1}\ln3\cdot2=2\ln3\cdot3^{2x+1}$.
 
-??? example "Solució de l'exercici 1.13"
-    !!! abstract "Enunciat"
-        Simplifica cada expressió i deriva-la. Conserva les restriccions del domini original.
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\dfrac{x^3+2x^2}{x}$ | **b)** $f(x)=\dfrac{x^4+3x}{x}$ |
-        | **c)** $f(x)=x^2\sqrt{x}$ | **d)** $f(x)=\dfrac{x^2-9}{x-3}$ |
-        | **e)** $f(x)=\ln(x^3)$, amb $x>0$ | **f)** $f(x)=e^{\ln x}$, amb $x>0$ |
+**1.13.**
+Simplifica cada expressió i deriva-la. Conserva les restriccions del domini original.
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^3+2x^2}{x}$ | **b)** $f(x)=\dfrac{x^4+3x}{x}$ |
+| **c)** $f(x)=x^2\sqrt{x}$ | **d)** $f(x)=\dfrac{x^2-9}{x-3}$ |
+| **e)** $f(x)=\ln(x^3)$, amb $x>0$ | **f)** $f(x)=e^{\ln x}$, amb $x>0$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.13"
+    **Resolució pas a pas**
 
     Simplifiquem, indiquem la restricció que prové de l'expressió original i després derivem.
 
@@ -633,17 +644,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
     - **e)** Com que $x>0$, $\ln(x^3)=3\ln x$; per tant, $f'(x)=\dfrac3x$.
     - **f)** Com que $x>0$, $e^{\ln x}=x$; per tant, $f'(x)=1$.
 
-??? example "Solució de l'exercici 1.14"
-    !!! abstract "Enunciat"
-        Calcula la derivada de les funcions següents i simplifica el resultat:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\dfrac{x^2-4}{x^2+4}$ | **b)** $f(x)=\dfrac{x-2}{(3-x)^2}$ |
-        | **c)** $f(x)=\dfrac{4x^2}{x+\sqrt{x}}$ | **d)** $f(x)=\left(\dfrac34-\dfrac{x}{6}\right)^5$ |
-        | **e)** $f(x)=\sqrt[4]{2x^3}$ | **f)** $f(x)=(3\sqrt{x}+2)^6$ |
+**1.14.**
+Calcula la derivada de les funcions següents i simplifica el resultat:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^2-4}{x^2+4}$ | **b)** $f(x)=\dfrac{x-2}{(3-x)^2}$ |
+| **c)** $f(x)=\dfrac{4x^2}{x+\sqrt{x}}$ | **d)** $f(x)=\left(\dfrac34-\dfrac{x}{6}\right)^5$ |
+| **e)** $f(x)=\sqrt[4]{2x^3}$ | **f)** $f(x)=(3\sqrt{x}+2)^6$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.14"
+    **Resolució pas a pas**
 
     - **a)** Regla del quocient:
 
@@ -686,17 +699,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         =\frac{9(3\sqrt{x}+2)^5}{\sqrt{x}}.
         $$
 
-??? example "Solució de l'exercici 1.15"
-    !!! abstract "Enunciat"
-        Troba la derivada de les funcions següents i simplifica-la sempre que sigui possible:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\dfrac{x^4}{(x-2)^3}$ | **b)** $f(x)=\left(\dfrac{x^2-3}{x}\right)^4$ |
-        | **c)** $f(x)=\dfrac{x^2}{(3x-1)^4}$ | **d)** $f(x)=\dfrac{4-x^2}{x^2-6x+9}$ |
-        | **e)** $f(x)=\left(\dfrac{2-x}{2+x}\right)^{3/2}$ | **f)** $f(x)=\dfrac{3}{x}+\dfrac{x^2}{4}$ |
+**1.15.**
+Troba la derivada de les funcions següents i simplifica-la sempre que sigui possible:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^4}{(x-2)^3}$ | **b)** $f(x)=\left(\dfrac{x^2-3}{x}\right)^4$ |
+| **c)** $f(x)=\dfrac{x^2}{(3x-1)^4}$ | **d)** $f(x)=\dfrac{4-x^2}{x^2-6x+9}$ |
+| **e)** $f(x)=\left(\dfrac{2-x}{2+x}\right)^{3/2}$ | **f)** $f(x)=\dfrac{3}{x}+\dfrac{x^2}{4}$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.15"
+    **Resolució pas a pas**
 
     - **a)** Escrivim $f(x)=x^4(x-2)^{-3}$:
 
@@ -740,17 +755,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$f'(x)=-3x^{-2}+\frac12x=-\frac3{x^2}+\frac{x}{2}.$$
 
-??? example "Solució de l'exercici 1.16"
-    !!! abstract "Enunciat"
-        Deriva les funcions següents:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\ln(x^2+3)$ | **b)** $f(x)=\ln\sqrt{2-x}$ |
-        | **c)** $f(x)=\dfrac{\ln x}{e^{2x}}$ | **d)** $f(x)=e^{3x^2-2}$ |
-        | **e)** $f(x)=\log_3(x^2+1)$ | **f)** $f(x)=\ln\left(\ln\dfrac{2}{x}\right)$ |
+**1.16.**
+Deriva les funcions següents:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\ln(x^2+3)$ | **b)** $f(x)=\ln\sqrt{2-x}$ |
+| **c)** $f(x)=\dfrac{\ln x}{e^{2x}}$ | **d)** $f(x)=e^{3x^2-2}$ |
+| **e)** $f(x)=\log_3(x^2+1)$ | **f)** $f(x)=\ln\left(\ln\dfrac{2}{x}\right)$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.16"
+    **Resolució pas a pas**
 
     - **a)** Regla de la cadena del logaritme:
 
@@ -778,17 +795,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         =-\frac1{x\ln(2/x)}.
         $$
 
-??? example "Solució de l'exercici 1.17"
-    !!! abstract "Enunciat"
-        Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=x^3-2x^2+4x-1$ | **b)** $f(x)=e^{3x}$ |
-        | **c)** $f(x)=(x-2)e^x$ | **d)** $f(x)=\ln(x+3)$ |
-        | **e)** $f(x)=\dfrac{1}{x+2}$ | |
+**1.17.**
+Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=x^3-2x^2+4x-1$ | **b)** $f(x)=e^{3x}$ |
+| **c)** $f(x)=(x-2)e^x$ | **d)** $f(x)=\ln(x+3)$ |
+| **e)** $f(x)=\dfrac{1}{x+2}$ | |
+
+??? example "Mostra la solució pas a pas de l'exercici 1.17"
+    **Resolució pas a pas**
 
     Derivem successivament el resultat de la fila anterior.
 
@@ -816,19 +835,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$f'(x)=-\frac1{(x+2)^2},qquad f''(x)=\frac2{(x+2)^3},qquad f'''(x)=-\frac6{(x+2)^4}.$$
 
+---
+
 ### Càlcul de coeficients
 
-??? example "Solució de l'exercici 1.18"
-    !!! abstract "Enunciat"
-        Sigui
+**1.18.**
+Sigui
 
-        $$
-        f(x)=ax^2+bx+1.
-        $$
+$$
+f(x)=ax^2+bx+1.
+$$
 
-        Calcula $a$ i $b$ sabent que $f(1)=4$ i $f'(1)=5$.
+Calcula $a$ i $b$ sabent que $f(1)=4$ i $f'(1)=5$.
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas de l'exercici 1.18"
+    **Resolució pas a pas**
 
     Derivem primer:
 
@@ -846,17 +867,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Restant les equacions obtenim $a=2$ i, substituint a $a+b=3$, $b=1$.
 
-??? example "Solució de l'exercici 1.19"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        g(x)=ax^3+bx^2-2x+1.
-        $$
+**1.19.**
+Considera la funció
 
-        Determina $a$ i $b$ perquè $g(1)=2$ i $g'(1)=5$.
+$$
+g(x)=ax^3+bx^2-2x+1.
+$$
 
-    **Resolució que cal justificar**
+Determina $a$ i $b$ perquè $g(1)=2$ i $g'(1)=5$.
+
+??? example "Mostra la solució pas a pas de l'exercici 1.19"
+    **Resolució pas a pas**
 
     $$g'(x)=3ax^2+2bx-2.$$
 
@@ -874,17 +897,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     $$3a+2(3-a)=7\Longrightarrow a=1,qquad b=2.$$
 
-??? example "Solució de l'exercici 1.20"
-    !!! abstract "Enunciat"
-        Sigui
+---
 
-        $$
-        h(x)=ax^2+bx+3.
-        $$
+**1.20.**
+Sigui
 
-        Determina els coeficients $a$ i $b$ sabent que $h(-1)=7$ i $h'(2)=6$. Escriu la funció obtinguda.
+$$
+h(x)=ax^2+bx+3.
+$$
 
-    **Resolució que cal justificar**
+Determina els coeficients $a$ i $b$ sabent que $h(-1)=7$ i $h'(2)=6$. Escriu la funció obtinguda.
+
+??? example "Mostra la solució pas a pas de l'exercici 1.20"
+    **Resolució pas a pas**
 
     $$h'(x)=2ax+b.$$
 
@@ -906,21 +931,23 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     $$h(x)=2x^2-2x+3.$$
 
-??? example "Solució de l'exercici 1.21"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        p(x)=x^3+ax^2+bx+c.
-        $$
+**1.21.**
+Considera la funció
 
-        La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=(1,0)$.
+$$
+p(x)=x^3+ax^2+bx+c.
+$$
 
-        - **a)** Escriu les tres equacions que expressen aquestes condicions.
-        - **b)** Determina els coeficients $a$, $b$ i $c$.
-        - **c)** Classifica l'extrem relatiu mitjançant la derivada segona.
+La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=(1,0)$.
 
-    **Resolució que cal justificar**
+- **a)** Escriu les tres equacions que expressen aquestes condicions.
+- **b)** Determina els coeficients $a$, $b$ i $c$.
+- **c)** Classifica l'extrem relatiu mitjançant la derivada segona.
+
+??? example "Mostra la solució pas a pas de l'exercici 1.21"
+    **Resolució pas a pas**
 
     La gràfica passa per $P=(0,2)$, passa per $Q=(1,0)$ i té tangent horitzontal en $Q$. Per tant,
 
@@ -950,20 +977,22 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Per tant, $Q=(1,0)$ és un mínim relatiu.
 
+---
+
 ## Tema 2. Aplicacions de les derivades
 
 ### Derivabilitat
 
-??? example "Solució de l'exercici 2.1"
-    !!! abstract "Enunciat"
-        Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
+**2.1.**
+Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
 
-        <figure markdown="span">
-          ![Sis gràfiques per identificar punts en què una funció no és derivable](../../img/calcul/fig_2_26_exercici_punts_no_derivables.svg?v=1){ width="920" }
-          <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_exercici_punts_no_derivables.tex">Figura 2.26.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
-        </figure>
+<figure markdown="span">
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../../img/calcul/fig_2_26_exercici_punts_no_derivables.svg?v=1){ width="920" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_exercici_punts_no_derivables.tex">Figura 2.26.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
+</figure>
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas de l'exercici 2.1"
+    **Resolució pas a pas**
 
     Una funció només pot ser derivable en un punt si és contínua i la gràfica hi té una única tangent amb pendent finit. Observant cada gràfica:
 
@@ -974,19 +1003,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
     - **e)** No és derivable a $x=-1$, on la tangent no és única.
     - **f)** No és derivable a $x=1$, perquè la gràfica no és contínua en aquest punt.
 
-??? example "Solució de l'exercici 2.2"
-    !!! abstract "Enunciat"
-        La figura representa una funció $y=f(x)$.
+---
 
-        - **a)** Calcula $f'(-2)$, $f'(1)$ i $f'(4)$ a partir del pendent de la gràfica.
-        - **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
+**2.2.**
+La figura representa una funció $y=f(x)$.
 
-        <figure markdown="span">
-          ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../../img/calcul/fig_2_27_exercici_derivades_grafica.svg?v=1){ width="700" }
-          <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_27_exercici_derivades_grafica.tex">Figura 2.27.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
-        </figure>
+- **a)** Calcula $f'(-2)$, $f'(1)$ i $f'(4)$ a partir del pendent de la gràfica.
+- **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
 
-    **Resolució que cal justificar**
+<figure markdown="span">
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../../img/calcul/fig_2_27_exercici_derivades_grafica.svg?v=1){ width="700" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_27_exercici_derivades_grafica.tex">Figura 2.27.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
+</figure>
+
+??? example "Mostra la solució pas a pas de l'exercici 2.2"
+    **Resolució pas a pas**
 
     - **a)** La derivada és el pendent de la tangent. A $x=-2$ i a $x=1$ la tangent és horitzontal, de manera que
 
@@ -996,19 +1027,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     - **b)** A $x=0$ i $x=2$ els trams s'uneixen amb pendents diferents, i a $x=3$ la gràfica presenta una discontinuïtat. En conseqüència, $f$ no és derivable a $x=0$, $x=2$ ni $x=3$.
 
-??? example "Solució de l'exercici 2.3"
-    !!! abstract "Enunciat"
-        Estudia la continuïtat i la derivabilitat de la funció en $x=1$:
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        x^2+x-2, & x\leq 1,\\[2pt]
-        3x-3, & x>1.
-        \end{cases}
-        $$
+**2.3.**
+Estudia la continuïtat i la derivabilitat de la funció en $x=1$:
 
-    **Resolució que cal justificar**
+$$
+f(x)=
+\begin{cases}
+x^2+x-2, & x\leq 1,\\[2pt]
+3x-3, & x>1.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.3"
+    **Resolució pas a pas**
 
     Primer comprovem la continuïtat:
 
@@ -1023,19 +1056,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Com que les derivades laterals coincideixen, $f$ és derivable a $x=1$ i $f'(1)=3$.
 
-??? example "Solució de l'exercici 2.4"
-    !!! abstract "Enunciat"
-        Estudia la continuïtat i la derivabilitat de la funció en $x=-1$:
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        x^2+4x+1, & x\leq -1,\\[2pt]
-        x-1, & x>-1.
-        \end{cases}
-        $$
+**2.4.**
+Estudia la continuïtat i la derivabilitat de la funció en $x=-1$:
 
-    **Resolució que cal justificar**
+$$
+f(x)=
+\begin{cases}
+x^2+4x+1, & x\leq -1,\\[2pt]
+x-1, & x>-1.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.4"
+    **Resolució pas a pas**
 
     Comprovem la continuïtat:
 
@@ -1050,19 +1085,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Com que $2\ne1$, no és derivable a $x=-1$; la gràfica hi té un punt angulós.
 
-??? example "Solució de l'exercici 2.5"
-    !!! abstract "Enunciat"
-        Estudia la continuïtat i la derivabilitat de la funció en $x=2$. Interpreta gràficament el resultat.
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        \sqrt{2-x}, & x\leq 2,\\[2pt]
-        \sqrt{x-2}, & x>2.
-        \end{cases}
-        $$
+**2.5.**
+Estudia la continuïtat i la derivabilitat de la funció en $x=2$. Interpreta gràficament el resultat.
 
-    **Resolució que cal justificar**
+$$
+f(x)=
+\begin{cases}
+\sqrt{2-x}, & x\leq 2,\\[2pt]
+\sqrt{x-2}, & x>2.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.5"
+    **Resolució pas a pas**
 
     Els dos trams tendeixen a zero i $f(2)=0$:
 
@@ -1086,24 +1123,26 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     No hi ha una derivada finita comuna; la funció no és derivable a $x=2$ i la gràfica hi presenta dues semitangents verticals.
 
-??? example "Solució de l'exercici 2.6"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        x^2+5x+4, & x<-2,\\[2pt]
-        2x+2, & -2\leq x\leq 1,\\[2pt]
-        x+1, & x>1.
-        \end{cases}
-        $$
+**2.6.**
+Considera la funció
 
-        - **a)** Estudia la continuïtat i la derivabilitat de $f$ en els punts d'unió.
-        - **b)** Determina $f'(x)$ en els intervals on existeix.
-        - **c)** Representa, en uns eixos separats, les funcions $f$ i $f'$.
+$$
+f(x)=
+\begin{cases}
+x^2+5x+4, & x<-2,\\[2pt]
+2x+2, & -2\leq x\leq 1,\\[2pt]
+x+1, & x>1.
+\end{cases}
+$$
 
-    **Resolució que cal justificar**
+- **a)** Estudia la continuïtat i la derivabilitat de $f$ en els punts d'unió.
+- **b)** Determina $f'(x)$ en els intervals on existeix.
+- **c)** Representa, en uns eixos separats, les funcions $f$ i $f'$.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.6"
+    **Resolució pas a pas**
 
     En $x=-2$:
 
@@ -1134,32 +1173,34 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
     \end{cases}
     $$
 
-??? example "Solució de l'exercici 2.7"
-    !!! abstract "Enunciat"
-        Estudia la continuïtat i la derivabilitat de les funcions següents. Indica el conjunt de punts on cadascuna és derivable i escriu-ne la funció derivada.
+---
 
-        **a)**
+**2.7.**
+Estudia la continuïtat i la derivabilitat de les funcions següents. Indica el conjunt de punts on cadascuna és derivable i escriu-ne la funció derivada.
 
-        $$
-        f(x)=
-        \begin{cases}
-        0, & x<0,\\[2pt]
-        x^2, & 0\leq x<2,\\[2pt]
-        2x, & x\geq2.
-        \end{cases}
-        $$
+**a)**
 
-        **b)**
+$$
+f(x)=
+\begin{cases}
+0, & x<0,\\[2pt]
+x^2, & 0\leq x<2,\\[2pt]
+2x, & x\geq2.
+\end{cases}
+$$
 
-        $$
-        g(x)=
-        \begin{cases}
-        e^{2x}, & x\leq0,\\[2pt]
-        2x+1, & x>0.
-        \end{cases}
-        $$
+**b)**
 
-    **Resolució que cal justificar**
+$$
+g(x)=
+\begin{cases}
+e^{2x}, & x\leq0,\\[2pt]
+2x+1, & x>0.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.7"
+    **Resolució pas a pas**
 
     - **a)** En $x=0$, els dos trams valen $0$ i les derivades laterals són $0$ i $2x|_{0}=0$: és contínua i derivable. En $x=2$, els dos trams valen $4$, però
 
@@ -1191,19 +1232,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         \end{cases}
         $$
 
-??? example "Solució de l'exercici 2.8"
-    !!! abstract "Enunciat"
-        Troba els valors de $k$ perquè la funció sigui derivable en tot $\mathbb{R}$:
+---
 
-        $$
-        f_k(x)=
-        \begin{cases}
-        kx^4+3x^2+5, & x\leq0,\\[2pt]
-        2x^2+5, & x>0.
-        \end{cases}
-        $$
+**2.8.**
+Troba els valors de $k$ perquè la funció sigui derivable en tot $\mathbb{R}$:
 
-    **Resolució que cal justificar**
+$$
+f_k(x)=
+\begin{cases}
+kx^4+3x^2+5, & x\leq0,\\[2pt]
+2x^2+5, & x>0.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.8"
+    **Resolució pas a pas**
 
     En $x=0$, els dos trams valen $5$ per a qualsevol $k$; per tant, sempre és contínua. Les derivades laterals són
 
@@ -1213,19 +1256,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     També coincideixen per a qualsevol valor del paràmetre. Per tant, la funció és derivable en tot $\mathbb{R}$ per a qualsevol $k\in\mathbb{R}$.
 
-??? example "Solució de l'exercici 2.9"
-    !!! abstract "Enunciat"
-        Calcula $m$ i $n$ perquè la funció sigui derivable en tot $\mathbb{R}$:
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        x^2+mx+4, & x\leq0,\\[2pt]
-        -2x^2+n, & x>0.
-        \end{cases}
-        $$
+**2.9.**
+Calcula $m$ i $n$ perquè la funció sigui derivable en tot $\mathbb{R}$:
 
-    **Resolució que cal justificar**
+$$
+f(x)=
+\begin{cases}
+x^2+mx+4, & x\leq0,\\[2pt]
+-2x^2+n, & x>0.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.9"
+    **Resolució pas a pas**
 
     La continuïtat en $x=0$ exigeix
 
@@ -1237,19 +1282,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Per tant, $m=0$ i $n=4$.
 
-??? example "Solució de l'exercici 2.10"
-    !!! abstract "Enunciat"
-        Determina $a$ i $b$ perquè la funció sigui derivable en tot $\mathbb{R}$:
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        x^3+1, & x<2,\\[2pt]
-        ax^2+b, & x\geq2.
-        \end{cases}
-        $$
+**2.10.**
+Determina $a$ i $b$ perquè la funció sigui derivable en tot $\mathbb{R}$:
 
-    **Resolució que cal justificar**
+$$
+f(x)=
+\begin{cases}
+x^3+1, & x<2,\\[2pt]
+ax^2+b, & x\geq2.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.10"
+    **Resolució pas a pas**
 
     La continuïtat en $x=2$ dona
 
@@ -1261,22 +1308,24 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Substituint a l'equació de continuïtat, $12+b=9$, i obtenim $b=-3$.
 
-??? example "Solució de l'exercici 2.11"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        x^2-4x+m, & x\leq2,\\[2pt]
-        -x^2+nx, & x>2.
-        \end{cases}
-        $$
+**2.11.**
+Considera la funció
 
-        - **a)** Calcula $m$ i $n$ perquè $f$ sigui derivable en tot $\mathbb{R}$.
-        - **b)** Per als valors obtinguts, determina els punts en què $f'(x)=0$.
+$$
+f(x)=
+\begin{cases}
+x^2-4x+m, & x\leq2,\\[2pt]
+-x^2+nx, & x>2.
+\end{cases}
+$$
 
-    **Resolució que cal justificar**
+- **a)** Calcula $m$ i $n$ perquè $f$ sigui derivable en tot $\mathbb{R}$.
+- **b)** Per als valors obtinguts, determina els punts en què $f'(x)=0$.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.11"
+    **Resolució pas a pas**
 
     La continuïtat en $x=2$ exigeix
 
@@ -1300,31 +1349,33 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     i $f'(2)=0$. Les dues equacions s'anul·len només a $x=2$; per tant, aquest és l'únic punt amb $f'(x)=0$.
 
-??? example "Solució de l'exercici 2.12"
-    !!! abstract "Enunciat"
-        Calcula $a$ i $b$ perquè cadascuna de les funcions següents sigui derivable en tot $\mathbb{R}$:
+---
 
-        **a)**
+**2.12.**
+Calcula $a$ i $b$ perquè cadascuna de les funcions següents sigui derivable en tot $\mathbb{R}$:
 
-        $$
-        f(x)=
-        \begin{cases}
-        ax^2+2x, & x\leq1,\\[2pt]
-        x^2-bx-1, & x>1.
-        \end{cases}
-        $$
+**a)**
 
-        **b)**
+$$
+f(x)=
+\begin{cases}
+ax^2+2x, & x\leq1,\\[2pt]
+x^2-bx-1, & x>1.
+\end{cases}
+$$
 
-        $$
-        g(x)=
-        \begin{cases}
-        x^3+2x, & x\leq0,\\[2pt]
-        ax+b, & x>0.
-        \end{cases}
-        $$
+**b)**
 
-    **Resolució que cal justificar**
+$$
+g(x)=
+\begin{cases}
+x^3+2x, & x\leq0,\\[2pt]
+ax+b, & x>0.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.12"
+    **Resolució pas a pas**
 
     - **a)** Continuïtat en $x=1$:
 
@@ -1344,19 +1395,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$3\cdot0^2+2=a\Longrightarrow a=2.$$
 
-??? example "Solució de l'exercici 2.13"
-    !!! abstract "Enunciat"
-        Calcula $a$ i $b$ perquè la funció sigui derivable en tot el seu domini:
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        a-2x, & x\leq1,\\[6pt]
-        \dfrac{b+\ln x}{x}, & x>1.
-        \end{cases}
-        $$
+**2.13.**
+Calcula $a$ i $b$ perquè la funció sigui derivable en tot el seu domini:
 
-    **Resolució que cal justificar**
+$$
+f(x)=
+\begin{cases}
+a-2x, & x\leq1,\\[6pt]
+\dfrac{b+\ln x}{x}, & x>1.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.13"
+    **Resolució pas a pas**
 
     La continuïtat en $x=1$ exigeix
 
@@ -1374,19 +1427,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Finalment, $a=b+2=5$.
 
-??? example "Solució de l'exercici 2.14"
-    !!! abstract "Enunciat"
-        Determina $a$ i $b$ perquè la funció sigui derivable en tot $\mathbb{R}$:
+---
 
-        $$
-        f(x)=
-        \begin{cases}
-        ax^2+bx+1, & x\leq1,\\[6pt]
-        \dfrac{a}{x}-\dfrac{b}{x^2}+3, & x>1.
-        \end{cases}
-        $$
+**2.14.**
+Determina $a$ i $b$ perquè la funció sigui derivable en tot $\mathbb{R}$:
 
-    **Resolució que cal justificar**
+$$
+f(x)=
+\begin{cases}
+ax^2+bx+1, & x\leq1,\\[6pt]
+\dfrac{a}{x}-\dfrac{b}{x^2}+3, & x>1.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.14"
+    **Resolució pas a pas**
 
     La continuïtat en $x=1$ dona
 
@@ -1402,16 +1457,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Com que $b=1$, obtenim $a=\frac13$.
 
-??? example "Solució de l'exercici 2.15"
-    !!! abstract "Enunciat"
-        Escriu les funcions següents a trossos i estudia'n la continuïtat i la derivabilitat. Indica el conjunt de punts on cadascuna és derivable.
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\lvert x+4\rvert$ | **b)** $f(x)=\lvert -2x+4\rvert$ |
-        | **c)** $h(x)=2x+\lvert x-1\rvert$ | |
+**2.15.**
+Escriu les funcions següents a trossos i estudia'n la continuïtat i la derivabilitat. Indica el conjunt de punts on cadascuna és derivable.
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\lvert x+4\rvert$ | **b)** $f(x)=\lvert -2x+4\rvert$ |
+| **c)** $h(x)=2x+\lvert x-1\rvert$ | |
+
+??? example "Mostra la solució pas a pas de l'exercici 2.15"
+    **Resolució pas a pas**
 
     En cada cas separem segons el signe de l'expressió dins del valor absolut.
 
@@ -1451,21 +1508,23 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         És contínua, però les derivades laterals són $1$ i $3$; no és derivable a $x=1$.
 
+---
+
 ### Creixement i extrems
 
 <div class="exercise-monotonia-tables" markdown="1">
-??? example "Solució de l'exercici 2.16"
-    !!! abstract "Enunciat"
-        Determina els intervals de creixement i de decreixement i calcula els màxims i els mínims relatius de les funcions següents. Justifica si cada solució de $f'(x)=0$ correspon realment a un extrem.
+**2.16.**
+Determina els intervals de creixement i de decreixement i calcula els màxims i els mínims relatius de les funcions següents. Justifica si cada solució de $f'(x)=0$ correspon realment a un extrem.
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=x^3-3x^2-9x+4$ | **b)** $f(x)=x^4-10x^2+9$ |
-        | **c)** $f(x)=\dfrac{x^2+3}{x-1}$ | **d)** $f(x)=(x-1)e^{-x}$ |
-        | **e)** $f(x)=\dfrac{\ln x}{x^2}$ | **f)** $f(x)=\dfrac{x^3}{x^2+1}$ |
-        | **g)** $f(x)=x^3-3x^2+3x$ | |
+| | |
+|:--|:--|
+| **a)** $f(x)=x^3-3x^2-9x+4$ | **b)** $f(x)=x^4-10x^2+9$ |
+| **c)** $f(x)=\dfrac{x^2+3}{x-1}$ | **d)** $f(x)=(x-1)e^{-x}$ |
+| **e)** $f(x)=\dfrac{\ln x}{x^2}$ | **f)** $f(x)=\dfrac{x^3}{x^2+1}$ |
+| **g)** $f(x)=x^3-3x^2+3x$ | |
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas de l'exercici 2.16"
+    **Resolució pas a pas**
 
     Per estudiar la monotonia, calculem $f'(x)$, trobem els punts crítics i fem el quadre de signes. Els zeros de la derivada, les discontinuïtats i els extrems del domini han de separar els intervals.
 
@@ -1499,16 +1558,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         La funció és creixent a tot $\mathbb{R}$. Tot i que $f'(0)=0$, a $(0,0)$ no canvia el signe de la derivada i no hi ha cap extrem.
     - **g)** $f'(x)=3x^2-6x+3=3(x-1)^2\geq0$. La funció és creixent a tot $\mathbb{R}$. El punt $(1,1)$ és estacionari, però no és un extrem perquè la derivada no canvia de signe.
 
-??? example "Solució de l'exercici 2.17"
-    !!! abstract "Enunciat"
-        Fes un estudi complet del creixement, el decreixement i els extrems relatius de les funcions següents:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=x^3-12x+1$ | **b)** $f(x)=x^4-4x^2$ |
-        | **c)** $f(x)=\dfrac{x^2-4}{x^2+1}$ | **d)** $f(x)=(x+1)e^{-x}$ |
+**2.17.**
+Fes un estudi complet del creixement, el decreixement i els extrems relatius de les funcions següents:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=x^3-12x+1$ | **b)** $f(x)=x^4-4x^2$ |
+| **c)** $f(x)=\dfrac{x^2-4}{x^2+1}$ | **d)** $f(x)=(x+1)e^{-x}$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 2.17"
+    **Resolució pas a pas**
 
     Cal justificar els intervals amb el signe de la derivada.
 
@@ -1524,19 +1585,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         Decreix a $(-\infty,0)$ i creix a $(0,+\infty)$; té un mínim relatiu i absolut a $(0,-4)$.
     - **d)** $f'(x)=e^{-x}-(x+1)e^{-x}=-xe^{-x}$. Com que $e^{-x}>0$, creix a $(-\infty,0)$ i decreix a $(0,+\infty)$. Té un màxim relatiu i absolut a $(0,1)$.
 
+---
+
 ### Representació de funcions
 
-??? example "Solució de l'exercici 2.18"
-    !!! abstract "Enunciat"
-        Estudia i representa les funcions polinòmiques següents. Indica el domini, els talls amb els eixos, les branques a l'infinit, els intervals de creixement i decreixement i els extrems.
+**2.18.**
+Estudia i representa les funcions polinòmiques següents. Indica el domini, els talls amb els eixos, les branques a l'infinit, els intervals de creixement i decreixement i els extrems.
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=x^4-6x^2+5$ | **b)** $f(x)=x^3-12x-16$ |
-        | **c)** $f(x)=x^4-4x^3$ | **d)** $f(x)=x^5-15x^4+75x^3-125x^2$ |
-        | **e)** $f(x)=4x^3-12x^2+9x-2$ | **f)** $f(x)=x^2(x-4)^2$ |
+| | |
+|:--|:--|
+| **a)** $f(x)=x^4-6x^2+5$ | **b)** $f(x)=x^3-12x-16$ |
+| **c)** $f(x)=x^4-4x^3$ | **d)** $f(x)=x^5-15x^4+75x^3-125x^2$ |
+| **e)** $f(x)=4x^3-12x^2+9x-2$ | **f)** $f(x)=x^2(x-4)^2$ |
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas de l'exercici 2.18"
+    **Resolució pas a pas**
 
     Totes sis funcions tenen domini $\mathbb{R}$. Factoritzem per trobar els talls amb l'eix $X$ i utilitzem la derivada per justificar la forma de la gràfica.
 
@@ -1552,18 +1615,20 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_18.tex">Figura 2.31.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
     </figure>
 
-??? example "Solució de l'exercici 2.19"
-    !!! abstract "Enunciat"
-        Estudia i representa les funcions racionals següents. Calcula els límits quan $x\to-\infty$ i $x\to+\infty$ i determina si hi ha una asímptota horitzontal o una branca infinita. Troba també les asímptotes verticals i, quan hi hagi asímptota horitzontal, estudia la posició de la corba respecte d'aquesta.
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\dfrac{x^2-1}{x^2-x-2}$ | **b)** $f(x)=\dfrac{2x^2-4}{x^2-1}$ |
-        | **c)** $f(x)=\dfrac{-x^2+x+6}{x^2-4}$ | **d)** $f(x)=\dfrac{3x^2+4}{x^2-4}$ |
-        | **e)** $f(x)=\dfrac{1}{(x+1)(x-2)}$ | **f)** $f(x)=\dfrac{x^2}{x-1}$ |
-        | **g)** $f(x)=\dfrac{-x^2}{x+1}$ | |
+**2.19.**
+Estudia i representa les funcions racionals següents. Calcula els límits quan $x\to-\infty$ i $x\to+\infty$ i determina si hi ha una asímptota horitzontal o una branca infinita. Troba també les asímptotes verticals i, quan hi hagi asímptota horitzontal, estudia la posició de la corba respecte d'aquesta.
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^2-1}{x^2-x-2}$ | **b)** $f(x)=\dfrac{2x^2-4}{x^2-1}$ |
+| **c)** $f(x)=\dfrac{-x^2+x+6}{x^2-4}$ | **d)** $f(x)=\dfrac{3x^2+4}{x^2-4}$ |
+| **e)** $f(x)=\dfrac{1}{(x+1)(x-2)}$ | **f)** $f(x)=\dfrac{x^2}{x-1}$ |
+| **g)** $f(x)=\dfrac{-x^2}{x+1}$ | |
+
+??? example "Mostra la solució pas a pas de l'exercici 2.19"
+    **Resolució pas a pas**
 
     En cada funció racional comencem pel domini, factoritzem si és possible i conservem sempre les exclusions de l'expressió original.
 
@@ -1580,51 +1645,53 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_19.tex">Figura 2.32.</a></strong> Representacions de les funcions racionals de l'exercici 2.19.</figcaption>
     </figure>
 
-??? example "Solució de l'exercici 2.20"
-    !!! abstract "Enunciat"
-        Estudia la continuïtat, la derivabilitat, el creixement i els extrems de cada funció i representa-la. Recorda que cada expressió només es dibuixa dins del seu interval.
+---
 
-        **a)**
+**2.20.**
+Estudia la continuïtat, la derivabilitat, el creixement i els extrems de cada funció i representa-la. Recorda que cada expressió només es dibuixa dins del seu interval.
 
-        $$
-        f(x)=
-        \begin{cases}
-        -x^2+4x+1, & x<1,\\
-        x^2-2x+3, & x\geq1.
-        \end{cases}
-        $$
+**a)**
 
-        **b)**
+$$
+f(x)=
+\begin{cases}
+-x^2+4x+1, & x<1,\\
+x^2-2x+3, & x\geq1.
+\end{cases}
+$$
 
-        $$
-        g(x)=
-        \begin{cases}
-        x^3-3x+2, & x<0,\\
-        (x-1)^2+1, & x\geq0.
-        \end{cases}
-        $$
+**b)**
 
-        **c)**
+$$
+g(x)=
+\begin{cases}
+x^3-3x+2, & x<0,\\
+(x-1)^2+1, & x\geq0.
+\end{cases}
+$$
 
-        $$
-        h(x)=
-        \begin{cases}
-        3^x, & x\leq1,\\
-        \dfrac{3}{x}, & x>1.
-        \end{cases}
-        $$
+**c)**
 
-        **d)**
+$$
+h(x)=
+\begin{cases}
+3^x, & x\leq1,\\
+\dfrac{3}{x}, & x>1.
+\end{cases}
+$$
 
-        $$
-        p(x)=
-        \begin{cases}
-        \dfrac{1}{x^2+4}, & x<0,\\[6pt]
-        1-\dfrac{x}{4}, & x\geq0.
-        \end{cases}
-        $$
+**d)**
 
-    **Resolució que cal justificar**
+$$
+p(x)=
+\begin{cases}
+\dfrac{1}{x^2+4}, & x<0,\\[6pt]
+1-\dfrac{x}{4}, & x\geq0.
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 2.20"
+    **Resolució pas a pas**
 
     Primer comprovem la continuïtat en el punt d'unió; després derivem cada tram i comparem les derivades laterals.
 
@@ -1633,16 +1700,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
     - **c)** A $x=1$, els dos trams valen $3$: és contínua. Les derivades laterals són $3\ln3$ i $-3$, de manera que hi ha un punt angulós. Creix abans d'$1$ i decreix després; per tant, $(1,3)$ és un màxim relatiu.
     - **d)** A $x=0$, el límit per l'esquerra és $\frac14$ i el valor pel tram dret és $1$: hi ha un salt. La derivada del primer tram és $-2x/(x^2+4)^2>0$ quan $x<0$ i la del segon és $-\frac14<0$. Així, $(0,1)$ és un màxim relatiu del tram dret, però la funció no és derivable al punt de salt.
 
-??? example "Solució de l'exercici 2.21"
-    !!! abstract "Enunciat"
-        Troba el domini de les funcions següents i expressa'l mitjançant intervals:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\sqrt{x+4}$ | **b)** $g(x)=\log(x^2-4x+3)$ |
-        | **c)** $h(x)=\sqrt{x^2-5x+6}$ | **d)** $p(x)=\log(2x-6)$ |
+**2.21.**
+Troba el domini de les funcions següents i expressa'l mitjançant intervals:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\sqrt{x+4}$ | **b)** $g(x)=\log(x^2-4x+3)$ |
+| **c)** $h(x)=\sqrt{x^2-5x+6}$ | **d)** $p(x)=\log(2x-6)$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 2.21"
+    **Resolució pas a pas**
 
     En una arrel d'índex parell, el radicand ha de ser no negatiu; si l'arrel apareix al denominador, ha de ser estrictament positiu.
 
@@ -1651,21 +1720,23 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
     - **c)** $(x-2)(x-3)\geq0$. El producte és no negatiu fora de les arrels. Domini: $(-\infty,2]\cup[3,+\infty)$.
     - **d)** $2x-6>0\Longrightarrow x>3$. Domini: $(3,+\infty)$.
 
-??? example "Solució de l'exercici 2.22"
-    !!! abstract "Enunciat"
-        Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós de la informació obtinguda. No cal estudiar els aspectes de la funció que no es demanen.
+---
 
-        - **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
-        - **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.
-        - **c)** Per a $h(x)=\ln(x^2-4)$, troba el domini, els talls i les asímptotes verticals.
-        - **d)** Per a $p(x)=\dfrac{x}{\ln(x^2+2)}$, estudia el domini i els talls amb els eixos.
-        - **e)** Per a $q(x)=e^{-x^2}$, estudia els límits a l'infinit, el creixement i els extrems.
-        - **f)** Per a $r(x)=x^2e^{-2x}$, estudia les branques a l'infinit, el creixement i els extrems.
-        - **g)** Per a $s(x)=\dfrac{x^2}{\ln x}$, determina el domini, les asímptotes i els intervals de creixement i decreixement.
-        - **h)** Per a $t(x)=\ln(x^2-9)$, estudia el domini, les asímptotes i els extrems.
-        - **i)** Per a $u(x)=(x-1)^2e^x$, estudia els límits a l'infinit, les asímptotes, el creixement i els extrems.
+**2.22.**
+Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós de la informació obtinguda. No cal estudiar els aspectes de la funció que no es demanen.
 
-    **Resolució que cal justificar**
+- **a)** Per a $f(x)=\sqrt[3]{9-x^2}$, determina el domini, els talls amb els eixos i els punts on no és derivable.
+- **b)** Per a $g(x)=\sqrt{x^2-4x}$, determina el domini i el comportament als extrems del domini.
+- **c)** Per a $h(x)=\ln(x^2-4)$, troba el domini, els talls i les asímptotes verticals.
+- **d)** Per a $p(x)=\dfrac{x}{\ln(x^2+2)}$, estudia el domini i els talls amb els eixos.
+- **e)** Per a $q(x)=e^{-x^2}$, estudia els límits a l'infinit, el creixement i els extrems.
+- **f)** Per a $r(x)=x^2e^{-2x}$, estudia les branques a l'infinit, el creixement i els extrems.
+- **g)** Per a $s(x)=\dfrac{x^2}{\ln x}$, determina el domini, les asímptotes i els intervals de creixement i decreixement.
+- **h)** Per a $t(x)=\ln(x^2-9)$, estudia el domini, les asímptotes i els extrems.
+- **i)** Per a $u(x)=(x-1)^2e^x$, estudia els límits a l'infinit, les asímptotes, el creixement i els extrems.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.22"
+    **Resolució pas a pas**
 
     - **a)** L'arrel cúbica està definida per a tot real: $D_f=\mathbb{R}$. Els zeros són $x=\pm3$ i $f(0)=\sqrt[3]{9}$. La derivada
 
@@ -1689,16 +1760,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         Creix a $(-\infty,-1)$ i $(1,+\infty)$, i decreix a $(-1,1)$. Té un màxim a $\left(-1,\frac4e\right)$ i un mínim a $(1,0)$. A l'esquerra, $y=0$ és asímptota horitzontal.
 
-??? example "Solució de l'exercici 2.23"
-    !!! abstract "Enunciat"
-        Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\lvert 2x-6\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
-        | **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
+**2.23.**
+Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no és derivable:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\lvert 2x-6\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
+| **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 2.23"
+    **Resolució pas a pas**
 
     Anul·lem les expressions dins dels valors absoluts i separem la funció en els intervals corresponents.
 
@@ -1745,16 +1818,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     En tots quatre casos, els trams coincideixen en els punts d'unió i la funció és contínua. Les derivades laterals són diferents en cada punt de canvi; per tant, aquests punts són angulosos.
 
-??? example "Solució de l'exercici 2.24"
-    !!! abstract "Enunciat"
-        Estudia i representa les funcions següents:
+---
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\lvert x^2-4x+3\rvert$ | **b)** $g(x)=\lvert -x^2+2x+8\rvert$ |
-        | **c)** $h(x)=\lvert x^2-9\rvert$ | **d)** $p(x)=\lvert -x^2+5x-6\rvert$ |
+**2.24.**
+Estudia i representa les funcions següents:
 
-    **Resolució que cal justificar**
+| | |
+|:--|:--|
+| **a)** $f(x)=\lvert x^2-4x+3\rvert$ | **b)** $g(x)=\lvert -x^2+2x+8\rvert$ |
+| **c)** $h(x)=\lvert x^2-9\rvert$ | **d)** $p(x)=\lvert -x^2+5x-6\rvert$ |
+
+??? example "Mostra la solució pas a pas de l'exercici 2.24"
+    **Resolució pas a pas**
 
     Factoritzem el polinomi interior i n'estudiem el signe. La funció amb valor absolut conserva els trams positius i canvia el signe dels negatius.
 
@@ -1805,19 +1880,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     En els zeros del polinomi interior, la gràfica rebota sobre l'eix $X$ i hi apareixen punts angulosos.
 
+---
+
 ### Síntesi
 
-??? example "Solució de l'exercici 2.25"
-    !!! abstract "Enunciat"
-        Calcula la derivada de cadascuna de les funcions següents. Simplifica el resultat quan sigui possible.
+**2.25.**
+Calcula la derivada de cadascuna de les funcions següents. Simplifica el resultat quan sigui possible.
 
-        | | |
-        |:--|:--|
-        | **a)** $f(x)=\dfrac{x^4}{4}+3x^{5/2}-2$ | **b)** $g(x)=\sqrt[3]{x^4}-\dfrac{2}{x^2}$ |
-        | **c)** $h(x)=2^x+\log_3 x$ | **d)** $p(x)=x^3\left(2x+e^x\right)$ |
-        | **e)** $q(x)=\ln(2x^2+7)$ | **f)** $r(x)=e^{(x^2-1)^3}$ |
+| | |
+|:--|:--|
+| **a)** $f(x)=\dfrac{x^4}{4}+3x^{5/2}-2$ | **b)** $g(x)=\sqrt[3]{x^4}-\dfrac{2}{x^2}$ |
+| **c)** $h(x)=2^x+\log_3 x$ | **d)** $p(x)=x^3\left(2x+e^x\right)$ |
+| **e)** $q(x)=\ln(2x^2+7)$ | **f)** $r(x)=e^{(x^2-1)^3}$ |
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas de l'exercici 2.25"
+    **Resolució pas a pas**
 
     - **a)** Derivem terme a terme:
 
@@ -1849,17 +1926,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         =6x(x^2-1)^2e^{(x^2-1)^3}.
         $$
 
-??? example "Solució de l'exercici 2.26"
-    !!! abstract "Enunciat"
-        Fes l'estudi complet de la funció
+---
 
-        $$
-        f(x)=\frac{3x^2-6}{x^2-9}.
-        $$
+**2.26.**
+Fes l'estudi complet de la funció
 
-        Determina'n el domini, els talls amb els eixos, les asímptotes verticals i horitzontals, els límits laterals, els extrems relatius i els intervals de creixement i decreixement. Finalment, fes-ne un esbós.
+$$
+f(x)=\frac{3x^2-6}{x^2-9}.
+$$
 
-    **Resolució que cal justificar**
+Determina'n el domini, els talls amb els eixos, les asímptotes verticals i horitzontals, els límits laterals, els extrems relatius i els intervals de creixement i decreixement. Finalment, fes-ne un esbós.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.26"
+    **Resolució pas a pas**
 
     - **Domini:** $x^2-9\ne0$, de manera que $D_f=\mathbb{R}\setminus\{-3,3\}$.
     - **Talls:** $3x^2-6=0\Rightarrow x=\pm\sqrt2$, i $f(0)=\frac23$.
@@ -1888,17 +1967,19 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         El denominador és positiu; per tant, $f'>0$ si $x<0$ i $f'<0$ si $x>0$, separant pels punts exclosos. La funció creix a $(-\infty,-3)$, $(-3,0)$ i decreix a $(0,3)$, $(3,+\infty)$. Hi ha un màxim relatiu a $(0,\frac23)$.
 
-??? example "Solució de l'exercici 2.27"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        g(x)=\frac{e^x}{x-1}.
-        $$
+**2.27.**
+Considera la funció
 
-        Troba les asímptotes verticals i horitzontals, calcula els límits laterals en els punts que no pertanyen al domini, deriva la funció i estudia'n la monotonia i els extrems relatius. Fes-ne un esbós amb la informació obtinguda.
+$$
+g(x)=\frac{e^x}{x-1}.
+$$
 
-    **Resolució que cal justificar**
+Troba les asímptotes verticals i horitzontals, calcula els límits laterals en els punts que no pertanyen al domini, deriva la funció i estudia'n la monotonia i els extrems relatius. Fes-ne un esbós amb la informació obtinguda.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.27"
+    **Resolució pas a pas**
 
     - **Domini:** $D_g=\mathbb{R}\setminus\{1\}$.
     - **Asímptota vertical:** com que $e^x>0$,
@@ -1924,19 +2005,21 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$\left(2,g(2)\right)=(2,e^2).$$
 
-??? example "Solució de l'exercici 2.28"
-    !!! abstract "Enunciat"
-        Considera la funció
+---
 
-        $$
-        p(x)=\lvert x-1\rvert+\lvert 2x+4\rvert.
-        $$
+**2.28.**
+Considera la funció
 
-        - **a)** Construeix una taula de signes per a les expressions interiors dels valors absoluts.
-        - **b)** Escriu $p$ com una funció a trossos.
-        - **c)** Indica en quins punts no és derivable i representa-la.
+$$
+p(x)=\lvert x-1\rvert+\lvert 2x+4\rvert.
+$$
 
-    **Resolució que cal justificar**
+- **a)** Construeix una taula de signes per a les expressions interiors dels valors absoluts.
+- **b)** Escriu $p$ com una funció a trossos.
+- **c)** Indica en quins punts no és derivable i representa-la.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.28"
+    **Resolució pas a pas**
 
     Els zeros de les expressions interiors són $x=-2$ i $x=1$. Fem la taula de signes:
 
@@ -1959,18 +2042,20 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     La funció és contínua als dos punts d'unió. Els pendents són $-3$, $1$ i $3$; com que canvien, no és derivable a $x=-2$ ni a $x=1$.
 
+---
+
 ### Optimització
 
-??? example "Solució de l'exercici 2.29"
-    !!! abstract "Enunciat"
-        **Hort urbà al costat d'un mur.**
+**2.29.**
+**Hort urbà al costat d'un mur.**
 
-        Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo. **Determina les dimensions de l'hort perquè l'àrea sigui màxima i calcula aquesta àrea.**
+Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo. **Determina les dimensions de l'hort perquè l'àrea sigui màxima i calcula aquesta àrea.**
 
-        - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
-        - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
+- **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
+- **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas de l'exercici 2.29"
+    **Resolució pas a pas**
 
     Siguin $x$ els costats perpendiculars al mur i $y$ el costat paral·lel. Només cal tancar tres costats:
 
@@ -1986,16 +2071,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     $$A_{\max}=30\cdot60=1.800\,\text{m}^2.$$
 
-??? example "Solució de l'exercici 2.30"
-    !!! abstract "Enunciat"
-        **Aparador rectangular.**
+---
 
-        Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
+**2.30.**
+**Aparador rectangular.**
 
-        - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
-        - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un mínim.
+Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
 
-    **Resolució que cal justificar**
+- **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
+- **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un mínim.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.30"
+    **Resolució pas a pas**
 
     Siguin $x$ el costat horitzontal i $y$ el vertical. Com que $xy=8$, $y=\frac8x$, amb $x>0$. El cost total és
 
@@ -2009,16 +2096,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     $$C_{\min}=8(2\sqrt3)+\frac{96}{2\sqrt3}=32\sqrt3\,€\approx55{,}43\,€.$$
 
-??? example "Solució de l'exercici 2.31"
-    !!! abstract "Enunciat"
-        **Llauna cilíndrica.**
+---
 
-        Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$. **Determina el radi i l'altura de la llauna perquè el volum sigui màxim i calcula aquest volum.**
+**2.31.**
+**Llauna cilíndrica.**
 
-        - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
-        - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
+Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$. **Determina el radi i l'altura de la llauna perquè el volum sigui màxim i calcula aquest volum.**
 
-    **Resolució que cal justificar**
+- **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
+- **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.31"
+    **Resolució pas a pas**
 
     La superfície d'un cilindre tancat és
 
@@ -2038,22 +2127,24 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     $$V_{\max}=\pi\cdot10^2\cdot20=2.000\pi\,\text{cm}^3.$$
 
-??? example "Solució de l'exercici 2.32"
-    !!! abstract "Enunciat"
-        **Recipient cònic.**
+---
 
-        Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
+**2.32.**
+**Recipient cònic.**
 
-        $$
-        r^2+h^2=15^2.
-        $$
+Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
 
-        **Determina el radi i l'altura del recipient perquè la capacitat sigui màxima i calcula aquesta capacitat.**
+$$
+r^2+h^2=15^2.
+$$
 
-        - **a)** Construeix la funció que cal optimitzar a partir de la relació donada i indica'n el domini.
-        - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
+**Determina el radi i l'altura del recipient perquè la capacitat sigui màxima i calcula aquesta capacitat.**
 
-    **Resolució que cal justificar**
+- **a)** Construeix la funció que cal optimitzar a partir de la relació donada i indica'n el domini.
+- **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.32"
+    **Resolució pas a pas**
 
     De $r^2+h^2=225$ obtenim
 
@@ -2077,23 +2168,25 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     $$V_{\max}=\frac13\pi(150)(5\sqrt3)=250\pi\sqrt3\,\text{cm}^3.$$
 
-??? example "Solució de l'exercici 2.33"
-    !!! abstract "Enunciat"
-        **Rescat a la platja.**
+---
 
-        Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
+**2.33.**
+**Rescat a la platja.**
 
-        El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. **Determina en quin punt de la costa ha de començar a nedar perquè el temps total del rescat sigui mínim i calcula aquest temps.**
+Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
 
-        <figure markdown="span" class="exercise-statement-figure--compact">
-          ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../../img/calcul/fig_2_28_rescat_platja.svg?v=1){ width="650" }
-          <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_rescat_platja.tex">Figura 2.28.</a></strong> Esquema del recorregut del socorrista en l'exercici 2.33.</figcaption>
-        </figure>
+El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. **Determina en quin punt de la costa ha de començar a nedar perquè el temps total del rescat sigui mínim i calcula aquest temps.**
 
-        - **a)** Defineix una variable que situï el punt $P$ i construeix la funció que cal optimitzar, indicant-ne el domini.
-        - **b)** Resol el problema, justifica el mínim i compara'l amb les opcions de fer tot el trajecte possible corrent o començar a nedar immediatament.
+<figure markdown="span" class="exercise-statement-figure--compact">
+  ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../../img/calcul/fig_2_28_rescat_platja.svg?v=1){ width="650" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_rescat_platja.tex">Figura 2.28.</a></strong> Esquema del recorregut del socorrista en l'exercici 2.33.</figcaption>
+</figure>
 
-    **Resolució que cal justificar**
+- **a)** Defineix una variable que situï el punt $P$ i construeix la funció que cal optimitzar, indicant-ne el domini.
+- **b)** Resol el problema, justifica el mínim i compara'l amb les opcions de fer tot el trajecte possible corrent o començar a nedar immediatament.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.33"
+    **Resolució pas a pas**
 
     Siguin $x=OP$. Aleshores el socorrista corre $BP=100-x$ metres i neda $\sqrt{x^2+60^2}$ metres. El temps és
 
@@ -2115,16 +2208,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Si corre fins a $O$, tarda $\frac{100}{6}+\frac{60}{2}=46{,}67\,\text{s}$. Si neda immediatament, tarda $\frac{\sqrt{100^2+60^2}}2\approx58{,}31\,\text{s}$. El punt interior és realment la millor opció.
 
-??? example "Solució de l'exercici 2.34"
-    !!! abstract "Enunciat"
-        **Entrades d'un espectacle.**
+---
 
-        Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$. **Determina el preu de l'entrada que maximitza el benefici i calcula el nombre d'entrades venudes i el benefici màxim.**
+**2.34.**
+**Entrades d'un espectacle.**
 
-        - **a)** Defineix la variable i construeix la funció de benefici, indicant el domini que té sentit en el context.
-        - **b)** Resol el problema i interpreta el resultat.
+Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$. **Determina el preu de l'entrada que maximitza el benefici i calcula el nombre d'entrades venudes i el benefici màxim.**
 
-    **Resolució que cal justificar**
+- **a)** Defineix la variable i construeix la funció de benefici, indicant el domini que té sentit en el context.
+- **b)** Resol el problema i interpreta el resultat.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.34"
+    **Resolució pas a pas**
 
     Siguin $x$ els augments de $2\,€$. El preu és $40+2x$ i es venen $500-20x$ entrades. Com que cada espectador costa $4\,€$, el benefici és
 
@@ -2141,28 +2236,30 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Si el preu només pot variar de $2$ en $2\,€$, comparem $x=3$ i $x=4$: tant $46\,€$ com $48\,€$ donen un benefici de $16.480\,€$.
 
-??? example "Solució de l'exercici 2.35"
-    !!! abstract "Enunciat"
-        **Producció d'una cooperativa.**
+---
 
-        El cost de produir $x$ unitats d'un article és
+**2.35.**
+**Producció d'una cooperativa.**
 
-        $$
-        C(x)=0{,}03x^2+4x+180,
-        $$
+El cost de produir $x$ unitats d'un article és
 
-        i el preu de venda de cada unitat depèn de la producció segons
+$$
+C(x)=0{,}03x^2+4x+180,
+$$
 
-        $$
-        p(x)=50-0{,}04x.
-        $$
+i el preu de venda de cada unitat depèn de la producció segons
 
-        La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fabricades. **Determina quantes unitats ha de fabricar perquè el benefici sigui màxim i calcula aquest benefici.**
+$$
+p(x)=50-0{,}04x.
+$$
 
-        - **a)** Construeix la funció de benefici a partir dels ingressos i els costos i indica'n el domini.
-        - **b)** Resol primer el problema considerant $x$ una variable real. Després, com que només es poden fabricar unitats senceres, compara els enters necessaris i dona la decisió final.
+La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fabricades. **Determina quantes unitats ha de fabricar perquè el benefici sigui màxim i calcula aquest benefici.**
 
-    **Resolució que cal justificar**
+- **a)** Construeix la funció de benefici a partir dels ingressos i els costos i indica'n el domini.
+- **b)** Resol primer el problema considerant $x$ una variable real. Després, com que només es poden fabricar unitats senceres, compara els enters necessaris i dona la decisió final.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.35"
+    **Resolució pas a pas**
 
     Els ingressos són
 
@@ -2182,22 +2279,24 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Cal fabricar $329$ unitats.
 
-??? example "Solució de l'exercici 2.36"
-    !!! abstract "Enunciat"
-        **Cost mitjà de fabricació.**
+---
 
-        El cost total, en euros, de fabricar $x$ unitats d'un producte és
+**2.36.**
+**Cost mitjà de fabricació.**
 
-        $$
-        C(x)=0{,}4x^2+12x+3.600, \qquad x>0.
-        $$
+El cost total, en euros, de fabricar $x$ unitats d'un producte és
 
-        **Determina quantes unitats s'han de fabricar perquè el cost mitjà per unitat sigui mínim i calcula aquest cost.**
+$$
+C(x)=0{,}4x^2+12x+3.600, \qquad x>0.
+$$
 
-        - **a)** Construeix la funció de cost mitjà i indica'n el domini.
-        - **b)** Resol primer el problema considerant $x$ una variable real. Després, si la producció ha de ser entera, compara els enters necessaris i dona la decisió final.
+**Determina quantes unitats s'han de fabricar perquè el cost mitjà per unitat sigui mínim i calcula aquest cost.**
 
-    **Resolució que cal justificar**
+- **a)** Construeix la funció de cost mitjà i indica'n el domini.
+- **b)** Resol primer el problema considerant $x$ una variable real. Després, si la producció ha de ser entera, compara els enters necessaris i dona la decisió final.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.36"
+    **Resolució pas a pas**
 
     El cost mitjà és
 
@@ -2213,24 +2312,26 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Comparant $94$ i $95$ unitats, el cost mitjà és lleugerament menor per a $95$; per tant, cal fabricar $95$ unitats.
 
-??? example "Solució de l'exercici 2.37"
-    !!! abstract "Enunciat"
-        **Campanya publicitària.**
+---
 
-        Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Vol determinar quina inversió proporciona el benefici màxim i calcular aquest benefici. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
+**2.37.**
+**Campanya publicitària.**
 
-        $$
-        B(x)=
-        \begin{cases}
-        -x^2+8x+20, & 0\leq x\leq4,\\[4pt]
-        -2x^2+20x-12, & 4<x\leq8.
-        \end{cases}
-        $$
+Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Vol determinar quina inversió proporciona el benefici màxim i calcular aquest benefici. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
 
-        - **a)** Estudia la funció en tot el domini i determina la inversió que proporciona el benefici màxim. Justifica el resultat tenint en compte el punt d'unió i els extrems del domini.
-        - **b)** Representa gràficament la funció i interpreta el resultat en el context del problema.
+$$
+B(x)=
+\begin{cases}
+-x^2+8x+20, & 0\leq x\leq4,\\[4pt]
+-2x^2+20x-12, & 4<x\leq8.
+\end{cases}
+$$
 
-    **Resolució que cal justificar**
+- **a)** Estudia la funció en tot el domini i determina la inversió que proporciona el benefici màxim. Justifica el resultat tenint en compte el punt d'unió i els extrems del domini.
+- **b)** Representa gràficament la funció i interpreta el resultat en el context del problema.
+
+??? example "Mostra la solució pas a pas de l'exercici 2.37"
+    **Resolució pas a pas**
 
     Estudiem cada tram dins del seu interval.
 
@@ -2250,27 +2351,29 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. La gràfica uneix el primer tram creixent amb el segon, que arriba al màxim $(5,38)$ i baixa fins a $(8,20)$.
 
+---
+
 ## Problemes PAU
 
 ### Estudi i interpretació d'una funció
 
-??? example "Solució del problema PAU.C.1. Evolució dels seguidors d'un divulgador"
-    !!! abstract "Enunciat"
-        **Evolució dels seguidors d'un divulgador**
+**PAU.C.1.**
+**Evolució dels seguidors d'un divulgador**
 
-        *(basat en l'exercici 1 de la convocatòria ordinària de 2026, sèrie 1)*. Un metge comença a divulgar continguts sobre salut a les xarxes socials. El nombre de seguidors que té al cap de $t$ setmanes és
+*(basat en l'exercici 1 de la convocatòria ordinària de 2026, sèrie 1)*. Un metge comença a divulgar continguts sobre salut a les xarxes socials. El nombre de seguidors que té al cap de $t$ setmanes és
 
-        $$
-        f(t)=10t^3-120t^2+450t+700, \qquad t\in[0,10].
-        $$
+$$
+f(t)=10t^3-120t^2+450t+700, \qquad t\in[0,10].
+$$
 
-        - **a)** Calcula quants seguidors té inicialment i al cap de deu setmanes.
-        - **b)** Estudia els intervals de creixement i decreixement i determina els extrems relatius.
-        - **c)** Fes un esbós de la gràfica utilitzant la informació obtinguda.
-        - **d)** Interpreta en quin moment publica un vídeo polèmic que provoca una pèrdua de seguidors i en quin moment publica un vídeo d'èxit a partir del qual torna a créixer.
-        - **e)** Determina en quin instant assoleix el nombre màxim absolut de seguidors durant les deu setmanes i calcula aquest nombre.
+- **a)** Calcula quants seguidors té inicialment i al cap de deu setmanes.
+- **b)** Estudia els intervals de creixement i decreixement i determina els extrems relatius.
+- **c)** Fes un esbós de la gràfica utilitzant la informació obtinguda.
+- **d)** Interpreta en quin moment publica un vídeo polèmic que provoca una pèrdua de seguidors i en quin moment publica un vídeo d'èxit a partir del qual torna a créixer.
+- **e)** Determina en quin instant assoleix el nombre màxim absolut de seguidors durant les deu setmanes i calcula aquest nombre.
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas del problema PAU.C.1"
+    **Resolució pas a pas**
 
     - **a) Valors inicial i final.** Substituïm els dos instants:
 
@@ -2310,24 +2413,26 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         El màxim absolut és de $3.200$ seguidors i s'assoleix a la setmana $10$.
 
-??? example "Solució del problema PAU.C.2. Microorganismes en una mostra"
-    !!! abstract "Enunciat"
-        **Microorganismes en una mostra**
+---
 
-        *(basat en l'exercici 3 de la convocatòria ordinària de 2025, sèrie 4)*. El nombre de microorganismes vius d'una mostra de laboratori, mesurat en desenes, és
+**PAU.C.2.**
+**Microorganismes en una mostra**
 
-        $$
-        f(x)=\frac{15x}{9+x^2}+k, \qquad x\geq0,
-        $$
+*(basat en l'exercici 3 de la convocatòria ordinària de 2025, sèrie 4)*. El nombre de microorganismes vius d'una mostra de laboratori, mesurat en desenes, és
 
-        on $x$ és el temps transcorregut, en hores.
+$$
+f(x)=\frac{15x}{9+x^2}+k, \qquad x\geq0,
+$$
 
-        - **a)** Determina $k$ sabent que inicialment hi havia $50$ microorganismes.
-        - **b)** Troba l'instant en què el nombre de microorganismes és màxim i calcula aquest màxim.
-        - **c)** Calcula el límit quan $x\to+\infty$ i interpreta el resultat en el context.
-        - **d)** Fes un esbós de la gràfica tenint en compte el valor inicial, el màxim i el comportament a llarg termini.
+on $x$ és el temps transcorregut, en hores.
 
-    **Resolució que cal justificar**
+- **a)** Determina $k$ sabent que inicialment hi havia $50$ microorganismes.
+- **b)** Troba l'instant en què el nombre de microorganismes és màxim i calcula aquest màxim.
+- **c)** Calcula el límit quan $x\to+\infty$ i interpreta el resultat en el context.
+- **d)** Fes un esbós de la gràfica tenint en compte el valor inicial, el màxim i el comportament a llarg termini.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.2"
+    **Resolució pas a pas**
 
     - **a)** En l'instant inicial,
 
@@ -2356,24 +2461,26 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     - **d)** L'esbós parteix de $(0,5)$, creix fins al màxim $(3,7{,}5)$ i després decreix acostant-se a l'asímptota horitzontal $y=5$.
 
-??? example "Solució del problema PAU.C.3. Visitants d'una exposició"
-    !!! abstract "Enunciat"
-        **Visitants d'una exposició**
+---
 
-        *(basat en el problema 3 de la convocatòria extraordinària de 2022, sèrie 3)*. El nombre de visitants setmanals d'una exposició, expressat en desenes de persones, és
+**PAU.C.3.**
+**Visitants d'una exposició**
 
-        $$
-        f(x)=\frac{240x}{x^2-2x+4}, \qquad x\geq1,
-        $$
+*(basat en el problema 3 de la convocatòria extraordinària de 2022, sèrie 3)*. El nombre de visitants setmanals d'una exposició, expressat en desenes de persones, és
 
-        on $x$ és el nombre de setmanes que fa que l'exposició està oberta.
+$$
+f(x)=\frac{240x}{x^2-2x+4}, \qquad x\geq1,
+$$
 
-        - **a)** Calcula quantes persones visitaran l'exposició la primera setmana.
-        - **b)** Troba la taxa de variació mitjana del nombre de visitants entre la primera setmana i la quarta i interpreta'n el signe.
-        - **c)** Estudia la monotonia de la funció dins del seu domini temporal.
-        - **d)** Determina la setmana en què es preveu la màxima afluència i el nombre de visitants corresponent.
+on $x$ és el nombre de setmanes que fa que l'exposició està oberta.
 
-    **Resolució que cal justificar**
+- **a)** Calcula quantes persones visitaran l'exposició la primera setmana.
+- **b)** Troba la taxa de variació mitjana del nombre de visitants entre la primera setmana i la quarta i interpreta'n el signe.
+- **c)** Estudia la monotonia de la funció dins del seu domini temporal.
+- **d)** Determina la setmana en què es preveu la màxima afluència i el nombre de visitants corresponent.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.3"
+    **Resolució pas a pas**
 
     - **a)**
 
@@ -2404,25 +2511,27 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$f(2)=\frac{480}{4-4+4}=120\text{ desenes}=1.200\text{ visitants}.$$
 
-??? example "Solució del problema PAU.C.4. Evolució dels clients d'una empresa"
-    !!! abstract "Enunciat"
-        **Evolució dels clients d'una empresa**
+---
 
-        *(basat en el problema 4 de la convocatòria extraordinària de 2021, sèrie 1)*. Una empresa que ha entrat en crisi modelitza el nombre de clients, expressat en milers, mitjançant
+**PAU.C.4.**
+**Evolució dels clients d'una empresa**
 
-        $$
-        C(t)=3-\frac{1}{t^2-4t+5}, \qquad t\geq0,
-        $$
+*(basat en el problema 4 de la convocatòria extraordinària de 2021, sèrie 1)*. Una empresa que ha entrat en crisi modelitza el nombre de clients, expressat en milers, mitjançant
 
-        on $t$ és el temps transcorregut, en anys.
+$$
+C(t)=3-\frac{1}{t^2-4t+5}, \qquad t\geq0,
+$$
 
-        - **a)** Calcula quants clients tenia l'empresa inicialment i al cap d'un any.
-        - **b)** Determina l'instant en què deixa de perdre clients i calcula quants en té en aquell moment.
-        - **c)** Comprova que l'instant trobat correspon a un mínim.
-        - **d)** Calcula quant temps ha de passar perquè l'empresa recuperi el nombre inicial de clients.
-        - **e)** Estudia el comportament a llarg termini de l'empresa.
+on $t$ és el temps transcorregut, en anys.
 
-    **Resolució que cal justificar**
+- **a)** Calcula quants clients tenia l'empresa inicialment i al cap d'un any.
+- **b)** Determina l'instant en què deixa de perdre clients i calcula quants en té en aquell moment.
+- **c)** Comprova que l'instant trobat correspon a un mínim.
+- **d)** Calcula quant temps ha de passar perquè l'empresa recuperi el nombre inicial de clients.
+- **e)** Estudia el comportament a llarg termini de l'empresa.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.4"
+    **Resolució pas a pas**
 
     - **a)**
 
@@ -2459,27 +2568,29 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         A llarg termini, el model tendeix a $3.000$ clients.
 
+---
+
 ### Funcions exponencials i logarítmiques
 
-??? example "Solució del problema PAU.C.5. Impacte d'una campanya publicitària"
-    !!! abstract "Enunciat"
-        **Impacte d'una campanya publicitària**
+**PAU.C.5.**
+**Impacte d'una campanya publicitària**
 
-        *(problema d'entrenament de tipus PAU)*. Una empresa acaba de llançar una aplicació mòbil i inicia una campanya publicitària. El nombre de descàrregues diàries de l'aplicació, expressat en centenars, es modelitza mitjançant
+*(problema d'entrenament de tipus PAU)*. Una empresa acaba de llançar una aplicació mòbil i inicia una campanya publicitària. El nombre de descàrregues diàries de l'aplicació, expressat en centenars, es modelitza mitjançant
 
-        $$
-        D(t)=20+10(t+1)e^{-t/2}, \qquad t\geq0,
-        $$
+$$
+D(t)=20+10(t+1)e^{-t/2}, \qquad t\geq0,
+$$
 
-        on $t$ és el temps transcorregut, en mesos, des de l'inici de la campanya.
+on $t$ és el temps transcorregut, en mesos, des de l'inici de la campanya.
 
-        - **a)** Quantes descàrregues diàries es produeixen en el moment d'iniciar la campanya?
-        - **b)** L'empresa vol saber durant quant temps augmentarà l'efecte de la campanya. Estudia el creixement i el decreixement de $D(t)$.
-        - **c)** Determina en quin moment s'assoleix el nombre màxim de descàrregues diàries i calcula aquest màxim.
-        - **d)** Quan hagi passat molt de temps, quantes descàrregues diàries preveu el model que es mantindran? Justifica la resposta a partir del comportament de l'expressió exponencial.
-        - **e)** Fes un esbós de la gràfica i assenyala-hi el valor inicial, el màxim i el valor al qual tendeix el nombre de descàrregues.
+- **a)** Quantes descàrregues diàries es produeixen en el moment d'iniciar la campanya?
+- **b)** L'empresa vol saber durant quant temps augmentarà l'efecte de la campanya. Estudia el creixement i el decreixement de $D(t)$.
+- **c)** Determina en quin moment s'assoleix el nombre màxim de descàrregues diàries i calcula aquest màxim.
+- **d)** Quan hagi passat molt de temps, quantes descàrregues diàries preveu el model que es mantindran? Justifica la resposta a partir del comportament de l'expressió exponencial.
+- **e)** Fes un esbós de la gràfica i assenyala-hi el valor inicial, el màxim i el valor al qual tendeix el nombre de descàrregues.
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas del problema PAU.C.5"
+    **Resolució pas a pas**
 
     - **a)**
 
@@ -2508,25 +2619,27 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
     - **e)** La gràfica parteix de $(0,30)$, puja fins a $(1,20+20e^{-1/2})$ i després baixa acostant-se a l'asímptota horitzontal $y=20$.
 
-??? example "Solució del problema PAU.C.6. Cost mitjà de producció"
-    !!! abstract "Enunciat"
-        **Cost mitjà de producció**
+---
 
-        *(problema d'entrenament de tipus PAU)*. Una empresa fabrica un component electrònic. El cost mitjà de producció, expressat en euros per unitat, depèn de la quantitat fabricada segons la funció
+**PAU.C.6.**
+**Cost mitjà de producció**
 
-        $$
-        C(x)=20+x-4\ln x, \qquad x>0,
-        $$
+*(problema d'entrenament de tipus PAU)*. Una empresa fabrica un component electrònic. El cost mitjà de producció, expressat en euros per unitat, depèn de la quantitat fabricada segons la funció
 
-        on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ correspon a una producció de $300$ unitats.
+$$
+C(x)=20+x-4\ln x, \qquad x>0,
+$$
 
-        - **a)** Justifica per què el domini del model és $x>0$. Quin és el cost mitjà per unitat quan l'empresa fabrica $100$ unitats?
-        - **b)** L'empresa vol saber fins a quin nivell de producció l'augment de la quantitat fabricada permet reduir el cost mitjà. Estudia els intervals de creixement i decreixement de $C(x)$.
-        - **c)** Determina quantes unitats s'han de fabricar perquè el cost mitjà sigui mínim i calcula aquest cost.
-        - **d)** L'empresa s'ha proposat aconseguir un cost mitjà inferior a $18\,€$ per unitat. Justifica si aquest objectiu és possible segons el model.
-        - **e)** Estudia què passa amb el cost mitjà quan la producció s'apropa a zero i quan augmenta indefinidament. Fes un esbós de la gràfica que reflecteixi aquest comportament i el mínim obtingut.
+on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ correspon a una producció de $300$ unitats.
 
-    **Resolució que cal justificar**
+- **a)** Justifica per què el domini del model és $x>0$. Quin és el cost mitjà per unitat quan l'empresa fabrica $100$ unitats?
+- **b)** L'empresa vol saber fins a quin nivell de producció l'augment de la quantitat fabricada permet reduir el cost mitjà. Estudia els intervals de creixement i decreixement de $C(x)$.
+- **c)** Determina quantes unitats s'han de fabricar perquè el cost mitjà sigui mínim i calcula aquest cost.
+- **d)** L'empresa s'ha proposat aconseguir un cost mitjà inferior a $18\,€$ per unitat. Justifica si aquest objectiu és possible segons el model.
+- **e)** Estudia què passa amb el cost mitjà quan la producció s'apropa a zero i quan augmenta indefinidament. Fes un esbós de la gràfica que reflecteixi aquest comportament i el mínim obtingut.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.6"
+    **Resolució pas a pas**
 
     - **a)** Cal $x>0$ perquè $\ln x$ estigui definit i perquè la producció sigui positiva. Per $100$ unitats, $x=1$:
 
@@ -2549,20 +2662,22 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         La gràfica baixa des de $+\infty$ fins al mínim de $x=4$ i després torna a pujar.
 
+---
+
 ### Modelització, comparació i optimització
 
 #### Construcció de la funció a partir de l'enunciat
 
-??? example "Solució del problema PAU.C.7. Reserves d'un hotel"
-    !!! abstract "Enunciat"
-        **Reserves d'un hotel**
+**PAU.C.7.**
+**Reserves d'un hotel**
 
-        *(basat en l'exercici 4, opció B, de la convocatòria ordinària de 2025, sèrie 1)*. Un hotel cobra $80\,€$ per una habitació doble i, amb aquest preu, preveu tenir $100$ reserves. Un estudi indica que, per cada euro de descompte, s'aconseguiran dues reserves més.
+*(basat en l'exercici 4, opció B, de la convocatòria ordinària de 2025, sèrie 1)*. Un hotel cobra $80\,€$ per una habitació doble i, amb aquest preu, preveu tenir $100$ reserves. Un estudi indica que, per cada euro de descompte, s'aconseguiran dues reserves més.
 
-        - **a)** Si $x$ és el descompte aplicat, determina la funció que expressa els ingressos de l'hotel en funció de $x$. Indica els valors admissibles de $x$.
-        - **b)** Quin ha de ser el preu de l'habitació perquè els ingressos siguin màxims? Calcula també el nombre de reserves i els ingressos màxims.
+- **a)** Si $x$ és el descompte aplicat, determina la funció que expressa els ingressos de l'hotel en funció de $x$. Indica els valors admissibles de $x$.
+- **b)** Quin ha de ser el preu de l'habitació perquè els ingressos siguin màxims? Calcula també el nombre de reserves i els ingressos màxims.
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas del problema PAU.C.7"
+    **Resolució pas a pas**
 
     - **a)** Si el descompte és $x$, el preu és $80-x$ i el nombre de reserves és $100+2x$. Per tant,
 
@@ -2586,16 +2701,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$I(15)=65\cdot130=8.450\,€.$$
 
-??? example "Solució del problema PAU.C.8. Contractació de venedors"
-    !!! abstract "Enunciat"
-        **Contractació de venedors**
+---
 
-        *(problema d'entrenament de tipus PAU)*. Una botiga en línia disposa de $10$ venedors i cadascun genera unes vendes mensuals de $5\,400\,€$. S'estima que, per cada venedor nou que es contracti, les vendes mensuals gestionades per cadascun dels venedors disminuiran en $180\,€$.
+**PAU.C.8.**
+**Contractació de venedors**
 
-        - **a)** Determina la funció que expressa els ingressos mensuals totals si es contracten $x$ venedors nous. Indica el domini de la funció dins del context.
-        - **b)** Quants venedors ha de tenir en total la botiga perquè els ingressos siguin màxims? Quins seran aquests ingressos?
+*(problema d'entrenament de tipus PAU)*. Una botiga en línia disposa de $10$ venedors i cadascun genera unes vendes mensuals de $5\,400\,€$. S'estima que, per cada venedor nou que es contracti, les vendes mensuals gestionades per cadascun dels venedors disminuiran en $180\,€$.
 
-    **Resolució que cal justificar**
+- **a)** Determina la funció que expressa els ingressos mensuals totals si es contracten $x$ venedors nous. Indica el domini de la funció dins del context.
+- **b)** Quants venedors ha de tenir en total la botiga perquè els ingressos siguin màxims? Quins seran aquests ingressos?
+
+??? example "Mostra la solució pas a pas del problema PAU.C.8"
+    **Resolució pas a pas**
 
     - **a)** Si es contracten $x$ venedors, n'hi haurà $10+x$ i cadascun gestionarà $5.400-180x$ euros:
 
@@ -2613,16 +2730,18 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$I(10)=20(5.400-1.800)=72.000\,€.$$
 
-??? example "Solució del problema PAU.C.9. Venda de motxilles"
-    !!! abstract "Enunciat"
-        **Venda de motxilles**
+---
 
-        *(problema d'entrenament de tipus PAU)*. Una empresa ven mensualment $40$ motxilles a un preu de $80\,€$ cadascuna. Per cada euro que es redueixi el preu, es preveu que es vendran dues motxilles més. L'empresa té uns costos fixos mensuals de $800\,€$, i fabricar cada motxilla costa $20\,€$.
+**PAU.C.9.**
+**Venda de motxilles**
 
-        - **a)** Si $x$ és la reducció del preu, determina la funció que expressa el benefici mensual de l'empresa en funció de $x$.
-        - **b)** Quina reducció de preu permet obtenir el benefici màxim? Calcula el preu de venda, el nombre de motxilles venudes i el benefici màxim.
+*(problema d'entrenament de tipus PAU)*. Una empresa ven mensualment $40$ motxilles a un preu de $80\,€$ cadascuna. Per cada euro que es redueixi el preu, es preveu que es vendran dues motxilles més. L'empresa té uns costos fixos mensuals de $800\,€$, i fabricar cada motxilla costa $20\,€$.
 
-    **Resolució que cal justificar**
+- **a)** Si $x$ és la reducció del preu, determina la funció que expressa el benefici mensual de l'empresa en funció de $x$.
+- **b)** Quina reducció de preu permet obtenir el benefici màxim? Calcula el preu de venda, el nombre de motxilles venudes i el benefici màxim.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.9"
+    **Resolució pas a pas**
 
     - **a)** Amb una reducció de $x$ euros, el preu és $80-x$ i es venen $40+2x$ motxilles. Els ingressos són $(80-x)(40+2x)$ i els costos, $800+20(40+2x)$. Així,
 
@@ -2643,30 +2762,32 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$B(20)=-2\cdot20^2+80\cdot20+1.600=2.400\,€.$$
 
-??? example "Solució del problema PAU.C.10. Demanda d'un accessori tecnològic"
-    !!! abstract "Enunciat"
-        **Demanda d'un accessori tecnològic**
+---
 
-        *(basat en l'exercici 1 de la convocatòria extraordinària de 2026, sèrie 2)*. La demanda setmanal d'un accessori tecnològic depèn del seu preu $p$, expressat en euros, segons
+**PAU.C.10.**
+**Demanda d'un accessori tecnològic**
 
-        $$
-        d(p)=500-10p-p^2, \qquad 0<p<15.
-        $$
+*(basat en l'exercici 1 de la convocatòria extraordinària de 2026, sèrie 2)*. La demanda setmanal d'un accessori tecnològic depèn del seu preu $p$, expressat en euros, segons
 
-        Els ingressos setmanals són $I(p)=p\,d(p)$.
+$$
+d(p)=500-10p-p^2, \qquad 0<p<15.
+$$
 
-        - **a)** Escriu i simplifica la funció $I(p)$.
-        - **b)** Determina el preu que maximitza els ingressos setmanals.
-        - **c)** Calcula la demanda corresponent i els ingressos màxims.
-        - **d)** L'elasticitat de la demanda respecte del preu es defineix, per a aquest exercici, com
+Els ingressos setmanals són $I(p)=p\,d(p)$.
 
-        $$
-        E(p)=-\frac{p\,d'(p)}{d(p)}.
-        $$
+- **a)** Escriu i simplifica la funció $I(p)$.
+- **b)** Determina el preu que maximitza els ingressos setmanals.
+- **c)** Calcula la demanda corresponent i els ingressos màxims.
+- **d)** L'elasticitat de la demanda respecte del preu es defineix, per a aquest exercici, com
 
-        Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i quan és de $10\,€$. No cal memoritzar aquesta fórmula.
+$$
+E(p)=-\frac{p\,d'(p)}{d(p)}.
+$$
 
-    **Resolució que cal justificar**
+Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i quan és de $10\,€$. No cal memoritzar aquesta fórmula.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.10"
+    **Resolució pas a pas**
 
     - **a)**
 
@@ -2700,25 +2821,27 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$E(5)=\frac{100}{425}=\frac4{17}\approx0{,}235,qquad E(10)=\frac{300}{300}=1.$$
 
-??? example "Solució del problema PAU.C.11. Tarifes de dues companyies de taxi"
-    !!! abstract "Enunciat"
-        **Tarifes de dues companyies de taxi**
+---
 
-        *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
+**PAU.C.11.**
+**Tarifes de dues companyies de taxi**
 
-        $$
-        g(x)=0{,}01x^2+0{,}1x+10,
-        $$
+*(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
 
-        on $x\geq0$ és la distància recorreguda en quilòmetres.
+$$
+g(x)=0{,}01x^2+0{,}1x+10,
+$$
 
-        - **a)** Escriu la funció $f(x)$ que dona el preu de la companyia A.
-        - **b)** Compara el preu de les dues companyies per a un recorregut de $10\,\text{km}$ i per a un de $80\,\text{km}$.
-        - **c)** Interpreta el valor $g(0)$ i determina si la companyia B cobra un cost fix.
-        - **d)** Calcula la distància positiva per a la qual les dues tarifes coincideixen.
-        - **e)** Considerant només els trajectes des de $0\,\text{km}$ fins a la distància trobada, determina quan és màxima la diferència de preu entre les dues tarifes i calcula aquesta diferència.
+on $x\geq0$ és la distància recorreguda en quilòmetres.
 
-    **Resolució que cal justificar**
+- **a)** Escriu la funció $f(x)$ que dona el preu de la companyia A.
+- **b)** Compara el preu de les dues companyies per a un recorregut de $10\,\text{km}$ i per a un de $80\,\text{km}$.
+- **c)** Interpreta el valor $g(0)$ i determina si la companyia B cobra un cost fix.
+- **d)** Calcula la distància positiva per a la qual les dues tarifes coincideixen.
+- **e)** Considerant només els trajectes des de $0\,\text{km}$ fins a la distància trobada, determina quan és màxima la diferència de preu entre les dues tarifes i calcula aquesta diferència.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.11"
+    **Resolució pas a pas**
 
     - **a)** La tarifa fixa és $20\,€$ i s'afegeixen $0{,}4\,€$ per quilòmetre:
 
@@ -2754,25 +2877,27 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         En aquest punt B és la companyia més barata.
 
+---
+
 ### Funcions a trossos
 
-??? example "Solució del problema PAU.C.12. Tarifa d'una empresa de paqueteria"
-    !!! abstract "Enunciat"
-        **Tarifa d'una empresa de paqueteria**
+**PAU.C.12.**
+**Tarifa d'una empresa de paqueteria**
 
-        *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
+*(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
 
-        - fins a $2\,\text{kg}$, el preu és fix i val $30\,€$;
-        - si el paquet pesa més de $2\,\text{kg}$ però menys d'$11\,\text{kg}$, els primers $2\,\text{kg}$ costen $15\,€$ per quilogram i la resta, $12\,€$ per quilogram;
-        - si pesa entre $11\,\text{kg}$ i $25\,\text{kg}$, ambdós inclosos, els primers $11\,\text{kg}$ costen $13\,€$ per quilogram i la resta, $15\,€$ per quilogram.
+- fins a $2\,\text{kg}$, el preu és fix i val $30\,€$;
+- si el paquet pesa més de $2\,\text{kg}$ però menys d'$11\,\text{kg}$, els primers $2\,\text{kg}$ costen $15\,€$ per quilogram i la resta, $12\,€$ per quilogram;
+- si pesa entre $11\,\text{kg}$ i $25\,\text{kg}$, ambdós inclosos, els primers $11\,\text{kg}$ costen $13\,€$ per quilogram i la resta, $15\,€$ per quilogram.
 
-        - **a)** Calcula el preu d'enviar un paquet de $9{,}5\,\text{kg}$ i un de $13\,\text{kg}$.
-        - **b)** Construeix la funció a trossos $P(x)$ que dona el preu de l'enviament en funció del pes $x$.
-        - **c)** Estudia la continuïtat de $P$ en els punts on canvia la tarifa i classifica les discontinuïtats, si n'hi ha.
-        - **d)** Representa gràficament la funció per a $0<x\leq25$.
-        - **e)** Si un enviament ha costat $162\,€$, calcula el pes del paquet i comprova a quin tram pertany la solució.
+- **a)** Calcula el preu d'enviar un paquet de $9{,}5\,\text{kg}$ i un de $13\,\text{kg}$.
+- **b)** Construeix la funció a trossos $P(x)$ que dona el preu de l'enviament en funció del pes $x$.
+- **c)** Estudia la continuïtat de $P$ en els punts on canvia la tarifa i classifica les discontinuïtats, si n'hi ha.
+- **d)** Representa gràficament la funció per a $0<x\leq25$.
+- **e)** Si un enviament ha costat $162\,€$, calcula el pes del paquet i comprova a quin tram pertany la solució.
 
-    **Resolució que cal justificar**
+??? example "Mostra la solució pas a pas del problema PAU.C.12"
+    **Resolució pas a pas**
 
     - **a)** Per $9{,}5\,\text{kg}$ s'aplica el segon tram:
 
@@ -2814,28 +2939,30 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         que sí pertany a $[11,25]$.
 
-??? example "Solució del problema PAU.C.13. Cost de neteja d'una empresa"
-    !!! abstract "Enunciat"
-        **Cost de neteja d'una empresa**
+---
 
-        *(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
+**PAU.C.13.**
+**Cost de neteja d'una empresa**
 
-        $$
-        C(t)=
-        \begin{cases}
-        \dfrac{t^2}{10}+10, & 0\leq t\leq10,\\[6pt]
-        28-\dfrac{(t-14)^2}{2}, & 10<t\leq20,
-        \end{cases}
-        $$
+*(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
 
-        on $t$ és el nombre d'anys transcorreguts des de l'obertura.
+$$
+C(t)=
+\begin{cases}
+\dfrac{t^2}{10}+10, & 0\leq t\leq10,\\[6pt]
+28-\dfrac{(t-14)^2}{2}, & 10<t\leq20,
+\end{cases}
+$$
 
-        - **a)** Calcula el cost de la neteja en el moment de l'obertura, al cap de deu anys i al cap de vint anys.
-        - **b)** Comprova que la funció és contínua en el punt d'unió.
-        - **c)** Estudia la monotonia de cada tram i representa gràficament la funció.
-        - **d)** Determina en quin moment el cost va ser màxim i calcula aquest cost en euros.
+on $t$ és el nombre d'anys transcorreguts des de l'obertura.
 
-    **Resolució que cal justificar**
+- **a)** Calcula el cost de la neteja en el moment de l'obertura, al cap de deu anys i al cap de vint anys.
+- **b)** Comprova que la funció és contínua en el punt d'unió.
+- **c)** Estudia la monotonia de cada tram i representa gràficament la funció.
+- **d)** Determina en quin moment el cost va ser màxim i calcula aquest cost en euros.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.13"
+    **Resolució pas a pas**
 
     - **a)**
 
@@ -2865,27 +2992,29 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
 
         $$C(14)=28\text{ centenars}=2.800\,€.$$
 
-??? example "Solució del problema PAU.C.14. Evolució del preu d'un producte"
-    !!! abstract "Enunciat"
-        **Evolució del preu d'un producte**
+---
 
-        *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
+**PAU.C.14.**
+**Evolució del preu d'un producte**
 
-        $$
-        P(t)=
-        \begin{cases}
-        5(t+1)^2-5, & 0\leq t\leq2,\\[4pt]
-        -4t+48, & 2<t\leq10.
-        \end{cases}
-        $$
+*(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
 
-        - **a)** Estudia la continuïtat de la funció en el punt d'unió.
-        - **b)** Determina els intervals en què el preu va créixer i aquells en què va disminuir.
-        - **c)** Calcula el preu màxim assolit i l'any en què es va assolir.
-        - **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
-        - **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
+$$
+P(t)=
+\begin{cases}
+5(t+1)^2-5, & 0\leq t\leq2,\\[4pt]
+-4t+48, & 2<t\leq10.
+\end{cases}
+$$
 
-    **Resolució que cal justificar**
+- **a)** Estudia la continuïtat de la funció en el punt d'unió.
+- **b)** Determina els intervals en què el preu va créixer i aquells en què va disminuir.
+- **c)** Calcula el preu màxim assolit i l'any en què es va assolir.
+- **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
+- **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.14"
+    **Resolució pas a pas**
 
     - **a)** En el punt d'unió,
 
@@ -2918,3 +3047,5 @@ Busca l'exercici que has resolt i desplega'n la solució. Abans de mirar-la, dei
         $$\operatorname{TVM}_{[5,10]}=\frac{8-28}{10-5}=-4\,€\text{ per any}.$$
 
     - **e)** La gràfica va de $(0,0)$ a $(2,40)$ seguint el tram parabòlic i continua amb la recta decreixent que arriba a $(10,8)$. El punt d'unió $(2,40)$ és també el màxim absolut.
+
+---

@@ -22,8 +22,7 @@ nav = [
       { "Optimització" = "calcul/aplicacions-derivades/04_optimitzacio.md" },
     ] },
     { "Per practicar" = [
-      { "Exercicis i problemes PAU" = "calcul/per-practicar/index.md" },
-      { "Solucionari desplegable" = "calcul/per-practicar/solucionari.md" },
+      { "Exercicis i problemes" = "calcul/per-practicar/solucionari.md" },
     ] },
     { "Laboratori de mates" = [
       { "Índex" = "calcul/eines/index.md" },
