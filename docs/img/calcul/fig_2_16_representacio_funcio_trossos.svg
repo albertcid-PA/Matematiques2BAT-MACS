@@ -148,7 +148,7 @@
 <use x='-58.610909' y='141.02166' xlink:href='#g8-61'/>
 <use x='-48.094829' y='141.02166' xlink:href='#g8-49'/>
 </g>
-<g fill='#b91c1c' transform='matrix(1 0 0 1 2.8184 -49.3899)'>
+<g fill='#b91c1c' transform='matrix(1 0 0 1 2.8184 -38.851)'>
 <use x='-66.620185' y='141.02166' xlink:href='#g9-40'/>
 <use x='-63.506842' y='141.02166' xlink:href='#g5-0'/>
 <use x='-57.280162' y='141.02166' xlink:href='#g9-51'/>
@@ -176,14 +176,14 @@
 <use x='-35.437616' y='141.02166' xlink:href='#g9-48'/>
 <use x='-31.466376' y='141.02166' xlink:href='#g9-41'/>
 </g>
-<g fill='#b91c1c' transform='matrix(1 0 0 1 180.0662 -48.1665)'>
+<g fill='#b91c1c' transform='matrix(1 0 0 1 180.0662 -37.627)'>
 <use x='-66.620185' y='141.02166' xlink:href='#g9-40'/>
 <use x='-63.506842' y='141.02166' xlink:href='#g9-51'/>
 <use x='-57.72142' y='141.02166' xlink:href='#g9-43'/>
 <use x='-49.791256' y='135.245272' xlink:href='#g5-112'/>
 </g>
-<rect x='-43.246326' y='134.906561' height='.338711' width='3.971238' transform='matrix(1 0 0 1 180.0662 -48.1665)' fill='#b91c1c'/>
-<g fill='#b91c1c' transform='matrix(1 0 0 1 180.0662 -48.1665)'>
+<rect x='-43.246326' y='134.906561' height='.338711' width='3.971238' transform='matrix(1 0 0 1 180.0662 -37.627)' fill='#b91c1c'/>
+<g fill='#b91c1c' transform='matrix(1 0 0 1 180.0662 -37.627)'>
 <use x='-43.246326' y='141.02166' xlink:href='#g9-50'/>
 <use x='-39.275088' y='141.02166' xlink:href='#g7-59'/>
 <use x='-35.548312' y='141.02166' xlink:href='#g9-48'/>
