@@ -921,7 +921,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     La funció decreix a banda i banda de $x=1$; per tant, aquest punt no és un extrem relatiu. En $x=3$, el signe de la derivada passa de negatiu a positiu i hi ha un mínim relatiu en $(3,-2)$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb els talls amb els eixos marcats, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable](../../img/calcul/fig_2_16_representacio_funcio_trossos.svg?v=6){ width="560" }
+      ![Gràfica d'una funció a trossos amb els talls amb els eixos marcats, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable](../../img/calcul/fig_2_16_representacio_funcio_trossos.svg?v=7){ width="560" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_16_representacio_funcio_trossos.tex">Figura 2.16.</a></strong> Funció a trossos amb els talls amb els eixos, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable.</figcaption>
     </figure>
 
