@@ -356,6 +356,6 @@ El procediment és el següent:
     En $x=2$, les derivades laterals són $f'(2^-)=-1$ i $f'(2^+)=1$. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en $x=2$.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/calcul/fig_2_7_valor_absolut_lineal.svg?v=2){ width="720" }
+      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/calcul/fig_2_7_valor_absolut_lineal.svg?v=3){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_7_valor_absolut_lineal.tex">Figura 2.7.</a></strong> Gràfica de $f(x)=|x-2|$.</figcaption>
     </figure>
