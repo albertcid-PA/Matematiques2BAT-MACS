@@ -1559,11 +1559,6 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
 
     Té un mínim relatiu a $(-2,4)$ i un màxim relatiu a $(0,0)$.
 
-<figure markdown="span" class="exercise-solution-figure">
-  ![Representacions de les funcions racionals de l'exercici 2.19](../img/calcul/fig_2_32_resultat_exercici_2_19.svg?v=2){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_19.tex">Figura 2.32.</a></strong> Representacions de les funcions racionals de l'exercici 2.19.</figcaption>
-</figure>
-
 **2.20.**
 
 Primer comprovem la continuïtat en el punt d'unió; després derivem cada tram i comparem les derivades laterals.
