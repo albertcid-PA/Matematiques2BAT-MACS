@@ -760,7 +760,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     La funció creix en tot el seu domini i no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica de la funció logarítmica logaritme neperià de x menys dos](../../img/calcul/fig_2_15_representacio_logaritmica.svg?v=2){ width="680" }
+      ![Gràfica de la funció logarítmica logaritme neperià de x menys dos](../../img/calcul/fig_2_15_representacio_logaritmica.svg?v=3){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_15_representacio_logaritmica.tex">Figura 2.15.</a></strong> Representació de $h(x)=\ln(x-2)$.</figcaption>
     </figure>
 
