@@ -1505,6 +1505,11 @@ $$
 
     No hi ha una derivada finita comuna; la funció no és derivable a $x=2$ i la gràfica hi presenta dues semitangents verticals.
 
+    <figure markdown="span" class="exercise-solution-figure">
+      ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../../img/calcul/fig_2_29_resultat_exercici_2_5.svg?v=1){ width="56%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_29_resultat_exercici_2_5.tex">Figura 2.29.</a></strong> Interpretació gràfica de la continuïtat i la no derivabilitat a $x=2$.</figcaption>
+    </figure>
+
 ---
 
 **2.6.**
@@ -1554,6 +1559,11 @@ $$
     1, & x>1.
     \end{cases}
     $$
+
+    <figure markdown="span" class="exercise-solution-figure">
+      ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../../img/calcul/fig_2_30_resultat_exercici_2_6.svg?v=1){ width="88%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_30_resultat_exercici_2_6.tex">Figura 2.30.</a></strong> Representació de $f$ i de $f'$ en l'exercici 2.6.</figcaption>
+    </figure>
 
 ---
 
@@ -2165,9 +2175,14 @@ Estudia i representa les funcions racionals següents. Calcula els límits quan 
 
         Té un mínim relatiu a $(-2,4)$ i un màxim relatiu a $(0,0)$.
 
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
+      ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_32_resultat_exercici_2_19_1.svg?v=1){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_19_1.tex">Figura 2.32.</a></strong> Representacions dels apartats a–d de l'exercici 2.19.</figcaption>
+    </figure>
+
     <figure markdown="span" class="exercise-solution-figure">
-      ![Representacions de les funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_32_resultat_exercici_2_19.svg?v=2){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_19.tex">Figura 2.32.</a></strong> Representacions de les funcions racionals de l'exercici 2.19.</figcaption>
+      ![Representacions de les tres darreres funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_33_resultat_exercici_2_19_2.svg?v=1){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_33_resultat_exercici_2_19_2.tex">Figura 2.33.</a></strong> Representacions dels apartats e–g de l'exercici 2.19.</figcaption>
     </figure>
 
 ---
@@ -2247,6 +2262,11 @@ $$
         $$
 
         Aquesta derivada és positiva quan $x<0$, mentre que la derivada del segon tram és $-\frac14<0$. Així, $(0,1)$ és un màxim relatiu del tram dret, però la funció no és derivable al punt de salt.
+
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
+      ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=1){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_20.tex">Figura 2.34.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
+    </figure>
 
 ---
 
@@ -2383,6 +2403,16 @@ Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós 
 
         Per tant, a l'esquerra, $y=0$ és asímptota horitzontal.
 
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
+      ![Representacions dels quatre primers apartats de l'exercici 2.22](../../img/calcul/fig_2_35_resultat_exercici_2_22_1.svg?v=1){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_35_resultat_exercici_2_22_1.tex">Figura 2.35.</a></strong> Representacions dels apartats a–d de l'exercici 2.22.</figcaption>
+    </figure>
+
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
+      ![Representacions dels cinc darrers apartats de l'exercici 2.22](../../img/calcul/fig_2_36_resultat_exercici_2_22_2.svg?v=2){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_36_resultat_exercici_2_22_2.tex">Figura 2.36.</a></strong> Representacions dels apartats e–i de l'exercici 2.22.</figcaption>
+    </figure>
+
 ---
 
 **2.23.**
@@ -2440,6 +2470,11 @@ Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no 
         $$
 
     En tots quatre casos, els trams coincideixen en els punts d'unió i la funció és contínua. Les derivades laterals són diferents en cada punt de canvi; per tant, aquests punts són angulosos.
+
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
+      ![Representacions de les quatre funcions amb valor absolut de l'exercici 2.23](../../img/calcul/fig_2_37_resultat_exercici_2_23.svg?v=1){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_37_resultat_exercici_2_23.tex">Figura 2.37.</a></strong> Representacions de les funcions de l'exercici 2.23.</figcaption>
+    </figure>
 
 ---
 
@@ -2502,6 +2537,11 @@ Estudia i representa les funcions següents:
         Té mínims a $(2,0)$ i $(3,0)$ i un màxim relatiu a $\left(\frac52,\frac14\right)$.
 
     En els zeros del polinomi interior, la gràfica rebota sobre l'eix $X$ i hi apareixen punts angulosos.
+
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
+      ![Representacions de les quatre funcions de l'exercici 2.24](../../img/calcul/fig_2_38_resultat_exercici_2_24.svg?v=1){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_38_resultat_exercici_2_24.tex">Figura 2.38.</a></strong> Representacions de les funcions de l'exercici 2.24.</figcaption>
+    </figure>
 
 ---
 
@@ -2621,6 +2661,11 @@ Determina'n el domini, els talls amb els eixos, les asímptotes verticals i hori
 
         El denominador és positiu; per tant, $f'>0$ si $x<0$ i $f'<0$ si $x>0$, separant pels punts exclosos. La funció creix a $(-\infty,-3)$, $(-3,0)$ i decreix a $(0,3)$, $(3,+\infty)$. Hi ha un màxim relatiu a $(0,\frac23)$.
 
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
+      ![Representació completa de la funció racional de l'exercici 2.26](../../img/calcul/fig_2_39_resultat_exercici_2_26.svg?v=1){ width="62%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_39_resultat_exercici_2_26.tex">Figura 2.39.</a></strong> Representació completa de la funció de l'exercici 2.26.</figcaption>
+    </figure>
+
 ---
 
 **2.27.**
@@ -2667,6 +2712,11 @@ Troba les asímptotes verticals i horitzontals, calcula els límits laterals en 
 
         $$\left(2,g(2)\right)=(2,e^2).$$
 
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
+      ![Representació completa de la funció exponencial racional de l'exercici 2.27](../../img/calcul/fig_2_40_resultat_exercici_2_27.svg?v=1){ width="62%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_40_resultat_exercici_2_27.tex">Figura 2.40.</a></strong> Representació completa de la funció de l'exercici 2.27.</figcaption>
+    </figure>
+
 ---
 
 **2.28.**
@@ -2703,6 +2753,11 @@ $$
     $$
 
     La funció és contínua als dos punts d'unió. Els pendents són $-3$, $1$ i $3$; com que canvien, no és derivable a $x=-2$ ni a $x=1$.
+
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
+      ![Representació de la funció amb valor absolut de l'exercici 2.28](../../img/calcul/fig_2_41_resultat_exercici_2_28.svg?v=1){ width="62%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_41_resultat_exercici_2_28.tex">Figura 2.41.</a></strong> Representació de la funció de l'exercici 2.28.</figcaption>
+    </figure>
 
 ---
 
@@ -3055,6 +3110,11 @@ $$
 
     Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. La gràfica uneix el primer tram creixent amb el segon, que arriba al màxim $(5,38)$ i baixa fins a $(8,20)$.
 
+    <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
+      ![Representació de la funció de benefici a trossos de l'exercici 2.37](../../img/calcul/fig_2_42_resultat_exercici_2_37.svg?v=1){ width="62%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_42_resultat_exercici_2_37.tex">Figura 2.42.</a></strong> Representació del benefici de l'exercici 2.37.</figcaption>
+    </figure>
+
 ---
 
 ## Problemes PAU
@@ -3117,6 +3177,11 @@ $$
 
         El màxim absolut és de $3.200$ seguidors i s'assoleix a la setmana $10$.
 
+    <figure markdown="span" class="pau-solution-figure">
+      ![Evolució dels seguidors amb els extrems relatius assenyalats](../../img/calcul/fig_pau_c_1_seguidors_divulgador.svg?v=1){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_1_seguidors_divulgador.tex">Figura PAU.C.1.</a></strong> Evolució del nombre de seguidors.</figcaption>
+    </figure>
+
 ---
 
 **PAU.C.2.**
@@ -3167,6 +3232,11 @@ on $x$ és el temps transcorregut, en hores.
         A llarg termini, la mostra tendeix a estabilitzar-se en $50$ microorganismes.
 
     - **d)** L'esbós parteix de $(0,5)$, creix fins al màxim $(3,7{,}5)$ i després decreix acostant-se a l'asímptota horitzontal $y=5$.
+
+    <figure markdown="span" class="pau-solution-figure">
+      ![Evolució dels microorganismes i asímptota horitzontal](../../img/calcul/fig_pau_c_2_microorganismes.svg?v=1){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_2_microorganismes.tex">Figura PAU.C.2.</a></strong> Evolució del nombre de microorganismes.</figcaption>
+    </figure>
 
 ---
 
@@ -3368,6 +3438,11 @@ on $t$ és el temps transcorregut, en mesos, des de l'inici de la campanya.
 
     - **e)** La gràfica parteix de $(0,30)$, puja fins a $(1,20+20e^{-1/2})$ i després baixa acostant-se a l'asímptota horitzontal $y=20$.
 
+    <figure markdown="span" class="pau-solution-figure">
+      ![Impacte de la campanya publicitària i asímptota horitzontal](../../img/calcul/fig_pau_c_3_campanya_publicitaria.svg?v=1){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_3_campanya_publicitaria.tex">Figura PAU.C.3.</a></strong> Evolució de les descàrregues diàries.</figcaption>
+    </figure>
+
 ---
 
 **PAU.C.6.**
@@ -3421,6 +3496,11 @@ on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ c
         $$
 
         La gràfica baixa des de $+\infty$ fins al mínim de $x=4$ i després torna a pujar.
+
+    <figure markdown="span" class="pau-solution-figure">
+      ![Cost mitjà de producció amb el mínim assenyalat](../../img/calcul/fig_pau_c_4_cost_mitja.svg?v=1){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_4_cost_mitja.tex">Figura PAU.C.4.</a></strong> Cost mitjà segons la producció.</figcaption>
+    </figure>
 
 ---
 
@@ -3699,6 +3779,11 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 
         que sí pertany a $[11,25]$.
 
+    <figure markdown="span" class="pau-solution-figure">
+      ![Tarifa de paqueteria amb la discontinuïtat de salt finit](../../img/calcul/fig_pau_c_5_tarifa_paqueteria.svg?v=1){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_5_tarifa_paqueteria.tex">Figura PAU.C.5.</a></strong> Tarifa de l'empresa de paqueteria.</figcaption>
+    </figure>
+
 ---
 
 **PAU.C.13.**
@@ -3760,6 +3845,11 @@ on $t$ és el nombre d'anys transcorreguts des de l'obertura.
     - **d)** El màxim es produeix a $t=14$:
 
         $$C(14)=28\text{ centenars}=2.800\,€.$$
+
+    <figure markdown="span" class="pau-solution-figure">
+      ![Cost de neteja amb el màxim assenyalat](../../img/calcul/fig_pau_c_6_cost_neteja.svg?v=1){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_6_cost_neteja.tex">Figura PAU.C.6.</a></strong> Evolució del cost de neteja.</figcaption>
+    </figure>
 
 ---
 
@@ -3825,5 +3915,10 @@ $$
         $$\operatorname{TVM}_{[5,10]}=\frac{8-28}{10-5}=-4\,€\text{ per any}.$$
 
     - **e)** La gràfica va de $(0,0)$ a $(2,40)$ seguint el tram parabòlic i continua amb la recta decreixent que arriba a $(10,8)$. El punt d'unió $(2,40)$ és també el màxim absolut.
+
+    <figure markdown="span" class="pau-solution-figure">
+      ![Evolució del preu del producte amb el màxim assenyalat](../../img/calcul/fig_pau_c_7_preu_producte.svg?v=1){ width="560" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_7_preu_producte.tex">Figura PAU.C.7.</a></strong> Evolució del preu del producte.</figcaption>
+    </figure>
 
 ---
