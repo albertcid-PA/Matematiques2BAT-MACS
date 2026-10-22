@@ -1444,15 +1444,26 @@ $$
 ??? example "Mostra la solució pas a pas de l'exercici 2.3"
     **Resolució pas a pas**
 
-    Primer comprovem la continuïtat:
+    Primer comprovem la continuïtat en els tres passos:
 
-    $$
-    f(1^-)=1^2+1-2=0,\qquad
-    f(1^+)=3\cdot1-3=0,\qquad
-    f(1)=0.
-    $$
+    1. **Límits laterals:**
 
-    Els dos límits laterals coincideixen amb $f(1)$; per tant, és contínua. Derivem els dos trams:
+        $$
+        f(1^-)=1^2+1-2=0,\qquad
+        f(1^+)=3\cdot1-3=0.
+        $$
+
+        Són finits i coincideixen; per tant, $\displaystyle\lim_{x\to1}f(x)=0$.
+
+    2. **Valor de la funció:** com que $x=1$ pertany al primer tram,
+
+        $$f(1)=1^2+1-2=0.$$
+
+    3. **Comparació:**
+
+        $$\lim_{x\to1}f(x)=0=f(1).$$
+
+    Per tant, $f$ és contínua en $x=1$. Derivem els dos trams:
 
     $$
     f'(x)=
@@ -1484,15 +1495,26 @@ $$
 ??? example "Mostra la solució pas a pas de l'exercici 2.4"
     **Resolució pas a pas**
 
-    Comprovem la continuïtat:
+    Comprovem la continuïtat en els tres passos:
 
-    $$
-    f(-1^-)=(-1)^2+4(-1)+1=-2,\qquad
-    f(-1^+)=-1-1=-2,\qquad
-    f(-1)=-2.
-    $$
+    1. **Límits laterals:**
 
-    La funció és contínua. Ara comparem les derivades laterals:
+        $$
+        f(-1^-)=(-1)^2+4(-1)+1=-2,\qquad
+        f(-1^+)=-1-1=-2.
+        $$
+
+        Són finits i coincideixen; per tant, $\displaystyle\lim_{x\to-1}f(x)=-2$.
+
+    2. **Valor de la funció:** com que $x=-1$ pertany al primer tram,
+
+        $$f(-1)=(-1)^2+4(-1)+1=-2.$$
+
+    3. **Comparació:**
+
+        $$\lim_{x\to-1}f(x)=-2=f(-1).$$
+
+    Per tant, $f$ és contínua en $x=-1$. Ara comparem les derivades laterals:
 
     $$
     f'(x)=
@@ -1522,13 +1544,26 @@ $$
 ??? example "Mostra la solució pas a pas de l'exercici 2.5"
     **Resolució pas a pas**
 
-    Els dos trams tendeixen a zero i $f(2)=0$:
+    Comprovem la continuïtat en els tres passos:
 
-    $$
-    f(2^-)=0=f(2)=f(2^+).
-    $$
+    1. **Límits laterals:**
 
-    Per tant, la funció és contínua. Les derivades són
+        $$
+        f(2^-)=\sqrt{2-2}=0,\qquad
+        f(2^+)=\sqrt{2-2}=0.
+        $$
+
+        Són finits i coincideixen; per tant, $\displaystyle\lim_{x\to2}f(x)=0$.
+
+    2. **Valor de la funció:** com que $x=2$ pertany al primer tram,
+
+        $$f(2)=\sqrt{2-2}=0.$$
+
+    3. **Comparació:**
+
+        $$\lim_{x\to2}f(x)=0=f(2).$$
+
+    Per tant, $f$ és contínua en $x=2$. Les derivades són
 
     $$
     f'(x)=
@@ -1570,20 +1605,42 @@ $$
 ??? example "Mostra la solució pas a pas de l'exercici 2.6"
     **Resolució pas a pas**
 
-    En $x=-2$:
+    En $x=-2$, comprovem la continuïtat en els tres passos:
 
-    $$
-    f(-2^-)=(-2)^2+5(-2)+4=-2,\qquad
-    f(-2^+)=f(-2)=2(-2)+2=-2.
-    $$
+    1. **Límits laterals:**
 
-    Per tant, és contínua a $x=-2$.
+        $$
+        f(-2^-)=(-2)^2+5(-2)+4=-2,\qquad
+        f(-2^+)=2(-2)+2=-2.
+        $$
 
-    En $x=1$:
+        Són finits i coincideixen; per tant, $\displaystyle\lim_{x\to-2}f(x)=-2$.
 
-    $$f(1^-)=f(1)=2(1)+2=4,\qquad f(1^+)=1+1=2.$$
+    2. **Valor de la funció:** com que $x=-2$ pertany al tram central,
 
-    Hi ha una discontinuïtat de salt; en conseqüència, tampoc és derivable a $x=1$.
+        $$f(-2)=2(-2)+2=-2.$$
+
+    3. **Comparació:**
+
+        $$\lim_{x\to-2}f(x)=-2=f(-2).$$
+
+    Per tant, $f$ és contínua en $x=-2$.
+
+    En $x=1$, repetim les tres comprovacions:
+
+    1. **Límits laterals:**
+
+        $$f(1^-)=2(1)+2=4,\qquad f(1^+)=1+1=2.$$
+
+        Com que no coincideixen, $\displaystyle\lim_{x\to1}f(x)$ no existeix.
+
+    2. **Valor de la funció:** com que $x=1$ pertany al tram central,
+
+        $$f(1)=2(1)+2=4.$$
+
+    3. **Comparació:** el límit no existeix i, per tant, no pot coincidir amb $f(1)$.
+
+    Així, en $x=1$ hi ha una discontinuïtat de salt; en conseqüència, tampoc no hi és derivable.
 
     Ara derivem mantenint els tres trams de la funció original:
 
@@ -1636,7 +1693,45 @@ $$
 ??? example "Mostra la solució pas a pas de l'exercici 2.7"
     **Resolució pas a pas**
 
-    - **a)** Derivem una vegada cada tram i mantenim els tres trams de la funció original:
+    - **a)** Comprovem primer la continuïtat en cadascun dels punts d'unió.
+
+        En $x=0$:
+
+        **1. Límits laterals:**
+
+        $$f(0^-)=0,\qquad f(0^+)=0^2=0.$$
+
+        Són finits i coincideixen; per tant, $\displaystyle\lim_{x\to0}f(x)=0$.
+
+        **2. Valor de la funció:** com que $x=0$ pertany al tram central,
+
+        $$f(0)=0^2=0.$$
+
+        **3. Comparació:**
+
+        $$\lim_{x\to0}f(x)=0=f(0).$$
+
+        Per tant, $f$ és contínua en $x=0$.
+
+        En $x=2$:
+
+        **1. Límits laterals:**
+
+        $$f(2^-)=2^2=4,\qquad f(2^+)=2\cdot2=4.$$
+
+        Són finits i coincideixen; per tant, $\displaystyle\lim_{x\to2}f(x)=4$.
+
+        **2. Valor de la funció:** com que $x=2$ pertany al tercer tram,
+
+        $$f(2)=2\cdot2=4.$$
+
+        **3. Comparació:**
+
+        $$\lim_{x\to2}f(x)=4=f(2).$$
+
+        Per tant, $f$ també és contínua en $x=2$.
+
+        Ara derivem una vegada cada tram i mantenim els tres trams de la funció original:
 
         $$
         f'(x)=
@@ -1647,11 +1742,9 @@ $$
         \end{cases}
         $$
 
-        En $x=0$, els dos trams de $f$ valen $0$ i
-
         $$f'(0^-)=0,\qquad f'(0^+)=2\cdot0=0.$$
 
-        Per tant, és contínua i derivable en $x=0$. En $x=2$, els dos trams de $f$ valen $4$, però
+        Per tant, és derivable en $x=0$. En $x=2$,
 
         $$f'(2^-)=2\cdot2=4,\qquad f'(2^+)=2.$$
 
@@ -1666,7 +1759,23 @@ $$
         \end{cases}
         $$
 
-    - **b)** En $x=0$, $e^0=1=2\cdot0+1$; és contínua.
+    - **b)** Comprovem la continuïtat en $x=0$:
+
+        **1. Límits laterals:**
+
+        $$g(0^-)=e^{2\cdot0}=1,\qquad g(0^+)=2\cdot0+1=1.$$
+
+        Són finits i coincideixen; per tant, $\displaystyle\lim_{x\to0}g(x)=1$.
+
+        **2. Valor de la funció:** com que $x=0$ pertany al primer tram,
+
+        $$g(0)=e^{2\cdot0}=1.$$
+
+        **3. Comparació:**
+
+        $$\lim_{x\to0}g(x)=1=g(0).$$
+
+        Per tant, $g$ és contínua en $x=0$.
 
         Per no confondre la funció $g$ de l'enunciat amb la funció interior de la regla de la cadena, anomenem $H$ la funció de l'enunciat. En el tram exponencial, $H(x)=e^{2x}$, i prenem
 
@@ -2043,7 +2152,15 @@ Escriu les funcions següents a trossos i estudia'n la continuïtat i la derivab
         \end{cases}
         $$
 
-        És contínua, però $f'(-4^-)=-1\ne1=f'(-4^+)$; no és derivable a $x=-4$.
+        Comprovem la continuïtat en els tres passos:
+
+        **1. Límits laterals:** $f(-4^-)=0$ i $f(-4^+)=0$; són finits i coincideixen, de manera que $\displaystyle\lim_{x\to-4}f(x)=0$.
+
+        **2. Valor de la funció:** $f(-4)=|-4+4|=0$.
+
+        **3. Comparació:** $\displaystyle\lim_{x\to-4}f(x)=0=f(-4)$.
+
+        Per tant, és contínua. Com que $f'(-4^-)=-1\ne1=f'(-4^+)$, no és derivable a $x=-4$.
 
     - **b)** $-2x+4=0$ quan $x=2$:
 
@@ -2065,7 +2182,15 @@ Escriu les funcions següents a trossos i estudia'n la continuïtat i la derivab
         \end{cases}
         $$
 
-        És contínua, però $f'(2^-)=-2\ne2=f'(2^+)$; no és derivable a $x=2$.
+        Comprovem la continuïtat en els tres passos:
+
+        **1. Límits laterals:** $f(2^-)=0$ i $f(2^+)=0$; són finits i coincideixen, de manera que $\displaystyle\lim_{x\to2}f(x)=0$.
+
+        **2. Valor de la funció:** $f(2)=|-2\cdot2+4|=0$.
+
+        **3. Comparació:** $\displaystyle\lim_{x\to2}f(x)=0=f(2)$.
+
+        Per tant, és contínua. Com que $f'(2^-)=-2\ne2=f'(2^+)$, no és derivable a $x=2$.
 
     - **c)** $x-1=0$ quan $x=1$:
 
@@ -2087,7 +2212,15 @@ Escriu les funcions següents a trossos i estudia'n la continuïtat i la derivab
         \end{cases}
         $$
 
-        És contínua, però $h'(1^-)=1\ne3=h'(1^+)$; no és derivable a $x=1$.
+        Comprovem la continuïtat en els tres passos:
+
+        **1. Límits laterals:** $h(1^-)=1+1=2$ i $h(1^+)=3\cdot1-1=2$; són finits i coincideixen, de manera que $\displaystyle\lim_{x\to1}h(x)=2$.
+
+        **2. Valor de la funció:** $h(1)=2\cdot1+|1-1|=2$.
+
+        **3. Comparació:** $\displaystyle\lim_{x\to1}h(x)=2=h(1)$.
+
+        Per tant, és contínua. Com que $h'(1^-)=1\ne3=h'(1^+)$, no és derivable a $x=1$.
 
 ---
 
