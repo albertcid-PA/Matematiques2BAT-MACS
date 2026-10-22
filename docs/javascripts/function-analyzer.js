@@ -3071,13 +3071,39 @@
     return `${html}${formula(derivativeAlignedTex(steps))}`;
   }
 
+  function derivativeIntervalsForBranch(analysis, branch) {
+    const intervals = domainIntervalsForBranch(branch).map((interval) => ({ ...interval }));
+    analysis.model.joins.forEach((join) => {
+      const study = analysis.joinDerivativeStudies.find((entry) => Math.abs(entry.x - join) < ROOT_EPS);
+      const derivativeExists = Boolean(study && study.type === "derivable");
+      intervals.forEach((interval) => {
+        if (Number.isFinite(interval.lower) && Math.abs(interval.lower - join) < ROOT_EPS) {
+          interval.lowerClosed = derivativeExists && branch.interval.lowerClosed;
+        }
+        if (Number.isFinite(interval.upper) && Math.abs(interval.upper - join) < ROOT_EPS) {
+          interval.upperClosed = derivativeExists && branch.interval.upperClosed;
+        }
+      });
+    });
+    return intervals;
+  }
+
+  function derivativeSummaryHtml(analysis) {
+    if (analysis.model.branches.length === 1) {
+      const branch = analysis.model.branches[0];
+      const interval = derivativeIntervalsForBranch(analysis, branch).map(texInterval).join("\\cup");
+      return `<h4>Derivada final i domini</h4><p>${formula(`f'(x)=${displayedDerivativeTex(branch)}`, false)} per a ${formula(`x\\in${interval}`, false)}.</p>`;
+    }
+
+    const rows = analysis.model.branches.map((branch) => {
+      const interval = derivativeIntervalsForBranch(analysis, branch).map(texInterval).join("\\cup") || "\\varnothing";
+      return `${displayedDerivativeTex(branch)}, & x\\in${interval}`;
+    });
+    return `<h4>Funció derivada</h4><p>La derivada conserva el mateix nombre de trams que la funció original:</p>${formula(`f'(x)=\\begin{cases}${rows.join("\\\\[4pt]")}\\end{cases}`)}<p>No afegim casos nous per als punts d'unió. Cada punt ${formula("x=a", false)} queda inclòs en un dels trams només si la funció és contínua i, després d'avaluar les expressions corresponents, es compleix ${formula("f'(a^-)=f'(a^+)", false)}.</p>`;
+  }
+
   function buildStep7(analysis) {
     const procedures = analysis.model.branches.map((branch, index) => derivativeProcedureHtml(branch, index, analysis.model.branches.length)).join("");
-    const rows = analysis.model.branches.map((branch, index) => {
-      const interval = domainIntervalsForBranch(branch).map(texInterval).join("\\cup");
-      const derivative = displayedDerivativeTex(branch);
-      return `<tr><th>${analysis.model.branches.length > 1 ? `Tram ${index + 1}` : "Funció"}</th><td>${formula(`x\\in${interval}`, false)}</td><td>${formula(`f'(x)=${derivative}`, false)}</td></tr>`;
-    }).join("");
     const methods = [];
     const seenMethods = new Set();
     analysis.model.branches.forEach((branch) => {
@@ -3114,7 +3140,7 @@
     const candidateText = candidates.length
       ? candidates.map((x) => formula(`x=${texNumber(x)}`, false)).join(", ")
       : "cap";
-    return `<p>Derivem cada expressió dins del seu interval, indicant la regla utilitzada i les substitucions:</p>${procedures}<h4>Derivades finals i intervals</h4><div class="fa-table-scroll"><table><thead><tr><th></th><th>Interval</th><th>Derivada</th></tr></thead><tbody>${rows}</tbody></table></div>${methods.join("")}<p>Resolem ${formula("f'(x)=0", false)} i afegim els punts on la derivada no existeix, els extrems del domini i els punts d'unió. Els candidats són: ${candidateText}.</p>`;
+    return `<p>Derivem cada expressió dins del seu interval, indicant la regla utilitzada i les substitucions:</p>${procedures}${derivativeSummaryHtml(analysis)}${methods.join("")}<p>Resolem ${formula("f'(x)=0", false)} i afegim els punts on la derivada no existeix, els extrems del domini i els punts d'unió. Els candidats són: ${candidateText}.</p>`;
   }
 
   function buildStep8(analysis) {

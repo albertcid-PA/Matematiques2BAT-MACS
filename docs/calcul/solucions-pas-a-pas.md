@@ -249,7 +249,7 @@ però cal conservar les exclusions de la funció original.
 - **Conclusió:** a $x=-2$ hi ha una discontinuïtat evitable i un forat a $(-2,-\frac13)$; $x=1$ és una asímptota vertical i $y=0$ és una asímptota horitzontal.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfica de la funció de l'exercici 1.5, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_14_resultat_exercici_1_5.svg?v=3){ width="62%" }
+  ![Gràfica de la funció de l'exercici 1.5, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_14_resultat_exercici_1_5.svg?v=3){ width="760" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_14_resultat_exercici_1_5.tex">Figura 1.14.</a></strong> Representació de la funció de l'exercici 1.5.</figcaption>
 </figure>
 
@@ -294,7 +294,7 @@ $$
     Així, $y=1$ és una asímptota horitzontal.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfica de la funció de l'exercici 1.6, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_15_resultat_exercici_1_6.svg?v=3){ width="62%" }
+  ![Gràfica de la funció de l'exercici 1.6, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_15_resultat_exercici_1_6.svg?v=3){ width="760" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_15_resultat_exercici_1_6.tex">Figura 1.15.</a></strong> Representació de la funció de l'exercici 1.6.</figcaption>
 </figure>
 
@@ -1080,7 +1080,7 @@ $$
 
 Els dos límits laterals coincideixen amb $f(1)$; per tant, és contínua. Derivem els dos trams:
 
-$$f'_-(1)=(2x+1)\big|_{x=1}=3,\qquad f'_+(1)=3.$$
+$$f'(1^-)=(2x+1)\big|_{x=1}=3,\qquad f'(1^+)=3.$$
 
 Com que les derivades laterals coincideixen, $f$ és derivable a $x=1$ i $f'(1)=3$.
 
@@ -1095,7 +1095,7 @@ $$
 
 La funció és contínua. Ara comparem les derivades laterals:
 
-$$f'_-( -1)=(2x+4)\big|_{x=-1}=2,\qquad f'_+( -1)=1.$$
+$$f'(-1^-)=(2x+4)\big|_{x=-1}=2,\qquad f'(-1^+)=1.$$
 
 Com que $2\ne1$, no és derivable a $x=-1$; la gràfica hi té un punt angulós.
 
@@ -1133,7 +1133,7 @@ $$
 
 És contínua, però
 
-$$f'_-( -2)=(2x+5)\big|_{-2}=1,\qquad f'_+( -2)=2.$$
+$$f'(-2^-)=(2x+5)\big|_{x=-2}=1,\qquad f'(-2^+)=2.$$
 
 Per tant, no és derivable a $x=-2$.
 
@@ -1158,7 +1158,7 @@ $$
 
 - **a)** En $x=0$, els dos trams valen $0$ i les derivades laterals són $0$ i $2x|_{0}=0$: és contínua i derivable. En $x=2$, els dos trams valen $4$, però
 
-    $$f'_-(2)=2\cdot2=4,\qquad f'_+(2)=2.$$
+    $$f'(2^-)=2\cdot2=4,\qquad f'(2^+)=2.$$
 
     És contínua però no derivable a $x=2$. Per tant,
 
@@ -1166,8 +1166,7 @@ $$
     f'(x)=
     \begin{cases}
     0, & x<0,\\
-    0, & x=0,\\
-    2x, & 0<x<2,\\
+    2x, & 0\leq x<2,\\
     2, & x>2.
     \end{cases}
     $$
@@ -1183,15 +1182,15 @@ $$
 
     $$H'(x)=f'(g(x))g'(x)=e^{2x}\cdot2=2e^{2x}.$$
 
-    $$H'_-(0)=2e^0=2,\qquad H'_+(0)=2.$$
+    $$H'(0^-)=2e^0=2,\qquad H'(0^+)=2.$$
 
     És derivable en tot $\mathbb{R}$ i
 
     $$
     H'(x)=
     \begin{cases}
-    2e^{2x}, & x<0,\\
-    2, & x\geq0.
+    2e^{2x}, & x\leq0,\\
+    2, & x>0.
     \end{cases}
     $$
 
@@ -1246,12 +1245,12 @@ Amb aquests valors,
 $$
 f'(x)=
 \begin{cases}
-2x-4, & x<2,\\
+2x-4, & x\leq2,\\
 -2x+4, & x>2,
 \end{cases}
 $$
 
-i $f'(2)=0$. Les dues equacions s'anul·len només a $x=2$; per tant, aquest és l'únic punt amb $f'(x)=0$.
+Les dues expressions s'anul·len només a $x=2$; per tant, aquest és l'únic punt amb $f'(x)=0$.
 
 **2.12.**
 
@@ -1430,7 +1429,7 @@ Totes sis funcions tenen domini $\mathbb{R}$. Factoritzem per trobar els talls a
 - **f)** $f(x)=x^2(x-4)^2$; els zeros són $0$ i $4$, tots dos dobles. Com que $f'(x)=4x(x-2)(x-4)$, té mínims a $(0,0)$ i $(4,0)$ i un màxim a $(2,16)$. Per l'ordre dels infinits, conservem $x^4$: $\lim_{x\to-\infty}f(x)=\lim_{x\to-\infty}x^4=+\infty$ i $\lim_{x\to+\infty}f(x)=\lim_{x\to+\infty}x^4=+\infty$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=3){ width="100%" }
+  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=4){ width="100%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_18.tex">Figura 2.31.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
 </figure>
 
