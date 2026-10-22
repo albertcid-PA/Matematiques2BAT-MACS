@@ -31,15 +31,15 @@
       (axis cs:-2,-5.15) -- (axis cs:-2,5.15);
     \addplot[corba, very thick, domain=-6.05:-2.2, samples=140]
       {1/(x+2)};
-    \addplot[corba, very thick, domain=-1.8:0.91, samples=140]
+    \addplot[corba, very thick, domain=-1.8:0.86, samples=140]
       {1/(x+2)};
-    \addplot[corba, very thick, domain=1.09:5.35, samples=140]
+    \addplot[corba, very thick, domain=1.14:5.35, samples=140]
       {1/(x+2)};
     \addplot[
       only marks,
       mark=o,
       mark size=3.2pt,
-      mark options={fill=white, draw=punt, line width=1.2pt}
+      mark options={fill=none, draw=punt, line width=1.2pt}
     ] coordinates {(1,0.333333)};
     \node[anchor=south west, text=punt, inner sep=1.5pt]
       at (axis cs:1.12,0.48) {$\left(1,\frac13\right)$};

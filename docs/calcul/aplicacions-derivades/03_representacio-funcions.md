@@ -438,7 +438,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i convergència a 1 als dos extrems](../../img/calcul/fig_2_11_representacio_racional.svg?v=6){ width="820" }
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i convergència a 1 als dos extrems](../../img/calcul/fig_2_11_representacio_racional.svg?v=7){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_racional.tex">Figura 2.11.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat de salt infinit.</figcaption>
     </figure>
 

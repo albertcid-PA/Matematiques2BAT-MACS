@@ -28,7 +28,7 @@
   ]
     % Discontinuïtat de salt.
     \nextgroupplot[title={\textbf{Discontinuïtat}}]
-      \addplot[corba, very thick, domain=-2:0, samples=80]
+      \addplot[corba, very thick, domain=-2:-0.1, samples=80]
         {0.35*x+2.35};
       \addplot[corba, very thick, domain=0:2, samples=80]
         {0.35*x+0.75};
@@ -36,7 +36,7 @@
         only marks,
         mark=o,
         mark size=3pt,
-        mark options={draw=punt, fill=white, line width=1pt}
+        mark options={draw=punt, fill=none, line width=1pt}
       ] coordinates {(0,2.35)};
       \addplot[
         only marks,

@@ -36,7 +36,7 @@
       \addplot[assimptota, dashed, thick, domain=-4:-2.4] {-1};
 
     \nextgroupplot[title={\textbf{b)}}]
-      \addplot[corba, very thick, domain=-4:0, samples=160]
+      \addplot[corba, very thick, domain=-4:-0.14, samples=160]
         {1+3*exp(x)};
       \addplot[corba, very thick, domain=0:4, samples=160]
         {2-3*exp(-x)};
@@ -44,9 +44,9 @@
       \addplot[assimptota, dashed, thick, domain=2.2:4] {2};
       \addplot[
         only marks,
-        mark=*,
+        mark=o,
         mark size=3pt,
-        mark options={draw=punt, fill=white, line width=1pt}
+        mark options={draw=punt, fill=none, line width=1pt}
       ] coordinates {(0,4)};
       \addplot[
         only marks,

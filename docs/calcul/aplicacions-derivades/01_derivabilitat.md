@@ -76,7 +76,7 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 | Discontinuïtat | No es compleixen les tres condicions de continuïtat. | No |
 
 <figure markdown="span">
-  ![Tres situacions en què una funció no és derivable: discontinuïtat, cúspide i tangent vertical](../../img/calcul/fig_2_2_casos_no_derivables.svg?v=2){ width="960" }
+  ![Tres situacions en què una funció no és derivable: discontinuïtat, cúspide i tangent vertical](../../img/calcul/fig_2_2_casos_no_derivables.svg?v=3){ width="960" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_2_casos_no_derivables.tex">Figura 2.2.</a></strong> Casos en què una funció no és derivable.</figcaption>
 </figure>
 
@@ -125,7 +125,7 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     Tota funció derivable en un punt ha de ser contínua en aquell punt. Com que $f$ no és contínua en $x=1$, podem concloure directament que $f$ **no és derivable** en $x=1$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable en x igual a u i una asímptota vertical en x igual a menys dos](../../img/calcul/fig_2_3_exemple_discontinuitat_evitable.svg?v=4){ width="740" }
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable en x igual a u i una asímptota vertical en x igual a menys dos](../../img/calcul/fig_2_3_exemple_discontinuitat_evitable.svg?v=5){ width="740" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_3_exemple_discontinuitat_evitable.tex">Figura 2.3.</a></strong> Discontinuïtat evitable en $x=1$ i asímptota vertical en $x=-2$.</figcaption>
     </figure>
 

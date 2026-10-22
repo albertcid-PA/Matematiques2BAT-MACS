@@ -30,15 +30,15 @@
     % a) Punt angulós en x=-1 i forat en x=1.
     \nextgroupplot[title={\textbf{a)}}]
       \addplot[corba, very thick, domain=-3:-1, samples=80] {x+2};
-      \addplot[corba, very thick, domain=-1:0.92, samples=80]
+      \addplot[corba, very thick, domain=-1:0.85, samples=80]
         {1-0.5*(x+1)^2};
-      \addplot[corba, very thick, domain=1.08:2.55, samples=70]
+      \addplot[corba, very thick, domain=1.15:2.55, samples=70]
         {1-0.5*(x+1)^2};
       \addplot[
         only marks,
         mark=o,
         mark size=3pt,
-        mark options={draw=punt, fill=white, line width=1pt}
+        mark options={draw=punt, fill=none, line width=1pt}
       ] coordinates {(1,-1)};
 
     % b) Funció polinòmica suau.
@@ -62,13 +62,13 @@
 
     % e) Discontinuïtat de salt en x=-1.
     \nextgroupplot[title={\textbf{e)}}]
-      \addplot[corba, very thick, domain=-3:-1, samples=40] {-1};
+      \addplot[corba, very thick, domain=-3:-1.15, samples=40] {-1};
       \addplot[corba, very thick, domain=-1:3, samples=40] {1};
       \addplot[
         only marks,
         mark=o,
         mark size=3pt,
-        mark options={draw=punt, fill=white, line width=1pt}
+        mark options={draw=punt, fill=none, line width=1pt}
       ] coordinates {(-1,-1)};
       \addplot[
         only marks,
