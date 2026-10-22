@@ -104,77 +104,104 @@ Calcula els límits següents aplicant l'ordre dels infinits:
 ??? example "Mostra la solució pas a pas de l'exercici 1.3"
     **Resolució pas a pas**
 
-    En cada cas conservem els termes dominants o dividim pel terme que creix més.
+    Escrivim sempre el límit complet. Quan suprimim termes que creixen menys, ho justifiquem aplicant l'ordre dels infinits.
 
     - **a)**
 
         $$
-        \frac{3x^2-2x+1}{(x-2)^2}
-        =\frac{3-\frac2x+\frac1{x^2}}{\left(1-\frac2x\right)^2}
-        \longrightarrow\frac31=3.
+        \lim_{x\to+\infty}\frac{3x^2-2x+1}{(x-2)^2}
+        =\lim_{x\to+\infty}\frac{3-\frac2x+\frac1{x^2}}{\left(1-\frac2x\right)^2}
+        =\frac31=3.
         $$
 
-    - **b)** Com que $x$ creix més de pressa que $\ln x$,
+        Hem dividit el numerador i el denominador per $x^2$, el factor de creixement més gran segons l'ordre dels infinits.
+
+    - **b)** Per l'ordre dels infinits, $x$ creix més de pressa que $\ln x$:
 
         $$
-        \frac{2x+\ln x}{\ln x}=2\frac{x}{\ln x}+1\longrightarrow+\infty.
+        \lim_{x\to+\infty}\frac{2x+\ln x}{\ln x}
+        =\lim_{x\to+\infty}\left(2\frac{x}{\ln x}+1\right)
+        =+\infty.
         $$
 
-    - **c)** L'exponencial domina les constants:
+    - **c)** Dividim pel factor de creixement més gran, $3^x$. Per l'ordre dels infinits, l'exponencial creix més que les constants:
 
         $$
-        \frac{5+3^x}{2\cdot3^x+1}
-        =\frac{\frac5{3^x}+1}{2+\frac1{3^x}}
-        \longrightarrow\frac12.
+        \lim_{x\to+\infty}\frac{5+3^x}{2\cdot3^x+1}
+        =\lim_{x\to+\infty}\frac{\frac5{3^x}+1}{2+\frac1{3^x}}
+        =\frac12.
         $$
 
-    - **d)**
+    - **d)** Dividim el numerador i el denominador per $2^x$, el factor de creixement més gran segons l'ordre dels infinits:
 
         $$
-        \frac{4\cdot2^x}{2^x+3}
-        =\frac4{1+\frac3{2^x}}\longrightarrow4.
+        \lim_{x\to+\infty}\frac{4\cdot2^x}{2^x+3}
+        =\lim_{x\to+\infty}\frac4{1+\frac3{2^x}}
+        =4.
         $$
 
-    - **e)**
+    - **e)** Dividim el numerador i el denominador per $x^3$, el factor de creixement més gran segons l'ordre dels infinits:
 
         $$
-        \frac{x^2-4}{x^3+1}
-        =\frac{\frac1x-\frac4{x^3}}{1+\frac1{x^3}}\longrightarrow0.
+        \lim_{x\to+\infty}\frac{x^2-4}{x^3+1}
+        =\lim_{x\to+\infty}\frac{\frac1x-\frac4{x^3}}{1+\frac1{x^3}}=0.
         $$
 
-    - **f)** Com que $x\to+\infty$, $\sqrt{x^2}=x$:
+    - **f)** Traiem $x^2$ de l'arrel. Com que $x\to+\infty$, $\sqrt{x^2}=x$:
 
         $$
-        \frac{3x-1}{\sqrt{4x^2+5}}
-        =\frac{3-\frac1x}{\sqrt{4+\frac5{x^2}}}
-        \longrightarrow\frac32.
+        \lim_{x\to+\infty}\frac{3x-1}{\sqrt{4x^2+5}}
+        =\lim_{x\to+\infty}\frac{3-\frac1x}{\sqrt{4+\frac5{x^2}}}
+        =\frac32.
         $$
 
-    - **g)** $5^x$ creix més de pressa que qualsevol potència de $x$; per tant, $5^x-4x^6\to+\infty$.
+    - **g)** Per l'ordre dels infinits, $5^x$ creix més de pressa que qualsevol potència de $x$:
+
+        $$
+        \lim_{x\to+\infty}\left(5^x-4x^6\right)=+\infty.
+        $$
+
     - **h)** Fem les divisions:
 
         $$
-        \frac{x^2}{x-1}=x+1+\frac1{x-1},qquad
+        \frac{x^2}{x-1}=x+1+\frac1{x-1},\qquad
         \frac{x^3}{x^2+2}=x-\frac{2x}{x^2+2}.
         $$
 
-        Així, la diferència tendeix a $1$.
-
-    - **i)**
+        Per tant,
 
         $$
-        4x^6-3x^4+x=x^6\left(4-\frac3{x^2}+\frac1{x^5}\right)\longrightarrow+\infty.
+        \lim_{x\to+\infty}\left(\frac{x^2}{x-1}-\frac{x^3}{x^2+2}\right)
+        =\lim_{x\to+\infty}\left(1+\frac1{x-1}+\frac{2x}{x^2+2}\right)=1.
         $$
 
-    - **j)** Quan $x\to-\infty$, $x^5\to-\infty$ i, per tant, $-2x^5\to+\infty$. Aquest terme domina $7x^2$ i el límit és $+\infty$.
-    - **k)**
+    - **i)** Traiem factor comú $x^6$, el factor de creixement més gran segons l'ordre dels infinits:
 
         $$
-        \frac{3x^3-2}{x^3+5x}
-        =\frac{3-\frac2{x^3}}{1+\frac5{x^2}}\longrightarrow3.
+        \lim_{x\to-\infty}\left(4x^6-3x^4+x\right)
+        =\lim_{x\to-\infty}x^6\left(4-\frac3{x^2}+\frac1{x^5}\right)
+        =+\infty.
         $$
 
-    - **l)** $2^x\to0$ i $x^3\to-\infty$ quan $x\to-\infty$; per tant, el límit és $-\infty$.
+    - **j)** Per l'ordre dels infinits, $x^5$ creix més de pressa que $x^2$. Quan $x\to-\infty$, $x^5\to-\infty$ i, per tant, $-2x^5\to+\infty$:
+
+        $$
+        \lim_{x\to-\infty}\left(-2x^5+7x^2\right)=+\infty.
+        $$
+
+    - **k)** Dividim el numerador i el denominador per $x^3$, el factor de creixement més gran segons l'ordre dels infinits:
+
+        $$
+        \lim_{x\to-\infty}\frac{3x^3-2}{x^3+5x}
+        =\lim_{x\to-\infty}\frac{3-\frac2{x^3}}{1+\frac5{x^2}}
+        =3.
+        $$
+
+    - **l)** Quan $x\to-\infty$, $2^x\to0$ i $x^3\to-\infty$. Per tant,
+
+        $$
+        \lim_{x\to-\infty}\left(2^x+x^3\right)=-\infty.
+        $$
 
 ---
 
@@ -306,10 +333,11 @@ $$
         \lim_{x\to1^+}f(x)=+\infty.
         $$
 
-        Finalment,
+        Finalment, per l'ordre dels infinits, el denominador creix sense fita mentre que el numerador és constant:
 
         $$
-        \lim_{x\to-\infty}f(x)=\lim_{x\to+\infty}f(x)=0.
+        \lim_{x\to-\infty}\frac1{x-1}=0,\qquad
+        \lim_{x\to+\infty}\frac1{x-1}=0.
         $$
 
     - **Conclusió:** a $x=-2$ hi ha una discontinuïtat evitable i un forat a $(-2,-\frac13)$; $x=1$ és una asímptota vertical i $y=0$ és una asímptota horitzontal.
@@ -359,10 +387,16 @@ $$
 
         El factor cancel·lat produeix una discontinuïtat evitable i un forat a $(4,2)$.
 
-    - **A l'infinit:**
+    - **A l'infinit:** per l'ordre dels infinits, dividim el numerador i el denominador per $x$:
 
         $$
-        \frac{x+4}{x}=1+\frac4x\longrightarrow1.
+        \lim_{x\to-\infty}\frac{x+4}{x}
+        =\lim_{x\to-\infty}\left(1+\frac4x\right)=1,
+        $$
+
+        $$
+        \lim_{x\to+\infty}\frac{x+4}{x}
+        =\lim_{x\to+\infty}\left(1+\frac4x\right)=1.
         $$
 
         Així, $y=1$ és una asímptota horitzontal.
@@ -406,11 +440,18 @@ $$
 
     perquè el numerador tendeix a $-1$, $x+2$ és positiu i $x-2\to0^+$. Els límits laterals no coincideixen: hi ha una discontinuïtat infinita i $x=2$ és una asímptota vertical només pel costat dret.
 
-    Per estudiar els infinits utilitzem el tram que correspon:
+    Per estudiar els infinits utilitzem el tram que correspon i dividim pel factor de creixement més gran, d'acord amb l'ordre dels infinits:
 
     $$
-    \lim_{x\to-\infty}\frac{x-2}{(x-3)(x-4)}=0,qquad
-    \lim_{x\to+\infty}\frac{x^2-5}{(x+2)(x-2)}=1.
+    \lim_{x\to-\infty}\frac{x-2}{(x-3)(x-4)}
+    =\lim_{x\to-\infty}\frac{\frac1x-\frac2{x^2}}
+    {\left(1-\frac3x\right)\left(1-\frac4x\right)}=0,
+    $$
+
+    $$
+    \lim_{x\to+\infty}\frac{x^2-5}{(x+2)(x-2)}
+    =\lim_{x\to+\infty}\frac{1-\frac5{x^2}}
+    {\left(1+\frac2x\right)\left(1-\frac2x\right)}=1.
     $$
 
 ---
@@ -1601,14 +1642,14 @@ Estudia i representa les funcions polinòmiques següents. Indica el domini, els
 ??? example "Mostra la solució pas a pas de l'exercici 2.18"
     **Resolució pas a pas**
 
-    Totes sis funcions tenen domini $\mathbb{R}$. Factoritzem per trobar els talls amb l'eix $X$ i utilitzem la derivada per justificar la forma de la gràfica.
+    Totes sis funcions tenen domini $\mathbb{R}$. Factoritzem per trobar els talls amb l'eix $X$ i utilitzem la derivada per justificar la forma de la gràfica. Per estudiar els infinits apliquem l'ordre dels infinits: el terme amb la potència més gran determina el comportament final.
 
-    - **a)** $f(x)=(x^2-1)(x^2-5)$; talla l'eix $X$ a $x=\pm1,\pm\sqrt5$ i l'eix $Y$ a $(0,5)$. Com que $f'(x)=4x(x^2-3)$, hi ha mínims a $(\pm\sqrt3,-4)$ i un màxim a $(0,5)$. Als dos infinits, $f(x)\to+\infty$.
-    - **b)** $f(x)=(x+2)^2(x-4)$; els zeros són $-2$ (doble) i $4$, i $f(0)=-16$. Com que $f'(x)=3(x-2)(x+2)$, hi ha un màxim a $(-2,0)$ i un mínim a $(2,-32)$. A l'esquerra $f(x)\to-\infty$ i a la dreta $f(x)\to+\infty$.
-    - **c)** $f(x)=x^3(x-4)$; els zeros són $0$ (triple) i $4$. Com que $f'(x)=4x^2(x-3)$, decreix fins a $x=3$ i creix després. Té un mínim a $(3,-27)$; $(0,0)$ és estacionari, però no és un extrem. Als dos infinits, $f(x)\to+\infty$.
-    - **d)** $f(x)=x^2(x-5)^3$; els zeros són $0$ (doble) i $5$ (triple). Com que $f'(x)=5x(x-2)(x-5)^2$, té un màxim a $(0,0)$ i un mínim a $(2,-108)$. A $(5,0)$ la derivada s'anul·la, però no canvia de signe. A l'esquerra $f(x)\to-\infty$ i a la dreta $f(x)\to+\infty$.
-    - **e)** $f(x)=4\left(x-\frac12\right)^2(x-2)$; els zeros són $\frac12$ (doble) i $2$, i $f(0)=-2$. Com que $f'(x)=3(2x-1)(2x-3)$, té un màxim a $\left(\frac12,0\right)$ i un mínim a $\left(\frac32,-2\right)$. A l'esquerra $f(x)\to-\infty$ i a la dreta $f(x)\to+\infty$.
-    - **f)** $f(x)=x^2(x-4)^2$; els zeros són $0$ i $4$, tots dos dobles. Com que $f'(x)=4x(x-2)(x-4)$, té mínims a $(0,0)$ i $(4,0)$ i un màxim a $(2,16)$. Als dos infinits, $f(x)\to+\infty$.
+    - **a)** $f(x)=(x^2-1)(x^2-5)$; talla l'eix $X$ a $x=\pm1,\pm\sqrt5$ i l'eix $Y$ a $(0,5)$. Com que $f'(x)=4x(x^2-3)$, hi ha mínims a $(\pm\sqrt3,-4)$ i un màxim a $(0,5)$. Per l'ordre dels infinits, el terme $x^4$ determina el comportament: $\lim_{x\to-\infty}f(x)=+\infty$ i $\lim_{x\to+\infty}f(x)=+\infty$.
+    - **b)** $f(x)=(x+2)^2(x-4)$; els zeros són $-2$ (doble) i $4$, i $f(0)=-16$. Com que $f'(x)=3(x-2)(x+2)$, hi ha un màxim a $(-2,0)$ i un mínim a $(2,-32)$. Per l'ordre dels infinits, el terme $x^3$ determina el comportament: $\lim_{x\to-\infty}f(x)=-\infty$ i $\lim_{x\to+\infty}f(x)=+\infty$.
+    - **c)** $f(x)=x^3(x-4)$; els zeros són $0$ (triple) i $4$. Com que $f'(x)=4x^2(x-3)$, decreix fins a $x=3$ i creix després. Té un mínim a $(3,-27)$; $(0,0)$ és estacionari, però no és un extrem. Per l'ordre dels infinits, el terme $x^4$ determina el comportament: $\lim_{x\to-\infty}f(x)=+\infty$ i $\lim_{x\to+\infty}f(x)=+\infty$.
+    - **d)** $f(x)=x^2(x-5)^3$; els zeros són $0$ (doble) i $5$ (triple). Com que $f'(x)=5x(x-2)(x-5)^2$, té un màxim a $(0,0)$ i un mínim a $(2,-108)$. A $(5,0)$ la derivada s'anul·la, però no canvia de signe. Per l'ordre dels infinits, el terme $x^5$ determina el comportament: $\lim_{x\to-\infty}f(x)=-\infty$ i $\lim_{x\to+\infty}f(x)=+\infty$.
+    - **e)** $f(x)=4\left(x-\frac12\right)^2(x-2)$; els zeros són $\frac12$ (doble) i $2$, i $f(0)=-2$. Com que $f'(x)=3(2x-1)(2x-3)$, té un màxim a $\left(\frac12,0\right)$ i un mínim a $\left(\frac32,-2\right)$. Per l'ordre dels infinits, el terme $4x^3$ determina el comportament: $\lim_{x\to-\infty}f(x)=-\infty$ i $\lim_{x\to+\infty}f(x)=+\infty$.
+    - **f)** $f(x)=x^2(x-4)^2$; els zeros són $0$ i $4$, tots dos dobles. Com que $f'(x)=4x(x-2)(x-4)$, té mínims a $(0,0)$ i $(4,0)$ i un màxim a $(2,16)$. Per l'ordre dels infinits, el terme $x^4$ determina el comportament: $\lim_{x\to-\infty}f(x)=+\infty$ i $\lim_{x\to+\infty}f(x)=+\infty$.
 
     <figure markdown="span" class="exercise-solution-figure">
       ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=2){ width="100%" }
@@ -1632,13 +1673,79 @@ Estudia i representa les funcions racionals següents. Calcula els límits quan 
 
     En cada funció racional comencem pel domini, factoritzem si és possible i conservem sempre les exclusions de l'expressió original.
 
-    - **a)** $\displaystyle f(x)=\frac{(x-1)(x+1)}{(x-2)(x+1)}=\frac{x-1}{x-2}$, amb $D_f=\mathbb{R}\setminus\{-1,2\}$. Hi ha un forat a $\left(-1,\frac23\right)$, una asímptota vertical $x=2$ i una asímptota horitzontal $y=1$. Els talls són $(1,0)$ i $\left(0,\frac12\right)$. Com que $f'(x)=-1/(x-2)^2<0$, decreix en cada interval del domini.
-    - **b)** $D_f=\mathbb{R}\setminus\{-1,1\}$; $x=\pm1$ són asímptotes verticals i $y=2$ és horitzontal. Els talls són $(\pm\sqrt2,0)$ i $(0,4)$. Com que $f'(x)=4x/(x^2-1)^2$, decreix per $x<0$ i creix per $x>0$, separant a $x=\pm1$. Té un mínim relatiu a $(0,4)$.
-    - **c)** $\displaystyle f(x)=\frac{-(x-3)(x+2)}{(x-2)(x+2)}=\frac{3-x}{x-2}$, amb $D_f=\mathbb{R}\setminus\{-2,2\}$. Hi ha un forat a $\left(-2,-\frac54\right)$, una asímptota vertical $x=2$ i una d'horitzontal $y=-1$. Els talls són $(3,0)$ i $\left(0,-\frac32\right)$. Com que $f'(x)=-1/(x-2)^2<0$, decreix en cada interval del domini.
-    - **d)** $D_f=\mathbb{R}\setminus\{-2,2\}$; $x=\pm2$ són asímptotes verticals i $y=3$ és horitzontal. No talla l'eix $X$ i talla l'eix $Y$ a $(0,-1)$. Com que $f'(x)=-32x/(x^2-4)^2$, creix per $x<0$ i decreix per $x>0$, separant a $x=\pm2$. Té un màxim relatiu a $(0,-1)$.
-    - **e)** $D_f=\mathbb{R}\setminus\{-1,2\}$; $x=-1$ i $x=2$ són asímptotes verticals, i $y=0$ és horitzontal. Talla l'eix $Y$ a $\left(0,-\frac12\right)$ i no talla l'eix $X$. Com que $f'(x)=-(2x-1)/(x^2-x-2)^2$, creix fins a $x=\frac12$ i decreix després, separant les discontinuïtats. Té un màxim relatiu a $\left(\frac12,-\frac49\right)$.
-    - **f)** Dividim: $\displaystyle\frac{x^2}{x-1}=x+1+\frac1{x-1}$. Així, $D_f=\mathbb{R}\setminus\{1\}$, $x=1$ és asímptota vertical i $y=x+1$ és obliqua. L'únic tall és $(0,0)$. Com que $f'(x)=x(x-2)/(x-1)^2$, té un màxim relatiu a $(0,0)$ i un mínim relatiu a $(2,4)$.
-    - **g)** Dividim: $\displaystyle-\frac{x^2}{x+1}=-x+1-\frac1{x+1}$. Així, $D_f=\mathbb{R}\setminus\{-1\}$, $x=-1$ és asímptota vertical i $y=-x+1$ és obliqua. L'únic tall és $(0,0)$. Com que $f'(x)=-x(x+2)/(x+1)^2$, té un mínim relatiu a $(-2,4)$ i un màxim relatiu a $(0,0)$.
+    - **a)** $\displaystyle f(x)=\frac{(x-1)(x+1)}{(x-2)(x+1)}=\frac{x-1}{x-2}$, amb $D_f=\mathbb{R}\setminus\{-1,2\}$. Hi ha un forat a $\left(-1,\frac23\right)$ i una asímptota vertical $x=2$. Per l'ordre dels infinits, dividim el numerador i el denominador per $x$:
+
+        $$
+        \lim_{x\to\pm\infty}\frac{x-1}{x-2}
+        =\lim_{x\to\pm\infty}\frac{1-\frac1x}{1-\frac2x}=1.
+        $$
+
+        Per tant, $y=1$ és una asímptota horitzontal. A més,
+
+        $$f(x)-1=\frac1{x-2},$$
+
+        de manera que la gràfica queda per sota de l'asímptota si $x<2$ i per sobre si $x>2$. Els talls són $(1,0)$ i $\left(0,\frac12\right)$. Com que $f'(x)=-1/(x-2)^2<0$, decreix en cada interval del domini.
+    - **b)** $D_f=\mathbb{R}\setminus\{-1,1\}$ i $x=\pm1$ són asímptotes verticals. Per l'ordre dels infinits, dividim el numerador i el denominador per $x^2$:
+
+        $$
+        \lim_{x\to\pm\infty}\frac{2x^2-4}{x^2-1}
+        =\lim_{x\to\pm\infty}\frac{2-\frac4{x^2}}{1-\frac1{x^2}}=2.
+        $$
+
+        Així, $y=2$ és una asímptota horitzontal. Com que
+
+        $$f(x)-2=\frac{-2}{x^2-1},$$
+
+        la gràfica queda per sota de l'asímptota si $|x|>1$ i per sobre si $|x|<1$. Els talls són $(\pm\sqrt2,0)$ i $(0,4)$. Com que $f'(x)=4x/(x^2-1)^2$, decreix per $x<0$ i creix per $x>0$, separant a $x=\pm1$. Té un mínim relatiu a $(0,4)$.
+    - **c)** $\displaystyle f(x)=\frac{-(x-3)(x+2)}{(x-2)(x+2)}=\frac{3-x}{x-2}$, amb $D_f=\mathbb{R}\setminus\{-2,2\}$. Hi ha un forat a $\left(-2,-\frac54\right)$ i una asímptota vertical $x=2$. Per l'ordre dels infinits, dividim el numerador i el denominador per $x$:
+
+        $$
+        \lim_{x\to\pm\infty}\frac{3-x}{x-2}
+        =\lim_{x\to\pm\infty}\frac{\frac3x-1}{1-\frac2x}=-1.
+        $$
+
+        Per tant, $y=-1$ és una asímptota horitzontal. Com que
+
+        $$f(x)+1=\frac1{x-2},$$
+
+        la gràfica queda per sota de l'asímptota si $x<2$ i per sobre si $x>2$. Els talls són $(3,0)$ i $\left(0,-\frac32\right)$. Com que $f'(x)=-1/(x-2)^2<0$, decreix en cada interval del domini.
+    - **d)** $D_f=\mathbb{R}\setminus\{-2,2\}$ i $x=\pm2$ són asímptotes verticals. Per l'ordre dels infinits, dividim el numerador i el denominador per $x^2$:
+
+        $$
+        \lim_{x\to\pm\infty}\frac{3x^2+4}{x^2-4}
+        =\lim_{x\to\pm\infty}\frac{3+\frac4{x^2}}{1-\frac4{x^2}}=3.
+        $$
+
+        Així, $y=3$ és una asímptota horitzontal. Com que
+
+        $$f(x)-3=\frac{16}{x^2-4},$$
+
+        la gràfica queda per sobre de l'asímptota si $|x|>2$ i per sota si $|x|<2$. No talla l'eix $X$ i talla l'eix $Y$ a $(0,-1)$. Com que $f'(x)=-32x/(x^2-4)^2$, creix per $x<0$ i decreix per $x>0$, separant a $x=\pm2$. Té un màxim relatiu a $(0,-1)$.
+    - **e)** $D_f=\mathbb{R}\setminus\{-1,2\}$ i $x=-1$ i $x=2$ són asímptotes verticals. Per l'ordre dels infinits, dividim el numerador i el denominador per $x^2$:
+
+        $$
+        \lim_{x\to\pm\infty}\frac1{(x+1)(x-2)}
+        =\lim_{x\to\pm\infty}\frac{\frac1{x^2}}
+        {\left(1+\frac1x\right)\left(1-\frac2x\right)}=0.
+        $$
+
+        Per tant, $y=0$ és una asímptota horitzontal. La funció és positiva a $(-\infty,-1)$ i $(2,+\infty)$, i negativa a $(-1,2)$; això indica si la gràfica queda per sobre o per sota de l'asímptota. Talla l'eix $Y$ a $\left(0,-\frac12\right)$ i no talla l'eix $X$. Com que $f'(x)=-(2x-1)/(x^2-x-2)^2$, creix fins a $x=\frac12$ i decreix després, separant les discontinuïtats. Té un màxim relatiu a $\left(\frac12,-\frac49\right)$.
+    - **f)** Dividim: $\displaystyle\frac{x^2}{x-1}=x+1+\frac1{x-1}$. Per comprovar l'asímptota obliqua fem el límit de la diferència:
+
+        $$
+        \lim_{x\to\pm\infty}\left[f(x)-(x+1)\right]
+        =\lim_{x\to\pm\infty}\frac1{x-1}=0.
+        $$
+
+        Així, $D_f=\mathbb{R}\setminus\{1\}$, $x=1$ és asímptota vertical i $y=x+1$ és obliqua. L'únic tall és $(0,0)$. Com que $f'(x)=x(x-2)/(x-1)^2$, té un màxim relatiu a $(0,0)$ i un mínim relatiu a $(2,4)$.
+    - **g)** Dividim: $\displaystyle-\frac{x^2}{x+1}=-x+1-\frac1{x+1}$. Per comprovar l'asímptota obliqua fem el límit de la diferència:
+
+        $$
+        \lim_{x\to\pm\infty}\left[f(x)-(-x+1)\right]
+        =\lim_{x\to\pm\infty}\frac{-1}{x+1}=0.
+        $$
+
+        Així, $D_f=\mathbb{R}\setminus\{-1\}$, $x=-1$ és asímptota vertical i $y=-x+1$ és obliqua. L'únic tall és $(0,0)$. Com que $f'(x)=-x(x+2)/(x+1)^2$, té un mínim relatiu a $(-2,4)$ i un màxim relatiu a $(0,0)$.
 
     <figure markdown="span" class="exercise-solution-figure">
       ![Representacions de les funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_32_resultat_exercici_2_19.svg?v=2){ width="100%" }
@@ -1746,8 +1853,20 @@ Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós 
     - **b)** Cal $x(x-4)\geq0$, de manera que $D_f=(-\infty,0]\cup[4,+\infty)$. Els talls amb l'eix $X$ són $(0,0)$ i $(4,0)$. A l'esquerra la funció s'acosta a l'obliqua $y=-x+2$ i a la dreta, a $y=x-2$.
     - **c)** Cal $x^2-4>0$: $D_f=(-\infty,-2)\cup(2,+\infty)$. Els zeros compleixen $\ln(x^2-4)=0$, és a dir, $x^2-4=1$; per tant, $x=\pm\sqrt5$. Les rectes $x=-2$ i $x=2$ són asímptotes verticals.
     - **d)** Com que $x^2+2\geq2$, $\ln(x^2+2)\geq\ln2>0$. El domini és $\mathbb{R}$ i l'únic tall amb els eixos és $(0,0)$.
-    - **e)** $f'(x)=-2xe^{-x^2}$. L'exponencial és sempre positiu, de manera que creix si $x<0$ i decreix si $x>0$. Té un màxim a $(0,1)$ i $y=0$ és asímptota horitzontal als dos infinits.
-    - **f)** $f'(x)=2xe^{-2x}(1-x)$. Decreix a $(-\infty,0)$, creix a $(0,1)$ i torna a decréixer a $(1,+\infty)$. Té un mínim a $(0,0)$ i un màxim a $(1,e^{-2})$. A l'esquerra tendeix a $+\infty$ i a la dreta tendeix a $0$.
+    - **e)** $f'(x)=-2xe^{-x^2}$. L'exponencial és sempre positiu, de manera que creix si $x<0$ i decreix si $x>0$. Té un màxim a $(0,1)$. Com que $-x^2\to-\infty$ als dos infinits,
+
+        $$
+        \lim_{x\to-\infty}e^{-x^2}=0,\qquad
+        \lim_{x\to+\infty}e^{-x^2}=0.
+        $$
+
+        Per tant, $y=0$ és una asímptota horitzontal als dos infinits.
+    - **f)** $f'(x)=2xe^{-2x}(1-x)$. Decreix a $(-\infty,0)$, creix a $(0,1)$ i torna a decréixer a $(1,+\infty)$. Té un mínim a $(0,0)$ i un màxim a $(1,e^{-2})$. Per estudiar els infinits escrivim $x^2e^{-2x}=x^2/e^{2x}$. Per l'ordre dels infinits, l'exponencial creix més de pressa que qualsevol potència:
+
+        $$
+        \lim_{x\to-\infty}x^2e^{-2x}=+\infty,\qquad
+        \lim_{x\to+\infty}\frac{x^2}{e^{2x}}=0.
+        $$
     - **g)** Cal $x>0$ i $\ln x\ne0$: $D_f=(0,1)\cup(1,+\infty)$. La recta $x=1$ és una asímptota vertical. Com que
 
         $$f'(x)=\frac{x(2\ln x-1)}{(\ln x)^2},$$
@@ -1758,7 +1877,14 @@ Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós 
 
         $$f'(x)=e^x\bigl((x-1)^2+2(x-1)\bigr)=e^x(x-1)(x+1).$$
 
-        Creix a $(-\infty,-1)$ i $(1,+\infty)$, i decreix a $(-1,1)$. Té un màxim a $\left(-1,\frac4e\right)$ i un mínim a $(1,0)$. A l'esquerra, $y=0$ és asímptota horitzontal.
+        Creix a $(-\infty,-1)$ i $(1,+\infty)$, i decreix a $(-1,1)$. Té un màxim a $\left(-1,\frac4e\right)$ i un mínim a $(1,0)$. Per l'ordre dels infinits, l'exponencial creix més de pressa que el factor polinòmic:
+
+        $$
+        \lim_{x\to-\infty}(x-1)^2e^x=0,\qquad
+        \lim_{x\to+\infty}(x-1)^2e^x=+\infty.
+        $$
+
+        Per tant, a l'esquerra, $y=0$ és asímptota horitzontal.
 
 ---
 
@@ -1942,9 +2068,15 @@ Determina'n el domini, els talls amb els eixos, les asímptotes verticals i hori
 
     - **Domini:** $x^2-9\ne0$, de manera que $D_f=\mathbb{R}\setminus\{-3,3\}$.
     - **Talls:** $3x^2-6=0\Rightarrow x=\pm\sqrt2$, i $f(0)=\frac23$.
-    - **Asímptota horitzontal:** els polinomis tenen el mateix grau i
+    - **Asímptota horitzontal:** per l'ordre dels infinits, dividim el numerador i el denominador per $x^2$:
 
-        $$\lim_{x\to\pm\infty}f(x)=\frac31=3.$$
+        $$
+        \lim_{x\to\pm\infty}\frac{3x^2-6}{x^2-9}
+        =\lim_{x\to\pm\infty}\frac{3-\frac6{x^2}}{1-\frac9{x^2}}
+        =3.
+        $$
+
+        Per tant, $y=3$ és una asímptota horitzontal.
 
     - **Asímptotes verticals i límits laterals:** el numerador és positiu prop de $\pm3$. Estudiant el signe de $(x-3)(x+3)$ obtenim
 
@@ -1989,9 +2121,17 @@ Troba les asímptotes verticals i horitzontals, calcula els límits laterals en 
 
     - **Comportament a l'infinit:**
 
-        $$\lim_{x\to-\infty}g(x)=0,$$
+        Quan $x\to-\infty$, $e^x\to0$ i $x-1\to-\infty$:
 
-        de manera que $y=0$ és asímptota horitzontal només per l'esquerra. Quan $x\to+\infty$, l'exponencial domina el polinomi i $g(x)\to+\infty$.
+        $$
+        \lim_{x\to-\infty}\frac{e^x}{x-1}=0,
+        $$
+
+        de manera que $y=0$ és asímptota horitzontal només per l'esquerra. Quan $x\to+\infty$, per l'ordre dels infinits, l'exponencial creix més de pressa que el polinomi:
+
+        $$
+        \lim_{x\to+\infty}\frac{e^x}{x-1}=+\infty.
+        $$
 
     - **Talls:** $g(0)=-1$ i no hi ha talls amb l'eix $X$, perquè $e^x$ no s'anul·la.
     - **Monotonia:**
@@ -2451,10 +2591,12 @@ on $x$ és el temps transcorregut, en hores.
 
         $$f(3)=\frac{45}{18}+5=7{,}5\text{ desenes}=75\text{ microorganismes}.$$
 
-    - **c)**
+    - **c)** Per l'ordre dels infinits, dividim el numerador i el denominador de la fracció per $x^2$:
 
         $$
-        \lim_{x\to+\infty}\left(\frac{15x}{9+x^2}+5\right)=0+5=5.
+        \lim_{x\to+\infty}\left(\frac{15x}{9+x^2}+5\right)
+        =\lim_{x\to+\infty}\left(\frac{\frac{15}{x}}{\frac9{x^2}+1}+5\right)
+        =0+5=5.
         $$
 
         A llarg termini, la mostra tendeix a estabilitzar-se en $50$ microorganismes.
@@ -2562,9 +2704,13 @@ on $t$ és el temps transcorregut, en anys.
 
         A més de l'instant inicial $t=0$, recupera aquest nombre al cap de $4$ anys.
 
-    - **e)**
+    - **e)** Per l'ordre dels infinits, el denominador creix sense fita i la fracció tendeix a zero:
 
-        $$\lim_{t\to+\infty}C(t)=3-0=3.$$
+        $$
+        \lim_{t\to+\infty}C(t)
+        =\lim_{t\to+\infty}\left(3-\frac1{t^2-4t+5}\right)
+        =3-0=3.
+        $$
 
         A llarg termini, el model tendeix a $3.000$ clients.
 
@@ -2611,9 +2757,19 @@ on $t$ és el temps transcorregut, en mesos, des de l'inici de la campanya.
 
         El màxim és d'unes $3.213$ descàrregues diàries.
 
-    - **d)** Com que $(t+1)e^{-t/2}\to0$,
+    - **d)** Escrivim el producte com un quocient:
 
-        $$\lim_{t\to+\infty}D(t)=20.$$
+        $$
+        (t+1)e^{-t/2}=\frac{t+1}{e^{t/2}}.
+        $$
+
+        Per l'ordre dels infinits, l'exponencial creix més de pressa que el polinomi. Per tant,
+
+        $$
+        \lim_{t\to+\infty}D(t)
+        =\lim_{t\to+\infty}\left(20+10\frac{t+1}{e^{t/2}}\right)
+        =20.
+        $$
 
         El model preveu que es mantindran $2.000$ descàrregues diàries.
 
@@ -2658,7 +2814,17 @@ on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ c
     - **d)** El mínim possible és aproximadament $18{,}45\,€$, que és superior a $18\,€$. Per tant, l'objectiu no és possible segons el model.
     - **e)**
 
-        $$\lim_{x\to0^+}C(x)=+\infty,qquad \lim_{x\to+\infty}C(x)=+\infty.$$
+        Quan $x\to0^+$, $\ln x\to-\infty$ i, per tant, $-4\ln x\to+\infty$:
+
+        $$
+        \lim_{x\to0^+}\left(20+x-4\ln x\right)=+\infty.
+        $$
+
+        Quan $x\to+\infty$, per l'ordre dels infinits, $x$ creix més de pressa que $\ln x$:
+
+        $$
+        \lim_{x\to+\infty}\left(20+x-4\ln x\right)=+\infty.
+        $$
 
         La gràfica baixa des de $+\infty$ fins al mínim de $x=4$ i després torna a pujar.
 
