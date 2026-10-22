@@ -228,7 +228,7 @@ Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si
     - **c)** La substitució dona $\frac3{0}$. El numerador és positiu i $x-2$ canvia de signe:
 
         $$
-        \lim_{x\to2^-}\frac{x+1}{x-2}=-\infty,qquad
+        \lim_{x\to2^-}\frac{x+1}{x-2}=-\infty,\qquad
         \lim_{x\to2^+}\frac{x+1}{x-2}=+\infty.
         $$
 
@@ -245,7 +245,7 @@ Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si
 
         $$
         \frac{x^2-5x+6}{2-x}
-        =\frac{(x-2)(x-3)}{-(x-2)}=3-x,qquad x\ne2.
+        =\frac{(x-2)(x-3)}{-(x-2)}=3-x,\qquad x\ne2.
         $$
 
         Per tant, el límit val $3-2=1$.
@@ -268,7 +268,7 @@ Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si
     - **h)** Obtenim $\frac00$. Factoritzem:
 
         $$
-        x^2+x-12=(x-3)(x+4),qquad
+        x^2+x-12=(x-3)(x+4),\qquad
         x^3-5x^2+3x+9=(x-3)^2(x+1).
         $$
 
@@ -282,7 +282,7 @@ Calcula els límits. Substitueix primer el valor al qual tendeix $x$ i indica si
         El numerador i $x+1$ són positius prop de $3$; per tant, el signe depèn de $x-3$:
 
         $$
-        \lim_{x\to3^-}=-\infty,qquad
+        \lim_{x\to3^-}=-\infty,\qquad
         \lim_{x\to3^+}=+\infty.
         $$
 
@@ -313,7 +313,7 @@ $$
     Per tant,
 
     $$
-    f(x)=\frac1{x-1},qquad x\ne-2,1,
+    f(x)=\frac1{x-1},\qquad x\ne-2,1,
     $$
 
     però cal conservar les exclusions de la funció original.
@@ -322,14 +322,14 @@ $$
     - **Límits demanats:**
 
         $$
-        f(0)=-1,qquad
+        f(0)=-1,\qquad
         \lim_{x\to-2}f(x)=\frac1{-3}=-\frac13.
         $$
 
         Prop de $x=1$, el numerador és positiu i el signe depèn de $x-1$:
 
         $$
-        \lim_{x\to1^-}f(x)=-\infty,qquad
+        \lim_{x\to1^-}f(x)=-\infty,\qquad
         \lim_{x\to1^+}f(x)=+\infty.
         $$
 
@@ -366,14 +366,14 @@ $$
     Factoritzem i simplifiquem sense oblidar el domini original:
 
     $$
-    g(x)=\frac{(x-4)(x+4)}{x(x-4)}=\frac{x+4}{x},qquad x\ne0,4.
+    g(x)=\frac{(x-4)(x+4)}{x(x-4)}=\frac{x+4}{x},\qquad x\ne0,4.
     $$
 
     - **Domini:** $D_g=\mathbb{R}\setminus\{0,4\}$.
     - **En $x=0$:**
 
         $$
-        \lim_{x\to0^-}\frac{x+4}{x}=-\infty,qquad
+        \lim_{x\to0^-}\frac{x+4}{x}=-\infty,\qquad
         \lim_{x\to0^+}\frac{x+4}{x}=+\infty.
         $$
 
@@ -428,7 +428,7 @@ $$
     En el punt d'unió $x=2$ calculem el valor i els dos límits laterals amb el tram corresponent.
 
     $$
-    f(2)=\frac{2-2}{(2-3)(2-4)}=0,qquad
+    f(2)=\frac{2-2}{(2-3)(2-4)}=0,\qquad
     \lim_{x\to2^-}f(x)=0.
     $$
 
@@ -479,7 +479,7 @@ on $t$ és el nombre de dies transcorreguts i $A(t)$ és l'estalvi expressat en 
     L'únic punt on pot fallar la continuïtat és $t=60$.
 
     $$
-    A(60)=e^{0{,}03\cdot60}=e^{1{,}8}\approx6{,}050,qquad
+    A(60)=e^{0{,}03\cdot60}=e^{1{,}8}\approx6{,}050,\qquad
     \lim_{t\to60^+}A(t)=-\frac{60}{30}+8=6.
     $$
 
@@ -524,18 +524,18 @@ Calcula la derivada de cada funció. Quan s'indiqui un punt, calcula també el v
 
     - **b)** Derivem terme a terme i després substituïm $x=2$:
 
-        $$f'(x)=(x^2-3x)'=2x-3,qquad f'(2)=4-3=1.$$
+        $$f'(x)=(x^2-3x)'=2x-3,\qquad f'(2)=4-3=1.$$
 
     - **c)** Apliquem la regla de la cadena a $(x+5)^{1/2}$:
 
         $$
-        f'(x)=\frac12(x+5)^{-1/2}\cdot1=\frac1{2\sqrt{x+5}},qquad
+        f'(x)=\frac12(x+5)^{-1/2}\cdot1=\frac1{2\sqrt{x+5}},\qquad
         f'(4)=\frac1{2\sqrt9}=\frac16.
         $$
 
     - **d)** Apliquem la regla de la cadena a l'exponencial:
 
-        $$f'(x)=e^{2x}\cdot(2x)'=2e^{2x},qquad f'(0)=2e^0=2.$$
+        $$f'(x)=e^{2x}\cdot(2x)'=2e^{2x},\qquad f'(0)=2e^0=2.$$
 
 ---
 
@@ -671,16 +671,16 @@ Simplifica cada expressió i deriva-la. Conserva les restriccions del domini ori
 
     - **a)**
 
-        $$f(x)=\frac{x^3+2x^2}{x}=x^2+2x,\quad x\ne0;qquad f'(x)=2x+2.$$
+        $$f(x)=\frac{x^3+2x^2}{x}=x^2+2x,\quad x\ne0;\qquad f'(x)=2x+2.$$
 
     - **b)**
 
-        $$f(x)=\frac{x^4+3x}{x}=x^3+3,\quad x\ne0;qquad f'(x)=3x^2.$$
+        $$f(x)=\frac{x^4+3x}{x}=x^3+3,\quad x\ne0;\qquad f'(x)=3x^2.$$
 
     - **c)** $f(x)=x^2x^{1/2}=x^{5/2}$ i $f'(x)=\dfrac52x^{3/2}$.
     - **d)**
 
-        $$f(x)=\frac{(x-3)(x+3)}{x-3}=x+3,\quad x\ne3;qquad f'(x)=1.$$
+        $$f(x)=\frac{(x-3)(x+3)}{x-3}=x+3,\quad x\ne3;\qquad f'(x)=1.$$
 
     - **e)** Com que $x>0$, $\ln(x^3)=3\ln x$; per tant, $f'(x)=\dfrac3x$.
     - **f)** Com que $x>0$, $e^{\ln x}=x$; per tant, $f'(x)=1$.
@@ -854,11 +854,11 @@ Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
 
     - **a)**
 
-        $$f'(x)=3x^2-4x+4,qquad f''(x)=6x-4,qquad f'''(x)=6.$$
+        $$f'(x)=3x^2-4x+4,\qquad f''(x)=6x-4,\qquad f'''(x)=6.$$
 
     - **b)**
 
-        $$f'(x)=3e^{3x},qquad f''(x)=9e^{3x},qquad f'''(x)=27e^{3x}.$$
+        $$f'(x)=3e^{3x},\qquad f''(x)=9e^{3x},\qquad f'''(x)=27e^{3x}.$$
 
     - **c)**
 
@@ -866,15 +866,15 @@ Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
         f'(x)=e^x+(x-2)e^x=(x-1)e^x,
         $$
 
-        $$f''(x)=e^x+(x-1)e^x=xe^x,qquad f'''(x)=e^x+xe^x=(x+1)e^x.$$
+        $$f''(x)=e^x+(x-1)e^x=xe^x,\qquad f'''(x)=e^x+xe^x=(x+1)e^x.$$
 
     - **d)**
 
-        $$f'(x)=\frac1{x+3},qquad f''(x)=-\frac1{(x+3)^2},qquad f'''(x)=\frac2{(x+3)^3}.$$
+        $$f'(x)=\frac1{x+3},\qquad f''(x)=-\frac1{(x+3)^2},\qquad f'''(x)=\frac2{(x+3)^3}.$$
 
     - **e)** Escrivim $f(x)=(x+2)^{-1}$:
 
-        $$f'(x)=-\frac1{(x+2)^2},qquad f''(x)=\frac2{(x+2)^3},qquad f'''(x)=-\frac6{(x+2)^4}.$$
+        $$f'(x)=-\frac1{(x+2)^2},\qquad f''(x)=\frac2{(x+2)^3},\qquad f'''(x)=-\frac6{(x+2)^4}.$$
 
 ---
 
@@ -936,7 +936,7 @@ Determina $a$ i $b$ perquè $g(1)=2$ i $g'(1)=5$.
 
     De $b=3-a$ i la segona equació:
 
-    $$3a+2(3-a)=7\Longrightarrow a=1,qquad b=2.$$
+    $$3a+2(3-a)=7\Longrightarrow a=1,\qquad b=2.$$
 
 ---
 
@@ -966,7 +966,7 @@ Determina els coeficients $a$ i $b$ sabent que $h(-1)=7$ i $h'(2)=6$. Escriu la 
 
     De la primera, $b=a-4$. Substituïm:
 
-    $$4a+(a-4)=6\Longrightarrow5a=10\Longrightarrow a=2,qquad b=-2.$$
+    $$4a+(a-4)=6\Longrightarrow5a=10\Longrightarrow a=2,\qquad b=-2.$$
 
     Per tant,
 
@@ -992,7 +992,7 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 
     La gràfica passa per $P=(0,2)$, passa per $Q=(1,0)$ i té tangent horitzontal en $Q$. Per tant,
 
-    $$p(0)=2,qquad p(1)=0,qquad p'(1)=0.$$
+    $$p(0)=2,\qquad p(1)=0,\qquad p'(1)=0.$$
 
     Com que
 
@@ -1001,12 +1001,12 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
     les tres equacions són
 
     $$
-    c=2,qquad 1+a+b+c=0,qquad3+2a+b=0.
+    c=2,\qquad 1+a+b+c=0,\qquad3+2a+b=0.
     $$
 
     Substituint $c=2$:
 
-    $$a+b=-3,qquad2a+b=-3.$$
+    $$a+b=-3,\qquad2a+b=-3.$$
 
     Restant les dues equacions obtenim $a=0$ i després $b=-3$. Així,
 
@@ -1014,7 +1014,7 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 
     Finalment,
 
-    $$p''(x)=6x+2a=6x,qquad p''(1)=6>0.$$
+    $$p''(x)=6x+2a=6x,\qquad p''(1)=6>0.$$
 
     Per tant, $Q=(1,0)$ és un mínim relatiu.
 
@@ -1062,7 +1062,7 @@ La figura representa una funció $y=f(x)$.
 
     - **a)** La derivada és el pendent de la tangent. A $x=-2$ i a $x=1$ la tangent és horitzontal, de manera que
 
-        $$f'(-2)=0,qquad f'(1)=0.$$
+        $$f'(-2)=0,\qquad f'(1)=0.$$
 
         El tram que conté $x=4$ és una recta que puja $2$ unitats per cada unitat horitzontal; per tant, $f'(4)=2$.
 
@@ -1087,13 +1087,13 @@ $$
     Primer comprovem la continuïtat:
 
     $$
-    f(1)=1^2+1-2=0,qquad
+    f(1)=1^2+1-2=0,\qquad
     \lim_{x\to1^+}(3x-3)=0.
     $$
 
     Els dos límits laterals coincideixen amb $f(1)$; per tant, és contínua. Derivem els dos trams:
 
-    $$f'_-(1)=(2x+1)\big|_{x=1}=3,qquad f'_+(1)=3.$$
+    $$f'_-(1)=(2x+1)\big|_{x=1}=3,\qquad f'_+(1)=3.$$
 
     Com que les derivades laterals coincideixen, $f$ és derivable a $x=1$ i $f'(1)=3$.
 
@@ -1116,13 +1116,13 @@ $$
     Comprovem la continuïtat:
 
     $$
-    f(-1)=(-1)^2+4(-1)+1=-2,qquad
+    f(-1)=(-1)^2+4(-1)+1=-2,\qquad
     \lim_{x\to-1^+}(x-1)=-2.
     $$
 
     La funció és contínua. Ara comparem les derivades laterals:
 
-    $$f'_-( -1)=(2x+4)\big|_{x=-1}=2,qquad f'_+( -1)=1.$$
+    $$f'_-( -1)=(2x+4)\big|_{x=-1}=2,\qquad f'_+( -1)=1.$$
 
     Com que $2\ne1$, no és derivable a $x=-1$; la gràfica hi té un punt angulós.
 
@@ -1160,7 +1160,7 @@ $$
 
     Així,
 
-    $$\lim_{x\to2^-}f'(x)=-\infty,qquad \lim_{x\to2^+}f'(x)=+\infty.$$
+    $$\lim_{x\to2^-}f'(x)=-\infty,\qquad \lim_{x\to2^+}f'(x)=+\infty.$$
 
     No hi ha una derivada finita comuna; la funció no és derivable a $x=2$ i la gràfica hi presenta dues semitangents verticals.
 
@@ -1188,18 +1188,18 @@ $$
     En $x=-2$:
 
     $$
-    \lim_{x\to-2^-}(x^2+5x+4)=-2,qquad f(-2)=2(-2)+2=-2.
+    \lim_{x\to-2^-}(x^2+5x+4)=-2,\qquad f(-2)=2(-2)+2=-2.
     $$
 
     És contínua, però
 
-    $$f'_-( -2)=(2x+5)\big|_{-2}=1,qquad f'_+( -2)=2.$$
+    $$f'_-( -2)=(2x+5)\big|_{-2}=1,\qquad f'_+( -2)=2.$$
 
     Per tant, no és derivable a $x=-2$.
 
     En $x=1$:
 
-    $$f(1)=2(1)+2=4,qquad \lim_{x\to1^+}(x+1)=2.$$
+    $$f(1)=2(1)+2=4,\qquad \lim_{x\to1^+}(x+1)=2.$$
 
     Hi ha una discontinuïtat de salt; en conseqüència, tampoc és derivable a $x=1$.
 
@@ -1245,7 +1245,7 @@ $$
 
     - **a)** En $x=0$, els dos trams valen $0$ i les derivades laterals són $0$ i $2x|_{0}=0$: és contínua i derivable. En $x=2$, els dos trams valen $4$, però
 
-        $$f'_-(2)=2\cdot2=4,qquad f'_+(2)=2.$$
+        $$f'_-(2)=2\cdot2=4,\qquad f'_+(2)=2.$$
 
         És contínua però no derivable a $x=2$. Per tant,
 
@@ -1261,7 +1261,7 @@ $$
 
     - **b)** En $x=0$, $e^0=1=2\cdot0+1$; és contínua. A més,
 
-        $$g'_-(0)=2e^0=2,qquad g'_+(0)=2.$$
+        $$g'_-(0)=2e^0=2,\qquad g'_+(0)=2.$$
 
         És derivable en tot $\mathbb{R}$ i
 
@@ -1292,7 +1292,7 @@ $$
     En $x=0$, els dos trams valen $5$ per a qualsevol $k$; per tant, sempre és contínua. Les derivades laterals són
 
     $$
-    \lim_{x\to0^-}(4kx^3+6x)=0,qquad \lim_{x\to0^+}4x=0.
+    \lim_{x\to0^-}(4kx^3+6x)=0,\qquad \lim_{x\to0^+}4x=0.
     $$
 
     També coincideixen per a qualsevol valor del paràmetre. Per tant, la funció és derivable en tot $\mathbb{R}$ per a qualsevol $k\in\mathbb{R}$.
@@ -1490,7 +1490,7 @@ $$
 
     Les derivades són
 
-    $$2ax+b,qquad -\frac{a}{x^2}+\frac{2b}{x^3}.$$
+    $$2ax+b,\qquad -\frac{a}{x^2}+\frac{2b}{x^3}.$$
 
     En $x=1$ han de coincidir:
 
@@ -2116,7 +2116,7 @@ Troba les asímptotes verticals i horitzontals, calcula els límits laterals en 
     - **Domini:** $D_g=\mathbb{R}\setminus\{1\}$.
     - **Asímptota vertical:** com que $e^x>0$,
 
-        $$\lim_{x\to1^-}\frac{e^x}{x-1}=-\infty,qquad
+        $$\lim_{x\to1^-}\frac{e^x}{x-1}=-\infty,\qquad
         \lim_{x\to1^+}\frac{e^x}{x-1}=+\infty.$$
 
     - **Comportament a l'infinit:**
@@ -2203,7 +2203,7 @@ Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectan
 
     L'àrea és
 
-    $$A(x)=xy=x(120-2x)=120x-2x^2,qquad0<x<60.$$
+    $$A(x)=xy=x(120-2x)=120x-2x^2,\qquad0<x<60.$$
 
     $$A'(x)=120-4x=0\Longrightarrow x=30.$$
 
@@ -2255,7 +2255,7 @@ Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600
 
     Dividim per $2\pi$ i aïllem $h$:
 
-    $$r^2+rh=300\Longrightarrow h=\frac{300}{r}-r,qquad0<r<\sqrt{300}.$$
+    $$r^2+rh=300\Longrightarrow h=\frac{300}{r}-r,\qquad0<r<\sqrt{300}.$$
 
     El volum és
 
@@ -2288,7 +2288,7 @@ $$
 
     De $r^2+h^2=225$ obtenim
 
-    $$h=\sqrt{225-r^2},qquad0<r<15.$$
+    $$h=\sqrt{225-r^2},\qquad0<r<15.$$
 
     La capacitat del con és
 
@@ -2330,7 +2330,7 @@ El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des 
 
     Siguin $x=OP$. Aleshores el socorrista corre $BP=100-x$ metres i neda $\sqrt{x^2+60^2}$ metres. El temps és
 
-    $$T(x)=\frac{100-x}{6}+\frac{\sqrt{x^2+3.600}}{2},qquad0\leq x\leq100.$$
+    $$T(x)=\frac{100-x}{6}+\frac{\sqrt{x^2+3.600}}{2},\qquad0\leq x\leq100.$$
 
     $$T'(x)=-\frac16+\frac{x}{2\sqrt{x^2+3.600}}.$$
 
@@ -2408,14 +2408,14 @@ La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fab
     Per tant,
 
     $$
-    B(x)=I(x)-C(x)=-0{,}07x^2+46x-180,qquad0\leq x\leq400.
+    B(x)=I(x)-C(x)=-0{,}07x^2+46x-180,\qquad0\leq x\leq400.
     $$
 
     $$B'(x)=-0{,}14x+46=0\Longrightarrow x=\frac{2.300}{7}\approx328{,}57.$$
 
     Com que $B''(x)=-0{,}14<0$, és un màxim continu. Com que la producció ha de ser entera, comparem:
 
-    $$B(328)=7.377{,}12\,€,qquad B(329)=7.377{,}13\,€.$$
+    $$B(328)=7.377{,}12\,€,\qquad B(329)=7.377{,}13\,€.$$
 
     Cal fabricar $329$ unitats.
 
@@ -2441,7 +2441,7 @@ $$
     El cost mitjà és
 
     $$
-    C_m(x)=\frac{C(x)}x=0{,}4x+12+\frac{3.600}{x},qquad x>0.
+    C_m(x)=\frac{C(x)}x=0{,}4x+12+\frac{3.600}{x},\qquad x>0.
     $$
 
     $$C_m'(x)=0{,}4-\frac{3.600}{x^2}=0\Longrightarrow x^2=9.000\Longrightarrow x=30\sqrt{10}\approx94{,}87.$$
@@ -2487,7 +2487,7 @@ $$
 
     Creix a $(4,5)$ i decreix a $(5,8]$. Cal comparar els punts importants:
 
-    $$B(0)=20,qquad B(4)=36,qquad B(5)=38,qquad B(8)=20.$$
+    $$B(0)=20,\qquad B(4)=36,\qquad B(5)=38,\qquad B(8)=20.$$
 
     Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. La gràfica uneix el primer tram creixent amb el segon, que arriba al màxim $(5,38)$ i baixa fins a $(8,20)$.
 
@@ -2541,7 +2541,7 @@ $$
         \end{array}
         $$
 
-        $$f(3)=1.240,qquad f(5)=1.200.$$
+        $$f(3)=1.240,\qquad f(5)=1.200.$$
 
         Hi ha un màxim relatiu a $(3,1.240)$ i un mínim relatiu a $(5,1.200)$.
 
@@ -2677,7 +2677,7 @@ on $t$ és el temps transcorregut, en anys.
 
     - **a)**
 
-        $$C(0)=3-\frac15=2{,}8,qquad C(1)=3-\frac12=2{,}5.$$
+        $$C(0)=3-\frac15=2{,}8,\qquad C(1)=3-\frac12=2{,}5.$$
 
         Són $2.800$ i $2.500$ clients, respectivament.
 
@@ -2848,7 +2848,7 @@ on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ c
     - **a)** Si el descompte és $x$, el preu és $80-x$ i el nombre de reserves és $100+2x$. Per tant,
 
         $$
-        I(x)=(80-x)(100+2x)=-2x^2+60x+8.000,qquad0\leq x\leq80.
+        I(x)=(80-x)(100+2x)=-2x^2+60x+8.000,\qquad0\leq x\leq80.
         $$
 
     - **b)**
@@ -2985,7 +2985,7 @@ Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i 
         =\frac{p(10+2p)}{500-10p-p^2}.
         $$
 
-        $$E(5)=\frac{100}{425}=\frac4{17}\approx0{,}235,qquad E(10)=\frac{300}{300}=1.$$
+        $$E(5)=\frac{100}{425}=\frac4{17}\approx0{,}235,\qquad E(10)=\frac{300}{300}=1.$$
 
 ---
 
@@ -3015,9 +3015,9 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 
     - **b)**
 
-        $$f(10)=24,qquad g(10)=12,$$
+        $$f(10)=24,\qquad g(10)=12,$$
 
-        $$f(80)=52,qquad g(80)=82.$$
+        $$f(80)=52,\qquad g(80)=82.$$
 
         A $10\,\text{km}$ és més barata B; a $80\,\text{km}$ és més barata A.
 
@@ -3086,11 +3086,11 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 
     - **c)** En $x=2$,
 
-        $$P(2)=30,qquad \lim_{x\to2^+}(12x+6)=30,$$
+        $$P(2)=30,\qquad \lim_{x\to2^+}(12x+6)=30,$$
 
         de manera que és contínua. En $x=11$,
 
-        $$\lim_{x\to11^-}P(x)=12\cdot11+6=138,qquad P(11)=15\cdot11-22=143.$$
+        $$\lim_{x\to11^-}P(x)=12\cdot11+6=138,\qquad P(11)=15\cdot11-22=143.$$
 
         Hi ha una discontinuïtat de salt finit de $5\,€$.
 
@@ -3132,13 +3132,13 @@ on $t$ és el nombre d'anys transcorreguts des de l'obertura.
 
     - **a)**
 
-        $$C(0)=10,qquad C(10)=\frac{100}{10}+10=20,qquad C(20)=28-\frac{36}{2}=10.$$
+        $$C(0)=10,\qquad C(10)=\frac{100}{10}+10=20,\qquad C(20)=28-\frac{36}{2}=10.$$
 
         Com que la unitat són centenars d'euros, els costos són $1.000\,€$, $2.000\,€$ i $1.000\,€$.
 
     - **b)**
 
-        $$C(10)=20,qquad \lim_{t\to10^+}\left(28-\frac{(t-14)^2}{2}\right)=20.$$
+        $$C(10)=20,\qquad \lim_{t\to10^+}\left(28-\frac{(t-14)^2}{2}\right)=20.$$
 
         Els dos trams coincideixen; per tant, $C$ és contínua a $t=10$.
 
@@ -3208,7 +3208,7 @@ $$
 
     - **d)** Els darrers cinc anys corresponen a $[5,10]$:
 
-        $$P(5)=28,qquad P(10)=8,$$
+        $$P(5)=28,\qquad P(10)=8,$$
 
         $$\operatorname{TVM}_{[5,10]}=\frac{8-28}{10-5}=-4\,€\text{ per any}.$$
 
