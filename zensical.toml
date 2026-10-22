@@ -26,7 +26,7 @@ nav = [
       { "Exercicis per temes" = "calcul/exercicis.md" },
       { "Problemes PAU" = "calcul/problemes-pau.md" },
     ] },
-    { "Eines" = [
+    { "Laboratori de mates" = [
       { "Índex" = "calcul/eines/index.md" },
       { "Analitzador de funcions" = "calcul/eines/analitzador-funcions.md" },
       { "Derivador pas a pas" = "calcul/eines/derivador-pas-a-pas.md" },

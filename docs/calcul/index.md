@@ -12,7 +12,7 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 - [**Exercicis per temes**](exercicis.md) — col·lecció completa d'exercicis de càlcul i optimització, agrupats segons la teoria.
 - [**Problemes PAU**](problemes-pau.md) — problemes de càlcul de convocatòries reals i d'entrenament de tipus PAU, agrupats per contingut.
 
-## Eines
+## Laboratori de mates
 
 - [**Analitzador de funcions**](eines/analitzador-funcions.md) — estudi guiat de funcions ordinàries, a trossos i amb valor absolut segons els vuit passos dels apunts.
 - [**Derivador pas a pas**](eines/derivador-pas-a-pas.md) — derivació i simplificació línia a línia amb la notació dels apunts.
