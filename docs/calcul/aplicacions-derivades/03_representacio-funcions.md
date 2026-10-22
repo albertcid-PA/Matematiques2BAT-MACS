@@ -277,7 +277,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     Hi ha un màxim relatiu en $(-1,32)$ i un mínim relatiu en $(3,0)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_10_representacio_polinomica.svg?v=3){ width="820" }
+      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_10_representacio_polinomica.svg?v=4){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_10_representacio_polinomica.tex">Figura 2.10.</a></strong> Representació de la funció polinòmica.</figcaption>
     </figure>
 
@@ -438,7 +438,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i convergència a 1 als dos extrems](../../img/calcul/fig_2_11_representacio_racional.svg?v=5){ width="820" }
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i convergència a 1 als dos extrems](../../img/calcul/fig_2_11_representacio_racional.svg?v=6){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_racional.tex">Figura 2.11.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat de salt infinit.</figcaption>
     </figure>
 
@@ -573,7 +573,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció té un mínim relatiu en $(0,0)$ i un màxim relatiu en $(4,-8)$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una asímptota vertical, branques infinites, un mínim i un màxim relatius](../../img/calcul/fig_2_12_representacio_racional_branques_infinites.svg?v=3){ width="820" }
+      ![Gràfica d'una funció racional amb una asímptota vertical, branques infinites, un mínim i un màxim relatius](../../img/calcul/fig_2_12_representacio_racional_branques_infinites.svg?v=4){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_12_representacio_racional_branques_infinites.tex">Figura 2.12.</a></strong> Funció racional amb una asímptota vertical, branques infinites i dos extrems relatius.</figcaption>
     </figure>
 
@@ -921,7 +921,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     La funció decreix a banda i banda de $x=1$; per tant, aquest punt no és un extrem relatiu. En $x=3$, el signe de la derivada passa de negatiu a positiu i hi ha un mínim relatiu en $(3,-2)$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb els talls amb els eixos marcats, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable](../../img/calcul/fig_2_16_representacio_funcio_trossos.svg?v=5){ width="560" }
+      ![Gràfica d'una funció a trossos amb els talls amb els eixos marcats, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable](../../img/calcul/fig_2_16_representacio_funcio_trossos.svg?v=6){ width="560" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_16_representacio_funcio_trossos.tex">Figura 2.16.</a></strong> Funció a trossos amb els talls amb els eixos, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable.</figcaption>
     </figure>
 
@@ -1000,7 +1000,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     Així, la gràfica és contínua en $x=2$ i en $x=3$. La pendent passa de $-1$ a $3$ en $x=2$, de manera que $(2,-1)$ és un mínim. En $x=3$, les dues pendents són positives: $(3,2)$ és un punt angulós, però no és un extrem. Els talls amb els eixos són $(0,1)$, $(1,0)$ i $\left(\frac73,0\right)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=6){ width="760" }
+      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=7){ width="760" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_17_representacio_dos_valors_absoluts.tex">Figura 2.17.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
     </figure>
 

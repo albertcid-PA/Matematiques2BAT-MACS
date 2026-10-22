@@ -191,7 +191,7 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     $$
 
     <figure markdown="span">
-      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/calcul/fig_2_9_creixement_polinomi_exponencial.svg?v=3){ width="720" }
+      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/calcul/fig_2_9_creixement_polinomi_exponencial.svg?v=4){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_polinomi_exponencial.tex">Figura 2.9.</a></strong> Creixement, decreixement i extrems de $f(x)=x^2e^{-x}$.</figcaption>
     </figure>
 
