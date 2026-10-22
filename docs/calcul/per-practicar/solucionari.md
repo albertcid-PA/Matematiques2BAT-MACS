@@ -4179,3 +4179,18 @@ $$
     </figure>
 
 ---
+
+!!! info "Recursos per continuar practicant"
+
+    **PAU de Catalunya**
+
+    - [Examenselectivitat — Matemàtiques CC.SS.](https://examenselectivitat.cat/selectivitat/Matem%C3%A0tiques%20CC.SS./): problemes classificats per temes.
+    - [Selecat](https://www.selecat.cat/): exàmens classificats per anys i convocatòries.
+    - [Canal Universitats](https://universitats.gencat.cat/ca/pau/models-examen-anys-anteriors/matematiques-aplicades-cc/): models d'examen i criteris de correcció oficials.
+
+    **Proves d'altres comunitats**
+
+    - [Toomates](https://www.toomates.net/): recopilatoris de proves PAU de diferents comunitats.
+    - [Exámenes de PAU](https://www.examenesdepau.com/): cercador de proves per comunitat, assignatura, any i convocatòria.
+
+    Les proves d'altres comunitats són útils per practicar, però els continguts, l'estructura i els criteris de correcció poden diferir dels de les PAU de Catalunya.
