@@ -13,7 +13,7 @@ En aquest apartat repassarem com s'interpreta un límit a partir de la gràfica 
     El límit $\displaystyle\lim_{x\to a}f(x)$ existeix quan els dos límits laterals coincideixen. El valor $f(a)$ és una informació diferent: pot coincidir amb el límit, ser diferent o no estar definit.
 
 <figure markdown="span">
-  ![Gràfica d'una funció amb continuïtat, discontinuïtats evitables, un salt finit, una asímptota vertical i dues asímptotes horitzontals](../../img/calcul/fig_1_1_interpretacio_grafica_limits.svg?v=4){ width="900" }
+  ![Gràfica d'una funció amb continuïtat, discontinuïtats evitables, un salt finit, una asímptota vertical i dues asímptotes horitzontals](../../img/calcul/fig_1_1_interpretacio_grafica_limits.svg?v=5){ width="900" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_1_interpretacio_grafica_limits.tex">Figura 1.1.</a></strong> Interpretació gràfica dels límits.</figcaption>
 </figure>
 
@@ -284,7 +284,7 @@ En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els d
     La funció presenta una **discontinuïtat de salt finit** en $x=1$. A més, $f(1)=1$ perquè el punt $x=1$ pertany al segon tros.
 
     <figure markdown="span">
-      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_8_limit_funcio_trossos.svg?v=4){ width="330" }
+      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_8_limit_funcio_trossos.svg?v=5){ width="330" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_8_limit_funcio_trossos.tex">Figura 1.8.</a></strong> Els límits laterals diferents originen un salt finit en $x=1$.</figcaption>
     </figure>
 
@@ -375,6 +375,6 @@ Si el numerador i el denominador tendeixen a zero, encara no podem saber el valo
     La funció original no està definida en $x=2$, però el límit existeix i és finit: hi ha una discontinuïtat evitable en el punt $\left(2,\frac34\right)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_10_limit_discontinuitat_evitable.svg?v=3){ width="680" }
+      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_10_limit_discontinuitat_evitable.svg?v=4){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_10_limit_discontinuitat_evitable.tex">Figura 1.10.</a></strong> El forat en $\left(2,\frac34\right)$ representa una discontinuïtat evitable.</figcaption>
     </figure>

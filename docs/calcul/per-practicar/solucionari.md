@@ -30,7 +30,7 @@ $$
 $$
 
 <figure markdown="span">
-  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=2){ width="850" }
+  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=3){ width="850" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_12_exercici_limits_dues_grafiques.tex">Figura 1.12.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ $$
 A partir de la gràfica, calcula els valors següents:
 
 <figure markdown="span">
-  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../../img/calcul/fig_1_13_exercici_lectura_limits.svg?v=2){ width="820" }
+  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../../img/calcul/fig_1_13_exercici_lectura_limits.svg?v=3){ width="820" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_13_exercici_lectura_limits.tex">Figura 1.13.</a></strong> Gràfica de l'exercici 1.2.</figcaption>
 </figure>
 
@@ -345,7 +345,7 @@ $$
     - **Conclusió:** a $x=-2$ hi ha una discontinuïtat evitable i un forat a $(-2,-\frac13)$; $x=1$ és una asímptota vertical i $y=0$ és una asímptota horitzontal.
 
     <figure markdown="span" class="exercise-solution-figure">
-      ![Gràfica de la funció de l'exercici 1.5, amb un forat i les asímptotes vertical i horitzontal](../../img/calcul/fig_1_14_resultat_exercici_1_5.svg?v=2){ width="62%" }
+      ![Gràfica de la funció de l'exercici 1.5, amb un forat i les asímptotes vertical i horitzontal](../../img/calcul/fig_1_14_resultat_exercici_1_5.svg?v=3){ width="62%" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_14_resultat_exercici_1_5.tex">Figura 1.14.</a></strong> Representació de la funció de l'exercici 1.5.</figcaption>
     </figure>
 
@@ -404,7 +404,7 @@ $$
         Així, $y=1$ és una asímptota horitzontal.
 
     <figure markdown="span" class="exercise-solution-figure">
-      ![Gràfica de la funció de l'exercici 1.6, amb un forat i les asímptotes vertical i horitzontal](../../img/calcul/fig_1_15_resultat_exercici_1_6.svg?v=2){ width="62%" }
+      ![Gràfica de la funció de l'exercici 1.6, amb un forat i les asímptotes vertical i horitzontal](../../img/calcul/fig_1_15_resultat_exercici_1_6.svg?v=3){ width="62%" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_15_resultat_exercici_1_6.tex">Figura 1.15.</a></strong> Representació de la funció de l'exercici 1.6.</figcaption>
     </figure>
 
@@ -1369,7 +1369,7 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
 
 <figure markdown="span">
-  ![Sis gràfiques per identificar punts en què una funció no és derivable](../../img/calcul/fig_2_26_exercici_punts_no_derivables.svg?v=2){ width="920" }
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../../img/calcul/fig_2_26_exercici_punts_no_derivables.svg?v=3){ width="920" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_exercici_punts_no_derivables.tex">Figura 2.26.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
 </figure>
 
@@ -1394,7 +1394,7 @@ La figura representa una funció $y=f(x)$.
 - **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
 
 <figure markdown="span">
-  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../../img/calcul/fig_2_27_exercici_derivades_grafica.svg?v=2){ width="700" }
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../../img/calcul/fig_2_27_exercici_derivades_grafica.svg?v=3){ width="700" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_27_exercici_derivades_grafica.tex">Figura 2.27.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
 </figure>
 
@@ -1561,7 +1561,7 @@ $$
     $$
 
     <figure markdown="span" class="exercise-solution-figure">
-      ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../../img/calcul/fig_2_30_resultat_exercici_2_6.svg?v=2){ width="88%" }
+      ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../../img/calcul/fig_2_30_resultat_exercici_2_6.svg?v=3){ width="88%" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_30_resultat_exercici_2_6.tex">Figura 2.30.</a></strong> Representació de $f$ i de $f'$ en l'exercici 2.6.</figcaption>
     </figure>
 
@@ -2177,7 +2177,7 @@ Estudia i representa les funcions racionals següents. Calcula els límits quan 
         Té un mínim relatiu a $(-2,4)$ i un màxim relatiu a $(0,0)$.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_32_resultat_exercici_2_19_1.svg?v=2){ width="100%" }
+      ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_32_resultat_exercici_2_19_1.svg?v=3){ width="100%" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_19_1.tex">Figura 2.32.</a></strong> Representacions dels apartats a–d de l'exercici 2.19.</figcaption>
     </figure>
 
@@ -2265,7 +2265,7 @@ $$
         Aquesta derivada és positiva quan $x<0$, mentre que la derivada del segon tram és $-\frac14<0$. Així, $(0,1)$ és un màxim relatiu del tram dret, però la funció no és derivable al punt de salt.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=2){ width="100%" }
+      ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=3){ width="100%" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_20.tex">Figura 2.34.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
     </figure>
 
@@ -3781,7 +3781,7 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
         que sí pertany a $[11,25]$.
 
     <figure markdown="span" class="pau-solution-figure">
-      ![Tarifa de paqueteria amb la discontinuïtat de salt finit](../../img/calcul/fig_pau_c_5_tarifa_paqueteria.svg?v=2){ width="560" }
+      ![Tarifa de paqueteria amb la discontinuïtat de salt finit](../../img/calcul/fig_pau_c_5_tarifa_paqueteria.svg?v=3){ width="560" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_5_tarifa_paqueteria.tex">Figura PAU.C.5.</a></strong> Tarifa de l'empresa de paqueteria.</figcaption>
     </figure>
 
