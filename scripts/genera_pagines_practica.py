@@ -142,6 +142,28 @@ def developed_solution_blocks(path: Path) -> dict[str, list[str]]:
     return solutions
 
 
+def figure_blocks(lines: list[str]) -> list[list[str]]:
+    """Extreu els blocs <figure> d'una solució breu conservant-ne el Markdown."""
+    figures: list[list[str]] = []
+    current: list[str] | None = None
+
+    for line in lines:
+        if current is None:
+            if re.match(r"^\s*<figure\b", line):
+                current = [line]
+            continue
+
+        current.append(line)
+        if re.match(r"^\s*</figure>\s*$", line):
+            figures.append(current)
+            current = None
+
+    if current is not None:
+        raise ValueError("S'ha trobat un bloc <figure> sense etiqueta de tancament")
+
+    return figures
+
+
 def solution_details(
     path: Path,
     statements: dict[str, list[str]],
@@ -181,7 +203,22 @@ def solution_details(
         output.append(f'??? example "{summary}"')
         output.append("    **Resolució pas a pas**")
         output.append("")
-        solution_body = developed.get(number, current_body)
+        solution_body = list(developed.get(number, current_body))
+
+        # Les solucions desenvolupades substitueixen el text breu, però les
+        # figures de resultat s'han de conservar i aparèixer sempre al final.
+        solution_text = "\n".join(solution_body)
+        for figure in figure_blocks(current_body):
+            figure_text = "\n".join(figure)
+            image = re.search(r"!\[[^\]]*\]\(([^)]+)\)", figure_text)
+            image_path = image.group(1).split("?", maxsplit=1)[0] if image else ""
+            if figure_text in solution_text or (image_path and image_path in solution_text):
+                continue
+            if solution_body and solution_body[-1].strip():
+                solution_body.append("")
+            solution_body.extend(figure)
+            solution_text = "\n".join(solution_body)
+
         if solution_body:
             output.extend(f"    {line}" if line else "" for line in solution_body)
         else:
