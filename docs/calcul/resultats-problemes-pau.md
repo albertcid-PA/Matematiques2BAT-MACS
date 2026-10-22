@@ -127,7 +127,7 @@ $$
 - **e)** El paquet pesa $\displaystyle\frac{184}{15}\approx12{,}27\,\text{kg}$, valor que pertany al tercer tram.
 
 <figure markdown="span" class="pau-solution-figure">
-  ![Tarifa de paqueteria amb la discontinuïtat de salt finit](../img/calcul/fig_pau_c_5_tarifa_paqueteria.svg?v=2){ width="560" }
+  ![Tarifa de paqueteria amb la discontinuïtat de salt finit](../img/calcul/fig_pau_c_5_tarifa_paqueteria.svg?v=3){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_5_tarifa_paqueteria.tex">Figura PAU.C.5.</a></strong> Tarifa de l'empresa de paqueteria.</figcaption>
 </figure>
 

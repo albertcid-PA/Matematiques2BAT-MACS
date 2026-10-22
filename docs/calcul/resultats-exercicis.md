@@ -31,14 +31,14 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 **1.5.** $D_f=\mathbb{R}\setminus\{-2,1\}$. $f(0)=-1$; $\lim_{x\to-2}f(x)=-\frac13$; $\lim_{x\to1^-}f(x)=-\infty$ i $\lim_{x\to1^+}f(x)=+\infty$; $\lim_{x\to\pm\infty}f(x)=0$. Hi ha una discontinuïtat evitable a $x=-2$, amb forat $(-2,-\frac13)$, una asímptota vertical $x=1$ i una asímptota horitzontal $y=0$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfica de la funció de l'exercici 1.5, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_14_resultat_exercici_1_5.svg?v=2){ width="62%" }
+  ![Gràfica de la funció de l'exercici 1.5, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_14_resultat_exercici_1_5.svg?v=3){ width="62%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_14_resultat_exercici_1_5.tex">Figura 1.14.</a></strong> Representació de la funció de l'exercici 1.5.</figcaption>
 </figure>
 
 **1.6.** $D_g=\mathbb{R}\setminus\{0,4\}$. A $x=0$, els límits laterals són $-\infty$ i $+\infty$; a $x=4$, $\lim g(x)=2$. Hi ha una asímptota vertical $x=0$, un forat $(4,2)$ i una asímptota horitzontal $y=1$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfica de la funció de l'exercici 1.6, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_15_resultat_exercici_1_6.svg?v=2){ width="62%" }
+  ![Gràfica de la funció de l'exercici 1.6, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_15_resultat_exercici_1_6.svg?v=3){ width="62%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_15_resultat_exercici_1_6.tex">Figura 1.15.</a></strong> Representació de la funció de l'exercici 1.6.</figcaption>
 </figure>
 
@@ -137,7 +137,7 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 **2.6.** A $x=-2$ és contínua però no derivable ($f'_- =1$, $f'_+=2$). A $x=1$ presenta una discontinuïtat de salt. $f'(x)=2x+5$ si $x<-2$, $f'(x)=2$ si $-2<x<1$ i $f'(x)=1$ si $x>1$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../img/calcul/fig_2_30_resultat_exercici_2_6.svg?v=2){ width="88%" }
+  ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../img/calcul/fig_2_30_resultat_exercici_2_6.svg?v=3){ width="88%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_30_resultat_exercici_2_6.tex">Figura 2.30.</a></strong> Representació de $f$ i de $f'$ en l'exercici 2.6.</figcaption>
 </figure>
 
@@ -274,7 +274,7 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 | **g)** | $D=\mathbb{R}\setminus\{-1\}$; AV $x=-1$; asímptota obliqua $y=-x+1$; tall $(0,0)$. | Decreix a $(-\infty,-2)\cup(0,+\infty)$ i creix a $(-2,-1)\cup(-1,0)$; mínim $(-2,4)$ i màxim $(0,0)$. |
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../img/calcul/fig_2_32_resultat_exercici_2_19_1.svg?v=2){ width="100%" }
+  ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../img/calcul/fig_2_32_resultat_exercici_2_19_1.svg?v=3){ width="100%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_19_1.tex">Figura 2.32.</a></strong> Representacions dels apartats a–d de l'exercici 2.19.</figcaption>
 </figure>
 
@@ -291,7 +291,7 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 - **d)** Discontinuïtat de salt a $x=0$. Creix a $(-\infty,0)$ i decreix a $(0,+\infty)$; màxim $(0,1)$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=2){ width="100%" }
+  ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=3){ width="100%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_20.tex">Figura 2.34.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
 </figure>
 

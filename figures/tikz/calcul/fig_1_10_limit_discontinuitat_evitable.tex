@@ -27,17 +27,19 @@
     grid style={black!10},
     clip=false,
   ]
-    \addplot[corba, very thick, domain=-0.4:5.2, samples=180]
+    \addplot[corba, very thick, domain=-0.4:1.86, samples=90]
+      {(x+1)/(x+2)};
+    \addplot[corba, very thick, domain=2.14:5.2, samples=90]
       {(x+1)/(x+2)};
 
     \addplot[guia, dashed, thick] coordinates {(2,0) (2,0.75)};
     \addplot[guia, dashed, thick] coordinates {(0,0.75) (2,0.75)};
     \addplot[
       only marks,
-      mark=*,
+      mark=o,
       mark size=3.6pt,
       punt,
-      mark options={draw=punt, fill=white, line width=1.2pt}
+      mark options={draw=punt, fill=none, line width=1.2pt}
     ] coordinates {(2,0.75)};
 
     \node[anchor=south west, text=corba]
