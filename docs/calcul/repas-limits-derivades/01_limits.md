@@ -13,7 +13,7 @@ En aquest apartat repassarem com s'interpreta un límit a partir de la gràfica 
     El límit $\displaystyle\lim_{x\to a}f(x)$ existeix quan els dos límits laterals coincideixen. El valor $f(a)$ és una informació diferent: pot coincidir amb el límit, ser diferent o no estar definit.
 
 <figure markdown="span">
-  ![Gràfica d'una funció amb continuïtat, discontinuïtats evitables, un salt finit, una asímptota vertical i dues asímptotes horitzontals](../../img/calcul/fig_1_1_interpretacio_grafica_limits.svg?v=1){ width="900" }
+  ![Gràfica d'una funció amb continuïtat, discontinuïtats evitables, un salt finit, una asímptota vertical i dues asímptotes horitzontals](../../img/calcul/fig_1_1_interpretacio_grafica_limits.svg?v=2){ width="900" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_1_interpretacio_grafica_limits.tex">Figura 1.1.</a></strong> Interpretació gràfica dels límits.</figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ $$
 $$
 
 <figure markdown="span">
-  ![Gràfica de menys x al cub, que creix cap a infinit quan x tendeix a menys infinit i decreix cap a menys infinit quan x tendeix a infinit](../../img/calcul/fig_1_2_comportament_infinits_menys_x_cub.svg?v=1){ width="700" }
+  ![Gràfica de menys x al cub, que creix cap a infinit quan x tendeix a menys infinit i decreix cap a menys infinit quan x tendeix a infinit](../../img/calcul/fig_1_2_comportament_infinits_menys_x_cub.svg?v=2){ width="700" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_2_comportament_infinits_menys_x_cub.tex">Figura 1.2.</a></strong> Comportament de $f(x)=-x^3$ als infinits.</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ $$
     No totes les funcions s'apropen a un valor concret ni creixen cap a $+\infty$ o $-\infty$. Per exemple, $f(x)=\sin x$ oscil·la indefinidament entre $-1$ i $1$. Per això, $\displaystyle\lim_{x\to+\infty}\sin x$ i $\displaystyle\lim_{x\to-\infty}\sin x$ no existeixen.
 
     <figure markdown="span">
-      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/calcul/fig_1_3_limit_inexistent_sinus.svg?v=1){ width="720" }
+      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/calcul/fig_1_3_limit_inexistent_sinus.svg?v=2){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_3_limit_inexistent_sinus.tex">Figura 1.3.</a></strong> Exemple de límit a l'infinit que no existeix.</figcaption>
     </figure>
 
@@ -134,7 +134,7 @@ $$
     $$
 
     <figure markdown="span">
-      ![Gràfica cartesiana de la funció exponencial menys 1 coma 1 elevat a x, que decreix cap a menys infinit](../../img/calcul/fig_1_4_ordre_infinits_exponencial.svg?v=3){ width="680" }
+      ![Gràfica cartesiana de la funció exponencial menys 1 coma 1 elevat a x, que decreix cap a menys infinit](../../img/calcul/fig_1_4_ordre_infinits_exponencial.svg?v=4){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_4_ordre_infinits_exponencial.tex">Figura 1.4.</a></strong> $-(1{,}1)^x$ tendeix a $-\infty$ i determina el límit de l'exemple.</figcaption>
     </figure>
 
@@ -174,7 +174,7 @@ $$
     $$
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica menys 4x elevat a 5 més 2x elevat a 3 menys 7x més 6](../../img/calcul/fig_1_5_ordre_infinits_polinomica.svg?v=1){ width="680" }
+      ![Gràfica de la funció polinòmica menys 4x elevat a 5 més 2x elevat a 3 menys 7x més 6](../../img/calcul/fig_1_5_ordre_infinits_polinomica.svg?v=2){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_5_ordre_infinits_polinomica.tex">Figura 1.5.</a></strong> El terme dominant $-4x^5$ determina el comportament de la funció als dos infinits.</figcaption>
     </figure>
 
@@ -204,7 +204,7 @@ $$
     $$
 
     <figure markdown="span">
-      ![Gràfica de la funció racional amb asímptota vertical x igual a 1 i asímptota horitzontal y igual a 2](../../img/calcul/fig_1_6_ordre_infinits_racional.svg?v=1){ width="700" }
+      ![Gràfica de la funció racional amb asímptota vertical x igual a 1 i asímptota horitzontal y igual a 2](../../img/calcul/fig_1_6_ordre_infinits_racional.svg?v=2){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_6_ordre_infinits_racional.tex">Figura 1.6.</a></strong> Quan $x\to+\infty$, la funció s'apropa a l'asímptota horitzontal $y=2$.</figcaption>
     </figure>
 
@@ -244,7 +244,7 @@ Les funcions polinòmiques i les funcions racionals són contínues en els punts
     $$
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica x al quadrat menys 3x més 5 amb el punt 2 coma 3 destacat](../../img/calcul/fig_1_7_limit_substitucio_directa.svg?v=1){ width="680" }
+      ![Gràfica de la funció polinòmica x al quadrat menys 3x més 5 amb el punt 2 coma 3 destacat](../../img/calcul/fig_1_7_limit_substitucio_directa.svg?v=2){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_7_limit_substitucio_directa.tex">Figura 1.7.</a></strong> El límit en $x=2$ coincideix amb el valor $f(2)=3$.</figcaption>
     </figure>
 
@@ -284,7 +284,7 @@ En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els d
     La funció presenta una **discontinuïtat de salt finit** en $x=1$. A més, $f(1)=1$ perquè el punt $x=1$ pertany al segon tros.
 
     <figure markdown="span">
-      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_8_limit_funcio_trossos.svg?v=3){ width="330" }
+      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_8_limit_funcio_trossos.svg?v=4){ width="330" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_8_limit_funcio_trossos.tex">Figura 1.8.</a></strong> Els límits laterals diferents originen un salt finit en $x=1$.</figcaption>
     </figure>
 
@@ -320,7 +320,7 @@ Si el numerador tendeix a un nombre diferent de zero i el denominador tendeix a 
     Els límits laterals són diferents i, per tant, el límit en $x=1$ no existeix. La recta $x=1$ és una asímptota vertical.
 
     <figure markdown="span">
-      ![Gràfica de la funció x més 2 dividit entre x menys 1 amb una asímptota vertical en x igual a 1](../../img/calcul/fig_1_9_limit_assimptota_vertical.svg?v=1){ width="680" }
+      ![Gràfica de la funció x més 2 dividit entre x menys 1 amb una asímptota vertical en x igual a 1](../../img/calcul/fig_1_9_limit_assimptota_vertical.svg?v=2){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_9_limit_assimptota_vertical.tex">Figura 1.9.</a></strong> Els límits laterals en $x=1$ són infinits de signe contrari.</figcaption>
     </figure>
 
@@ -375,6 +375,6 @@ Si el numerador i el denominador tendeixen a zero, encara no podem saber el valo
     La funció original no està definida en $x=2$, però el límit existeix i és finit: hi ha una discontinuïtat evitable en el punt $\left(2,\frac34\right)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_10_limit_discontinuitat_evitable.svg?v=2){ width="680" }
+      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_10_limit_discontinuitat_evitable.svg?v=3){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_10_limit_discontinuitat_evitable.tex">Figura 1.10.</a></strong> El forat en $\left(2,\frac34\right)$ representa una discontinuïtat evitable.</figcaption>
     </figure>

@@ -23,14 +23,14 @@ $$
 $$
 
 <figure markdown="span">
-  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=1){ width="850" }
+  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=2){ width="850" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_12_exercici_limits_dues_grafiques.tex">Figura 1.12.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
 </figure>
 
 **1.2.** A partir de la gràfica, calcula els valors següents:
 
 <figure markdown="span">
-  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../img/calcul/fig_1_13_exercici_lectura_limits.svg?v=1){ width="820" }
+  ![Gràfica amb un salt finit, una discontinuïtat evitable, una asímptota vertical i asímptotes horitzontals](../img/calcul/fig_1_13_exercici_lectura_limits.svg?v=2){ width="820" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_13_exercici_lectura_limits.tex">Figura 1.13.</a></strong> Gràfica de l'exercici 1.2.</figcaption>
 </figure>
 
@@ -252,7 +252,7 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 **2.1.** Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
 
 <figure markdown="span">
-  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/calcul/fig_2_26_exercici_punts_no_derivables.svg?v=1){ width="920" }
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/calcul/fig_2_26_exercici_punts_no_derivables.svg?v=2){ width="920" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_exercici_punts_no_derivables.tex">Figura 2.26.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
 </figure>
 
@@ -262,7 +262,7 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 - **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
 
 <figure markdown="span">
-  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/calcul/fig_2_27_exercici_derivades_grafica.svg?v=1){ width="700" }
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/calcul/fig_2_27_exercici_derivades_grafica.svg?v=2){ width="700" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_27_exercici_derivades_grafica.tex">Figura 2.27.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
 </figure>
 
@@ -635,7 +635,7 @@ $$
 El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. **Determina en quin punt de la costa ha de començar a nedar perquè el temps total del rescat sigui mínim i calcula aquest temps.**
 
 <figure markdown="span" class="exercise-statement-figure--compact">
-  ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../img/calcul/fig_2_28_rescat_platja.svg?v=1){ width="650" }
+  ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../img/calcul/fig_2_28_rescat_platja.svg?v=2){ width="650" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_rescat_platja.tex">Figura 2.28.</a></strong> Esquema del recorregut del socorrista en l'exercici 2.33.</figcaption>
 </figure>
 

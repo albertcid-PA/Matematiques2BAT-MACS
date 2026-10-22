@@ -13,7 +13,7 @@ Comprova els resultats després d'haver resolt cada problema i d'haver-ne justif
 - **e)** El màxim absolut del període és de $3.200$ seguidors i s'assoleix a la setmana $10$.
 
 <figure markdown="span" class="pau-solution-figure">
-  ![Evolució dels seguidors amb els extrems relatius assenyalats](../img/calcul/fig_pau_c_1_seguidors_divulgador.svg?v=1){ width="560" }
+  ![Evolució dels seguidors amb els extrems relatius assenyalats](../img/calcul/fig_pau_c_1_seguidors_divulgador.svg?v=2){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_1_seguidors_divulgador.tex">Figura PAU.C.1.</a></strong> Evolució del nombre de seguidors.</figcaption>
 </figure>
 
@@ -25,7 +25,7 @@ Comprova els resultats després d'haver resolt cada problema i d'haver-ne justif
 - **d)** La gràfica parteix de $(0,5)$, creix fins a $(3,7{,}5)$ i després decreix acostant-se a l'asímptota horitzontal $y=5$.
 
 <figure markdown="span" class="pau-solution-figure">
-  ![Evolució dels microorganismes i asímptota horitzontal](../img/calcul/fig_pau_c_2_microorganismes.svg?v=1){ width="560" }
+  ![Evolució dels microorganismes i asímptota horitzontal](../img/calcul/fig_pau_c_2_microorganismes.svg?v=2){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_2_microorganismes.tex">Figura PAU.C.2.</a></strong> Evolució del nombre de microorganismes.</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ Comprova els resultats després d'haver resolt cada problema i d'haver-ne justif
 - **e)** La gràfica parteix de $(0,30)$, arriba al màxim quan $t=1$ i després decreix acostant-se a l'asímptota horitzontal $y=20$.
 
 <figure markdown="span" class="pau-solution-figure">
-  ![Impacte de la campanya publicitària i asímptota horitzontal](../img/calcul/fig_pau_c_3_campanya_publicitaria.svg?v=1){ width="560" }
+  ![Impacte de la campanya publicitària i asímptota horitzontal](../img/calcul/fig_pau_c_3_campanya_publicitaria.svg?v=2){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_3_campanya_publicitaria.tex">Figura PAU.C.3.</a></strong> Evolució de les descàrregues diàries.</figcaption>
 </figure>
 
@@ -68,7 +68,7 @@ Comprova els resultats després d'haver resolt cada problema i d'haver-ne justif
 - **e)** $C(x)\to+\infty$ quan $x\to0^+$ i quan $x\to+\infty$. La gràfica baixa fins al mínim $(4,24-4\ln4)$ i després torna a pujar.
 
 <figure markdown="span" class="pau-solution-figure">
-  ![Cost mitjà de producció amb el mínim assenyalat](../img/calcul/fig_pau_c_4_cost_mitja.svg?v=1){ width="560" }
+  ![Cost mitjà de producció amb el mínim assenyalat](../img/calcul/fig_pau_c_4_cost_mitja.svg?v=2){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_4_cost_mitja.tex">Figura PAU.C.4.</a></strong> Cost mitjà segons la producció.</figcaption>
 </figure>
 
@@ -127,7 +127,7 @@ $$
 - **e)** El paquet pesa $\displaystyle\frac{184}{15}\approx12{,}27\,\text{kg}$, valor que pertany al tercer tram.
 
 <figure markdown="span" class="pau-solution-figure">
-  ![Tarifa de paqueteria amb la discontinuïtat de salt finit](../img/calcul/fig_pau_c_5_tarifa_paqueteria.svg?v=1){ width="560" }
+  ![Tarifa de paqueteria amb la discontinuïtat de salt finit](../img/calcul/fig_pau_c_5_tarifa_paqueteria.svg?v=2){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_5_tarifa_paqueteria.tex">Figura PAU.C.5.</a></strong> Tarifa de l'empresa de paqueteria.</figcaption>
 </figure>
 
@@ -139,7 +139,7 @@ $$
 - **d)** El cost màxim es produeix al cap de $14$ anys i és de $28$ centenars d'euros, és a dir, $2.800\,€$.
 
 <figure markdown="span" class="pau-solution-figure">
-  ![Cost de neteja amb el màxim assenyalat](../img/calcul/fig_pau_c_6_cost_neteja.svg?v=1){ width="560" }
+  ![Cost de neteja amb el màxim assenyalat](../img/calcul/fig_pau_c_6_cost_neteja.svg?v=2){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_6_cost_neteja.tex">Figura PAU.C.6.</a></strong> Evolució del cost de neteja.</figcaption>
 </figure>
 
@@ -152,6 +152,6 @@ $$
 - **e)** La gràfica uneix el tram parabòlic de $(0,0)$ a $(2,40)$ amb el tram lineal decreixent de $(2,40)$ a $(10,8)$.
 
 <figure markdown="span" class="pau-solution-figure">
-  ![Evolució del preu del producte amb el màxim assenyalat](../img/calcul/fig_pau_c_7_preu_producte.svg?v=1){ width="560" }
+  ![Evolució del preu del producte amb el màxim assenyalat](../img/calcul/fig_pau_c_7_preu_producte.svg?v=2){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_7_preu_producte.tex">Figura PAU.C.7.</a></strong> Evolució del preu del producte.</figcaption>
 </figure>
