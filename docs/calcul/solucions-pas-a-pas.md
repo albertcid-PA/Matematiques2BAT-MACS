@@ -1071,14 +1071,13 @@ Una funció només pot ser derivable en un punt si és contínua i la gràfica h
 
 **2.3.**
 
-Primer comprovem la continuïtat:
+Primer comprovem la continuïtat en els tres passos:
 
-$$
-f(1)=1^2+1-2=0,\qquad
-\lim_{x\to1^+}(3x-3)=0.
-$$
+1. **Límits laterals:** $f(1^-)=1^2+1-2=0$ i $f(1^+)=3\cdot1-3=0$. Per tant, $\displaystyle\lim_{x\to1}f(x)=0$.
+2. **Valor de la funció:** $f(1)=1^2+1-2=0$.
+3. **Comparació:** $\displaystyle\lim_{x\to1}f(x)=0=f(1)$.
 
-Els dos límits laterals coincideixen amb $f(1)$; per tant, és contínua. Derivem els dos trams:
+Per tant, $f$ és contínua en $x=1$. Derivem els dos trams:
 
 $$f'(1^-)=(2x+1)\big|_{x=1}=3,\qquad f'(1^+)=3.$$
 
@@ -1086,14 +1085,13 @@ Com que les derivades laterals coincideixen, $f$ és derivable a $x=1$ i $f'(1)=
 
 **2.4.**
 
-Comprovem la continuïtat:
+Comprovem la continuïtat en els tres passos:
 
-$$
-f(-1)=(-1)^2+4(-1)+1=-2,\qquad
-\lim_{x\to-1^+}(x-1)=-2.
-$$
+1. **Límits laterals:** $f(-1^-)=(-1)^2+4(-1)+1=-2$ i $f(-1^+)=-1-1=-2$. Per tant, $\displaystyle\lim_{x\to-1}f(x)=-2$.
+2. **Valor de la funció:** $f(-1)=(-1)^2+4(-1)+1=-2$.
+3. **Comparació:** $\displaystyle\lim_{x\to-1}f(x)=-2=f(-1)$.
 
-La funció és contínua. Ara comparem les derivades laterals:
+Per tant, $f$ és contínua en $x=-1$. Ara comparem les derivades laterals:
 
 $$f'(-1^-)=(2x+4)\big|_{x=-1}=2,\qquad f'(-1^+)=1.$$
 
@@ -1101,13 +1099,13 @@ Com que $2\ne1$, no és derivable a $x=-1$; la gràfica hi té un punt angulós.
 
 **2.5.**
 
-Els dos trams tendeixen a zero i $f(2)=0$:
+Comprovem la continuïtat en els tres passos:
 
-$$
-\lim_{x\to2^-}\sqrt{2-x}=0=f(2)=\lim_{x\to2^+}\sqrt{x-2}.
-$$
+1. **Límits laterals:** $f(2^-)=\sqrt{2-2}=0$ i $f(2^+)=\sqrt{2-2}=0$. Per tant, $\displaystyle\lim_{x\to2}f(x)=0$.
+2. **Valor de la funció:** $f(2)=\sqrt{2-2}=0$.
+3. **Comparació:** $\displaystyle\lim_{x\to2}f(x)=0=f(2)$.
 
-Per tant, la funció és contínua. Les derivades són
+Per tant, $f$ és contínua en $x=2$. Les derivades són
 
 $$
 f'(x)=
@@ -1125,23 +1123,25 @@ No hi ha una derivada finita comuna; la funció no és derivable a $x=2$ i la gr
 
 **2.6.**
 
-En $x=-2$:
+En $x=-2$, comprovem la continuïtat en els tres passos:
 
-$$
-\lim_{x\to-2^-}(x^2+5x+4)=-2,\qquad f(-2)=2(-2)+2=-2.
-$$
+1. **Límits laterals:** $f(-2^-)=(-2)^2+5(-2)+4=-2$ i $f(-2^+)=2(-2)+2=-2$. Per tant, $\displaystyle\lim_{x\to-2}f(x)=-2$.
+2. **Valor de la funció:** $f(-2)=2(-2)+2=-2$.
+3. **Comparació:** $\displaystyle\lim_{x\to-2}f(x)=-2=f(-2)$.
 
-És contínua, però
+Per tant, és contínua, però
 
 $$f'(-2^-)=(2x+5)\big|_{x=-2}=1,\qquad f'(-2^+)=2.$$
 
 Per tant, no és derivable a $x=-2$.
 
-En $x=1$:
+En $x=1$, repetim les tres comprovacions:
 
-$$f(1)=2(1)+2=4,\qquad \lim_{x\to1^+}(x+1)=2.$$
+1. **Límits laterals:** $f(1^-)=2(1)+2=4$ i $f(1^+)=1+1=2$. Com que no coincideixen, $\displaystyle\lim_{x\to1}f(x)$ no existeix.
+2. **Valor de la funció:** $f(1)=2(1)+2=4$.
+3. **Comparació:** el límit no existeix i, per tant, no pot coincidir amb $f(1)$.
 
-Hi ha una discontinuïtat de salt; en conseqüència, tampoc és derivable a $x=1$.
+Hi ha una discontinuïtat de salt; en conseqüència, tampoc no és derivable a $x=1$.
 
 En els intervals oberts,
 
@@ -1156,7 +1156,25 @@ $$
 
 **2.7.**
 
-- **a)** En $x=0$, els dos trams valen $0$ i les derivades laterals són $0$ i $2x|_{0}=0$: és contínua i derivable. En $x=2$, els dos trams valen $4$, però
+- **a)** Comprovem primer la continuïtat.
+
+    En $x=0$:
+
+    **1. Límits laterals:** $f(0^-)=0$ i $f(0^+)=0^2=0$. Per tant, $\displaystyle\lim_{x\to0}f(x)=0$.
+
+    **2. Valor de la funció:** $f(0)=0^2=0$.
+
+    **3. Comparació:** $\displaystyle\lim_{x\to0}f(x)=0=f(0)$.
+
+    En $x=2$:
+
+    **1. Límits laterals:** $f(2^-)=2^2=4$ i $f(2^+)=2\cdot2=4$. Per tant, $\displaystyle\lim_{x\to2}f(x)=4$.
+
+    **2. Valor de la funció:** $f(2)=2\cdot2=4$.
+
+    **3. Comparació:** $\displaystyle\lim_{x\to2}f(x)=4=f(2)$.
+
+    Així, $f$ és contínua en tots dos punts d'unió. Les derivades laterals coincideixen en $x=0$, però en $x=2$
 
     $$f'(2^-)=2\cdot2=4,\qquad f'(2^+)=2.$$
 
@@ -1171,7 +1189,15 @@ $$
     \end{cases}
     $$
 
-- **b)** En $x=0$, $e^0=1=2\cdot0+1$; és contínua.
+- **b)** Comprovem la continuïtat en $x=0$:
+
+    **1. Límits laterals:** $g(0^-)=e^{2\cdot0}=1$ i $g(0^+)=2\cdot0+1=1$. Per tant, $\displaystyle\lim_{x\to0}g(x)=1$.
+
+    **2. Valor de la funció:** $g(0)=e^{2\cdot0}=1$.
+
+    **3. Comparació:** $\displaystyle\lim_{x\to0}g(x)=1=g(0)$.
+
+    Per tant, $g$ és contínua en $x=0$.
 
     Per no confondre la funció $g$ de l'enunciat amb la funció interior de la regla de la cadena, anomenem $H$ la funció de l'enunciat. En el tram exponencial, $H(x)=e^{2x}$, i prenem
 
@@ -1320,6 +1346,14 @@ En cada cas separem segons el signe de l'expressió dins del valor absolut.
     \end{cases}
     $$
 
+    Comprovem la continuïtat en els tres passos:
+
+    **1. Límits laterals:** $f(-4^-)=0$ i $f(-4^+)=0$; per tant, $\displaystyle\lim_{x\to-4}f(x)=0$.
+
+    **2. Valor de la funció:** $f(-4)=|-4+4|=0$.
+
+    **3. Comparació:** $\displaystyle\lim_{x\to-4}f(x)=0=f(-4)$.
+
     És contínua, però les derivades laterals són $-1$ i $1$; no és derivable a $x=-4$.
 
 - **b)** $-2x+4=0$ quan $x=2$:
@@ -1332,6 +1366,14 @@ En cada cas separem segons el signe de l'expressió dins del valor absolut.
     \end{cases}
     $$
 
+    Comprovem la continuïtat en els tres passos:
+
+    **1. Límits laterals:** $f(2^-)=0$ i $f(2^+)=0$; per tant, $\displaystyle\lim_{x\to2}f(x)=0$.
+
+    **2. Valor de la funció:** $f(2)=|-2\cdot2+4|=0$.
+
+    **3. Comparació:** $\displaystyle\lim_{x\to2}f(x)=0=f(2)$.
+
     És contínua, però els pendents laterals són $-2$ i $2$; no és derivable a $x=2$.
 
 - **c)** $x-1=0$ quan $x=1$:
@@ -1343,6 +1385,14 @@ En cada cas separem segons el signe de l'expressió dins del valor absolut.
     2x+(x-1)=3x-1, & x\geq1.
     \end{cases}
     $$
+
+    Comprovem la continuïtat en els tres passos:
+
+    **1. Límits laterals:** $h(1^-)=1+1=2$ i $h(1^+)=3\cdot1-1=2$; per tant, $\displaystyle\lim_{x\to1}h(x)=2$.
+
+    **2. Valor de la funció:** $h(1)=2\cdot1+|1-1|=2$.
+
+    **3. Comparació:** $\displaystyle\lim_{x\to1}h(x)=2=h(1)$.
 
     És contínua, però les derivades laterals són $1$ i $3$; no és derivable a $x=1$.
 
