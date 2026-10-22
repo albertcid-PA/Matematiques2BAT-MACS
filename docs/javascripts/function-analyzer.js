@@ -3433,7 +3433,10 @@
     const mapX = (x) => margin.left + ((x - xMin) / (xMax - xMin)) * plotWidth;
     const mapY = (y) => margin.top + ((yMax - y) / (yMax - yMin)) * plotHeight;
 
-    context.fillStyle = "#ffffff";
+    const graphStyles = window.getComputedStyle(canvas);
+    const graphBackground = graphStyles.getPropertyValue("--graph-background").trim() || "#f2f3fa";
+    const graphGrid = graphStyles.getPropertyValue("--graph-grid").trim() || "#d6d9e6";
+    context.fillStyle = graphBackground;
     context.fillRect(0, 0, width, height);
     context.save();
     context.beginPath();
@@ -3443,7 +3446,7 @@
     const xStep = niceStep(xMax - xMin, 10);
     const yStep = niceStep(yMax - yMin, 8);
     context.lineWidth = 1;
-    context.strokeStyle = "#e3e8ef";
+    context.strokeStyle = graphGrid;
     context.fillStyle = "#536273";
     context.font = "12px system-ui, sans-serif";
     context.textAlign = "center";
@@ -3558,7 +3561,7 @@
       if (point.x < xMin || point.x > xMax || point.y < yMin || point.y > yMax || !Number.isFinite(point.y)) return;
       context.beginPath();
       context.arc(mapX(point.x), mapY(point.y), 4.5, 0, Math.PI * 2);
-      context.fillStyle = open ? "#ffffff" : color;
+      context.fillStyle = open ? graphBackground : color;
       context.strokeStyle = color;
       context.lineWidth = 2;
       context.fill();
@@ -4023,6 +4026,11 @@
       window.clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(redraw, 120);
     });
+    const themeObserver = new MutationObserver(function () {
+      if (currentAnalysis) redraw();
+    });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
+    themeObserver.observe(document.body, { attributes: true, attributeFilter: ["data-md-color-scheme"] });
   }
 
   const publicApi = {
