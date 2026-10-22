@@ -1610,7 +1610,7 @@ $$
         \end{cases}
         $$
 
-    - **b)** En $x=0$, $e^0=1=2\cdot0+1$; és contínua. A més,
+    - **b)** En $x=0$, $e^0=1=2\cdot0+1$; és contínua.
 
         Per no confondre la funció $g$ de l'enunciat amb la funció interior de la regla de la cadena, anomenem $H$ la funció de l'enunciat. En el tram exponencial, $H(x)=e^{2x}$, i prenem
 
@@ -1934,7 +1934,8 @@ Determina els intervals de creixement i de decreixement i calcula els màxims i 
     - **c)** $D_f=\mathbb{R}\setminus\{1\}$. Apliquem directament la regla del quocient:
 
         $$
-        f'(x)=\frac{(2x-2)(x-1)-(x^2-2x+3)}{(x-1)^2}
+        f'(x)=\frac{2x(x-1)-(x^2+3)}{(x-1)^2}
+        =\frac{x^2-2x-3}{(x-1)^2}
         =\frac{(x+1)(x-3)}{(x-1)^2}.
         $$
 
