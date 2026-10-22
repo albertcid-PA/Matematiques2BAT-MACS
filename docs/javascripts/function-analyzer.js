@@ -3682,6 +3682,7 @@
     const pieceExamples = {
       "exercise-a": { count: 2, expressions: ["-x^2+4*x+1", "x^2-2*x+3"], break1: 1, owner1: "right" },
       "exercise-c": { count: 2, expressions: ["3^x", "3/x"], break1: 1, owner1: "left" },
+      "quadratic-rational": { count: 2, expressions: ["x^2-5", "(x+3)/(x-2)"], break1: 1, owner1: "right" },
       three: { count: 3, expressions: ["-3*x-3", "x+5", "3*x+3"], break1: -2, break2: 1, owner1: "right", owner2: "right" },
     };
 

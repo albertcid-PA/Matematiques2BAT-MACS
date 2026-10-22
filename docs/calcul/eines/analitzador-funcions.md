@@ -5,7 +5,7 @@
 
     L'analitzador és una ajuda per revisar una resolució. Cal justificar els passos i saber interpretar la informació obtinguda.
 
-<div id="function-analyzer" class="fa-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=22">
+<div id="function-analyzer" class="fa-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=23">
   <noscript>
     <p class="fa-message fa-message--error">Cal activar el JavaScript del navegador per utilitzar l'analitzador.</p>
   </noscript>
@@ -71,6 +71,7 @@
         <span>Prova:</span>
         <button type="button" data-piece-example="exercise-a">salt finit</button>
         <button type="button" data-piece-example="exercise-c">unió contínua</button>
+        <button type="button" data-piece-example="quadratic-rational">quadràtica i racional</button>
         <button type="button" data-piece-example="three">tres trams</button>
       </div>
     </section>
