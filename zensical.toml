@@ -22,9 +22,8 @@ nav = [
       { "Optimització" = "calcul/aplicacions-derivades/04_optimitzacio.md" },
     ] },
     { "Per practicar" = [
-      { "Índex" = "calcul/per-practicar/index.md" },
-      { "Exercicis per temes" = "calcul/exercicis.md" },
-      { "Problemes PAU" = "calcul/problemes-pau.md" },
+      { "Exercicis i problemes PAU" = "calcul/per-practicar/index.md" },
+      { "Solucionari desplegable" = "calcul/per-practicar/solucionari.md" },
     ] },
     { "Laboratori de mates" = [
       { "Índex" = "calcul/eines/index.md" },
@@ -68,7 +67,7 @@ extra_javascript = [
 
 extra_css = [
   "https://unpkg.com/katex@0/dist/katex.min.css",
-  "stylesheets/extra.css?v=9",
+  "stylesheets/extra.css?v=10",
 ]
 
 [project.theme]
