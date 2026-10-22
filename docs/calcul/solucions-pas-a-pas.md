@@ -249,7 +249,7 @@ però cal conservar les exclusions de la funció original.
 - **Conclusió:** a $x=-2$ hi ha una discontinuïtat evitable i un forat a $(-2,-\frac13)$; $x=1$ és una asímptota vertical i $y=0$ és una asímptota horitzontal.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfica de la funció de l'exercici 1.5, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_14_resultat_exercici_1_5.svg?v=1){ width="62%" }
+  ![Gràfica de la funció de l'exercici 1.5, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_14_resultat_exercici_1_5.svg?v=2){ width="62%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_14_resultat_exercici_1_5.tex">Figura 1.14.</a></strong> Representació de la funció de l'exercici 1.5.</figcaption>
 </figure>
 
@@ -294,7 +294,7 @@ $$
     Així, $y=1$ és una asímptota horitzontal.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfica de la funció de l'exercici 1.6, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_15_resultat_exercici_1_6.svg?v=1){ width="62%" }
+  ![Gràfica de la funció de l'exercici 1.6, amb un forat i les asímptotes vertical i horitzontal](../img/calcul/fig_1_15_resultat_exercici_1_6.svg?v=2){ width="62%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_15_resultat_exercici_1_6.tex">Figura 1.15.</a></strong> Representació de la funció de l'exercici 1.6.</figcaption>
 </figure>
 
@@ -1429,7 +1429,7 @@ Totes sis funcions tenen domini $\mathbb{R}$. Factoritzem per trobar els talls a
 - **f)** $f(x)=x^2(x-4)^2$; els zeros són $0$ i $4$, tots dos dobles. Com que $f'(x)=4x(x-2)(x-4)$, té mínims a $(0,0)$ i $(4,0)$ i un màxim a $(2,16)$. Per l'ordre dels infinits, conservem $x^4$: $\lim_{x\to-\infty}f(x)=\lim_{x\to-\infty}x^4=+\infty$ i $\lim_{x\to+\infty}f(x)=\lim_{x\to+\infty}x^4=+\infty$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=2){ width="100%" }
+  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=3){ width="100%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_18.tex">Figura 2.31.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
 </figure>
 

@@ -16,7 +16,7 @@ LaTeX Workshop executarà automàticament la recepta **TikZ a SVG per al web**. 
 
 No cal editar mai l'SVG manualment.
 
-El procés de conversió afegeix automàticament un fons blanc a l'SVG. No cal definir-lo a cada document TikZ.
+El procés de conversió conserva el fons transparent de l'SVG. El web hi aplica un fons pastel des de `docs/stylesheets/extra.css`, amb una tonalitat específica per als modes diürn i nocturn. No cal definir el fons a cada document TikZ.
 
 ## Numeració
 
