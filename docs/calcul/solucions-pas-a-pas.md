@@ -367,16 +367,36 @@ que pertany al segon tram. Per tant, l'estalvi és de $4.000$ litres aproximadam
 
     $$f'(x)=(x^2-3x)'=2x-3,\qquad f'(2)=4-3=1.$$
 
-- **c)** Apliquem la regla de la cadena a $(x+5)^{1/2}$:
+- **c)** Per aplicar la regla de la cadena, anomenem $h$ la funció de l'enunciat i prenem
 
     $$
-    f'(x)=\frac12(x+5)^{-1/2}\cdot1=\frac1{2\sqrt{x+5}},\qquad
-    f'(4)=\frac1{2\sqrt9}=\frac16.
+    f(x)=\sqrt{x}\quad\Longrightarrow\quad f'(x)=\frac1{2\sqrt{x}},
     $$
 
-- **d)** Apliquem la regla de la cadena a l'exponencial:
+    $$
+    g(x)=x+5\quad\Longrightarrow\quad g'(x)=1.
+    $$
 
-    $$f'(x)=e^{2x}\cdot(2x)'=2e^{2x},\qquad f'(0)=2e^0=2.$$
+    Com que $h(x)=f(g(x))$, apliquem $h'(x)=f'(g(x))g'(x)$:
+
+    $$
+    h'(x)=\frac1{2\sqrt{x+5}}\cdot1=\frac1{2\sqrt{x+5}},\qquad
+    h'(4)=\frac1{2\sqrt9}=\frac16.
+    $$
+
+- **d)** Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$
+    f(x)=e^x\quad\Longrightarrow\quad f'(x)=e^x,
+    $$
+
+    $$
+    g(x)=2x\quad\Longrightarrow\quad g'(x)=2.
+    $$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$h'(x)=f'(g(x))g'(x)=e^{2x}\cdot2=2e^{2x},\qquad h'(0)=2e^0=2.$$
 
 **1.10.**
 
@@ -417,21 +437,21 @@ Abans de derivar els quocients amb potències de $x$, els escrivim amb exponent 
     =6x^2-2x+6.
     $$
 
-- **d)** Regla del quocient:
+- **d)** Apliquem directament la regla del quocient:
 
     $$
     f'(x)=\frac{2x(x+1)-(x^2-4)}{(x+1)^2}
     =\frac{x^2+2x+4}{(x+1)^2}.
     $$
 
-- **e)** Regla del quocient:
+- **e)** Apliquem directament la regla del quocient:
 
     $$
     f'(x)=\frac{3(x^2+1)-(3x+2)2x}{(x^2+1)^2}
     =\frac{-3x^2-4x+3}{(x^2+1)^2}.
     $$
 
-- **f)** Regla del quocient:
+- **f)** Apliquem directament la regla del quocient:
 
     $$
     f'(x)=\frac{\frac1x x^2-(\ln x)2x}{x^4}
@@ -440,22 +460,113 @@ Abans de derivar els quocients amb potències de $x$, els escrivim amb exponent 
 
 **1.12.**
 
-En tots els apartats derivem la funció exterior i multipliquem per la derivada de l'expressió interior.
+Com que a la regla de la cadena reservem $f$ per a la funció exterior i $g$ per a la interior, anomenem $h$ la funció de cada enunciat. En tots els apartats fem servir
 
-- **a)** $f'(x)=7(2x-3)^6\cdot2=14(2x-3)^6$.
-- **b)** $f'(x)=\dfrac1{2\sqrt{x^2+5}}\cdot2x=\dfrac{x}{\sqrt{x^2+5}}$.
-- **c)** $f(x)=(3x+1)^{-4}$ i
+$$h(x)=f(g(x))\quad\Longrightarrow\quad h'(x)=f'(g(x))g'(x).$$
 
-    $$f'(x)=-4(3x+1)^{-5}\cdot3=-\frac{12}{(3x+1)^5}.$$
+- **a)** Prenem
 
-- **d)** $f'(x)=e^{x^2-2x}(2x-2)=(2x-2)e^{x^2-2x}$.
-- **e)** $f'(x)=\dfrac1{4x^2+1}\cdot8x=\dfrac{8x}{4x^2+1}$.
-- **f)** $f'(x)=-2(x^3+1)^{-3}\cdot3x^2=-\dfrac{6x^2}{(x^3+1)^3}$.
-- **g)**
+    $$f(x)=x^7\Longrightarrow f'(x)=7x^6,\qquad
+    g(x)=2x-3\Longrightarrow g'(x)=2.$$
 
-    $$f'(x)=\frac1{2\sqrt{1-e^x}}\cdot(-e^x)=-\frac{e^x}{2\sqrt{1-e^x}}.$$
+    Per tant,
 
-- **h)** $f'(x)=3^{2x+1}\ln3\cdot2=2\ln3\cdot3^{2x+1}$.
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =7(2x-3)^6\cdot2
+    =14(2x-3)^6.
+    $$
+
+- **b)** Prenem
+
+    $$f(x)=\sqrt{x}\Longrightarrow f'(x)=\frac1{2\sqrt{x}},\qquad
+    g(x)=x^2+5\Longrightarrow g'(x)=2x.$$
+
+    Per tant,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =\frac1{2\sqrt{x^2+5}}\cdot2x
+    =\frac{x}{\sqrt{x^2+5}}.
+    $$
+
+- **c)** Primer escrivim $h(x)=(3x+1)^{-4}$. Prenem
+
+    $$f(x)=x^{-4}\Longrightarrow f'(x)=-4x^{-5},\qquad
+    g(x)=3x+1\Longrightarrow g'(x)=3.$$
+
+    Per tant,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =-4(3x+1)^{-5}\cdot3
+    =-\frac{12}{(3x+1)^5}.
+    $$
+
+- **d)** Prenem
+
+    $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=x^2-2x\Longrightarrow g'(x)=2x-2.$$
+
+    Per tant,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =e^{x^2-2x}(2x-2)
+    =(2x-2)e^{x^2-2x}.
+    $$
+
+- **e)** Prenem
+
+    $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
+    g(x)=4x^2+1\Longrightarrow g'(x)=8x.$$
+
+    Per tant,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =\frac1{4x^2+1}\cdot8x
+    =\frac{8x}{4x^2+1}.
+    $$
+
+- **f)** Prenem
+
+    $$f(x)=x^{-2}\Longrightarrow f'(x)=-2x^{-3},\qquad
+    g(x)=x^3+1\Longrightarrow g'(x)=3x^2.$$
+
+    Per tant,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =-2(x^3+1)^{-3}\cdot3x^2
+    =-\frac{6x^2}{(x^3+1)^3}.
+    $$
+
+- **g)** Prenem
+
+    $$f(x)=\sqrt{x}\Longrightarrow f'(x)=\frac1{2\sqrt{x}},\qquad
+    g(x)=1-e^x\Longrightarrow g'(x)=-e^x.$$
+
+    Per tant,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =\frac1{2\sqrt{1-e^x}}\cdot(-e^x)
+    =-\frac{e^x}{2\sqrt{1-e^x}}.
+    $$
+
+- **h)** Prenem
+
+    $$f(x)=3^x\Longrightarrow f'(x)=3^x\ln3,\qquad
+    g(x)=2x+1\Longrightarrow g'(x)=2.$$
+
+    Per tant,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =3^{2x+1}\ln3\cdot2
+    =2\ln3\cdot3^{2x+1}.
+    $$
 
 **1.13.**
 
@@ -479,17 +590,29 @@ Simplifiquem, indiquem la restricció que prové de l'expressió original i desp
 
 **1.14.**
 
-- **a)** Regla del quocient:
+- **a)** Apliquem directament la regla del quocient:
 
     $$
     f'(x)=\frac{2x(x^2+4)-(x^2-4)2x}{(x^2+4)^2}
     =\frac{16x}{(x^2+4)^2}.
     $$
 
-- **b)** Escrivim $f(x)=(x-2)(3-x)^{-2}$:
+- **b)** Anomenem $h$ la funció de l'enunciat i apliquem directament la regla del quocient. Abans derivem el denominador $v(x)=(3-x)^2$ amb la regla de la cadena. Prenem
 
     $$
-    f'(x)=(3-x)^{-2}+2(x-2)(3-x)^{-3}
+    f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
+    g(x)=3-x\Longrightarrow g'(x)=-1.
+    $$
+
+    Com que $v(x)=f(g(x))$,
+
+    $$v'(x)=f'(g(x))g'(x)=2(3-x)(-1)=-2(3-x).$$
+
+    Ara, amb $u(x)=x-2$ i $u'(x)=1$, apliquem la regla del quocient:
+
+    $$
+    h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v(x)^2}
+    =\frac{(3-x)^2+2(x-2)(3-x)}{(3-x)^4}
     =\frac{x-1}{(3-x)^3}.
     $$
 
@@ -497,97 +620,240 @@ Simplifiquem, indiquem la restricció que prové de l'expressió original i desp
 
     $$f(x)=\frac{4x^{3/2}}{\sqrt{x}+1}.$$
 
-    Aplicant la regla del quocient,
+    Aplicant directament la regla del quocient,
 
     $$
     f'(x)=\frac{6\sqrt{x}(\sqrt{x}+1)-4x^{3/2}\frac1{2\sqrt{x}}}{(\sqrt{x}+1)^2}
     =\frac{2\sqrt{x}(2\sqrt{x}+3)}{(\sqrt{x}+1)^2}.
     $$
 
-- **d)** Regla de la cadena:
+- **d)** Anomenem $h$ la funció de l'enunciat i prenem
 
-    $$f'(x)=5\left(\frac34-\frac{x}{6}\right)^4\left(-\frac16\right)
+    $$f(x)=x^5\Longrightarrow f'(x)=5x^4,\qquad
+    g(x)=\frac34-\frac{x}{6}\Longrightarrow g'(x)=-\frac16.$$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$h'(x)=f'(g(x))g'(x)
+    =5\left(\frac34-\frac{x}{6}\right)^4\left(-\frac16\right)
     =-\frac56\left(\frac34-\frac{x}{6}\right)^4.$$
 
 - **e)** Per $x\geq0$, $f(x)=\sqrt[4]{2}\,x^{3/4}$. Per $x>0$,
 
     $$f'(x)=\sqrt[4]{2}\cdot\frac34x^{-1/4}=\frac{3\sqrt[4]{2}}{4\sqrt[4]{x}}.$$
 
-- **f)** Regla de la cadena:
+- **f)** Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$f(x)=x^6\Longrightarrow f'(x)=6x^5,\qquad
+    g(x)=3\sqrt{x}+2\Longrightarrow g'(x)=\frac3{2\sqrt{x}}.$$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
 
     $$
-    f'(x)=6(3\sqrt{x}+2)^5\cdot\frac3{2\sqrt{x}}
+    h'(x)=f'(g(x))g'(x)
+    =6(3\sqrt{x}+2)^5\cdot\frac3{2\sqrt{x}}
     =\frac{9(3\sqrt{x}+2)^5}{\sqrt{x}}.
     $$
 
 **1.15.**
 
-- **a)** Escrivim $f(x)=x^4(x-2)^{-3}$:
+- **a)** Apliquem directament la regla del quocient. Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$u(x)=x^4\Longrightarrow u'(x)=4x^3.$$
+
+    Per derivar $v(x)=(x-2)^3$, apliquem la regla de la cadena. Prenem
+
+    $$f(x)=x^3\Longrightarrow f'(x)=3x^2,\qquad
+    g(x)=x-2\Longrightarrow g'(x)=1.$$
+
+    Com que $v(x)=f(g(x))$,
+
+    $$v'(x)=f'(g(x))g'(x)=3(x-2)^2\cdot1=3(x-2)^2.$$
+
+    Per tant,
 
     $$
-    f'(x)=4x^3(x-2)^{-3}-3x^4(x-2)^{-4}
+    h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v(x)^2}
+    =\frac{4x^3(x-2)^3-3x^4(x-2)^2}{(x-2)^6}
     =\frac{x^3(x-8)}{(x-2)^4}.
     $$
 
-- **b)** Posem directament la regla de la cadena sobre el quocient:
+- **b)** Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$f(x)=x^4\Longrightarrow f'(x)=4x^3,$$
+
+    $$g(x)=\frac{x^2-3}{x}.$$
+
+    Derivem $g$ directament amb la regla del quocient:
 
     $$
-    f'(x)=4\left(\frac{x^2-3}{x}\right)^3
-    \frac{2x\cdot x-(x^2-3)}{x^2}
+    g'(x)=\frac{2x\cdot x-(x^2-3)\cdot1}{x^2}
+    =\frac{x^2+3}{x^2}.
+    $$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =4\left(\frac{x^2-3}{x}\right)^3\frac{x^2+3}{x^2}
     =\frac{4(x^2-3)^3(x^2+3)}{x^5}.
     $$
 
-- **c)** Escrivim $f(x)=x^2(3x-1)^{-4}$:
+- **c)** Apliquem directament la regla del quocient. Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$u(x)=x^2\Longrightarrow u'(x)=2x.$$
+
+    Per derivar $v(x)=(3x-1)^4$, apliquem la regla de la cadena. Prenem
+
+    $$f(x)=x^4\Longrightarrow f'(x)=4x^3,\qquad
+    g(x)=3x-1\Longrightarrow g'(x)=3.$$
+
+    Com que $v(x)=f(g(x))$,
+
+    $$v'(x)=f'(g(x))g'(x)=4(3x-1)^3\cdot3=12(3x-1)^3.$$
+
+    Per tant,
 
     $$
-    f'(x)=2x(3x-1)^{-4}-12x^2(3x-1)^{-5}
+    h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v(x)^2}
+    =\frac{2x(3x-1)^4-12x^2(3x-1)^3}{(3x-1)^8}
     =-\frac{2x(3x+1)}{(3x-1)^5}.
     $$
 
-- **d)** Regla del quocient i factorització del denominador:
+- **d)** Apliquem directament la regla del quocient. El numerador és $u(x)=4-x^2$, de manera que $u'(x)=-2x$. Per derivar el denominador $v(x)=x^2-6x+9=(x-3)^2$, apliquem la regla de la cadena. Prenem
+
+    $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
+    g(x)=x-3\Longrightarrow g'(x)=1.$$
+
+    Com que $v(x)=f(g(x))$,
+
+    $$v'(x)=f'(g(x))g'(x)=2(x-3).$$
+
+    Així,
 
     $$
     f'(x)=\frac{-2x(x-3)^2-(4-x^2)2(x-3)}{(x-3)^4}
     =\frac{2(3x-4)}{(x-3)^3}.
     $$
 
-- **e)** Si $u(x)=\dfrac{2-x}{2+x}$, aleshores
+- **e)** Anomenem $h$ la funció de l'enunciat i prenem
 
-    $$u'(x)=\frac{-(2+x)-(2-x)}{(2+x)^2}=-\frac4{(2+x)^2}.$$
+    $$f(x)=x^{3/2}\Longrightarrow f'(x)=\frac32x^{1/2},$$
 
-    Per la regla de la cadena,
+    $$g(x)=\frac{2-x}{2+x}.$$
 
-    $$f'(x)=\frac32u(x)^{1/2}u'(x)
+    Derivem $g$ directament amb la regla del quocient:
+
+    $$g'(x)=\frac{(-1)(2+x)-(2-x)\cdot1}{(2+x)^2}=-\frac4{(2+x)^2}.$$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$h'(x)=f'(g(x))g'(x)
+    =\frac32g(x)^{1/2}g'(x)
     =-\frac6{(x+2)^2}\sqrt{\frac{2-x}{2+x}}.$$
 
-- **f)** $f(x)=3x^{-1}+\frac14x^2$ i
+- **f)** Derivem $\frac3x$ directament amb la regla del quocient i $\frac{x^2}{4}$ amb la regla de la constant:
 
-    $$f'(x)=-3x^{-2}+\frac12x=-\frac3{x^2}+\frac{x}{2}.$$
+    $$
+    f'(x)=\frac{0\cdot x-3\cdot1}{x^2}+\frac14\cdot2x
+    =-\frac3{x^2}+\frac{x}{2}.
+    $$
 
 **1.16.**
 
-- **a)** Regla de la cadena del logaritme:
+- **a)** Anomenem $h$ la funció de l'enunciat i prenem
 
-    $$f'(x)=\frac{(x^2+3)'}{x^2+3}=\frac{2x}{x^2+3}.$$
+    $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
+    g(x)=x^2+3\Longrightarrow g'(x)=2x.$$
 
-- **b)** Simplifiquem $\ln\sqrt{2-x}=\frac12\ln(2-x)$:
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
 
-    $$f'(x)=\frac12\frac{-1}{2-x}=-\frac1{2(2-x)}.$$
+    $$h'(x)=f'(g(x))g'(x)=\frac1{x^2+3}\cdot2x=\frac{2x}{x^2+3}.$$
 
-- **c)** Escrivim $f(x)=(\ln x)e^{-2x}$ i apliquem el producte:
+- **b)** Aquesta funció té dues composicions. Anomenem $h$ la funció de l'enunciat i prenem primer
 
-    $$f'(x)=\frac1x e^{-2x}-2(\ln x)e^{-2x}
-    =e^{-2x}\left(\frac1x-2\ln x\right).$$
+    $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
+    g(x)=\sqrt{2-x}.$$
 
-- **d)** $f'(x)=e^{3x^2-2}\cdot6x=6xe^{3x^2-2}$.
-- **e)**
-
-    $$f'(x)=\frac{(x^2+1)'}{(x^2+1)\ln3}=\frac{2x}{(x^2+1)\ln3}.$$
-
-- **f)** Apliquem dues vegades la regla de la cadena:
+    Per derivar $g$, prenem $p(x)=\sqrt{x}$ i $q(x)=2-x$:
 
     $$
-    f'(x)=\frac1{\ln(2/x)}\cdot\left(\ln\frac2x\right)'
+    p'(x)=\frac1{2\sqrt{x}},\qquad q'(x)=-1,
+    $$
+
+    $$
+    g'(x)=p'(q(x))q'(x)=-\frac1{2\sqrt{2-x}}.
+    $$
+
+    Com que $h(x)=f(g(x))$, tornem a aplicar la regla de la cadena:
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =\frac1{\sqrt{2-x}}\left(-\frac1{2\sqrt{2-x}}\right)
+    =-\frac1{2(2-x)}.
+    $$
+
+- **c)** Apliquem directament la regla del quocient. Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x.$$
+
+    El denominador $v(x)=e^{2x}$ és una composició. Prenem $f(x)=e^x$ i $g(x)=2x$:
+
+    $$v'(x)=f'(g(x))g'(x)=e^{2x}\cdot2=2e^{2x}.$$
+
+    Per tant,
+
+    $$
+    h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v(x)^2}
+    =\frac{\frac1x e^{2x}-2(\ln x)e^{2x}}{e^{4x}}
+    =e^{-2x}\left(\frac1x-2\ln x\right).
+    $$
+
+- **d)** Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=3x^2-2\Longrightarrow g'(x)=6x.$$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$h'(x)=f'(g(x))g'(x)=e^{3x^2-2}\cdot6x=6xe^{3x^2-2}.$$
+
+- **e)** Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$f(x)=\log_3x\Longrightarrow f'(x)=\frac1{x\ln3},\qquad
+    g(x)=x^2+1\Longrightarrow g'(x)=2x.$$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =\frac1{(x^2+1)\ln3}\cdot2x
+    =\frac{2x}{(x^2+1)\ln3}.
+    $$
+
+- **f)** Aquesta funció té dues composicions. Anomenem $h$ la funció de l'enunciat i prenem
+
+    $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
+    g(x)=\ln\frac2x.$$
+
+    Per derivar $g$, prenem $p(x)=\ln x$ i $q(x)=\frac2x$. Derivem $q$ directament amb la regla del quocient:
+
+    $$
+    q'(x)=\frac{0\cdot x-2\cdot1}{x^2}=-\frac2{x^2}.
+    $$
+
+    Apliquem la regla de la cadena a $g(x)=p(q(x))$:
+
+    $$
+    g'(x)=p'(q(x))q'(x)
+    =\frac1{2/x}\left(-\frac2{x^2}\right)
+    =-\frac1x.
+    $$
+
+    Finalment, com que $h(x)=f(g(x))$, tornem a aplicar la regla de la cadena:
+
+    $$
+    h'(x)=f'(g(x))g'(x)
     =\frac1{\ln(2/x)}\left(-\frac1x\right)
     =-\frac1{x\ln(2/x)}.
     $$
@@ -600,9 +866,20 @@ Derivem successivament el resultat de la fila anterior.
 
     $$f'(x)=3x^2-4x+4,\qquad f''(x)=6x-4,\qquad f'''(x)=6.$$
 
-- **b)**
+- **b)** Anomenem $h$ la funció de l'enunciat i, per a la primera derivada, prenem
 
-    $$f'(x)=3e^{3x},\qquad f''(x)=9e^{3x},\qquad f'''(x)=27e^{3x}.$$
+    $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=3x\Longrightarrow g'(x)=3.$$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$h'(x)=f'(g(x))g'(x)=e^{3x}\cdot3=3e^{3x}.$$
+
+    En les derivades següents tornem a aplicar la mateixa regla de la cadena a $e^{3x}$:
+
+    $$h''(x)=3\cdot e^{3x}\cdot3=9e^{3x},$$
+
+    $$h'''(x)=9\cdot e^{3x}\cdot3=27e^{3x}.$$
 
 - **c)**
 
@@ -612,13 +889,76 @@ Derivem successivament el resultat de la fila anterior.
 
     $$f''(x)=e^x+(x-1)e^x=xe^x,\qquad f'''(x)=e^x+xe^x=(x+1)e^x.$$
 
-- **d)**
+- **d)** Anomenem $h$ la funció de l'enunciat i prenem
 
-    $$f'(x)=\frac1{x+3},\qquad f''(x)=-\frac1{(x+3)^2},\qquad f'''(x)=\frac2{(x+3)^3}.$$
+    $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
+    g(x)=x+3\Longrightarrow g'(x)=1.$$
 
-- **e)** Escrivim $f(x)=(x+2)^{-1}$:
+    Per la regla de la cadena,
 
-    $$f'(x)=-\frac1{(x+2)^2},\qquad f''(x)=\frac2{(x+2)^3},\qquad f'''(x)=-\frac6{(x+2)^4}.$$
+    $$h'(x)=f'(g(x))g'(x)=\frac1{x+3}.$$
+
+    Derivem les fraccions següents directament amb la regla del quocient:
+
+    $$
+    h''(x)=\frac{0\cdot(x+3)-1\cdot1}{(x+3)^2}
+    =-\frac1{(x+3)^2},
+    $$
+
+    Per obtenir la tercera derivada, el denominador és una composició. Prenem
+
+    $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
+    g(x)=x+3\Longrightarrow g'(x)=1.$$
+
+    Per la regla de la cadena,
+
+    $$\left((x+3)^2\right)'=f'(g(x))g'(x)=2(x+3).$$
+
+    Tornem a aplicar directament la regla del quocient:
+
+    $$
+    h'''(x)=\frac{0\cdot(x+3)^2-(-1)\cdot2(x+3)}{(x+3)^4}
+    =\frac2{(x+3)^3}.
+    $$
+
+- **e)** Anomenem $h$ la funció de l'enunciat i apliquem directament la regla del quocient:
+
+    $$
+    h'(x)=\frac{0\cdot(x+2)-1\cdot1}{(x+2)^2}
+    =-\frac1{(x+2)^2}.
+    $$
+
+    Per obtenir la segona derivada, el denominador és una composició. Prenem
+
+    $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
+    g(x)=x+2\Longrightarrow g'(x)=1.$$
+
+    Per la regla de la cadena,
+
+    $$\left((x+2)^2\right)'=f'(g(x))g'(x)=2(x+2).$$
+
+    Tornem a aplicar directament la regla del quocient:
+
+    $$
+    h''(x)=\frac{0\cdot(x+2)^2-(-1)\cdot2(x+2)}{(x+2)^4}
+    =\frac2{(x+2)^3},
+    $$
+
+    Per obtenir la tercera derivada, prenem ara
+
+    $$f(x)=x^3\Longrightarrow f'(x)=3x^2,\qquad
+    g(x)=x+2\Longrightarrow g'(x)=1.$$
+
+    Per la regla de la cadena,
+
+    $$\left((x+2)^3\right)'=f'(g(x))g'(x)=3(x+2)^2.$$
+
+    Apliquem una altra vegada directament la regla del quocient:
+
+    $$
+    h'''(x)=\frac{0\cdot(x+2)^3-2\cdot3(x+2)^2}{(x+2)^6}
+    =-\frac6{(x+2)^4}.
+    $$
 
 **1.18.**
 
@@ -834,12 +1174,21 @@ $$
 
 - **b)** En $x=0$, $e^0=1=2\cdot0+1$; és contínua. A més,
 
-    $$g'_-(0)=2e^0=2,\qquad g'_+(0)=2.$$
+    Per no confondre la funció $g$ de l'enunciat amb la funció interior de la regla de la cadena, anomenem $H$ la funció de l'enunciat. En el tram exponencial, $H(x)=e^{2x}$, i prenem
+
+    $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=2x\Longrightarrow g'(x)=2.$$
+
+    Així, $H(x)=f(g(x))$ en aquest tram i
+
+    $$H'(x)=f'(g(x))g'(x)=e^{2x}\cdot2=2e^{2x}.$$
+
+    $$H'_-(0)=2e^0=2,\qquad H'_+(0)=2.$$
 
     És derivable en tot $\mathbb{R}$ i
 
     $$
-    g'(x)=
+    H'(x)=
     \begin{cases}
     2e^{2x}, & x<0,\\
     2, & x\geq0.
@@ -1004,7 +1353,7 @@ Per estudiar la monotonia, calculem $f'(x)$, trobem els punts crítics i fem el 
 
 - **a)** $f'(x)=3x^2-6x-9=3(x+1)(x-3)$. El signe és $+$, $-$, $+$ en els intervals determinats per $-1$ i $3$. Per tant, creix a $(-\infty,-1)$ i $(3,+\infty)$, i decreix a $(-1,3)$. Hi ha un màxim relatiu a $(-1,9)$ i un mínim relatiu a $(3,-23)$.
 - **b)** $f'(x)=4x^3-20x=4x(x^2-5)$. Els punts crítics són $-\sqrt5$, $0$ i $\sqrt5$. La funció decreix a $(-\infty,-\sqrt5)$ i $(0,\sqrt5)$, i creix a $(-\sqrt5,0)$ i $(\sqrt5,+\infty)$. Té mínims relatius a $(\pm\sqrt5,-16)$ i un màxim relatiu a $(0,9)$.
-- **c)** $D_f=\mathbb{R}\setminus\{1\}$ i
+- **c)** $D_f=\mathbb{R}\setminus\{1\}$. Apliquem directament la regla del quocient:
 
     $$
     f'(x)=\frac{(2x-2)(x-1)-(x^2-2x+3)}{(x-1)^2}
@@ -1012,17 +1361,29 @@ Per estudiar la monotonia, calculem $f'(x)$, trobem els punts crítics i fem el 
     $$
 
     Cal separar també $x=1$. Creix a $(-\infty,-1)$ i $(3,+\infty)$; decreix a $(-1,1)$ i $(1,3)$. Hi ha un màxim relatiu a $(-1,-2)$ i un mínim relatiu a $(3,6)$.
-- **d)** Per la regla del producte i la cadena,
+- **d)** Anomenem $F$ la funció de l'enunciat i apliquem la regla del producte. Per derivar el factor exponencial, prenem
 
-    $$f'(x)=e^{-x}-(x-1)e^{-x}=e^{-x}(2-x).$$
+    $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=-x\Longrightarrow g'(x)=-1.$$
+
+    Per la regla de la cadena,
+
+    $$\left(e^{-x}\right)'=f'(g(x))g'(x)=-e^{-x}.$$
+
+    Ara apliquem la regla del producte:
+
+    $$F'(x)=e^{-x}-(x-1)e^{-x}=e^{-x}(2-x).$$
 
     Com que $e^{-x}>0$, creix si $x<2$ i decreix si $x>2$. Per tant, té un màxim relatiu a $(2,e^{-2})$.
-- **e)** $D_f=(0,+\infty)$ i
+- **e)** $D_f=(0,+\infty)$. Apliquem directament la regla del quocient:
 
-    $$f'(x)=\frac{1-2\ln x}{x^3}.$$
+    $$
+    f'(x)=\frac{\frac1x\cdot x^2-(\ln x)\cdot2x}{x^4}
+    =\frac{1-2\ln x}{x^3}.
+    $$
 
     Com que $x^3>0$, $f'(x)=0$ quan $x=\sqrt e$. Creix a $(0,\sqrt e)$ i decreix a $(\sqrt e,+\infty)$; té un màxim relatiu a $\left(\sqrt e,\frac1{2e}\right)$.
-- **f)** Per la regla del quocient,
+- **f)** Apliquem directament la regla del quocient,
 
     $$
     f'(x)=\frac{3x^2(x^2+1)-2x(x^3+1)}{(x^2+1)^2}
@@ -1038,7 +1399,7 @@ Cal justificar els intervals amb el signe de la derivada.
 
 - **a)** $f'(x)=3x^2-12=3(x-2)(x+2)$. Creix a $(-\infty,-2)$ i $(2,+\infty)$, i decreix a $(-2,2)$. Té un màxim relatiu a $(-2,17)$ i un mínim relatiu a $(2,-15)$.
 - **b)** $f'(x)=4x^3-8x=4x(x^2-2)$. Decreix a $(-\infty,-\sqrt2)$ i $(0,\sqrt2)$, i creix a $(-\sqrt2,0)$ i $(\sqrt2,+\infty)$. Té mínims relatius a $(\pm\sqrt2,-4)$ i un màxim relatiu a $(0,0)$.
-- **c)**
+- **c)** Apliquem directament la regla del quocient:
 
     $$
     f'(x)=\frac{2x(x^2+1)-2x(x^2-4)}{(x^2+1)^2}
@@ -1046,7 +1407,15 @@ Cal justificar els intervals amb el signe de la derivada.
     $$
 
     Decreix a $(-\infty,0)$ i creix a $(0,+\infty)$; té un mínim relatiu i absolut a $(0,-4)$.
-- **d)** $f'(x)=e^{-x}-(x+1)e^{-x}=-xe^{-x}$. Com que $e^{-x}>0$, creix a $(-\infty,0)$ i decreix a $(0,+\infty)$. Té un màxim relatiu i absolut a $(0,1)$.
+- **d)** Anomenem $F$ la funció de l'enunciat i apliquem la regla del producte. El factor $e^{-x}$ és una composició: prenem $f(x)=e^x$ i $g(x)=-x$, amb $f'(x)=e^x$ i $g'(x)=-1$. Per la regla de la cadena,
+
+    $$\left(e^{-x}\right)'=f'(g(x))g'(x)=e^{-x}(-1)=-e^{-x}.$$
+
+    Per tant,
+
+    $$F'(x)=e^{-x}-(x+1)e^{-x}=-xe^{-x}.$$
+
+    Com que $e^{-x}>0$, creix a $(-\infty,0)$ i decreix a $(0,+\infty)$. Té un màxim relatiu i absolut a $(0,1)$.
 
 **2.18.**
 
@@ -1079,7 +1448,14 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
 
     $$f(x)-1=\frac1{x-2},$$
 
-    de manera que la gràfica queda per sota de l'asímptota si $x<2$ i per sobre si $x>2$. Els talls són $(1,0)$ i $\left(0,\frac12\right)$. Com que $f'(x)=-1/(x-2)^2<0$, decreix en cada interval del domini.
+    de manera que la gràfica queda per sota de l'asímptota si $x<2$ i per sobre si $x>2$. Els talls són $(1,0)$ i $\left(0,\frac12\right)$. Derivem directament amb la regla del quocient:
+
+    $$
+    f'(x)=\frac{1\cdot(x-2)-(x-1)\cdot1}{(x-2)^2}
+    =-\frac1{(x-2)^2}<0.
+    $$
+
+    Per tant, decreix en cada interval del domini.
 - **b)** $D_f=\mathbb{R}\setminus\{-1,1\}$ i $x=\pm1$ són asímptotes verticals. Per l'ordre dels infinits, al numerador domina $2x^2$ i al denominador domina $x^2$:
 
     $$
@@ -1091,7 +1467,14 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
 
     $$f(x)-2=\frac{-2}{x^2-1},$$
 
-    la gràfica queda per sota de l'asímptota si $|x|>1$ i per sobre si $|x|<1$. Els talls són $(\pm\sqrt2,0)$ i $(0,4)$. Com que $f'(x)=4x/(x^2-1)^2$, decreix per $x<0$ i creix per $x>0$, separant a $x=\pm1$. Té un mínim relatiu a $(0,4)$.
+    la gràfica queda per sota de l'asímptota si $|x|>1$ i per sobre si $|x|<1$. Els talls són $(\pm\sqrt2,0)$ i $(0,4)$. Derivem directament amb la regla del quocient:
+
+    $$
+    f'(x)=\frac{4x(x^2-1)-(2x^2-4)2x}{(x^2-1)^2}
+    =\frac{4x}{(x^2-1)^2}.
+    $$
+
+    Així, decreix per $x<0$ i creix per $x>0$, separant a $x=\pm1$. Té un mínim relatiu a $(0,4)$.
 - **c)** $\displaystyle f(x)=\frac{-(x-3)(x+2)}{(x-2)(x+2)}=\frac{3-x}{x-2}$, amb $D_f=\mathbb{R}\setminus\{-2,2\}$. Hi ha un forat a $\left(-2,-\frac54\right)$ i una asímptota vertical $x=2$. Per l'ordre dels infinits, al numerador domina $-x$ i al denominador domina $x$:
 
     $$
@@ -1103,7 +1486,14 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
 
     $$f(x)+1=\frac1{x-2},$$
 
-    la gràfica queda per sota de l'asímptota si $x<2$ i per sobre si $x>2$. Els talls són $(3,0)$ i $\left(0,-\frac32\right)$. Com que $f'(x)=-1/(x-2)^2<0$, decreix en cada interval del domini.
+    la gràfica queda per sota de l'asímptota si $x<2$ i per sobre si $x>2$. Els talls són $(3,0)$ i $\left(0,-\frac32\right)$. Derivem directament amb la regla del quocient:
+
+    $$
+    f'(x)=\frac{(-1)(x-2)-(3-x)\cdot1}{(x-2)^2}
+    =-\frac1{(x-2)^2}<0.
+    $$
+
+    Per tant, decreix en cada interval del domini.
 - **d)** $D_f=\mathbb{R}\setminus\{-2,2\}$ i $x=\pm2$ són asímptotes verticals. Per l'ordre dels infinits, al numerador domina $3x^2$ i al denominador domina $x^2$:
 
     $$
@@ -1115,7 +1505,14 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
 
     $$f(x)-3=\frac{16}{x^2-4},$$
 
-    la gràfica queda per sobre de l'asímptota si $|x|>2$ i per sota si $|x|<2$. No talla l'eix $X$ i talla l'eix $Y$ a $(0,-1)$. Com que $f'(x)=-32x/(x^2-4)^2$, creix per $x<0$ i decreix per $x>0$, separant a $x=\pm2$. Té un màxim relatiu a $(0,-1)$.
+    la gràfica queda per sobre de l'asímptota si $|x|>2$ i per sota si $|x|<2$. No talla l'eix $X$ i talla l'eix $Y$ a $(0,-1)$. Derivem directament amb la regla del quocient:
+
+    $$
+    f'(x)=\frac{6x(x^2-4)-(3x^2+4)2x}{(x^2-4)^2}
+    =-\frac{32x}{(x^2-4)^2}.
+    $$
+
+    Així, creix per $x<0$ i decreix per $x>0$, separant a $x=\pm2$. Té un màxim relatiu a $(0,-1)$.
 - **e)** $D_f=\mathbb{R}\setminus\{-1,2\}$ i $x=-1$ i $x=2$ són asímptotes verticals. Per l'ordre dels infinits, el denominador es comporta com $x^2$ i és un infinit més gran que la constant del numerador:
 
     $$
@@ -1123,7 +1520,14 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
     =\lim_{x\to\pm\infty}\frac1{x^2}=0.
     $$
 
-    Per tant, $y=0$ és una asímptota horitzontal. La funció és positiva a $(-\infty,-1)$ i $(2,+\infty)$, i negativa a $(-1,2)$; això indica si la gràfica queda per sobre o per sota de l'asímptota. Talla l'eix $Y$ a $\left(0,-\frac12\right)$ i no talla l'eix $X$. Com que $f'(x)=-(2x-1)/(x^2-x-2)^2$, creix fins a $x=\frac12$ i decreix després, separant les discontinuïtats. Té un màxim relatiu a $\left(\frac12,-\frac49\right)$.
+    Per tant, $y=0$ és una asímptota horitzontal. La funció és positiva a $(-\infty,-1)$ i $(2,+\infty)$, i negativa a $(-1,2)$; això indica si la gràfica queda per sobre o per sota de l'asímptota. Talla l'eix $Y$ a $\left(0,-\frac12\right)$ i no talla l'eix $X$. Derivem directament amb la regla del quocient, amb denominador $x^2-x-2$:
+
+    $$
+    f'(x)=\frac{0\cdot(x^2-x-2)-1\cdot(2x-1)}{(x^2-x-2)^2}
+    =-\frac{2x-1}{(x^2-x-2)^2}.
+    $$
+
+    Així, creix fins a $x=\frac12$ i decreix després, separant les discontinuïtats. Té un màxim relatiu a $\left(\frac12,-\frac49\right)$.
 - **f)** Dividim: $\displaystyle\frac{x^2}{x-1}=x+1+\frac1{x-1}$. Per comprovar l'asímptota obliqua fem el límit de la diferència. Per l'ordre dels infinits, el denominador $x-1$ és més gran que la constant $1$:
 
     $$
@@ -1131,7 +1535,14 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
     =\lim_{x\to\pm\infty}\frac1{x-1}=0.
     $$
 
-    Així, $D_f=\mathbb{R}\setminus\{1\}$, $x=1$ és asímptota vertical i $y=x+1$ és obliqua. L'únic tall és $(0,0)$. Com que $f'(x)=x(x-2)/(x-1)^2$, té un màxim relatiu a $(0,0)$ i un mínim relatiu a $(2,4)$.
+    Així, $D_f=\mathbb{R}\setminus\{1\}$, $x=1$ és asímptota vertical i $y=x+1$ és obliqua. L'únic tall és $(0,0)$. Derivem la funció original directament amb la regla del quocient:
+
+    $$
+    f'(x)=\frac{2x(x-1)-x^2\cdot1}{(x-1)^2}
+    =\frac{x(x-2)}{(x-1)^2}.
+    $$
+
+    Té un màxim relatiu a $(0,0)$ i un mínim relatiu a $(2,4)$.
 - **g)** Dividim: $\displaystyle-\frac{x^2}{x+1}=-x+1-\frac1{x+1}$. Per comprovar l'asímptota obliqua fem el límit de la diferència. Per l'ordre dels infinits, el denominador $x+1$ és més gran que la constant $-1$:
 
     $$
@@ -1139,7 +1550,14 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
     =\lim_{x\to\pm\infty}\frac{-1}{x+1}=0.
     $$
 
-    Així, $D_f=\mathbb{R}\setminus\{-1\}$, $x=-1$ és asímptota vertical i $y=-x+1$ és obliqua. L'únic tall és $(0,0)$. Com que $f'(x)=-x(x+2)/(x+1)^2$, té un mínim relatiu a $(-2,4)$ i un màxim relatiu a $(0,0)$.
+    Així, $D_f=\mathbb{R}\setminus\{-1\}$, $x=-1$ és asímptota vertical i $y=-x+1$ és obliqua. L'únic tall és $(0,0)$. Derivem la funció original directament amb la regla del quocient:
+
+    $$
+    f'(x)=\frac{(-2x)(x+1)-(-x^2)\cdot1}{(x+1)^2}
+    =-\frac{x(x+2)}{(x+1)^2}.
+    $$
+
+    Té un mínim relatiu a $(-2,4)$ i un màxim relatiu a $(0,0)$.
 
 <figure markdown="span" class="exercise-solution-figure">
   ![Representacions de les funcions racionals de l'exercici 2.19](../img/calcul/fig_2_32_resultat_exercici_2_19.svg?v=2){ width="100%" }
@@ -1151,9 +1569,32 @@ En cada funció racional comencem pel domini, factoritzem si és possible i cons
 Primer comprovem la continuïtat en el punt d'unió; després derivem cada tram i comparem les derivades laterals.
 
 - **a)** A $x=1$, el límit per l'esquerra és $4$ i el valor pel tram dret és $2$: hi ha un salt. Les derivades són $-2x+4$ i $2x-2$. La funció creix en cadascun dels dos trams i $(1,2)$ és un mínim relatiu del tram dret, però no és derivable al punt de salt.
-- **b)** A $x=0$, els dos trams valen $2$: és contínua. Les derivades laterals són $-3$ i $-2$, que no coincideixen; $(0,2)$ és un punt angulós. En el primer tram, $f'(x)=3(x-1)(x+1)$; en el segon, $f'(x)=2(x-1)$. Hi ha un màxim relatiu a $(-1,4)$ i un mínim relatiu a $(1,1)$.
-- **c)** A $x=1$, els dos trams valen $3$: és contínua. Les derivades laterals són $3\ln3$ i $-3$, de manera que hi ha un punt angulós. Creix abans d'$1$ i decreix després; per tant, $(1,3)$ és un màxim relatiu.
-- **d)** A $x=0$, el límit per l'esquerra és $\frac14$ i el valor pel tram dret és $1$: hi ha un salt. La derivada del primer tram és $-2x/(x^2+4)^2>0$ quan $x<0$ i la del segon és $-\frac14<0$. Així, $(0,1)$ és un màxim relatiu del tram dret, però la funció no és derivable al punt de salt.
+- **b)** A $x=0$, els dos trams valen $2$: és contínua. Per no confondre la funció $g$ de l'enunciat amb la funció interior, l'anomenem $H$. En el primer tram, $H'(x)=3x^2-3=3(x-1)(x+1)$. En el segon tram hi ha una composició; prenem
+
+    $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
+    g(x)=x-1\Longrightarrow g'(x)=1.$$
+
+    Per la regla de la cadena,
+
+    $$\left((x-1)^2+1\right)'=f'(g(x))g'(x)+0=2(x-1).$$
+
+    Les derivades laterals a $x=0$ són $-3$ i $-2$, que no coincideixen; $(0,2)$ és un punt angulós. Hi ha un màxim relatiu a $(-1,4)$ i un mínim relatiu a $(1,1)$.
+- **c)** A $x=1$, els dos trams valen $3$: és contínua. En el primer tram, $h'(x)=3^x\ln3$. Derivem el segon tram directament amb la regla del quocient:
+
+    $$
+    \left(\frac3x\right)'=\frac{0\cdot x-3\cdot1}{x^2}=-\frac3{x^2}.
+    $$
+
+    Les derivades laterals són $3\ln3$ i $-3$, de manera que hi ha un punt angulós. Creix abans d'$1$ i decreix després; per tant, $(1,3)$ és un màxim relatiu.
+- **d)** A $x=0$, el límit per l'esquerra és $\frac14$ i el valor pel tram dret és $1$: hi ha un salt. Derivem el primer tram directament amb la regla del quocient:
+
+    $$
+    \left(\frac1{x^2+4}\right)'
+    =\frac{0\cdot(x^2+4)-1\cdot2x}{(x^2+4)^2}
+    =-\frac{2x}{(x^2+4)^2}.
+    $$
+
+    Aquesta derivada és positiva quan $x<0$, mentre que la derivada del segon tram és $-\frac14<0$. Així, $(0,1)$ és un màxim relatiu del tram dret, però la funció no és derivable al punt de salt.
 
 **2.21.**
 
@@ -1166,15 +1607,34 @@ En una arrel d'índex parell, el radicand ha de ser no negatiu; si l'arrel apare
 
 **2.22.**
 
-- **a)** L'arrel cúbica està definida per a tot real: $D_f=\mathbb{R}$. Els zeros són $x=\pm3$ i $f(0)=\sqrt[3]{9}$. La derivada
+- **a)** L'arrel cúbica està definida per a tot real: $D_f=\mathbb{R}$. Els zeros són $x=\pm3$ i $f(0)=\sqrt[3]{9}$. Per derivar, anomenem $h$ la funció de l'enunciat i prenem
 
-    $$f'(x)=\frac{-2x}{3(9-x^2)^{2/3}}$$
+    $$f(x)=\sqrt[3]{x}=x^{1/3}\Longrightarrow f'(x)=\frac13x^{-2/3},$$
 
-    no existeix a $x=\pm3$, punts que cal marcar a la gràfica.
+    $$g(x)=9-x^2\Longrightarrow g'(x)=-2x.$$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =\frac13(9-x^2)^{-2/3}(-2x)
+    =\frac{-2x}{3(9-x^2)^{2/3}}.
+    $$
+
+    La derivada no existeix a $x=\pm3$, punts que cal marcar a la gràfica.
 - **b)** Cal $x(x-4)\geq0$, de manera que $D_f=(-\infty,0]\cup[4,+\infty)$. Els talls amb l'eix $X$ són $(0,0)$ i $(4,0)$. A l'esquerra la funció s'acosta a l'obliqua $y=-x+2$ i a la dreta, a $y=x-2$.
 - **c)** Cal $x^2-4>0$: $D_f=(-\infty,-2)\cup(2,+\infty)$. Els zeros compleixen $\ln(x^2-4)=0$, és a dir, $x^2-4=1$; per tant, $x=\pm\sqrt5$. Les rectes $x=-2$ i $x=2$ són asímptotes verticals.
 - **d)** Com que $x^2+2\geq2$, $\ln(x^2+2)\geq\ln2>0$. El domini és $\mathbb{R}$ i l'únic tall amb els eixos és $(0,0)$.
-- **e)** $f'(x)=-2xe^{-x^2}$. L'exponencial és sempre positiu, de manera que creix si $x<0$ i decreix si $x>0$. Té un màxim a $(0,1)$. Com que $-x^2\to-\infty$ als dos infinits,
+- **e)** Per no confondre la funció $q$ de l'enunciat amb la funció interior, l'anomenem $h$. Prenem
+
+    $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=-x^2\Longrightarrow g'(x)=-2x.$$
+
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
+
+    $$h'(x)=f'(g(x))g'(x)=e^{-x^2}(-2x)=-2xe^{-x^2}.$$
+
+    L'exponencial és sempre positiu, de manera que creix si $x<0$ i decreix si $x>0$. Té un màxim a $(0,1)$. Com que $-x^2\to-\infty$ als dos infinits,
 
     $$
     \lim_{x\to-\infty}e^{-x^2}=0,\qquad
@@ -1182,21 +1642,57 @@ En una arrel d'índex parell, el radicand ha de ser no negatiu; si l'arrel apare
     $$
 
     Per tant, $y=0$ és una asímptota horitzontal als dos infinits.
-- **f)** $f'(x)=2xe^{-2x}(1-x)$. Decreix a $(-\infty,0)$, creix a $(0,1)$ i torna a decréixer a $(1,+\infty)$. Té un mínim a $(0,0)$ i un màxim a $(1,e^{-2})$. Quan $x\to-\infty$, tant $x^2$ com $e^{-2x}$ tendeixen a $+\infty$. Quan $x\to+\infty$, escrivim $x^2e^{-2x}=x^2/e^{2x}$ i, per l'ordre dels infinits, $e^{2x}$ és un infinit més gran que $x^2$:
+- **f)** Anomenem $H$ la funció $r$ de l'enunciat i apliquem la regla del producte. El factor exponencial és una composició; prenem
+
+    $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=-2x\Longrightarrow g'(x)=-2.$$
+
+    Per la regla de la cadena,
+
+    $$\left(e^{-2x}\right)'=f'(g(x))g'(x)=-2e^{-2x}.$$
+
+    Apliquem ara la regla del producte:
+
+    $$
+    H'(x)=2xe^{-2x}+x^2(-2e^{-2x})
+    =2xe^{-2x}(1-x).
+    $$
+
+    Decreix a $(-\infty,0)$, creix a $(0,1)$ i torna a decréixer a $(1,+\infty)$. Té un mínim a $(0,0)$ i un màxim a $(1,e^{-2})$. Quan $x\to-\infty$, tant $x^2$ com $e^{-2x}$ tendeixen a $+\infty$. Quan $x\to+\infty$, escrivim $x^2e^{-2x}=x^2/e^{2x}$ i, per l'ordre dels infinits, $e^{2x}$ és un infinit més gran que $x^2$:
 
     $$
     \lim_{x\to-\infty}x^2e^{-2x}=+\infty,\qquad
     \lim_{x\to+\infty}\frac{x^2}{e^{2x}}=0.
     $$
-- **g)** Cal $x>0$ i $\ln x\ne0$: $D_f=(0,1)\cup(1,+\infty)$. La recta $x=1$ és una asímptota vertical. Com que
+- **g)** Cal $x>0$ i $\ln x\ne0$: $D_f=(0,1)\cup(1,+\infty)$. La recta $x=1$ és una asímptota vertical. Derivem directament amb la regla del quocient:
 
-    $$f'(x)=\frac{x(2\ln x-1)}{(\ln x)^2},$$
+    $$
+    s'(x)=\frac{2x\ln x-x^2\frac1x}{(\ln x)^2}
+    =\frac{x(2\ln x-1)}{(\ln x)^2},
+    $$
 
     el punt crític és $x=\sqrt e$. Decreix fins a $\sqrt e$, separant a $x=1$, i creix després; té un mínim a $(\sqrt e,2e)$.
-- **h)** $D_f=(-\infty,-3)\cup(3,+\infty)$ i $x=\pm3$ són asímptotes verticals. Com que $f'(x)=2x/(x^2-9)$, decreix a $(-\infty,-3)$ i creix a $(3,+\infty)$.
-- **i)**
+- **h)** $D_f=(-\infty,-3)\cup(3,+\infty)$ i $x=\pm3$ són asímptotes verticals. Per derivar, anomenem $h$ la funció $t$ de l'enunciat i prenem
 
-    $$f'(x)=e^x\bigl((x-1)^2+2(x-1)\bigr)=e^x(x-1)(x+1).$$
+    $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
+    g(x)=x^2-9\Longrightarrow g'(x)=2x.$$
+
+    Per la regla de la cadena,
+
+    $$h'(x)=f'(g(x))g'(x)=\frac1{x^2-9}\cdot2x=\frac{2x}{x^2-9}.$$
+
+    Per tant, decreix a $(-\infty,-3)$ i creix a $(3,+\infty)$.
+- **i)** Anomenem $H$ la funció $u$ de l'enunciat i apliquem la regla del producte. Per al factor $(x-1)^2$, prenem $f(x)=x^2$ i $g(x)=x-1$; per la regla de la cadena,
+
+    $$\left((x-1)^2\right)'=f'(g(x))g'(x)=2(x-1)\cdot1=2(x-1).$$
+
+    Ara apliquem la regla del producte:
+
+    $$
+    H'(x)=2(x-1)e^x+(x-1)^2e^x
+    =e^x\bigl((x-1)^2+2(x-1)\bigr)
+    =e^x(x-1)(x+1).
+    $$
 
     Creix a $(-\infty,-1)$ i $(1,+\infty)$, i decreix a $(-1,1)$. Té un màxim a $\left(-1,\frac4e\right)$ i un mínim a $(1,0)$. Quan $x\to-\infty$, escrivim $(x-1)^2e^x=(x-1)^2/e^{-x}$; per l'ordre dels infinits, l'exponencial del denominador és més gran que el polinomi del numerador. Quan $x\to+\infty$, els dos factors són positius i tendeixen a $+\infty$:
 
@@ -1327,14 +1823,39 @@ En els zeros del polinomi interior, la gràfica rebota sobre l'eix $X$ i hi apar
     =8x^3+x^2(x+3)e^x.
     $$
 
-- **e)** Regla de la cadena:
+- **e)** Per no confondre la funció $q$ de l'enunciat amb la funció interior, l'anomenem $h$. Prenem
 
-    $$q'(x)=\frac{(2x^2+7)'}{2x^2+7}=\frac{4x}{2x^2+7}.$$
+    $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
+    g(x)=2x^2+7\Longrightarrow g'(x)=4x.$$
 
-- **f)** Apliquem la regla de la cadena dues vegades:
+    Com que $h(x)=f(g(x))$, per la regla de la cadena,
 
     $$
-    r'(x)=e^{(x^2-1)^3}\cdot3(x^2-1)^2\cdot2x
+    h'(x)=f'(g(x))g'(x)
+    =\frac1{2x^2+7}\cdot4x
+    =\frac{4x}{2x^2+7}.
+    $$
+
+- **f)** Aquesta funció té dues composicions. Per no confondre la funció $r$ de l'enunciat amb les funcions de la regla de la cadena, l'anomenem $h$. Prenem
+
+    $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=(x^2-1)^3.$$
+
+    Per derivar $g$, prenem $p(x)=x^3$ i $q(x)=x^2-1$:
+
+    $$p'(x)=3x^2,\qquad q'(x)=2x,$$
+
+    $$
+    g'(x)=p'(q(x))q'(x)
+    =3(x^2-1)^2\cdot2x
+    =6x(x^2-1)^2.
+    $$
+
+    Finalment, com que $h(x)=f(g(x))$, tornem a aplicar la regla de la cadena:
+
+    $$
+    h'(x)=f'(g(x))g'(x)
+    =e^{(x^2-1)^3}\cdot6x(x^2-1)^2
     =6x(x^2-1)^2e^{(x^2-1)^3}.
     $$
 
@@ -1364,7 +1885,7 @@ En els zeros del polinomi interior, la gràfica rebota sobre l'eix $X$ i hi apar
     \lim_{x\to3^+}f(x)=+\infty.
     $$
 
-- **Monotonia:**
+- **Monotonia:** apliquem directament la regla del quocient:
 
     $$
     f'(x)=\frac{6x(x^2-9)-(3x^2-6)2x}{(x^2-9)^2}
@@ -1396,7 +1917,7 @@ En els zeros del polinomi interior, la gràfica rebota sobre l'eix $X$ i hi apar
     $$
 
 - **Talls:** $g(0)=-1$ i no hi ha talls amb l'eix $X$, perquè $e^x$ no s'anul·la.
-- **Monotonia:**
+- **Monotonia:** apliquem directament la regla del quocient:
 
     $$
     g'(x)=\frac{e^x(x-1)-e^x}{(x-1)^2}
@@ -1490,10 +2011,33 @@ La capacitat del con és
 
 $$V(r)=\frac13\pi r^2\sqrt{225-r^2}.$$
 
-Derivem:
+Per derivar el factor $\sqrt{225-r^2}$, apliquem la regla de la cadena. Prenem
 
 $$
-V'(r)=\frac{\pi r(150-r^2)}{\sqrt{225-r^2}}.
+f(x)=\sqrt{x}\Longrightarrow f'(x)=\frac1{2\sqrt{x}},\qquad
+g(x)=225-x^2\Longrightarrow g'(x)=-2x.
+$$
+
+Per tant,
+
+$$
+\left(\sqrt{225-r^2}\right)'
+=f'(g(r))g'(r)
+=\frac1{2\sqrt{225-r^2}}(-2r)
+=-\frac{r}{\sqrt{225-r^2}}.
+$$
+
+Ara apliquem la regla del producte a $r^2\sqrt{225-r^2}$:
+
+$$
+\begin{aligned}
+V'(r)
+&=\frac{\pi}{3}\left[2r\sqrt{225-r^2}
++r^2\left(-\frac{r}{\sqrt{225-r^2}}\right)\right]\\
+&=\frac{\pi}{3}\,
+\frac{2r(225-r^2)-r^3}{\sqrt{225-r^2}}\\
+&=\frac{\pi r(150-r^2)}{\sqrt{225-r^2}}.
+\end{aligned}
 $$
 
 En el domini, $V'(r)=0$ quan $r^2=150$, és a dir, $r=5\sqrt6$. El signe passa de positiu a negatiu, així que és un màxim. L'altura és
@@ -1510,7 +2054,26 @@ Siguin $x=OP$. Aleshores el socorrista corre $BP=100-x$ metres i neda $\sqrt{x^2
 
 $$T(x)=\frac{100-x}{6}+\frac{\sqrt{x^2+3.600}}{2},\qquad0\leq x\leq100.$$
 
-$$T'(x)=-\frac16+\frac{x}{2\sqrt{x^2+3.600}}.$$
+El radical és una composició. Prenem
+
+$$
+f(x)=\sqrt{x}\Longrightarrow f'(x)=\frac1{2\sqrt{x}},\qquad
+g(x)=x^2+3.600\Longrightarrow g'(x)=2x.
+$$
+
+Per la regla de la cadena,
+
+$$
+\left(\sqrt{x^2+3.600}\right)'
+=f'(g(x))g'(x)
+=\frac1{2\sqrt{x^2+3.600}}\cdot2x
+=\frac{x}{\sqrt{x^2+3.600}}.
+$$
+
+Per tant,
+
+$$T'(x)=-\frac16+\frac12\cdot\frac{x}{\sqrt{x^2+3.600}}
+=-\frac16+\frac{x}{2\sqrt{x^2+3.600}}.$$
 
 Igualem a zero:
 
@@ -1647,7 +2210,7 @@ Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una invers
 
     Com que $50$ microorganismes són $5$ desenes, $k=5$.
 
-- **b)** Amb $k=5$, derivem:
+- **b)** Amb $k=5$, apliquem directament la regla del quocient al terme racional:
 
     $$
     f'(x)=\frac{15(9+x^2)-15x(2x)}{(9+x^2)^2}
@@ -1689,7 +2252,7 @@ Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una invers
 
     Els valors inicial i final coincideixen, però això no implica que la funció hagi estat constant entremig.
 
-- **c)** Derivem:
+- **c)** Apliquem directament la regla del quocient:
 
     $$
     f'(x)=\frac{240(x^2-2x+4)-240x(2x-2)}{(x^2-2x+4)^2}
@@ -1710,10 +2273,21 @@ Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una invers
 
     Són $2.800$ i $2.500$ clients, respectivament.
 
-- **b)** Derivem:
+- **b)** Escrivim
+
+    $$q(t)=\frac1{t^2-4t+5}.$$
+
+    Apliquem directament la regla del quocient:
 
     $$
-    C'(t)=\frac{2t-4}{(t^2-4t+5)^2}.
+    q'(t)=\frac{0\cdot(t^2-4t+5)-1\cdot(2t-4)}{(t^2-4t+5)^2}
+    =-\frac{2t-4}{(t^2-4t+5)^2}.
+    $$
+
+    Com que $C(t)=3-q(t)$,
+
+    $$
+    C'(t)=0-q'(t)=\frac{2t-4}{(t^2-4t+5)^2}.
     $$
 
     El denominador és positiu i $C'(t)=0$ quan $t=2$. Per tant, deixa de perdre clients al cap de dos anys:
@@ -1750,7 +2324,23 @@ Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una invers
 
     $$D(0)=20+10(0+1)e^0=30\text{ centenars}=3.000\text{ descàrregues}.$$
 
-- **b)** Derivem el producte $(t+1)e^{-t/2}$:
+- **b)** Per derivar el factor exponencial, apliquem la regla de la cadena. Prenem
+
+    $$
+    f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
+    g(x)=-\frac x2\Longrightarrow g'(x)=-\frac12.
+    $$
+
+    Per tant,
+
+    $$
+    \left(e^{-t/2}\right)'
+    =f'(g(t))g'(t)
+    =e^{-t/2}\left(-\frac12\right)
+    =-\frac12e^{-t/2}.
+    $$
+
+    Ara apliquem la regla del producte a $(t+1)e^{-t/2}$:
 
     $$
     D'(t)=10\left[e^{-t/2}+(t+1)\left(-\frac12\right)e^{-t/2}\right]
@@ -2006,7 +2596,16 @@ Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una invers
 
     Els dos trams coincideixen; per tant, $C$ és contínua a $t=10$.
 
-- **c)** Derivem per trams:
+- **c)** Derivem per trams. En el segon tram hi ha la composició $(t-14)^2$. Prenem
+
+    $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
+    g(x)=x-14\Longrightarrow g'(x)=1.$$
+
+    Per la regla de la cadena,
+
+    $$\left((t-14)^2\right)'=f'(g(t))g'(t)=2(t-14).$$
+
+    Per tant,
 
     $$
     C'(t)=
@@ -2032,7 +2631,16 @@ Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una invers
 
     Els dos valors coincideixen; per tant, la funció és contínua a $t=2$.
 
-- **b)** Derivem cada tram:
+- **b)** Derivem cada tram. En el primer tram hi ha la composició $(t+1)^2$. Prenem
+
+    $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
+    g(x)=x+1\Longrightarrow g'(x)=1.$$
+
+    Per la regla de la cadena,
+
+    $$\left((t+1)^2\right)'=f'(g(t))g'(t)=2(t+1).$$
+
+    Per tant,
 
     $$
     P'(t)=
