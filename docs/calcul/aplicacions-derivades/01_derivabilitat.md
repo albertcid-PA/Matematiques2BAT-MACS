@@ -87,6 +87,15 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 
 En una funció definida a trossos, estudiem primer si els dos trossos enllacen i després si ho fan amb la mateixa pendent.
 
+!!! tip "La derivada conserva els trams"
+    Derivem **una expressió per cada tram** i mantenim el mateix nombre de trams que tenia la funció original. No afegim un cas nou per a cada punt d'unió. Després, estudiem cada punt $x=a$ per separat i comprovem si
+
+    $$
+    f'(a^-)=f'(a^+).
+    $$
+
+    Si la funció és contínua en $a$ i aquestes dues derivades laterals són finites i coincideixen, la derivada existeix en $a$; si no, el punt queda exclòs del domini de $f'$.
+
 !!! example "Exemple 1. Funció discontínua i no derivable"
     Estudia la derivabilitat de la funció en $x=1$:
 
