@@ -304,7 +304,7 @@ En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els pro
 
 <div class="practice-actions" markdown="1">
 
-[Descarrega els enunciats en PDF](../../assets/exercicis/recull_enunciats_calcul.pdf?v=1){{ target="_blank" rel="noopener" }}
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=1){{ target="_blank" rel="noopener" }}
 
 </div>
 
