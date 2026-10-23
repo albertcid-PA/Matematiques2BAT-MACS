@@ -401,6 +401,169 @@
   }
 }
 
+/* Maquetació del PDF complet dels apunts d'un tema. */
+@media print {
+  body:has(.pdf-topic-collection) {
+    background: #fff;
+    color: #111;
+  }
+
+  body:has(.pdf-topic-collection) .md-header,
+  body:has(.pdf-topic-collection) .md-tabs,
+  body:has(.pdf-topic-collection) .md-sidebar,
+  body:has(.pdf-topic-collection) .md-path,
+  body:has(.pdf-topic-collection) .md-footer,
+  body:has(.pdf-topic-collection) .md-top,
+  body:has(.pdf-topic-collection) .md-content__button,
+  body:has(.pdf-topic-collection) .md-typeset .headerlink {
+    display: none !important;
+  }
+
+  body:has(.pdf-topic-collection) .md-main,
+  body:has(.pdf-topic-collection) .md-main__inner,
+  body:has(.pdf-topic-collection) .md-content,
+  body:has(.pdf-topic-collection) .md-content__inner {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  body:has(.pdf-topic-collection) .md-content__inner {
+    padding: 0 3mm;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset {
+    color: #111;
+    font-family: "Latin Modern Roman", "Times New Roman", serif;
+    font-size: 10pt;
+    line-height: 1.28;
+  }
+
+  body:has(.pdf-topic-collection) .pdf-topic-cover {
+    display: flex;
+    min-height: 245mm;
+    flex-direction: column;
+    justify-content: center;
+    break-after: page;
+  }
+
+  body:has(.pdf-topic-collection) .pdf-topic-cover h1 {
+    max-width: 145mm;
+    margin: 0 0 0.8rem;
+    font-size: 27pt;
+    line-height: 1.12;
+  }
+
+  body:has(.pdf-topic-collection) .pdf-topic-subtitle {
+    max-width: 145mm;
+    margin: 0 0 2.2rem;
+    color: #3d4b63;
+    font-size: 13pt;
+  }
+
+  body:has(.pdf-topic-collection) .pdf-topic-toc {
+    max-width: 130mm;
+    padding: 0.8rem 1rem;
+    border-left: 3pt solid #365fb3;
+    background: #eef3fb;
+  }
+
+  body:has(.pdf-topic-collection) .pdf-topic-toc h2 {
+    margin-top: 0;
+    border-bottom: 0;
+  }
+
+  body:has(.pdf-topic-collection) .pdf-topic-section-break {
+    break-before: page;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset h2 {
+    margin: 0 0 0.45rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 1pt solid #365fb3;
+    font-size: 20pt;
+    break-after: avoid;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset h3 {
+    margin: 0.85rem 0 0.3rem;
+    font-size: 14pt;
+    break-after: avoid;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset h4 {
+    margin: 0.65rem 0 0.25rem;
+    font-size: 11.5pt;
+    break-after: avoid;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset h5 {
+    margin: 0.55rem 0 0.2rem;
+    font-size: 10.5pt;
+    break-after: avoid;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset p,
+  body:has(.pdf-topic-collection) .md-typeset ul,
+  body:has(.pdf-topic-collection) .md-typeset ol,
+  body:has(.pdf-topic-collection) .md-typeset div.arithmatex {
+    margin-block: 0.25rem;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset div.arithmatex,
+  body:has(.pdf-topic-collection) .md-typeset .katex-display,
+  body:has(.pdf-topic-collection) .md-typeset .katex-display > .katex {
+    max-height: none !important;
+    overflow: visible !important;
+    scrollbar-width: none;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset div.arithmatex::-webkit-scrollbar,
+  body:has(.pdf-topic-collection) .md-typeset .katex-display::-webkit-scrollbar,
+  body:has(.pdf-topic-collection) .md-typeset .katex-display > .katex::-webkit-scrollbar {
+    display: none;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset table,
+  body:has(.pdf-topic-collection) .md-typeset figure,
+  body:has(.pdf-topic-collection) .md-typeset div.arithmatex {
+    break-inside: avoid;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset .admonition {
+    margin-block: 0.45rem;
+    break-inside: auto;
+    box-shadow: none;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset .admonition-title {
+    break-after: avoid;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset figure {
+    margin: 0.45rem auto;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset figure img {
+    max-width: 100%;
+    max-height: 92mm;
+    padding: 0.12rem;
+    border-color: transparent;
+    background: #f1f4fa;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset figure figcaption {
+    margin-top: 0.1rem;
+    font-size: 8.2pt;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
 /* Analitzador interactiu de funcions. */
 .md-typeset .fa-tool {
   --fa-accent: #1565c0;
