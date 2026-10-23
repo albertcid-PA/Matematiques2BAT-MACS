@@ -525,6 +525,18 @@
     display: none;
   }
 
+  body:has(.pdf-topic-collection) .md-typeset .md-typeset__scrollwrap,
+  body:has(.pdf-topic-collection) .md-typeset .md-typeset__table {
+    max-width: 100%;
+    overflow: visible !important;
+    scrollbar-width: none;
+  }
+
+  body:has(.pdf-topic-collection) .md-typeset .md-typeset__scrollwrap::-webkit-scrollbar,
+  body:has(.pdf-topic-collection) .md-typeset .md-typeset__table::-webkit-scrollbar {
+    display: none;
+  }
+
   body:has(.pdf-topic-collection) .md-typeset table,
   body:has(.pdf-topic-collection) .md-typeset figure,
   body:has(.pdf-topic-collection) .md-typeset div.arithmatex {
