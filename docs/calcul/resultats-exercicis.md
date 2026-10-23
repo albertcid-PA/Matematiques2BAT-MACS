@@ -130,7 +130,7 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 **2.5.** És contínua a $x=2$, però no és derivable: les derivades laterals tendeixen a $-\infty$ i $+\infty$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../img/calcul/fig_2_29_resultat_exercici_2_5.svg?v=3){ width="760" }
+  ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../img/calcul/fig_2_29_resultat_exercici_2_5.svg?v=4){ width="760" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_29_resultat_exercici_2_5.tex">Figura 2.29.</a></strong> Interpretació gràfica de la continuïtat i la no derivabilitat a $x=2$.</figcaption>
 </figure>
 
