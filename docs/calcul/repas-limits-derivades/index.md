@@ -4,7 +4,7 @@ Aquest primer tema recupera els conceptes i procediments de primer de batxillera
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega 1. Repàs de límits i derivades**](../../assets/apunts/tema_1_repas_limits_derivades.pdf?v=1){ target="_blank" rel="noopener" }
+[**Descarrega 1. Repàs de límits i derivades**](../../assets/apunts/tema_1_repas_limits_derivades.pdf?v=2){ target="_blank" rel="noopener" }
 
 </div>
 
