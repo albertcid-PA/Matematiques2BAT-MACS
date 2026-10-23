@@ -291,7 +291,7 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 - **d)** Discontinuïtat de salt a $x=0$. Creix a $(-\infty,0)$ i decreix a $(0,+\infty)$; màxim $(0,1)$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=5){ width="100%" }
+  ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=6){ width="100%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_20.tex">Figura 2.34.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
 </figure>
 
