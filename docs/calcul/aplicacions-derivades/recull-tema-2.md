@@ -1846,6 +1846,22 @@ Busca què demana exactament l'enunciat i escriu primer la seva fórmula natural
 | Distància mínima | $d=$ fórmula de la distància | Longitud mínima | $L=$ suma de les longituds |
 | Producció màxima | $Q=$ quantitat produïda | Nombre màxim d'usuaris | $N=$ funció del nombre d'usuaris |
 
+En molts enunciats, la funció objectiu no apareix directament. Abans cal combinar algunes relacions com aquestes:
+
+| Relació útil | Fórmula | Relació útil | Fórmula |
+|:---|:---:|:---|:---:|
+| Velocitat, espai i temps | $v=\dfrac{e}{t}$, $t=\dfrac{e}{v}$, $e=v\cdot t$ | Temps total per trams | $T=\dfrac{e_1}{v_1}+\dfrac{e_2}{v_2}+\cdots$ |
+| Consum total | $Q=g(v)\cdot t$ | Cost del combustible | $C_c=p_\ell\cdot Q$ |
+| Cost del conductor | $C_h=p_h\cdot t$ | Cost total del viatge | $C=C_c+C_h$ |
+| Ingressos | $I=p\cdot q$ | Benefici | $B=I-C_T$ |
+| Cost total de producció | $C_T=C_F+c_u\cdot q$ | Cost mitjà per unitat | $C_m=\dfrac{C_T}{q}$ |
+| Diferència entre tarifes | $D=\lvert f-g\rvert$ | Cost per parts | $C=p_1m_1+p_2m_2+\cdots$ |
+
+Aquí, $e$ és l'espai recorregut, $v$ la velocitat, $t$ el temps, $g(v)$ el consum per unitat de temps, $Q$ la quantitat consumida, $p_\ell$ el preu per litre, $p_h$ el preu per hora, $p$ el preu de venda i $q$ la quantitat venuda o produïda. En la fórmula del cost total de producció, $C_F$ és el cost fix i $c_u$ el cost per unitat, quan aquest és constant.
+
+!!! note "Comprova les unitats en els problemes de consum"
+    Si $g(v)$ està expressat en litres per hora i $t$ en hores, aleshores $Q=g(v)\cdot t$ queda expressat en litres. No confonguis el **consum per hora** amb el **consum total del trajecte**.
+
 Per exemple, si volem maximitzar l'àrea d'un rectangle de costats $x$ i $y$, comencem amb
 
 $$
