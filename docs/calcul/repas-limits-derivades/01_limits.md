@@ -284,7 +284,7 @@ En un punt on canvia l'expressió d'una funció a trossos, calculem sempre els d
     La funció presenta una **discontinuïtat de salt finit** en $x=1$. A més, $f(1)=1$ perquè el punt $x=1$ pertany al segon tros.
 
     <figure markdown="span">
-      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_8_limit_funcio_trossos.svg?v=5){ width="330" }
+      ![Gràfica de la funció a trossos amb un cercle buit en el punt 1 coma 3 i un punt ple en el punt 1 coma 1](../../img/calcul/fig_1_8_limit_funcio_trossos.svg?v=6){ width="330" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_8_limit_funcio_trossos.tex">Figura 1.8.</a></strong> Els límits laterals diferents originen un salt finit en $x=1$.</figcaption>
     </figure>
 
