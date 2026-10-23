@@ -2,6 +2,12 @@
 
 En aquest tema utilitzarem les derivades per estudiar el comportament de les funcions, representar-les i resoldre problemes d'optimització.
 
+<div class="practice-actions" markdown="1">
+
+[**Descarrega 2. Aplicacions de les derivades**](../../assets/apunts/tema_2_aplicacions_derivades.pdf?v=1){ target="_blank" rel="noopener" }
+
+</div>
+
 ## Derivabilitat
 
 - [**Derivabilitat**](01_derivabilitat.md) — relació entre continuïtat i derivabilitat, derivades laterals i funcions definides a trossos.
