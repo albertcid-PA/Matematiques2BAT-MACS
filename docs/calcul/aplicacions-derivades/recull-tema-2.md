@@ -1812,6 +1812,11 @@ En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ 
 
 ### 2. Procediment general d'un problema d'optimització
 
+!!! example "Problema conductor: un rectangle de perímetre fix"
+    Cerca les dimensions i l'àrea màxima d'un rectangle de costats $x$ i $y$ i perímetre de $20\,\text{cm}$.
+
+Resoldrem aquest problema mentre presentem els passos del procediment.
+
 !!! abstract "Definició: funció objectiu i restricció"
     La **funció objectiu** és la magnitud que volem fer màxima o mínima: una àrea, un volum, un perímetre, un cost, un benefici o una distància.
 
@@ -1823,21 +1828,23 @@ En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ 
 2. Assigna una lletra a cada magnitud desconeguda i indica'n les unitats.
 3. Decideix quina serà la variable principal, habitualment $x$.
 
+En el problema conductor, $x$ i $y$ representen les longituds dels dos costats del rectangle, mesurades en centímetres. Totes dues han de ser positives.
+
 !!! note "Les variables han de tenir significat"
     Si $x$ representa una longitud, caldrà exigir $x>0$. Si una altra longitud és, per exemple, $12-2x$, també haurem d'exigir $12-2x>0$.
 
 #### Pas 2. Identificar la funció objectiu
 
-Busca què demana exactament l'enunciat i escriu primer la seva fórmula natural, encara que depengui de més d'una variable.
+Busca què demana exactament l'enunciat i escriu primer la seva fórmula natural, encara que depengui de més d'una variable. Aquestes són algunes possibilitats habituals:
 
-| Què demana el problema? | Funció objectiu habitual |
-|:---|:---:|
-| Àrea màxima | $A=$ fórmula de l'àrea |
-| Volum màxim | $V=$ fórmula del volum |
-| Perímetre mínim | $P=$ fórmula del perímetre |
-| Cost mínim | $C=$ suma de tots els costos |
-| Benefici màxim | $B=I-C$ |
-| Distància mínima | $d=$ fórmula de la distància |
+| Què demana? | Funció objectiu | Què demana? | Funció objectiu |
+|:---|:---:|:---|:---:|
+| Àrea màxima | $A=$ fórmula de l'àrea | Volum màxim | $V=$ fórmula del volum |
+| Perímetre mínim | $P=$ suma dels costats | Superfície mínima | $S=$ suma de les àrees |
+| Cost mínim | $C=$ suma dels costos | Benefici màxim | $B=I-C$ |
+| Ingressos màxims | $I=p\cdot q$ | Temps mínim | $T=$ suma dels temps |
+| Distància mínima | $d=$ fórmula de la distància | Longitud mínima | $L=$ suma de les longituds |
+| Producció màxima | $Q=$ quantitat produïda | Nombre màxim d'usuaris | $N=$ funció del nombre d'usuaris |
 
 Per exemple, si volem maximitzar l'àrea d'un rectangle de costats $x$ i $y$, comencem amb
 
@@ -1851,7 +1858,7 @@ Aquesta encara no és la funció final perquè depèn de dues variables.
 
 Tradueix la informació que es manté fixa en una equació. Pot provenir d'un perímetre donat, una quantitat limitada de material, una suma de longituds, un pressupost o qualsevol altra condició de l'enunciat.
 
-En l'exemple del rectangle, si el perímetre és $20$, la restricció és
+En l'exemple del rectangle, com que el perímetre és de $20\,\text{cm}$, la restricció és
 
 $$
 2x+2y=20.
@@ -1895,6 +1902,8 @@ x>0,\qquad 10-x>0
 0<x<10.
 $$
 
+Per tant, el domini de la funció objectiu és $(0,10)$, amb $x$ expressada en centímetres.
+
 #### Pas 6. Trobar els candidats a màxim o mínim
 
 1. Calcula la derivada $F'(x)$.
@@ -1903,6 +1912,22 @@ $$
 4. Si el domini és un interval tancat, considera també els seus extrems.
 
 Només conservem els candidats que pertanyen al domini del problema.
+
+En l'exemple del rectangle,
+
+$$
+A'(x)=10-2x.
+$$
+
+Resolem $A'(x)=0$:
+
+$$
+10-2x=0
+\quad\Longrightarrow\quad
+x=5.
+$$
+
+Com que $5\in(0,10)$, aquest valor és candidat a màxim.
 
 #### Pas 7. Comprovar el màxim o el mínim
 
@@ -1913,13 +1938,15 @@ La comprovació principal es fa amb una **taula de signes de la derivada**:
 3. Tria un valor de prova de cada interval i calcula-hi el signe de $F'$.
 4. Indica si $F$ creix o decreix i identifica els màxims i els mínims.
 
-Per exemple, si $F'(a)=0$, podem obtenir una taula com aquesta:
+En l'exemple, estudiem el signe de $A'(x)=10-2x$ dins del domini $(0,10)$:
 
-| $x$ | Interval anterior | $a$ | Interval posterior |
+| $x$ | $(0,5)$ | $5$ | $(5,10)$ |
 |:---:|:---:|:---:|:---:|
-| Valor de prova | $x_1$ | — | $x_2$ |
-| Signe de $F'(x)$ | $+$ | $0$ | $-$ |
-| Comportament de $F$ | creix | màxim | decreix |
+| Valor de prova | $2$ | — | $8$ |
+| Signe de $A'(x)$ | $+$ | $0$ | $-$ |
+| Comportament de $A$ | creix | màxim | decreix |
+
+Per tant, $x=5$ dona el màxim de l'àrea.
 
 En general:
 
@@ -1943,6 +1970,20 @@ Si hi ha diversos candidats o extrems del domini, calcula el valor de $F$ en cad
 1. Recupera les altres variables mitjançant la restricció.
 2. Comprova que totes les mesures siguin possibles i compleixin l'enunciat.
 3. Respon exactament què es demana, amb les unitats corresponents.
+
+En el rectangle, recuperem l'altra dimensió amb la restricció:
+
+$$
+y=10-x=10-5=5.
+$$
+
+L'àrea màxima és
+
+$$
+A(5)=5\cdot 5=25.
+$$
+
+Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm}\times 5\,\text{cm}$ i la seva àrea màxima és de $25\,\text{cm}^2$.
 
 !!! warning "Errors habituals"
     - Derivar una expressió que encara depèn de dues variables.
