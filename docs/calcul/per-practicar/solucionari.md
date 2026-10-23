@@ -30,7 +30,7 @@ $$
 $$
 
 <figure markdown="span">
-  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=3){ width="850" }
+  ![Dues gràfiques per practicar la lectura de límits laterals i límits a l'infinit](../../img/calcul/fig_1_12_exercici_limits_dues_grafiques.svg?v=4){ width="850" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_12_exercici_limits_dues_grafiques.tex">Figura 1.12.</a></strong> Lectura de límits laterals i límits a l'infinit.</figcaption>
 </figure>
 
@@ -1580,7 +1580,7 @@ $$
     No hi ha una derivada finita comuna; la funció no és derivable a $x=2$ i la gràfica hi presenta dues semitangents verticals.
 
     <figure markdown="span" class="exercise-solution-figure">
-      ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../../img/calcul/fig_2_29_resultat_exercici_2_5.svg?v=2){ width="760" }
+      ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../../img/calcul/fig_2_29_resultat_exercici_2_5.svg?v=3){ width="760" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_29_resultat_exercici_2_5.tex">Figura 2.29.</a></strong> Interpretació gràfica de la continuïtat i la no derivabilitat a $x=2$.</figcaption>
     </figure>
 
@@ -2654,7 +2654,7 @@ $$
         La primera expressió és positiva quan $x<0$, mentre que la segona és negativa. Així, $(0,1)$ és un màxim relatiu del tram dret, però la funció no és derivable al punt de salt.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=4){ width="100%" }
+      ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=5){ width="100%" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_20.tex">Figura 2.34.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
     </figure>
 
