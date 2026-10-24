@@ -690,6 +690,14 @@ $$
 - **a)** Estudia la funció en tot el domini i determina la inversió que proporciona el benefici màxim. Justifica el resultat tenint en compte el punt d'unió i els extrems del domini.
 - **b)** Representa gràficament la funció i interpreta el resultat en el context del problema.
 
+#### Geometria a l'espai: problema integrador
+
+**2.38. Maletes Pallaresos.** Vueling demana que la suma de l'amplada, la llargada i l'alçada de les maletes facturades sigui de $15\,\text{dm}$. Maletes Pallaresos vol dissenyar una maleta amb aquesta condició i amb una alçada igual al triple de l'amplada.
+
+- **a)** Troba la funció que determina el volum de la maleta en funció de la seva amplada i indica'n el domini.
+- **b)** Troba les dimensions que ha de tenir la maleta perquè el volum sigui màxim i justifica-ho.
+- **c)** Calcula el volum màxim de la maleta.
+
 !!! info "Preparació de les PAU"
     Continua amb el recull de [problemes PAU de càlcul](problemes-pau.md), ordenat per continguts i amb exercicis de convocatòries reals i d'entrenament de tipus PAU.
 

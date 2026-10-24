@@ -2207,6 +2207,59 @@ $$B(0)=20,\qquad B(4)=36,\qquad B(5)=38,\qquad B(8)=20.$$
 
 Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. La gràfica uneix el primer tram creixent amb el segon, que arriba al màxim $(5,38)$ i baixa fins a $(8,20)$.
 
+**2.38.**
+
+Siguin $x$ l'amplada de la maleta, $y$ la llargada i $h$ l'alçada, totes expressades en decímetres. Com que l'alçada és el triple de l'amplada,
+
+$$h=3x.$$
+
+La suma de les tres dimensions és de $15\,\text{dm}$:
+
+$$x+y+h=15.$$
+
+Substituïm $h=3x$ i aïllem la llargada:
+
+$$x+y+3x=15\Longrightarrow y=15-4x.$$
+
+Com que totes les dimensions han de ser positives,
+
+$$0<x<\frac{15}{4}.$$
+
+El volum d'un prisma rectangular és el producte de les tres dimensions. Per tant,
+
+$$
+V(x)=x\cdot y\cdot h
+=x(15-4x)(3x)
+=45x^2-12x^3.
+$$
+
+Derivem i factoritzem:
+
+$$V'(x)=90x-36x^2=18x(5-2x).$$
+
+En el domini, l'únic punt crític és
+
+$$5-2x=0\Longrightarrow x=\frac52=2{,}5.$$
+
+La derivada és positiva a $\left(0,\frac52\right)$ i negativa a $\left(\frac52,\frac{15}{4}\right)$. Per tant, el volum creix abans de $x=2{,}5$ i decreix després, de manera que aquest valor proporciona el màxim.
+
+Les altres dimensions són
+
+$$
+y=15-4(2{,}5)=5\,\text{dm},
+\qquad
+h=3(2{,}5)=7{,}5\,\text{dm}.
+$$
+
+Finalment,
+
+$$
+V_{\max}=2{,}5\cdot5\cdot7{,}5
+=93{,}75\,\text{dm}^3.
+$$
+
+La maleta de volum màxim té una amplada de $2{,}5\,\text{dm}$, una llargada de $5\,\text{dm}$ i una alçada de $7{,}5\,\text{dm}$.
+
 **PAU.C.1.**
 
 - **a) Valors inicial i final.** Substituïm els dos instants:
