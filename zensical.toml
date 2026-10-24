@@ -38,7 +38,13 @@ nav = [
       { "Mètode de Gauss" = "algebra-lineal/sistemes-gauss/02_metode-gauss.md" },
       { "Plantejament de problemes" = "algebra-lineal/sistemes-gauss/03_plantejament-problemes.md" },
     ] },
-    { "4. Matrius" = "algebra-lineal/matrius/index.md" },
+    { "4. Matrius" = [
+      { "Índex" = "algebra-lineal/matrius/index.md" },
+      { "Concepte i tipus de matrius" = "algebra-lineal/matrius/01_concepte-tipus.md" },
+      { "Operacions amb matrius" = "algebra-lineal/matrius/02_operacions.md" },
+      { "Matriu inversa" = "algebra-lineal/matrius/03_matriu-inversa.md" },
+      { "Equacions i sistemes matricials" = "algebra-lineal/matrius/04_equacions-sistemes-matricials.md" },
+    ] },
     { "Per practicar" = [
       { "Exercicis i problemes" = "algebra-lineal/per-practicar/solucionari.md" },
     ] },
