@@ -409,3 +409,5 @@ $$
   ![Representació de la funció de benefici a trossos de l'exercici 2.37](../img/calcul/fig_2_42_resultat_exercici_2_37.svg?v=2){ width="760" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_42_resultat_exercici_2_37.tex">Figura 2.42.</a></strong> Representació del benefici de l'exercici 2.37.</figcaption>
 </figure>
+
+**2.38.** Amplada: $2{,}5\,\text{dm}$; llargada: $5\,\text{dm}$; alçada: $7{,}5\,\text{dm}$. Volum màxim: $93{,}75\,\text{dm}^3$.
