@@ -283,6 +283,15 @@ Els problemes següents combinen diversos continguts. S'indica si provenen d'una
 """
 
 
+def trailing_resources(path: Path) -> str:
+    marker = '!!! info "Recursos per continuar practicant"'
+    text = read(path)
+    _, separator, tail = text.partition(marker)
+    if not separator:
+        return ""
+    return f"{marker}{tail}".strip()
+
+
 def generate_solution_page() -> str:
     exercise_statements = statement_blocks(CALCUL / "exercicis.md")
     pau_statements = statement_blocks(CALCUL / "problemes-pau.md")
@@ -298,6 +307,7 @@ def generate_solution_page() -> str:
         developed,
         pau=True,
     )
+    continuation_resources = trailing_resources(CALCUL / "problemes-pau.md")
     return f"""# Exercicis i problemes
 
 En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
@@ -317,6 +327,8 @@ En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els pro
 ## Problemes PAU
 
 {pau_solutions}
+
+{continuation_resources}
 """
 
 
