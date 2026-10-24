@@ -99,32 +99,32 @@ $$
 L'esglaonem:
 
 $$
-\left[
+\left(
 \begin{array}{ccc|c}
 1&1&1&120\\
 0&1&-2&0\\
 8&5&3&685
 \end{array}
-\right]
+\right)
 \mathop{\longrightarrow}^{F_3\leftarrow F_3-8F_1}
-\left[
+\left(
 \begin{array}{ccc|c}
 1&1&1&120\\
 0&1&-2&0\\
 0&-3&-5&-275
 \end{array}
-\right]
+\right)
 $$
 
 $$
 \mathop{\longrightarrow}^{F_3\leftarrow F_3+3F_2}
-\left[
+\left(
 \begin{array}{ccc|c}
 1&1&1&120\\
 0&1&-2&0\\
 0&0&-11&-275
 \end{array}
-\right].
+\right).
 $$
 
 Resolem de baix cap amunt:
