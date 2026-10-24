@@ -1,8 +1,6 @@
 # Exercicis de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/exercicis_calcul.pdf?v=10" target="_blank" rel="noopener">Descarrega el llistat en PDF</a></p>
-
-<p class="download-pdf"><a href="../assets/exercicis/resultats_exercicis_calcul.pdf?v=10" target="_blank" rel="noopener">Consulta el llistat de resultats en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/recull_enunciats_calcul.pdf?v=2" target="_blank" rel="noopener">Descarrega el recull d'enunciats en PDF</a></p>
 
 ---
 
