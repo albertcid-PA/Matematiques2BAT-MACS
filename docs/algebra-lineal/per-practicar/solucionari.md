@@ -250,32 +250,3 @@ $$
     $$
 
     L'última fila representa $0=1$, que és una contradicció. El sistema és incompatible i no té solució.
-
----
-
-**3.8.**
-Segons el valor del paràmetre $a$, classifica el sistema següent:
-
-$$
-\begin{cases}
-x+y=2,\\
-2x+2y=a.
-\end{cases}
-$$
-
-??? example "Mostra la solució pas a pas de l'exercici 3.8"
-    Fem $F_2\leftarrow F_2-2F_1$:
-
-    $$
-    \left[
-    \begin{array}{cc|c}
-    1&1&2\\
-    0&0&a-4
-    \end{array}
-    \right].
-    $$
-
-    - Si $a=4$, l'última fila és $0=0$. Queda una incògnita lliure i el sistema és compatible indeterminat.
-    - Si $a\neq4$, l'última fila és $0=a-4$, amb $a-4\neq0$. És una contradicció i el sistema és incompatible.
-
-    No hi ha cap valor de $a$ per al qual el sistema sigui compatible determinat.

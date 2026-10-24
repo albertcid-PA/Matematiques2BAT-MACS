@@ -1,6 +1,6 @@
 # Sistemes d'equacions lineals
 
-Un sistema d'equacions permet descriure diverses condicions que s'han de complir alhora. En aquest tema treballarem amb equacions lineals i buscarem els valors de les incògnites que verifiquen totes les equacions del sistema.
+Un sistema d'equacions permet expressar diverses condicions que s'han de complir alhora. En aquest tema treballarem amb sistemes de coeficients numèrics i aprendrem a decidir si tenen una solució, infinites solucions o cap solució.
 
 ## 1. Equacions lineals
 
@@ -11,16 +11,16 @@ Un sistema d'equacions permet descriure diverses condicions que s'han de complir
     a_1x_1+a_2x_2+\cdots+a_nx_n=b,
     $$
 
-    on $a_1,a_2,\ldots,a_n$ i $b$ són nombres reals. Els nombres $a_i$ són els **coeficients**, i $b$ és el **terme independent**.
+    on $a_1,a_2,\ldots,a_n$ i $b$ són nombres reals. Els nombres $a_i$ són els **coeficients** i $b$ és el **terme independent**.
 
-En una equació lineal, les incògnites només apareixen elevades a $1$: no hi pot haver productes d'incògnites, potències, arrels ni incògnites en un denominador.
+En una equació lineal, les incògnites només apareixen elevades a $1$. No hi pot haver productes d'incògnites, potències, arrels ni incògnites en un denominador.
 
 | Expressió | És lineal? | Motiu |
 |---|:---:|---|
 | $2x-3y+z=5$ | Sí | Les incògnites són de grau $1$. |
 | $xy+y=1$ | No | Hi apareix el producte $xy$. |
 | $x^2+y=4$ | No | Hi apareix $x^2$. |
-| $\dfrac{x}{2}-3y=0$ | Sí | Dividir $x$ per $2$ és multiplicar $x$ pel coeficient $\frac12$. |
+| $\dfrac{x}{2}-3y=0$ | Sí | $\dfrac{x}{2}$ és el mateix que $\dfrac12x$. |
 
 ## 2. Sistemes i solucions
 
@@ -47,29 +47,19 @@ $$
 !!! warning "Cal comprovar totes les equacions"
     Uns valors només són solució del sistema si verifiquen **totes** les equacions. L'ordre també és important: en $(x,y)=(3,2)$, el primer valor correspon a $x$ i el segon, a $y$.
 
-### Nombre d'equacions i d'incògnites
-
-El sistema
-
-$$
-\begin{cases}
-2x+y-z=1,\\
-x-y+2z=5,\\
-3x+2y+z=4
-\end{cases}
-$$
-
-té tres equacions i tres incògnites. Que el nombre d'equacions coincideixi amb el d'incògnites **no garanteix** que el sistema tingui una única solució: cal estudiar la relació entre les equacions.
+El nombre d'equacions i el nombre d'incògnites no permeten saber, per si sols, quantes solucions té el sistema. Per exemple, un sistema de tres equacions i tres incògnites pot tenir una solució, infinites solucions o cap solució.
 
 ## 3. Classificació segons el nombre de solucions
 
-Un sistema lineal només pot tenir una solució, infinites solucions o cap solució.
+Un sistema lineal només pot ser d'un dels tres tipus següents:
 
 | Classificació | Nombre de solucions | Abreviació |
 |---|---:|:---:|
 | Sistema compatible determinat | Una | SCD |
 | Sistema compatible indeterminat | Infinites | SCI |
 | Sistema incompatible | Cap | SI |
+
+Un sistema és **compatible** si té alguna solució. Per això tant els SCD com els SCI són sistemes compatibles.
 
 ### 3.1 Sistema compatible determinat
 
@@ -95,13 +85,21 @@ x+y=4,\\
 \end{cases}
 $$
 
-la segona equació és el doble de la primera. Totes dues expressen la mateixa condició i hi ha infinites solucions:
+la segona equació és el doble de la primera. Totes dues expressen la mateixa condició i hi ha infinites solucions.
+
+Si prenem $y=\lambda$, obtenim
 
 $$
-(x,y)=(t,4-t),\qquad t\in\mathbb{R}.
+x=4-\lambda.
 $$
 
-És un **sistema compatible indeterminat**.
+Per tant, el conjunt de solucions és
+
+$$
+\boxed{(x,y)=(4-\lambda,\lambda),\qquad \lambda\in\mathbb{R}.}
+$$
+
+El sistema és **compatible indeterminat**.
 
 ### 3.3 Sistema incompatible
 
@@ -114,16 +112,35 @@ x+y=4,\\
 \end{cases}
 $$
 
-si multipliquéssim la primera equació per $2$, obtindríem $2x+2y=8$, que contradiu la segona equació. El sistema no té cap solució i és un **sistema incompatible**.
+el doble de la primera equació seria $2x+2y=8$, però la segona exigeix que $2x+2y=10$. Les dues condicions es contradiuen. El sistema no té cap solució i és **incompatible**.
 
 !!! note "Interpretació geomètrica amb dues incògnites"
     Cada equació lineal amb dues incògnites representa una recta:
 
     - en un SCD, les rectes es tallen en un punt;
     - en un SCI, les rectes coincideixen;
-    - en un SI, les rectes són paral·leles i diferents.
+    - en un SI, les rectes no tenen cap punt en comú.
 
-## 4. Sistemes equivalents
+## 4. Quina informació aporten les equacions?
+
+En un sistema, una equació pot aportar informació nova, repetir una condició anterior o contradir-la.
+
+| Relació entre les equacions | Què significa? | Efecte possible |
+|---|---|---|
+| Condicions independents | Cada equació aporta informació nova. | Pot permetre obtenir una solució única. |
+| Condició redundant | Una equació es dedueix de les altres. | Pot quedar alguna incògnita lliure. |
+| Condicions contradictòries | Dues condicions no es poden complir alhora. | El sistema no té solució. |
+
+Aquestes relacions es veuen amb claredat després d'aplicar el mètode de Gauss:
+
+- una fila de zeros representa una condició redundant;
+- una igualtat impossible, com ara $0=5$, representa una contradicció;
+- si podem determinar totes les incògnites, la solució és única.
+
+!!! note "Abast del tema"
+    En aquest tema no discutirem sistemes que continguin paràmetres en els coeficients o en els termes independents. La lletra $\lambda$ només s'utilitzarà per expressar les infinites solucions d'un SCI.
+
+## 5. Sistemes equivalents
 
 !!! abstract "Definició: sistemes equivalents"
     Dos sistemes són **equivalents** si tenen exactament les mateixes solucions.
@@ -161,9 +178,9 @@ significa que substituïm la segona equació pel resultat de restar-li dues vega
     \end{cases}
     $$
 
-    El segon sistema és equivalent al primer, però ara la segona equació conté una sola incògnita. D'aquí obtenim $y=3$ i, substituint a la primera equació, $x=2$.
+    El segon sistema és equivalent al primer, però és més fàcil de resoldre. Obtenim $y=3$ i, substituint a la primera equació, $x=2$.
 
-## 5. Sistemes esglaonats
+## 6. Sistemes esglaonats
 
 Un sistema està **esglaonat** quan, a mesura que baixem, cada equació comença més a la dreta que l'anterior. Per exemple,
 
@@ -195,4 +212,4 @@ $$
 \boxed{(x,y,z)=(3,7,-2).}
 $$
 
-El mètode de Gauss consisteix precisament a transformar qualsevol sistema lineal en un sistema esglaonat equivalent.
+El mètode de Gauss consisteix a transformar un sistema lineal en un sistema esglaonat equivalent.
