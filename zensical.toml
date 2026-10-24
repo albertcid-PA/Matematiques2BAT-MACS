@@ -36,6 +36,7 @@ nav = [
       { "Índex" = "algebra-lineal/sistemes-gauss/index.md" },
       { "Sistemes d'equacions lineals" = "algebra-lineal/sistemes-gauss/01_sistemes-equacions-lineals.md" },
       { "Mètode de Gauss" = "algebra-lineal/sistemes-gauss/02_metode-gauss.md" },
+      { "Plantejament de problemes" = "algebra-lineal/sistemes-gauss/03_plantejament-problemes.md" },
     ] },
     { "4. Matrius" = "algebra-lineal/matrius/index.md" },
     { "Per practicar" = [

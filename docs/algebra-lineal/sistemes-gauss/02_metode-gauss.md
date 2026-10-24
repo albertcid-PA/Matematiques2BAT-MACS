@@ -1,10 +1,10 @@
 # Mètode de Gauss
 
-El mètode de Gauss transforma un sistema d'equacions lineals en un sistema esglaonat equivalent. Un cop esglaonat, el resolem de baix cap amunt i n'interpretem el resultat.
+El mètode de Gauss transforma un sistema d'equacions lineals en un sistema esglaonat equivalent. Un cop esglaonat, el resolem de baix cap amunt i utilitzem el resultat per classificar-lo com a SCD, SCI o SI.
 
 ## 1. Taula de coeficients
 
-Per operar amb més comoditat, podem escriure només els coeficients i els termes independents del sistema. La barra vertical separa els dos membres de les equacions.
+Per operar amb més comoditat, podem escriure només els coeficients i els termes independents del sistema. La barra vertical separa els coeficients dels termes independents.
 
 $$
 \begin{cases}
@@ -24,12 +24,14 @@ $$
 
 Cada fila representa una equació i cada columna correspon sempre a la mateixa incògnita.
 
-!!! warning "No podem canviar l'ordre de les columnes"
-    Si l'ordre de les incògnites és $x,y,z$, totes les files han de seguir aquest ordre. Quan una incògnita no apareix en una equació, el seu coeficient és $0$.
+!!! warning "Cal mantenir l'ordre de les incògnites"
+    Si l'ordre és $x,y,z$, totes les files han de seguir aquest ordre. Quan una incògnita no apareix en una equació, el seu coeficient és $0$.
+
+    Per exemple, $2x-z=4$ s'ha d'escriure com $2x+0y-z=4$.
 
 ## 2. Transformacions elementals
 
-En la taula de coeficients, les operacions amb equacions es converteixen en operacions amb files:
+Les operacions amb equacions es converteixen en operacions amb files:
 
 | Operació | Notació | Condició |
 |---|---|---|
@@ -42,14 +44,15 @@ Aquestes transformacions no canvien les solucions del sistema.
 ## 3. Procediment de Gauss
 
 !!! tip "Passos del mètode de Gauss"
-    1. Escriu el sistema ordenant les incògnites sempre de la mateixa manera.
-    2. Tria el primer coeficient no nul com a **pivot**.
-    3. Fes zeros sota el pivot sumant múltiples de la fila del pivot.
-    4. Passa a la columna següent i repeteix el procés. Si el pivot necessari és zero, intercanvia files.
-    5. Quan el sistema estigui esglaonat, resol-lo de baix cap amunt.
-    6. Interpreta el resultat i classifica el sistema com a SCD, SCI o SI.
+    1. Ordena les incògnites sempre de la mateixa manera.
+    2. Escriu la taula de coeficients, sense oblidar els zeros.
+    3. Tria el primer coeficient no nul com a **pivot**.
+    4. Fes zeros sota el pivot sumant múltiples de la fila del pivot.
+    5. Passa a la columna següent i repeteix el procés. Si el pivot és zero, intercanvia files.
+    6. Quan el sistema estigui esglaonat, resol-lo de baix cap amunt.
+    7. Classifica el sistema i justifica la resposta.
 
-No és necessari convertir els pivots en $1$. Sovint és preferible conservar nombres enters per evitar fraccions durant l'esglaonament.
+No cal convertir els pivots en $1$. Sovint és preferible conservar nombres enters per evitar fraccions durant l'esglaonament.
 
 ## 4. Sistema compatible determinat
 
@@ -64,7 +67,7 @@ No és necessari convertir els pivots en $1$. Sovint és preferible conservar no
     \end{cases}
     $$
 
-    Escrivim la taula i fem zeros sota el primer pivot:
+    Fem zeros sota el primer pivot:
 
     $$
     \left[
@@ -84,7 +87,7 @@ No és necessari convertir els pivots en $1$. Sovint és preferible conservar no
     \right].
     $$
 
-    Intercanviem les dues últimes files per treballar amb el pivot $1$ i fem zero a sota:
+    Intercanviem les dues últimes files i fem zero sota el segon pivot:
 
     $$
     \left[
@@ -119,9 +122,9 @@ No és necessari convertir els pivots en $1$. Sovint és preferible conservar no
     $$
     z=-1,
     \qquad
-    y-2(-1)=4\Rightarrow y=2,
+    y=2,
     \qquad
-    x+2-1=2\Rightarrow x=1.
+    x=1.
     $$
 
     Per tant,
@@ -130,7 +133,7 @@ No és necessari convertir els pivots en $1$. Sovint és preferible conservar no
     \boxed{(x,y,z)=(1,2,-1).}
     $$
 
-    El sistema té una única solució i és **compatible determinat**.
+    Hem pogut determinar totes les incògnites i la solució és única. El sistema és **compatible determinat**.
 
 ## 5. Quan cal intercanviar files
 
@@ -149,7 +152,7 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     \right],
     $$
 
-    no podem utilitzar el segon coeficient de la segona fila com a pivot perquè és $0$. Intercanviem $F_2$ i $F_3$:
+    el segon coeficient de la segona fila és $0$. Intercanviem $F_2$ i $F_3$:
 
     $$
     \left[
@@ -163,7 +166,7 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
 
     Ara el sistema ja està esglaonat i es pot resoldre de baix cap amunt.
 
-## 6. Sistemes amb infinites solucions
+## 6. Sistema compatible indeterminat
 
 !!! example "Exemple 3. Una equació redundant"
     Considerem
@@ -196,26 +199,26 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     \right].
     $$
 
-    L'última fila representa la identitat $0=0$ i no aporta cap condició nova. Hi ha dues equacions independents i tres incògnites; per tant, una incògnita queda lliure.
+    L'última fila representa la identitat $0=0$ i no aporta cap condició nova. Queda una incògnita lliure.
 
-    Prenem $z=t$, amb $t\in\mathbb{R}$. De la segona equació obtenim $y=1$, i de la primera,
+    Prenem $z=\lambda$, amb $\lambda\in\mathbb{R}$. De la segona equació obtenim $y=1$ i, de la primera,
 
     $$
-    x+1+t=4\Rightarrow x=3-t.
+    x=3-\lambda.
     $$
 
     Així, el conjunt de solucions és
 
     $$
-    \boxed{(x,y,z)=(3-t,1,t),\qquad t\in\mathbb{R}.}
+    \boxed{(x,y,z)=(3-\lambda,1,\lambda),\qquad \lambda\in\mathbb{R}.}
     $$
 
-    El sistema és **compatible indeterminat**.
+    El sistema té infinites solucions i és **compatible indeterminat**.
 
-## 7. Sistemes sense solució
+## 7. Sistema incompatible
 
 !!! example "Exemple 4. Una contradicció"
-    Canviem només el terme independent de la tercera equació de l'exemple anterior:
+    Considerem ara
 
     $$
     \begin{cases}
@@ -241,15 +244,26 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
 
 ## 8. Lectura final del sistema esglaonat
 
-| Forma que apareix després de Gauss | Interpretació | Classificació |
+| Forma obtinguda després de Gauss | Interpretació | Classificació |
 |---|---|:---:|
-| Hi ha un pivot per a cada incògnita. | Una única solució. | SCD |
-| Apareix una fila $0=0$ i queda alguna incògnita lliure. | Infinites solucions, expressades amb un paràmetre. | SCI |
-| Apareix una fila $0=k$, amb $k\neq0$. | Contradicció: no hi ha solució. | SI |
+| Es poden determinar totes les incògnites. | Hi ha una única solució. | SCD |
+| Apareix una fila $0=0$ i queda alguna incògnita lliure. | Hi ha infinites solucions. | SCI |
+| Apareix una fila $0=k$, amb $k\neq0$. | Hi ha una contradicció. | SI |
 
-!!! warning "Errors habituals"
+!!! tip "Com s'ha de justificar la classificació"
+    No n'hi ha prou amb escriure només les sigles. Cal relacionar la forma esglaonada amb el nombre de solucions:
+
+    - **SCD:** «Podem determinar totes les incògnites; per tant, el sistema té una única solució.»
+    - **SCI:** «Queda una incògnita lliure; per tant, el sistema té infinites solucions.»
+    - **SI:** «Apareix una igualtat impossible; per tant, el sistema no té solució.»
+
+## 9. Errors habituals
+
+!!! warning "Revisa aquests punts"
     - Fer una operació només en alguns termes d'una fila.
+    - Oblidar un coeficient $0$ quan una incògnita no apareix.
     - Oblidar el terme independent, situat a la dreta de la barra.
-    - Dividir una fila per zero.
+    - Multiplicar o dividir una fila per $0$.
     - Aturar-se en obtenir la forma esglaonada sense fer la substitució enrere.
-    - Donar una solució sense classificar el sistema.
+    - En un SCI, donar només un exemple de solució en lloc d'expressar-les totes.
+    - Donar la solució sense classificar ni justificar el sistema.
