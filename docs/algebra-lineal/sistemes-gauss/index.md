@@ -1,6 +1,6 @@
 # 3. Sistemes i mètode de Gauss
 
-En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineals i a resoldre'ls de manera sistemàtica amb el mètode de Gauss.
+En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineals, a resoldre'ls amb el mètode de Gauss i a utilitzar-los per modelitzar problemes.
 
 ## Sistemes d'equacions lineals
 
@@ -9,6 +9,10 @@ En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineal
 ## Mètode de Gauss
 
 - [**Mètode de Gauss**](02_metode-gauss.md) — transformacions elementals, esglaonament, substitució enrere i interpretació del resultat.
+
+## Plantejament de problemes
+
+- [**Plantejament de problemes amb sistemes**](03_plantejament-problemes.md) — definició de les incògnites, traducció de les condicions, suficiència de les dades i validació de la solució.
 
 ## Per practicar
 
