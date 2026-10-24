@@ -32,9 +32,9 @@ Comprova si $(x,y,z)=(1,2,-1)$ és solució del sistema
 
 $$
 \begin{cases}
-x+y+z=2,\\
-2x-y+z=-1,\\
-x+2y-z=6.
+x+y+z=2\\
+2x-y+z=-1\\
+x+2y-z=6
 \end{cases}
 $$
 
@@ -62,9 +62,9 @@ Resol el sistema esglaonat següent i classifica'l:
 
 $$
 \begin{cases}
-x-2y+z=-13,\\
-y+3z=1,\\
-2z=-4.
+x-2y+z=-13\\
+y+3z=1\\
+2z=-4
 \end{cases}
 $$
 
@@ -92,14 +92,30 @@ Resol pel mètode de Gauss i classifica el sistema:
 
 $$
 \begin{cases}
-x+y+z=2,\\
-2x-y+z=-1,\\
-x+2y-z=6.
+x+y+z=2\\
+2x-y+z=-1\\
+x+2y-z=6
 \end{cases}
 $$
 
 ??? example "Mostra la solució pas a pas de l'exercici 3.4"
-    Fem $F_2\leftarrow F_2-2F_1$ i $F_3\leftarrow F_3-F_1$:
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&2\\
+    2&-1&1&-1\\
+    1&2&-1&6
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_2=F_2-2F_1\\F_3=F_3-F_1}}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&2\\
+    0&-3&-1&-5\\
+    0&1&-2&4
+    \end{array}
+    \right)
+    $$
 
     $$
     \left(
@@ -108,19 +124,15 @@ $$
     0&-3&-1&-5\\
     0&1&-2&4
     \end{array}
-    \right).
-    $$
-
-    Intercanviem $F_2$ i $F_3$, i després fem $F_3\leftarrow F_3+3F_2$:
-
-    $$
+    \right)
+    \xrightarrow{\substack{F_2\leftrightarrow F_3\\F_3=F_3+3F_2}}
     \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
     0&1&-2&4\\
     0&0&-7&7
     \end{array}
-    \right).
+    \right)
     $$
 
     Per substitució enrere obtenim $z=-1$, $y=2$ i $x=1$. Per tant,
@@ -138,14 +150,30 @@ Resol pel mètode de Gauss. Durant l'esglaonament hauràs d'intercanviar dues fi
 
 $$
 \begin{cases}
-x+y+z=4,\\
-2x+2y-z=5,\\
-x-y+2z=5.
+x+y+z=4\\
+2x+2y-z=5\\
+x-y+2z=5
 \end{cases}
 $$
 
 ??? example "Mostra la solució pas a pas de l'exercici 3.5"
-    Fem $F_2\leftarrow F_2-2F_1$ i $F_3\leftarrow F_3-F_1$:
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    2&2&-1&5\\
+    1&-1&2&5
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_2=F_2-2F_1\\F_3=F_3-F_1}}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    0&0&-3&-3\\
+    0&-2&1&1
+    \end{array}
+    \right)
+    $$
 
     $$
     \left(
@@ -154,19 +182,15 @@ $$
     0&0&-3&-3\\
     0&-2&1&1
     \end{array}
-    \right).
-    $$
-
-    Com que el segon coeficient de $F_2$ és zero, intercanviem $F_2$ i $F_3$:
-
-    $$
+    \right)
+    \xrightarrow{F_2\leftrightarrow F_3}
     \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&1&1\\
     0&0&-3&-3
     \end{array}
-    \right).
+    \right)
     $$
 
     De l'última fila obtenim $z=1$; de la segona, $-2y+1=1$, és a dir, $y=0$; i de la primera, $x+1=4$, de manera que $x=3$.
@@ -184,14 +208,30 @@ Resol pel mètode de Gauss i classifica el sistema:
 
 $$
 \begin{cases}
-x+y+z=4,\\
-x-y+z=2,\\
-2x+2z=6.
+x+y+z=4\\
+x-y+z=2\\
+2x+2z=6
 \end{cases}
 $$
 
 ??? example "Mostra la solució pas a pas de l'exercici 3.6"
-    Fem $F_2\leftarrow F_2-F_1$ i $F_3\leftarrow F_3-2F_1$:
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    1&-1&1&2\\
+    2&0&2&6
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_2=F_2-F_1\\F_3=F_3-2F_1}}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    0&-2&0&-2\\
+    0&-2&0&-2
+    \end{array}
+    \right)
+    $$
 
     $$
     \left(
@@ -200,10 +240,18 @@ $$
     0&-2&0&-2\\
     0&-2&0&-2
     \end{array}
-    \right).
+    \right)
+    \xrightarrow{F_3=F_3-F_2}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    0&-2&0&-2\\
+    0&0&0&0
+    \end{array}
+    \right)
     $$
 
-    Amb $F_3\leftarrow F_3-F_2$ obtenim una fila de zeros. Prenem $z=t$, amb $t\in\mathbb{R}$. Aleshores $y=1$ i $x=3-t$.
+    Obtenim una fila de zeros. Prenem $z=t$, amb $t\in\mathbb{R}$. Aleshores $y=1$ i $x=3-t$.
 
     $$
     \boxed{(x,y,z)=(3-t,1,t),\qquad t\in\mathbb{R}.}
@@ -218,14 +266,30 @@ Resol pel mètode de Gauss i classifica el sistema:
 
 $$
 \begin{cases}
-x+y+z=4,\\
-x-y+z=2,\\
-2x+2z=7.
+x+y+z=4\\
+x-y+z=2\\
+2x+2z=7
 \end{cases}
 $$
 
 ??? example "Mostra la solució pas a pas de l'exercici 3.7"
-    Apliquem $F_2\leftarrow F_2-F_1$ i $F_3\leftarrow F_3-2F_1$:
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    1&-1&1&2\\
+    2&0&2&7
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_2=F_2-F_1\\F_3=F_3-2F_1}}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    0&-2&0&-2\\
+    0&-2&0&-1
+    \end{array}
+    \right)
+    $$
 
     $$
     \left(
@@ -234,19 +298,15 @@ $$
     0&-2&0&-2\\
     0&-2&0&-1
     \end{array}
-    \right).
-    $$
-
-    Després, amb $F_3\leftarrow F_3-F_2$, obtenim
-
-    $$
+    \right)
+    \xrightarrow{F_3=F_3-F_2}
     \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&0&-2\\
     0&0&0&1
     \end{array}
-    \right).
+    \right)
     $$
 
     L'última fila representa $0=1$, que és una contradicció. El sistema és incompatible i no té solució.
