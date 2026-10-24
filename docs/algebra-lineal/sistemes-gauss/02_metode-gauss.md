@@ -13,13 +13,13 @@ x+y+z=2,\\
 x+2y-z=6
 \end{cases}
 \quad\longleftrightarrow\quad
-\left[
+\left(
 \begin{array}{ccc|c}
 1&1&1&2\\
 2&-1&1&-1\\
 1&2&-1&6
 \end{array}
-\right].
+\right).
 $$
 
 Cada fila representa una equació i cada columna correspon sempre a la mateixa incògnita.
@@ -40,6 +40,21 @@ Les operacions amb equacions es converteixen en operacions amb files:
 | Sumar a una fila un múltiple d'una altra | $F_i\leftarrow F_i+kF_j$ | Sempre és possible. |
 
 Aquestes transformacions no canvien les solucions del sistema.
+
+!!! note "Dependència entre files"
+    Durant l'esglaonament, una fila és **dependent** de les altres si es pot obtenir com una combinació d'aquestes files. En aquest cas, no aporta informació nova i pot acabar convertida en una fila completament nul·la:
+
+    $$
+    (0\quad 0\quad 0\mid 0).
+    $$
+
+    Cal considerar la fila sencera, inclòs el terme independent. Una fila de la forma
+
+    $$
+    (0\quad 0\quad 0\mid k),\qquad k\neq0,
+    $$
+
+    no és redundant: representa una contradicció i indica que el sistema és incompatible.
 
 ## 3. Procediment de Gauss
 
@@ -70,41 +85,41 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
     Fem zeros sota el primer pivot:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
     2&-1&1&-1\\
     1&2&-1&6
     \end{array}
-    \right]
+    \right)
     \mathop{\longrightarrow}^{\substack{F_2\leftarrow F_2-2F_1\\F_3\leftarrow F_3-F_1}}
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
     0&-3&-1&-5\\
     0&1&-2&4
     \end{array}
-    \right].
+    \right).
     $$
 
     Intercanviem les dues últimes files i fem zero sota el segon pivot:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
     0&1&-2&4\\
     0&-3&-1&-5
     \end{array}
-    \right]
+    \right)
     \mathop{\longrightarrow}^{F_3\leftarrow F_3+3F_2}
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
     0&1&-2&4\\
     0&0&-7&7
     \end{array}
-    \right].
+    \right).
     $$
 
     El sistema esglaonat és
@@ -143,25 +158,25 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     En la taula
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&2&-1&3\\
     0&0&2&4\\
     0&3&1&5
     \end{array}
-    \right],
+    \right),
     $$
 
     el segon coeficient de la segona fila és $0$. Intercanviem $F_2$ i $F_3$:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&2&-1&3\\
     0&3&1&5\\
     0&0&2&4
     \end{array}
-    \right].
+    \right).
     $$
 
     Ara el sistema ja està esglaonat i es pot resoldre de baix cap amunt.
@@ -182,21 +197,21 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     Apliquem $F_2\leftarrow F_2-F_1$ i $F_3\leftarrow F_3-2F_1$:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&0&-2\\
     0&-2&0&-2
     \end{array}
-    \right]
+    \right)
     \mathop{\longrightarrow}^{F_3\leftarrow F_3-F_2}
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&0&-2\\
     0&0&0&0
     \end{array}
-    \right].
+    \right).
     $$
 
     L'última fila representa la identitat $0=0$ i no aporta cap condició nova. Queda una incògnita lliure.
@@ -231,13 +246,13 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     L'esglaonament condueix a
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&0&-2\\
     0&0&0&1
     \end{array}
-    \right].
+    \right).
     $$
 
     L'última fila representa l'equació impossible $0=1$. Per tant, el sistema no té cap solució i és **incompatible**.

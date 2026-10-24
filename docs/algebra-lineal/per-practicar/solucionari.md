@@ -102,25 +102,25 @@ $$
     Fem $F_2\leftarrow F_2-2F_1$ i $F_3\leftarrow F_3-F_1$:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
     0&-3&-1&-5\\
     0&1&-2&4
     \end{array}
-    \right].
+    \right).
     $$
 
     Intercanviem $F_2$ i $F_3$, i després fem $F_3\leftarrow F_3+3F_2$:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
     0&1&-2&4\\
     0&0&-7&7
     \end{array}
-    \right].
+    \right).
     $$
 
     Per substitució enrere obtenim $z=-1$, $y=2$ i $x=1$. Per tant,
@@ -148,25 +148,25 @@ $$
     Fem $F_2\leftarrow F_2-2F_1$ i $F_3\leftarrow F_3-F_1$:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&0&-3&-3\\
     0&-2&1&1
     \end{array}
-    \right].
+    \right).
     $$
 
     Com que el segon coeficient de $F_2$ és zero, intercanviem $F_2$ i $F_3$:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&1&1\\
     0&0&-3&-3
     \end{array}
-    \right].
+    \right).
     $$
 
     De l'última fila obtenim $z=1$; de la segona, $-2y+1=1$, és a dir, $y=0$; i de la primera, $x+1=4$, de manera que $x=3$.
@@ -194,13 +194,13 @@ $$
     Fem $F_2\leftarrow F_2-F_1$ i $F_3\leftarrow F_3-2F_1$:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&0&-2\\
     0&-2&0&-2
     \end{array}
-    \right].
+    \right).
     $$
 
     Amb $F_3\leftarrow F_3-F_2$ obtenim una fila de zeros. Prenem $z=t$, amb $t\in\mathbb{R}$. Aleshores $y=1$ i $x=3-t$.
@@ -228,25 +228,25 @@ $$
     Apliquem $F_2\leftarrow F_2-F_1$ i $F_3\leftarrow F_3-2F_1$:
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&0&-2\\
     0&-2&0&-1
     \end{array}
-    \right].
+    \right).
     $$
 
     Després, amb $F_3\leftarrow F_3-F_2$, obtenim
 
     $$
-    \left[
+    \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
     0&-2&0&-2\\
     0&0&0&1
     \end{array}
-    \right].
+    \right).
     $$
 
     L'última fila representa $0=1$, que és una contradicció. El sistema és incompatible i no té solució.
