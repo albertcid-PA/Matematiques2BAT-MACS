@@ -51,8 +51,8 @@ Les dades inicials donen el sistema
 
 $$
 \begin{cases}
-x+y+z=120,\\
-y=2z.
+x+y+z=120\\
+y=2z
 \end{cases}
 $$
 
@@ -90,9 +90,9 @@ Ara tenim el sistema
 
 $$
 \begin{cases}
-x+y+z=120,\\
-y-2z=0,\\
-8x+5y+3z=685.
+x+y+z=120\\
+y-2z=0\\
+8x+5y+3z=685
 \end{cases}
 $$
 
@@ -106,7 +106,7 @@ $$
 8&5&3&685
 \end{array}
 \right)
-\mathop{\longrightarrow}^{F_3\leftarrow F_3-8F_1}
+\xrightarrow{F_3=F_3-8F_1}
 \left(
 \begin{array}{ccc|c}
 1&1&1&120\\
@@ -117,7 +117,7 @@ $$
 $$
 
 $$
-\mathop{\longrightarrow}^{F_3\leftarrow F_3+3F_2}
+\xrightarrow{F_3=F_3+3F_2}
 \left(
 \begin{array}{ccc|c}
 1&1&1&120\\

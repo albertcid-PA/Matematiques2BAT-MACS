@@ -8,8 +8,8 @@ Per operar amb més comoditat, podem escriure només els coeficients i els terme
 
 $$
 \begin{cases}
-x+y+z=2,\\
-2x-y+z=-1,\\
+x+y+z=2\\
+2x-y+z=-1\\
 x+2y-z=6
 \end{cases}
 \quad\longleftrightarrow\quad
@@ -19,7 +19,7 @@ x+2y-z=6
 2&-1&1&-1\\
 1&2&-1&6
 \end{array}
-\right).
+\right)
 $$
 
 Cada fila representa una equació i cada columna correspon sempre a la mateixa incògnita.
@@ -35,11 +35,112 @@ Les operacions amb equacions es converteixen en operacions amb files:
 
 | Operació | Notació | Condició |
 |---|---|---|
-| Intercanviar dues files | $F_i\leftrightarrow F_j$ | Sempre és possible. |
-| Multiplicar una fila | $F_i\leftarrow kF_i$ | Cal que $k\neq0$. |
-| Sumar a una fila un múltiple d'una altra | $F_i\leftarrow F_i+kF_j$ | Sempre és possible. |
+| Permutar dues files (intercanviar-les) | $F_i\leftrightarrow F_j$ | Sempre és possible. |
+| Multiplicar una fila | $F_i=kF_i$ | Cal que $k\neq0$. |
+| Sumar a una fila un múltiple d'una altra (**combinació lineal**) | $F_i=F_i+kF_j$ | Sempre és possible. |
 
 Aquestes transformacions no canvien les solucions del sistema.
+
+!!! tip "Combinació lineal per evitar fraccions"
+    Suposem que, en una mateixa columna, el pivot de $F_i$ és $a\neq0$ i el coeficient que volem eliminar de $F_j$ és $b$. En lloc de dividir per $a$, podem fer
+
+    $$
+    F_j=aF_j-bF_i.
+    $$
+
+    El nou coeficient és $ab-ba=0$. La nova fila és una **combinació lineal** de les dues files anteriors i ens permet mantenir nombres enters durant l'esglaonament.
+
+    Per exemple, resolem matricialment el sistema
+
+    $$
+    \begin{cases}
+    2x+y-z=1\\
+    3x-y+2z=7\\
+    x+2y+z=8
+    \end{cases}
+    $$
+
+    Per anul·lar el coeficient $3$ de $F_2$, podríem fer una operació amb una fracció:
+
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    2&1&-1&1\\
+    3&-1&2&7\\
+    1&2&1&8
+    \end{array}
+    \right)
+    \xrightarrow{F_2=F_2-\frac32F_1}
+    \left(
+    \begin{array}{ccc|c}
+    2&1&-1&1\\
+    0&-\frac52&\frac72&\frac{11}{2}\\
+    1&2&1&8
+    \end{array}
+    \right).
+    $$
+
+    En canvi, amb la combinació lineal $F_2=2F_2-3F_1$ obtenim una fila equivalent amb coeficients enters:
+
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    2&1&-1&1\\
+    3&-1&2&7\\
+    1&2&1&8
+    \end{array}
+    \right)
+    \xrightarrow{F_2=2F_2-3F_1}
+    \left(
+    \begin{array}{ccc|c}
+    2&1&-1&1\\
+    0&-5&7&11\\
+    1&2&1&8
+    \end{array}
+    \right).
+    $$
+
+    Continuem l'esglaonament mantenint els coeficients enters:
+
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    2&1&-1&1\\
+    0&-5&7&11\\
+    1&2&1&8
+    \end{array}
+    \right)
+    \xrightarrow{F_3=2F_3-F_1}
+    \left(
+    \begin{array}{ccc|c}
+    2&1&-1&1\\
+    0&-5&7&11\\
+    0&3&3&15
+    \end{array}
+    \right).
+    $$
+
+    Finalment, eliminem el coeficient de $y$ de la tercera fila:
+
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    2&1&-1&1\\
+    0&-5&7&11\\
+    0&3&3&15
+    \end{array}
+    \right)
+    \xrightarrow{F_3=5F_3+3F_2}
+    \left(
+    \begin{array}{ccc|c}
+    2&1&-1&1\\
+    0&-5&7&11\\
+    0&0&36&108
+    \end{array}
+    \right).
+    $$
+
+    Resolent de baix cap amunt, obtenim $z=3$, $y=2$ i $x=1$.
 
 !!! note "Dependència entre files"
     Durant l'esglaonament, una fila és **dependent** de les altres si es pot obtenir com una combinació d'aquestes files. En aquest cas, no aporta informació nova i pot acabar convertida en una fila completament nul·la:
@@ -62,8 +163,8 @@ Aquestes transformacions no canvien les solucions del sistema.
     1. Ordena les incògnites sempre de la mateixa manera.
     2. Escriu la taula de coeficients, sense oblidar els zeros.
     3. Tria el primer coeficient no nul com a **pivot**.
-    4. Fes zeros sota el pivot sumant múltiples de la fila del pivot.
-    5. Passa a la columna següent i repeteix el procés. Si el pivot és zero, intercanvia files.
+    4. Fes zeros sota el pivot. Si una divisió produeix fraccions, utilitza una combinació lineal de files.
+    5. Passa a la columna següent i repeteix el procés. Si el pivot és zero, permuta les files.
     6. Quan el sistema estigui esglaonat, resol-lo de baix cap amunt.
     7. Classifica el sistema i justifica la resposta.
 
@@ -76,9 +177,9 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
 
     $$
     \begin{cases}
-    x+y+z=2,\\
-    2x-y+z=-1,\\
-    x+2y-z=6.
+    x+y+z=2\\
+    2x-y+z=-1\\
+    x+2y-z=6
     \end{cases}
     $$
 
@@ -92,7 +193,7 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
     1&2&-1&6
     \end{array}
     \right)
-    \mathop{\longrightarrow}^{\substack{F_2\leftarrow F_2-2F_1\\F_3\leftarrow F_3-F_1}}
+    \xrightarrow{\substack{F_2=F_2-2F_1\\F_3=F_3-F_1}}
     \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
@@ -102,7 +203,7 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
     \right).
     $$
 
-    Intercanviem les dues últimes files i fem zero sota el segon pivot:
+    Permutem les dues últimes files i fem zero sota el segon pivot:
 
     $$
     \left(
@@ -112,7 +213,7 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
     0&-3&-1&-5
     \end{array}
     \right)
-    \mathop{\longrightarrow}^{F_3\leftarrow F_3+3F_2}
+    \xrightarrow{F_3=F_3+3F_2}
     \left(
     \begin{array}{ccc|c}
     1&1&1&2\\
@@ -126,9 +227,9 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
 
     $$
     \begin{cases}
-    x+y+z=2,\\
-    y-2z=4,\\
-    -7z=7.
+    x+y+z=2\\
+    y-2z=4\\
+    -7z=7
     \end{cases}
     $$
 
@@ -150,36 +251,102 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
 
     Hem pogut determinar totes les incògnites i la solució és única. El sistema és **compatible determinat**.
 
-## 5. Quan cal intercanviar files
+## 5. Permutació i combinació lineal
 
-Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui un coeficient no nul en aquella columna i intercanviem les files.
+Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui un coeficient no nul en aquella columna i permutem les files. Després podem fer combinacions lineals per obtenir zeros sense introduir fraccions.
 
-!!! example "Exemple 2. Pivot nul"
-    En la taula
+!!! example "Exemple 2. Permutació i combinació lineal"
+    Resolem el sistema
+
+    $$
+    \begin{cases}
+    2y+z=7\\
+    2x-y+z=3\\
+    3x+2y-z=4
+    \end{cases}
+    $$
+
+    El primer coeficient de $F_1$ és $0$. Per obtenir un pivot no nul en la primera columna, permutem $F_1$ i $F_2$:
 
     $$
     \left(
     \begin{array}{ccc|c}
-    1&2&-1&3\\
-    0&0&2&4\\
-    0&3&1&5
+    0&2&1&7\\
+    2&-1&1&3\\
+    3&2&-1&4
     \end{array}
-    \right),
+    \right)
+    \xrightarrow{F_1\leftrightarrow F_2}
+    \left(
+    \begin{array}{ccc|c}
+    2&-1&1&3\\
+    0&2&1&7\\
+    3&2&-1&4
+    \end{array}
+    \right)
     $$
 
-    el segon coeficient de la segona fila és $0$. Intercanviem $F_2$ i $F_3$:
+    Per anul·lar el coeficient $3$ de $F_3$, podríem restar $\frac32F_1$, però apareixerien fraccions. Fem la combinació lineal
+
+    $$
+    F_3=2F_3-3F_1.
+    $$
+
+    Així, el coeficient de $x$ es transforma en $2\cdot3-3\cdot2=0$:
 
     $$
     \left(
     \begin{array}{ccc|c}
-    1&2&-1&3\\
-    0&3&1&5\\
-    0&0&2&4
+    2&-1&1&3\\
+    0&2&1&7\\
+    3&2&-1&4
     \end{array}
-    \right).
+    \right)
+    \xrightarrow{F_3=2F_3-3F_1}
+    \left(
+    \begin{array}{ccc|c}
+    2&-1&1&3\\
+    0&2&1&7\\
+    0&7&-5&-1
+    \end{array}
+    \right)
     $$
 
-    Ara el sistema ja està esglaonat i es pot resoldre de baix cap amunt.
+    Per fer zero sota el segon pivot, tornem a combinar files:
+
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    2&-1&1&3\\
+    0&2&1&7\\
+    0&7&-5&-1
+    \end{array}
+    \right)
+    \xrightarrow{F_3=2F_3-7F_2}
+    \left(
+    \begin{array}{ccc|c}
+    2&-1&1&3\\
+    0&2&1&7\\
+    0&0&-17&-51
+    \end{array}
+    \right)
+    $$
+
+    Resolem de baix cap amunt:
+
+    $$
+    z=3,
+    \qquad
+    y=2,
+    \qquad
+    x=1.
+    $$
+
+    Per tant, la solució és
+
+    $$
+    \boxed{(x,y,z)=(1,2,3).}
+    $$
 
 ## 6. Sistema compatible indeterminat
 
@@ -188,13 +355,13 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
 
     $$
     \begin{cases}
-    x+y+z=4,\\
-    x-y+z=2,\\
-    2x+2z=6.
+    x+y+z=4\\
+    x-y+z=2\\
+    2x+2z=6
     \end{cases}
     $$
 
-    Apliquem $F_2\leftarrow F_2-F_1$ i $F_3\leftarrow F_3-2F_1$:
+    Apliquem $F_2=F_2-F_1$ i $F_3=F_3-2F_1$:
 
     $$
     \left(
@@ -204,7 +371,7 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     0&-2&0&-2
     \end{array}
     \right)
-    \mathop{\longrightarrow}^{F_3\leftarrow F_3-F_2}
+    \xrightarrow{F_3=F_3-F_2}
     \left(
     \begin{array}{ccc|c}
     1&1&1&4\\
@@ -237,9 +404,9 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
 
     $$
     \begin{cases}
-    x+y+z=4,\\
-    x-y+z=2,\\
-    2x+2z=7.
+    x+y+z=4\\
+    x-y+z=2\\
+    2x+2z=7
     \end{cases}
     $$
 

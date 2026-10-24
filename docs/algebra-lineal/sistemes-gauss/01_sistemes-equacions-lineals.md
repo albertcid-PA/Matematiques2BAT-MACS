@@ -31,7 +31,7 @@ Per exemple,
 
 $$
 \begin{cases}
-x+y=5,\\
+x+y=5\\
 x-y=1
 \end{cases}
 $$
@@ -55,9 +55,9 @@ Un sistema lineal només pot ser d'un dels tres tipus següents:
 
 | Classificació | Nombre de solucions | Abreviació |
 |---|---:|:---:|
-| Sistema compatible determinat | Una | SCD |
-| Sistema compatible indeterminat | Infinites | SCI |
-| Sistema incompatible | Cap | SI |
+| Sistema compatible determinat | Una | **SCD** |
+| Sistema compatible indeterminat | Infinites | **SCI** |
+| Sistema incompatible | Cap | **SI** |
 
 Un sistema és **compatible** si té alguna solució. Per això tant els SCD com els SCI són sistemes compatibles.
 
@@ -67,7 +67,7 @@ El sistema
 
 $$
 \begin{cases}
-x+y=5,\\
+x+y=5\\
 x-y=1
 \end{cases}
 $$
@@ -80,8 +80,8 @@ En el sistema
 
 $$
 \begin{cases}
-x+y=4,\\
-2x+2y=8,
+x+y=4\\
+2x+2y=8
 \end{cases}
 $$
 
@@ -107,19 +107,14 @@ En el sistema
 
 $$
 \begin{cases}
-x+y=4,\\
-2x+2y=10,
+x+y=4\\
+2x+2y=10
 \end{cases}
 $$
 
 el doble de la primera equació seria $2x+2y=8$, però la segona exigeix que $2x+2y=10$. Les dues condicions es contradiuen. El sistema no té cap solució i és **incompatible**.
 
-!!! note "Interpretació geomètrica amb dues incògnites"
-    Cada equació lineal amb dues incògnites representa una recta:
 
-    - en un SCD, les rectes es tallen en un punt;
-    - en un SCI, les rectes coincideixen;
-    - en un SI, les rectes no tenen cap punt en comú.
 
 ## 4. Quina informació aporten les equacions?
 
@@ -128,8 +123,8 @@ En un sistema, una equació pot aportar informació nova, repetir una condició 
 | Relació entre les equacions | Què significa? | Efecte possible |
 |---|---|---|
 | Condicions independents | Cada equació aporta informació nova. | Pot permetre obtenir una solució única. |
-| Condició redundant | Una equació es dedueix de les altres. | Pot quedar alguna incògnita lliure. |
-| Condicions contradictòries | Dues condicions no es poden complir alhora. | El sistema no té solució. |
+| Condició redundant | Una equació es dedueix de les altres. | Pot quedar alguna incògnita lliure. L'equació es pot eliminar perquè no aporta informació. |
+| Condicions contradictòries | Les equacions es contradiuen i no es poden satisfer totes alhora. | El sistema no té solució. |
 
 Aquestes relacions es veuen amb claredat després d'aplicar el mètode de Gauss:
 
@@ -151,34 +146,26 @@ Podem transformar un sistema en un altre d'equivalent mitjançant aquestes opera
 2. Multiplicar una equació per un nombre diferent de zero.
 3. Substituir una equació per la suma d'aquesta equació i un múltiple d'una altra.
 
-Per indicar les equacions, escriurem $E_1,E_2,E_3,\ldots$ Per exemple,
-
-$$
-E_2\leftarrow E_2-2E_1
-$$
-
-significa que substituïm la segona equació pel resultat de restar-li dues vegades la primera.
+Per indicar les equacions, escriurem $E_1,E_2,E_3,\ldots$ L'operació s'escriu damunt de la fletxa que uneix el sistema inicial amb el sistema transformat.
 
 !!! example "Exemple. Obtenció d'un sistema equivalent"
-    Partim del sistema
+    Partim del sistema i restem la primera equació a la segona:
 
     $$
     \begin{cases}
-    x+y=5,\\
-    2x-y=1.
+    x+y=5\\
+    x-y=1
     \end{cases}
-    $$
-
-    Fem $E_2\leftarrow E_2-2E_1$:
-
-    $$
+    \xrightarrow{E_2=E_2-E_1}
     \begin{cases}
-    x+y=5,\\
-    -3y=-9.
+    x+y=5\\
+    -2y=-4
     \end{cases}
     $$
 
-    El segon sistema és equivalent al primer, però és més fàcil de resoldre. Obtenim $y=3$ i, substituint a la primera equació, $x=2$.
+    La transformació $E_2=E_2-E_1$ substitueix la segona equació per la diferència entre la segona i la primera; la primera equació no canvia.
+
+    El segon sistema és equivalent al primer, però és més fàcil de resoldre. Obtenim $y=2$ i, substituint a la primera equació, $x=3$.
 
 ## 6. Sistemes esglaonats
 
@@ -186,9 +173,9 @@ Un sistema està **esglaonat** quan, a mesura que baixem, cada equació comença
 
 $$
 \begin{cases}
-x-2y+z=-13,\\
-y+3z=1,\\
-2z=-4.
+x-2y+z=-13\\
+y+3z=1\\
+2z=-4
 \end{cases}
 $$
 
