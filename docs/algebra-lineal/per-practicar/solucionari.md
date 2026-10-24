@@ -2,12 +2,6 @@
 
 En aquesta pàgina tens els enunciats del bloc d'àlgebra lineal. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
 
-<div class="practice-actions" markdown="1">
-
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_algebra_lineal.pdf?v=1){ target="_blank" rel="noopener" }
-
-</div>
-
 !!! tip "Com treballar"
     En aplicar el mètode de Gauss, anota cada transformació de fila, mantén sempre el mateix ordre de les incògnites i acaba classificant el sistema.
 
