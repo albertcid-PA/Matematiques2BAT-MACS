@@ -1,5 +1,12 @@
 # Equacions matricials
 
+<nav class="lab-mobile-nav" aria-label="Eines del Laboratori de mates">
+  <a href="resolucio-sistemes.md">Resolució de sistemes</a>
+  <a href="calculadora-matrius.md">Operacions amb matrius</a>
+  <a href="aillament-equacions-matricials.md" aria-current="page">Equacions matricials</a>
+  <a href="sistemes-matricials.md">Sistemes matricials</a>
+</nav>
+
 !!! abstract "Aïllar $X$ respectant l'ordre dels factors"
     Escriu qualsevol **equació matricial lineal en $X$** del temari. L'eina desenvoluparà els parèntesis, reunirà els termes que contenen $X$, traurà $X$ com a factor comú quan sigui possible i mostrarà el resultat en la forma $X=\ldots$
 

@@ -1,5 +1,12 @@
 # Resolució de sistemes
 
+<nav class="lab-mobile-nav" aria-label="Eines del Laboratori de mates">
+  <a href="resolucio-sistemes.md" aria-current="page">Resolució de sistemes</a>
+  <a href="calculadora-matrius.md">Operacions amb matrius</a>
+  <a href="aillament-equacions-matricials.md">Equacions matricials</a>
+  <a href="sistemes-matricials.md">Sistemes matricials</a>
+</nav>
+
 !!! abstract "Resoldre com ho faríem en paper"
     Introdueix un sistema de **dues equacions amb dues incògnites** o de **tres equacions amb tres incògnites**. L'eina construirà la matriu ampliada, aplicarà el mètode de Gauss, completarà la resolució i justificarà si el sistema és **SCD**, **SCI** o **SI**.
 
