@@ -1200,6 +1200,11 @@
   font-weight: 700;
 }
 
+.md-typeset .ls-operator {
+  flex: 0 0 0.85rem;
+  text-align: center;
+}
+
 /* Disposició anterior de l'entrada, conservada per poder comparar-la. */
 .md-typeset .ls-tool[data-entry-layout="classic"] .ls-equations {
   padding: 0;
@@ -1401,7 +1406,9 @@
 }
 
 .md-typeset .mc-system-entry-operator {
+  flex: 0 0 0.85rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .md-typeset .mc-tool .mc-system-entry input[type="text"] {
@@ -1474,6 +1481,10 @@
     gap: 0.08rem;
   }
 
+  .md-typeset .ls-operator {
+    flex-basis: 0.7rem;
+  }
+
   .md-typeset .ls-equation-row {
     font-size: 0.82rem;
   }
@@ -1511,5 +1522,9 @@
     min-height: 1.95rem;
     padding-inline: 0.1rem;
     font-size: 0.82rem;
+  }
+
+  .md-typeset .mc-system-entry-operator {
+    flex-basis: 0.7rem;
   }
 }

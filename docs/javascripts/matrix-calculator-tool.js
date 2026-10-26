@@ -26,6 +26,7 @@
       return new Fraction(this.n * value.d, this.d * value.n);
     }
     neg() { return new Fraction(-this.n, this.d); }
+    abs() { return new Fraction(this.n < 0n ? -this.n : this.n, this.d); }
     isZero() { return this.n === 0n; }
     isOne() { return this.n === this.d; }
     isInteger() { return this.d === 1n; }
@@ -969,13 +970,27 @@
       const rightMatrix = useFirstEquation ? p : q;
       const rightSymbol = useFirstEquation ? "P" : "Q";
       const numerator = matrixSub(rightMatrix, matrixScale(otherCoefficient, remainingMatrix));
-      const solvedMatrix = matrixScale(ONE.div(solvedCoefficient), numerator);
+      const solvedScale = ONE.div(solvedCoefficient);
+      const solvedMatrix = matrixScale(solvedScale, numerator);
       const isolatedRight = `${rightSymbol}${variableTerm(otherCoefficient.neg(), remainingVariable, false)}`;
+      let explicitOperation = matrixTex(rightMatrix);
+      if (!otherCoefficient.isZero()) {
+        const operator = otherCoefficient.n < 0n ? "+" : "-";
+        const absoluteCoefficient = otherCoefficient.abs();
+        const coefficient = absoluteCoefficient.isOne() ? "" : absoluteCoefficient.toTex();
+        explicitOperation += `${operator}${coefficient}${matrixTex(remainingMatrix)}`;
+      }
+      const symbolicCalculation = solvedScale.isOne()
+        ? isolatedRight
+        : `${solvedScale.toTex()}\\left(${isolatedRight}\\right)`;
+      const explicitCalculation = solvedScale.isOne()
+        ? explicitOperation
+        : `${solvedScale.toTex()}\\left(${explicitOperation}\\right)`;
 
       steps.push(step(
         `Substituïm i calculem ${eliminatedVariable}`,
-        `Fem servir la ${useFirstEquation ? "primera" : "segona"} equació i mantenim l'ordre dels termes.`,
-        `${eliminatedVariable}=${ONE.div(solvedCoefficient).toTex()}\\left(${isolatedRight}\\right)=${matrixTex(solvedMatrix)}`,
+        `Fem servir la ${useFirstEquation ? "primera" : "segona"} equació, substituïm la matriu coneguda i operem element a element.`,
+        `${eliminatedVariable}=${symbolicCalculation}=${explicitCalculation}=${matrixTex(solvedMatrix)}`,
       ));
 
       const x = eliminateX ? solvedMatrix : remainingMatrix;
@@ -1077,19 +1092,26 @@
       run(() => analyzeOperation(root.querySelector("#mc-op-expression").value));
     }
 
-    function calculateEquation() {
-      run(() => analyzeEquation(
-        root.querySelector("#mc-eq-kind").value,
-        readMatrix(root, "mc-eq-a"),
-        readMatrix(root, "mc-eq-b"),
-        readMatrix(root, "mc-eq-c"),
-      ));
-    }
-
     function calculateSystem() {
+      function signedCoefficient(coefficientId, operatorId) {
+        const input = root.querySelector(`#${coefficientId}`);
+        const operator = root.querySelector(`#${operatorId}`);
+        let source = input.value.trim();
+        if (source.startsWith("-")) {
+          source = source.slice(1);
+          input.value = source;
+          input.dataset.sign = "-1";
+        } else if (source.startsWith("+")) {
+          source = source.slice(1);
+          input.value = source;
+          input.dataset.sign = "1";
+        }
+        operator.textContent = input.dataset.sign === "-1" ? "−" : "+";
+        return parseFraction(source).mul(parseFraction(input.dataset.sign || "1"));
+      }
       run(() => analyzeSystem(
-        parseFraction(root.querySelector("#mc-sys-a").value), parseFraction(root.querySelector("#mc-sys-b").value),
-        parseFraction(root.querySelector("#mc-sys-c").value), parseFraction(root.querySelector("#mc-sys-d").value),
+        parseFraction(root.querySelector("#mc-sys-a").value), signedCoefficient("mc-sys-b", "mc-sys-b-operator"),
+        parseFraction(root.querySelector("#mc-sys-c").value), signedCoefficient("mc-sys-d", "mc-sys-d-operator"),
         readMatrix(root, "mc-sys-p"), readMatrix(root, "mc-sys-q"),
       ));
     }
@@ -1101,26 +1123,14 @@
       status.textContent = "";
     }
 
-    function resetEquation() {
-      const values = { a11: "1", a12: "2", a21: "0", a22: "1", b11: "5", b12: "1", b21: "2", b22: "-1", c11: "7", c12: "2", c21: "2", c22: "-1" };
-      Object.entries(values).forEach(([key, value]) => { root.querySelector(`#mc-eq-${key}`).value = value; });
-      root.querySelector("#mc-eq-kind").value = "xplus";
-      updateEquationHint();
-      results.hidden = true;
-    }
-
     function resetSystem() {
-      const values = { a: "1", b: "1", c: "1", d: "-1", p11: "4", p12: "6", p21: "2", p22: "0", q11: "2", q12: "0", q21: "0", q22: "2" };
+      const values = { a: "1", b: "1", c: "1", d: "1", p11: "4", p12: "6", p21: "2", p22: "0", q11: "2", q12: "0", q21: "0", q22: "2" };
       Object.entries(values).forEach(([key, value]) => { root.querySelector(`#mc-sys-${key}`).value = value; });
+      root.querySelector("#mc-sys-b").dataset.sign = "1";
+      root.querySelector("#mc-sys-d").dataset.sign = "-1";
+      root.querySelector("#mc-sys-b-operator").textContent = "+";
+      root.querySelector("#mc-sys-d-operator").textContent = "−";
       results.hidden = true;
-    }
-
-    function updateEquationHint() {
-      const kind = root.querySelector("#mc-eq-kind").value;
-      const text = kind === "axb" || kind === "diff"
-        ? "S'utilitzen les matrius A, B i C."
-        : "S'utilitzen les matrius A i B; la matriu C no intervé en aquesta equació.";
-      root.querySelector("#mc-eq-hint").textContent = text;
     }
 
     tabs.forEach((tab) => tab.addEventListener("click", () => setMode(tab.dataset.mcMode)));
@@ -1147,9 +1157,27 @@
       status.textContent = "";
     }));
     root.querySelector("#mc-op-reset").addEventListener("click", resetOperation);
-    root.querySelector("#mc-eq-calculate").addEventListener("click", calculateEquation);
-    root.querySelector("#mc-eq-reset").addEventListener("click", resetEquation);
-    root.querySelector("#mc-eq-kind").addEventListener("change", updateEquationHint);
+    [["mc-sys-b", "mc-sys-b-operator"], ["mc-sys-d", "mc-sys-d-operator"]].forEach(([inputId, operatorId]) => {
+      const input = root.querySelector(`#${inputId}`);
+      const operator = root.querySelector(`#${operatorId}`);
+      input.addEventListener("focus", () => {
+        if (input.dataset.sign === "-1" && !input.value.trim().startsWith("-")) input.value = `-${input.value.trim()}`;
+        operator.style.visibility = "hidden";
+      });
+      input.addEventListener("blur", () => {
+        let source = input.value.trim();
+        if (source.startsWith("-")) {
+          input.dataset.sign = "-1";
+          source = source.slice(1);
+        } else if (source.startsWith("+")) {
+          input.dataset.sign = "1";
+          source = source.slice(1);
+        }
+        input.value = source;
+        operator.textContent = input.dataset.sign === "-1" ? "−" : "+";
+        operator.style.visibility = "visible";
+      });
+    });
     root.querySelector("#mc-sys-calculate").addEventListener("click", calculateSystem);
     root.querySelector("#mc-sys-reset").addEventListener("click", resetSystem);
     nextButton.addEventListener("click", () => {
@@ -1170,10 +1198,8 @@
       if (input.tagName === "TEXTAREA" && event.shiftKey) return;
       event.preventDefault();
       if (panel.dataset.mcPanel === "operations") calculateOperation();
-      else if (panel.dataset.mcPanel === "equations") calculateEquation();
       else calculateSystem();
     }));
-    updateEquationHint();
   }
 
   window.MatrixCalculatorTool = { init: initMatrixCalculator };
