@@ -2,9 +2,9 @@
 
 El mètode de Gauss transforma un sistema d'equacions lineals en un sistema esglaonat equivalent. Un cop esglaonat, el resolem de baix cap amunt i utilitzem el resultat per classificar-lo com a SCD, SCI o SI.
 
-## 1. Taula de coeficients
+## 1. Matriu de coeficients i matriu ampliada
 
-Per operar amb més comoditat, podem escriure només els coeficients i els termes independents del sistema. La barra vertical separa els coeficients dels termes independents.
+Considerem el sistema
 
 $$
 \begin{cases}
@@ -12,7 +12,34 @@ x+y+z=2\\
 2x-y+z=-1\\
 x+2y-z=6
 \end{cases}
-\quad\longleftrightarrow\quad
+$$
+
+La **matriu de coeficients**, que anomenarem $A$, conté únicament els coeficients de les incògnites, sempre en el mateix ordre:
+
+$$
+A=
+\begin{pmatrix}
+1&1&1\\
+2&-1&1\\
+1&2&-1
+\end{pmatrix}
+$$
+
+La columna dels termes independents és
+
+$$
+b=
+\begin{pmatrix}
+2\\
+-1\\
+6
+\end{pmatrix}
+$$
+
+Si afegim aquesta columna a la matriu de coeficients, obtenim la **matriu ampliada**, que representem per $(A\mid b)$:
+
+$$
+(A\mid b)=
 \left(
 \begin{array}{ccc|c}
 1&1&1&2\\
@@ -22,7 +49,7 @@ x+2y-z=6
 \right)
 $$
 
-Cada fila representa una equació i cada columna correspon sempre a la mateixa incògnita.
+Cada fila de la matriu ampliada correspon a una equació. Les primeres columnes contenen els coeficients i la columna situada després de la barra vertical conté els termes independents. Per aplicar el mètode de Gauss treballem amb la matriu ampliada, perquè conserva tota la informació del sistema.
 
 !!! warning "Cal mantenir l'ordre de les incògnites"
     Si l'ordre és $x,y,z$, totes les files han de seguir aquest ordre. Quan una incògnita no apareix en una equació, el seu coeficient és $0$.
@@ -161,7 +188,7 @@ Aquestes transformacions no canvien les solucions del sistema.
 
 !!! tip "Passos del mètode de Gauss"
     1. Ordena les incògnites sempre de la mateixa manera.
-    2. Escriu la taula de coeficients, sense oblidar els zeros.
+    2. Escriu la matriu ampliada, sense oblidar els zeros.
     3. Tria el primer coeficient no nul com a **pivot**.
     4. Fes zeros sota el pivot. Si una divisió produeix fraccions, utilitza una combinació lineal de files.
     5. Passa a la columna següent i repeteix el procés. Si el pivot és zero, permuta les files.

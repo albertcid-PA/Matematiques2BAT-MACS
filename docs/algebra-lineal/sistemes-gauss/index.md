@@ -10,9 +10,9 @@ En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineal
 
 - [**Mètode de Gauss**](02_metode-gauss.md) — transformacions elementals, esglaonament, substitució enrere i interpretació del resultat.
 
-## Plantejament de problemes
+## Problemes de sistemes
 
-- [**Plantejament de problemes amb sistemes**](03_plantejament-problemes.md) — definició de les incògnites, traducció de les condicions, suficiència de les dades i validació de la solució.
+- [**Problemes de sistemes**](03_plantejament-problemes.md) — definició de les incògnites, traducció de les condicions, classificació del sistema i validació de la solució.
 
 ## Per practicar
 

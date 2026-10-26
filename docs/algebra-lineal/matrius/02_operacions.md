@@ -136,7 +136,90 @@ $$
 !!! tip "Files per columnes"
     Per calcular l'element situat a la fila $i$ i la columna $j$ del producte, utilitza la fila $i$ de la primera matriu i la columna $j$ de la segona.
 
-## 4. L'ordre dels factors és important
+## 4. Càlcul d'elements desconeguts
+
+Quan només ens demanen alguns elements desconeguts d'una matriu, no sempre cal efectuar tot el producte. Podem calcular únicament les posicions on apareixen les incògnites i igualar-les amb els elements corresponents de la matriu resultat.
+
+!!! example "Exemple: càlcul només dels elements necessaris"
+    Considerem les matrius d'ordre $3\times2$
+
+    $$
+    A=
+    \begin{pmatrix}
+    1&2\\
+    0&-1\\
+    3&1
+    \end{pmatrix}
+    \qquad
+    X=
+    \begin{pmatrix}
+    x&1\\
+    2&-1\\
+    y&0
+    \end{pmatrix}
+    $$
+
+    Sabem que
+
+    $$
+    A^TX=
+    \begin{pmatrix}
+    7&1\\
+    2&3
+    \end{pmatrix}
+    $$
+
+    Volem determinar només els elements $x$ i $y$ de $X$. Primer transponem $A$:
+
+    $$
+    A^T=
+    \begin{pmatrix}
+    1&0&3\\
+    2&-1&1
+    \end{pmatrix}
+    $$
+
+    Com que $x$ i $y$ només apareixen a la primera columna de $X$, calculem únicament les posicions $(1,1)$ i $(2,1)$ de $A^TX$:
+
+    $$
+    (A^TX)_{11}
+    =
+    \begin{pmatrix}1&0&3\end{pmatrix}
+    \begin{pmatrix}x\\2\\y\end{pmatrix}
+    =x+3y
+    $$
+
+    $$
+    (A^TX)_{21}
+    =
+    \begin{pmatrix}2&-1&1\end{pmatrix}
+    \begin{pmatrix}x\\2\\y\end{pmatrix}
+    =2x+y-2
+    $$
+
+    Igualem aquestes dues posicions amb els elements corresponents de la matriu resultat:
+
+    $$
+    \begin{cases}
+    x+3y=7\\
+    2x+y-2=2
+    \end{cases}
+    \quad\Longleftrightarrow\quad
+    \begin{cases}
+    x+3y=7\\
+    2x+y=4
+    \end{cases}
+    $$
+
+    Resolent el sistema, obtenim
+
+    $$
+    \boxed{x=1,\qquad y=2}
+    $$
+
+    Només hem calculat dues posicions del producte perquè eren les úniques necessàries per trobar les dues incògnites.
+
+## 5. L'ordre dels factors és important
 
 En general, el producte de matrius no és commutatiu:
 
@@ -162,7 +245,7 @@ $$
 
 Per tant, $AB\neq BA$.
 
-## 5. Propietats de les operacions
+## 6. Propietats de les operacions
 
 Sempre que les dimensions permetin efectuar les operacions, es compleixen les propietats següents:
 
@@ -178,34 +261,108 @@ Sempre que les dimensions permetin efectuar les operacions, es compleixen les pr
 !!! warning "El producte no és commutatiu"
     No podem canviar l'ordre dels factors. En particular, d'una igualtat com $AX=B$ no podem passar indistintament a $X=BA^{-1}$: cal tenir en compte a quin costat multiplica cada matriu.
 
-## 6. Potències d'una matriu
+## 7. Potències d'una matriu
 
 Si $A$ és quadrada, podem definir
 
 $$
-A^2=A\cdot A,
+A^2=A\cdot A
 \qquad
-A^3=A\cdot A\cdot A,
+A^3=A^2\cdot A
+\qquad
+A^4=A^3\cdot A
 $$
-
-i, en general, $A^n$ és el producte d'$A$ per ella mateixa $n$ vegades.
 
 Per conveni,
 
 $$
-A^0=I.
+A^0=I
 $$
 
-Per exemple,
+!!! example "Exemple: càlcul successiu de les potències"
+    Considerem
 
-$$
-\begin{pmatrix}
-1&1\\
-0&1
-\end{pmatrix}^{2}
-=
-\begin{pmatrix}
-1&2\\
-0&1
-\end{pmatrix}
-$$
+    $$
+    A=
+    \begin{pmatrix}
+    1&2\\
+    0&1
+    \end{pmatrix}
+    $$
+
+    Primer calculem $A^2$:
+
+    $$
+    A^2=A\cdot A
+    =
+    \begin{pmatrix}
+    1&2\\
+    0&1
+    \end{pmatrix}
+    \begin{pmatrix}
+    1&2\\
+    0&1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    1&4\\
+    0&1
+    \end{pmatrix}
+    $$
+
+    Per calcular $A^3$, aprofitem el resultat anterior:
+
+    $$
+    A^3=A^2\cdot A
+    =
+    \begin{pmatrix}
+    1&4\\
+    0&1
+    \end{pmatrix}
+    \begin{pmatrix}
+    1&2\\
+    0&1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    1&6\\
+    0&1
+    \end{pmatrix}
+    $$
+
+    De la mateixa manera,
+
+    $$
+    A^4=A^3\cdot A
+    =
+    \begin{pmatrix}
+    1&6\\
+    0&1
+    \end{pmatrix}
+    \begin{pmatrix}
+    1&2\\
+    0&1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    1&8\\
+    0&1
+    \end{pmatrix}
+    $$
+
+!!! note "Fixa-t'hi"
+    En general, $A^n$ és el producte d'$A$ per ella mateixa $n$ vegades. Per calcular les potències successives, podem utilitzar
+
+    $$
+    A^n=A^{n-1}\cdot A
+    $$
+
+    En l'exemple anterior s'observa, per a $n=0,1,2,\ldots$, el patró
+
+    $$
+    A^n=
+    \begin{pmatrix}
+    1&2n\\
+    0&1
+    \end{pmatrix}
+    $$
