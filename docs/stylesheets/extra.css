@@ -600,7 +600,8 @@
 .md-typeset .fa-mode-tab,
 .md-typeset .fa-tool button,
 .md-typeset .fa-tool input,
-.md-typeset .fa-tool select {
+.md-typeset .fa-tool select,
+.md-typeset .fa-tool textarea {
   font: inherit;
 }
 
@@ -649,7 +650,8 @@
 
 .md-typeset .fa-tool input[type="text"],
 .md-typeset .fa-tool input[type="number"],
-.md-typeset .fa-tool select {
+.md-typeset .fa-tool select,
+.md-typeset .fa-tool textarea {
   box-sizing: border-box;
   width: 100%;
   min-height: 2.3rem;
@@ -662,6 +664,7 @@
 
 .md-typeset .fa-tool input:focus-visible,
 .md-typeset .fa-tool select:focus-visible,
+.md-typeset .fa-tool textarea:focus-visible,
 .md-typeset .fa-tool button:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--fa-accent) 35%, transparent);
   outline-offset: 2px;
@@ -774,6 +777,14 @@
   border-left: 0.2rem solid #c62828;
   border-radius: 0.35rem;
   background: color-mix(in srgb, #ef5350 12%, var(--md-default-bg-color));
+}
+
+.md-typeset .fa-message p {
+  margin: 0;
+}
+
+.md-typeset .fa-message p + p {
+  margin-top: 0.45rem;
 }
 
 .md-typeset .fa-results {
@@ -1108,6 +1119,305 @@
   display: none;
 }
 
+/* Laboratori de sistemes d'equacions */
+.md-typeset .ls-input-card {
+  border-radius: 0.75rem;
+}
+
+.md-typeset .ls-tool .fa-mode-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: visible;
+}
+
+.md-typeset .ls-tool .fa-mode-tab {
+  min-width: 0;
+  padding-inline: 0.55rem;
+  text-align: center;
+}
+
+.md-typeset .ls-equations {
+  position: relative;
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.65rem;
+  padding: 0.9rem 0.9rem 0.9rem 2.4rem;
+  overflow-x: auto;
+  border: 1px solid var(--fa-border);
+  border-radius: 0.65rem;
+  background: var(--fa-surface);
+}
+
+.md-typeset .ls-equations::before {
+  position: absolute;
+  top: 50%;
+  left: 0.2rem;
+  color: var(--md-default-fg-color);
+  content: "{";
+  font-family: "Latin Modern Math", "Cambria Math", "Times New Roman", serif;
+  font-size: 5.4rem;
+  font-weight: 300;
+  line-height: 1;
+  transform: translateY(-52%) scaleX(0.34);
+  transform-origin: left center;
+}
+
+.md-typeset .ls-tool[data-system-size="3"] .ls-equations::before {
+  font-size: 7.8rem;
+}
+
+.md-typeset .ls-equation-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: max-content;
+  padding: 0;
+}
+
+.md-typeset .ls-equation-row[hidden],
+.md-typeset .ls-z-term[hidden] {
+  display: none !important;
+}
+
+.md-typeset .ls-z-term {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.md-typeset .ls-tool .ls-equation-row input[type="text"] {
+  flex: 0 0 3.8rem;
+  width: 3.8rem;
+  min-height: 2.05rem;
+  padding-inline: 0.4rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .ls-operator,
+.md-typeset .ls-equals {
+  font-weight: 700;
+}
+
+/* Disposició anterior de l'entrada, conservada per poder comparar-la. */
+.md-typeset .ls-tool[data-entry-layout="classic"] .ls-equations {
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+.md-typeset .ls-tool[data-entry-layout="classic"] .ls-equations::before {
+  content: none;
+}
+
+.md-typeset .ls-tool[data-entry-layout="classic"] .ls-equation-row {
+  padding: 0.65rem 0.75rem;
+  overflow-x: auto;
+  border: 1px solid var(--fa-border);
+  border-radius: 0.55rem;
+  background: var(--fa-surface);
+}
+
+.md-typeset .ls-step-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.md-typeset .ls-step-heading h3 {
+  margin: 0.12rem 0 0.35rem;
+}
+
+.md-typeset .ls-classification {
+  display: inline-block;
+  flex: 0 0 auto;
+  padding: 0.18rem 0.52rem;
+  border: 1px solid currentcolor;
+  border-radius: 999px;
+  font-size: 0.78em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.md-typeset .ls-classification--scd {
+  color: #167545;
+  background: color-mix(in srgb, #32a66b 12%, transparent);
+}
+
+.md-typeset .ls-classification--sci {
+  color: #8a5b00;
+  background: color-mix(in srgb, #d99a18 14%, transparent);
+}
+
+.md-typeset .ls-classification--si {
+  color: #a52b2b;
+  background: color-mix(in srgb, #d95555 12%, transparent);
+}
+
+.md-typeset .ls-step-card .fa-formula {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Calculadora de matrius */
+.md-typeset .mc-tool [data-mc-panel][hidden] {
+  display: none !important;
+}
+
+.md-typeset .mc-tool .mc-expression-input {
+  min-height: 6.2rem;
+  padding: 0.8rem 0.9rem;
+  resize: vertical;
+  border-width: 2px;
+  border-color: color-mix(in srgb, var(--fa-accent) 42%, var(--fa-border));
+  background: var(--fa-surface);
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.md-typeset .mc-editor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(12rem, 1fr));
+  gap: 0.75rem;
+  margin-block: 0.7rem;
+}
+
+.md-typeset .mc-editor-grid--three {
+  grid-template-columns: repeat(3, minmax(10rem, 1fr));
+}
+
+.md-typeset .mc-editor-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem;
+  border: 1px solid var(--fa-border);
+  border-radius: 0.55rem;
+  background: var(--fa-surface);
+}
+
+.md-typeset .mc-matrix-input {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(3.25rem, 4.4rem));
+  gap: 0.35rem;
+  padding: 0.15rem 0.65rem;
+}
+
+.md-typeset .mc-matrix-input::before,
+.md-typeset .mc-matrix-input::after {
+  position: absolute;
+  top: 50%;
+  color: var(--md-default-fg-color);
+  font-family: "Times New Roman", serif;
+  font-size: 4.25rem;
+  font-weight: 300;
+  line-height: 1;
+  transform: translateY(-52%) scaleX(0.55);
+}
+
+.md-typeset .mc-matrix-input::before {
+  left: -0.2rem;
+  content: "(";
+}
+
+.md-typeset .mc-matrix-input::after {
+  right: -0.2rem;
+  content: ")";
+}
+
+.md-typeset .mc-matrix-input--system {
+  padding-inline: 1.1rem;
+}
+
+.md-typeset .mc-matrix-input--system::before {
+  left: 0.05rem;
+  transform: translateY(-52%) scaleX(0.38);
+  transform-origin: left center;
+}
+
+.md-typeset .mc-matrix-input--system::after {
+  right: 0.05rem;
+  transform: translateY(-52%) scaleX(0.38);
+  transform-origin: right center;
+}
+
+.md-typeset .mc-tool .mc-matrix-input input[type="text"] {
+  min-height: 2rem;
+  padding: 0.3rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .mc-control-grid {
+  display: grid;
+  grid-template-columns: minmax(12rem, 2fr) minmax(7rem, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.md-typeset .mc-control-grid .fa-label {
+  margin-bottom: 0.3rem;
+}
+
+.md-typeset .mc-system-entry {
+  position: relative;
+  display: grid;
+  gap: 0.65rem;
+  max-width: 25rem;
+  margin-block: 0.55rem 1rem;
+  padding: 0.8rem 1rem 0.8rem 2.35rem;
+  overflow-x: auto;
+  border: 1px solid var(--fa-border);
+  border-radius: 0.65rem;
+  background: var(--fa-surface);
+}
+
+.md-typeset .mc-system-entry::before {
+  position: absolute;
+  top: 50%;
+  left: 0.35rem;
+  color: var(--md-default-fg-color);
+  content: "{";
+  font-family: "Latin Modern Math", "Cambria Math", "Times New Roman", serif;
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1;
+  transform: translateY(-52%) scaleX(0.38);
+  transform-origin: left center;
+}
+
+.md-typeset .mc-system-entry-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: max-content;
+  font-size: 1rem;
+}
+
+.md-typeset .mc-system-entry-operator {
+  font-weight: 700;
+}
+
+.md-typeset .mc-tool .mc-system-entry input[type="text"] {
+  flex: 0 0 3.4rem;
+  width: 3.4rem;
+  min-height: 2.05rem;
+  padding-inline: 0.3rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.md-typeset .mc-tool .dt-step-card .fa-formula {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 @media (max-width: 44rem) {
   .md-typeset .fa-piece-grid,
   .md-typeset .fa-third-piece:not([hidden]),
@@ -1134,5 +1444,72 @@
   .md-typeset .dt-progress {
     display: inline-block;
     margin-bottom: 0.6rem;
+  }
+
+  .md-typeset .ls-tool .ls-equation-row input[type="text"] {
+    box-sizing: border-box;
+    flex-basis: 1.55rem;
+    width: 1.55rem;
+    min-height: 1.9rem;
+    padding-inline: 0.05rem;
+    font-size: 0.75rem;
+  }
+
+  .md-typeset .ls-equations {
+    gap: 0.55rem;
+    padding: 0.75rem 0.2rem 0.75rem 1.7rem;
+  }
+
+  .md-typeset .ls-equations::before {
+    left: 0.05rem;
+    font-size: 4.7rem;
+  }
+
+  .md-typeset .ls-tool[data-system-size="3"] .ls-equations::before {
+    font-size: 6.9rem;
+  }
+
+  .md-typeset .ls-equation-row,
+  .md-typeset .ls-z-term {
+    gap: 0.08rem;
+  }
+
+  .md-typeset .ls-equation-row {
+    font-size: 0.82rem;
+  }
+
+  .md-typeset .ls-equations {
+    overflow-x: hidden;
+  }
+
+  .md-typeset .mc-editor-grid,
+  .md-typeset .mc-editor-grid--three,
+  .md-typeset .mc-control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .md-typeset .mc-system-entry {
+    padding: 0.75rem 0.35rem 0.75rem 1.8rem;
+    overflow-x: hidden;
+  }
+
+  .md-typeset .mc-system-entry::before {
+    left: 0.05rem;
+    font-size: 5.4rem;
+    transform: translateY(-52%) scaleX(0.34);
+  }
+
+  .md-typeset .mc-system-entry-row {
+    gap: 0.15rem;
+    font-size: 0.9rem;
+  }
+
+  .md-typeset .mc-tool .mc-system-entry input[type="text"] {
+    box-sizing: border-box;
+    flex-basis: 2.7rem;
+    width: 2.7rem;
+    min-height: 1.95rem;
+    padding-inline: 0.1rem;
+    font-size: 0.82rem;
   }
 }
