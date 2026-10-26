@@ -461,10 +461,31 @@
       return column < size ? `ls-a${row + 1}${column + 1}` : `ls-b${row + 1}`;
     }
 
+    function setSignedInput(input, value) {
+      const source = String(value).trim();
+      const negative = source.startsWith("-");
+      input.value = negative || source.startsWith("+") ? source.slice(1) : source;
+      input.dataset.sign = negative ? "-1" : "1";
+      const operator = root.querySelector(`#${input.dataset.operatorId}`);
+      operator.textContent = negative ? "−" : "+";
+      operator.style.visibility = "visible";
+    }
+
+    function signedFraction(input) {
+      let source = input.value.trim();
+      if (source.startsWith("-") || source.startsWith("+")) setSignedInput(input, source);
+      source = input.value.trim();
+      return parseFraction(source).mul(parseFraction(input.dataset.sign || "1"));
+    }
+
     function setExample(kind) {
       const example = EXAMPLES[size][kind];
       example.forEach((row, rowIndex) => {
-        for (let column = 0; column < size; column += 1) root.querySelector(`#ls-a${rowIndex + 1}${column + 1}`).value = row[column];
+        for (let column = 0; column < size; column += 1) {
+          const input = root.querySelector(`#ls-a${rowIndex + 1}${column + 1}`);
+          if (column === 0) input.value = row[column];
+          else setSignedInput(input, row[column]);
+        }
         root.querySelector(`#ls-b${rowIndex + 1}`).value = row[size];
       });
       results.hidden = true;
@@ -491,7 +512,7 @@
         const values = [];
         for (let column = 0; column <= size; column += 1) {
           const input = root.querySelector(`#${inputId(row, column)}`);
-          values.push(parseFraction(input.value));
+          values.push(column > 0 && column < size ? signedFraction(input) : parseFraction(input.value));
         }
         matrix.push(values);
       }
@@ -550,6 +571,14 @@
 
     tabs.forEach((tab) => tab.addEventListener("click", () => setSize(tab.dataset.systemSize)));
     root.querySelectorAll("[data-system-example]").forEach((button) => button.addEventListener("click", () => setExample(button.dataset.systemExample)));
+    root.querySelectorAll("[data-ls-signed]").forEach((input) => {
+      const operator = root.querySelector(`#${input.dataset.operatorId}`);
+      input.addEventListener("focus", () => {
+        if (input.dataset.sign === "-1" && !input.value.trim().startsWith("-")) input.value = `-${input.value.trim()}`;
+        operator.style.visibility = "hidden";
+      });
+      input.addEventListener("blur", () => setSignedInput(input, input.value));
+    });
     solveButton.addEventListener("click", solve);
     nextButton.addEventListener("click", revealNextStep);
     showAllButton.addEventListener("click", () => {

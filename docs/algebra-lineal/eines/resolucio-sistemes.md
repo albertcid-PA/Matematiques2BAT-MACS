@@ -5,7 +5,7 @@
 
     Pots mostrar els passos d'un en un per comparar-los amb el teu procediment.
 
-<div id="linear-system-tool" class="fa-tool ls-tool" data-entry-layout="system" data-system-size="2" data-tool-url="../../../javascripts/linear-system-tool.js?v=3">
+<div id="linear-system-tool" class="fa-tool ls-tool" data-entry-layout="system" data-system-size="2" data-tool-url="../../../javascripts/linear-system-tool.js?v=4">
   <noscript>
     <p class="fa-message fa-message--error">Cal activar el JavaScript del navegador per utilitzar aquesta eina.</p>
   </noscript>
@@ -21,27 +21,27 @@
     <div class="ls-equations" aria-label="Coeficients del sistema">
       <div class="ls-equation-row" data-equation-row="0">
         <input id="ls-a11" type="text" inputmode="decimal" value="1" aria-label="Coeficient de x de la primera equació"><span>$x$</span>
-        <span class="ls-operator">+</span><input id="ls-a12" type="text" inputmode="decimal" value="1" aria-label="Coeficient de y de la primera equació"><span>$y$</span>
-        <span class="ls-z-term" hidden><span class="ls-operator">+</span><input id="ls-a13" type="text" inputmode="decimal" value="0" aria-label="Coeficient de z de la primera equació"><span>$z$</span></span>
+        <span id="ls-op-12" class="ls-operator">+</span><input id="ls-a12" type="text" inputmode="decimal" value="1" data-ls-signed data-sign="1" data-operator-id="ls-op-12" aria-label="Coeficient de y de la primera equació"><span>$y$</span>
+        <span class="ls-z-term" hidden><span id="ls-op-13" class="ls-operator">+</span><input id="ls-a13" type="text" inputmode="decimal" value="0" data-ls-signed data-sign="1" data-operator-id="ls-op-13" aria-label="Coeficient de z de la primera equació"><span>$z$</span></span>
         <span class="ls-equals">=</span><input id="ls-b1" type="text" inputmode="decimal" value="5" aria-label="Terme independent de la primera equació">
       </div>
 
       <div class="ls-equation-row" data-equation-row="1">
         <input id="ls-a21" type="text" inputmode="decimal" value="1" aria-label="Coeficient de x de la segona equació"><span>$x$</span>
-        <span class="ls-operator">+</span><input id="ls-a22" type="text" inputmode="decimal" value="-1" aria-label="Coeficient de y de la segona equació"><span>$y$</span>
-        <span class="ls-z-term" hidden><span class="ls-operator">+</span><input id="ls-a23" type="text" inputmode="decimal" value="0" aria-label="Coeficient de z de la segona equació"><span>$z$</span></span>
+        <span id="ls-op-22" class="ls-operator">−</span><input id="ls-a22" type="text" inputmode="decimal" value="1" data-ls-signed data-sign="-1" data-operator-id="ls-op-22" aria-label="Coeficient de y de la segona equació"><span>$y$</span>
+        <span class="ls-z-term" hidden><span id="ls-op-23" class="ls-operator">+</span><input id="ls-a23" type="text" inputmode="decimal" value="0" data-ls-signed data-sign="1" data-operator-id="ls-op-23" aria-label="Coeficient de z de la segona equació"><span>$z$</span></span>
         <span class="ls-equals">=</span><input id="ls-b2" type="text" inputmode="decimal" value="1" aria-label="Terme independent de la segona equació">
       </div>
 
       <div class="ls-equation-row" data-equation-row="2" hidden>
         <input id="ls-a31" type="text" inputmode="decimal" value="1" aria-label="Coeficient de x de la tercera equació"><span>$x$</span>
-        <span class="ls-operator">+</span><input id="ls-a32" type="text" inputmode="decimal" value="2" aria-label="Coeficient de y de la tercera equació"><span>$y$</span>
-        <span class="ls-z-term"><span class="ls-operator">+</span><input id="ls-a33" type="text" inputmode="decimal" value="-1" aria-label="Coeficient de z de la tercera equació"><span>$z$</span></span>
+        <span id="ls-op-32" class="ls-operator">+</span><input id="ls-a32" type="text" inputmode="decimal" value="2" data-ls-signed data-sign="1" data-operator-id="ls-op-32" aria-label="Coeficient de y de la tercera equació"><span>$y$</span>
+        <span class="ls-z-term"><span id="ls-op-33" class="ls-operator">−</span><input id="ls-a33" type="text" inputmode="decimal" value="1" data-ls-signed data-sign="-1" data-operator-id="ls-op-33" aria-label="Coeficient de z de la tercera equació"><span>$z$</span></span>
         <span class="ls-equals">=</span><input id="ls-b3" type="text" inputmode="decimal" value="6" aria-label="Terme independent de la tercera equació">
       </div>
     </div>
 
-    <p class="fa-help">Pots escriure nombres enters, decimals amb coma o punt i fraccions com <code>3/2</code>.</p>
+    <p class="fa-help">Pots escriure nombres enters, decimals amb coma o punt i fraccions com <code>3/2</code>. Si introdueixes un coeficient negatiu, el signe es col·locarà automàticament entre els termes.</p>
 
     <div class="fa-example-row" aria-label="Exemples de sistemes">
       <span>Prova:</span>
