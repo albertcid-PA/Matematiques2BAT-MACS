@@ -52,8 +52,9 @@ nav = [
     { "Laboratori de mates" = [
       { "Índex" = "algebra-lineal/eines/index.md" },
       { "Resolució de sistemes" = "algebra-lineal/eines/resolucio-sistemes.md" },
+      { "Operacions amb matrius" = "algebra-lineal/eines/calculadora-matrius.md" },
       { "Equacions matricials" = "algebra-lineal/eines/aillament-equacions-matricials.md" },
-      { "Calculadora de matrius" = "algebra-lineal/eines/calculadora-matrius.md" },
+      { "Sistemes matricials" = "algebra-lineal/eines/sistemes-matricials.md" },
     ] },
   ] },
   { "Probabilitat i estadística" = [
