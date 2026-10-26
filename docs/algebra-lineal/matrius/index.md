@@ -16,4 +16,8 @@ En aquest tema aprendrem a representar informació mitjançant matrius, a operar
 
 ## Equacions i sistemes matricials
 
-- [**Equacions i sistemes matricials**](04_equacions-sistemes-matricials.md) — aïllament d'una matriu incògnita i resolució de sistemes d'equacions matricials.
+- [**Equacions i sistemes matricials**](04_equacions-sistemes-matricials.md) — aïllament d'una matriu incògnita, resolució per coeficients, sistemes d'equacions matricials i resolució de sistemes lineals amb la matriu inversa.
+
+## Problemes de matrius
+
+- [**Problemes de matrius**](05_problemes-matrius.md) — organització de dades, elecció de les operacions i interpretació dels resultats en problemes contextualitzats.
