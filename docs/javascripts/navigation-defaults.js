@@ -1,10 +1,7 @@
 (function () {
   "use strict";
 
-  const mobileNavigation = window.matchMedia("(max-width: 76.234375em)");
-
   function openAlgebraLab() {
-    if (!mobileNavigation.matches) return;
     const toggle = document.getElementById("__nav_3_5");
     if (toggle) toggle.checked = true;
   }
@@ -15,5 +12,4 @@
     openAlgebraLab();
   }
 
-  mobileNavigation.addEventListener("change", openAlgebraLab);
 }());
