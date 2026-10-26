@@ -163,7 +163,7 @@
 }
 
 .md-sidebar--primary #__nav_3_5 + .md-nav__container + .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
-  padding: 0.22rem 0.45rem;
+  padding-block: 0.22rem;
   line-height: 1.25;
 }
 
