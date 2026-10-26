@@ -1,12 +1,5 @@
 # Sistemes matricials
 
-<nav class="lab-mobile-nav" aria-label="Eines del Laboratori de mates">
-  <a href="resolucio-sistemes.md">Resolució de sistemes</a>
-  <a href="calculadora-matrius.md">Operacions amb matrius</a>
-  <a href="aillament-equacions-matricials.md">Equacions matricials</a>
-  <a href="sistemes-matricials.md" aria-current="page">Sistemes matricials</a>
-</nav>
-
 !!! abstract "Resolució pas a pas"
     Aquesta eina resol **sistemes de dues equacions** en què les incògnites $X$ i $Y$ són matrius d'ordre $2\times2$.
 

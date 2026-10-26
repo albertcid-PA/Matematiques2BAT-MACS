@@ -1,12 +1,5 @@
 # Operacions amb matrius
 
-<nav class="lab-mobile-nav" aria-label="Eines del Laboratori de mates">
-  <a href="resolucio-sistemes.md">Resolució de sistemes</a>
-  <a href="calculadora-matrius.md" aria-current="page">Operacions amb matrius</a>
-  <a href="aillament-equacions-matricials.md">Equacions matricials</a>
-  <a href="sistemes-matricials.md">Sistemes matricials</a>
-</nav>
-
 !!! abstract "Càlcul matricial pas a pas"
     Aquesta eina permet practicar **operacions amb matrius**. Els càlculs es presenten de manera exacta i amb els passos que caldria justificar en paper.
 
