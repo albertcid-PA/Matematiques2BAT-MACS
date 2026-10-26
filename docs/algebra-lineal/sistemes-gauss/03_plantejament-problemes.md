@@ -1,4 +1,4 @@
-# Plantejament de problemes amb sistemes
+# Problemes de sistemes
 
 En molts problemes, les equacions no venen donades: cal construir-les a partir de l'enunciat. La resolució no acaba quan obtenim uns nombres; també hem de comprovar que tenen sentit en el context.
 
@@ -28,16 +28,16 @@ Suposem que $x$, $y$ i $z$ representen tres quantitats.
 !!! warning "No comencis a calcular massa aviat"
     Primer cal definir les incògnites i escriure totes les equacions. Si no sabem què representa cada lletra, no podrem interpretar correctament el resultat.
 
-## 3. Exemple complet: quan falta una condició
+## 3. Exemple complet: com canvia la classificació
 
 !!! example "Lots de material escolar"
     Una cooperativa prepara $120$ lots de tres tipus: bàsic, estàndard i complet. El nombre de lots estàndard és el doble del nombre de lots complets.
 
-    **a)** Es pot determinar quants lots s'han preparat de cada tipus?
+    **a)** Amb aquestes dades, es pot determinar quants lots s'han preparat de cada tipus?
 
     **b)** Sabem, a més, que els lots costen $8\,€$, $5\,€$ i $3\,€$, respectivament, i que el valor total és de $685\,€$. Quants lots hi ha de cada tipus?
 
-### 3.1 Definició de les incògnites
+    **c)** Un altre full de control afirma que s'han utilitzat $250$ etiquetes, dues per cada lot. Aquesta dada és compatible amb les dades inicials?
 
 Anomenem:
 
@@ -45,48 +45,40 @@ Anomenem:
 - $y$: nombre de lots estàndard;
 - $z$: nombre de lots complets.
 
-### 3.2 Amb les dues primeres condicions
-
-Les dades inicials donen el sistema
+Comencem només amb les dades inicials. El sistema és
 
 $$
 \begin{cases}
 x+y+z=120\\
-y=2z
+y-2z=0
 \end{cases}
 $$
 
 Hi ha dues equacions independents i tres incògnites. Si prenem $z=\lambda$, obtenim
 
 $$
-y=2\lambda
-$$
-
-i
-
-$$
-x=120-3\lambda.
+y=2\lambda,
+\qquad
+x=120-3\lambda
 $$
 
 Per tant,
 
 $$
-\boxed{(x,y,z)=(120-3\lambda,2\lambda,\lambda).}
+\boxed{(x,y,z)=(120-3\lambda,2\lambda,\lambda)}
 $$
 
-El sistema és **compatible indeterminat**: les dades no permeten determinar una única distribució dels lots.
+El sistema és **compatible indeterminat (SCI)**: les dades no permeten determinar una única distribució dels lots.
 
-Com que les incògnites representen quantitats de lots, les solucions vàlides han de ser nombres enters no negatius. Aquesta restricció prové del context, no del mètode de Gauss.
+Matemàticament, $\lambda\in\mathbb{R}$. Com que les incògnites representen quantitats de lots, les solucions vàlides en el context corresponen als valors enters de $\lambda$ compresos entre $0$ i $40$.
 
-### 3.3 Afegim la condició econòmica
-
-La nova condició és
+Quan hi afegim la informació econòmica de l'apartat **b)**, obtenim una tercera equació:
 
 $$
-8x+5y+3z=685.
+8x+5y+3z=685
 $$
 
-Ara tenim el sistema
+El sistema complet és
 
 $$
 \begin{cases}
@@ -124,36 +116,70 @@ $$
 0&1&-2&0\\
 0&0&-11&-275
 \end{array}
-\right).
+\right)
 $$
 
 Resolem de baix cap amunt:
 
 $$
-z=25,
+z=25
 \qquad
-y=50,
+y=50
 \qquad
-x=45.
+x=45
 $$
 
-El sistema és **compatible determinat** perquè hem pogut determinar totes les incògnites. La cooperativa ha preparat $45$ lots bàsics, $50$ d'estàndard i $25$ de complets.
+El sistema és **compatible determinat (SCD)** perquè hem pogut determinar totes les incògnites. La cooperativa ha preparat $45$ lots bàsics, $50$ d'estàndard i $25$ de complets.
 
 Comprovem el resultat:
 
 $$
-45+50+25=120,
-$$
-
-$$
-50=2\cdot25,
-$$
-
-$$
-8\cdot45+5\cdot50+3\cdot25=685.
+\begin{aligned}
+45+50+25&=120\\
+50&=2\cdot25\\
+8\cdot45+5\cdot50+3\cdot25&=685
+\end{aligned}
 $$
 
 Les tres condicions es compleixen.
+
+Finalment, estudiem la dada alternativa de l'apartat **c)**. Si cada lot porta dues etiquetes, el nou registre es tradueix en
+
+$$
+2x+2y+2z=250
+$$
+
+Juntament amb les dades inicials, tindríem
+
+$$
+\begin{cases}
+x+y+z=120\\
+y-2z=0\\
+2x+2y+2z=250
+\end{cases}
+$$
+
+En esglaonar la matriu ampliada,
+
+$$
+\left(
+\begin{array}{ccc|c}
+1&1&1&120\\
+0&1&-2&0\\
+2&2&2&250
+\end{array}
+\right)
+\xrightarrow{F_3=F_3-2F_1}
+\left(
+\begin{array}{ccc|c}
+1&1&1&120\\
+0&1&-2&0\\
+0&0&0&10
+\end{array}
+\right)
+$$
+
+L'última fila representa la igualtat impossible $0=10$. Per tant, les dades són contradictòries i el sistema és **incompatible (SI)**: no hi ha cap distribució de lots que compleixi totes les condicions.
 
 ## 4. Què significa cada tipus de sistema en un problema?
 

@@ -13,6 +13,11 @@ Una matriu permet ordenar nombres en files i columnes. Aquesta disposició facil
 
     El símbol $a_{ij}$ designa l'element situat a la fila $i$ i la columna $j$. Si la matriu té $m$ files i $n$ columnes, diem que és d'**ordre** o **dimensió** $m\times n$.
 
+!!! note "Conveni de notació"
+    Utilitzarem **lletres majúscules** com $A$, $B$, $C$ o $X$ per representar matrius. Les **lletres minúscules** com $a$, $b$, $c$, $x$ o $y$ representaran nombres: poden ser elements d'una matriu, coeficients o incògnites. Per tant, una minúscula també pot aparèixer fora d'una matriu com a factor escalar, per exemple $aA$.
+
+    Així, a $A=(a_{ij})_{m\times n}$, $A$ és la matriu completa i $a_{ij}$ és un dels seus elements.
+
 De manera desenvolupada, aquesta notació representa
 
 $$
