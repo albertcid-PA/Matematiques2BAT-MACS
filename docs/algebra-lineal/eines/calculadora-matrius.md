@@ -1,21 +1,16 @@
-# Calculadora de matrius
+# Operacions amb matrius
 
-!!! abstract "Càlcul matricial numèric pas a pas"
-    Aquesta eina permet practicar **operacions amb matrius** i resoldre **sistemes d'equacions matricials**. Els càlculs es presenten de manera exacta i amb els passos que caldria justificar en paper.
+!!! abstract "Càlcul matricial pas a pas"
+    Aquesta eina permet practicar **operacions amb matrius**. Els càlculs es presenten de manera exacta i amb els passos que caldria justificar en paper.
 
     Pots mostrar els passos d'un en un per comparar-los amb el teu procediment.
 
     Per aïllar $X$ en una equació matricial, utilitza l'eina [**Equacions matricials**](aillament-equacions-matricials.md).
 
-<div id="matrix-calculator-tool" class="fa-tool mc-tool" data-tool-url="../../../javascripts/matrix-calculator-tool.js?v=20">
+<div id="matrix-calculator-tool" class="fa-tool mc-tool" data-tool-url="../../../javascripts/matrix-calculator-tool.js?v=21">
   <noscript>
     <p class="fa-message">Cal activar el JavaScript del navegador per utilitzar aquesta eina.</p>
   </noscript>
-
-  <div class="fa-mode-tabs" role="tablist" aria-label="Tipus de càlcul matricial">
-    <button class="fa-mode-tab is-active" type="button" role="tab" aria-selected="true" data-mc-mode="operations">Operacions</button>
-    <button class="fa-mode-tab" type="button" role="tab" aria-selected="false" data-mc-mode="systems">Sistemes matricials</button>
-  </div>
 
   <div class="fa-input-card mc-input-card">
     <section data-mc-panel="operations">
@@ -43,38 +38,6 @@
       </div>
     </section>
 
-    <section data-mc-panel="systems" hidden>
-      <p class="fa-label">Sistema matricial</p>
-      <p class="fa-help"><strong>Completa els coeficients de $X$ i $Y$</strong></p>
-      <div class="mc-system-entry" aria-label="Coeficients del sistema matricial">
-        <div class="mc-system-entry-row">
-          <input id="mc-sys-a" type="text" inputmode="decimal" value="1" aria-label="Coeficient de X de la primera equació"><span>$X$</span>
-          <span id="mc-sys-b-operator" class="mc-system-entry-operator">+</span>
-          <input id="mc-sys-b" type="text" inputmode="decimal" value="1" data-sign="1" aria-label="Coeficient de Y de la primera equació"><span>$Y=P$</span>
-        </div>
-        <div class="mc-system-entry-row">
-          <input id="mc-sys-c" type="text" inputmode="decimal" value="1" aria-label="Coeficient de X de la segona equació"><span>$X$</span>
-          <span id="mc-sys-d-operator" class="mc-system-entry-operator">−</span>
-          <input id="mc-sys-d" type="text" inputmode="decimal" value="1" data-sign="-1" aria-label="Coeficient de Y de la segona equació"><span>$Y=Q$</span>
-        </div>
-      </div>
-      <p class="fa-help"><strong>Matrius dels termes independents</strong></p>
-      <div class="mc-editor-grid">
-        <div class="mc-editor-card"><strong>$P=$</strong><div class="mc-matrix-input mc-matrix-input--system">
-          <input id="mc-sys-p11" type="text" inputmode="decimal" value="4"><input id="mc-sys-p12" type="text" inputmode="decimal" value="6">
-          <input id="mc-sys-p21" type="text" inputmode="decimal" value="2"><input id="mc-sys-p22" type="text" inputmode="decimal" value="0">
-        </div></div>
-        <div class="mc-editor-card"><strong>$Q=$</strong><div class="mc-matrix-input mc-matrix-input--system">
-          <input id="mc-sys-q11" type="text" inputmode="decimal" value="2"><input id="mc-sys-q12" type="text" inputmode="decimal" value="0">
-          <input id="mc-sys-q21" type="text" inputmode="decimal" value="0"><input id="mc-sys-q22" type="text" inputmode="decimal" value="2">
-        </div></div>
-      </div>
-      <div class="fa-actions">
-        <button id="mc-sys-calculate" class="fa-primary" type="button">Resol pas a pas</button>
-        <button id="mc-sys-reset" type="button">Reinicia</button>
-      </div>
-    </section>
-
     <p class="fa-help">Pots escriure enters, decimals amb coma o punt i fraccions com <code>3/2</code>.</p>
     <span id="mc-status" class="fa-status" role="status" aria-live="polite"></span>
   </div>
@@ -91,12 +54,12 @@
 </div>
 
 !!! note "Criteri de càlcul"
-    A la pestanya d'operacions pots introduir matrius rectangulars de diferents ordres. La pestanya **Sistemes matricials** treballa amb matrius numèriques d'ordre $2\times2$. L'exemple específic d'operacions utilitza matrius $3\times2$ per practicar la transposició i calcular només els elements necessaris d'un producte.
+    Pots introduir matrius rectangulars de diferents ordres. L'exemple específic utilitza matrius $3\times2$ per practicar la transposició i calcular només els elements necessaris d'un producte.
 
 !!! note "Conveni de notació"
     Les **majúscules** $A$, $B$, $C$, $X$ i $Y$ representen matrius. Les **minúscules** $a$, $b$, $c$, $x$, $y$... representen nombres: poden aparèixer dins d'una matriu com a elements o fora com a coeficients escalars que multipliquen una matriu.
 
-    En aquesta calculadora cal escriure els elements de cada matriu. Per treballar només amb els noms $A$, $B$, $C$... i obtenir una expressió $X=\ldots$, utilitza [**Equacions matricials**](aillament-equacions-matricials.md).
+    En aquesta eina cal escriure els elements de cada matriu. Per treballar només amb els noms $A$, $B$, $C$... i obtenir una expressió $X=\ldots$, utilitza [**Equacions matricials**](aillament-equacions-matricials.md).
 
 !!! warning "Abast de l'eina"
-    La calculadora resol operacions numèriques, igualtats matricials amb elements desconeguts i sistemes matricials. Quan una operació no és possible, n'indica el motiu i recorda la propietat teòrica que cal aplicar. No estudia sistemes amb paràmetres ni substitueix la justificació de les dimensions i de l'ordre dels factors.
+    L'eina resol operacions numèriques i igualtats matricials amb elements desconeguts. Quan una operació no és possible, n'indica el motiu i recorda la propietat teòrica que cal aplicar. No substitueix la justificació de les dimensions ni de l'ordre dels factors.

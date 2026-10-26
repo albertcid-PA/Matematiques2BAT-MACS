@@ -1134,11 +1134,6 @@
     }
 
     tabs.forEach((tab) => tab.addEventListener("click", () => setMode(tab.dataset.mcMode)));
-    root.querySelector("#mc-op-calculate").addEventListener("click", calculateOperation);
-    root.querySelector("#mc-op-example").addEventListener("click", () => {
-      root.querySelector("#mc-op-expression").value = "[[1 2][0 -1][3 1]]^t * [[x 1][2 -1][y 0]] = [[7 1][2 3]]";
-      calculateOperation();
-    });
     const operationExamples = {
       sum: "[[-2 3][-2 3][3 -2]] + [[1 0][4 -1][-2 5]]",
       product: "[[1 2 3][0 -1 2]] * [[2 1][-1 0][3 2]]",
@@ -1150,36 +1145,49 @@
       combined: "2 * [[1 0][2 1]] + ([[1 1][0 1]]^2) - [[1 0][0 1]]",
       incompatible: "[[1 2][3 4]] + [[1 0 2][2 1 3]]",
     };
-    root.querySelectorAll("[data-mc-op-example]").forEach((button) => button.addEventListener("click", () => {
-      root.querySelector("#mc-op-expression").value = operationExamples[button.dataset.mcOpExample];
-      results.hidden = true;
-      message.hidden = true;
-      status.textContent = "";
-    }));
-    root.querySelector("#mc-op-reset").addEventListener("click", resetOperation);
-    [["mc-sys-b", "mc-sys-b-operator"], ["mc-sys-d", "mc-sys-d-operator"]].forEach(([inputId, operatorId]) => {
-      const input = root.querySelector(`#${inputId}`);
-      const operator = root.querySelector(`#${operatorId}`);
-      input.addEventListener("focus", () => {
-        if (input.dataset.sign === "-1" && !input.value.trim().startsWith("-")) input.value = `-${input.value.trim()}`;
-        operator.style.visibility = "hidden";
+
+    const operationCalculate = root.querySelector("#mc-op-calculate");
+    if (operationCalculate) {
+      operationCalculate.addEventListener("click", calculateOperation);
+      root.querySelector("#mc-op-example").addEventListener("click", () => {
+        root.querySelector("#mc-op-expression").value = "[[1 2][0 -1][3 1]]^t * [[x 1][2 -1][y 0]] = [[7 1][2 3]]";
+        calculateOperation();
       });
-      input.addEventListener("blur", () => {
-        let source = input.value.trim();
-        if (source.startsWith("-")) {
-          input.dataset.sign = "-1";
-          source = source.slice(1);
-        } else if (source.startsWith("+")) {
-          input.dataset.sign = "1";
-          source = source.slice(1);
-        }
-        input.value = source;
-        operator.textContent = input.dataset.sign === "-1" ? "−" : "+";
-        operator.style.visibility = "visible";
+      root.querySelectorAll("[data-mc-op-example]").forEach((button) => button.addEventListener("click", () => {
+        root.querySelector("#mc-op-expression").value = operationExamples[button.dataset.mcOpExample];
+        results.hidden = true;
+        message.hidden = true;
+        status.textContent = "";
+      }));
+      root.querySelector("#mc-op-reset").addEventListener("click", resetOperation);
+    }
+
+    const systemCalculate = root.querySelector("#mc-sys-calculate");
+    if (systemCalculate) {
+      [["mc-sys-b", "mc-sys-b-operator"], ["mc-sys-d", "mc-sys-d-operator"]].forEach(([inputId, operatorId]) => {
+        const input = root.querySelector(`#${inputId}`);
+        const operator = root.querySelector(`#${operatorId}`);
+        input.addEventListener("focus", () => {
+          if (input.dataset.sign === "-1" && !input.value.trim().startsWith("-")) input.value = `-${input.value.trim()}`;
+          operator.style.visibility = "hidden";
+        });
+        input.addEventListener("blur", () => {
+          let source = input.value.trim();
+          if (source.startsWith("-")) {
+            input.dataset.sign = "-1";
+            source = source.slice(1);
+          } else if (source.startsWith("+")) {
+            input.dataset.sign = "1";
+            source = source.slice(1);
+          }
+          input.value = source;
+          operator.textContent = input.dataset.sign === "-1" ? "−" : "+";
+          operator.style.visibility = "visible";
+        });
       });
-    });
-    root.querySelector("#mc-sys-calculate").addEventListener("click", calculateSystem);
-    root.querySelector("#mc-sys-reset").addEventListener("click", resetSystem);
+      systemCalculate.addEventListener("click", calculateSystem);
+      root.querySelector("#mc-sys-reset").addEventListener("click", resetSystem);
+    }
     nextButton.addEventListener("click", () => {
       if (!analysis || revealed >= analysis.steps.length) return;
       revealed += 1;
