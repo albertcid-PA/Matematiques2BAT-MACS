@@ -167,31 +167,15 @@
   line-height: 1.25;
 }
 
-@media screen and (min-width: 76.25em) {
-  .md-sidebar--primary #__nav_3_5 + .md-nav__container > label {
-    display: flex;
-  }
+.md-sidebar--primary #__nav_3_5 + .md-nav__container > label {
+  display: none;
+}
 
-  .md-sidebar--primary #__nav_3_5 + .md-nav__container .md-nav__icon::after {
-    display: block;
-  }
-
-  .md-sidebar--primary #__nav_3_5 + .md-nav__container + .md-nav {
-    display: grid;
-    grid-template-rows: 0fr;
-    visibility: collapse;
-    opacity: 0;
-  }
-
-  .md-sidebar--primary #__nav_3_5:checked + .md-nav__container + .md-nav {
-    grid-template-rows: minmax(0.4rem, 1fr);
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .md-sidebar--primary #__nav_3_5:checked + .md-nav__container .md-nav__icon::after {
-    transform: rotate(90deg);
-  }
+.md-sidebar--primary #__nav_3_5 + .md-nav__container + .md-nav {
+  display: grid;
+  grid-template-rows: minmax(0.4rem, 1fr);
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Reuneix els dossiers de pràctica en targetes clares i adaptables. */
