@@ -4,7 +4,7 @@ En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineal
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega 3. Sistemes i mètode de Gauss**](../../assets/apunts/tema_3_sistemes_metode_gauss.pdf?v=1){ target="_blank" rel="noopener" }
+[**Descarrega 3. Sistemes i mètode de Gauss**](../../assets/apunts/tema_3_sistemes_metode_gauss.pdf?v=2){ target="_blank" rel="noopener" }
 
 </div>
 

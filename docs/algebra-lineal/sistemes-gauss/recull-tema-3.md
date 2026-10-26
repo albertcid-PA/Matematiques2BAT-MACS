@@ -747,153 +747,184 @@ Suposem que $x$, $y$ i $z$ representen tres quantitats.
 !!! example "Lots de material escolar"
     Una cooperativa prepara $120$ lots de tres tipus: bàsic, estàndard i complet. El nombre de lots estàndard és el doble del nombre de lots complets.
 
-    **a)** Amb aquestes dades, es pot determinar quants lots s'han preparat de cada tipus?
+    **a)** Un primer full de control afirma que s'han utilitzat $240$ etiquetes, dues per cada lot. Amb aquesta informació, es pot determinar quants lots s'han preparat de cada tipus?
 
     **b)** Sabem, a més, que els lots costen $8\,€$, $5\,€$ i $3\,€$, respectivament, i que el valor total és de $685\,€$. Quants lots hi ha de cada tipus?
 
     **c)** Un altre full de control afirma que s'han utilitzat $250$ etiquetes, dues per cada lot. Aquesta dada és compatible amb les dades inicials?
 
-Anomenem:
+    **Resolució**
 
-- $x$: nombre de lots bàsics;
-- $y$: nombre de lots estàndard;
-- $z$: nombre de lots complets.
+    Anomenem:
 
-Comencem només amb les dades inicials. El sistema és
+    - $x$: nombre de lots bàsics;
+    - $y$: nombre de lots estàndard;
+    - $z$: nombre de lots complets.
 
-$$
-\begin{cases}
-x+y+z=120\\
-y-2z=0
-\end{cases}
-$$
+    **Apartat a)**
 
-Hi ha dues equacions independents i tres incògnites. Si prenem $z=\lambda$, obtenim
+    Si cada lot porta dues etiquetes, la informació del primer full de control es tradueix en $2x+2y+2z=240$. El sistema és
 
-$$
-y=2\lambda,
-\qquad
-x=120-3\lambda
-$$
+    $$
+    \begin{cases}
+    x+y+z=120\\
+    y-2z=0\\
+    2x+2y+2z=240
+    \end{cases}
+    $$
 
-Per tant,
+    Apliquem el mètode de Gauss:
 
-$$
-\boxed{(x,y,z)=(120-3\lambda,2\lambda,\lambda)}
-$$
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&120\\
+    0&1&-2&0\\
+    2&2&2&240
+    \end{array}
+    \right)
+    \xrightarrow{F_3=F_3-2F_1}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&120\\
+    0&1&-2&0\\
+    0&0&0&0
+    \end{array}
+    \right)
+    $$
 
-El sistema és **compatible indeterminat (SCI)**: les dades no permeten determinar una única distribució dels lots.
+    L'última fila representa la identitat $0=0$: la dada de les $240$ etiquetes és el doble de la primera equació i no aporta informació nova. Queda una incògnita lliure.
 
-Matemàticament, $\lambda\in\mathbb{R}$. Com que les incògnites representen quantitats de lots, les solucions vàlides en el context corresponen als valors enters de $\lambda$ compresos entre $0$ i $40$.
+    Si prenem $z=\lambda$, obtenim
 
-Quan hi afegim la informació econòmica de l'apartat **b)**, obtenim una tercera equació:
+    $$
+    y=2\lambda,
+    \qquad
+    x=120-3\lambda
+    $$
 
-$$
-8x+5y+3z=685
-$$
+    Per tant,
 
-El sistema complet és
+    $$
+    \boxed{(x,y,z)=(120-3\lambda,2\lambda,\lambda)}
+    $$
 
-$$
-\begin{cases}
-x+y+z=120\\
-y-2z=0\\
-8x+5y+3z=685
-\end{cases}
-$$
+    El sistema és **compatible indeterminat (SCI)**: la dada repetida no permet determinar una única distribució dels lots.
 
-L'esglaonem:
+    Matemàticament, $\lambda\in\mathbb{R}$. Com que les incògnites representen quantitats de lots, les solucions vàlides en el context corresponen als valors enters de $\lambda$ compresos entre $0$ i $40$.
 
-$$
-\left(
-\begin{array}{ccc|c}
-1&1&1&120\\
-0&1&-2&0\\
-8&5&3&685
-\end{array}
-\right)
-\xrightarrow{F_3=F_3-8F_1}
-\left(
-\begin{array}{ccc|c}
-1&1&1&120\\
-0&1&-2&0\\
-0&-3&-5&-275
-\end{array}
-\right)
-$$
+    **Apartat b)**
 
-$$
-\xrightarrow{F_3=F_3+3F_2}
-\left(
-\begin{array}{ccc|c}
-1&1&1&120\\
-0&1&-2&0\\
-0&0&-11&-275
-\end{array}
-\right)
-$$
+    La informació econòmica proporciona una condició nova:
 
-Resolem de baix cap amunt:
+    $$
+    8x+5y+3z=685
+    $$
 
-$$
-z=25
-\qquad
-y=50
-\qquad
-x=45
-$$
+    El sistema és
 
-El sistema és **compatible determinat (SCD)** perquè hem pogut determinar totes les incògnites. La cooperativa ha preparat $45$ lots bàsics, $50$ d'estàndard i $25$ de complets.
+    $$
+    \begin{cases}
+    x+y+z=120\\
+    y-2z=0\\
+    8x+5y+3z=685
+    \end{cases}
+    $$
 
-Comprovem el resultat:
+    L'esglaonem:
 
-$$
-\begin{aligned}
-45+50+25&=120\\
-50&=2\cdot25\\
-8\cdot45+5\cdot50+3\cdot25&=685
-\end{aligned}
-$$
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&120\\
+    0&1&-2&0\\
+    8&5&3&685
+    \end{array}
+    \right)
+    \xrightarrow{F_3=F_3-8F_1}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&120\\
+    0&1&-2&0\\
+    0&-3&-5&-275
+    \end{array}
+    \right)
+    $$
 
-Les tres condicions es compleixen.
+    $$
+    \xrightarrow{F_3=F_3+3F_2}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&120\\
+    0&1&-2&0\\
+    0&0&-11&-275
+    \end{array}
+    \right)
+    $$
 
-Finalment, estudiem la dada alternativa de l'apartat **c)**. Si cada lot porta dues etiquetes, el nou registre es tradueix en
+    Resolem de baix cap amunt:
 
-$$
-2x+2y+2z=250
-$$
+    $$
+    z=25
+    \qquad
+    y=50
+    \qquad
+    x=45
+    $$
 
-Juntament amb les dades inicials, tindríem
+    El sistema és **compatible determinat (SCD)** perquè hem pogut determinar totes les incògnites. La cooperativa ha preparat $45$ lots bàsics, $50$ d'estàndard i $25$ de complets.
 
-$$
-\begin{cases}
-x+y+z=120\\
-y-2z=0\\
-2x+2y+2z=250
-\end{cases}
-$$
+    Comprovem el resultat:
 
-En esglaonar la matriu ampliada,
+    $$
+    \begin{aligned}
+    45+50+25&=120\\
+    50&=2\cdot25\\
+    8\cdot45+5\cdot50+3\cdot25&=685
+    \end{aligned}
+    $$
 
-$$
-\left(
-\begin{array}{ccc|c}
-1&1&1&120\\
-0&1&-2&0\\
-2&2&2&250
-\end{array}
-\right)
-\xrightarrow{F_3=F_3-2F_1}
-\left(
-\begin{array}{ccc|c}
-1&1&1&120\\
-0&1&-2&0\\
-0&0&0&10
-\end{array}
-\right)
-$$
+    Les tres condicions es compleixen.
 
-L'última fila representa la igualtat impossible $0=10$. Per tant, les dades són contradictòries i el sistema és **incompatible (SI)**: no hi ha cap distribució de lots que compleixi totes les condicions.
+    **Apartat c)**
+
+    Si cada lot porta dues etiquetes, el segon registre es tradueix en
+
+    $$
+    2x+2y+2z=250
+    $$
+
+    Juntament amb les dades inicials, tindríem
+
+    $$
+    \begin{cases}
+    x+y+z=120\\
+    y-2z=0\\
+    2x+2y+2z=250
+    \end{cases}
+    $$
+
+    En esglaonar la matriu ampliada,
+
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&120\\
+    0&1&-2&0\\
+    2&2&2&250
+    \end{array}
+    \right)
+    \xrightarrow{F_3=F_3-2F_1}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&120\\
+    0&1&-2&0\\
+    0&0&0&10
+    \end{array}
+    \right)
+    $$
+
+    L'última fila representa la igualtat impossible $0=10$. Per tant, les dades són contradictòries i el sistema és **incompatible (SI)**: no hi ha cap distribució de lots que compleixi totes les condicions.
 
 ### 4. Què significa cada tipus de sistema en un problema?
 
