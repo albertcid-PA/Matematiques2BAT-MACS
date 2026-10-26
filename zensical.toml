@@ -36,7 +36,7 @@ nav = [
       { "Índex" = "algebra-lineal/sistemes-gauss/index.md" },
       { "Sistemes d'equacions lineals" = "algebra-lineal/sistemes-gauss/01_sistemes-equacions-lineals.md" },
       { "Mètode de Gauss" = "algebra-lineal/sistemes-gauss/02_metode-gauss.md" },
-      { "Plantejament de problemes" = "algebra-lineal/sistemes-gauss/03_plantejament-problemes.md" },
+      { "Problemes de sistemes" = "algebra-lineal/sistemes-gauss/03_plantejament-problemes.md" },
     ] },
     { "4. Matrius" = [
       { "Índex" = "algebra-lineal/matrius/index.md" },
@@ -44,9 +44,15 @@ nav = [
       { "Operacions amb matrius" = "algebra-lineal/matrius/02_operacions.md" },
       { "Matriu inversa" = "algebra-lineal/matrius/03_matriu-inversa.md" },
       { "Equacions i sistemes matricials" = "algebra-lineal/matrius/04_equacions-sistemes-matricials.md" },
+      { "Problemes de matrius" = "algebra-lineal/matrius/05_problemes-matrius.md" },
     ] },
     { "Per practicar" = [
       { "Exercicis i problemes" = "algebra-lineal/per-practicar/solucionari.md" },
+    ] },
+    { "Laboratori de mates" = [
+      { "Índex" = "algebra-lineal/eines/index.md" },
+      { "Resolució de sistemes" = "algebra-lineal/eines/resolucio-sistemes.md" },
+      { "Calculadora de matrius" = "algebra-lineal/eines/calculadora-matrius.md" },
     ] },
   ] },
   { "Probabilitat i estadística" = [
@@ -71,11 +77,13 @@ extra_javascript = [
   "https://unpkg.com/katex@0/dist/katex.min.js",
   "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
   "javascripts/function-analyzer-loader.js?v=3",
+  "javascripts/linear-system-loader.js?v=1",
+  "javascripts/matrix-calculator-loader.js?v=1",
 ]
 
 extra_css = [
   "https://unpkg.com/katex@0/dist/katex.min.css",
-  "stylesheets/extra.css?v=10",
+  "stylesheets/extra.css?v=26",
 ]
 
 [project.theme]
