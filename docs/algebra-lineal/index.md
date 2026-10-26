@@ -14,3 +14,6 @@ En aquest bloc estudiarem els sistemes d'equacions lineals i les matrius, i els 
 ## Laboratori de mates
 
 - [**Resolució de sistemes**](eines/resolucio-sistemes.md) — resolució guiada pel mètode de Gauss i classificació com a SCD, SCI o SI.
+- [**Operacions amb matrius**](eines/calculadora-matrius.md) — operacions combinades, potències, transposicions, inverses i elements desconeguts.
+- [**Equacions matricials**](eines/aillament-equacions-matricials.md) — aïllament simbòlic de $X$ respectant l'ordre dels factors.
+- [**Sistemes matricials**](eines/sistemes-matricials.md) — resolució pas a pas de sistemes amb dues matrius incògnites.
