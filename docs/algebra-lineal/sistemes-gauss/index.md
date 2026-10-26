@@ -2,6 +2,12 @@
 
 En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineals, a resoldre'ls amb el mètode de Gauss i a utilitzar-los per modelitzar problemes.
 
+<div class="practice-actions" markdown="1">
+
+[**Descarrega 3. Sistemes i mètode de Gauss**](../../assets/apunts/tema_3_sistemes_metode_gauss.pdf?v=1){ target="_blank" rel="noopener" }
+
+</div>
+
 ## Sistemes d'equacions lineals
 
 - [**Sistemes d'equacions lineals**](01_sistemes-equacions-lineals.md) — equacions lineals, solució d'un sistema, classificació i sistemes equivalents.

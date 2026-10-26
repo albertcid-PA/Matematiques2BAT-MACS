@@ -504,6 +504,10 @@
     break-before: page;
   }
 
+  body:has(.pdf-topic-collection) .pdf-topic-keep-together {
+    break-inside: avoid;
+  }
+
   body:has(.pdf-topic-collection) .md-typeset h2 {
     margin: 0 0 0.45rem;
     padding-bottom: 0.18rem;
