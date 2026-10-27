@@ -88,7 +88,7 @@ extra_javascript = [
 
 extra_css = [
   "https://unpkg.com/katex@0/dist/katex.min.css",
-  "stylesheets/extra.css?v=38",
+  "stylesheets/extra.css?v=39",
 ]
 
 [project.theme]
