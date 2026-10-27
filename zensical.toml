@@ -83,11 +83,12 @@ extra_javascript = [
   "javascripts/linear-system-loader.js?v=1",
   "javascripts/matrix-equation-isolator-loader.js?v=2",
   "javascripts/matrix-calculator-loader.js?v=1",
+  "javascripts/navigation-hybrid.js?v=1",
 ]
 
 extra_css = [
   "https://unpkg.com/katex@0/dist/katex.min.css",
-  "stylesheets/extra.css?v=37",
+  "stylesheets/extra.css?v=38",
 ]
 
 [project.theme]
