@@ -13,6 +13,7 @@ Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicac
 ## Preparació d'exàmens
 
 - [**Prova parcial del 1r trimestre núm. 1: Càlcul**](preparacio-examens/pp1-1.md) — temari, itinerari de pràctica, comprovació final i instruccions per treballar amb el tutor d'IA.
+- [**Prova parcial del 1r trimestre núm. 2: Càlcul**](preparacio-examens/pp1-2.md) — preparació de tot el càlcul dels temes 1 i 2 amb problemes contextualitzats de tipus PAU i especial atenció a l'optimització.
 
 ## Autoria i eines
 

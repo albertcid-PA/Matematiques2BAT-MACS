@@ -71,6 +71,7 @@ nav = [
   { "Preparació d'exàmens" = [
     { "Índex" = "preparacio-examens/index.md" },
     { "Prova parcial del 1r trimestre núm. 1: Càlcul" = "preparacio-examens/pp1-1.md" },
+    { "Prova parcial del 1r trimestre núm. 2: Càlcul" = "preparacio-examens/pp1-2.md" },
   ] },
 ]
 

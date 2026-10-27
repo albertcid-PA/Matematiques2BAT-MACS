@@ -6,7 +6,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 TOPIC_DIR = PROJECT_ROOT / "docs" / "calcul" / "repas-limits-derivades"
-OUTPUT = TOPIC_DIR / "recull-tema-1.md"
+OUTPUT = PROJECT_ROOT / "sources" / "generated" / "recull-tema-1.md"
 SOURCES = (
     TOPIC_DIR / "01_limits.md",
     TOPIC_DIR / "02_derivades.md",
@@ -36,6 +36,7 @@ def prepare_source(path: Path) -> str:
 
 
 def main() -> None:
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     limits, derivatives = (prepare_source(path) for path in SOURCES)
     document = f"""<!-- Fitxer generat automàticament per scripts/genera_recull_tema_1.py. -->
 

@@ -19,3 +19,4 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 ## Preparació de la prova
 
 - [**Prova parcial del 1r trimestre núm. 1: Càlcul**](../preparacio-examens/pp1-1.md) — recorregut de preparació de la prova, amb tot el bloc de càlcul excepte optimització i problemes PAU.
+- [**Prova parcial del 1r trimestre núm. 2: Càlcul**](../preparacio-examens/pp1-2.md) — tot el temari dels temes 1 i 2, amb problemes contextualitzats de tipus PAU i especial atenció a l'optimització.
