@@ -3621,8 +3621,6 @@ on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ c
 
 ### Modelització, comparació i optimització
 
-#### Construcció de la funció a partir de l'enunciat
-
 **PAU.C.7.**
 **Reserves d'un hotel**
 
