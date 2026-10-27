@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 CALCUL = DOCS / "calcul"
 PRACTICA = CALCUL / "per-practicar"
+CALCUL_SOURCES = ROOT / "sources" / "calcul"
+GENERATED_SOURCES = ROOT / "sources" / "generated"
 
 
 def read(path: Path) -> str:
@@ -263,8 +265,8 @@ def solution_details(
 
 
 def generate_pdf_collection_page() -> str:
-    exercises = body_after_separator(CALCUL / "exercicis.md")
-    pau = demote_headings(body_after_separator(CALCUL / "problemes-pau.md"))
+    exercises = body_after_separator(CALCUL_SOURCES / "exercicis.md")
+    pau = demote_headings(body_after_separator(CALCUL_SOURCES / "problemes-pau.md"))
     return f"""# Recull d'enunciats de càlcul {{.pdf-exercise-collection}}
 
 ---
@@ -293,21 +295,21 @@ def trailing_resources(path: Path) -> str:
 
 
 def generate_solution_page() -> str:
-    exercise_statements = statement_blocks(CALCUL / "exercicis.md")
-    pau_statements = statement_blocks(CALCUL / "problemes-pau.md")
-    developed = developed_solution_blocks(CALCUL / "solucions-pas-a-pas.md")
+    exercise_statements = statement_blocks(CALCUL_SOURCES / "exercicis.md")
+    pau_statements = statement_blocks(CALCUL_SOURCES / "problemes-pau.md")
+    developed = developed_solution_blocks(CALCUL_SOURCES / "solucions-pas-a-pas.md")
     exercise_solutions = solution_details(
-        CALCUL / "resultats-exercicis.md",
+        CALCUL_SOURCES / "resultats-exercicis.md",
         exercise_statements,
         developed,
     )
     pau_solutions = solution_details(
-        CALCUL / "resultats-problemes-pau.md",
+        CALCUL_SOURCES / "resultats-problemes-pau.md",
         pau_statements,
         developed,
         pau=True,
     )
-    continuation_resources = trailing_resources(CALCUL / "problemes-pau.md")
+    continuation_resources = trailing_resources(CALCUL_SOURCES / "problemes-pau.md")
     return f"""# Exercicis i problemes
 
 En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
@@ -334,8 +336,9 @@ En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els pro
 
 def main() -> None:
     PRACTICA.mkdir(parents=True, exist_ok=True)
+    GENERATED_SOURCES.mkdir(parents=True, exist_ok=True)
     (PRACTICA / "solucionari.md").write_text(generate_solution_page(), encoding="utf-8", newline="\n")
-    (CALCUL / "recull-enunciats-calcul.md").write_text(
+    (GENERATED_SOURCES / "recull-enunciats-calcul.md").write_text(
         generate_pdf_collection_page(),
         encoding="utf-8",
         newline="\n",
