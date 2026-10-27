@@ -6,7 +6,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 TOPIC_DIR = PROJECT_ROOT / "docs" / "algebra-lineal" / "sistemes-gauss"
-OUTPUT = TOPIC_DIR / "recull-tema-3.md"
+OUTPUT = PROJECT_ROOT / "sources" / "generated" / "recull-tema-3.md"
 SOURCES = (
     TOPIC_DIR / "01_sistemes-equacions-lineals.md",
     TOPIC_DIR / "02_metode-gauss.md",
@@ -58,6 +58,7 @@ def prepare_source(path: Path) -> str:
 
 
 def main() -> None:
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     sections = [prepare_source(path) for path in SOURCES]
     section_break = '\n\n<div class="pdf-topic-section-break"></div>\n\n'
     content = section_break.join(sections)

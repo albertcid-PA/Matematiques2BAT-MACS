@@ -8,6 +8,8 @@ $tempDir = Join-Path $env:TEMP "codex-recull-enunciats-calcul"
 $rawPdf = Join-Path $tempDir "recull_enunciats_calcul_sense_peu.pdf"
 $outputPdf = Join-Path $projectRoot "output\pdf\recull_enunciats_calcul.pdf"
 $webPdf = Join-Path $projectRoot "docs\assets\exercicis\recull_enunciats_calcul.pdf"
+$printSource = Join-Path $projectRoot "sources\generated\recull-enunciats-calcul.md"
+$printPage = Join-Path $projectRoot "docs\calcul\__pdf-recull-enunciats.md"
 $profileDir = Join-Path $tempDir "edge-profile"
 $port = 8768
 $server = $null
@@ -30,6 +32,12 @@ Remove-Item -LiteralPath $profileDir -Recurse -Force -ErrorAction SilentlyContin
 
 Push-Location $projectRoot
 try {
+    & $python (Join-Path $PSScriptRoot "genera_pagines_practica.py")
+    if ($LASTEXITCODE -ne 0) {
+        throw "No s'ha pogut generar la pàgina imprimible del recull de càlcul."
+    }
+    Copy-Item -LiteralPath $printSource -Destination $printPage -Force
+
     & $zensical build --clean
     if ($LASTEXITCODE -ne 0) {
         throw "La compilació de Zensical ha fallat."
@@ -37,7 +45,7 @@ try {
 
     $server = Start-Process -FilePath $python -ArgumentList "-m", "http.server", "$port", "--bind", "127.0.0.1" -WorkingDirectory (Join-Path $projectRoot "site") -PassThru -WindowStyle Hidden
 
-    $url = "http://127.0.0.1:$port/calcul/recull-enunciats-calcul/"
+    $url = "http://127.0.0.1:$port/calcul/__pdf-recull-enunciats/"
     $ready = $false
     for ($attempt = 0; $attempt -lt 30; $attempt++) {
         try {
@@ -73,6 +81,7 @@ try {
     }
 
     Copy-Item -LiteralPath $outputPdf -Destination $webPdf -Force
+    Remove-Item -LiteralPath $printPage -Force
     & $zensical build --clean
     if ($LASTEXITCODE -ne 0) {
         throw "La compilació final de Zensical ha fallat."
@@ -81,6 +90,7 @@ try {
     Write-Host "Còpia publicable: $webPdf"
 }
 finally {
+    Remove-Item -LiteralPath $printPage -Force -ErrorAction SilentlyContinue
     if ($server -and -not $server.HasExited) {
         Stop-Process -Id $server.Id -Force
     }

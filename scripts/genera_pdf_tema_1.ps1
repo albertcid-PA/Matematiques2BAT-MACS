@@ -8,6 +8,8 @@ $tempDir = Join-Path $projectRoot "tmp\pdfs\tema-1-repas-limits-derivades"
 $rawPdf = Join-Path $tempDir "tema_1_repas_limits_derivades_sense_peu.pdf"
 $outputPdf = Join-Path $projectRoot "output\pdf\tema_1_repas_limits_derivades.pdf"
 $webPdf = Join-Path $projectRoot "docs\assets\apunts\tema_1_repas_limits_derivades.pdf"
+$printSource = Join-Path $projectRoot "sources\generated\recull-tema-1.md"
+$printPage = Join-Path $projectRoot "docs\calcul\repas-limits-derivades\__pdf-tema-1.md"
 $profileDir = Join-Path $tempDir "edge-profile"
 $port = 8770
 $server = $null
@@ -41,6 +43,7 @@ try {
     if ($LASTEXITCODE -ne 0) {
         throw "No s'ha pogut generar la pàgina imprimible del tema 1."
     }
+    Copy-Item -LiteralPath $printSource -Destination $printPage -Force
 
     & $zensical build --clean
     if ($LASTEXITCODE -ne 0) {
@@ -51,7 +54,7 @@ try {
         -ArgumentList "-m", "http.server", "$port", "--bind", "127.0.0.1" `
         -WorkingDirectory (Join-Path $projectRoot "site") -PassThru -WindowStyle Hidden
 
-    $url = "http://127.0.0.1:$port/calcul/repas-limits-derivades/recull-tema-1/"
+    $url = "http://127.0.0.1:$port/calcul/repas-limits-derivades/__pdf-tema-1/"
     $ready = $false
     for ($attempt = 0; $attempt -lt 30; $attempt++) {
         try {
@@ -99,6 +102,7 @@ try {
     }
 
     Copy-Item -LiteralPath $outputPdf -Destination $webPdf -Force
+    Remove-Item -LiteralPath $printPage -Force
     & $zensical build --clean
     if ($LASTEXITCODE -ne 0) {
         throw "La compilació final de Zensical ha fallat."
@@ -107,6 +111,7 @@ try {
     Write-Host "Còpia publicable: $webPdf"
 }
 finally {
+    Remove-Item -LiteralPath $printPage -Force -ErrorAction SilentlyContinue
     if ($server -and -not $server.HasExited) {
         Stop-Process -Id $server.Id -Force
     }
