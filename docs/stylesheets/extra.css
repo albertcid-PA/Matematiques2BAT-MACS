@@ -152,6 +152,67 @@
   color: var(--md-typeset-a-color);
 }
 
+/*
+ * En escriptori estret conviuen les dues navegacions:
+ * el menú local queda fix a l'esquerra i el menú general s'obre des de la capçalera.
+ */
+@media screen and (min-width: 60em) and (max-width: 76.234375em) {
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--primary {
+    position: sticky;
+    top: 2.4rem;
+    z-index: auto;
+    display: block;
+    flex-shrink: 0;
+    align-self: flex-start;
+    width: 12.1rem;
+    height: 0;
+    padding: 1.1rem 0;
+    background: transparent;
+    backdrop-filter: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+    transform: none;
+  }
+
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--primary .md-sidebar__scrollwrap {
+    position: relative;
+    inset: auto;
+    max-height: calc(100vh - 4.6rem);
+    margin: 0;
+  }
+
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__title,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__source,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__list > .md-nav__item:not(.md-nav__item--active),
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__list > .md-nav__item--active > .md-nav__container,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__list > .md-nav__item--active > .md-nav > .md-nav__title,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__list > .md-nav__item--active > .md-nav > .md-nav__list > .md-nav__item--nested > .md-nav__container > label {
+    display: none;
+  }
+
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__list > .md-nav__item--active > .md-nav > .md-nav__list > .md-nav__item--nested > label.md-nav__link > .md-nav__icon {
+    display: none;
+  }
+
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__list > .md-nav__item--active,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__list > .md-nav__item--active > .md-nav,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-nav--primary > .md-nav__list > .md-nav__item--active > .md-nav > .md-nav__list > .md-nav__item--nested > .md-nav {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--secondary:not([hidden]) {
+    display: none;
+  }
+
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
+    margin-left: 1.2rem;
+  }
+}
+
 /* Reuneix els dossiers de pràctica en targetes clares i adaptables. */
 .md-typeset .practice-actions {
   margin-block: 1rem 1.35rem;
