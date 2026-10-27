@@ -152,6 +152,11 @@
   color: var(--md-typeset-a-color);
 }
 
+/* Destaca els noms numerats dels temes dins dels menús de navegació. */
+.md-nav .nav-topic-title {
+  font-weight: 700;
+}
+
 /*
  * En tauleta horitzontal i escriptori estret conviuen les dues navegacions:
  * el menú local queda fix a l'esquerra i el menú general s'obre des de la capçalera.
