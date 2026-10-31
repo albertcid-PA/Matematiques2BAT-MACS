@@ -22,7 +22,7 @@ nav = [
       { "Optimització" = "calcul/aplicacions-derivades/04_optimitzacio.md" },
     ] },
     { "Per practicar" = [
-      { "Exercicis i problemes" = "calcul/per-practicar/solucionari.md" },
+      { "Exercicis i problemes" = "calcul/per-practicar/exercicis_calcul.md" },
     ] },
     { "Laboratori de mates" = [
       { "Índex" = "calcul/eines/index.md" },
@@ -47,7 +47,7 @@ nav = [
       { "Problemes de matrius" = "algebra-lineal/matrius/05_problemes-matrius.md" },
     ] },
     { "Per practicar" = [
-      { "Exercicis i problemes" = "algebra-lineal/per-practicar/solucionari.md" },
+      { "Exercicis i problemes" = "algebra-lineal/per-practicar/exercicis_algebra.md" },
     ] },
     { "Laboratori de mates" = [
       { "Índex" = "algebra-lineal/eines/index.md" },

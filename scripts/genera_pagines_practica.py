@@ -337,7 +337,7 @@ En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els pro
 def main() -> None:
     PRACTICA.mkdir(parents=True, exist_ok=True)
     GENERATED_SOURCES.mkdir(parents=True, exist_ok=True)
-    (PRACTICA / "solucionari.md").write_text(generate_solution_page(), encoding="utf-8", newline="\n")
+    (PRACTICA / "exercicis_calcul.md").write_text(generate_solution_page(), encoding="utf-8", newline="\n")
     (GENERATED_SOURCES / "recull-enunciats-calcul.md").write_text(
         generate_pdf_collection_page(),
         encoding="utf-8",
