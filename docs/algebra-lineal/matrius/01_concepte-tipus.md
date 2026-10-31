@@ -109,12 +109,19 @@ Les matrius es poden classificar segons la forma o segons els seus elements.
 | Matriu columna | Té una sola columna. | $\begin{pmatrix}1\\-2\\3\end{pmatrix}$ |
 | Matriu rectangular | El nombre de files és diferent del nombre de columnes. | $\begin{pmatrix}1&0&2\\3&-1&4\end{pmatrix}$ |
 | Matriu quadrada | Té el mateix nombre de files que de columnes. | $\begin{pmatrix}1&2\\3&4\end{pmatrix}$ |
-| Matriu nul·la | Tots els elements són $0$. | $\begin{pmatrix}0&0\\0&0\end{pmatrix}$ |
+| Matriu nul·la | Tots els elements són $0$. | $O=\begin{pmatrix}0&0\\0&0\end{pmatrix}$ |
 | Matriu diagonal | És quadrada i tots els elements que no són a la diagonal principal són $0$. | $\begin{pmatrix}2&0\\0&-1\end{pmatrix}$ |
 | Matriu escalar | És diagonal i tots els elements de la diagonal principal són iguals. | $\begin{pmatrix}3&0\\0&3\end{pmatrix}$ |
 | Matriu identitat | És escalar i els elements de la diagonal principal són $1$. | $I_2=\begin{pmatrix}1&0\\0&1\end{pmatrix}$ |
 
 Una matriu quadrada d'ordre $n$ té $n$ files i $n$ columnes. La seva diagonal principal està formada pels elements $a_{11},a_{22},\ldots,a_{nn}$.
+
+!!! note "Subíndexs i ordre de les matrius"
+    Quan volem indicar l'ordre d'una **matriu rectangular**, necessitem dos nombres: $A_{m\times n}$ representa una matriu amb $m$ files i $n$ columnes.
+
+    En una **matriu quadrada**, com que el nombre de files i de columnes coincideix, n'hi ha prou amb un sol subíndex: $A_n$ representa una matriu d'ordre $n\times n$. Per exemple, $A_3$ és una matriu quadrada d'ordre $3$, mentre que $B_{2\times3}$ és una matriu rectangular d'ordre $2\times3$.
+
+    Aquest mateix conveni s'utilitza en notacions com $O_n$ per a la matriu nul·la quadrada i $I_n$ per a la matriu identitat d'ordre $n$.
 
 ### 3.1 Matrius triangulars
 
@@ -173,6 +180,11 @@ A^t=
 $$
 
 Per tant, si $A$ és d'ordre $m\times n$, la seva transposada és d'ordre $n\times m$.
+
+!!! note "Interpretació de la transposició"
+    La transposició no modifica les dades: n'intercanvia l'organització. Si les files d'una matriu representen magatzems i les columnes representen productes, a la matriu transposada les files representen els productes i les columnes, els magatzems.
+
+    Aquesta reorganització pot ser útil per presentar les dades des d'un altre punt de vista o per col·locar-les en l'ordre necessari abans d'un producte de matrius.
 
 !!! note "Matriu simètrica"
     Una matriu quadrada és **simètrica** si coincideix amb la seva transposada, és a dir, si $A=A^t$. Per exemple,

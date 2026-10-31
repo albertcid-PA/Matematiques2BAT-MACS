@@ -15,6 +15,11 @@ Les operacions amb matrius tenen condicions pròpies. Abans de calcular, cal com
     A-B=(a_{ij}-b_{ij})_{m\times n}.
     $$
 
+!!! note "Interpretació de la suma i la resta"
+    La suma permet **agrupar dades de les mateixes categories** i la resta permet **comparar dues situacions** o calcular-ne la variació. El resultat conserva el significat de les files i les columnes de les matrius inicials.
+
+    No n'hi ha prou que les dues matrius tinguin el mateix ordre: també han de representar les mateixes categories, en el mateix ordre i amb unitats compatibles.
+
 Si
 
 $$
@@ -58,6 +63,11 @@ $$
 \lambda A=(\lambda a_{ij})_{m\times n}.
 $$
 
+!!! note "Interpretació del factor"
+    Multiplicar una matriu per un nombre significa aplicar el mateix factor a totes les dades. Per exemple, multiplicar per $1{,}10$ representa un augment del $10\,\%$, mentre que multiplicar per $0{,}80$ representa una reducció del $20\,\%$.
+
+    Les files i les columnes mantenen el mateix significat; només canvien els valors dels elements.
+
 $$
 -2
 \begin{pmatrix}
@@ -79,6 +89,68 @@ $$
     Si $A$ és d'ordre $m\times n$ i $B$ és d'ordre $n\times p$, el producte $AB$ és d'ordre $m\times p$.
 
 Cada element del producte s'obté multiplicant una fila de la primera matriu per una columna de la segona i sumant els resultats.
+
+!!! note "Com s'interpreta el resultat?"
+    Les **files del resultat** conserven el significat de les files de la primera matriu i les **columnes del resultat** conserven el significat de les columnes de la segona.
+
+    Cada parella formada per una fila de la primera matriu i una columna de la segona produeix una casella del resultat. Les categories comunes —les columnes de la primera matriu i les files de la segona— són les que permeten relacionar les dades.
+
+!!! example "Magatzems, productes i proveïdors"
+    La matriu $Q$ indica les quantitats de tres productes que necessiten tres magatzems. Les etiquetes laterals identifiquen els magatzems i les superiors, els productes:
+
+    $$
+    Q=
+    \begin{array}{cc}
+    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    \begin{array}{c}M_1\\M_2\\M_3\end{array}
+    &
+    \begin{pmatrix}
+    10&5&8\\
+    6&9&4\\
+    7&3&6
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    La matriu $P$ recull el preu unitari de cada producte segons dos proveïdors. Les files corresponen als productes i les columnes, als proveïdors A i B:
+
+    $$
+    P=
+    \begin{array}{cc}
+    &\begin{array}{cc}\text{A}\!&\!\text{B}\end{array}\\[0.5mm]
+    \begin{array}{c}P_1\\P_2\\P_3\end{array}
+    &
+    \begin{pmatrix}
+    3&4\\
+    5&4\\
+    4&5
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Per tant, les files de $QP$ corresponen als magatzems $M_1$, $M_2$ i $M_3$, i les columnes indiquen el cost total amb els proveïdors A i B:
+
+    $$
+    QP=
+    \begin{array}{cc}
+    &\begin{array}{cc}C_A\!&\!C_B\end{array}\\[0.5mm]
+    \begin{array}{c}M_1\\M_2\\M_3\end{array}
+    &
+    \begin{pmatrix}
+    87&100\\
+    79&80\\
+    60&70
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Per exemple, la casella de la fila $M_1$ i la columna del proveïdor B és
+
+    $$
+    10\cdot4+5\cdot4+8\cdot5=100
+    $$
+
+    Així, $100\,€$ és el cost total dels productes del magatzem $M_1$ si es compren al proveïdor B.
 
 Algebraicament, si
 
@@ -278,6 +350,9 @@ Per conveni,
 $$
 A^0=I
 $$
+
+!!! note "Significat d'una potència"
+    Una potència d'una matriu representa un producte repetit: $A^n$ no s'obté elevant cada element d'$A$ a $n$. Com que la matriu s'ha de poder multiplicar per ella mateixa, les potències només estan definides per a matrius quadrades.
 
 !!! example "Exemple: càlcul successiu de les potències"
     Considerem
