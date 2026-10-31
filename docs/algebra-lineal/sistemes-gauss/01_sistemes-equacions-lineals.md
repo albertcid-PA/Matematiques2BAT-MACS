@@ -96,7 +96,7 @@ $$
 Per tant, el conjunt de solucions és
 
 $$
-\boxed{(x,y)=(4-\lambda,\lambda),\qquad \lambda\in\mathbb{R}.}
+\boxed{(x,y)=(4-\lambda,\lambda),\qquad \lambda\in\mathbb{R}}
 $$
 
 El sistema és **compatible indeterminat**.
@@ -120,10 +120,17 @@ el doble de la primera equació seria $2x+2y=8$, però la segona exigeix que $2x
 
 En un sistema, una equació pot aportar informació nova, repetir una condició anterior o contradir-la.
 
+!!! abstract "Dependència i independència lineal"
+    Un conjunt d'equacions és **linealment dependent** si alguna de les equacions es pot obtenir combinant linealment les altres, és a dir, multiplicant-les per nombres i sumant-les. Aquesta equació repeteix informació que ja teníem.
+
+    En canvi, les equacions són **linealment independents** si cap d'elles no es pot obtenir com una combinació lineal de les altres. En aquest cas, cadascuna aporta informació nova.
+
+    Cal considerar sempre l'equació sencera, inclòs el terme independent. Per exemple, $2x+2y=6$ depèn de $x+y=3$, però $2x+2y=7$ la contradiu.
+
 | Relació entre les equacions | Què significa? | Efecte possible |
 |---|---|---|
-| Condicions independents | Cada equació aporta informació nova. | Pot permetre obtenir una solució única. |
-| Condició redundant | Una equació es dedueix de les altres. | Pot quedar alguna incògnita lliure. L'equació es pot eliminar perquè no aporta informació. |
+| Equacions linealment independents | Cada equació aporta informació nova. | Pot permetre obtenir una solució única. |
+| Equació dependent o redundant | Una equació és combinació lineal de les altres. | Pot quedar alguna incògnita lliure. L'equació es pot eliminar perquè no aporta informació. |
 | Condicions contradictòries | Les equacions es contradiuen i no es poden satisfer totes alhora. | El sistema no té solució. |
 
 Aquestes relacions es veuen amb claredat després d'aplicar el mètode de Gauss:
@@ -196,7 +203,7 @@ $$
 Per tant,
 
 $$
-\boxed{(x,y,z)=(3,7,-2).}
+\boxed{(x,y,z)=(3,7,-2)}
 $$
 
 El mètode de Gauss consisteix a transformar un sistema lineal en un sistema esglaonat equivalent.

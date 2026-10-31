@@ -116,7 +116,7 @@ $$
 Per tant, el conjunt de solucions és
 
 $$
-\boxed{(x,y)=(4-\lambda,\lambda),\qquad \lambda\in\mathbb{R}.}
+\boxed{(x,y)=(4-\lambda,\lambda),\qquad \lambda\in\mathbb{R}}
 $$
 
 El sistema és **compatible indeterminat**.
@@ -140,10 +140,17 @@ el doble de la primera equació seria $2x+2y=8$, però la segona exigeix que $2x
 
 En un sistema, una equació pot aportar informació nova, repetir una condició anterior o contradir-la.
 
+!!! abstract "Dependència i independència lineal"
+    Un conjunt d'equacions és **linealment dependent** si alguna de les equacions es pot obtenir combinant linealment les altres, és a dir, multiplicant-les per nombres i sumant-les. Aquesta equació repeteix informació que ja teníem.
+
+    En canvi, les equacions són **linealment independents** si cap d'elles no es pot obtenir com una combinació lineal de les altres. En aquest cas, cadascuna aporta informació nova.
+
+    Cal considerar sempre l'equació sencera, inclòs el terme independent. Per exemple, $2x+2y=6$ depèn de $x+y=3$, però $2x+2y=7$ la contradiu.
+
 | Relació entre les equacions | Què significa? | Efecte possible |
 |---|---|---|
-| Condicions independents | Cada equació aporta informació nova. | Pot permetre obtenir una solució única. |
-| Condició redundant | Una equació es dedueix de les altres. | Pot quedar alguna incògnita lliure. L'equació es pot eliminar perquè no aporta informació. |
+| Equacions linealment independents | Cada equació aporta informació nova. | Pot permetre obtenir una solució única. |
+| Equació dependent o redundant | Una equació és combinació lineal de les altres. | Pot quedar alguna incògnita lliure. L'equació es pot eliminar perquè no aporta informació. |
 | Condicions contradictòries | Les equacions es contradiuen i no es poden satisfer totes alhora. | El sistema no té solució. |
 
 Aquestes relacions es veuen amb claredat després d'aplicar el mètode de Gauss:
@@ -220,7 +227,7 @@ $$
 Per tant,
 
 $$
-\boxed{(x,y,z)=(3,7,-2).}
+\boxed{(x,y,z)=(3,7,-2)}
 $$
 
 El mètode de Gauss consisteix a transformar un sistema lineal en un sistema esglaonat equivalent.
@@ -335,7 +342,7 @@ Aquestes transformacions no canvien les solucions del sistema.
     0&-\frac52&\frac72&\frac{11}{2}\\
     1&2&1&8
     \end{array}
-    \right).
+    \right)
     $$
 
     En canvi, amb la combinació lineal $F_2=2F_2-3F_1$ obtenim una fila equivalent amb coeficients enters:
@@ -355,7 +362,7 @@ Aquestes transformacions no canvien les solucions del sistema.
     0&-5&7&11\\
     1&2&1&8
     \end{array}
-    \right).
+    \right)
     $$
 
     Continuem l'esglaonament mantenint els coeficients enters:
@@ -375,7 +382,7 @@ Aquestes transformacions no canvien les solucions del sistema.
     0&-5&7&11\\
     0&3&3&15
     \end{array}
-    \right).
+    \right)
     $$
 
     Finalment, eliminem el coeficient de $y$ de la tercera fila:
@@ -395,7 +402,7 @@ Aquestes transformacions no canvien les solucions del sistema.
     0&-5&7&11\\
     0&0&36&108
     \end{array}
-    \right).
+    \right)
     $$
 
     Resolent de baix cap amunt, obtenim $z=3$, $y=2$ i $x=1$.
@@ -458,7 +465,7 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
     0&-3&-1&-5\\
     0&1&-2&4
     \end{array}
-    \right).
+    \right)
     $$
 
     Permutem les dues últimes files i fem zero sota el segon pivot:
@@ -478,7 +485,7 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
     0&1&-2&4\\
     0&0&-7&7
     \end{array}
-    \right).
+    \right)
     $$
 
     El sistema esglaonat és
@@ -504,7 +511,7 @@ No cal convertir els pivots en $1$. Sovint és preferible conservar nombres ente
     Per tant,
 
     $$
-    \boxed{(x,y,z)=(1,2,-1).}
+    \boxed{(x,y,z)=(1,2,-1)}
     $$
 
     Hem pogut determinar totes les incògnites i la solució és única. El sistema és **compatible determinat**.
@@ -603,7 +610,7 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     Per tant, la solució és
 
     $$
-    \boxed{(x,y,z)=(1,2,3).}
+    \boxed{(x,y,z)=(1,2,3)}
     $$
 
 ### 6. Sistema compatible indeterminat
@@ -619,7 +626,27 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     \end{cases}
     $$
 
-    Apliquem $F_2=F_2-F_1$ i $F_3=F_3-2F_1$:
+    Escrivim la matriu ampliada i fem zero sota el primer pivot:
+
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    1&-1&1&2\\
+    2&0&2&6
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_2=F_2-F_1\\F_3=F_3-2F_1}}
+    \left(
+    \begin{array}{ccc|c}
+    1&1&1&4\\
+    0&-2&0&-2\\
+    0&-2&0&-2
+    \end{array}
+    \right)
+    $$
+
+    Les dues darreres files són iguals. En restem la segona a la tercera:
 
     $$
     \left(
@@ -636,7 +663,7 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     0&-2&0&-2\\
     0&0&0&0
     \end{array}
-    \right).
+    \right)
     $$
 
     L'última fila representa la identitat $0=0$ i no aporta cap condició nova. Queda una incògnita lliure.
@@ -650,7 +677,7 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     Així, el conjunt de solucions és
 
     $$
-    \boxed{(x,y,z)=(3-\lambda,1,\lambda),\qquad \lambda\in\mathbb{R}.}
+    \boxed{(x,y,z)=(3-\lambda,1,\lambda),\qquad \lambda\in\mathbb{R}}
     $$
 
     El sistema té infinites solucions i és **compatible indeterminat**.
@@ -677,7 +704,7 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
     0&-2&0&-2\\
     0&0&0&1
     \end{array}
-    \right).
+    \right)
     $$
 
     L'última fila representa l'equació impossible $0=1$. Per tant, el sistema no té cap solució i és **incompatible**.
@@ -689,7 +716,7 @@ Si en la posició del pivot hi ha un zero, busquem una fila inferior que tingui 
 | Forma obtinguda després de Gauss | Interpretació | Classificació |
 |---|---|:---:|
 | Es poden determinar totes les incògnites. | Hi ha una única solució. | SCD |
-| Apareix una fila $0=0$ i queda alguna incògnita lliure. | Hi ha infinites solucions. | SCI |
+| No apareix cap contradicció i queda almenys una incògnita lliure. Pot aparèixer una fila $0=0$. | Hi ha infinites solucions. | SCI |
 | Apareix una fila $0=k$, amb $k\neq0$. | Hi ha una contradicció. | SI |
 
 !!! tip "Com s'ha de justificar la classificació"

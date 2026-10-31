@@ -4,27 +4,32 @@ En una equació matricial, la incògnita és una matriu. Per aïllar-la utilitze
 
 En tots els exemples d'aquesta pàgina, les matrius incògnites i les matrius conegudes són d'ordre $2\times2$.
 
-!!! warning "Propietats que utilitzarem"
+!!! note "Recordatori de les propietats"
     Sempre que les dimensions siguin compatibles, podem aplicar aquestes propietats:
 
-    - **Commutativa de la suma:** $A+B=B+A$.
-    - **Associativa del producte:** $(AB)C=A(BC)$.
-    - **Distributives:** $A(B+C)=AB+AC$ i $(A+B)C=AC+BC$.
-    - **Matriu identitat:** $AI=IA=A$.
-    - **Matriu inversa, si $A$ és invertible:** $A^{-1}A=AA^{-1}=I$.
+    | Operació | Propietat | Expressió |
+    |---|---|---|
+    | Suma | Commutativa | $A+B=B+A$ |
+    | Suma | Associativa | $(A+B)+C=A+(B+C)$ |
+    | Suma | Element neutre | $A+O=A$ |
+    | Suma | Matriu oposada | $A+(-A)=O$ |
+    | Producte per un nombre | Distributiva | $\lambda(A+B)=\lambda A+\lambda B$ |
+    | Producte per un nombre | Associativa | $\lambda(\mu A)=(\lambda\mu)A$ |
+    | Producte de matrius | Associativa | $(AB)C=A(BC)$ |
+    | Producte de matrius | Distributives | $A(B+C)=AB+AC$ i $(A+B)C=AC+BC$ |
+    | Producte de matrius | Element neutre | $AI=IA=A$ |
+    | Inversa | Definició | $A^{-1}A=AA^{-1}=I$ |
+    | Inversa d'un producte | Canvi d'ordre | $(AB)^{-1}=B^{-1}A^{-1}$ |
+    | Producte de matrius | No commutativa, en general | $AB\neq BA$ |
 
-    En canvi, la multiplicació de matrius **no compleix la propietat commutativa**. En general,
-
-    $$
-    AB\neq BA.
-    $$
-
-    Per això, si multipliquem un membre d'una equació per l'esquerra o per la dreta, hem de multiplicar l'altre membre pel mateix costat i conservar l'ordre dels factors.
+    Com que el producte de matrius no és commutatiu, si multipliquem un membre d'una equació per l'esquerra o per la dreta, hem de multiplicar l'altre membre pel mateix costat i conservar l'ordre dels factors.
 
 ## 1. Equacions matricials
 
 !!! abstract "Definició: equació matricial"
     Una **equació matricial** és una igualtat entre matrius en què alguna de les matrius és desconeguda. Resoldre-la consisteix a trobar totes les matrius que fan certa la igualtat.
+
+    Les matrius s'escriuen sempre amb **lletres majúscules**: $A$, $B$ i $C$ representen matrius conegudes, mentre que $X$ representa la matriu incògnita. Les lletres minúscules $x$, $y$, $z$ o $t$ representen nombres, com ara els elements desconeguts de $X$.
 
 Abans d'operar, cal comprovar que totes les sumes i tots els productes estan definits.
 
@@ -236,7 +241,7 @@ $$
     \begin{pmatrix}
     1&-1\\
     0&1
-    \end{pmatrix},
+    \end{pmatrix}
     \qquad
     \begin{pmatrix}
     1&0\\
@@ -272,7 +277,7 @@ $$
     \end{pmatrix}
     $$
 
-### 1.5 Resolució per coeficients
+### 1.5 Resolució d'una equació matricial per coeficients
 
 També podem resoldre una equació matricial escrivint els elements desconeguts de $X$ com a incògnites. Si $X$ és d'ordre $2\times2$, posem
 
@@ -285,6 +290,9 @@ z&t
 $$
 
 Després efectuem les operacions matricials i utilitzem la igualtat de matrius: els elements que ocupen la mateixa posició han de ser iguals. D'aquesta manera obtenim un sistema d'equacions amb les incògnites $x$, $y$, $z$ i $t$.
+
+!!! note "Dues situacions diferents"
+    A l'apartat d'operacions amb matrius calculàvem només alguns elements desconeguts d'una matriu i, per tant, només les posicions necessàries del resultat. Aquí la incògnita és la **matriu completa** $X$: hem de determinar tots els seus elements perquè es compleixi l'equació matricial.
 
 !!! tip "Passos de la resolució per coeficients"
     1. Escriu $X$ amb quatre coeficients desconeguts.
@@ -480,7 +488,7 @@ Com que $X$ i $Y$ només estan multiplicades per nombres reals, podem aplicar el
 
     $$
     \boxed{
-    X=\begin{pmatrix}1&2\\2&2\end{pmatrix},
+    X=\begin{pmatrix}1&2\\2&2\end{pmatrix}
     \qquad
     Y=\begin{pmatrix}2&-1\\3&0\end{pmatrix}
     }
@@ -493,7 +501,7 @@ Com que $X$ i $Y$ només estan multiplicades per nombres reals, podem aplicar el
     \begin{pmatrix}
     3&1\\
     5&2
-    \end{pmatrix},
+    \end{pmatrix}
     \qquad
     2X-Y=
     \begin{pmatrix}
