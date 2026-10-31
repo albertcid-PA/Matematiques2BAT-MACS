@@ -22,4 +22,4 @@ En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineal
 
 ## Per practicar
 
-- [**Exercicis i problemes**](../per-practicar/solucionari.md#tema-3-sistemes-i-metode-de-gauss) — activitats del tema 3 amb les solucions pas a pas desplegables.
+- [**Exercicis i problemes**](../per-practicar/exercicis_algebra.md#tema-3-sistemes-i-metode-de-gauss) — activitats del tema 3 amb les solucions pas a pas desplegables.

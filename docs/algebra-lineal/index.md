@@ -9,7 +9,7 @@ En aquest bloc estudiarem els sistemes d'equacions lineals i les matrius, i els 
 
 ## Per practicar
 
-- [**Exercicis i problemes**](per-practicar/solucionari.md) — enunciats del bloc d'àlgebra lineal amb les solucions pas a pas desplegables.
+- [**Exercicis i problemes**](per-practicar/exercicis_algebra.md) — enunciats del bloc d'àlgebra lineal amb les solucions pas a pas desplegables.
 
 ## Laboratori de mates
 

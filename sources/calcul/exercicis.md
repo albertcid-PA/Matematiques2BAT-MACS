@@ -701,4 +701,4 @@ $$
 - **c)** Calcula el volum màxim de la maleta.
 
 !!! note "Preparació de les PAU"
-    Continua amb els [problemes PAU de càlcul de l'apartat Per practicar](per-practicar/solucionari.md#problemes-pau), ordenats per continguts i amb exercicis de convocatòries reals i d'entrenament de tipus PAU.
+    Continua amb els [problemes PAU de càlcul de l'apartat Per practicar](per-practicar/exercicis_calcul.md#problemes-pau), ordenats per continguts i amb exercicis de convocatòries reals i d'entrenament de tipus PAU.
