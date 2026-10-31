@@ -3678,6 +3678,7 @@
     const steps = root.querySelector("#fa-steps");
     const canvas = root.querySelector("#fa-graph");
     const legend = root.querySelector("#fa-legend");
+    const fitGraphButton = root.querySelector("#fa-fit-graph");
     const zoomInButton = root.querySelector("#fa-zoom-in");
     const zoomOutButton = root.querySelector("#fa-zoom-out");
     let activeMode = "standard";
@@ -3993,6 +3994,12 @@
     }
 
     root.querySelector("#fa-analyze").addEventListener("click", analyze);
+    fitGraphButton.addEventListener("click", function () {
+      if (!currentAnalysis) return;
+      graphView = { ...initialGraphXWindow(currentAnalysis), yMin: null, yMax: null };
+      redraw();
+      message.hidden = true;
+    });
     zoomInButton.addEventListener("click", () => zoomGraph(0.7));
     zoomOutButton.addEventListener("click", () => zoomGraph(1.4));
     canvas.addEventListener("wheel", function (event) {
