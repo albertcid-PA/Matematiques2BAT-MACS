@@ -1003,6 +1003,11 @@
   gap: 0.3rem;
 }
 
+.md-typeset .fa-tool .fa-fit-graph {
+  border-radius: 0.4rem;
+  font-weight: 700;
+}
+
 .md-typeset .fa-tool .fa-zoom-button {
   display: inline-grid;
   width: 2rem;
