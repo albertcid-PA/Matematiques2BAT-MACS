@@ -35,17 +35,27 @@ indica que la primera botiga ha venut $12$ unitats del primer producte i $8$ del
     5. **Efectua els càlculs**.
     6. **Interpreta cada resultat** dins del context del problema.
 
-| Objectiu | Operació habitual |
-|---|---|
-| Agrupar dades del mateix tipus | Suma de matrius |
-| Comparar dues situacions | Resta de matrius |
-| Aplicar el mateix factor a totes les dades | Producte per un nombre |
-| Relacionar dos conjunts de dades | Producte de matrius |
+## 3. Significat de les operacions en un problema
+
+Abans de calcular, convé anticipar què representarà el resultat de l'operació:
+
+| Operació | Interpretació habitual | Estructura del resultat |
+|---|---|---|
+| $A+B$ | Agrupar dades de les mateixes categories | Conserva les files i les columnes |
+| $A-B$ | Comparar dues situacions o calcular una variació | Conserva les files i les columnes |
+| $\lambda A$ | Aplicar el mateix factor a totes les dades | Conserva les files i les columnes |
+| $A^t$ | Intercanviar el paper de les files i les columnes | Les files passen a ser columnes i les columnes, files |
+| $AB$ | Relacionar dos conjunts de dades | Conserva les files d'$A$ i les columnes de $B$ |
+
+En un producte de matrius, cada fila de la primera matriu es combina amb cada columna de la segona i produeix una casella del resultat. Les categories comunes —les columnes de la primera i les files de la segona— permeten relacionar les dades i queden integrades en el càlcul.
+
+!!! note "La mida depèn del problema"
+    Les matrius d'un problema no han de ser necessàriament d'ordre $2\times2$. El nombre de files i columnes depèn de les categories que representem. Per exemple, les existències de quatre productes en tres magatzems es poden organitzar en una matriu d'ordre $3\times4$.
 
 !!! warning "L'ordre del producte importa"
     Abans de multiplicar, comprova que el nombre de columnes de la primera matriu coincideixi amb el nombre de files de la segona. En general, $AB\neq BA$.
 
-## 3. Exemple complet
+## 4. Exemple complet
 
 !!! example "Vendes de dues botigues"
     **Enunciat**
@@ -140,7 +150,7 @@ indica que la primera botiga ha venut $12$ unitats del primer producte i $8$ del
     215+230=445\,€
     $$
 
-## 4. Interpretació i comprovació
+## 5. Interpretació i comprovació
 
 En acabar un problema, cal comprovar:
 
