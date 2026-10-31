@@ -624,7 +624,8 @@
           return `\\left|${current.args[0].toTex(options)}\\right|`;
         },
       };
-      return node.toTex({ parenthesis: "keep", implicit: "show", handler });
+      return node.toTex({ parenthesis: "keep", implicit: "show", handler })
+        .replace(/\\cdot(?=[A-Za-z])/g, "\\cdot ");
     } catch (_error) {
       return node.toString();
     }
@@ -3433,10 +3434,21 @@
         ...graphHorizontalAsymptotes(analysis).map((y) => ({ x: (xMin + xMax) / 2, y })),
         { x: 0, y: evaluateModel(analysis.model, 0) },
       ].filter((point) => Number.isFinite(point.y) && point.x >= xMin && point.x <= xMax);
-      highlighted.forEach((point) => {
-        yMin = Math.min(yMin, point.y);
-        yMax = Math.max(yMax, point.y);
-      });
+      const focusValues = highlighted.map((point) => point.y);
+      const focusMin = focusValues.length ? Math.min(...focusValues) : NaN;
+      const focusMax = focusValues.length ? Math.max(...focusValues) : NaN;
+      const focusSpan = focusMax - focusMin;
+      const sampledSpan = yMax - yMin;
+      if (Number.isFinite(focusSpan) && focusSpan > 1e-7 && sampledSpan > focusSpan * 12) {
+        const focusPadding = focusSpan * 0.35;
+        yMin = focusMin - focusPadding;
+        yMax = focusMax + focusPadding;
+      } else {
+        highlighted.forEach((point) => {
+          yMin = Math.min(yMin, point.y);
+          yMax = Math.max(yMax, point.y);
+        });
+      }
       if (!Number.isFinite(yMin) || !Number.isFinite(yMax)) {
         yMin = -5;
         yMax = 5;
