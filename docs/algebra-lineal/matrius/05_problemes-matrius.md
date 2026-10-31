@@ -57,28 +57,30 @@ En un producte de matrius, cada fila de la primera matriu es combina amb cada co
 
 ## 4. Exemple complet
 
-!!! example "Vendes de dues botigues"
+!!! example "Vendes de tres productes en tres botigues"
     **Enunciat**
 
-    Una empresa ven dos productes, $A$ i $B$, en dues botigues. Les files representen els productes $A$ i $B$, i les columnes, les botigues $1$ i $2$.
+    Una empresa ven tres productes, $A$, $B$ i $C$, en tres botigues. Les files representen els productes i les columnes, les botigues $1$, $2$ i $3$.
 
     Durant el matí i la tarda s'han registrat les vendes següents:
 
     $$
     M=
     \begin{pmatrix}
-    12&8\\
-    10&9
+    12&8&10\\
+    10&9&7\\
+    6&11&8
     \end{pmatrix}
     \qquad
     T=
     \begin{pmatrix}
-    7&6\\
-    5&11
+    7&6&5\\
+    5&11&9\\
+    8&4&7
     \end{pmatrix}
     $$
 
-    El producte $A$ costa $5\,€$ per unitat i el producte $B$, $8\,€$.
+    Els productes $A$, $B$ i $C$ costen $5\,€$, $8\,€$ i $6\,€$ per unitat, respectivament.
 
     Calcula:
 
@@ -94,7 +96,7 @@ En un producte de matrius, cada fila de la primera matriu es combina amb cada co
     $$
     P=
     \begin{pmatrix}
-    5&8
+    5&8&6
     \end{pmatrix}
     $$
 
@@ -104,22 +106,25 @@ En un producte de matrius, cada fila de la primera matriu es combina amb cada co
     U=M+T
     =
     \begin{pmatrix}
-    12&8\\
-    10&9
+    12&8&10\\
+    10&9&7\\
+    6&11&8
     \end{pmatrix}
     +
     \begin{pmatrix}
-    7&6\\
-    5&11
+    7&6&5\\
+    5&11&9\\
+    8&4&7
     \end{pmatrix}
     =
     \begin{pmatrix}
-    19&14\\
-    15&20
+    19&14&15\\
+    15&20&16\\
+    14&15&15
     \end{pmatrix}
     $$
 
-    Per tant, del producte $A$ s'han venut $19$ unitats a la botiga $1$ i $14$ a la botiga $2$; del producte $B$, se n'han venut $15$ i $20$, respectivament.
+    Per exemple, del producte $A$ s'han venut $19$ unitats a la botiga $1$, $14$ a la botiga $2$ i $15$ a la botiga $3$. Cada fila de $U$ correspon a un producte i cada columna, a una botiga.
 
     Multipliquem la matriu fila dels preus per la matriu de les unitats venudes:
 
@@ -127,27 +132,29 @@ En un producte de matrius, cada fila de la primera matriu es combina amb cada co
     R=PU
     =
     \begin{pmatrix}
-    5&8
+    5&8&6
     \end{pmatrix}
     \begin{pmatrix}
-    19&14\\
-    15&20
+    19&14&15\\
+    15&20&16\\
+    14&15&15
     \end{pmatrix}
     =
     \begin{pmatrix}
-    215&230
+    299&320&293
     \end{pmatrix}
     $$
 
-    El primer element de $R$ és la recaptació de la botiga $1$ i el segon, la de la botiga $2$:
+    Els tres elements de $R$ són les recaptacions de les botigues $1$, $2$ i $3$:
 
-    - botiga $1$: $5\cdot19+8\cdot15=215\,€$;
-    - botiga $2$: $5\cdot14+8\cdot20=230\,€$.
+    - botiga $1$: $5\cdot19+8\cdot15+6\cdot14=299\,€$;
+    - botiga $2$: $5\cdot14+8\cdot20+6\cdot15=320\,€$;
+    - botiga $3$: $5\cdot15+8\cdot16+6\cdot15=293\,€$.
 
     Finalment, la recaptació total de l'empresa és
 
     $$
-    215+230=445\,€
+    299+320+293=912\,€
     $$
 
 ## 5. Interpretació i comprovació
@@ -160,5 +167,5 @@ En acabar un problema, cal comprovar:
 - que cada nombre es tradueix en una frase relacionada amb el context.
 
 !!! note "Les unitats també es multipliquen"
-    En l'exemple, els elements de $P$ s'expressen en euros per unitat i els d'$U$, en unitats venudes. Per això els elements del producte $PU$ s'expressen en euros.
+    En l'exemple, els elements de $P$ s'expressen en euros per unitat i els d'$U$, en unitats venudes. Per això els elements del producte $PU$ s'expressen en euros. El producte és possible perquè les tres columnes de $P$ coincideixen amb les tres files d'$U$.
 

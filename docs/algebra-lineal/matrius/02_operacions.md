@@ -267,7 +267,7 @@ Quan només ens demanen alguns elements desconeguts d'una matriu, no sempre cal 
     Sabem que
 
     $$
-    A^TX=
+    A^tX=
     \begin{pmatrix}
     7&1\\
     2&3
@@ -277,17 +277,17 @@ Quan només ens demanen alguns elements desconeguts d'una matriu, no sempre cal 
     Volem determinar només els elements $x$ i $y$ de $X$. Primer transponem $A$:
 
     $$
-    A^T=
+    A^t=
     \begin{pmatrix}
     1&0&3\\
     2&-1&1
     \end{pmatrix}
     $$
 
-    Com que $x$ i $y$ només apareixen a la primera columna de $X$, calculem únicament les posicions $(1,1)$ i $(2,1)$ de $A^TX$:
+    Com que $x$ i $y$ només apareixen a la primera columna de $X$, calculem únicament les posicions $(1,1)$ i $(2,1)$ de $A^tX$:
 
     $$
-    (A^TX)_{11}
+    (A^tX)_{11}
     =
     \begin{pmatrix}1&0&3\end{pmatrix}
     \begin{pmatrix}x\\2\\y\end{pmatrix}
@@ -295,7 +295,7 @@ Quan només ens demanen alguns elements desconeguts d'una matriu, no sempre cal 
     $$
 
     $$
-    (A^TX)_{21}
+    (A^tX)_{21}
     =
     \begin{pmatrix}2&-1&1\end{pmatrix}
     \begin{pmatrix}x\\2\\y\end{pmatrix}
@@ -335,15 +335,15 @@ $$
 Fins i tot pot passar que $AB$ existeixi i $BA$ no existeixi. Quan existeixen tots dos productes, tampoc no han de coincidir. Per exemple, si
 
 $$
-A=\begin{pmatrix}1&1\\0&1\end{pmatrix},
+A=\begin{pmatrix}1&1\\0&1\end{pmatrix}
 \qquad
-B=\begin{pmatrix}1&0\\1&1\end{pmatrix},
+B=\begin{pmatrix}1&0\\1&1\end{pmatrix}
 $$
 
 obtenim
 
 $$
-AB=\begin{pmatrix}2&1\\1&1\end{pmatrix},
+AB=\begin{pmatrix}2&1\\1&1\end{pmatrix}
 \qquad
 BA=\begin{pmatrix}1&1\\1&2\end{pmatrix}
 $$
@@ -354,14 +354,20 @@ Per tant, $AB\neq BA$.
 
 Sempre que les dimensions permetin efectuar les operacions, es compleixen les propietats següents:
 
-| Propietat | Expressió |
-|---|---|
-| Commutativa de la suma | $A+B=B+A$ |
-| Associativa de la suma | $(A+B)+C=A+(B+C)$ |
-| Associativa del producte | $(AB)C=A(BC)$ |
-| Distributiva per l'esquerra | $A(B+C)=AB+AC$ |
-| Distributiva per la dreta | $(A+B)C=AC+BC$ |
-| Element neutre del producte | $AI=IA=A$ |
+| Operació | Propietat | Expressió |
+|---|---|---|
+| Suma | Commutativa | $A+B=B+A$ |
+| Suma | Associativa | $(A+B)+C=A+(B+C)$ |
+| Suma | Element neutre | $A+O=O+A=A$ |
+| Suma | Matriu oposada | $A+(-A)=O$ |
+| Producte per un nombre | Distributiva respecte de la suma de matrius | $\lambda(A+B)=\lambda A+\lambda B$ |
+| Producte per un nombre | Distributiva respecte de la suma de nombres | $(\lambda+\mu)A=\lambda A+\mu A$ |
+| Producte per un nombre | Associativa | $\lambda(\mu A)=(\lambda\mu)A$ |
+| Producte de matrius | Associativa | $(AB)C=A(BC)$ |
+| Producte de matrius | Distributiva per l'esquerra | $A(B+C)=AB+AC$ |
+| Producte de matrius | Distributiva per la dreta | $(A+B)C=AC+BC$ |
+| Producte de matrius | Element neutre | $AI=IA=A$ |
+| Producte de matrius | No commutativa, en general | $AB\neq BA$ |
 
 !!! warning "El producte no és commutatiu"
     No podem canviar l'ordre dels factors. En particular, d'una igualtat com $AX=B$ no podem passar indistintament a $X=BA^{-1}$: cal tenir en compte a quin costat multiplica cada matriu.

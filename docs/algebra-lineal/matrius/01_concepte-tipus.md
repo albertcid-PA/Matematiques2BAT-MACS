@@ -94,7 +94,7 @@ x&2\\
 \begin{pmatrix}
 3&2\\
 -1&5
-\end{pmatrix},
+\end{pmatrix}
 $$
 
 aleshores $x=3$ i $y=5$.
@@ -119,7 +119,7 @@ Una matriu quadrada d'ordre $n$ té $n$ files i $n$ columnes. La seva diagonal p
 !!! note "Subíndexs i ordre de les matrius"
     Quan volem indicar l'ordre d'una **matriu rectangular**, necessitem dos nombres: $A_{m\times n}$ representa una matriu amb $m$ files i $n$ columnes.
 
-    En una **matriu quadrada**, com que el nombre de files i de columnes coincideix, n'hi ha prou amb un sol subíndex: $A_n$ representa una matriu d'ordre $n\times n$. Per exemple, $A_3$ és una matriu quadrada d'ordre $3$, mentre que $B_{2\times3}$ és una matriu rectangular d'ordre $2\times3$.
+    En una **matriu quadrada**, com que el nombre de files i de columnes coincideix, podem adoptar el conveni d'utilitzar un sol subíndex: $A_n$ representarà una matriu d'ordre $n\times n$. Per exemple, $A_3$ és una matriu quadrada d'ordre $3$, mentre que $B_{2\times3}$ és una matriu rectangular d'ordre $2\times3$. També podem trobar la notació completa $A_{n\times n}$.
 
     Aquest mateix conveni s'utilitza en notacions com $O_n$ per a la matriu nul·la quadrada i $I_n$ per a la matriu identitat d'ordre $n$.
 

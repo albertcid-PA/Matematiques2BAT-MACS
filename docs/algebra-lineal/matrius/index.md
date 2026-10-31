@@ -2,6 +2,12 @@
 
 En aquest tema aprendrem a representar informació mitjançant matrius, a operar-hi i a resoldre equacions i sistemes en què les incògnites són matrius.
 
+<div class="practice-actions" markdown="1">
+
+[**Descarrega 4. Matrius**](../../assets/apunts/tema_4_matrius.pdf?v=1){ target="_blank" rel="noopener" }
+
+</div>
+
 ## Concepte i tipus de matrius
 
 - [**Concepte i tipus de matrius**](01_concepte-tipus.md) — elements, ordre, igualtat, matriu transposada i tipus principals.
