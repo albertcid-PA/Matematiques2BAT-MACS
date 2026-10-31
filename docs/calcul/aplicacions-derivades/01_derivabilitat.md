@@ -61,7 +61,7 @@ $$
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_1_derivades_laterals.tex">Figura 2.1.</a></strong> Derivades laterals en un punt suau i en un punt angulós.</figcaption>
 </figure>
 
-En el primer gràfic, la pendent s'apropa al mateix valor des dels dos costats: la funció és derivable en $a$. En el segon, les pendents laterals són diferents: la funció és contínua, però no és derivable en $a$.
+En el primer gràfic, el pendent s'apropa al mateix valor des dels dos costats: la funció és derivable en $a$. En el segon, els pendents laterals són diferents: la funció és contínua, però no és derivable en $a$.
 
 ## 3. Com es reconeix gràficament?
 
@@ -69,10 +69,10 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 
 | Aspecte de la gràfica en $x=a$ | Què passa? | És derivable? |
 |---|---|:---:|
-| Punt suau | Les dues pendents laterals són finites i iguals. | Sí |
-| Punt angulós | Les pendents laterals són finites, però diferents. | No |
-| Cúspide | Les pendents laterals es fan infinites amb signes diferents. | No |
-| Tangent vertical | La pendent no és finita. | No |
+| Punt suau | Els dos pendents laterals són finits i iguals. | Sí |
+| Punt angulós | Els pendents laterals són finits, però diferents. | No |
+| Cúspide | Els pendents laterals es fan infinits amb signes diferents. | No |
+| Tangent vertical | El pendent no és finit. | No |
 | Discontinuïtat | No es compleixen les tres condicions de continuïtat. | No |
 
 <figure markdown="span">
@@ -85,7 +85,7 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 
 ## 4. Estudi analític de la derivabilitat
 
-En una funció definida a trossos, estudiem primer si els dos trossos enllacen i després si ho fan amb la mateixa pendent.
+En una funció definida a trossos, estudiem primer si els dos trossos enllacen i després si ho fan amb el mateix pendent.
 
 !!! tip "La derivada conserva els trams"
     Derivem **una expressió per cada tram** i mantenim el mateix nombre de trams que tenia la funció original. No afegim un cas nou per a cada punt d'unió. Després, estudiem cada punt $x=a$ per separat i comprovem si

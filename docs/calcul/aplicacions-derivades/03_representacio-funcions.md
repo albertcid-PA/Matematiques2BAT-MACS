@@ -782,7 +782,7 @@ g(x), & g(x)\geq0,\\
 \end{cases}
 $$
 
-Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del seu interval. Si tots els trossos són funcions lineals, no cal repetir els vuit passos: n'hi ha prou amb identificar la pendent, situar dos punts de cada recta i comprovar els punts d'unió. Si els trossos no són lineals, seguim els vuit passos habituals a partir de la funció a trossos.
+Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del seu interval. Si tots els trossos són funcions lineals, no cal repetir els vuit passos: n'hi ha prou amb identificar el pendent, situar dos punts de cada recta i comprovar els punts d'unió. Si els trossos no són lineals, seguim els vuit passos habituals a partir de la funció a trossos.
 
 !!! note "Dibuix final"
     Els cercles buits indiquen que el punt no pertany al tros corresponent; els punts plens indiquen el valor real de la funció. La gràfica no s'ha de prolongar fora de l'interval assignat a cada expressió.
@@ -981,7 +981,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     \end{cases}
     $$
 
-    **Construcció de la gràfica.** Els tres trossos són funcions lineals. Per tant, no cal aplicar-hi els vuit passos ni calcular derivades: la pendent i dos punts de cada recta permeten dibuixar cada tram dins del seu interval.
+    **Construcció de la gràfica.** Els tres trossos són funcions lineals. Per tant, no cal aplicar-hi els vuit passos ni calcular derivades: el pendent i dos punts de cada recta permeten dibuixar cada tram dins del seu interval.
 
     | Interval | Expressió | Pendent | Punts útils |
     |:---:|:---:|:---:|:---:|
@@ -997,7 +997,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     3\cdot3-7=3-1=2.
     $$
 
-    Així, la gràfica és contínua en $x=2$ i en $x=3$. La pendent passa de $-1$ a $3$ en $x=2$, de manera que $(2,-1)$ és un mínim. En $x=3$, les dues pendents són positives: $(3,2)$ és un punt angulós, però no és un extrem. Els talls amb els eixos són $(0,1)$, $(1,0)$ i $\left(\frac73,0\right)$.
+    Així, la gràfica és contínua en $x=2$ i en $x=3$. El pendent passa de $-1$ a $3$ en $x=2$, de manera que $(2,-1)$ és un mínim. En $x=3$, els dos pendents són positius: $(3,2)$ és un punt angulós, però no és un extrem. Els talls amb els eixos són $(0,1)$, $(1,0)$ i $\left(\frac73,0\right)$.
 
     <figure markdown="span">
       ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=7){ width="760" }

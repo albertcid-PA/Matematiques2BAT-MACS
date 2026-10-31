@@ -193,7 +193,7 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
     \end{aligned}
     $$
 
-    !!! nota
+    !!! note
         Ens agrada sempre posar les constants al davant.
 
 ### Divisió
