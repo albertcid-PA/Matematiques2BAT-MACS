@@ -4036,7 +4036,7 @@ $$
 
 ---
 
-!!! info "Recursos per continuar practicant"
+!!! note "Recursos per continuar practicant"
 
     **PAU de Catalunya**
 
