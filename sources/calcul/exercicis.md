@@ -1,6 +1,6 @@
 # Exercicis de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/recull_enunciats_calcul.pdf?v=2" target="_blank" rel="noopener">Descarrega el recull d'enunciats en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/recull_enunciats_calcul.pdf?v=3" target="_blank" rel="noopener">Descarrega el recull d'enunciats en PDF</a></p>
 
 ---
 
@@ -700,5 +700,5 @@ $$
 - **b)** Troba les dimensions que ha de tenir la maleta perquè el volum sigui màxim i justifica-ho.
 - **c)** Calcula el volum màxim de la maleta.
 
-!!! info "Preparació de les PAU"
+!!! note "Preparació de les PAU"
     Continua amb els [problemes PAU de càlcul de l'apartat Per practicar](per-practicar/solucionari.md#problemes-pau), ordenats per continguts i amb exercicis de convocatòries reals i d'entrenament de tipus PAU.

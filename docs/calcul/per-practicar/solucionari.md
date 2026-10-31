@@ -1,10 +1,10 @@
-# Exercicis i problemes
+# Exercicis i problemes {.pdf-exercise-collection}
 
 En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=2){ target="_blank" rel="noopener" }
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=3){ target="_blank" rel="noopener" }
 
 </div>
 
@@ -3620,6 +3620,8 @@ on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ c
 ---
 
 ### Modelització, comparació i optimització
+
+#### Construcció de la funció a partir de l'enunciat
 
 **PAU.C.7.**
 **Reserves d'un hotel**
