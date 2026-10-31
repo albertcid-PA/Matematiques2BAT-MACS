@@ -5,7 +5,7 @@
 
     L'analitzador és una ajuda per revisar una resolució. Cal justificar els passos i saber interpretar la informació obtinguda.
 
-<div id="function-analyzer" class="fa-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=25">
+<div id="function-analyzer" class="fa-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=26">
   <noscript>
     <p class="fa-message fa-message--error">Cal activar el JavaScript del navegador per utilitzar l'analitzador.</p>
   </noscript>
@@ -27,9 +27,9 @@
         <span>Prova:</span>
         <button type="button" data-example="x^3-3*x^2-9*x+27">polinòmica</button>
         <button type="button" data-example="(x^2-x-2)/(x^2-3*x+2)">racional</button>
-        <button type="button" data-example="root(4,x-16)">irracional</button>
-        <button type="button" data-example="exp(-x)">exponencial</button>
-        <button type="button" data-example="ln(x-2)">logarítmica</button>
+        <button type="button" data-example="root(4,x^2-4)">irracional</button>
+        <button type="button" data-example="x^2*exp(-x)">exponencial</button>
+        <button type="button" data-example="ln(x^2-4)">logarítmica</button>
       </div>
     </section>
 
@@ -133,7 +133,7 @@
         <canvas id="fa-graph-overlay" class="fa-graph-overlay" width="960" height="540" aria-hidden="true"></canvas>
         <div id="fa-graph-tooltip" class="fa-graph-tooltip" hidden></div>
       </div>
-      <p class="fa-graph-help"><strong>Ordinador:</strong> arrossega el gràfic per desplaçar-lo, fes servir la rodeta o els botons per canviar el zoom i passa el cursor per una corba per consultar-ne les coordenades. Un punt petit i dues línies guia n'indiquen la posició. <strong>Mòbil:</strong> llisca un dit per resseguir la funció; utilitza dos dits per desplaçar el gràfic o fer zoom.</p>
+      <p class="fa-graph-help"><strong>Ordinador:</strong> arrossega el gràfic per desplaçar-lo, fes servir la rodeta o els botons per canviar el zoom i mou el cursor per l'àrea del gràfic per consultar les coordenades de la funció. Un punt petit i dues línies guia n'indiquen la posició. <strong>Mòbil:</strong> llisca un dit per resseguir la funció; utilitza dos dits per desplaçar el gràfic o fer zoom.</p>
       <div id="fa-legend" class="fa-legend"></div>
     </section>
   </section>

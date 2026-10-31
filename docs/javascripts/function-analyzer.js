@@ -3344,8 +3344,7 @@
       });
     }
 
-    const threshold = nearest && nearest.marked ? markerThreshold : (touchInteraction ? 36 : 22) * state.width / rect.width;
-    if (!nearest || nearest.distance > threshold) {
+    if (!nearest) {
       clearGraphTracking(canvas);
       return;
     }
