@@ -158,33 +158,46 @@ $$
     A^t=(a_{ji})_{n\times m}.
     $$
 
-Si
-
-$$
-A=
-\begin{pmatrix}
-1&2&-1\\
-3&0&4
-\end{pmatrix},
-$$
-
-aleshores
-
-$$
-A^t=
-\begin{pmatrix}
-1&3\\
-2&0\\
--1&4
-\end{pmatrix}
-$$
-
 Per tant, si $A$ és d'ordre $m\times n$, la seva transposada és d'ordre $n\times m$.
 
 !!! note "Interpretació de la transposició"
     La transposició no modifica les dades: n'intercanvia l'organització. Si les files d'una matriu representen magatzems i les columnes representen productes, a la matriu transposada les files representen els productes i les columnes, els magatzems.
 
     Aquesta reorganització pot ser útil per presentar les dades des d'un altre punt de vista o per col·locar-les en l'ordre necessari abans d'un producte de matrius.
+
+!!! example "Canviar el punt de vista de les dades"
+    La matriu $Q$ indica les quantitats de tres productes que necessiten dos magatzems:
+
+    $$
+    Q=
+    \begin{array}{cc}
+    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    \begin{array}{c}M_1\\M_2\end{array}
+    &
+    \begin{pmatrix}
+    10&5&8\\
+    6&9&4
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    En transposar-la, els productes passen a les files i els magatzems, a les columnes:
+
+    $$
+    Q^t=
+    \begin{array}{cc}
+    &\begin{array}{cc}M_1\!&\!M_2\end{array}\\[0.5mm]
+    \begin{array}{c}P_1\\P_2\\P_3\end{array}
+    &
+    \begin{pmatrix}
+    10&6\\
+    5&9\\
+    8&4
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Per tant, $Q$ és d'ordre $2\times3$ i $Q^t$ és d'ordre $3\times2$.
 
 !!! note "Matriu simètrica"
     Una matriu quadrada és **simètrica** si coincideix amb la seva transposada, és a dir, si $A=A^t$. Per exemple,

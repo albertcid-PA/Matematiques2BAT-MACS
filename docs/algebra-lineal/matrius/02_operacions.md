@@ -20,38 +20,66 @@ Les operacions amb matrius tenen condicions pròpies. Abans de calcular, cal com
 
     No n'hi ha prou que les dues matrius tinguin el mateix ordre: també han de representar les mateixes categories, en el mateix ordre i amb unitats compatibles.
 
-Si
+!!! example "Quantitats en dos períodes"
+    Les matrius $Q_1$ i $Q_2$ indiquen les unitats de tres productes que necessiten dos magatzems durant dos períodes diferents:
 
-$$
-A=\begin{pmatrix}1&-2\\3&0\end{pmatrix},
-\qquad
-B=\begin{pmatrix}4&1\\-1&5\end{pmatrix},
-$$
+    $$
+    Q_1=
+    \begin{array}{cc}
+    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    \begin{array}{c}M_1\\M_2\end{array}
+    &
+    \begin{pmatrix}
+    10&5&8\\
+    6&9&4
+    \end{pmatrix}
+    \end{array}
+    $$
 
-aleshores
+    $$
+    Q_2=
+    \begin{array}{cc}
+    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    \begin{array}{c}M_1\\M_2\end{array}
+    &
+    \begin{pmatrix}
+    12&4&9\\
+    5&11&6
+    \end{pmatrix}
+    \end{array}
+    $$
 
-$$
-A+B=
-\begin{pmatrix}
-1+4&-2+1\\
-3+(-1)&0+5
-\end{pmatrix}
-=
-\begin{pmatrix}
-5&-1\\
-2&5
-\end{pmatrix},
-$$
+    La suma dona les quantitats totals dels dos períodes:
 
-i
+    $$
+    Q_1+Q_2=
+    \begin{array}{cc}
+    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    \begin{array}{c}M_1\\M_2\end{array}
+    &
+    \begin{pmatrix}
+    22&9&17\\
+    11&20&10
+    \end{pmatrix}
+    \end{array}
+    $$
 
-$$
-A-B=
-\begin{pmatrix}
--3&-3\\
-4&-5
-\end{pmatrix}
-$$
+    La diferència $Q_2-Q_1$ mostra la variació del segon període respecte del primer:
+
+    $$
+    Q_2-Q_1=
+    \begin{array}{cc}
+    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    \begin{array}{c}M_1\\M_2\end{array}
+    &
+    \begin{pmatrix}
+    2&-1&1\\
+    -1&2&2
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Per exemple, el valor $-1$ de la primera fila indica que el magatzem $M_1$ necessita una unitat menys del producte $P_2$ en el segon període.
 
 ## 2. Producte d'una matriu per un nombre
 
@@ -68,23 +96,28 @@ $$
 
     Les files i les columnes mantenen el mateix significat; només canvien els valors dels elements.
 
-$$
--2
-\begin{pmatrix}
-1&-3\\
-2&4
-\end{pmatrix}
-=
-\begin{pmatrix}
--2&6\\
--4&-8
-\end{pmatrix}
-$$
+!!! example "Duplicar les quantitats"
+    Si volem cobrir dos períodes iguals al primer de l'exemple anterior, multipliquem $Q_1$ per $2$:
+
+    $$
+    2Q_1=
+    \begin{array}{cc}
+    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    \begin{array}{c}M_1\\M_2\end{array}
+    &
+    \begin{pmatrix}
+    20&10&16\\
+    12&18&8
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Totes les quantitats es dupliquen, però les files continuen representant els magatzems i les columnes, els productes.
 
 ## 3. Producte de matrius
 
 !!! abstract "Condició per multiplicar"
-    El producte $AB$ només està definit si el nombre de columnes d'$A$ coincideix amb el nombre de files de $B$.
+    **Abans de multiplicar**, ens hem d'assegurar que el nombre de columnes de la primera matriu és igual al nombre de files de la segona. Si no coincideixen, el producte no es pot efectuar.
 
     Si $A$ és d'ordre $m\times n$ i $B$ és d'ordre $n\times p$, el producte $AB$ és d'ordre $m\times p$.
 
