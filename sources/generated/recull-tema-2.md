@@ -82,7 +82,7 @@ $$
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_1_derivades_laterals.tex">Figura 2.1.</a></strong> Derivades laterals en un punt suau i en un punt angulós.</figcaption>
 </figure>
 
-En el primer gràfic, la pendent s'apropa al mateix valor des dels dos costats: la funció és derivable en $a$. En el segon, les pendents laterals són diferents: la funció és contínua, però no és derivable en $a$.
+En el primer gràfic, el pendent s'apropa al mateix valor des dels dos costats: la funció és derivable en $a$. En el segon, els pendents laterals són diferents: la funció és contínua, però no és derivable en $a$.
 
 ### 3. Com es reconeix gràficament?
 
@@ -90,10 +90,10 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 
 | Aspecte de la gràfica en $x=a$ | Què passa? | És derivable? |
 |---|---|:---:|
-| Punt suau | Les dues pendents laterals són finites i iguals. | Sí |
-| Punt angulós | Les pendents laterals són finites, però diferents. | No |
-| Cúspide | Les pendents laterals es fan infinites amb signes diferents. | No |
-| Tangent vertical | La pendent no és finita. | No |
+| Punt suau | Els dos pendents laterals són finits i iguals. | Sí |
+| Punt angulós | Els pendents laterals són finits, però diferents. | No |
+| Cúspide | Els pendents laterals es fan infinits amb signes diferents. | No |
+| Tangent vertical | El pendent no és finit. | No |
 | Discontinuïtat | No es compleixen les tres condicions de continuïtat. | No |
 
 <figure markdown="span">
@@ -106,7 +106,7 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 
 ### 4. Estudi analític de la derivabilitat
 
-En una funció definida a trossos, estudiem primer si els dos trossos enllacen i després si ho fan amb la mateixa pendent.
+En una funció definida a trossos, estudiem primer si els dos trossos enllacen i després si ho fan amb el mateix pendent.
 
 !!! tip "La derivada conserva els trams"
     Derivem **una expressió per cada tram** i mantenim el mateix nombre de trams que tenia la funció original. No afegim un cas nou per a cada punt d'unió. Després, estudiem cada punt $x=a$ per separat i comprovem si
@@ -1380,7 +1380,7 @@ g(x), & g(x)\geq0,\\
 \end{cases}
 $$
 
-Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del seu interval. Si tots els trossos són funcions lineals, no cal repetir els vuit passos: n'hi ha prou amb identificar la pendent, situar dos punts de cada recta i comprovar els punts d'unió. Si els trossos no són lineals, seguim els vuit passos habituals a partir de la funció a trossos.
+Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del seu interval. Si tots els trossos són funcions lineals, no cal repetir els vuit passos: n'hi ha prou amb identificar el pendent, situar dos punts de cada recta i comprovar els punts d'unió. Si els trossos no són lineals, seguim els vuit passos habituals a partir de la funció a trossos.
 
 !!! note "Dibuix final"
     Els cercles buits indiquen que el punt no pertany al tros corresponent; els punts plens indiquen el valor real de la funció. La gràfica no s'ha de prolongar fora de l'interval assignat a cada expressió.
@@ -1579,7 +1579,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     \end{cases}
     $$
 
-    **Construcció de la gràfica.** Els tres trossos són funcions lineals. Per tant, no cal aplicar-hi els vuit passos ni calcular derivades: la pendent i dos punts de cada recta permeten dibuixar cada tram dins del seu interval.
+    **Construcció de la gràfica.** Els tres trossos són funcions lineals. Per tant, no cal aplicar-hi els vuit passos ni calcular derivades: el pendent i dos punts de cada recta permeten dibuixar cada tram dins del seu interval.
 
     | Interval | Expressió | Pendent | Punts útils |
     |:---:|:---:|:---:|:---:|
@@ -1595,7 +1595,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     3\cdot3-7=3-1=2.
     $$
 
-    Així, la gràfica és contínua en $x=2$ i en $x=3$. La pendent passa de $-1$ a $3$ en $x=2$, de manera que $(2,-1)$ és un mínim. En $x=3$, les dues pendents són positives: $(3,2)$ és un punt angulós, però no és un extrem. Els talls amb els eixos són $(0,1)$, $(1,0)$ i $\left(\frac73,0\right)$.
+    Així, la gràfica és contínua en $x=2$ i en $x=3$. El pendent passa de $-1$ a $3$ en $x=2$, de manera que $(2,-1)$ és un mínim. En $x=3$, els dos pendents són positius: $(3,2)$ és un punt angulós, però no és un extrem. Els talls amb els eixos són $(0,1)$, $(1,0)$ i $\left(\frac73,0\right)$.
 
     <figure markdown="span">
       ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=7){ width="760" }

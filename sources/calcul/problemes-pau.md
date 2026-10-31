@@ -185,7 +185,7 @@ $$
 - **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
 - **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
 
-!!! info "Recursos per continuar practicant"
+!!! note "Recursos per continuar practicant"
 
     **PAU de Catalunya**
 

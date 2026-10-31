@@ -698,7 +698,7 @@ $$
 - **b)** Troba les dimensions que ha de tenir la maleta perquè el volum sigui màxim i justifica-ho.
 - **c)** Calcula el volum màxim de la maleta.
 
-!!! info "Preparació de les PAU"
+!!! note "Preparació de les PAU"
     Continua amb els [problemes PAU de càlcul de l'apartat Per practicar](per-practicar/solucionari.md#problemes-pau), ordenats per continguts i amb exercicis de convocatòries reals i d'entrenament de tipus PAU.
 
 <div class="pdf-page-break"></div>
@@ -892,7 +892,7 @@ $$
 - **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
 - **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
 
-!!! info "Recursos per continuar practicant"
+!!! note "Recursos per continuar practicant"
 
     **PAU de Catalunya**
 

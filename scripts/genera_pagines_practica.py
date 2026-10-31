@@ -96,7 +96,7 @@ def statement_blocks(path: Path) -> dict[str, list[str]]:
             flush()
             continue
 
-        if line.startswith('!!! info "Preparació') or line.startswith('!!! info "Recursos'):
+        if re.match(r'^!!! (?:info|note) "(?:Preparació|Recursos)', line):
             flush()
             continue
 
@@ -286,12 +286,12 @@ Els problemes següents combinen diversos continguts. S'indica si provenen d'una
 
 
 def trailing_resources(path: Path) -> str:
-    marker = '!!! info "Recursos per continuar practicant"'
     text = read(path)
-    _, separator, tail = text.partition(marker)
-    if not separator:
+    match = re.search(r'^!!! (?:info|note) "Recursos per continuar practicant"', text, re.MULTILINE)
+    if match is None:
         return ""
-    return f"{marker}{tail}".strip()
+    tail = text[match.end() :]
+    return f'!!! note "Recursos per continuar practicant"{tail}'.strip()
 
 
 def generate_solution_page() -> str:
@@ -310,13 +310,13 @@ def generate_solution_page() -> str:
         pau=True,
     )
     continuation_resources = trailing_resources(CALCUL_SOURCES / "problemes-pau.md")
-    return f"""# Exercicis i problemes
+    return f"""# Exercicis i problemes {{.pdf-exercise-collection}}
 
 En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=2){{ target="_blank" rel="noopener" }}
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=3){{ target="_blank" rel="noopener" }}
 
 </div>
 
