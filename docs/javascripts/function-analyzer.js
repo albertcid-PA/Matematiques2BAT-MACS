@@ -3676,11 +3676,14 @@
       ...analysis.criticalPoints,
       ...finiteDomainBoundaries(analysis.model),
     ].filter(Number.isFinite);
-    if (!relevant.length || relevant.every((x) => x >= defaultWindow.xMin && x <= defaultWindow.xMax)) return defaultWindow;
+    if (!relevant.length) return defaultWindow;
+    const fitPiecewiseWindow = analysis.model.mode === "piecewise";
+    if (!fitPiecewiseWindow && relevant.every((x) => x >= defaultWindow.xMin && x <= defaultWindow.xMax)) return defaultWindow;
     const minimum = Math.min(...relevant);
     const maximum = Math.max(...relevant);
     const center = (minimum + maximum) / 2;
-    const span = Math.max(20, (maximum - minimum) * 1.4 + 4);
+    const minimumSpan = fitPiecewiseWindow ? 8 : 20;
+    const span = Math.max(minimumSpan, (maximum - minimum) * 1.4 + 4);
     return { xMin: center - span / 2, xMax: center + span / 2 };
   }
 
