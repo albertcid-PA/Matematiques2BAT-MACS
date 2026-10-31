@@ -3204,6 +3204,12 @@
       .map((limit) => limit.value));
   }
 
+  function graphCriticalPoints(analysis) {
+    return uniqueNumbers([...analysis.criticalPoints, ...finiteDomainBoundaries(analysis.model)])
+      .map((x) => ({ x, y: evaluateModel(analysis.model, x) }))
+      .filter((point) => Number.isFinite(point.y));
+  }
+
   function graphMarkedPoints(analysis) {
     const points = [];
     function add(point) {
@@ -3429,10 +3435,9 @@
       yMin = quantile(yValues, 0.03);
       yMax = quantile(yValues, 0.97);
       const highlighted = [
-        ...analysis.roots.map((x) => ({ x, y: 0 })),
-        ...graphExtrema(analysis),
+        ...graphMarkedPoints(analysis),
+        ...graphCriticalPoints(analysis),
         ...graphHorizontalAsymptotes(analysis).map((y) => ({ x: (xMin + xMax) / 2, y })),
-        { x: 0, y: evaluateModel(analysis.model, 0) },
       ].filter((point) => Number.isFinite(point.y) && point.x >= xMin && point.x <= xMax);
       const focusValues = highlighted.map((point) => point.y);
       const focusMin = focusValues.length ? Math.min(...focusValues) : NaN;
@@ -3668,9 +3673,10 @@
       ...analysis.roots,
       ...analysis.model.joins,
       ...analysis.specialPoints.map((point) => point.x),
-      ...graphExtrema(analysis).map((point) => point.x),
+      ...analysis.criticalPoints,
+      ...finiteDomainBoundaries(analysis.model),
     ].filter(Number.isFinite);
-    if (!relevant.length || relevant.some((x) => x >= defaultWindow.xMin && x <= defaultWindow.xMax)) return defaultWindow;
+    if (!relevant.length || relevant.every((x) => x >= defaultWindow.xMin && x <= defaultWindow.xMax)) return defaultWindow;
     const minimum = Math.min(...relevant);
     const maximum = Math.max(...relevant);
     const center = (minimum + maximum) / 2;
