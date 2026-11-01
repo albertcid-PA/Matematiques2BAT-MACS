@@ -36,6 +36,7 @@ La presència dels fitxers no implica una auditoria completa del seu contingut m
 | Desenvolupament dels temes 5–7 | Contingut previst, sense encàrrec actiu per redactar-lo en aquesta conversa. Desenvolupar-lo quan el professor ho demani. |
 | Còpies temporals de l'entorn antic | `tmp/venv-antic/` (l'entorn `.venv` anterior) i `tmp/context-git-20261101/` (còpia de Codex que no es va enviar) ja no són necessàries. Es poden esborrar quan el professor ho vulgui; `tmp/` no es versiona. |
 | PDF dels temes 1, 2 i 4 i del recull | Només s'ha provat de punta a punta el script del tema 3 amb l'entorn nou. Els altres quatre tenen els mateixos canvis, però encara no s'han executat. |
+| Converses de Codex | Abans d'esborrar-les, conservar els adjunts o els acords que no s'hagin recuperat. |
 | Revisió d'emmagatzematge de GitHub Actions | La cerca ha recuperat una comprovació que va quedar pendent a la conversa del 29 d'octubre de 2026: l'espai dels artefactes d'Actions. No s'ha comprovat en aquesta tasca. Les xifres històriques de consum o mida d'aquella conversa no descriuen necessàriament l'estat actual. |
 
 ### Abast del context recuperat
@@ -44,20 +45,11 @@ La segona cerca ha aclarit que les recomanacions del 28 d'octubre de 2026 sobre 
 
 ## Darrera tasca
 
-- **Objectiu:** traspassar el manteniment del projecte de Codex a Claude Code (1 de novembre de 2026).
-- **Fitxers afectats:** `AGENTS.md`, `CLAUDE.md`, `GUIA_MANTENIMENT.md`, aquest document i els cinc `scripts/genera_pdf_*.ps1`.
-- **Implementat:**
-  - a partir de l'inventari inicial fet amb Codex, s'ha afegit `CLAUDE.md`, que importa `AGENTS.md`;
-  - s'ha recreat `.venv` a la carpeta actual, amb les mateixes versions i amb `pypdf` i `reportlab`, i `zensical.exe` torna a funcionar;
-  - els scripts de PDF utilitzen el Python de `.venv` en lloc del de Codex;
-  - s'ha afegit el BOM UTF-8 als cinc scripts de PDF, perquè Windows PowerShell 5.1 no espatlli els accents del peu de pàgina;
-  - el treball es fa directament al repositori principal.
-- **Comprovacions:**
-  - `zensical.exe build --clean` acaba amb `No issues found`;
-  - `git fetch origin` funciona;
-  - `genera_pdf_tema_3.ps1` genera un PDF amb les mateixes 16 pàgines i el mateix text, peu de pàgina inclòs, que el publicat; el PDF publicat s'ha restaurat i no s'ha canviat;
-  - no hi ha canvis al contingut de l'alumnat.
-- **Pròxim pas:** abans d'esborrar converses de Codex, conservar els adjunts o els acords que no s'hagin recuperat.
+- **Objectiu:** ampliar la pràctica de sistemes d'equacions amb més exercicis de Gauss i problemes de plantejament (1 de novembre de 2026). El professor va triar aquests dos tipus i unes sis activitats; els sistemes amb paràmetre no s'han inclòs.
+- **Fitxer afectat:** `docs/algebra-lineal/per-practicar/exercicis_algebra.md` (edició directa, sense generador).
+- **Implementat:** exercicis 3.8 (SCD amb intercanvi de files), 3.9 (SCI), 3.10 (SI i condició de compatibilitat) i una subsecció nova «Problemes de sistemes» amb 3.11 (SCD), 3.12 (SCI amb solucions naturals), 3.13 (SCD amb solució no vàlida en el context) i 3.14 (una mateixa situació que dona SCD, SCI o SI segons la dada afegida, amb taula resum). Tots tenen la solució pas a pas en desplegables tancats. A petició del professor, el paràmetre de les solucions dels SCI és $\lambda$ a tota la pàgina (abans s'usava $t$ al 3.6), com a la teoria.
+- **Comprovacions:** solucions verificades per substitució amb Python; `zensical.exe build --clean` acaba amb `No issues found`; `git diff --check` net; pàgina revisada al navegador local (14 desplegables tancats, fórmules renderitzades sense desbordament horitzontal, cap recurs amb error).
+- **Publicació:** el professor ha demanat publicar-ho; s'envia a `main` en el commit d'aquesta tasca. Per verificar el web públic, cal buscar-hi l'exercici 3.14.
 
 ## Com registrar una tasca incompleta
 
