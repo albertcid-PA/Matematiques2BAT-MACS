@@ -1,8 +1,8 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $zensical = Join-Path $projectRoot ".venv\Scripts\zensical.exe"
-$python = "C:\Users\acid8\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+$python = Join-Path $projectRoot ".venv\Scripts\python.exe"
 $edge = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 $tempDir = Join-Path $projectRoot "tmp\pdfs\tema-3-sistemes-metode-gauss"
 $rawPdf = Join-Path $tempDir "tema_3_sistemes_metode_gauss_sense_peu.pdf"

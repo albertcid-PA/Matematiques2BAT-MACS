@@ -2,6 +2,16 @@
 
 Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Ciències Socials II**. Aquestes instruccions s'han de seguir en qualsevol conversa nova oberta dins del projecte.
 
+## Continuïtat entre converses
+
+- En començar una tasca, llegeix aquest fitxer i [ESTAT_PROJECTE.md](ESTAT_PROJECTE.md), i revisa `git status`. Consulta [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md) per identificar les fonts, els generadors i les comprovacions que corresponen al canvi.
+- Les converses anteriors no són una dependència del projecte. Conserva els criteris estables en aquest fitxer, els procediments tècnics a la guia de manteniment i els pendents a l'estat del projecte.
+- Quan el professor acordi un criteri nou que hagi de continuar vigent, incorpora'l al document corresponent. No converteixis una proposta de l'agent en una decisió del professor.
+- Mantén `ESTAT_PROJECTE.md` breu i actualitzat quan canviï l'estat del treball. Si una tasca queda incompleta, indica l'objectiu, els fitxers afectats, què s'ha fet, què falta, les comprovacions executades i el pròxim pas concret.
+- Distingeix entre implementat, comprovat en local i verificat al web públic. No registris com a comprovació una acció que només s'ha proposat.
+- Si un acord o material només existeix en una conversa que no pots consultar, declara aquesta mancança i no en reconstrueixis el contingut per suposició.
+- Aquests documents són de manteniment del repositori: no els incorporis a la navegació de l'alumnat.
+
 ## Objectiu i llengua
 
 - Escriu el contingut adreçat a l'alumnat en català estàndard, amb frases clares i vocabulari matemàtic precís.
@@ -16,6 +26,9 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - `docs/stylesheets/extra.css` conté els ajustos visuals comuns.
 - `figures/tikz/` conté el codi font de les figures matemàtiques.
 - `docs/img/` conté els SVG que mostra el navegador.
+- `sources/calcul/` conté les fonts dels enunciats, resultats i solucions de la pàgina de pràctica de càlcul. Modifica aquestes fonts i regenera amb `scripts/genera_pagines_practica.py`; no editis directament `docs/calcul/per-practicar/exercicis_calcul.md`.
+- Els textos fixos, els enllaços i la versió del PDF de la pàgina generada de càlcul es defineixen al mateix generador. Canvia'ls allí perquè no es perdin en regenerar.
+- `sources/generated/` conté Markdown generat. Modifica les fonts originals o el generador corresponent, no aquests resultats manualment.
 - `site/` és una sortida generada. **No l'editis manualment ni la versionis.**
 - Consulta `GUIA_GRAFIQUES.md` abans de crear o modificar una figura.
 
@@ -56,6 +69,7 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - No atribueixis una convocatòria o procedència si no s'ha verificat.
 - Evita sèries repetitives: combina càlcul, interpretació, justificació i representació.
 - Les solucions han de valorar el procediment, no només el resultat.
+- A les pàgines de pràctica de càlcul i àlgebra lineal, conserva els enunciats visibles i les solucions pas a pas dins de desplegables `??? example`, tancats inicialment.
 
 ## Reculls d'exercicis en PDF
 
@@ -66,6 +80,15 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - Inclou fórmules, taules i figures necessàries, però evita espais sobrers i salts de pàgina innecessaris. No redueixis les figures fins al punt que les etiquetes deixin de ser llegibles.
 - Desa el PDF publicable a `docs/assets/exercicis/` i una còpia de treball a `output/pdf/`.
 - Després de generar-lo, renderitza totes les pàgines i revisa visualment que no hi hagi text tallat, encavalcaments, pàgines buides ni fórmules o figures il·legibles.
+
+## PDF dels apunts i sincronització
+
+- Els PDF dels apunts dels temes 1–4 es generen amb `scripts/genera_pdf_tema_1.ps1` fins a `scripts/genera_pdf_tema_4.ps1`. El recull d'enunciats de càlcul es genera amb `scripts/genera_pdf_recull_calcul.ps1`. Consulta les correspondències i les dependències a `GUIA_MANTENIMENT.md`.
+- Desa els PDF dels apunts a `docs/assets/apunts/` i els d'exercicis a `docs/assets/exercicis/`, amb còpia de treball a `output/pdf/`.
+- Conserva la maquetació específica dels apunts: classe `.pdf-topic-collection`, Latin Modern Roman de 10 pt, portada i índex. La configuració de 9 pt anterior correspon als reculls d'exercicis.
+- Quan canviïn textos, fórmules, taules o figures inclosos en un PDF, regenera els PDF afectats i incrementa `?v=n` en tots els enllaços corresponents, inclosos els definits als generadors.
+- Aplica als PDF dels apunts la mateixa revisió visual de totes les pàgines que als reculls d'exercicis.
+- Comprova les rutes i les dependències abans d'executar els scripts; no pressuposis que les rutes locals de Python o Edge seran vàlides en un altre entorn.
 
 ## Preparació d'exàmens
 
@@ -115,6 +138,8 @@ Per servir el web en local:
 
 ## Git i publicació
 
+- Repositori: <https://github.com/albertcid-PA/Matematiques2BAT-MACS>. Branca de publicació: `main`. Web públic: <https://albertcid-pa.github.io/Matematiques2BAT-MACS/>.
+- El flux `.github/workflows/docs.yml` construeix i publica el web. No executa els generadors de pràctica, figures ni PDF: cal generar i versionar els resultats afectats abans del `push`.
 - No descartis ni sobreescriguis canvis del professor.
 - Revisa `git status` abans de començar i abans de fer el commit.
 - Fes commits petits amb missatges descriptius en català.

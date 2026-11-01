@@ -1,8 +1,8 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $zensical = Join-Path $projectRoot ".venv\Scripts\zensical.exe"
-$python = "C:\Users\acid8\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+$python = Join-Path $projectRoot ".venv\Scripts\python.exe"
 $edge = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 $tempDir = Join-Path $projectRoot "tmp\pdfs\tema-1-repas-limits-derivades"
 $rawPdf = Join-Path $tempDir "tema_1_repas_limits_derivades_sense_peu.pdf"
