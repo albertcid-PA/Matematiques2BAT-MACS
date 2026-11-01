@@ -26,6 +26,7 @@ La presència dels fitxers no implica una auditoria completa del seu contingut m
 - La preparació de la segona prova parcial de càlcul presenta els temes 1 i 2 sencers com a coneixements previs. Preveu preguntes majoritàriament contextualitzades, amb especial atenció a l'optimització, les funcions a trossos, el valor absolut i el domini. La font del detall és `docs/preparacio-examens/pp1-2.md`; no extrapolis aquest format a altres proves sense indicació del professor.
 - La pràctica de càlcul es reconstrueix des de `sources/calcul/`. Els enunciats, els resultats breus i les solucions desenvolupades tenen fitxers diferents.
 - GitHub Actions publica els recursos generats localment; no els torna a generar.
+- Pràctica de sistemes (tema 3), criteris del professor de l'1 de novembre de 2026: pocs exercicis mecànics, que obliguin a pivotar (intercanviar files) i a combinar files amb els dos coeficients per no treballar amb fraccions; problemes contextualitzats amb percentatges (borsa, parts del preu i benefici, trams de facturació, IVA...), amb resultats percentuals exactes i no aproximats; paràmetre $\lambda$ a les solucions dels SCI, com a la teoria.
 
 ## Pendents i límits coneguts
 
@@ -45,11 +46,12 @@ La segona cerca ha aclarit que les recomanacions del 28 d'octubre de 2026 sobre 
 
 ## Darrera tasca
 
-- **Objectiu:** ampliar la pràctica de sistemes d'equacions amb més exercicis de Gauss i problemes de plantejament (1 de novembre de 2026). El professor va triar aquests dos tipus i unes sis activitats; els sistemes amb paràmetre no s'han inclòs.
+- **Objectiu:** refer la pràctica de sistemes d'equacions del tema 3 segons les indicacions del professor (1 de novembre de 2026). Una primera versió amb els exercicis 3.8–3.14 es va publicar al commit `f9d395b`; després el professor va demanar menys exercicis mecànics i problemes amb percentatges.
 - **Fitxer afectat:** `docs/algebra-lineal/per-practicar/exercicis_algebra.md` (edició directa, sense generador).
-- **Implementat:** exercicis 3.8 (SCD amb intercanvi de files), 3.9 (SCI), 3.10 (SI i condició de compatibilitat) i una subsecció nova «Problemes de sistemes» amb 3.11 (SCD), 3.12 (SCI amb solucions naturals), 3.13 (SCD amb solució no vàlida en el context) i 3.14 (una mateixa situació que dona SCD, SCI o SI segons la dada afegida, amb taula resum). Tots tenen la solució pas a pas en desplegables tancats. A petició del professor, el paràmetre de les solucions dels SCI és $\lambda$ a tota la pàgina (abans s'usava $t$ al 3.6), com a la teoria.
-- **Comprovacions:** solucions verificades per substitució amb Python; `zensical.exe build --clean` acaba amb `No issues found`; `git diff --check` net; pàgina revisada al navegador local (14 desplegables tancats, fórmules renderitzades sense desbordament horitzontal, cap recurs amb error).
-- **Publicació:** el professor ha demanat publicar-ho; s'envia a `main` en el commit d'aquesta tasca. Per verificar el web públic, cal buscar-hi l'exercici 3.14.
+- **Implementat:** 3.1–3.3 sense canvis. Els mecànics de Gauss queden reduïts a quatre de nous (3.4 i 3.5 SCD, 3.6 SCI, 3.7 SI), tots amb intercanvi de files o combinacions amb els dos coeficients. Els problemes 3.8–3.11 són tots amb percentatges: borsa amb validació d'una solució negativa (3.8), parts del preu amb IVA i benefici, i efecte d'un descompte sobre el benefici (3.9), trams horaris de la factura de la llum, SCI per percentatges complementaris i després SCD (3.10), i tipus d'IVA d'una compra, on una dada diferent dona SCD, SCI o SI (3.11). El consell «Com treballar» explica el pivot zero i la combinació amb dos coeficients.
+- **Comprovacions:** sistemes i transformacions de fila verificats amb Python; `zensical.exe build --clean` acaba amb `No issues found`; `git diff --check` net; pàgina revisada al navegador local (11 desplegables tancats, cap fórmula més ampla que la columna, cap recurs amb error).
+- **Publicació:** el professor ha demanat publicar-ho; s'envia a `main` en el commit d'aquesta tasca. Per verificar el web públic, cal buscar-hi el problema 3.11 de l'IVA.
+- **Pròxim pas:** el professor continuarà més endavant; no hi ha cap encàrrec pendent en aquesta pàgina.
 
 ## Com registrar una tasca incompleta
 
