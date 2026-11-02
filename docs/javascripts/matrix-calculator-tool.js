@@ -441,7 +441,7 @@
     if (!source.every((row) => row.length === size)) {
       throw theoryError(
         "No es pot calcular la inversa perquè la matriu no és quadrada.",
-        "La inversa A^{-1} només es defineix per a una matriu quadrada, ja que ha de complir AA^{-1}=A^{-1}A=I del mateix ordre.",
+        "La inversa $A^{-1}$ només es defineix per a una matriu quadrada, ja que ha de complir $AA^{-1}=A^{-1}A=I$ del mateix ordre.",
       );
     }
     const augmented = source.map((row, i) => row.concat(Array.from({ length: size }, (_, j) => i === j ? ONE : ZERO)));
@@ -452,8 +452,8 @@
       while (pivotRow < size && augmented[pivotRow][column].isZero()) pivotRow += 1;
       if (pivotRow === size) {
         throw theoryError(
-          `La matriu ${symbol.replace(/\\/g, "")} no és invertible perquè no es pot transformar en la identitat.`,
-          "Una matriu quadrada té inversa només si, mitjançant Gauss-Jordan, la part esquerra de (A|I) es pot convertir en la identitat.",
+          `La matriu no és invertible: en aplicar Gauss-Jordan, a la columna ${column + 1} no queda cap pivot no nul i, per tant, no es pot transformar en la identitat.`,
+          "Una matriu quadrada té inversa només si, mitjançant Gauss-Jordan, la part esquerra de $(A|I)$ es pot convertir en la identitat.",
         );
       }
       if (pivotRow !== column) {
@@ -544,7 +544,7 @@
           `No es pot calcular ${operationName}: la matriu és d'ordre ${order.rows}×${order.columns} i no és quadrada.`,
           node.operation === "inverse"
             ? "Només una matriu quadrada pot tenir inversa, perquè el producte amb la seva inversa ha de donar una matriu identitat del mateix ordre."
-            : "Per formar A^n cal multiplicar A per ella mateixa; això només és possible si el nombre de files coincideix amb el de columnes.",
+            : "Per formar $A^n$ cal multiplicar $A$ per ella mateixa; això només és possible si el nombre de files coincideix amb el de columnes.",
         );
       }
       if (node.operation === "inverse") {
@@ -677,7 +677,7 @@
         );
       }
       if (node.operation !== "transpose") {
-        throw new Error("En una igualtat amb incògnites, utilitza sumes, restes, productes i transposicions. Les potències i les inverses es poden calcular amb matrius numèriques.");
+        throw new Error("Aquesta eina només calcula potències i inverses quan tota l'expressió és numèrica. Si hi ha lletres, utilitza sumes, restes, productes i transposicions.");
       }
       const order = matrixOrder(child.value);
       const result = { type: "matrix", value: matrixTranspose(child.value) };
@@ -1082,6 +1082,7 @@
             theory.append(label, document.createTextNode(error.theory));
             message.append(theory);
           }
+          renderMath(message);
           message.hidden = false;
           status.textContent = "";
         }
@@ -1143,7 +1144,6 @@
       power: "[[1 2][0 1]]^3",
       inverse: "[[1 2][3 5]]^-1",
       combined: "2 * [[1 0][2 1]] + ([[1 1][0 1]]^2) - [[1 0][0 1]]",
-      incompatible: "[[1 2][3 4]] + [[1 0 2][2 1 3]]",
     };
 
     const operationCalculate = root.querySelector("#mc-op-calculate");
