@@ -33,7 +33,7 @@ La presència dels fitxers no implica una auditoria completa del seu contingut m
 | Element | Estat i pròxim pas |
 |:--|:--|
 | Context exclusiu de converses antigues | L'1 de novembre de 2026 s'han fet dues cerques dirigides de context d'aquest projecte. No han identificat criteris docents nous confirmats pel professor que faltessin als documents. La recuperació és parcial i no equival a llegir íntegrament totes les converses ni a conservar-ne els adjunts. No donar el traspàs per exhaustiu. |
-| Recull d'exercicis d'àlgebra | No hi ha un PDF d'exercicis d'àlgebra entre els fitxers versionats consultats, ni un generador específic identificat. La pàgina tampoc inclou l'enllaç inicial ni la classe de recull que demana `AGENTS.md`. Si el professor encarrega aquest recull, caldrà crear-lo i aplicar-hi la maquetació comuna; no s'ha implementat en aquesta tasca. |
+| Recull d'exercicis d'àlgebra | No hi ha un PDF d'exercicis d'àlgebra entre els fitxers versionats consultats, ni un generador específic identificat. La pàgina tampoc inclou l'enllaç inicial ni la classe de recull que demana `AGENTS.md`. El professor ha indicat (2 de novembre de 2026) que es farà quan s'acabin els exercicis d'àlgebra; llavors caldrà crear-lo i aplicar-hi la maquetació comuna. |
 | Desenvolupament dels temes 5–7 | Contingut previst, sense encàrrec actiu per redactar-lo en aquesta conversa. Desenvolupar-lo quan el professor ho demani. |
 | Còpies temporals de l'entorn antic | `tmp/venv-antic/` (l'entorn `.venv` anterior) i `tmp/context-git-20261101/` (còpia de Codex que no es va enviar) ja no són necessàries. Es poden esborrar quan el professor ho vulgui; `tmp/` no es versiona. |
 | PDF dels temes 1, 2 i 4 i del recull | Només s'ha provat de punta a punta el script del tema 3 amb l'entorn nou. Els altres quatre tenen els mateixos canvis, però encara no s'han executat. |
@@ -72,6 +72,15 @@ La segona cerca ha aclarit que les recomanacions del 28 d'octubre de 2026 sobre 
 - **Comprovacions:** solucions i transformacions de fila verificades amb Python; cerca automàtica sense sistemes repetits entre els exercicis i la teoria; `zensical.exe build --clean` acaba amb `No issues found`; `git diff --check` net; pàgina revisada al navegador local (26 desplegables tancats, numeració correcta, cap fórmula més ampla que la columna a 1280 px, cap recurs amb error).
 - **Publicació:** el professor ha demanat publicar-ho; s'envia a `main` en el commit d'aquesta tasca.
 - **Pendent de decisió del professor:** incorporar o no l'exercici 4, opció B, a) de la sèrie 4 de 2025 (fàbrica de pasta), que podria ser l'entrada opcional de la seva llista; aplicar o no l'enunciat literal als PAU de càlcul. Per verificar el web públic, cal buscar-hi «Activitats d'una associació».
+
+## Colors de les figures i mode fosc
+
+- **Objectiu:** que les figures TikZ usin els colors de la pàgina de referència que va indicar el professor (2 de novembre de 2026, Matemàtiques I, inequacions) i que el mateix gràfic es vegi en mode dia i en mode fosc.
+- **Implementat, sense publicar:** paleta nova a les 64 fonts de `figures/tikz/calcul/` i SVG regenerats; `?v=n` incrementat a les referències; panell de fons retirat i filtre de mode fosc a `docs/stylesheets/extra.css` (`extra.css?v=42`); etiquetes de la figura 2.25 recol·locades; PDF del recull de càlcul (`?v=4`) i dels temes 1 (`?v=4`) i 2 (`?v=3`) regenerats. Criteri documentat a `GUIA_GRAFIQUES.md`.
+- **Comprovat en local:** `zensical.exe build --clean` sense incidències; `git diff --check` net; sense imatges trencades a les pàgines d'exercicis i d'optimització; figures 2.20, 2.25 i 2.28 revisades al navegador; les 82 pàgines dels tres PDF revisades en miniatura, amb el mateix nombre de pàgines que abans.
+- **Analitzador de funcions (a petició del professor):** el gràfic i la llegenda usen la mateixa paleta i el mateix filtre, sense panell de fons (`function-analyzer.js?v=32` a l'analitzador i `?v=25` al derivador, `extra.css?v=43`). Comprovat en local amb una funció racional en tots dos modes; els colors de la interfície de l'eina no s'han canviat.
+- **Límits:** en mode fosc els colors són els que dona el filtre i no coincideixen exactament amb els de la referència (la corba surt més lila i el verd, més fosc). Els PDF dels apunts conserven el seu fons de figura `#f1f4fa`.
+- **Pròxim pas:** el professor ha de revisar el resultat i decidir si es publica.
 
 ## Com registrar una tasca incompleta
 

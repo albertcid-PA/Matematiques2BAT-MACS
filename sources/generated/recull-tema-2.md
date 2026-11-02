@@ -78,7 +78,7 @@ $$
 $$
 
 <figure markdown="span">
-  ![Comparació gràfica entre un punt suau, on les derivades laterals coincideixen, i un punt angulós, on són diferents](../../img/calcul/fig_2_1_derivades_laterals.svg?v=2){ width="900" }
+  ![Comparació gràfica entre un punt suau, on les derivades laterals coincideixen, i un punt angulós, on són diferents](../../img/calcul/fig_2_1_derivades_laterals.svg?v=3){ width="900" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_1_derivades_laterals.tex">Figura 2.1.</a></strong> Derivades laterals en un punt suau i en un punt angulós.</figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ Abans de calcular, la forma de la gràfica ens permet anticipar què passarà:
 | Discontinuïtat | No es compleixen les tres condicions de continuïtat. | No |
 
 <figure markdown="span">
-  ![Tres situacions en què una funció no és derivable: discontinuïtat, cúspide i tangent vertical](../../img/calcul/fig_2_2_casos_no_derivables.svg?v=3){ width="960" }
+  ![Tres situacions en què una funció no és derivable: discontinuïtat, cúspide i tangent vertical](../../img/calcul/fig_2_2_casos_no_derivables.svg?v=4){ width="960" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_2_casos_no_derivables.tex">Figura 2.2.</a></strong> Casos en què una funció no és derivable.</figcaption>
 </figure>
 
@@ -155,7 +155,7 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     Tota funció derivable en un punt ha de ser contínua en aquell punt. Com que $f$ no és contínua en $x=1$, podem concloure directament que $f$ **no és derivable** en $x=1$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable en x igual a u i una asímptota vertical en x igual a menys dos](../../img/calcul/fig_2_3_exemple_discontinuitat_evitable.svg?v=5){ width="740" }
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable en x igual a u i una asímptota vertical en x igual a menys dos](../../img/calcul/fig_2_3_exemple_discontinuitat_evitable.svg?v=6){ width="740" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_3_exemple_discontinuitat_evitable.tex">Figura 2.3.</a></strong> Discontinuïtat evitable en $x=1$ i asímptota vertical en $x=-2$.</figcaption>
     </figure>
 
@@ -197,7 +197,7 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     Les derivades laterals no coincideixen. Per tant, $f$ **no és derivable** en $x=1$ i la gràfica té un punt angulós.
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos contínua amb un punt angulós en x igual a u](../../img/calcul/fig_2_4_exemple_continua_no_derivable.svg?v=5){ width="720" }
+      ![Gràfica d'una funció a trossos contínua amb un punt angulós en x igual a u](../../img/calcul/fig_2_4_exemple_continua_no_derivable.svg?v=6){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_4_exemple_continua_no_derivable.tex">Figura 2.4.</a></strong> Funció contínua però no derivable en $x=1$.</figcaption>
     </figure>
 
@@ -239,7 +239,7 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     Les derivades laterals coincideixen. Per tant, $f$ **és derivable** en $x=-1$ i $f'(-1)=-3$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb una unió suau en x igual a menys u](../../img/calcul/fig_2_5_exemple_continua_derivable.svg?v=4){ width="720" }
+      ![Gràfica d'una funció a trossos amb una unió suau en x igual a menys u](../../img/calcul/fig_2_5_exemple_continua_derivable.svg?v=5){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_5_exemple_continua_derivable.tex">Figura 2.5.</a></strong> Funció contínua i derivable en $x=-1$.</figcaption>
     </figure>
 
@@ -308,7 +308,7 @@ En una funció definida a trossos, estudiem primer si els dos trossos enllacen i
     i en aquest cas $f'(2)=4$.
 
     <figure markdown="span">
-      ![Gràfica de la funció a trossos obtinguda amb m igual a u i n igual a quatre](../../img/calcul/fig_2_6_exemple_parametres.svg?v=4){ width="720" }
+      ![Gràfica de la funció a trossos obtinguda amb m igual a u i n igual a quatre](../../img/calcul/fig_2_6_exemple_parametres.svg?v=5){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_6_exemple_parametres.tex">Figura 2.6.</a></strong> Funció derivable obtinguda amb $m=1$ i $n=4$.</figcaption>
     </figure>
 
@@ -377,7 +377,7 @@ El procediment és el següent:
     En $x=2$, les derivades laterals són $f'(2^-)=-1$ i $f'(2^+)=1$. Així, $f$ és contínua en tot $\mathbb{R}$, però no és derivable en $x=2$.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/calcul/fig_2_7_valor_absolut_lineal.svg?v=3){ width="720" }
+      ![Gràfica de la funció valor absolut de x menys dos, amb un punt angulós en x igual a dos](../../img/calcul/fig_2_7_valor_absolut_lineal.svg?v=4){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_7_valor_absolut_lineal.tex">Figura 2.7.</a></strong> Gràfica de $f(x)=|x-2|$.</figcaption>
     </figure>
 
@@ -519,7 +519,7 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     $$
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica amb un màxim i un mínim relatius](../../img/calcul/fig_2_8_creixement_maxim_minim.svg?v=3){ width="740" }
+      ![Gràfica de la funció polinòmica amb un màxim i un mínim relatius](../../img/calcul/fig_2_8_creixement_maxim_minim.svg?v=4){ width="740" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_8_creixement_maxim_minim.tex">Figura 2.8.</a></strong> Creixement, decreixement, màxim i mínim de $f(x)=x^3-3x^2-9x+5$.</figcaption>
     </figure>
 
@@ -576,7 +576,7 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     $$
 
     <figure markdown="span">
-      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/calcul/fig_2_9_creixement_polinomi_exponencial.svg?v=5){ width="720" }
+      ![Gràfica del producte d'un polinomi per una exponencial amb un mínim i un màxim relatius](../../img/calcul/fig_2_9_creixement_polinomi_exponencial.svg?v=6){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_polinomi_exponencial.tex">Figura 2.9.</a></strong> Creixement, decreixement i extrems de $f(x)=x^2e^{-x}$.</figcaption>
     </figure>
 
@@ -875,7 +875,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     Hi ha un màxim relatiu en $(-1,32)$ i un mínim relatiu en $(3,0)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_10_representacio_polinomica.svg?v=5){ width="820" }
+      ![Gràfica de la funció polinòmica amb els talls i els extrems relatius destacats](../../img/calcul/fig_2_10_representacio_polinomica.svg?v=6){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_10_representacio_polinomica.tex">Figura 2.10.</a></strong> Representació de la funció polinòmica.</figcaption>
     </figure>
 
@@ -1036,7 +1036,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i convergència a 1 als dos extrems](../../img/calcul/fig_2_11_representacio_racional.svg?v=7){ width="820" }
+      ![Gràfica d'una funció racional amb una discontinuïtat evitable, una asímptota vertical i convergència a 1 als dos extrems](../../img/calcul/fig_2_11_representacio_racional.svg?v=8){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_11_representacio_racional.tex">Figura 2.11.</a></strong> Funció racional amb una discontinuïtat evitable i una discontinuïtat de salt infinit.</figcaption>
     </figure>
 
@@ -1171,7 +1171,7 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
     La funció té un mínim relatiu en $(0,0)$ i un màxim relatiu en $(4,-8)$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció racional amb una asímptota vertical, branques infinites, un mínim i un màxim relatius](../../img/calcul/fig_2_12_representacio_racional_branques_infinites.svg?v=5){ width="820" }
+      ![Gràfica d'una funció racional amb una asímptota vertical, branques infinites, un mínim i un màxim relatius](../../img/calcul/fig_2_12_representacio_racional_branques_infinites.svg?v=6){ width="820" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_12_representacio_racional_branques_infinites.tex">Figura 2.12.</a></strong> Funció racional amb una asímptota vertical, branques infinites i dos extrems relatius.</figcaption>
     </figure>
 
@@ -1243,7 +1243,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     La funció creix en tot el seu domini i té un mínim absolut en $(-2,0)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció irracional arrel quadrada de x més dos](../../img/calcul/fig_2_13_representacio_irracional.svg?v=2){ width="680" }
+      ![Gràfica de la funció irracional arrel quadrada de x més dos](../../img/calcul/fig_2_13_representacio_irracional.svg?v=3){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_13_representacio_irracional.tex">Figura 2.13.</a></strong> Representació de $f(x)=\sqrt{x+2}$.</figcaption>
     </figure>
 
@@ -1294,7 +1294,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     La funció decreix en tot $\mathbb{R}$ i no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica de la funció exponencial e elevat a menys x](../../img/calcul/fig_2_14_representacio_exponencial.svg?v=2){ width="680" }
+      ![Gràfica de la funció exponencial e elevat a menys x](../../img/calcul/fig_2_14_representacio_exponencial.svg?v=3){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_14_representacio_exponencial.tex">Figura 2.14.</a></strong> Representació de $g(x)=e^{-x}$.</figcaption>
     </figure>
 
@@ -1358,7 +1358,7 @@ En aquestes funcions el domini i els límits acostumen a determinar bona part de
     La funció creix en tot el seu domini i no té extrems relatius.
 
     <figure markdown="span">
-      ![Gràfica de la funció logarítmica logaritme neperià de x menys dos](../../img/calcul/fig_2_15_representacio_logaritmica.svg?v=3){ width="680" }
+      ![Gràfica de la funció logarítmica logaritme neperià de x menys dos](../../img/calcul/fig_2_15_representacio_logaritmica.svg?v=4){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_15_representacio_logaritmica.tex">Figura 2.15.</a></strong> Representació de $h(x)=\ln(x-2)$.</figcaption>
     </figure>
 
@@ -1519,7 +1519,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     La funció decreix a banda i banda de $x=1$; per tant, aquest punt no és un extrem relatiu. En $x=3$, el signe de la derivada passa de negatiu a positiu i hi ha un mínim relatiu en $(3,-2)$.
 
     <figure markdown="span">
-      ![Gràfica d'una funció a trossos amb els talls amb els eixos marcats, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable](../../img/calcul/fig_2_16_representacio_funcio_trossos.svg?v=7){ width="560" }
+      ![Gràfica d'una funció a trossos amb els talls amb els eixos marcats, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable](../../img/calcul/fig_2_16_representacio_funcio_trossos.svg?v=8){ width="560" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_16_representacio_funcio_trossos.tex">Figura 2.16.</a></strong> Funció a trossos amb els talls amb els eixos, una discontinuïtat de salt infinit i un punt d'unió continu però no derivable.</figcaption>
     </figure>
 
@@ -1598,7 +1598,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     Així, la gràfica és contínua en $x=2$ i en $x=3$. El pendent passa de $-1$ a $3$ en $x=2$, de manera que $(2,-1)$ és un mínim. En $x=3$, els dos pendents són positius: $(3,2)$ és un punt angulós, però no és un extrem. Els talls amb els eixos són $(0,1)$, $(1,0)$ i $\left(\frac73,0\right)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=7){ width="760" }
+      ![Gràfica de la funció valor absolut de menys dos x més quatre menys el valor absolut de x menys tres](../../img/calcul/fig_2_17_representacio_dos_valors_absoluts.svg?v=8){ width="760" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_17_representacio_dos_valors_absoluts.tex">Figura 2.17.</a></strong> Representació de $f(x)=|-2x+4|-|x-3|$.</figcaption>
     </figure>
 
@@ -1756,7 +1756,7 @@ Un cop obtinguda la funció a trossos, estudiem cada expressió només dins del 
     La funció té mínims relatius i absoluts en $(-3,0)$ i $(1,0)$, i un màxim relatiu en $(-1,4)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció valor absolut de x al quadrat més dos x menys tres, amb punts angulosos en x igual a menys tres i x igual a u](../../img/calcul/fig_2_18_valor_absolut_quadratica.svg?v=3){ width="720" }
+      ![Gràfica de la funció valor absolut de x al quadrat més dos x menys tres, amb punts angulosos en x igual a menys tres i x igual a u](../../img/calcul/fig_2_18_valor_absolut_quadratica.svg?v=4){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_18_valor_absolut_quadratica.tex">Figura 2.18.</a></strong> Representació de $f(x)=|x^2+2x-3|$.</figcaption>
     </figure>
 
@@ -1773,7 +1773,7 @@ En els problemes d'optimització sovint cal expressar longituds, àrees o volums
 En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar el **perímetre**. En qualsevol figura poligonal, el perímetre és la **suma de les longituds de tots els costats**.
 
 <figure markdown="span">
-  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/calcul/fig_2_19_repas_geometria_plana.svg?v=8){ width="900" }
+  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/calcul/fig_2_19_repas_geometria_plana.svg?v=9){ width="900" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_19_repas_geometria_plana.tex">Figura 2.19.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
 </figure>
 
@@ -1793,7 +1793,7 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ per indicar el **volum**. L'àrea total és la suma de les àrees de totes les superfícies que formen el cos.
 
 <figure markdown="span">
-  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/calcul/fig_2_20_repas_geometria_espai.svg?v=12){ width="960" }
+  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/calcul/fig_2_20_repas_geometria_espai.svg?v=13){ width="960" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_20_repas_geometria_espai.tex">Figura 2.20.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
 </figure>
 
@@ -2030,7 +2030,7 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     - $y$: altura de la capsa, en centímetres.
 
     <figure markdown="span">
-      ![Capsa oberta de base quadrada amb el costat x i l'altura y](../../img/calcul/fig_2_21_capsa_oberta.svg?v=7){ width="520" }
+      ![Capsa oberta de base quadrada amb el costat x i l'altura y](../../img/calcul/fig_2_21_capsa_oberta.svg?v=8){ width="520" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_21_capsa_oberta.tex">Figura 2.21.</a></strong> Variables de la capsa de base quadrada i sense tapa.</figcaption>
     </figure>
 
@@ -2315,7 +2315,7 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     Com que $f(x)$ està expressada en desenes de persones, el model preveu que, amb el pas del temps, el nombre setmanal de visitants **s'aproximarà a zero**. Això no vol dir que en una setmana concreta hagi de ser exactament zero, sinó que l'afluència prevista serà cada vegada més petita.
 
     <figure markdown="span">
-      ![Gràfica del nombre setmanal de visitants amb un màxim a la segona setmana](../../img/calcul/fig_2_22_visitants_exposicio.svg?v=4){ width="700" }
+      ![Gràfica del nombre setmanal de visitants amb un màxim a la segona setmana](../../img/calcul/fig_2_22_visitants_exposicio.svg?v=5){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_22_visitants_exposicio.tex">Figura 2.22.</a></strong> Evolució prevista del nombre setmanal de visitants, expressat en desenes de persones.</figcaption>
     </figure>
 #### 3.3 Benefici màxim d'una empresa de joguines
@@ -2496,7 +2496,7 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     - Entre $10$ i $18$ milers de nines, el benefici **decreix** fins a $20$ milers d'euros.
 
     <figure markdown="span">
-      ![Gràfica del benefici de Joguines Pallaresos en funció dels milers de nines](../../img/calcul/fig_2_23_benefici_empresa.svg?v=4){ width="700" }
+      ![Gràfica del benefici de Joguines Pallaresos en funció dels milers de nines](../../img/calcul/fig_2_23_benefici_empresa.svg?v=5){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_23_benefici_empresa.tex">Figura 2.23.</a></strong> Benefici en funció dels milers de nines fabricades.</figcaption>
     </figure>
 
@@ -2627,7 +2627,7 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     Per tant, la secció ha de tenir **$18$ venedors en total** i obtindrà uns ingressos mensuals màxims de **$64\,800$ €**.
 
     <figure markdown="span">
-      ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/calcul/fig_2_24_ingressos_venedors.svg?v=3){ width="700" }
+      ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/calcul/fig_2_24_ingressos_venedors.svg?v=4){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_24_ingressos_venedors.tex">Figura 2.24.</a></strong> Ingressos mensuals en funció del nombre de venedors nous contractats.</figcaption>
     </figure>
 
@@ -2820,7 +2820,7 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     **Apartat f. Representem la funció**
 
     <figure markdown="span">
-      ![Gràfica del preu d'un producte definit mitjançant una funció a trossos](../../img/calcul/fig_2_25_preu_producte_trossos.svg?v=2){ width="720" }
+      ![Gràfica del preu d'un producte definit mitjançant una funció a trossos](../../img/calcul/fig_2_25_preu_producte_trossos.svg?v=3){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_25_preu_producte_trossos.tex">Figura 2.25.</a></strong> Evolució del preu del producte, expressat en centenars d'euros.</figcaption>
     </figure>
 

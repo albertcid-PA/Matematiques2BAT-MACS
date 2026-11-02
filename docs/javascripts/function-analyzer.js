@@ -5,15 +5,16 @@
   const ROOT_EPS = 1e-6;
   const MAX_ABS_BREAKS = 6;
   const ALLOWED_FUNCTIONS = new Set(["abs", "sqrt", "cbrt", "root", "exp", "log"]);
-  const COLORS = ["#1565c0", "#7b1fa2", "#00897b"];
+  const COLORS = ["#3f51b5", "#2e9d5b", "#d97706"];
+  const ASYMPTOTE_COLOR = "#d32f2f";
   const POINT_COLORS = {
-    xIntercept: "#6d4c41",
-    yIntercept: "#546e7a",
-    bothIntercepts: "#3949ab",
-    maximum: "#ef6c00",
-    minimum: "#c2185b",
-    removable: "#c62828",
-    angular: "#5e35b1",
+    xIntercept: "#526cfe",
+    yIntercept: "#6b7280",
+    bothIntercepts: "#374151",
+    maximum: "#d32f2f",
+    minimum: "#d97706",
+    removable: "#d32f2f",
+    angular: "#2e9d5b",
   };
 
   function normalizeDecimalCommas(value) {
@@ -3366,7 +3367,7 @@
     context.beginPath();
     context.rect(margin.left, margin.top, plotWidth, plotHeight);
     context.clip();
-    context.strokeStyle = "rgba(38, 50, 56, 0.42)";
+    context.strokeStyle = "rgba(0, 0, 0, 0.42)";
     context.lineWidth = 1;
     context.setLineDash([4, 4]);
     context.beginPath();
@@ -3378,7 +3379,7 @@
     context.setLineDash([]);
     context.beginPath();
     context.arc(nearest.pointX, nearest.pointY, 3.5, 0, Math.PI * 2);
-    context.fillStyle = nearest.color || "#1565c0";
+    context.fillStyle = nearest.color || COLORS[0];
     context.strokeStyle = "#ffffff";
     context.lineWidth = 1.25;
     context.fill();
@@ -3476,10 +3477,7 @@
     const mapY = (y) => margin.top + ((yMax - y) / (yMax - yMin)) * plotHeight;
 
     const graphStyles = window.getComputedStyle(canvas);
-    const graphBackground = graphStyles.getPropertyValue("--graph-background").trim() || "#f2f3fa";
-    const graphGrid = graphStyles.getPropertyValue("--graph-grid").trim() || "#d6d9e6";
-    context.fillStyle = graphBackground;
-    context.fillRect(0, 0, width, height);
+    const graphGrid = graphStyles.getPropertyValue("--graph-grid").trim() || "#d9d9d9";
     context.save();
     context.beginPath();
     context.rect(margin.left, margin.top, plotWidth, plotHeight);
@@ -3489,7 +3487,7 @@
     const yStep = niceStep(yMax - yMin, 8);
     context.lineWidth = 1;
     context.strokeStyle = graphGrid;
-    context.fillStyle = "#536273";
+    context.fillStyle = "#374151";
     context.font = "12px system-ui, sans-serif";
     context.textAlign = "center";
     context.textBaseline = "top";
@@ -3508,8 +3506,8 @@
       context.stroke();
     }
 
-    context.strokeStyle = "#263238";
-    context.fillStyle = "#263238";
+    context.strokeStyle = "#737373";
+    context.fillStyle = "#737373";
     context.lineWidth = 1.4;
     const axisY = yMin <= 0 && yMax >= 0 ? mapY(0) : margin.top + plotHeight;
     const axisX = xMin <= 0 && xMax >= 0 ? mapX(0) : margin.left;
@@ -3524,7 +3522,7 @@
       const px = mapX(point.x);
       context.save();
       context.setLineDash([7, 5]);
-      context.strokeStyle = "#c62828";
+      context.strokeStyle = ASYMPTOTE_COLOR;
       context.lineWidth = 1.5;
       context.beginPath();
       context.moveTo(px, margin.top);
@@ -3538,7 +3536,7 @@
       const py = mapY(y);
       context.save();
       context.setLineDash([7, 5]);
-      context.strokeStyle = "#c62828";
+      context.strokeStyle = ASYMPTOTE_COLOR;
       context.lineWidth = 1.5;
       context.beginPath();
       context.moveTo(margin.left, py);
@@ -3579,7 +3577,7 @@
 
     context.restore();
 
-    context.fillStyle = "#455a64";
+    context.fillStyle = "#374151";
     context.font = "12px system-ui, sans-serif";
     context.textAlign = "center";
     context.textBaseline = "top";
@@ -3603,7 +3601,7 @@
       if (point.x < xMin || point.x > xMax || point.y < yMin || point.y > yMax || !Number.isFinite(point.y)) return;
       context.beginPath();
       context.arc(mapX(point.x), mapY(point.y), 4.5, 0, Math.PI * 2);
-      context.fillStyle = open ? graphBackground : color;
+      context.fillStyle = open ? "#ffffff" : color;
       context.strokeStyle = color;
       context.lineWidth = 2;
       context.fill();
@@ -3637,8 +3635,8 @@
 
   function renderLegend(analysis, container) {
     const items = analysis.model.branches.map((branch, index) => `<span class="fa-legend-item" style="--legend-color:${COLORS[index % COLORS.length]}">${analysis.model.branches.length > 1 ? `Tram ${index + 1}: ` : ""}${formula(`y=${branch.tex}`, false)}</span>`);
-    if (analysis.specialPoints.some((point) => point.type === "asímptota vertical")) items.push('<span class="fa-legend-item" style="--legend-color:#c62828">Asímptota vertical</span>');
-    graphHorizontalAsymptotes(analysis).forEach((y) => items.push(`<span class="fa-legend-item" style="--legend-color:#c62828">Asímptota horitzontal ${formula(`y=${texNumber(y)}`, false)}</span>`));
+    if (analysis.specialPoints.some((point) => point.type === "asímptota vertical")) items.push(`<span class="fa-legend-item" style="--legend-color:${ASYMPTOTE_COLOR}">Asímptota vertical</span>`);
+    graphHorizontalAsymptotes(analysis).forEach((y) => items.push(`<span class="fa-legend-item" style="--legend-color:${ASYMPTOTE_COLOR}">Asímptota horitzontal ${formula(`y=${texNumber(y)}`, false)}</span>`));
     const markedPoints = graphMarkedPoints(analysis);
     [
       ["x-intercept", "Tall amb l'eix X", POINT_COLORS.xIntercept],
@@ -3649,7 +3647,7 @@
       ["removable", "Discontinuïtat evitable", POINT_COLORS.removable],
       ["angular", "Punt angulós", POINT_COLORS.angular],
     ].forEach(([kind, label, color]) => {
-      if (markedPoints.some((point) => point.kind === kind)) items.push(`<span class="fa-legend-item fa-legend-item--point" style="--legend-color:${color}">${label}</span>`);
+      if (markedPoints.some((point) => point.kind === kind)) items.push(`<span class="fa-legend-item fa-legend-item--point${kind === "removable" ? " fa-legend-item--open" : ""}" style="--legend-color:${color}">${label}</span>`);
     });
     container.innerHTML = items.join("");
   }
