@@ -76,11 +76,11 @@ La segona cerca ha aclarit que les recomanacions del 28 d'octubre de 2026 sobre 
 ## Colors de les figures i mode fosc
 
 - **Objectiu:** que les figures TikZ usin els colors de la pàgina de referència que va indicar el professor (2 de novembre de 2026, Matemàtiques I, inequacions) i que el mateix gràfic es vegi en mode dia i en mode fosc.
-- **Implementat, sense publicar:** paleta nova a les 64 fonts de `figures/tikz/calcul/` i SVG regenerats; `?v=n` incrementat a les referències; panell de fons retirat i filtre de mode fosc a `docs/stylesheets/extra.css` (`extra.css?v=42`); etiquetes de la figura 2.25 recol·locades; PDF del recull de càlcul (`?v=4`) i dels temes 1 (`?v=4`) i 2 (`?v=3`) regenerats. Criteri documentat a `GUIA_GRAFIQUES.md`.
+- **Implementat:** paleta nova a les 64 fonts de `figures/tikz/calcul/` i SVG regenerats; `?v=n` incrementat a les referències; panell de fons retirat i filtre de mode fosc a `docs/stylesheets/extra.css` (`extra.css?v=42`); etiquetes de la figura 2.25 recol·locades; PDF del recull de càlcul (`?v=4`) i dels temes 1 (`?v=4`) i 2 (`?v=3`) regenerats. Criteri documentat a `GUIA_GRAFIQUES.md`.
 - **Comprovat en local:** `zensical.exe build --clean` sense incidències; `git diff --check` net; sense imatges trencades a les pàgines d'exercicis i d'optimització; figures 2.20, 2.25 i 2.28 revisades al navegador; les 82 pàgines dels tres PDF revisades en miniatura, amb el mateix nombre de pàgines que abans.
 - **Analitzador de funcions (a petició del professor):** el gràfic i la llegenda usen la mateixa paleta i el mateix filtre, sense panell de fons (`function-analyzer.js?v=32` a l'analitzador i `?v=25` al derivador, `extra.css?v=43`). Comprovat en local amb una funció racional en tots dos modes; els colors de la interfície de l'eina no s'han canviat.
 - **Límits:** en mode fosc els colors són els que dona el filtre i no coincideixen exactament amb els de la referència (la corba surt més lila i el verd, més fosc). Els PDF dels apunts conserven el seu fons de figura `#f1f4fa`.
-- **Pròxim pas:** el professor ha de revisar el resultat i decidir si es publica.
+- **Publicació:** commit `e39fea3`, verificat al web públic el 2 de novembre de 2026: `extra.css?v=43` amb el filtre, `function-analyzer.js?v=32` amb la paleta nova, figura 2.25 en mode fosc a `calcul/aplicacions-derivades/04_optimitzacio/`, i els enllaços i les mides dels PDF nous.
 
 ## Com registrar una tasca incompleta
 
