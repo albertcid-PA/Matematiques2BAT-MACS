@@ -4,9 +4,9 @@ Aquest bloc reuneix la probabilitat, les distribucions i la inferència estadís
 
 ## Temes
 
-5. [**Probabilitat i teorema de Bayes**](probabilitat/index.md).
-6. [**Distribucions de probabilitat**](distribucions/index.md).
-7. [**Inferència estadística**](inferencia/index.md).
+- [**5. Probabilitat i teorema de Bayes**](probabilitat/index.md).
+- [**6. Distribucions de probabilitat**](distribucions/index.md).
+- [**7. Inferència estadística**](inferencia/index.md).
 
 ## Per practicar
 

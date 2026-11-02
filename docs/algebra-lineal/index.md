@@ -4,8 +4,8 @@ En aquest bloc estudiarem els sistemes d'equacions lineals i les matrius, i els 
 
 ## Temes
 
-3. [**Sistemes i mètode de Gauss**](sistemes-gauss/index.md) — sistemes lineals, classificació, resolució pel mètode de Gauss i problemes de sistemes.
-4. [**Matrius**](matrius/index.md) — tipus de matrius, operacions, matriu inversa, equacions matricials i problemes de matrius.
+- [**3. Sistemes i mètode de Gauss**](sistemes-gauss/index.md) — sistemes lineals, classificació, resolució pel mètode de Gauss i problemes de sistemes.
+- [**4. Matrius**](matrius/index.md) — tipus de matrius, operacions, matriu inversa, equacions matricials i problemes de matrius.
 
 ## Per practicar
 
