@@ -1,13 +1,5 @@
 :root {
-  --graph-background: #f2f3fa;
-  --graph-border: #d8ddea;
-  --graph-grid: #d6d9e6;
-}
-
-[data-md-color-scheme="slate"] {
-  --graph-background: #d9e2ec;
-  --graph-border: #b8c4d2;
-  --graph-grid: #c2ccd8;
+  --graph-grid: #d9d9d9;
 }
 
 /* Manté les fórmules i el text dels requadres a la mateixa mida que el cos. */
@@ -24,13 +16,25 @@
   text-align: center;
 }
 
-/* Integra les figures SVG en un fons pastel llegible en els dos modes. */
+/* Mostra les figures SVG sobre el fons de la pàgina. */
 .md-typeset figure img[src*=".svg"] {
   box-sizing: border-box;
   padding: 0.75rem;
-  border: 1px solid var(--graph-border);
-  border-radius: 0.5rem;
-  background: var(--graph-background);
+}
+
+/* El mateix gràfic s'adapta al mode fosc: el negre passa a clar i es conserva la tonalitat. */
+[data-md-color-scheme="slate"] .md-typeset figure img[src*=".svg"],
+[data-md-color-scheme="slate"] .md-typeset .fa-canvas-wrap canvas,
+[data-md-color-scheme="slate"] .md-typeset .fa-legend-item::before {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+@media print {
+  [data-md-color-scheme="slate"] .md-typeset figure img[src*=".svg"],
+  [data-md-color-scheme="slate"] .md-typeset .fa-canvas-wrap canvas,
+  [data-md-color-scheme="slate"] .md-typeset .fa-legend-item::before {
+    filter: none;
+  }
 }
 
 /* Presenta la numeració i el títol de les figures de manera uniforme. */
@@ -1025,9 +1029,8 @@
   aspect-ratio: 16 / 9;
   margin-top: 0.65rem;
   overflow: hidden;
-  border: 1px solid var(--graph-border);
+  border: 1px solid var(--fa-border);
   border-radius: 0.45rem;
-  background: var(--graph-background);
 }
 
 .md-typeset .fa-canvas-wrap canvas {
@@ -1096,6 +1099,12 @@
 .md-typeset .fa-legend-item--point::before {
   width: 0.55rem;
   height: 0.55rem;
+}
+
+.md-typeset .fa-legend-item--open::before {
+  box-sizing: border-box;
+  border: 2px solid var(--legend-color);
+  background: transparent;
 }
 
 /* Derivador pas a pas. */

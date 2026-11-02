@@ -2,9 +2,9 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
-\definecolor{corba}{HTML}{365FB3}
+\definecolor{corba}{HTML}{3F51B5}
 \definecolor{secant}{HTML}{D97706}
-\definecolor{tangent}{HTML}{15803D}
+\definecolor{tangent}{HTML}{2E9D5B}
 
 \begin{document}
 \begin{tikzpicture}
@@ -21,8 +21,8 @@
     xtick={1,2},
     xticklabels={$a$,$a+h$},
     ytick=\empty,
-    axis line style={black!65},
-    tick style={black!65},
+    axis line style={black!55},
+    tick style={black!55},
     clip=false,
   ]
     % Funció de mostra: f(x)=x^2.
@@ -44,7 +44,7 @@
     % Projeccions sobre l'eix horitzontal i increment h.
     \draw[densely dashed, black!45] (axis cs:1,0) -- (axis cs:1,1);
     \draw[densely dashed, black!45] (axis cs:2,0) -- (axis cs:2,4);
-    \draw[<->, black!65]
+    \draw[<->, black!55]
       (axis cs:1,0.28) -- node[inner sep=1pt] {$h$} (axis cs:2,0.28);
   \end{axis}
 \end{tikzpicture}

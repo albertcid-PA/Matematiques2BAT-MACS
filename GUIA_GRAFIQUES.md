@@ -16,7 +16,26 @@ LaTeX Workshop executarà automàticament la recepta **TikZ a SVG per al web**. 
 
 No cal editar mai l'SVG manualment.
 
-El procés de conversió conserva el fons transparent de l'SVG. El web hi aplica un fons pastel des de `docs/stylesheets/extra.css`, amb una tonalitat específica per als modes diürn i nocturn. No cal definir el fons a cada document TikZ.
+El procés de conversió conserva el fons transparent de l'SVG, i el web mostra la figura directament sobre el fons de la pàgina. No cal definir el fons a cada document TikZ.
+
+## Colors i mode fosc
+
+Cada figura té un sol SVG, dibuixat per al mode dia. En mode fosc, `docs/stylesheets/extra.css` l'adapta amb el filtre `invert(1) hue-rotate(180deg)`: el negre passa a clar i els colors conserven la tonalitat. Als PDF i en imprimir, la figura es manté en la versió de dia.
+
+| Element | Color |
+|:--|:--|
+| Corba principal | `#3F51B5` |
+| Segona corba o tram | `#2E9D5B`; per al text, `!80!black` perquè tingui prou contrast |
+| Punts destacats, màxims, assímptotes en vermell | `#D32F2F` |
+| Accent i guies | `#526CFE` |
+| Tercer color, si cal | `#D97706` |
+| Guies neutres | `#6B7280` |
+| Eixos i marques | `black!55` |
+| Quadrícula | `black!15` |
+
+El gràfic de l'analitzador de funcions segueix el mateix criteri: `docs/javascripts/function-analyzer.js` dibuixa el canvas amb aquests colors, sense fons, i el mateix filtre l'adapta al mode fosc. Dibuixa'l sempre amb els colors de dia i no hi afegeixis colors específics per al mode fosc.
+
+No facis servir `opacity` a TikZ: en passar per `dvisvgm`, la transparència s'encomana als elements dibuixats després i les corbes gairebé desapareixen. Fes servir colors opacs.
 
 ## Numeració
 

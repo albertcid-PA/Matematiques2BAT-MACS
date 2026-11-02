@@ -3,8 +3,8 @@
 \usetikzlibrary{arrows.meta}
 \pgfplotsset{compat=1.18}
 
-\definecolor{corba}{HTML}{365FB3}
-\definecolor{assimptota}{HTML}{C2415D}
+\definecolor{corba}{HTML}{3F51B5}
+\definecolor{assimptota}{HTML}{D32F2F}
 
 \begin{document}
 \begin{tikzpicture}
@@ -20,10 +20,10 @@
     ylabel={$y$},
     xtick={-3,-2,-1,1,2,3,4},
     ytick={-6,-3,3,6},
-    axis line style={black!65},
-    tick style={black!65},
+    axis line style={black!55},
+    tick style={black!55},
     grid=major,
-    grid style={black!10},
+    grid style={black!15},
     clip=false,
   ]
     \addplot[assimptota, dashed, thick] coordinates {(1,-8.2) (1,8.2)};
