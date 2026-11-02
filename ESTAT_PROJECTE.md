@@ -26,7 +26,7 @@ La presència dels fitxers no implica una auditoria completa del seu contingut m
 - La preparació de la segona prova parcial de càlcul presenta els temes 1 i 2 sencers com a coneixements previs. Preveu preguntes majoritàriament contextualitzades, amb especial atenció a l'optimització, les funcions a trossos, el valor absolut i el domini. La font del detall és `docs/preparacio-examens/pp1-2.md`; no extrapolis aquest format a altres proves sense indicació del professor.
 - La pràctica de càlcul es reconstrueix des de `sources/calcul/`. Els enunciats, els resultats breus i les solucions desenvolupades tenen fitxers diferents.
 - GitHub Actions publica els recursos generats localment; no els torna a generar.
-- Pràctica de sistemes (tema 3), criteris del professor de l'1 de novembre de 2026: pocs exercicis mecànics, que obliguin a pivotar (intercanviar files) i a combinar files amb els dos coeficients per no treballar amb fraccions; problemes contextualitzats amb percentatges (borsa, parts del preu i benefici, trams de facturació, IVA...), amb resultats percentuals exactes i no aproximats; paràmetre $\lambda$ a les solucions dels SCI, com a la teoria.
+- Pràctica de sistemes (tema 3), criteris del professor de l'1 de novembre de 2026: pocs exercicis mecànics, que obliguin a pivotar (intercanviar files) i a combinar files amb els dos coeficients per no treballar amb fraccions; problemes contextualitzats amb percentatges (borsa, parts del preu i benefici, trams de facturació, IVA...), amb resultats percentuals exactes i no aproximats; paràmetre $\lambda$ a les solucions dels SCI, com a la teoria. Els problemes PAU d'àlgebra van en una secció pròpia «Problemes PAU» de `exercicis_algebra.md`, amb numeració `PAU.AL.n`. Criteri del professor: enunciat literal de la PAU (sense «basat en»), amb els apartats i la puntuació originals; només s'adapta la tipografia (fórmules, unitats, separació de milers). Falta decidir si s'aplica el mateix criteri als PAU de càlcul, que ara són adaptats.
 
 ## Pendents i límits coneguts
 
@@ -46,12 +46,32 @@ La segona cerca ha aclarit que les recomanacions del 28 d'octubre de 2026 sobre 
 
 ## Darrera tasca
 
-- **Objectiu:** refer la pràctica de sistemes d'equacions del tema 3 segons les indicacions del professor (1 de novembre de 2026). Una primera versió amb els exercicis 3.8–3.14 es va publicar al commit `f9d395b`; després el professor va demanar menys exercicis mecànics i problemes amb percentatges.
-- **Fitxer afectat:** `docs/algebra-lineal/per-practicar/exercicis_algebra.md` (edició directa, sense generador).
-- **Implementat:** 3.1–3.3 sense canvis. Els mecànics de Gauss queden reduïts a quatre de nous (3.4 i 3.5 SCD, 3.6 SCI, 3.7 SI), tots amb intercanvi de files o combinacions amb els dos coeficients. Els problemes 3.8–3.11 són tots amb percentatges: borsa amb validació d'una solució negativa (3.8), parts del preu amb IVA i benefici, i efecte d'un descompte sobre el benefici (3.9), trams horaris de la factura de la llum, SCI per percentatges complementaris i després SCD (3.10), i tipus d'IVA d'una compra, on una dada diferent dona SCD, SCI o SI (3.11). El consell «Com treballar» explica el pivot zero i la combinació amb dos coeficients.
-- **Comprovacions:** sistemes i transformacions de fila verificats amb Python; `zensical.exe build --clean` acaba amb `No issues found`; `git diff --check` net; pàgina revisada al navegador local (11 desplegables tancats, cap fórmula més ampla que la columna, cap recurs amb error).
-- **Publicació:** el professor ha demanat publicar-ho; s'envia a `main` en el commit d'aquesta tasca. Per verificar el web públic, cal buscar-hi el problema 3.11 de l'IVA.
-- **Pròxim pas:** el professor continuarà més endavant; no hi ha cap encàrrec pendent en aquesta pàgina.
+- **Objectiu:** refer la pràctica de sistemes del tema 3 i començar els problemes PAU d'àlgebra, segons les indicacions del professor (1 i 2 de novembre de 2026).
+- **Fitxers afectats:** `docs/algebra-lineal/per-practicar/exercicis_algebra.md` (edició directa, sense generador), `docs/algebra-lineal/index.md` i `docs/algebra-lineal/sistemes-gauss/index.md`.
+- **Exercicis 3.1–3.12:** 3.1 lineals; 3.2 i 3.3 amb sistemes propis, diferents dels de la teoria. Mecànics de Gauss: 3.4 SCD amb la fila de pivot $1$ a la tercera posició, 3.5 i 3.6 SCD, 3.7 SCI i 3.8 SI. Problemes amb percentatges: borsa amb validació d'una solució negativa (3.9), parts del preu amb IVA i benefici (3.10), trams de la factura de la llum (3.11) i tipus d'IVA d'una compra, on la dada afegida dona SCD, SCI o SI (3.12).
+- **Problemes PAU:** a continuació dels exercicis, a la mateixa pàgina, sense paràgraf de presentació i amb el quadre final «Recursos per continuar practicant», com a càlcul.
+
+  | Problema | Procedència |
+  |:--|:--|
+  | PAU.AL.1 | 2026 ordinària, sèrie 1, ex. 2 |
+  | PAU.AL.2 | 2026 extraordinària, sèrie 2, ex. 2 |
+  | PAU.AL.3 | 2026 ordinària, sèrie 1, ex. 4, opció B, 4.2 |
+  | PAU.AL.4 | 2026 extraordinària, sèrie 2, ex. 4, opció A, 4.2 |
+  | PAU.AL.5 | 2025 ordinària, sèrie 1, ex. 1 |
+  | PAU.AL.6 | 2025 ordinària, sèrie 4, ex. 1 |
+  | PAU.AL.7 | 2025 extraordinària, sèrie 3, ex. 2 |
+  | PAU.AL.8 | 2024 ordinària, sèrie 1, q. 2, igual que la sèrie 0 de 2025, ex. 2 |
+  | PAU.AL.9 | 2024 ordinària, sèrie 5, q. 2 |
+  | PAU.AL.10 | 2024 extraordinària, sèrie 3, q. 2 |
+  | PAU.AL.11 | 2023 ordinària, sèrie 1, q. 3 |
+  | PAU.AL.12 | 2023 ordinària, sèrie 5, q. 3 |
+  | PAU.AL.13 | 2023 extraordinària, sèrie 2, q. 1 |
+  | PAU.AL.14 | 2022 ordinària, sèrie 2, q. 1 |
+
+- **Fonts:** els enunciats surten del recull de Toomates `materials/Recopilació PAU/Pauccss.pdf` (versió del 6 de setembre de 2026). Les imatges del document de Google «Problemes de Sistemes PAU» no es poden obrir (error 403): la correspondència es basa en l'any, la convocatòria i la sèrie, i els enunciats no s'han comparat amb les imatges.
+- **Comprovacions:** solucions i transformacions de fila verificades amb Python; cerca automàtica sense sistemes repetits entre els exercicis i la teoria; `zensical.exe build --clean` acaba amb `No issues found`; `git diff --check` net; pàgina revisada al navegador local (26 desplegables tancats, numeració correcta, cap fórmula més ampla que la columna a 1280 px, cap recurs amb error).
+- **Publicació:** el professor ha demanat publicar-ho; s'envia a `main` en el commit d'aquesta tasca.
+- **Pendent de decisió del professor:** incorporar o no l'exercici 4, opció B, a) de la sèrie 4 de 2025 (fàbrica de pasta), que podria ser l'entrada opcional de la seva llista; aplicar o no l'enunciat literal als PAU de càlcul. Per verificar el web públic, cal buscar-hi «Activitats d'una associació».
 
 ## Com registrar una tasca incompleta
 
