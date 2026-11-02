@@ -132,7 +132,7 @@ La compilació ha d'acabar amb `No issues found`. A PowerShell 5.1, Zensical esc
 
 ### Revisió i enviament
 
-Reutilitza el servidor existent si és del projecte. Revisa al navegador les pàgines modificades, els enllaços principals, l'ordre de pestanyes, les fórmules, les taules, les figures i els errors de consola. Si el canvi només afecta documentació de manteniment fora de `docs/`, no hi ha una pàgina d'alumnat modificada per revisar visualment.
+Reutilitza el servidor existent si és del projecte. Executar `build --clean` amb el servidor engegat buida `site/` un moment i pot donar errors 404 temporals; el 2 de novembre de 2026 `site/` va quedar buida després d'una compilació i es va resoldre tornant-la a executar. Revisa al navegador les pàgines modificades, els enllaços principals, l'ordre de pestanyes, les fórmules, les taules, les figures i els errors de consola. Si el canvi només afecta documentació de manteniment fora de `docs/`, no hi ha una pàgina d'alumnat modificada per revisar visualment.
 
 La publicació funciona així:
 
@@ -143,7 +143,7 @@ La publicació funciona així:
 
 Repositori: <https://github.com/albertcid-PA/Matematiques2BAT-MACS>.
 
-Amb Claude Code es treballa directament al repositori principal: l'1 de novembre de 2026, `git status` i `git fetch origin` hi han funcionat sense opcions especials, i `main` coincidia amb `origin/main`. El `push` encara no s'hi ha provat. Si falla per autenticació, no canviïs credencials ni la configuració global: informa'n el professor perquè l'executi des d'un terminal propi. No forcis mai el `push`; si el remot ha avançat, integra'n abans els canvis.
+Amb Claude Code es treballa directament al repositori principal: l'1 de novembre de 2026, `git status` i `git fetch origin` hi han funcionat sense opcions especials, i `main` coincidia amb `origin/main`. El `push` també hi ha funcionat (commit `f373faa`, 2 de novembre de 2026). Amb Codex, el relleu és a la mateixa carpeta, però encara no s'hi ha comprovat Git ni l'entorn `.venv`. Si el `push` falla per autenticació, no canviïs credencials ni la configuració global: informa'n el professor perquè l'executi des d'un terminal propi. No forcis mai el `push`; si el remot ha avançat, integra'n abans els canvis.
 
 La còpia `tmp/context-git-20261101/` la va crear Codex amb un altre usuari de Windows (`CodexSandboxOffline`), i Git la rebutja per propietat dubtosa. Els seus tres documents coincideixen amb els del repositori principal i el commit no es va arribar a enviar. No l'utilitzis.
 

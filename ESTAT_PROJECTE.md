@@ -2,6 +2,17 @@
 
 Data de l'inventari inicial: **1 de novembre de 2026**. Aquest document és un punt de continuació i s'ha d'actualitzar quan canviï l'estat del treball. No substitueix la comprovació dels fitxers ni de Git.
 
+## Traspàs
+
+Apartat de relleu entre assistents (vegeu «Relleu entre assistents» a [AGENTS.md](AGENTS.md)). Se sobreescriu a cada tancament de torn.
+
+- **Darrer torn:** Claude Code, 2 de novembre de 2026.
+- **Darrer commit publicat:** `f373faa`, que treu l'exemple «Operació impossible» de la calculadora de matrius i aclareix els motius dels errors. Verificat al web públic (`matrix-calculator-tool.js?v=23`).
+- **Sense commit:** res. El protocol de relleu i el criteri dels exàmens a Google Docs són en un commit posterior, «Estableix el relleu entre Claude Code i Codex». Comprova amb `git status` si ja s'ha enviat a `origin/main`.
+- **Comprovat:** només l'edició dels documents, l'accentuació i la compilació local. El protocol encara no s'ha provat amb Codex.
+- **Pròxim pas:** cap d'immediat. El professor provarà Codex més endavant; la primera vegada, cal dir-li «Reprèn la feina» i comprovar que hi funcionen `git status`, `git commit` i la compilació amb `.venv`.
+- **Decisions pendents del professor:** les indicades a «Darrera tasca».
+
 ## Context que es conserva
 
 - [AGENTS.md](AGENTS.md): criteris docents, estil, navegació, figures, PDF, comprovació i publicació.

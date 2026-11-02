@@ -12,6 +12,17 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - Si un acord o material només existeix en una conversa que no pots consultar, declara aquesta mancança i no en reconstrueixis el contingut per suposició.
 - Aquests documents són de manteniment del repositori: no els incorporis a la navegació de l'alumnat.
 
+## Relleu entre assistents
+
+El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assistents no es comuniquen directament: el canal és el repositori.
+
+- Treballa un sol assistent alhora. L'altre no modifica res a la carpeta fins que el primer ha tancat el torn.
+- Quan el professor digui **«Tanca el torn»**, actualitza l'apartat «Traspàs» de [ESTAT_PROJECTE.md](ESTAT_PROJECTE.md), sobreescrivint-ne el contingut, i informa de què queda sense commit. Aquesta ordre no autoritza cap commit ni cap `push`.
+- Quan el professor digui **«Reprèn la feina»**, llegeix aquest fitxer i el traspàs, revisa `git status` i `git log`, resumeix l'estat al professor i espera la seva indicació abans de modificar res.
+- Si el traspàs no coincideix amb Git o amb els fitxers, preval el que hi ha a Git i als fitxers; indica la diferència al professor. Els canvis sense commit que no constin al traspàs no es descarten ni es sobreescriuen.
+- Els criteris del projecte es desen als documents del repositori. La memòria privada de cada assistent només pot contenir detalls de la seva pròpia eina.
+- Cada assistent s'identifica als seus commits amb una línia final `Co-Authored-By`.
+
 ## Objectiu i llengua
 
 - Escriu el contingut adreçat a l'alumnat en català estàndard, amb frases clares i vocabulari matemàtic precís.
@@ -99,6 +110,12 @@ Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Cièn
 - Les instruccions d'un tutor d'IA han de fer que proposi una pregunta cada vegada, esperi el procediment de l'alumne i ofereixi pistes graduals abans de mostrar la solució.
 - Quan una pàgina d'examen inclogui NotebookLM, dona a l'alumnat unes instruccions breus per crear el quadern, afegir-hi les fonts del web i començar l'entrenament amb un compte personal.
 - No publiquis un enllaç de NotebookLM fins que s'hagi comprovat que el quadern és accessible amb un compte personal d'alumne.
+
+## Exàmens a Google Docs
+
+- Escriu les fórmules amb l'editor d'equacions de Google Docs sempre que es pugui, perquè quedin editables.
+- Escriu les funcions a trossos per al complement Auto-LaTeX: codi LaTeX entre `$$` i `$$`, en una sola línia.
+- El professor revisa i retoca cada examen abans de donar-lo per bo.
 
 ## Figures i gràfiques
 
