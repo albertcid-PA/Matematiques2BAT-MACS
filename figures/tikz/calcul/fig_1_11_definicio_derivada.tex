@@ -33,11 +33,11 @@
     \addplot[only marks, mark=*, mark size=2.2pt, corba]
       coordinates {(1,1) (2,4)};
     \node[anchor=east] at (axis cs:0.94,1.12) {$A$};
-    \node[anchor=west] at (axis cs:2.06,4.08) {$B$};
+    \node[anchor=west] at (axis cs:2.08,3.75) {$B$};
 
     % Recta secant AB i recta tangent en A.
     \addplot[secant, thick, domain=0.25:2.55] {3*x-2};
-    \node[secant, anchor=west] at (axis cs:2.18,4.72) {recta secant};
+    \node[secant, anchor=west] at (axis cs:2.42,4.8) {recta secant};
     \addplot[tangent, thick, domain=0.15:2.75] {2*x-1};
     \node[tangent, anchor=west] at (axis cs:2.25,3.18) {recta tangent};
 
@@ -45,7 +45,7 @@
     \draw[densely dashed, black!45] (axis cs:1,0) -- (axis cs:1,1);
     \draw[densely dashed, black!45] (axis cs:2,0) -- (axis cs:2,4);
     \draw[<->, black!55]
-      (axis cs:1,0.28) -- node[inner sep=1pt] {$h$} (axis cs:2,0.28);
+      (axis cs:1,0.28) -- node[above, inner sep=1.5pt] {$h$} (axis cs:2,0.28);
   \end{axis}
 \end{tikzpicture}
 \end{document}

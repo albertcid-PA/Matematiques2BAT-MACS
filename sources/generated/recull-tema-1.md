@@ -75,7 +75,7 @@ $$
 $$
 
 <figure markdown="span">
-  ![Gràfica de menys x al cub, que creix cap a infinit quan x tendeix a menys infinit i decreix cap a menys infinit quan x tendeix a infinit](../../img/calcul/fig_1_2_comportament_infinits_menys_x_cub.svg?v=5){ width="700" }
+  ![Gràfica de menys x al cub, que creix cap a infinit quan x tendeix a menys infinit i decreix cap a menys infinit quan x tendeix a infinit](../../img/calcul/fig_1_2_comportament_infinits_menys_x_cub.svg?v=6){ width="700" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_2_comportament_infinits_menys_x_cub.tex">Figura 1.2.</a></strong> Comportament de $f(x)=-x^3$ als infinits.</figcaption>
 </figure>
 
@@ -83,7 +83,7 @@ $$
     No totes les funcions s'apropen a un valor concret ni creixen cap a $+\infty$ o $-\infty$. Per exemple, $f(x)=\sin x$ oscil·la indefinidament entre $-1$ i $1$. Per això, $\displaystyle\lim_{x\to+\infty}\sin x$ i $\displaystyle\lim_{x\to-\infty}\sin x$ no existeixen.
 
     <figure markdown="span">
-      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/calcul/fig_1_3_limit_inexistent_sinus.svg?v=5){ width="720" }
+      ![Gràfica de la funció sinus, que oscil·la indefinidament entre menys u i u](../../img/calcul/fig_1_3_limit_inexistent_sinus.svg?v=6){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_3_limit_inexistent_sinus.tex">Figura 1.3.</a></strong> Exemple de límit a l'infinit que no existeix.</figcaption>
     </figure>
 
@@ -223,7 +223,7 @@ $$
     $$
 
     <figure markdown="span">
-      ![Gràfica de la funció racional amb asímptota vertical x igual a 1 i asímptota horitzontal y igual a 2](../../img/calcul/fig_1_6_ordre_infinits_racional.svg?v=3){ width="700" }
+      ![Gràfica de la funció racional amb asímptota vertical x igual a 1 i asímptota horitzontal y igual a 2](../../img/calcul/fig_1_6_ordre_infinits_racional.svg?v=4){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_6_ordre_infinits_racional.tex">Figura 1.6.</a></strong> Quan $x\to+\infty$, la funció s'apropa a l'asímptota horitzontal $y=2$.</figcaption>
     </figure>
 
@@ -263,7 +263,7 @@ Les funcions polinòmiques i les funcions racionals són contínues en els punts
     $$
 
     <figure markdown="span">
-      ![Gràfica de la funció polinòmica x al quadrat menys 3x més 5 amb el punt 2 coma 3 destacat](../../img/calcul/fig_1_7_limit_substitucio_directa.svg?v=3){ width="680" }
+      ![Gràfica de la funció polinòmica x al quadrat menys 3x més 5 amb el punt 2 coma 3 destacat](../../img/calcul/fig_1_7_limit_substitucio_directa.svg?v=4){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_7_limit_substitucio_directa.tex">Figura 1.7.</a></strong> El límit en $x=2$ coincideix amb el valor $f(2)=3$.</figcaption>
     </figure>
 
@@ -339,7 +339,7 @@ Si el numerador tendeix a un nombre diferent de zero i el denominador tendeix a 
     Els límits laterals són diferents i, per tant, el límit en $x=1$ no existeix. La recta $x=1$ és una asímptota vertical.
 
     <figure markdown="span">
-      ![Gràfica de la funció x més 2 dividit entre x menys 1 amb una asímptota vertical en x igual a 1](../../img/calcul/fig_1_9_limit_assimptota_vertical.svg?v=4){ width="680" }
+      ![Gràfica de la funció x més 2 dividit entre x menys 1 amb una asímptota vertical en x igual a 1](../../img/calcul/fig_1_9_limit_assimptota_vertical.svg?v=5){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_9_limit_assimptota_vertical.tex">Figura 1.9.</a></strong> Els límits laterals en $x=1$ són infinits de signe contrari.</figcaption>
     </figure>
 
@@ -394,7 +394,7 @@ Si el numerador i el denominador tendeixen a zero, encara no podem saber el valo
     La funció original no està definida en $x=2$, però el límit existeix i és finit: hi ha una discontinuïtat evitable en el punt $\left(2,\frac34\right)$.
 
     <figure markdown="span">
-      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_10_limit_discontinuitat_evitable.svg?v=6){ width="680" }
+      ![Gràfica de la funció racional amb una discontinuïtat evitable en el punt 2 coma tres quarts](../../img/calcul/fig_1_10_limit_discontinuitat_evitable.svg?v=7){ width="680" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_10_limit_discontinuitat_evitable.tex">Figura 1.10.</a></strong> El forat en $\left(2,\frac34\right)$ representa una discontinuïtat evitable.</figcaption>
     </figure>
 
@@ -424,7 +424,7 @@ En aquest apartat recordarem les derivades de les funcions elementals i les regl
 Geomètricament, la taxa de variació mitjana és el pendent de la recta secant que passa pels punts $A=(a,f(a))$ i $B=(a+h,f(a+h))$. Quan $h$ s'apropa a zero, el punt $B$ s'apropa a $A$ i la recta secant s'apropa a la recta tangent.
 
 <figure markdown="span">
-  ![Interpretació geomètrica de la derivada mitjançant una recta secant que s'apropa a la tangent](../../img/calcul/fig_1_11_definicio_derivada.svg?v=5){ width="720" }
+  ![Interpretació geomètrica de la derivada mitjançant una recta secant que s'apropa a la tangent](../../img/calcul/fig_1_11_definicio_derivada.svg?v=6){ width="720" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_11_definicio_derivada.tex">Figura 1.11.</a></strong> Definició de derivada.</figcaption>
 </figure>
 

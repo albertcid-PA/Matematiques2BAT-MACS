@@ -19,6 +19,7 @@
     ymin=-60,
     ymax=1450,
     xlabel={$x$ (milers de nines)},
+    xlabel style={at={(axis description cs:1,-0.07)}, anchor=north east},
     ylabel={$B(x)$ (milers d'euros)},
     xtick={0,2,4,6,8,10,12,14,16,18},
     ytick={0,200,400,600,800,1000,1200,1400},
@@ -54,10 +55,10 @@
     \node[anchor=south, text=maxim, font=\small]
       at (axis cs:10,1330) {màxim $(10,1\,300)$};
     \node[anchor=south east, text=extrem, font=\small]
-      at (axis cs:17.8,65) {$B(18)=20$};
+      at (axis cs:16.9,170) {$B(18)=20$};
 
-    \node[anchor=north east, text=corba, font=\small]
-      at (axis cs:15.8,790) {$B(x)=-x^3+18x^2-60x+1\,100$};
+    \node[anchor=north west, text=corba, font=\small, align=left]
+      at (axis cs:2.7,800) {$B(x)=-x^3+18x^2$\\$\phantom{B(x)={}}-60x+1\,100$};
   \end{axis}
 \end{tikzpicture}
 \end{document}
