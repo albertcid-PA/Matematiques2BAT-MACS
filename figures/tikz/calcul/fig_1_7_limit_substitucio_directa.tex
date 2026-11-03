@@ -21,6 +21,7 @@
     ylabel={$y$},
     xtick={1,2,3,4},
     ytick={1,2,3,4,5,6,7},
+    yticklabels={$1$,$2$,$3$,$4$,{},$6$,$7$},
     axis line style={black!55},
     tick style={black!55},
     grid=major,
@@ -36,7 +37,9 @@
       coordinates {(2,3)};
 
     \node[anchor=south west, text=corba]
-      at (axis cs:3.05,4.25) {$f(x)=x^2-3x+5$};
+      at (axis cs:3.2,3.7) {$f(x)=x^2-3x+5$};
+    % La corba travessaria aquesta etiqueta a l'altre costat de l'eix
+    \node[anchor=south west, inner sep=1.5pt] at (axis cs:0.06,5.15) {$5$};
     \node[anchor=south east, text=punt]
       at (axis cs:1.9,3.4) {$(2,3)$};
   \end{axis}

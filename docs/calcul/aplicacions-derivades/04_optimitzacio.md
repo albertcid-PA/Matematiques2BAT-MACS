@@ -732,7 +732,7 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     - Entre $10$ i $18$ milers de nines, el benefici **decreix** fins a $20$ milers d'euros.
 
     <figure markdown="span">
-      ![Gràfica del benefici de Joguines Pallaresos en funció dels milers de nines](../../img/calcul/fig_2_23_benefici_empresa.svg?v=5){ width="700" }
+      ![Gràfica del benefici de Joguines Pallaresos en funció dels milers de nines](../../img/calcul/fig_2_23_benefici_empresa.svg?v=6){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_23_benefici_empresa.tex">Figura 2.23.</a></strong> Benefici en funció dels milers de nines fabricades.</figcaption>
     </figure>
 
@@ -863,7 +863,7 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     Per tant, la secció ha de tenir **$18$ venedors en total** i obtindrà uns ingressos mensuals màxims de **$64\,800$ €**.
 
     <figure markdown="span">
-      ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/calcul/fig_2_24_ingressos_venedors.svg?v=4){ width="700" }
+      ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/calcul/fig_2_24_ingressos_venedors.svg?v=5){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_24_ingressos_venedors.tex">Figura 2.24.</a></strong> Ingressos mensuals en funció del nombre de venedors nous contractats.</figcaption>
     </figure>
 
@@ -1056,7 +1056,7 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     **Apartat f. Representem la funció**
 
     <figure markdown="span">
-      ![Gràfica del preu d'un producte definit mitjançant una funció a trossos](../../img/calcul/fig_2_25_preu_producte_trossos.svg?v=3){ width="720" }
+      ![Gràfica del preu d'un producte definit mitjançant una funció a trossos](../../img/calcul/fig_2_25_preu_producte_trossos.svg?v=4){ width="720" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_25_preu_producte_trossos.tex">Figura 2.25.</a></strong> Evolució del preu del producte, expressat en centenars d'euros.</figcaption>
     </figure>
 

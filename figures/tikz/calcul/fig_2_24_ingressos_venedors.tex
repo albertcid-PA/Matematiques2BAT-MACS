@@ -18,6 +18,7 @@
     ymin=-4,
     ymax=72,
     xlabel={$x$ (venedors nous)},
+    xlabel style={at={(axis description cs:1,-0.07)}, anchor=north east},
     ylabel={$I(x)$ (milers d'euros)},
     xtick={0,2,4,6,8,10,12,14,16,18,20,22,24},
     ytick={0,10,20,30,40,50,60,70},
@@ -43,12 +44,12 @@
     \node[anchor=north west, text=extrem, font=\small]
       at (axis cs:0.4,56.5) {$I(0)=57{,}6$};
     \node[anchor=north west, text=maxim, font=\small]
-      at (axis cs:6.5,59.5) {màxim $(6,64{,}8)$};
+      at (axis cs:6.5,52) {màxim $(6,64{,}8)$};
     \node[anchor=south east, text=extrem, font=\small]
-      at (axis cs:23.3,5) {$I(24)=0$};
+      at (axis cs:20.5,9) {$I(24)=0$};
 
-    \node[anchor=north east, text=corba, font=\small]
-      at (axis cs:20.5,42)
+    \node[anchor=north west, text=corba, font=\small]
+      at (axis cs:6.5,32)
       {$I(x)=-0{,}2x^2+2{,}4x+57{,}6$};
   \end{axis}
 \end{tikzpicture}
