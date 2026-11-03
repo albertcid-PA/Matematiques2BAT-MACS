@@ -10,10 +10,9 @@ Aquesta guia descriu el funcionament verificable del repositori. Els criteris do
 | Pràctica de càlcul | `sources/calcul/` | `scripts/genera_pagines_practica.py` genera `docs/calcul/per-practicar/exercicis_calcul.md` i `sources/generated/recull-enunciats-calcul.md`. |
 | Textos fixos i enllaç al PDF de la pràctica de càlcul | `scripts/genera_pagines_practica.py` | Cal regenerar la pàgina després de canviar-los. La versió `?v=n` està escrita al generador. |
 | Pràctica d'àlgebra lineal | `docs/algebra-lineal/per-practicar/exercicis_algebra.md` | Edició directa; no té un generador equivalent identificat al repositori. |
-| Reculls imprimibles dels temes 1–4 | Fonts originals de cada tema i `scripts/genera_recull_tema_1.py` fins a `genera_recull_tema_4.py` | `sources/generated/recull-tema-1.md` fins a `recull-tema-4.md`. |
 | Figures | `.tex` dins de `figures/tikz/` | SVG a la mateixa ruta relativa dins de `docs/img/`; consulta [GUIA_GRAFIQUES.md](GUIA_GRAFIQUES.md). |
 | Navegació i configuració | `zensical.toml` | Menús, tema, extensions i càrrega dels recursos. |
-| Estils comuns i impressió | `docs/stylesheets/extra.css` | Estils de pantalla i dels dos tipus de PDF. |
+| Estils comuns i impressió | `docs/stylesheets/extra.css` | Estils de pantalla i del recull d'exercicis en PDF. Els PDF de teoria fan servir `sources/llibre/apunts.sty`. |
 | Eines interactives | `docs/javascripts/` i pàgines de `docs/calcul/eines/` o `docs/algebra-lineal/eines/` | Revisa també els carregadors i la inclusió dels scripts quan modifiquis una eina. |
 
 No editis manualment `sources/generated/` ni `site/`. Els resultats de `sources/generated/` i els recursos publicables estan versionats; `site/`, `tmp/` i `output/` estan ignorats per Git.
@@ -97,7 +96,6 @@ Revisa el diff de la pàgina i del recull generats. L'execució sobreescriu els 
 - Les figures es compilen des de `figures/tikz/` amb la lletra del llibre i es guarden a `tmp/llibre/figures/`. Només es recompilen les noves o modificades. Els SVG del web no intervenen.
 - El generador treu els números escrits als títols del Markdown perquè LaTeX numera els apartats. Per això la numeració del PDF (2.2.1) no coincideix amb la del web.
 - Si troba un bloc HTML o una imatge que no sap convertir, s'atura amb un missatge. Cal afegir-hi la conversió, no editar el LaTeX generat.
-- Els scripts `genera_pdf_tema_1.ps1` a `genera_pdf_tema_4.ps1` i `genera_recull_tema_N.py` són el sistema anterior, amb Edge. Només es conserven fins que el professor decideixi retirar-los.
 
 ### Recull d'enunciats de càlcul
 
@@ -109,7 +107,7 @@ El script PowerShell crida el generador de Markdown corresponent; no cal executa
 
 Crea una pàgina temporal `__pdf-...md` dins de `docs/`, serveix `site/`, imprimeix amb Edge, afegeix el peu de pàgina i desa també una còpia amb el mateix nom a `output/pdf/`. En acabar elimina la pàgina temporal i torna a compilar.
 
-El port temporal és el `8768` (els scripts antics dels temes fan servir del `8770` al `8773`). Comprova que estigui disponible; no aturis processos aliens per alliberar-lo. Si una execució s'interromp, comprova si ha quedat una pàgina temporal abans de fer la compilació final.
+El port temporal és el `8768`. Comprova que estigui disponible; no aturis processos aliens per alliberar-lo. Si una execució s'interromp, comprova si ha quedat una pàgina temporal abans de fer la compilació final.
 
 ### Maquetació i comprovació
 
