@@ -196,4 +196,13 @@
     {\small\textbf{#2} #3\par}
   \end{minipage}\par\medskip}
 
+% ---------- Avís de taules reduïdes ----------
+% Deixa al registre el percentatge de reducció de les taules que no hi caben;
+% el generador en fa un avís si la reducció és gaire gran.
+\newsavebox{\caixataula}
+\newcommand{\informataula}{%
+  \ifdim\wd\caixataula>\linewidth
+    \typeout{TAULA-REDUIDA \the\numexpr\dimexpr\linewidth\relax*100/\dimexpr\wd\caixataula\relax\relax\space pagina \thepage}%
+  \fi}
+
 \endinput

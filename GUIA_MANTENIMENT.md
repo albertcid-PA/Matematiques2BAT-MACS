@@ -81,14 +81,19 @@ Revisa el diff de la pàgina i del recull generats. L'execució sobreescriu els 
 
 ### PDF de teoria dels temes
 
-`scripts/genera_pdf_tema.py` llegeix el títol i la introducció de l'`index.md` del tema i les pàgines de contingut, ho converteix a LaTeX amb l'estil de `sources/llibre/apunts.sty` i compila amb XeLaTeX. Necessita MiKTeX amb les lletres TeX Gyre; el Python només fa servir la biblioteca estàndard.
+`scripts/genera_pdf_tema.py` llegeix els temes del menú de `zensical.toml`: és tema qualsevol entrada que comenci per un número, com «5. Probabilitat i teorema de Bayes». Pren el títol i la introducció de l'`index.md` i les pàgines de l'entrada, ho converteix a LaTeX amb l'estil de `sources/llibre/apunts.sty` i compila amb XeLaTeX. Necessita MiKTeX amb les lletres TeX Gyre; per als fulls de revisió, també `pypdf` i `pdftoppm`.
 
 ```powershell
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py --llista      # temes detectats i estat
 & ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py 2             # PDF de revisió a tmp\llibre\pdf\
-& ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py 2 --publica   # també a docs\assets\apunts\ i output\pdf\
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py 2 --publica   # també a docs\assets\apunts\ i output\pdf\, i puja el ?v=n
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py --tots        # tots els temes amb contingut
 & ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py 1 3 4 --nomes-tex   # només la conversió, sense compilar
 ```
 
+- **Tema nou:** n'hi ha prou que surti al menú de `zensical.toml` amb el seu número i que hagi perdut l'avís `"En preparació"`. Pot tenir diverses pàgines o una de sola. El nom del PDF surt de l'enllaç de l'índex; si encara no n'hi ha, es deriva del títol i, en publicar, l'script indica el text de l'enllaç que cal afegir.
+- **Revisió:** cada execució deixa a `tmp/llibre/revisio/tema-N/` uns fulls amb totes les pàgines. L'script també avisa de les taules reduïdes per sota del 80 % i de possibles restes de Markdown, però això no substitueix la revisió visual.
+- **Publicació:** `--publica` no fa commit ni `push`. Fes-los quan hagis revisat el resultat.
 - Les figures es compilen des de `figures/tikz/` amb la lletra del llibre i es guarden a `tmp/llibre/figures/`. Només es recompilen les noves o modificades. Els SVG del web no intervenen.
 - El generador treu els números escrits als títols del Markdown perquè LaTeX numera els apartats. Per això la numeració del PDF (2.2.1) no coincideix amb la del web.
 - Si troba un bloc HTML o una imatge que no sap convertir, s'atura amb un missatge. Cal afegir-hi la conversió, no editar el LaTeX generat.

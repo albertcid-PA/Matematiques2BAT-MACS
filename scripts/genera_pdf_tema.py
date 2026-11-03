@@ -7,21 +7,31 @@ LaTeX amb l'estil de sources/llibre/apunts.sty i compila el PDF amb XeLaTeX.
 La conversió i l'estil s'han adaptat del generador de «Matemàtiques I» de Jordi i
 Ignasi Irazuzta (https://github.com/irazuzta/Matematiques1BAT, CC BY-NC-SA 4.0).
 
+Els temes i les seves pàgines es llegeixen del menú de zensical.toml: és tema
+qualsevol entrada del menú que comenci per un número («5. Probabilitat…»).
+
 Ús, des de l'arrel del repositori:
 
+    .venv\\Scripts\\python.exe scripts\\genera_pdf_tema.py --llista
     .venv\\Scripts\\python.exe scripts\\genera_pdf_tema.py 2
     .venv\\Scripts\\python.exe scripts\\genera_pdf_tema.py 2 --publica
+    .venv\\Scripts\\python.exe scripts\\genera_pdf_tema.py --tots
     .venv\\Scripts\\python.exe scripts\\genera_pdf_tema.py 1 3 4 --nomes-tex
 
-Sense opcions, el PDF queda a tmp/llibre/pdf/ per revisar-lo i no es toca res del
-que es publica. Amb --publica, es copia a docs/assets/apunts/ i a output/pdf/.
+Sense opcions, el PDF queda a tmp/llibre/pdf/ per revisar-lo, amb uns fulls de
+revisió a tmp/llibre/revisio/, i no es toca res del que es publica.
+Amb --publica, el PDF es copia a docs/assets/apunts/ i a output/pdf/, i s'incrementa
+el ?v=n dels enllaços. Amb --tots, es processen tots els temes que ja tenen contingut.
 Amb --nomes-tex, només es fa la conversió a LaTeX, sense compilar res.
 """
 import html
+import os
 import re
 import shutil
 import subprocess
 import sys
+import tomllib
+import unicodedata
 from pathlib import Path
 
 ARREL = Path(__file__).resolve().parents[1]
@@ -31,31 +41,11 @@ OBRA = ARREL / "tmp" / "llibre"
 FIG_PDF = OBRA / "figures"
 ASSIGNATURA = "Matemàtiques Aplicades a les Ciències Socials II"
 
-TEMES = {
-    1: {
-        "carpeta": "calcul/repas-limits-derivades",
-        "fonts": ["01_limits.md", "02_derivades.md"],
-        "pdf": "tema_1_repas_limits_derivades.pdf",
-    },
-    2: {
-        "carpeta": "calcul/aplicacions-derivades",
-        "fonts": ["01_derivabilitat.md", "02_creixement-extrems.md",
-                  "03_representacio-funcions.md", "04_optimitzacio.md"],
-        "pdf": "tema_2_aplicacions_derivades.pdf",
-    },
-    3: {
-        "carpeta": "algebra-lineal/sistemes-gauss",
-        "fonts": ["01_sistemes-equacions-lineals.md", "02_metode-gauss.md",
-                  "03_plantejament-problemes.md"],
-        "pdf": "tema_3_sistemes_metode_gauss.pdf",
-    },
-    4: {
-        "carpeta": "algebra-lineal/matrius",
-        "fonts": ["01_concepte-tipus.md", "02_operacions.md", "03_matriu-inversa.md",
-                  "04_equacions-sistemes-matricials.md", "05_problemes-matrius.md"],
-        "pdf": "tema_4_matrius.pdf",
-    },
-}
+PARAULES_BUIDES = {"i", "de", "del", "la", "el", "les", "els", "a", "amb", "per", "en", "d", "l"}
+RE_ENLLAC_PDF = r"assets/apunts/([\w.-]+\.pdf)"
+
+# Percentatge de reducció a partir del qual s'avisa que una taula pot costar de llegir
+AVIS_TAULA = 80
 
 CAIXES = {  # tipus de requadre del web -> entorn d'apunts.sty
     "abstract": "definicio",
@@ -76,6 +66,63 @@ RE_ADM = re.compile(r'^(!!!|\?\?\?\+?)\s+(\w+)(?:\s+"(.*)")?\s*$')
 
 # Figures TikZ que necessita el tema que s'està convertint: {nom: .tex d'origen}
 FIGURES = {}
+
+
+# ---------------------------------------------------------------- temes del menú
+
+def _pagines(entrada):
+    """Totes les pàgines d'una entrada del menú, en ordre."""
+    if isinstance(entrada, str):
+        return [entrada]
+    if isinstance(entrada, dict):
+        return [p for valor in entrada.values() for p in _pagines(valor)]
+    return [p for valor in entrada for p in _pagines(valor)]
+
+
+def _nom_pdf(num, titol, index):
+    """El nom de l'enllaç de l'índex; si encara no n'hi ha, es deriva del títol."""
+    m = re.search(RE_ENLLAC_PDF, index.read_text(encoding="utf-8-sig"))
+    if m:
+        return m.group(1)
+    net = unicodedata.normalize("NFKD", titol).encode("ascii", "ignore").decode().lower()
+    paraules = [p for p in re.findall(r"[a-z0-9]+", net) if p not in PARAULES_BUIDES]
+    return f"tema_{num}_{'_'.join(paraules)}.pdf"
+
+
+def temes_del_menu():
+    """Llegeix els temes del menú de zensical.toml: {número: dades del tema}."""
+    with open(ARREL / "zensical.toml", "rb") as f:
+        menu = tomllib.load(f)["project"]["nav"]
+    temes = {}
+
+    def recorre(entrades):
+        for entrada in entrades:
+            if not isinstance(entrada, dict):
+                continue
+            for clau, valor in entrada.items():
+                m = re.match(r"^(\d+)\.\s+(.*)$", clau)
+                if m:
+                    num, titol = int(m.group(1)), m.group(2).strip()
+                    pagines = [DOCS / p for p in _pagines(valor)]
+                    index = next((p for p in pagines if p.name == "index.md"), pagines[0])
+                    if num in temes:
+                        raise SystemExit(f"El tema {num} surt dues vegades al menú de zensical.toml.")
+                    temes[num] = {
+                        "titol": titol,
+                        "index": index,
+                        "fonts": [p for p in pagines if p != index],
+                        "pdf": _nom_pdf(num, titol, index),
+                    }
+                elif isinstance(valor, list):
+                    recorre(valor)
+
+    recorre(menu)
+    return temes
+
+
+def en_preparacio(tema):
+    """Un tema sense pàgines pròpies amb l'avís «En preparació» encara no té contingut."""
+    return not tema["fonts"] and '"En preparació"' in tema["index"].read_text(encoding="utf-8-sig")
 
 
 # ---------------------------------------------------------------- text en línia
@@ -225,8 +272,10 @@ def table(lines):
         return "\n".join(["\\begin{center}", "\\begin{tabularx}{\\linewidth}{%s}" % spec, *cos,
                           "\\end{tabularx}", "\\end{center}"])
     mida = "\\footnotesize\\setlength{\\tabcolsep}{3.5pt}" if n >= 6 else "\\small" if n >= 4 else ""
-    return "\n".join(["\\begin{center}", mida, "\\adjustbox{max width=\\linewidth}{%",
-                      "\\begin{tabular}{%s}" % "".join(aligns), *cos, "\\end{tabular}}", "\\end{center}"])
+    return "\n".join(["\\begin{center}", mida, "\\sbox{\\caixataula}{%",
+                      "\\begin{tabular}{%s}" % "".join(aligns), *cos, "\\end{tabular}}%",
+                      "\\informataula", "\\adjustbox{max width=\\linewidth}{\\usebox{\\caixataula}}",
+                      "\\end{center}"])
 
 
 # ---------------------------------------------------------------- figures
@@ -440,14 +489,18 @@ def llegeix(path):
     return [re.sub(r"^(#{1,6}\s+)\d+(?:\.\d+)*\.?\s+", r"\1", l) for l in text.split("\n")]
 
 
-def capitol(num):
-    tema = TEMES[num]
-    carpeta = DOCS / tema["carpeta"]
-    index = llegeix(carpeta / "index.md")
+def capitol(tema):
+    carpeta = tema["index"].parent
+    index = llegeix(tema["index"])
     titol = re.match(r"^#\s+(.*)$", index[0]).group(1).strip()
-    k = next(n for n, x in enumerate(index) if x.startswith("## "))
+    k = next((n for n, x in enumerate(index) if x.startswith("## ")), len(index))
     parts = [heading("chapter", titol) + "\n\n" + blocks(index[1:k], carpeta)]
-    parts += [blocks(llegeix(carpeta / nom), carpeta) for nom in tema["fonts"]]
+    if tema["fonts"]:
+        # L'índex només aporta el títol i la introducció; la resta és navegació del web
+        parts += [blocks(llegeix(p), p.parent) for p in tema["fonts"]]
+    else:
+        # Tema d'una sola pàgina: els seus «##» fan el paper dels apartats
+        parts.append(blocks([re.sub(r"^#(#+\s)", r"\1", l) for l in index[k:]], carpeta))
     cos = "\n\n".join(parts) + "\n"
     # Entre dos títols seguits no es reserva lloc: el primer quedaria sol a la pàgina
     cos = re.sub(r"(\\(?:section|subsection|subsubsection)\{[^\n]*\})\n\n\\needspace\{10\\baselineskip\}\n",
@@ -510,9 +563,9 @@ def compila_figures():
         print("Figura compilada:", nom, flush=True)
 
 
-def compila(num, dest):
-    env = dict(__import__("os").environ)
-    env["TEXINPUTS"] = str(ESTIL) + ";" + env.get("TEXINPUTS", "")
+def compila(num, tema, dest):
+    env = dict(os.environ)
+    env["TEXINPUTS"] = str(ESTIL) + os.pathsep + env.get("TEXINPUTS", "")
     nom = f"tema_{num}"
     for passada in range(3):  # índex, marcadors i números de pàgina
         r = executa(["xelatex", "-interaction=nonstopmode", "-halt-on-error", nom + ".tex"], dest, env)
@@ -525,30 +578,121 @@ def compila(num, dest):
         raise SystemExit(f"Falten caràcters a les lletres: {falten}")
     grans = [float(x) for x in re.findall(r"Overfull \\hbox \(([\d.]+)pt", log)]
     print("Línies que desborden més de 5 pt:", sum(1 for g in grans if g > 5))
-    sortida = OBRA / "pdf" / TEMES[num]["pdf"]
+    reduides = sorted(set(re.findall(r"TAULA-REDUIDA (\d+) pagina (\w+)", log)), key=lambda x: int(x[0]))
+    for percent, pagina in reduides:
+        if int(percent) < AVIS_TAULA:
+            print(f"AVÍS: taula reduïda al {percent} % prop de la pàgina {pagina}; comprova que es llegeix.")
+    sortida = OBRA / "pdf" / tema["pdf"]
     sortida.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(dest / (nom + ".pdf"), sortida)
     return sortida
 
 
-def publica(sortida):
+def comprova_text(sortida):
+    """Avisa si al PDF hi ha restes de Markdown o d'HTML sense convertir."""
+    if not shutil.which("pdftotext"):
+        print("AVÍS: no s'ha trobat pdftotext; no es comproven les restes de Markdown.")
+        return
+    r = subprocess.run(["pdftotext", "-layout", str(sortida), "-"], stdout=subprocess.PIPE,
+                       stderr=subprocess.DEVNULL, encoding="utf-8", errors="replace")
+    restes = [l.strip() for l in r.stdout.splitlines() if re.search(r"\*\*|!!!|\$\$|</|\{ ?width|\]\(", l)]
+    for linia in restes[:10]:
+        print("AVÍS: possible resta sense convertir:", linia[:90])
+
+
+def fulls_de_revisio(num, sortida):
+    """Posa totes les pàgines en fulls de 4 x 2 per revisar-les de pressa."""
+    if not shutil.which("pdftoppm"):
+        print("AVÍS: no s'ha trobat pdftoppm; no es generen els fulls de revisió.")
+        return
+    try:
+        from pypdf import PageObject, PdfReader, PdfWriter, Transformation
+    except ImportError:
+        print("AVÍS: no s'ha trobat pypdf; no es generen els fulls de revisió.")
+        return
+    carpeta = OBRA / "revisio" / f"tema-{num}"
+    shutil.rmtree(carpeta, ignore_errors=True)
+    carpeta.mkdir(parents=True)
+    lector = PdfReader(sortida)
+    escriptor = PdfWriter()
+    ample, alt, columnes, files, escala = 595.28, 841.89, 4, 2, 0.5
+    for i in range(0, len(lector.pages), columnes * files):
+        full = PageObject.create_blank_page(width=ample * escala * columnes, height=alt * escala * files)
+        for k, pagina in enumerate(lector.pages[i:i + columnes * files]):
+            x = (k % columnes) * ample * escala
+            y = (files - 1 - k // columnes) * alt * escala
+            full.merge_transformed_page(pagina, Transformation().scale(escala).translate(x, y))
+        escriptor.add_page(full)
+    fulls = carpeta / "fulls.pdf"
+    escriptor.write(fulls)
+    subprocess.run(["pdftoppm", "-r", "85", "-png", str(fulls), str(carpeta / "full")], check=True)
+    fulls.unlink()
+    print("Fulls de revisió:", carpeta.relative_to(ARREL))
+
+
+def incrementa_enllacos(nom_pdf):
+    """Puja una unitat el ?v=n de tots els enllaços al PDF. Retorna quants n'ha trobat."""
+    trobats = 0
+    for md in DOCS.rglob("*.md"):
+        with open(md, encoding="utf-8", newline="") as f:
+            text = f.read()
+        if nom_pdf not in text:
+            continue
+        nou, canvis = re.subn(re.escape(nom_pdf) + r"\?v=(\d+)",
+                              lambda m: f"{nom_pdf}?v={int(m.group(1)) + 1}", text)
+        if canvis:
+            with open(md, "w", encoding="utf-8", newline="") as f:
+                f.write(nou)
+            trobats += canvis
+            print("Enllaç actualitzat:", md.relative_to(ARREL))
+    return trobats
+
+
+def publica(sortida, tema):
     for carpeta in (ARREL / "docs" / "assets" / "apunts", ARREL / "output" / "pdf"):
         carpeta.mkdir(parents=True, exist_ok=True)
         shutil.copy(sortida, carpeta / sortida.name)
         print("Copiat a:", (carpeta / sortida.name).relative_to(ARREL))
-    print("Recorda incrementar ?v=n als enllaços d'aquest PDF.")
+    if not incrementa_enllacos(sortida.name):
+        rel = os.path.relpath(DOCS / "assets" / "apunts" / sortida.name, tema["index"].parent).replace(os.sep, "/")
+        print(f"AVÍS: cap pàgina enllaça aquest PDF. Afegeix a {tema['index'].relative_to(ARREL)}:")
+        print(f'  <div class="practice-actions" markdown="1">\n\n'
+              f'  [**Descarrega {num_i_titol(tema)}**]({rel}?v=1){{ target="_blank" rel="noopener" }}\n\n  </div>')
+
+
+def num_i_titol(tema):
+    return re.match(r"^#\s+(.*)$", tema["index"].read_text(encoding="utf-8-sig").split("\n")[0]).group(1).strip()
 
 
 def main(argv):
-    temes = [int(a) for a in argv if a.isdigit()]
-    desconeguts = [a for a in argv if not a.isdigit() and a not in ("--publica", "--nomes-tex")]
-    if not temes or desconeguts or any(t not in TEMES for t in temes):
+    opcions = {"--publica", "--nomes-tex", "--tots", "--llista"}
+    desconeguts = [a for a in argv if not a.isdigit() and a not in opcions]
+    if desconeguts or not argv:
+        sys.exit(__doc__)
+    disponibles = temes_del_menu()
+    if "--llista" in argv:
+        for num, tema in sorted(disponibles.items()):
+            pagines = len(tema["fonts"]) or 1
+            estat = "en preparació" if en_preparacio(tema) else f"{pagines} {'pàgina' if pagines == 1 else 'pàgines'}"
+            print(f"{num}. {tema['titol']} ({estat}) -> {tema['pdf']}")
+        return
+    if "--tots" in argv:
+        temes = [n for n, t in sorted(disponibles.items()) if not en_preparacio(t)]
+    else:
+        temes = [int(a) for a in argv if a.isdigit()]
+    if not temes:
         sys.exit(__doc__)
     for num in temes:
+        if num not in disponibles:
+            sys.exit(f"El tema {num} no surt al menú de zensical.toml. Temes: {sorted(disponibles)}")
+        if en_preparacio(disponibles[num]):
+            sys.exit(f"El tema {num} encara té l'avís «En preparació» i no té contingut per generar.")
+    for num in temes:
+        tema = disponibles[num]
         FIGURES.clear()
         dest = OBRA / f"tema-{num}"
         dest.mkdir(parents=True, exist_ok=True)
-        titol, cos = capitol(num)
+        titol, cos = capitol(tema)
         (dest / "capitol.tex").write_text(cos, encoding="utf-8", newline="\n")
         principal = PRINCIPAL % dict(assignatura=ASSIGNATURA, num=num, previ=num - 1, titol=titol)
         (dest / f"tema_{num}.tex").write_text(principal, encoding="utf-8", newline="\n")
@@ -556,10 +700,12 @@ def main(argv):
         if "--nomes-tex" in argv:
             continue
         compila_figures()
-        sortida = compila(num, dest)
+        sortida = compila(num, tema, dest)
         print("PDF:", sortida.relative_to(ARREL))
+        comprova_text(sortida)
+        fulls_de_revisio(num, sortida)
         if "--publica" in argv:
-            publica(sortida)
+            publica(sortida, tema)
 
 
 if __name__ == "__main__":
