@@ -5,7 +5,7 @@
 
     Introdueix els coeficients de $X$ i $Y$ i les matrius $P$ i $Q$. La resolució mostra l'eliminació, l'aïllament i la substitució amb les matrius que s'operen.
 
-<div id="matrix-calculator-tool" class="fa-tool mc-tool" data-tool-url="../../../javascripts/matrix-calculator-tool.js?v=21">
+<div id="matrix-calculator-tool" class="fa-tool mc-tool" data-tool-url="../../../javascripts/matrix-calculator-tool.js?v=24">
   <noscript>
     <p class="fa-message">Cal activar el JavaScript del navegador per utilitzar aquesta eina.</p>
   </noscript>

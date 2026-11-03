@@ -7,7 +7,7 @@
 
     Per aïllar $X$ en una equació matricial, utilitza l'eina [**Equacions matricials**](aillament-equacions-matricials.md).
 
-<div id="matrix-calculator-tool" class="fa-tool mc-tool" data-tool-url="../../../javascripts/matrix-calculator-tool.js?v=23">
+<div id="matrix-calculator-tool" class="fa-tool mc-tool" data-tool-url="../../../javascripts/matrix-calculator-tool.js?v=24">
   <noscript>
     <p class="fa-message">Cal activar el JavaScript del navegador per utilitzar aquesta eina.</p>
   </noscript>
@@ -23,7 +23,6 @@
         <button type="button" data-mc-op-example="sum">Suma</button>
         <button type="button" data-mc-op-example="product">Producte</button>
         <button type="button" data-mc-op-example="scalar">Producte per un nombre</button>
-        <button type="button" data-mc-op-example="literal">Coeficient literal</button>
         <button type="button" data-mc-op-example="transpose">Transposició</button>
         <button type="button" data-mc-op-example="power">Potència</button>
         <button type="button" data-mc-op-example="inverse">Inversa</button>
