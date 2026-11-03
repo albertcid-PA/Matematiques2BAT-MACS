@@ -71,33 +71,49 @@ Revisa el diff de la pàgina i del recull generats. L'execució sobreescriu els 
 
 ## Generació dels PDF
 
-| PDF | Fonts del contingut | Script PowerShell | Destinació publicable |
+| PDF | Fonts del contingut | Script | Destinació publicable |
 |:--|:--|:--|:--|
 | Enunciats de càlcul | Enunciats de `sources/calcul/` | `scripts/genera_pdf_recull_calcul.ps1` | `docs/assets/exercicis/recull_enunciats_calcul.pdf` |
-| Tema 1 | `01_limits.md` i `02_derivades.md` de `docs/calcul/repas-limits-derivades/` | `scripts/genera_pdf_tema_1.ps1` | `docs/assets/apunts/tema_1_repas_limits_derivades.pdf` |
-| Tema 2 | Les quatre pàgines de contingut de `docs/calcul/aplicacions-derivades/` | `scripts/genera_pdf_tema_2.ps1` | `docs/assets/apunts/tema_2_aplicacions_derivades.pdf` |
-| Tema 3 | Les tres pàgines de contingut de `docs/algebra-lineal/sistemes-gauss/` | `scripts/genera_pdf_tema_3.ps1` | `docs/assets/apunts/tema_3_sistemes_metode_gauss.pdf` |
-| Tema 4 | Les cinc pàgines de contingut de `docs/algebra-lineal/matrius/` | `scripts/genera_pdf_tema_4.ps1` | `docs/assets/apunts/tema_4_matrius.pdf` |
+| Tema 1 | `01_limits.md` i `02_derivades.md` de `docs/calcul/repas-limits-derivades/` | `scripts/genera_pdf_tema.py 1` | `docs/assets/apunts/tema_1_repas_limits_derivades.pdf` |
+| Tema 2 | Les quatre pàgines de contingut de `docs/calcul/aplicacions-derivades/` | `scripts/genera_pdf_tema.py 2` | `docs/assets/apunts/tema_2_aplicacions_derivades.pdf` |
+| Tema 3 | Les tres pàgines de contingut de `docs/algebra-lineal/sistemes-gauss/` | `scripts/genera_pdf_tema.py 3` | `docs/assets/apunts/tema_3_sistemes_metode_gauss.pdf` |
+| Tema 4 | Les cinc pàgines de contingut de `docs/algebra-lineal/matrius/` | `scripts/genera_pdf_tema.py 4` | `docs/assets/apunts/tema_4_matrius.pdf` |
 
-Cada script PowerShell crida el generador de Markdown corresponent; no cal executar prèviament el generador Python per obtenir el PDF. Per exemple:
+### PDF de teoria dels temes
+
+`scripts/genera_pdf_tema.py` llegeix el títol i la introducció de l'`index.md` del tema i les pàgines de contingut, ho converteix a LaTeX amb l'estil de `sources/llibre/apunts.sty` i compila amb XeLaTeX. Necessita MiKTeX amb les lletres TeX Gyre; el Python només fa servir la biblioteca estàndard.
+
+```powershell
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py 2             # PDF de revisió a tmp\llibre\pdf\
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py 2 --publica   # també a docs\assets\apunts\ i output\pdf\
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py 1 3 4 --nomes-tex   # només la conversió, sense compilar
+```
+
+- Les figures es compilen des de `figures/tikz/` amb la lletra del llibre i es guarden a `tmp/llibre/figures/`. Només es recompilen les noves o modificades. Els SVG del web no intervenen.
+- El generador treu els números escrits als títols del Markdown perquè LaTeX numera els apartats. Per això la numeració del PDF (2.2.1) no coincideix amb la del web.
+- Si troba un bloc HTML o una imatge que no sap convertir, s'atura amb un missatge. Cal afegir-hi la conversió, no editar el LaTeX generat.
+- Els scripts `genera_pdf_tema_1.ps1` a `genera_pdf_tema_4.ps1` i `genera_recull_tema_N.py` són el sistema anterior, amb Edge. Només es conserven fins que el professor decideixi retirar-los.
+
+### Recull d'enunciats de càlcul
+
+El script PowerShell crida el generador de Markdown corresponent; no cal executar-lo prèviament. Comparteix `site/` i recompila amb `--clean`:
 
 ```powershell
 & ".\scripts\genera_pdf_recull_calcul.ps1"
-& ".\scripts\genera_pdf_tema_1.ps1"
 ```
 
-Executa només els scripts afectats pel canvi, i fes-ho seqüencialment: tots comparteixen `site/` i recompilen amb `--clean`. Els scripts creen una pàgina temporal `__pdf-...md` dins de `docs/`, serveixen `site/`, imprimeixen amb Edge, afegeixen el peu de pàgina i desen també una còpia amb el mateix nom a `output/pdf/`. En acabar eliminen la pàgina temporal i tornen a compilar.
+Crea una pàgina temporal `__pdf-...md` dins de `docs/`, serveix `site/`, imprimeix amb Edge, afegeix el peu de pàgina i desa també una còpia amb el mateix nom a `output/pdf/`. En acabar elimina la pàgina temporal i torna a compilar.
 
-Els ports temporals són `8768` per al recull i `8770`–`8773` per als temes 1–4. Comprova que estiguin disponibles; no aturis processos aliens per alliberar-los. Si una execució s'interromp, comprova si ha quedat una pàgina temporal abans de fer la compilació final.
+El port temporal és el `8768` (els scripts antics dels temes fan servir del `8770` al `8773`). Comprova que estigui disponible; no aturis processos aliens per alliberar-lo. Si una execució s'interromp, comprova si ha quedat una pàgina temporal abans de fer la compilació final.
 
 ### Maquetació i comprovació
 
-| Tipus | Classe de la pàgina imprimible | Tipografia del cos |
+| Tipus | Maquetació | Tipografia del cos |
 |:--|:--|:--|
-| Recull d'exercicis | `.pdf-exercise-collection` | Latin Modern Roman, 9 pt, interlineat compacte i marges A4 reduïts. |
-| Apunts d'un tema | `.pdf-topic-collection` | Latin Modern Roman, 10 pt, amb portada i índex. |
+| Recull d'exercicis | Classe `.pdf-exercise-collection` d'`extra.css` | Latin Modern Roman, 9 pt, interlineat compacte i marges A4 reduïts. |
+| Apunts d'un tema | `sources/llibre/apunts.sty` | TeX Gyre Pagella, 11 pt, una sola cara, amb portada, índex i capçaleres. |
 
-Reutilitza les regles d'impressió d'`extra.css` i les fonts locals de `docs/assets/fonts/latin-modern/`. Després de regenerar un PDF:
+Als reculls, reutilitza les regles d'impressió d'`extra.css` i les fonts locals de `docs/assets/fonts/latin-modern/`. Després de regenerar un PDF:
 
 1. Incrementa `?v=n` en tots els enllaços que hi apunten. Si l'enllaç pertany a una pàgina generada, modifica el generador i torna a generar-la.
 2. Renderitza totes les pàgines del PDF i revisa-les visualment: fórmules, figures i etiquetes llegibles, sense text tallat, encavalcaments ni pàgines buides inesperades.

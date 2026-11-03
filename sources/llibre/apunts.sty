@@ -1,0 +1,199 @@
+% apunts.sty — estil dels PDF de teoria de Matemàtiques Aplicades a les Ciències Socials II.
+% El fa servir scripts/genera_pdf_tema.py.
+% Adaptat de l'estil de «Matemàtiques I» de Jordi i Ignasi Irazuzta (CC BY-NC-SA 4.0).
+% El fan servir els documents principals que genera llibre/llibre.py.
+% Es compila amb XeLaTeX (o LuaLaTeX).
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{apunts}[2026/11/02 Estil dels apunts de MACS II]
+
+% ---------- Llengua i tipus de lletra ----------
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+% Es carreguen pel nom del fitxer perquè funcioni a qualsevol instal·lació de TeX Live
+\setmainfont{texgyrepagella}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic, Scale=MatchLowercase]
+\setmathfont{texgyrepagella-math.otf}
+\RequirePackage{polyglossia}
+\setdefaultlanguage{catalan}
+\RequirePackage{microtype}
+\RequirePackage{cancel}
+\RequirePackage{newunicodechar}
+% El signe de l'euro sempre surt de la lletra de text, també dins de les fórmules.
+\newunicodechar{€}{\ensuremath{\text{\symbol{"20AC}}}}
+
+% ---------- Pàgina ----------
+\RequirePackage[a4paper,left=2.4cm,right=2.4cm,top=2.6cm,bottom=2.6cm,
+  headheight=14pt,headsep=0.8cm,footskip=1.2cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em plus 0.2em minus 0.1em}
+\linespread{1.06}
+\raggedbottom
+\setlength{\emergencystretch}{1.5em}
+\tolerance=2500
+\RequirePackage{emptypage}  % pàgines en blanc sense capçalera ni número
+\makeatletter\@beginparpenalty=\@M\makeatother
+\RequirePackage{needspace}  % evita començar una caixa al final de la pàgina
+
+% ---------- Colors ----------
+\RequirePackage{xcolor}
+\definecolor{tema}{HTML}{2E4A7D}      % color principal (títols)
+\definecolor{definicio}{HTML}{1F5FA8} % definicions
+\definecolor{exemple}{HTML}{6A4CA5}   % exemples
+\definecolor{nota}{HTML}{3A6F8F}      % notes
+\definecolor{propietat}{HTML}{1E7A64} % propietats, consells
+\definecolor{compte}{HTML}{B5591A}    % advertiments
+
+% ---------- Títols ----------
+\RequirePackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\color{tema}}
+  {\Large\MakeUppercase{\chaptertitlename}\ \thechapter}
+  {0.6em}
+  {\Huge\bfseries}
+  [\vspace{0.4em}{\color{tema}\titlerule[1.2pt]}]
+\titlespacing*{\chapter}{0pt}{0pt}{2.2em}
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries\color{tema}}{\thesection}{0.8em}{}
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\bfseries\color{tema}}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}
+  {\normalfont\sffamily\normalsize\bfseries\color{tema}}{}{0em}{}
+\titlespacing*{\section}{0pt}{1.6em plus 0.4em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1.3em plus 0.3em}{0.4em}
+\titlespacing*{\subsubsection}{0pt}{1.0em plus 0.2em}{0.3em}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% Cada tema és un capítol: «Tema 2».
+\gappto\captionscatalan{\renewcommand{\chaptername}{Tema}}
+\renewcommand{\chaptername}{Tema}
+
+% ---------- Capçaleres i peus ----------
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ \ #1}}
+\fancyhead[L]{\small\sffamily\color{tema!80}\leftmark}
+\fancyhead[R]{\small\sffamily\color{tema!80}\rightmark}
+\fancyfoot[R]{\small\sffamily\thepage}
+\fancyfoot[L]{\small\sffamily\color{black!45}Matemàtiques Aplicades a les Ciències Socials II}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{{\color{tema!35}\hrule height\headrulewidth width\headwidth}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[R]{\small\sffamily\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+% ---------- Llistes i taules ----------
+\RequirePackage{enumitem}
+\setlist{topsep=0.3em,itemsep=0.25em,parsep=0.15em}
+\setlist[itemize]{leftmargin=1.6em}
+\setlist[enumerate]{leftmargin=1.8em}
+\setlist[itemize,1]{label={\color{tema}\textbullet}}
+\setlist[itemize,2]{label={\color{tema}\textendash}}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\renewcommand{\arraystretch}{1.35}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% ---------- Caixes ----------
+\RequirePackage[most]{tcolorbox}
+\tcbset{
+  apunts/.style={
+    enhanced, % sense «breakable»: cap caixa es parteix entre dues pàgines
+    colback=#1!4, colframe=#1!75!black,
+    colbacktitle=#1!14, coltitle=#1!60!black,
+    fonttitle=\sffamily\bfseries\small,
+    boxrule=0.5pt, toprule=0.5pt, leftrule=2.2pt, arc=1.5pt,
+    left=8pt, right=8pt, top=5pt, bottom=5pt,
+    toptitle=3pt, bottomtitle=3pt,
+    before skip=0.9em, after skip=0.9em,
+    parbox=false,
+    before upper={\setlength{\parskip}{0.5em}},
+  }
+}
+% Les caixes no es parteixen mai entre dues pàgines: si no hi caben, passen
+% senceres a la pàgina següent. Només si una caixa és més alta que una pàgina
+% sencera (no hi cabria enlloc) es permet partir-la.
+\RequirePackage{environ}
+\newsavebox{\caixamesura}
+\newcommand{\caixaapunts}[3]{%
+  \sbox{\caixamesura}{\begin{minipage}{\linewidth}%
+    \begin{tcolorbox}[apunts=#1, title={#2}, before skip=0pt, after skip=0pt]#3\end{tcolorbox}%
+  \end{minipage}}%
+  \ifdim\dimexpr\ht\caixamesura+\dp\caixamesura\relax>\textheight
+    \PackageWarning{apunts}{Caixa més alta que una pàgina: es parteix (pàgina \thepage)}%
+    \begin{tcolorbox}[apunts=#1, title={#2}, breakable]#3\end{tcolorbox}%
+  \else
+    \begin{tcolorbox}[apunts=#1, title={#2}]#3\end{tcolorbox}%
+  \fi}
+\NewEnviron{definicio}[1]{\caixaapunts{definicio}{#1}{\BODY}}
+% Els exemples poden ser més llargs que una pàgina: es parteixen per no deixar
+% grans espais en blanc. Les altres caixes es mantenen senceres.
+\NewEnviron{exemple}[1]{\needspace{7\baselineskip}\begin{tcolorbox}[apunts=exemple, title={#1}, breakable, enhanced jigsaw, pad at break*=3mm]\BODY\end{tcolorbox}}
+\NewEnviron{nota}[1]{\caixaapunts{nota}{#1}{\BODY}}
+\NewEnviron{propietat}[1]{\caixaapunts{propietat}{#1}{\BODY}}
+\NewEnviron{compte}[1]{\caixaapunts{compte}{#1}{\BODY}}
+
+% Fórmules destacades dins i fora de les caixes
+\setlength{\abovedisplayskip}{0.6em plus 0.2em}
+\setlength{\belowdisplayskip}{0.6em plus 0.2em}
+
+% ---------- Imatges i gràfiques ----------
+\RequirePackage[export]{adjustbox}   % max width per a les imatges
+% ---------- Enllaços i metadades ----------
+\RequirePackage[hidelinks,bookmarksnumbered]{hyperref}
+
+% ---------- Portada ----------
+% Autoria i llicència: les mateixes que a la pàgina d'inici del web.
+% La insígnia cc-by-nc-sa.pdf és a la mateixa carpeta que aquest fitxer.
+\newcommand{\autoria}{%
+  \begin{tabular}{@{}l@{\hspace{1.2em}}l@{}}
+    {\large\color{black!80}Albert Cid} &
+      {\footnotesize\color{black!50}\href{mailto:albert.cid@inselspallaresos.cat}{albert.cid@inselspallaresos.cat}}
+  \end{tabular}\par}
+\newcommand{\llicencia}{%
+  \begin{minipage}[c]{2.6cm}\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca}{\includegraphics[width=2.4cm]{cc-by-nc-sa.pdf}}\end{minipage}%
+  \hfill
+  \begin{minipage}[c]{\dimexpr\linewidth-3.1cm\relax}\footnotesize\color{black!65}\rmfamily
+    Aquesta obra està subjecta a una llicència de
+    \href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca}{Reconeixement-NoComercial-CompartirIgual
+    4.0 Internacional (CC~BY-NC-SA~4.0)}. Ets lliure de compartir i adaptar aquest material, sempre que en
+    reconeguis l'autoria, no en facis un ús comercial i el distribueixis amb la mateixa llicència. Maquetació basada en els apunts de Matemàtiques I de Jordi i Ignasi Irazuzta.
+  \end{minipage}}
+\newcommand{\portada}[3]{% {número del tema}{títol}{curs}
+  \begin{titlepage}
+    \sffamily\color{tema}
+    \vspace*{0.16\textheight}
+    {\Large Matemàtiques Aplicades a les Ciències Socials II\par}
+    \vspace{0.4em}
+    {\large\color{black!60}#3\par}
+    \vspace{3.2em}
+    {\color{tema}\rule{\linewidth}{1.2pt}\par}
+    \vspace{1.4em}
+    {\Large\MakeUppercase{Tema}\ #1\par}
+    \vspace{0.5em}
+    {\fontsize{38}{44}\selectfont\bfseries #2\par}
+    \vspace{1.4em}
+    {\color{tema}\rule{\linewidth}{1.2pt}\par}
+    \vspace{2.2em}
+    \autoria
+    \vfill
+    {\normalsize\color{black!55}Apunts de teoria\par}
+    \vspace{1.2em}
+    {\color{black!25}\rule{\linewidth}{0.4pt}\par}
+    \vspace{0.8em}
+    \llicencia
+  \end{titlepage}
+}
+
+% ---------- Figures del projecte ----------
+\newcommand{\figuraprojecte}[3]{% {fitxer}{etiqueta amb enllaç}{peu}
+  \par\medskip\noindent\begin{minipage}{\linewidth}\centering
+    \includegraphics[max width=0.9\linewidth,max height=12cm]{#1}\par\smallskip
+    {\small\textbf{#2} #3\par}
+  \end{minipage}\par\medskip}
+
+\endinput
