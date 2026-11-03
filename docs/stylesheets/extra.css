@@ -146,16 +146,6 @@
   white-space: nowrap;
 }
 
-/* Enllaç al dossier imprimible dels exercicis. */
-.md-typeset .download-pdf {
-  margin-block: 0.9rem 1.25rem;
-  font-weight: 600;
-}
-
-.md-typeset .download-pdf a:visited {
-  color: var(--md-typeset-a-color);
-}
-
 /* Destaca els noms numerats dels temes dins dels menús de navegació. */
 .md-nav .nav-topic-title {
   font-weight: 700;
@@ -222,37 +212,9 @@
   }
 }
 
-/* Reuneix els dossiers de pràctica en targetes clares i adaptables. */
+/* Separa l'enllaç de descàrrega del PDF del contingut de la pàgina. */
 .md-typeset .practice-actions {
   margin-block: 1rem 1.35rem;
-}
-
-.md-typeset .practice-download-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem;
-  margin-block: 0.8rem 1.25rem;
-}
-
-.md-typeset .practice-download-card {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.65rem;
-  background: var(--md-code-bg-color);
-}
-
-.md-typeset .practice-download-card h3 {
-  margin-top: 0;
-}
-
-.md-typeset .practice-download-card > :last-child {
-  margin-bottom: 0;
-}
-
-@media screen and (max-width: 44.984375em) {
-  .md-typeset .practice-download-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /*
@@ -311,8 +273,7 @@
   body:has(.pdf-exercise-collection) .md-top,
   body:has(.pdf-exercise-collection) .md-content__button,
   body:has(.pdf-exercise-collection) .md-typeset .headerlink,
-  body:has(.pdf-exercise-collection) .md-typeset .admonition.info,
-  body:has(.pdf-exercise-collection) .download-pdf {
+  body:has(.pdf-exercise-collection) .md-typeset .admonition.info {
     display: none !important;
   }
 
@@ -468,185 +429,6 @@
 
   body:has(.pdf-exercise-collection) .pdf-page-break {
     break-before: page;
-  }
-}
-
-/* Maquetació del PDF complet dels apunts d'un tema. */
-@media print {
-  body:has(.pdf-topic-collection) {
-    background: #fff;
-    color: #111;
-  }
-
-  body:has(.pdf-topic-collection) .md-header,
-  body:has(.pdf-topic-collection) .md-tabs,
-  body:has(.pdf-topic-collection) .md-sidebar,
-  body:has(.pdf-topic-collection) .md-path,
-  body:has(.pdf-topic-collection) .md-footer,
-  body:has(.pdf-topic-collection) .md-top,
-  body:has(.pdf-topic-collection) .md-content__button,
-  body:has(.pdf-topic-collection) .md-typeset .headerlink {
-    display: none !important;
-  }
-
-  body:has(.pdf-topic-collection) .md-main,
-  body:has(.pdf-topic-collection) .md-main__inner,
-  body:has(.pdf-topic-collection) .md-content,
-  body:has(.pdf-topic-collection) .md-content__inner {
-    display: block;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-  }
-
-  body:has(.pdf-topic-collection) .md-content__inner {
-    padding: 0 3mm;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset {
-    color: #111;
-    font-family: "Latin Modern Roman", "Times New Roman", serif;
-    font-size: 10pt;
-    line-height: 1.28;
-  }
-
-  body:has(.pdf-topic-collection) .pdf-topic-cover {
-    display: flex;
-    min-height: 245mm;
-    flex-direction: column;
-    justify-content: center;
-    break-after: page;
-  }
-
-  body:has(.pdf-topic-collection) .pdf-topic-cover h1 {
-    max-width: 145mm;
-    margin: 0 0 0.8rem;
-    font-size: 27pt;
-    line-height: 1.12;
-  }
-
-  body:has(.pdf-topic-collection) .pdf-topic-subtitle {
-    max-width: 145mm;
-    margin: 0 0 2.2rem;
-    color: #3d4b63;
-    font-size: 13pt;
-  }
-
-  body:has(.pdf-topic-collection) .pdf-topic-toc {
-    max-width: 130mm;
-    padding: 0.8rem 1rem;
-    border-left: 3pt solid #365fb3;
-    background: #eef3fb;
-  }
-
-  body:has(.pdf-topic-collection) .pdf-topic-toc h2 {
-    margin-top: 0;
-    border-bottom: 0;
-  }
-
-  body:has(.pdf-topic-collection) .pdf-topic-section-break {
-    break-before: page;
-  }
-
-  body:has(.pdf-topic-collection) .pdf-topic-keep-together {
-    break-inside: avoid;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset h2 {
-    margin: 0 0 0.45rem;
-    padding-bottom: 0.18rem;
-    border-bottom: 1pt solid #365fb3;
-    font-size: 20pt;
-    break-after: avoid;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset h3 {
-    margin: 0.85rem 0 0.3rem;
-    font-size: 14pt;
-    break-after: avoid;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset h4 {
-    margin: 0.65rem 0 0.25rem;
-    font-size: 11.5pt;
-    break-after: avoid;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset h5 {
-    margin: 0.55rem 0 0.2rem;
-    font-size: 10.5pt;
-    break-after: avoid;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset p,
-  body:has(.pdf-topic-collection) .md-typeset ul,
-  body:has(.pdf-topic-collection) .md-typeset ol,
-  body:has(.pdf-topic-collection) .md-typeset div.arithmatex {
-    margin-block: 0.25rem;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset div.arithmatex,
-  body:has(.pdf-topic-collection) .md-typeset .katex-display,
-  body:has(.pdf-topic-collection) .md-typeset .katex-display > .katex {
-    max-height: none !important;
-    overflow: visible !important;
-    scrollbar-width: none;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset div.arithmatex::-webkit-scrollbar,
-  body:has(.pdf-topic-collection) .md-typeset .katex-display::-webkit-scrollbar,
-  body:has(.pdf-topic-collection) .md-typeset .katex-display > .katex::-webkit-scrollbar {
-    display: none;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset .md-typeset__scrollwrap,
-  body:has(.pdf-topic-collection) .md-typeset .md-typeset__table {
-    max-width: 100%;
-    overflow: visible !important;
-    scrollbar-width: none;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset .md-typeset__scrollwrap::-webkit-scrollbar,
-  body:has(.pdf-topic-collection) .md-typeset .md-typeset__table::-webkit-scrollbar {
-    display: none;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset table,
-  body:has(.pdf-topic-collection) .md-typeset figure,
-  body:has(.pdf-topic-collection) .md-typeset div.arithmatex {
-    break-inside: avoid;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset .admonition {
-    margin-block: 0.45rem;
-    break-inside: auto;
-    box-shadow: none;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset .admonition-title {
-    break-after: avoid;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset figure {
-    margin: 0.45rem auto;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset figure img {
-    max-width: 100%;
-    max-height: 92mm;
-    padding: 0.12rem;
-    border-color: transparent;
-    background: #f1f4fa;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset figure figcaption {
-    margin-top: 0.1rem;
-    font-size: 8.2pt;
-  }
-
-  body:has(.pdf-topic-collection) .md-typeset a {
-    color: inherit;
-    text-decoration: none;
   }
 }
 
@@ -984,11 +766,6 @@
   text-align: center;
 }
 
-.md-typeset .fa-note {
-  color: var(--md-default-fg-color--light);
-  font-size: 0.9em;
-}
-
 .md-typeset .fa-graph-section {
   margin-top: 1rem;
   padding: 0.9rem;
@@ -1289,26 +1066,6 @@
   text-align: center;
 }
 
-/* Disposició anterior de l'entrada, conservada per poder comparar-la. */
-.md-typeset .ls-tool[data-entry-layout="classic"] .ls-equations {
-  padding: 0;
-  overflow: visible;
-  border: 0;
-  background: transparent;
-}
-
-.md-typeset .ls-tool[data-entry-layout="classic"] .ls-equations::before {
-  content: none;
-}
-
-.md-typeset .ls-tool[data-entry-layout="classic"] .ls-equation-row {
-  padding: 0.65rem 0.75rem;
-  overflow-x: auto;
-  border: 1px solid var(--fa-border);
-  border-radius: 0.55rem;
-  background: var(--fa-surface);
-}
-
 .md-typeset .ls-step-heading {
   display: flex;
   align-items: center;
@@ -1375,10 +1132,6 @@
   margin-block: 0.7rem;
 }
 
-.md-typeset .mc-editor-grid--three {
-  grid-template-columns: repeat(3, minmax(10rem, 1fr));
-}
-
 .md-typeset .mc-editor-card {
   display: flex;
   align-items: center;
@@ -1441,17 +1194,6 @@
   padding: 0.3rem;
   text-align: center;
   font-variant-numeric: tabular-nums;
-}
-
-.md-typeset .mc-control-grid {
-  display: grid;
-  grid-template-columns: minmax(12rem, 2fr) minmax(7rem, 1fr);
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-}
-
-.md-typeset .mc-control-grid .fa-label {
-  margin-bottom: 0.3rem;
 }
 
 .md-typeset .mc-system-entry {
@@ -1577,9 +1319,7 @@
     overflow-x: hidden;
   }
 
-  .md-typeset .mc-editor-grid,
-  .md-typeset .mc-editor-grid--three,
-  .md-typeset .mc-control-grid {
+  .md-typeset .mc-editor-grid {
     grid-template-columns: 1fr;
   }
 
