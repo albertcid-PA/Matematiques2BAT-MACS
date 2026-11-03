@@ -4,7 +4,7 @@ En aquest tema aprendrem a representar informació mitjançant matrius, a operar
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega 4. Matrius**](../../assets/apunts/tema_4_matrius.pdf?v=1){ target="_blank" rel="noopener" }
+[**Descarrega 4. Matrius**](../../assets/apunts/tema_4_matrius.pdf?v=2){ target="_blank" rel="noopener" }
 
 </div>
 

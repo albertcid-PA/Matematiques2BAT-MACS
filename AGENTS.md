@@ -94,9 +94,9 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 
 ## PDF dels apunts i sincronització
 
-- Els PDF dels apunts dels temes 1–4 es generen amb `scripts/genera_pdf_tema_1.ps1` fins a `scripts/genera_pdf_tema_4.ps1`. El recull d'enunciats de càlcul es genera amb `scripts/genera_pdf_recull_calcul.ps1`. Consulta les correspondències i les dependències a `GUIA_MANTENIMENT.md`.
+- Els PDF de teoria dels temes es generen amb `scripts/genera_pdf_tema.py`, que converteix el Markdown del web a LaTeX i el compila amb XeLaTeX. L'estil és a `sources/llibre/apunts.sty`. El recull d'enunciats de càlcul es genera amb `scripts/genera_pdf_recull_calcul.ps1`. Consulta les correspondències i les dependències a `GUIA_MANTENIMENT.md`.
 - Desa els PDF dels apunts a `docs/assets/apunts/` i els d'exercicis a `docs/assets/exercicis/`, amb còpia de treball a `output/pdf/`.
-- Conserva la maquetació específica dels apunts: classe `.pdf-topic-collection`, Latin Modern Roman de 10 pt, portada i índex. La configuració de 9 pt anterior correspon als reculls d'exercicis.
+- Conserva la maquetació específica dels apunts, adaptada dels apunts de Matemàtiques I de Jordi i Ignasi Irazuzta: TeX Gyre Pagella d'11 pt, una sola cara, portada, índex amb números de pàgina, capçaleres amb el tema i l'apartat i caixes amb franja de títol. Els exemples es poden partir entre pàgines; les altres caixes es mantenen senceres. Mantén el crèdit a la maquetació al costat de la llicència de la portada. La configuració de 9 pt anterior correspon als reculls d'exercicis.
 - Quan canviïn textos, fórmules, taules o figures inclosos en un PDF, regenera els PDF afectats i incrementa `?v=n` en tots els enllaços corresponents, inclosos els definits als generadors.
 - Aplica als PDF dels apunts la mateixa revisió visual de totes les pàgines que als reculls d'exercicis.
 - Comprova les rutes i les dependències abans d'executar els scripts; no pressuposis que les rutes locals de Python o Edge seran vàlides en un altre entorn.
