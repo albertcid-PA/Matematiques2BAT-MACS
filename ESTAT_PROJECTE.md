@@ -4,13 +4,17 @@ Data de l'inventari inicial: **1 de novembre de 2026**. Aquest document és un p
 
 ## Traspàs
 
-Apartat de relleu entre assistents (vegeu «Relleu entre assistents» a [AGENTS.md](AGENTS.md)). Se sobreescriu a cada tancament de torn.
+Apartat de relleu entre assistents (vegeu «Relleu entre assistents» a [AGENTS.md](AGENTS.md)).
 
-- **Darrer torn:** Claude Code, 2 de novembre de 2026.
-- **Darrer commit publicat:** `f373faa`, que treu l'exemple «Operació impossible» de la calculadora de matrius i aclareix els motius dels errors. Verificat al web públic (`matrix-calculator-tool.js?v=23`).
-- **Sense commit:** res. El protocol de relleu i el criteri dels exàmens a Google Docs són en un commit posterior, «Estableix el relleu entre Claude Code i Codex». Comprova amb `git status` si ja s'ha enviat a `origin/main`.
-- **Comprovat:** només l'edició dels documents, l'accentuació i la compilació local. El protocol encara no s'ha provat amb Codex.
-- **Pròxim pas:** cap d'immediat. El professor provarà Codex més endavant; la primera vegada, cal dir-li «Reprèn la feina» i comprovar que hi funcionen `git status`, `git commit` i la compilació amb `.venv`.
+- **Darrer torn:** Claude Code, 5 de novembre de 2026.
+- **Darrers commits:** `07858de` (exercicis 2.23, 2.30 i 2.34 de càlcul, ja publicat abans d'aquest traspàs), `d0cfc18` (criteris d'ús del material de consulta local) i el commit que actualitza aquest traspàs, tots enviats a `origin/main`.
+- **Torn anterior de Codex (4 de novembre de 2026):** va afegir `Co-Authored-By: Codex <noreply@openai.com>` als 268 commits d'octubre i va reescriure l'historial publicat a petició del professor. Les dates, els arbres i les identitats es van preservar. Les branques `backup-*` es van esborrar.
+- **Hashes corregits:** els documents citaven commits anteriors a la reescriptura. S'han substituït pels de `main`: `9304002` (calculadora de matrius), `722173c` (gràfiques en mode dia i fosc) i `cedcf71` (nou format dels PDF de teoria).
+- **Material de consulta:** `materials/` és local i ignorada per Git. El criteri d'ús és a `AGENTS.md` i l'inventari, a `materials/INVENTARI.md`.
+- **Fora del repositori:** l'examen «2_PP1.2 Domini, valor absolut, funcions a trossos i optimització» i el seu solucionari són a Google Drive. Les fonts del solucionari són a `tmp/solucionari_2_PP1.2/` i la còpia a `output/pdf/`, totes dues ignorades per Git. El professor revisa l'examen abans de donar-lo per bo.
+- **Sense commit:** res dels fitxers versionats.
+- **Comprovat:** els hashes citats als documents són a `origin/main`; `git diff --check` net. Els commits d'aquest traspàs no modifiquen el web.
+- **Pròxim pas:** cap d'immediat; esperar les indicacions del professor.
 - **Decisions pendents del professor:** les indicades a «Darrera tasca».
 
 ## Context que es conserva
@@ -46,11 +50,9 @@ La presència dels fitxers no implica una auditoria completa del seu contingut m
 | Context exclusiu de converses antigues | L'1 de novembre de 2026 s'han fet dues cerques dirigides de context d'aquest projecte. No han identificat criteris docents nous confirmats pel professor que faltessin als documents. La recuperació és parcial i no equival a llegir íntegrament totes les converses ni a conservar-ne els adjunts. No donar el traspàs per exhaustiu. |
 | Recull d'exercicis d'àlgebra | No hi ha un PDF d'exercicis d'àlgebra entre els fitxers versionats consultats, ni un generador específic identificat. La pàgina tampoc inclou l'enllaç inicial ni la classe de recull que demana `AGENTS.md`. El professor ha indicat (2 de novembre de 2026) que es farà quan s'acabin els exercicis d'àlgebra; llavors caldrà crear-lo i aplicar-hi la maquetació comuna. |
 | Desenvolupament dels temes 5–7 | Contingut previst, sense encàrrec actiu per redactar-lo en aquesta conversa. Desenvolupar-lo quan el professor ho demani. |
-| Còpies temporals de l'entorn antic | `tmp/venv-antic/` (l'entorn `.venv` anterior) i `tmp/context-git-20261101/` (còpia de Codex que no es va enviar) ja no són necessàries. Es poden esborrar quan el professor ho vulgui; `tmp/` no es versiona. |
-| Nou format dels PDF de teoria | Acordat amb el professor el 3 de novembre de 2026: `scripts/genera_pdf_tema.py` i `sources/llibre/apunts.sty`, adaptats dels apunts de Matemàtiques I de Jordi i Ignasi Irazuzta. Els quatre temes s'han generat i revisat en local (18, 61, 20 i 32 pàgines) i s'han publicat el 3 de novembre de 2026 (commit `654647c`). Verificat al web públic: els quatre enllaços amb la versió nova i els quatre PDF idèntics als locals. La portada porta el correu del professor, com ha indicat. El generador detecta els temes des de `zensical.toml`, incrementa el `?v=n` en publicar i genera fulls de revisió; provat amb temes de mentida en una còpia, encara no amb cap tema real nou. Els scripts antics dels temes amb Edge i el seu CSS s'han retirat. |
+| Nou format dels PDF de teoria | Acordat amb el professor el 3 de novembre de 2026: `scripts/genera_pdf_tema.py` i `sources/llibre/apunts.sty`, adaptats dels apunts de Matemàtiques I de Jordi i Ignasi Irazuzta. Els quatre temes s'han generat i revisat en local (18, 61, 20 i 32 pàgines) i s'han publicat el 3 de novembre de 2026 (commit `cedcf71`). Verificat al web públic: els quatre enllaços amb la versió nova i els quatre PDF idèntics als locals. La portada porta el correu del professor, com ha indicat. El generador detecta els temes des de `zensical.toml`, incrementa el `?v=n` en publicar i genera fulls de revisió; provat amb temes de mentida en una còpia, encara no amb cap tema real nou. Els scripts antics dels temes amb Edge i el seu CSS s'han retirat. |
 | Figures del tema 2 | Etiquetes de les figures 2.12, 2.14–2.18 i 2.23–2.25 corregides als `.tex`, amb els SVG regenerats i `?v=n` incrementat. Comprovat en local, al web i al PDF. Queden sense tocar la figura 2.11, amb $x=1$ molt a prop de la corba, i l'espai en blanc de la pàgina 37 del PDF, perquè la figura 2.19 no hi cap. |
 | Figures del tema 1 | Etiquetes de les figures 1.2, 1.3, 1.6, 1.7, 1.9, 1.10 i 1.11 corregides als `.tex`, amb els SVG regenerats i `?v=n` incrementat. Comprovat en local, al web i al PDF. Les figures 1.5 i 1.8 tenen alguna etiqueta justa, però llegible. |
-| Recull d'enunciats | Només s'ha provat de punta a punta l'antic script del tema 3 amb l'entorn nou. El del recull té els mateixos canvis, però encara no s'ha executat. |
 | Converses de Codex | Abans d'esborrar-les, conservar els adjunts o els acords que no s'hagin recuperat. |
 | Revisió d'emmagatzematge de GitHub Actions | La cerca ha recuperat una comprovació que va quedar pendent a la conversa del 29 d'octubre de 2026: l'espai dels artefactes d'Actions. No s'ha comprovat en aquesta tasca. Les xifres històriques de consum o mida d'aquella conversa no descriuen necessàriament l'estat actual. |
 
@@ -94,7 +96,7 @@ La segona cerca ha aclarit que les recomanacions del 28 d'octubre de 2026 sobre 
 - **Comprovat en local:** `zensical.exe build --clean` sense incidències; `git diff --check` net; sense imatges trencades a les pàgines d'exercicis i d'optimització; figures 2.20, 2.25 i 2.28 revisades al navegador; les 82 pàgines dels tres PDF revisades en miniatura, amb el mateix nombre de pàgines que abans.
 - **Analitzador de funcions (a petició del professor):** el gràfic i la llegenda usen la mateixa paleta i el mateix filtre, sense panell de fons (`function-analyzer.js?v=32` a l'analitzador i `?v=25` al derivador, `extra.css?v=43`). Comprovat en local amb una funció racional en tots dos modes; els colors de la interfície de l'eina no s'han canviat.
 - **Límits:** en mode fosc els colors són els que dona el filtre i no coincideixen exactament amb els de la referència (la corba surt més lila i el verd, més fosc). Els PDF dels apunts conserven el seu fons de figura `#f1f4fa`.
-- **Publicació:** commit `e39fea3`, verificat al web públic el 2 de novembre de 2026: `extra.css?v=43` amb el filtre, `function-analyzer.js?v=32` amb la paleta nova, figura 2.25 en mode fosc a `calcul/aplicacions-derivades/04_optimitzacio/`, i els enllaços i les mides dels PDF nous.
+- **Publicació:** commit `722173c`, verificat al web públic el 2 de novembre de 2026: `extra.css?v=43` amb el filtre, `function-analyzer.js?v=32` amb la paleta nova, figura 2.25 en mode fosc a `calcul/aplicacions-derivades/04_optimitzacio/`, i els enllaços i les mides dels PDF nous.
 
 ## Com registrar una tasca incompleta
 

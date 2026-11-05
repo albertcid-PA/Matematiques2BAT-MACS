@@ -10,7 +10,7 @@ En començar una sessió nova: llegeix aquest fitxer i `AGENTS.md`; per reprendr
 
 - El professor treballa aquest projecte alternant Claude Code (app d'escriptori, Windows) i Codex, tots dos oberts directament a la carpeta `C:\Users\acid8\Documents\ClaudeGPT\Apunts 2n BAT`. Segueix la secció «Relleu entre assistents» d'`AGENTS.md`. Comprova la carpeta abans d'actuar i fes servir rutes relatives en scripts i documents.
 - L'ordinador té MiKTeX (pdfLaTeX, XeLaTeX, latexmk, `pdftoppm`), Git i Edge (comprovat l'1 de novembre de 2026). L'entorn `.venv` es va recrear aquell dia a la carpeta actual i conté Zensical, `pypdf` i `reportlab`; els scripts ja no depenen del Python del runtime de Codex. Mira la secció «Entorn local» de `GUIA_MANTENIMENT.md` si alguna cosa falla.
-- Treballa directament al repositori principal: `git fetch` funciona des d'aquesta carpeta. La còpia `tmp/context-git-20261101/` era una solució provisional de Codex i ja no s'ha de fer servir.
+- Treballa directament al repositori principal: `git fetch` funciona des d'aquesta carpeta.
 - Desa en UTF-8 i comprova els accents després de desar.
 - La memòria de Claude i els projectes de claude.ai no substitueixen `ESTAT_PROJECTE.md`: la continuïtat viu al repositori perquè la comparteixen tots els assistents.
 
