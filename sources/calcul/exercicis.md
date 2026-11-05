@@ -1,6 +1,6 @@
 # Exercicis de càlcul {.pdf-exercise-collection}
 
-<p class="download-pdf"><a href="../assets/exercicis/recull_enunciats_calcul.pdf?v=4" target="_blank" rel="noopener">Descarrega el recull d'enunciats en PDF</a></p>
+<p class="download-pdf"><a href="../assets/exercicis/recull_enunciats_calcul.pdf?v=7" target="_blank" rel="noopener">Descarrega el recull d'enunciats en PDF</a></p>
 
 ---
 
@@ -548,6 +548,7 @@ $$
 |:--|:--|
 | **a)** $f(x)=\lvert 2x-6\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
 | **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
+| **e)** $f(x)=\dfrac{x}{\lvert x-2\rvert}$ | |
 
 **2.24.** Estudia i representa les funcions següents:
 
@@ -603,7 +604,7 @@ En cada problema, identifica les dades i defineix les variables necessàries. Co
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-**2.30. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
+**2.30. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $6\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
 
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un mínim.
@@ -644,7 +645,7 @@ El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des 
 
 **2.34. Entrades d'un espectacle.** Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$. **Determina el preu de l'entrada que maximitza el benefici i calcula el nombre d'entrades venudes i el benefici màxim.**
 
-- **a)** Defineix la variable i construeix la funció de benefici, indicant el domini que té sentit en el context.
+- **a)** Defineix la variable i expressa en funció d'ella els ingressos i les despeses. Calcula la funció de benefici com a ingressos menys despeses, indicant el domini que té sentit en el context.
 - **b)** Resol el problema i interpreta el resultat.
 
 **2.35. Producció d'una cooperativa.** El cost de produir $x$ unitats d'un article és

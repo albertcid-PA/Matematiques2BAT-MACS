@@ -325,9 +325,10 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 - **b)** $4x+1$ si $x<-1$ i $2x-1$ si $x\geq-1$; no derivable a $x=-1$.
 - **c)** $-2x+1$ si $x<-1$, $3$ si $-1\leq x<2$ i $2x-1$ si $x\geq2$; no derivable a $x=-1,2$.
 - **d)** $-x^2-x+2$ si $x<-2$ i $x^2+x-2$ si $x\geq-2$; no derivable a $x=-2$.
+- **e)** $\frac{x}{2-x}$ si $x<2$ i $\frac{x}{x-2}$ si $x>2$; no està definida a $x=2$, on té una asímptota vertical, i per tant no hi és derivable.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les quatre funcions amb valor absolut de l'exercici 2.23](../img/calcul/fig_2_37_resultat_exercici_2_23.svg?v=4){ width="100%" }
+  ![Representacions de les cinc funcions amb valor absolut de l'exercici 2.23](../img/calcul/fig_2_37_resultat_exercici_2_23.svg?v=6){ width="100%" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_37_resultat_exercici_2_23.tex">Figura 2.37.</a></strong> Representacions de les funcions de l'exercici 2.23.</figcaption>
 </figure>
 
@@ -389,7 +390,7 @@ $$
 
 **2.29.** Costat perpendicular al mur: $30\,\text{m}$; costat paral·lel: $60\,\text{m}$; àrea màxima: $1.800\,\text{m}^2$.
 
-**2.30.** Costats horitzontals: $2\sqrt3\,\text{m}$; costats verticals: $\frac{4\sqrt3}{3}\,\text{m}$. Cost mínim: $32\sqrt3\,€\approx55{,}43\,€$.
+**2.30.** Costats horitzontals: $3\,\text{m}$; costats verticals: $2\,\text{m}$. Cost mínim: $48\,€$.
 
 **2.31.** $r=10\,\text{cm}$, $h=20\,\text{cm}$; volum màxim $2.000\pi\,\text{cm}^3$.
 

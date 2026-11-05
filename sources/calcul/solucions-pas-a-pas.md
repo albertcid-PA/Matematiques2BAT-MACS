@@ -1794,7 +1794,25 @@ Anul·lem les expressions dins dels valors absoluts i separem la funció en els 
     \end{cases}
     $$
 
-En tots quatre casos, els trams coincideixen en els punts d'unió i la funció és contínua. Les derivades laterals són diferents en cada punt de canvi; per tant, aquests punts són angulosos.
+- **e)** El denominador s'anul·la a $x=2$; per tant, el domini és $\mathbb{R}\setminus\{2\}$:
+
+    $$
+    \frac{x}{|x-2|}=
+    \begin{cases}
+    \dfrac{x}{2-x},&x<2,\\[2mm]
+    \dfrac{x}{x-2},&x>2.
+    \end{cases}
+    $$
+
+    Per dibuixar-la, calculem els límits:
+
+    $$
+    \lim_{x\to2}f(x)=+\infty,\qquad\lim_{x\to-\infty}f(x)=-1,\qquad\lim_{x\to+\infty}f(x)=1.
+    $$
+
+    Té una asímptota vertical a $x=2$ i les asímptotes horitzontals $y=-1$ i $y=1$. Talla els eixos a $(0,0)$. Com que $f'(x)=\frac{2}{(2-x)^2}>0$ si $x<2$ i $f'(x)=\frac{-2}{(x-2)^2}<0$ si $x>2$, és creixent a l'esquerra de $2$ i decreixent a la dreta.
+
+En els apartats **a)**, **b)**, **c)** i **d)**, els trams coincideixen en els punts d'unió i la funció és contínua. Les derivades laterals són diferents en cada punt de canvi; per tant, aquests punts són angulosos. A l'apartat **e)**, la funció no està definida a $x=2$: no hi és contínua ni derivable, i és derivable en tota la resta del domini.
 
 **2.24.**
 
@@ -2014,17 +2032,17 @@ $$A_{\max}=30\cdot60=1.800\,\text{m}^2.$$
 
 **2.30.**
 
-Siguin $x$ el costat horitzontal i $y$ el vertical. Com que $xy=8$, $y=\frac8x$, amb $x>0$. El cost total és
+Siguin $x$ el costat horitzontal i $y$ el vertical. Com que $xy=6$, $y=\frac6x$, amb $x>0$. El cost total és
 
-$$C(x)=2\cdot4x+2\cdot6y=8x+\frac{96}{x}.$$
+$$C(x)=2\cdot4x+2\cdot6y=8x+\frac{72}{x}.$$
 
-$$C'(x)=8-\frac{96}{x^2}=0\Longrightarrow x^2=12\Longrightarrow x=2\sqrt3.$$
+$$C'(x)=8-\frac{72}{x^2}=0\Longrightarrow x^2=9\Longrightarrow x=3.$$
 
-$$y=\frac8{2\sqrt3}=\frac{4\sqrt3}{3}.$$
+$$y=\frac63=2.$$
 
-Com que $C''(x)=\frac{192}{x^3}>0$, és un mínim. El cost és
+Com que $C''(x)=\frac{144}{x^3}>0$, és un mínim. El cost és
 
-$$C_{\min}=8(2\sqrt3)+\frac{96}{2\sqrt3}=32\sqrt3\,€\approx55{,}43\,€.$$
+$$C_{\min}=8\cdot3+\frac{72}{3}=48\,€.$$
 
 **2.31.**
 
@@ -2136,11 +2154,24 @@ Si corre fins a $O$, tarda $\frac{100}{6}+\frac{60}{2}=46{,}67\,\text{s}$. Si ne
 
 **2.34.**
 
-Siguin $x$ els augments de $2\,€$. El preu és $40+2x$ i es venen $500-20x$ entrades. Com que cada espectador costa $4\,€$, el benefici és
+Siguin $x$ els augments de $2\,€$. El preu és $40+2x$ i es venen $500-20x$ entrades. Com que el nombre d'entrades no pot ser negatiu, el domini és $0\leq x\leq25$.
+
+Els ingressos són el preu per les entrades venudes:
 
 $$
-B(x)=(40+2x-4)(500-20x)-2.000
-=-40x^2+280x+16.000.
+I(x)=(40+2x)(500-20x)=-40x^2+200x+20.000.
+$$
+
+Les despeses són les de cada espectador més els costos fixos:
+
+$$
+D(x)=4(500-20x)+2.000=-80x+4.000.
+$$
+
+El benefici és la diferència entre els ingressos i les despeses:
+
+$$
+B(x)=I(x)-D(x)=-40x^2+280x+16.000,\qquad0\leq x\leq25.
 $$
 
 $$B'(x)=-80x+280=0\Longrightarrow x=3{,}5.$$
