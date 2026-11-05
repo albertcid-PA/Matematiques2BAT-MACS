@@ -4,7 +4,7 @@ En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els pro
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=4){ target="_blank" rel="noopener" }
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=7){ target="_blank" rel="noopener" }
 
 </div>
 
@@ -2472,6 +2472,7 @@ Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no 
 |:--|:--|
 | **a)** $f(x)=\lvert 2x-6\rvert$ | **b)** $f(x)=3x-\lvert x+1\rvert$ |
 | **c)** $f(x)=\lvert x+1\rvert+\lvert x-2\rvert$ | **d)** $f(x)=(x-1)\lvert x+2\rvert$ |
+| **e)** $f(x)=\dfrac{x}{\lvert x-2\rvert}$ | |
 
 ??? example "Mostra la solució pas a pas de l'exercici 2.23"
     **Resolució pas a pas**
@@ -2519,10 +2520,28 @@ Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no 
         \end{cases}
         $$
 
-    En tots quatre casos, els trams coincideixen en els punts d'unió i la funció és contínua. Les derivades laterals són diferents en cada punt de canvi; per tant, aquests punts són angulosos.
+    - **e)** El denominador s'anul·la a $x=2$; per tant, el domini és $\mathbb{R}\setminus\{2\}$:
+
+        $$
+        \frac{x}{|x-2|}=
+        \begin{cases}
+        \dfrac{x}{2-x},&x<2,\\[2mm]
+        \dfrac{x}{x-2},&x>2.
+        \end{cases}
+        $$
+
+        Per dibuixar-la, calculem els límits:
+
+        $$
+        \lim_{x\to2}f(x)=+\infty,\qquad\lim_{x\to-\infty}f(x)=-1,\qquad\lim_{x\to+\infty}f(x)=1.
+        $$
+
+        Té una asímptota vertical a $x=2$ i les asímptotes horitzontals $y=-1$ i $y=1$. Talla els eixos a $(0,0)$. Com que $f'(x)=\frac{2}{(2-x)^2}>0$ si $x<2$ i $f'(x)=\frac{-2}{(x-2)^2}<0$ si $x>2$, és creixent a l'esquerra de $2$ i decreixent a la dreta.
+
+    En els apartats **a)**, **b)**, **c)** i **d)**, els trams coincideixen en els punts d'unió i la funció és contínua. Les derivades laterals són diferents en cada punt de canvi; per tant, aquests punts són angulosos. A l'apartat **e)**, la funció no està definida a $x=2$: no hi és contínua ni derivable, i és derivable en tota la resta del domini.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions de les quatre funcions amb valor absolut de l'exercici 2.23](../../img/calcul/fig_2_37_resultat_exercici_2_23.svg?v=4){ width="100%" }
+      ![Representacions de les cinc funcions amb valor absolut de l'exercici 2.23](../../img/calcul/fig_2_37_resultat_exercici_2_23.svg?v=6){ width="100%" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_37_resultat_exercici_2_23.tex">Figura 2.37.</a></strong> Representacions de les funcions de l'exercici 2.23.</figcaption>
     </figure>
 
@@ -2843,7 +2862,7 @@ Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectan
 **2.30.**
 **Aparador rectangular.**
 
-Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
+Una botiga vol construir un aparador rectangular de $6\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
 
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un mínim.
@@ -2851,17 +2870,17 @@ Una botiga vol construir un aparador rectangular de $8\,\text{m}^2$. El perfil m
 ??? example "Mostra la solució pas a pas de l'exercici 2.30"
     **Resolució pas a pas**
 
-    Siguin $x$ el costat horitzontal i $y$ el vertical. Com que $xy=8$, $y=\frac8x$, amb $x>0$. El cost total és
+    Siguin $x$ el costat horitzontal i $y$ el vertical. Com que $xy=6$, $y=\frac6x$, amb $x>0$. El cost total és
 
-    $$C(x)=2\cdot4x+2\cdot6y=8x+\frac{96}{x}.$$
+    $$C(x)=2\cdot4x+2\cdot6y=8x+\frac{72}{x}.$$
 
-    $$C'(x)=8-\frac{96}{x^2}=0\Longrightarrow x^2=12\Longrightarrow x=2\sqrt3.$$
+    $$C'(x)=8-\frac{72}{x^2}=0\Longrightarrow x^2=9\Longrightarrow x=3.$$
 
-    $$y=\frac8{2\sqrt3}=\frac{4\sqrt3}{3}.$$
+    $$y=\frac63=2.$$
 
-    Com que $C''(x)=\frac{192}{x^3}>0$, és un mínim. El cost és
+    Com que $C''(x)=\frac{144}{x^3}>0$, és un mínim. El cost és
 
-    $$C_{\min}=8(2\sqrt3)+\frac{96}{2\sqrt3}=32\sqrt3\,€\approx55{,}43\,€.$$
+    $$C_{\min}=8\cdot3+\frac{72}{3}=48\,€.$$
 
 ---
 
@@ -3024,17 +3043,30 @@ El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des 
 
 Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$. **Determina el preu de l'entrada que maximitza el benefici i calcula el nombre d'entrades venudes i el benefici màxim.**
 
-- **a)** Defineix la variable i construeix la funció de benefici, indicant el domini que té sentit en el context.
+- **a)** Defineix la variable i expressa en funció d'ella els ingressos i les despeses. Calcula la funció de benefici com a ingressos menys despeses, indicant el domini que té sentit en el context.
 - **b)** Resol el problema i interpreta el resultat.
 
 ??? example "Mostra la solució pas a pas de l'exercici 2.34"
     **Resolució pas a pas**
 
-    Siguin $x$ els augments de $2\,€$. El preu és $40+2x$ i es venen $500-20x$ entrades. Com que cada espectador costa $4\,€$, el benefici és
+    Siguin $x$ els augments de $2\,€$. El preu és $40+2x$ i es venen $500-20x$ entrades. Com que el nombre d'entrades no pot ser negatiu, el domini és $0\leq x\leq25$.
+
+    Els ingressos són el preu per les entrades venudes:
 
     $$
-    B(x)=(40+2x-4)(500-20x)-2.000
-    =-40x^2+280x+16.000.
+    I(x)=(40+2x)(500-20x)=-40x^2+200x+20.000.
+    $$
+
+    Les despeses són les de cada espectador més els costos fixos:
+
+    $$
+    D(x)=4(500-20x)+2.000=-80x+4.000.
+    $$
+
+    El benefici és la diferència entre els ingressos i les despeses:
+
+    $$
+    B(x)=I(x)-D(x)=-40x^2+280x+16.000,\qquad0\leq x\leq25.
     $$
 
     $$B'(x)=-80x+280=0\Longrightarrow x=3{,}5.$$
