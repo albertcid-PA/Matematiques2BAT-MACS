@@ -43,6 +43,12 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 - `site/` és una sortida generada. **No l'editis manualment ni la versionis.**
 - Consulta `GUIA_GRAFIQUES.md` abans de crear o modificar una figura.
 
+## Material de consulta
+
+- La carpeta `materials/` conté documentació de base del professor per consultar. És local i no es versiona, de manera que en un altre entorn pot no existir. Si no hi és, declara-ho i no en suposis el contingut.
+- Fes-la servir per comprovar el temari, el nivell, la notació i la procedència dels problemes PAU, i per inspirar exercicis propis. No en reprodueixis fidelment textos, solucions ni figures als apunts, als exàmens ni al web.
+- L'inventari és a `materials/INVENTARI.md`, dins de la mateixa carpeta. No en copiïs el contingut a cap fitxer versionat.
+
 ## Estructura i navegació
 
 - Mantén aquest ordre de pestanyes principals:
