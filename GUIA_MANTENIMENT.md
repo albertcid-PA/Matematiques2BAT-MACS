@@ -142,6 +142,7 @@ Quan canviïs CSS o JavaScript amb una versió `?v=n` a la configuració o als c
 ```powershell
 & ".\.venv\Scripts\zensical.exe" build --clean
 git diff --check
+& ".\.venv\Scripts\python.exe" scripts\comprova_sincronia.py
 ```
 
 La compilació ha d'acabar amb `No issues found`. A PowerShell 5.1, Zensical escriu aquest missatge per stderr i pot aparèixer com un `NativeCommandError` vermell; el que compta és el codi de sortida 0. Per revisar canvis del web:
@@ -149,6 +150,20 @@ La compilació ha d'acabar amb `No issues found`. A PowerShell 5.1, Zensical esc
 ```powershell
 & ".\.venv\Scripts\zensical.exe" serve -a 127.0.0.1:8000
 ```
+
+### Sincronia dels fitxers generats
+
+`scripts/comprova_sincronia.py` compara els fitxers canviats amb `HEAD` i acaba amb codi 1 si troba algun d'aquests problemes:
+
+| Comprovació | Avisa quan |
+|:--|:--|
+| Figures | Un `.tex` de `figures/tikz/` ha canviat i el seu SVG no. |
+| `?v=n` | Un SVG o un PDF de `docs/` ha canviat i alguna referència conserva el número anterior. |
+| Pràctica de càlcul | `exercicis_calcul.md` o `recull-enunciats-calcul.md` no coincideixen amb el que genera `sources/calcul/`. |
+| PDF dels temes | Han canviat les pàgines del tema, el títol o la introducció de l'índex, les figures que hi surten, `apunts.sty` o `genera_pdf_tema.py`, i el PDF no. |
+| Recull de càlcul | Han canviat els enunciats, les figures que hi surten o el seu script, i el PDF no. |
+
+Amb `--staged` només comprova el que s'ha afegit amb `git add`; amb `--des origin/main`, tot el que encara no s'ha publicat. Treballa a partir dels fitxers canviats, de manera que no detecta un PDF que ja estigués desfasat en un commit anterior. Tampoc detecta els canvis d'`extra.css` que afecten la impressió del recull ni si el contingut d'un PDF regenerat és correcte: la revisió visual continua sent necessària.
 
 ### Revisió i enviament
 

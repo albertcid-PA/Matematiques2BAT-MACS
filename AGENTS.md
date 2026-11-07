@@ -122,7 +122,7 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 
 ## Comprovació local
 
-- Compila sempre amb `zensical build --clean` des de l'entorn `.venv`; ha d'acabar amb `No issues found`. Executa també `git diff --check`. Les comandes exactes són a «Comprovació i publicació» de [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md).
+- Compila sempre amb `zensical build --clean` des de l'entorn `.venv`; ha d'acabar amb `No issues found`. Executa també `git diff --check` i `scripts/comprova_sincronia.py`, que avisa de figures, PDF, pràctica de càlcul o `?v=n` sense actualitzar. Les comandes exactes són a «Comprovació i publicació» de [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md).
 - Revisa al navegador local la pàgina modificada i els enllaços principals: ordre del menú, fórmules, taules, figures i absència d'errors de consola. Reutilitza el servidor existent si el port `8000` ja està ocupat pel projecte.
 
 ## Git i publicació
