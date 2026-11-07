@@ -165,6 +165,18 @@ La compilació ha d'acabar amb `No issues found`. A PowerShell 5.1, Zensical esc
 
 Amb `--staged` només comprova el que s'ha afegit amb `git add`; amb `--des origin/main`, tot el que encara no s'ha publicat. Treballa a partir dels fitxers canviats, de manera que no detecta un PDF que ja estigués desfasat en un commit anterior. Tampoc detecta els canvis d'`extra.css` que afecten la impressió del recull ni si el contingut d'un PDF regenerat és correcte: la revisió visual continua sent necessària.
 
+### Comprovació automàtica en fer un commit
+
+El hook versionat [`.githooks/pre-commit`](.githooks/pre-commit) executa `git diff --cached --check` i `scripts/comprova_sincronia.py --staged`, i atura el commit si alguna comprovació falla. No compila el web: `build --clean` continua sent un pas manual. Si no troba l'entorn `.venv`, ho avisa i deixa fer el commit sense comprovar la sincronia.
+
+S'activa una sola vegada per còpia del repositori (comprovat el 7 de novembre de 2026 a la carpeta de treball):
+
+```powershell
+git config core.hooksPath .githooks
+```
+
+`.gitattributes` obliga el hook a tenir finals de línia LF, perquè `sh` no l'executaria amb CRLF. Si el hook atura un commit, corregeix el problema que indica; no el saltis amb `git commit --no-verify` sense el permís del professor.
+
 ### Revisió i enviament
 
 Reutilitza el servidor existent si és del projecte. Executar `build --clean` amb el servidor engegat buida `site/` un moment i pot donar errors 404 temporals; el 2 de novembre de 2026 `site/` va quedar buida després d'una compilació i es va resoldre tornant-la a executar. Revisa al navegador les pàgines modificades, els enllaços principals, l'ordre de pestanyes, les fórmules, les taules, les figures i els errors de consola. Si el canvi només afecta documentació de manteniment fora de `docs/`, no hi ha una pàgina d'alumnat modificada per revisar visualment.

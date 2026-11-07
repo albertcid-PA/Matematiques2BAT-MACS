@@ -131,6 +131,7 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 - El flux `.github/workflows/docs.yml` construeix i publica el web. No executa els generadors de pràctica, figures ni PDF: cal generar i versionar els resultats afectats abans del `push`.
 - No descartis ni sobreescriguis canvis del professor.
 - Revisa `git status` abans de començar i abans de fer el commit.
+- El hook `.githooks/pre-commit` comprova cada commit i l'atura si hi ha fitxers generats sense actualitzar. Corregeix el que indiqui; no el saltis amb `--no-verify` sense el permís del professor.
 - Fes commits petits amb missatges descriptius en català.
 - Quan s'hagi demanat actualitzar el web, envia els canvis a `main`; GitHub Actions construeix i publica Zensical.
 - Després del `push`, comprova la URL pública amb una dada concreta del canvi. No donis la publicació per acabada només perquè el `push` hagi funcionat.

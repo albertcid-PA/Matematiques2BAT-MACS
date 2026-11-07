@@ -1,0 +1,39 @@
+#!/bin/sh
+# Hook versionat del projecte. S'activa una vegada per còpia del repositori amb:
+#     git config core.hooksPath .githooks
+# Atura el commit si els canvis afegits tenen espais sobrers o si algun fitxer
+# generat (SVG, PDF, pràctica de càlcul, ?v=n) no està al dia. Vegeu
+# «Sincronia dels fitxers generats» a GUIA_MANTENIMENT.md.
+# No el saltis amb --no-verify sense el permís del professor.
+
+arrel=$(git rev-parse --show-toplevel) || exit 1
+cd "$arrel" || exit 1
+
+errors=0
+
+if ! git diff --cached --check >&2; then
+    echo "pre-commit: hi ha espais sobrers o marques de conflicte als canvis afegits." >&2
+    errors=1
+fi
+
+python=""
+for candidat in .venv/Scripts/python.exe .venv/bin/python; do
+    if [ -x "$candidat" ]; then
+        python=$candidat
+        break
+    fi
+done
+
+if [ -z "$python" ]; then
+    echo "pre-commit: no s'ha trobat l'entorn .venv; no s'ha pogut comprovar la sincronia dels fitxers generats." >&2
+elif ! PYTHONUTF8=1 PYTHONIOENCODING=utf-8 "$python" scripts/comprova_sincronia.py --staged >&2; then
+    errors=1
+fi
+
+if [ "$errors" -ne 0 ]; then
+    echo "" >&2
+    echo "pre-commit: commit aturat. Corregeix-ho, torna a fer git add i repeteix el commit." >&2
+    exit 1
+fi
+
+exit 0

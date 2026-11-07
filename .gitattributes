@@ -1,0 +1,2 @@
+# El hook s'executa amb sh: ha de tenir finals de línia LF.
+.githooks/* text eol=lf
