@@ -435,10 +435,16 @@
 /* Analitzador interactiu de funcions. */
 .md-typeset .fa-tool {
   --fa-accent: #1565c0;
-  --fa-accent-soft: #e8f1fb;
+  --fa-accent-text: var(--fa-accent);
+  --fa-accent-soft: color-mix(in srgb, var(--md-default-bg-color) 91%, var(--fa-accent) 9%);
   --fa-border: color-mix(in srgb, var(--md-default-fg-color) 18%, transparent);
   --fa-surface: color-mix(in srgb, var(--md-default-bg-color) 94%, var(--fa-accent) 6%);
   margin-block: 1.1rem 1.6rem;
+}
+
+/* En mode fosc, el blau del text ha de ser més clar perquè es llegeixi bé. */
+[data-md-color-scheme="slate"] .md-typeset .fa-tool {
+  --fa-accent-text: #8ab4f8;
 }
 
 .md-typeset .fa-mode-tabs {
@@ -472,7 +478,7 @@
 }
 
 .md-typeset .fa-mode-tab.is-active {
-  color: var(--fa-accent);
+  color: var(--fa-accent-text);
   background: var(--md-default-bg-color);
   box-shadow: 0 -2px 0 var(--fa-accent) inset;
   font-weight: 700;
@@ -663,7 +669,7 @@
 .md-typeset .fa-eyebrow,
 .md-typeset .fa-step-number {
   margin: 0;
-  color: var(--fa-accent);
+  color: var(--fa-accent-text);
   font-size: 0.78em;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -704,7 +710,7 @@
 .md-typeset .fa-step summary::after {
   content: "+";
   float: right;
-  color: var(--fa-accent);
+  color: var(--fa-accent-text);
   font-size: 1.15em;
   font-weight: 700;
 }
@@ -920,7 +926,7 @@
 
 .md-typeset .dt-rule {
   padding: 0.24rem 0.55rem;
-  color: var(--fa-accent);
+  color: var(--fa-accent-text);
   border: 1px solid color-mix(in srgb, var(--fa-accent) 35%, transparent);
   border-radius: 999px;
   background: var(--md-default-bg-color);
@@ -952,7 +958,7 @@
 
 .md-typeset .dt-step-rule {
   margin: 0.15rem 0 0.45rem;
-  color: var(--fa-accent);
+  color: var(--fa-accent-text);
   font-size: 0.84em;
 }
 
