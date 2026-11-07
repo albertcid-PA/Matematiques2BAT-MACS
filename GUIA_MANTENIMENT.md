@@ -31,15 +31,16 @@ Mantén coordinats els identificadors dels enunciats i les solucions. No canviï
 
 ## Entorn local
 
-Executa les comandes des de l'arrel del repositori, en PowerShell. El web utilitza l'entorn `.venv` i Zensical; no donis per fet que l'ordre genèrica `python` està disponible (la de `WindowsApps` és el redirector de Microsoft Store).
+Executa les comandes des de l'arrel del repositori, en PowerShell. Comprova les rutes i les dependències abans d'executar els scripts: no pressuposis que les rutes locals de Python o Edge seran vàlides en un altre entorn. El web utilitza l'entorn `.venv` i Zensical; no donis per fet que l'ordre genèrica `python` està disponible (la de `WindowsApps` és el redirector de Microsoft Store).
 
 Estat comprovat l'1 de novembre de 2026, amb Claude Code a `C:\Users\acid8\Documents\ClaudeGPT\Apunts 2n BAT`:
 
 | Element | Ruta | Estat |
 |:--|:--|:--|
-| Entorn `.venv` | `.venv\Scripts\python.exe` (Python 3.14.7) i `.venv\Scripts\zensical.exe` | Recreat a la carpeta actual. Conté Zensical 0.0.63, `pypdf` i `reportlab`. Els cinc scripts de PDF l'utilitzen tant per a Zensical com per a Python. |
+| Entorn `.venv` | `.venv\Scripts\python.exe` (Python 3.14.7) i `.venv\Scripts\zensical.exe` | Recreat a la carpeta actual. Conté Zensical 0.0.63, `pypdf` i `reportlab`. Els scripts de PDF l'utilitzen tant per a Zensical com per a Python. |
 | Python base | `C:\Users\acid8\AppData\Local\Python\pythoncore-3.14-64\python.exe` | Serveix per recrear `.venv`. |
 | Edge | `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe` | Existeix. |
+| MiKTeX i Git | pdfLaTeX, XeLaTeX, latexmk i `pdftoppm`; Git | Disponibles. |
 
 Els llançadors `.exe` de `.venv`, com `zensical.exe`, porten escrita la ruta absoluta de la carpeta on es va crear l'entorn. Si el projecte es torna a moure, deixen de funcionar sense cap missatge (codi de sortida 1). Ja va passar quan la carpeta es va moure de `Documents\ChatGPT` a `Documents\ClaudeGPT`. Mentrestant, `& ".\.venv\Scripts\python.exe" -m zensical ...` continua funcionant, i la solució és recrear l'entorn:
 
@@ -54,7 +55,7 @@ Quan la compilació hagi passat, es pot esborrar `tmp\venv-antic`. Els scripts d
 
 En aquest ordinador, PowerShell és Windows PowerShell 5.1, que llegeix com a ANSI els `.ps1` UTF-8 sense BOM. Per això, els scripts amb text accentuat es desen en UTF-8 **amb BOM**. Altrament, el peu de pàgina dels PDF surt amb caràcters malmesos (per exemple, «MatemÃ tiques»). Quan executis un script, no en redirigeixis la sortida amb `2>&1`: amb `$ErrorActionPreference = "Stop"`, el missatge `No issues found` que Zensical escriu per stderr es convertiria en un error i aturaria el script.
 
-Els generadors de Markdown utilitzen la biblioteca estàndard de Python. `scripts/afegeix_peu_pdf.py` necessita `pypdf` i `reportlab` en el Python que executen els scripts. Els PDF es creen amb Edge en mode sense interfície, a partir del web compilat. Les figures necessiten `latex` i `dvisvgm`, amb TikZ i PGFPlots instal·lats.
+Els generadors de Markdown utilitzen la biblioteca estàndard de Python. `scripts/afegeix_peu_pdf.py` necessita `pypdf` i `reportlab` en el Python que executen els scripts. El recull d'enunciats de càlcul es crea amb Edge en mode sense interfície, a partir del web compilat; els PDF de teoria, amb XeLaTeX. Les figures necessiten `latex` i `dvisvgm`, amb TikZ i PGFPlots instal·lats.
 
 ## Generació de la pràctica de càlcul
 

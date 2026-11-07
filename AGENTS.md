@@ -1,16 +1,24 @@
 # Instruccions del projecte
 
-Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Ciències Socials II**. Aquestes instruccions s'han de seguir en qualsevol conversa nova oberta dins del projecte.
+Aquest repositori conté els apunts web de **Matemàtiques Aplicades a les Ciències Socials II**. Aquestes instruccions s'han de seguir en qualsevol conversa nova oberta dins del projecte. Contenen els criteris que s'apliquen sempre; els procediments i les comandes són a les guies.
+
+## Què cal llegir
+
+| Quan | Document |
+|:--|:--|
+| En començar qualsevol tasca | Aquest fitxer, [ESTAT_PROJECTE.md](ESTAT_PROJECTE.md) i `git status`. |
+| Abans de modificar fonts, generadors, PDF, l'entorn o de publicar | [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md): quina font cal editar, quin script la regenera, comandes i comprovacions. |
+| Abans de crear o modificar una figura | [GUIA_GRAFIQUES.md](GUIA_GRAFIQUES.md): criteris, colors, numeració i compilació. |
+
+Aquests documents són de manteniment del repositori: no els incorporis a la navegació de l'alumnat.
 
 ## Continuïtat entre converses
 
-- En començar una tasca, llegeix aquest fitxer i [ESTAT_PROJECTE.md](ESTAT_PROJECTE.md), i revisa `git status`. Consulta [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md) per identificar les fonts, els generadors i les comprovacions que corresponen al canvi.
-- Les converses anteriors no són una dependència del projecte. Conserva els criteris estables en aquest fitxer, els procediments tècnics a la guia de manteniment i els pendents a l'estat del projecte.
+- Les converses anteriors no són una dependència del projecte. Conserva els criteris estables en aquest fitxer, els procediments tècnics a les guies i els pendents a l'estat del projecte.
 - Quan el professor acordi un criteri nou que hagi de continuar vigent, incorpora'l al document corresponent. No converteixis una proposta de l'agent en una decisió del professor.
-- Mantén `ESTAT_PROJECTE.md` breu i actualitzat quan canviï l'estat del treball. Si una tasca queda incompleta, indica l'objectiu, els fitxers afectats, què s'ha fet, què falta, les comprovacions executades i el pròxim pas concret.
+- Mantén `ESTAT_PROJECTE.md` breu i actualitzat quan canviï l'estat del treball. Si una tasca queda incompleta, indica l'objectiu, els fitxers afectats, què s'ha fet, què falta, les comprovacions executades, el bloqueig real si n'hi ha i el pròxim pas concret. Si s'ha publicat, registra el commit i la URL comprovada. Elimina els pendents resolts i no hi mantinguis un diari de la conversa.
 - Distingeix entre implementat, comprovat en local i verificat al web públic. No registris com a comprovació una acció que només s'ha proposat.
 - Si un acord o material només existeix en una conversa que no pots consultar, declara aquesta mancança i no en reconstrueixis el contingut per suposició.
-- Aquests documents són de manteniment del repositori: no els incorporis a la navegació de l'alumnat.
 
 ## Relleu entre assistents
 
@@ -30,18 +38,11 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 - Conserva la intenció didàctica indicada pel professor. No ampliïs el temari ni introdueixis tècniques no demanades.
 - Quan una petició sigui prou concreta, implementa-la, comprova-la en local i publica-la si el professor ha demanat actualitzar el web.
 
-## Fonts del web
+## Fonts i fitxers generats
 
-- `docs/` conté el Markdown, les imatges i els recursos publicables.
-- `zensical.toml` defineix la navegació, el tema i les extensions Markdown.
-- `docs/stylesheets/extra.css` conté els ajustos visuals comuns.
-- `figures/tikz/` conté el codi font de les figures matemàtiques.
-- `docs/img/` conté els SVG que mostra el navegador.
-- `sources/calcul/` conté les fonts dels enunciats, resultats i solucions de la pàgina de pràctica de càlcul. Modifica aquestes fonts i regenera amb `scripts/genera_pagines_practica.py`; no editis directament `docs/calcul/per-practicar/exercicis_calcul.md`.
-- Els textos fixos, els enllaços i la versió del PDF de la pàgina generada de càlcul es defineixen al mateix generador. Canvia'ls allí perquè no es perdin en regenerar.
-- `sources/generated/` conté Markdown generat. Modifica les fonts originals o el generador corresponent, no aquests resultats manualment.
-- `site/` és una sortida generada. **No l'editis manualment ni la versionis.**
-- Consulta `GUIA_GRAFIQUES.md` abans de crear o modificar una figura.
+- Edita sempre la font, mai el resultat generat. La correspondència entre fonts, generadors i resultats és a la taula «Fonts i fitxers generats» de [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md).
+- No editis manualment `site/` (sortida generada, que no es versiona), `sources/generated/`, `docs/calcul/per-practicar/exercicis_calcul.md` ni els SVG de `docs/img/`.
+- Els textos fixos, els enllaços i la versió del PDF de la pàgina generada de càlcul es defineixen al generador. Canvia'ls allí perquè no es perdin en regenerar.
 
 ## Material de consulta
 
@@ -88,24 +89,20 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 - Les solucions han de valorar el procediment, no només el resultat.
 - A les pàgines de pràctica de càlcul i àlgebra lineal, conserva els enunciats visibles i les solucions pas a pas dins de desplegables `??? example`, tancats inicialment.
 
-## Reculls d'exercicis en PDF
+## PDF
 
-- Presenta al començament de cada pàgina d'exercicis un enllaç al recull complet en PDF.
-- Afegeix `?v=n` a l'enllaç del PDF i incrementa'n el número cada vegada que regeneris el recull, per evitar que el navegador mostri una versió antiga.
-- Marca el títol principal de la pàgina amb la classe `.pdf-exercise-collection` perquè s'hi apliqui la maquetació d'impressió comuna definida a `docs/stylesheets/extra.css`.
-- Els reculls utilitzen Latin Modern Roman, cos de 9 pt, interlineat compacte, marges A4 reduïts i títols proporcionats. Conserva aquesta configuració en els futurs blocs.
-- Inclou fórmules, taules i figures necessàries, però evita espais sobrers i salts de pàgina innecessaris. No redueixis les figures fins al punt que les etiquetes deixin de ser llegibles.
-- Desa el PDF publicable a `docs/assets/exercicis/` i una còpia de treball a `output/pdf/`.
-- Després de generar-lo, renderitza totes les pàgines i revisa visualment que no hi hagi text tallat, encavalcaments, pàgines buides ni fórmules o figures il·legibles.
-
-## PDF dels apunts i sincronització
-
-- Els PDF de teoria dels temes es generen amb `scripts/genera_pdf_tema.py`, que converteix el Markdown del web a LaTeX i el compila amb XeLaTeX. L'estil és a `sources/llibre/apunts.sty`. El recull d'enunciats de càlcul es genera amb `scripts/genera_pdf_recull_calcul.ps1`. Consulta les correspondències i les dependències a `GUIA_MANTENIMENT.md`.
-- Desa els PDF dels apunts a `docs/assets/apunts/` i els d'exercicis a `docs/assets/exercicis/`, amb còpia de treball a `output/pdf/`.
-- Conserva la maquetació específica dels apunts, adaptada dels apunts de Matemàtiques I de Jordi i Ignasi Irazuzta: TeX Gyre Pagella d'11 pt, una sola cara, portada, índex amb números de pàgina, capçaleres amb el tema i l'apartat i caixes amb franja de títol. Els exemples es poden partir entre pàgines; les altres caixes es mantenen senceres. Mantén el crèdit a la maquetació al costat de la llicència de la portada. La configuració de 9 pt anterior correspon als reculls d'exercicis.
+- **Reculls d'exercicis.** Presenta al començament de cada pàgina d'exercicis un enllaç al recull complet en PDF, amb `?v=n`, i marca el títol principal amb la classe `.pdf-exercise-collection`, perquè s'hi apliqui la maquetació d'impressió comuna d'`extra.css`. Conserva-hi Latin Modern Roman, cos de 9 pt, interlineat compacte, marges A4 reduïts i títols proporcionats, també en els futurs blocs.
+- **Apunts dels temes.** Conserva la maquetació de `sources/llibre/apunts.sty`, adaptada dels apunts de Matemàtiques I de Jordi i Ignasi Irazuzta: TeX Gyre Pagella d'11 pt, una sola cara, portada, índex amb números de pàgina, capçaleres amb el tema i l'apartat i caixes amb franja de títol. Els exemples es poden partir entre pàgines; les altres caixes es mantenen senceres. Mantén el crèdit a la maquetació al costat de la llicència de la portada.
+- Inclou les fórmules, les taules i les figures necessàries, però evita espais sobrers i salts de pàgina innecessaris. No redueixis les figures fins al punt que les etiquetes deixin de ser llegibles.
 - Quan canviïn textos, fórmules, taules o figures inclosos en un PDF, regenera els PDF afectats i incrementa `?v=n` en tots els enllaços corresponents, inclosos els definits als generadors.
-- Aplica als PDF dels apunts la mateixa revisió visual de totes les pàgines que als reculls d'exercicis.
-- Comprova les rutes i les dependències abans d'executar els scripts; no pressuposis que les rutes locals de Python o Edge seran vàlides en un altre entorn.
+- Després de generar qualsevol PDF, renderitza totes les pàgines i revisa visualment que no hi hagi text tallat, encavalcaments, pàgines buides ni fórmules o figures il·legibles.
+- Scripts, destinacions i passos: «Generació dels PDF» de [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md).
+
+## Figures
+
+- Edita el `.tex` de `figures/tikz/` i regenera l'SVG; no modifiquis mai l'SVG manualment. Mantén tots dos fitxers sincronitzats.
+- Totes les referències a SVG dins del Markdown porten `?v=n`, que cal incrementar cada vegada que es regenera la figura.
+- La resta de criteris (numeració, peu de figura, colors, escala, etiquetes) i el procediment són a [GUIA_GRAFIQUES.md](GUIA_GRAFIQUES.md).
 
 ## Preparació d'exàmens
 
@@ -123,41 +120,10 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 - Escriu les funcions a trossos per al complement Auto-LaTeX: codi LaTeX entre `$$` i `$$`, en una sola línia.
 - El professor revisa i retoca cada examen abans de donar-lo per bo.
 
-## Figures i gràfiques
-
-- Edita el fitxer `.tex` de `figures/tikz/`; no modifiquis l'SVG manualment.
-- Mantén el `.tex` i l'SVG corresponent sincronitzats.
-- Numera les figures amb el tema i l'ordre d'aparició: `Figura 1.1`, `Figura 2.17`...
-- Les figures dels problemes PAU tenen una numeració pròpia i consecutiva dins de cada bloc: `Figura PAU.C.n` per a càlcul, `Figura PAU.AL.n` per a àlgebra lineal i `Figura PAU.PE.n` per a probabilitat i estadística.
-- El peu de figura ha d'enllaçar amb el `.tex` del repositori.
-- Mantén una escala coherent, etiquetes llegibles i cap text a sobre de les corbes o de les acotacions.
-- En figures geomètriques, dibuixa amb línia discontínua només les arestes realment ocultes.
-- Regenera una figura amb `scripts/compila_figures.ps1` i revisa visualment el resultat abans de publicar.
-- Totes les referències a SVG dins del Markdown han d'incloure `?v=n`. Quan regeneris una figura, incrementa aquest número perquè el navegador no reutilitzi una versió antiga de la memòria cau.
-
 ## Comprovació local
 
-Des de l'arrel del projecte, compila sempre amb:
-
-```powershell
-& ".\.venv\Scripts\zensical.exe" build --clean
-```
-
-La compilació ha d'acabar amb `No issues found`. Executa també:
-
-```powershell
-git diff --check
-```
-
-Per servir el web en local:
-
-```powershell
-& ".\.venv\Scripts\zensical.exe" serve -a 127.0.0.1:8000
-```
-
-- Reutilitza el servidor existent si el port `8000` ja està ocupat pel projecte.
-- Comprova la pàgina modificada i els enllaços principals al navegador.
-- Revisa l'ordre del menú, les fórmules, les taules, les figures i l'absència d'errors de consola.
+- Compila sempre amb `zensical build --clean` des de l'entorn `.venv`; ha d'acabar amb `No issues found`. Executa també `git diff --check`. Les comandes exactes són a «Comprovació i publicació» de [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md).
+- Revisa al navegador local la pàgina modificada i els enllaços principals: ordre del menú, fórmules, taules, figures i absència d'errors de consola. Reutilitza el servidor existent si el port `8000` ja està ocupat pel projecte.
 
 ## Git i publicació
 
@@ -172,3 +138,5 @@ Per servir el web en local:
 ## Criteri de finalització
 
 Una modificació està acabada quan el contingut és matemàticament correcte, manté el format del projecte, compila sense incidències, s'ha revisat visualment i, si correspon, és visible al web públic.
+
+En acabar, informa per separat de què s'ha modificat, què s'ha comprovat i què queda pendent.

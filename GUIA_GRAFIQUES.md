@@ -5,6 +5,13 @@ Les gràfiques matemàtiques del projecte tenen dos fitxers relacionats:
 - `figures/tikz/.../nom.tex`: codi font editable amb TikZ i PGFPlots.
 - `docs/img/.../nom.svg`: resultat que mostra el navegador.
 
+## Criteris
+
+- Mantén una escala coherent, etiquetes llegibles i cap text a sobre de les corbes o de les acotacions.
+- En figures geomètriques, dibuixa amb línia discontínua només les arestes realment ocultes.
+- Després de regenerar una figura, revisa visualment el resultat abans de publicar.
+- Totes les referències a l'SVG dins del Markdown porten `?v=n`. Quan regeneris la figura, incrementa aquest número en totes les referències, incloses les de les fonts de les pàgines generades, perquè el navegador no reutilitzi una versió antiga. Si la figura surt en un PDF, regenera'l.
+
 ## Actualització automàtica
 
 1. Obre tota la carpeta `Apunts 2n BAT` amb Visual Studio Code.
@@ -73,7 +80,7 @@ Des de l'arrel del projecte pots regenerar totes les figures amb:
 Per regenerar només una figura:
 
 ```powershell
-& ".\scripts\compila_figures.ps1" -Source ".\figures\tikz\calcul\fig_1_4_definicio_derivada.tex"
+& ".\scripts\compila_figures.ps1" -Source ".\figures\tikz\calcul\fig_1_11_definicio_derivada.tex"
 ```
 
 Els fitxers temporals de LaTeX es guarden dins de `tmp`, una carpeta ignorada per Git.

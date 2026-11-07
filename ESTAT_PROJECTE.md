@@ -17,13 +17,6 @@ Apartat de relleu entre assistents (vegeu «Relleu entre assistents» a [AGENTS.
 - **Pròxim pas:** cap d'immediat; esperar les indicacions del professor.
 - **Decisions pendents del professor:** les indicades a «Darrera tasca».
 
-## Context que es conserva
-
-- [AGENTS.md](AGENTS.md): criteris docents, estil, navegació, figures, PDF, comprovació i publicació.
-- [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md): fonts originals, fitxers generats, dependències i comandes.
-- [GUIA_GRAFIQUES.md](GUIA_GRAFIQUES.md): procediment específic d'edició de figures.
-- [README.md](README.md): presentació del projecte, URL pública i llicència.
-
 ## Inventari verificat al repositori
 
 | Bloc | Contingut observat |
@@ -52,6 +45,7 @@ La presència dels fitxers no implica una auditoria completa del seu contingut m
 | Desenvolupament dels temes 5–7 | Contingut previst, sense encàrrec actiu per redactar-lo en aquesta conversa. Desenvolupar-lo quan el professor ho demani. |
 | Nou format dels PDF de teoria | Acordat amb el professor el 3 de novembre de 2026: `scripts/genera_pdf_tema.py` i `sources/llibre/apunts.sty`, adaptats dels apunts de Matemàtiques I de Jordi i Ignasi Irazuzta. Els quatre temes s'han generat i revisat en local (18, 61, 20 i 32 pàgines) i s'han publicat el 3 de novembre de 2026 (commit `cedcf71`). Verificat al web públic: els quatre enllaços amb la versió nova i els quatre PDF idèntics als locals. La portada porta el correu del professor, com ha indicat. El generador detecta els temes des de `zensical.toml`, incrementa el `?v=n` en publicar i genera fulls de revisió; provat amb temes de mentida en una còpia, encara no amb cap tema real nou. Els scripts antics dels temes amb Edge i el seu CSS s'han retirat. |
 | Figures del tema 2 | Etiquetes de les figures 2.12, 2.14–2.18 i 2.23–2.25 corregides als `.tex`, amb els SVG regenerats i `?v=n` incrementat. Comprovat en local, al web i al PDF. Queden sense tocar la figura 2.11, amb $x=1$ molt a prop de la corba, i l'espai en blanc de la pàgina 37 del PDF, perquè la figura 2.19 no hi cap. |
+| Mode fosc de les figures | Implementat i publicat el 2 de novembre de 2026 (commit `722173c`; criteri a `GUIA_GRAFIQUES.md`). En mode fosc els colors són els que dona el filtre i no coincideixen exactament amb els de la referència: la corba surt més lila i el verd, més fosc. Els PDF dels apunts conserven el fons de figura `#f1f4fa`. |
 | Figures del tema 1 | Etiquetes de les figures 1.2, 1.3, 1.6, 1.7, 1.9, 1.10 i 1.11 corregides als `.tex`, amb els SVG regenerats i `?v=n` incrementat. Comprovat en local, al web i al PDF. Les figures 1.5 i 1.8 tenen alguna etiqueta justa, però llegible. |
 | Converses de Codex | Abans d'esborrar-les, conservar els adjunts o els acords que no s'hagin recuperat. |
 | Revisió d'emmagatzematge de GitHub Actions | La cerca ha recuperat una comprovació que va quedar pendent a la conversa del 29 d'octubre de 2026: l'espai dels artefactes d'Actions. No s'ha comprovat en aquesta tasca. Les xifres històriques de consum o mida d'aquella conversa no descriuen necessàriament l'estat actual. |
@@ -88,16 +82,3 @@ La segona cerca ha aclarit que les recomanacions del 28 d'octubre de 2026 sobre 
 - **Comprovacions:** solucions i transformacions de fila verificades amb Python; cerca automàtica sense sistemes repetits entre els exercicis i la teoria; `zensical.exe build --clean` acaba amb `No issues found`; `git diff --check` net; pàgina revisada al navegador local (26 desplegables tancats, numeració correcta, cap fórmula més ampla que la columna a 1280 px, cap recurs amb error).
 - **Publicació:** el professor ha demanat publicar-ho; s'envia a `main` en el commit d'aquesta tasca.
 - **Pendent de decisió del professor:** incorporar o no l'exercici 4, opció B, a) de la sèrie 4 de 2025 (fàbrica de pasta), que podria ser l'entrada opcional de la seva llista; aplicar o no l'enunciat literal als PAU de càlcul. Per verificar el web públic, cal buscar-hi «Activitats d'una associació».
-
-## Colors de les figures i mode fosc
-
-- **Objectiu:** que les figures TikZ usin els colors de la pàgina de referència que va indicar el professor (2 de novembre de 2026, Matemàtiques I, inequacions) i que el mateix gràfic es vegi en mode dia i en mode fosc.
-- **Implementat:** paleta nova a les 64 fonts de `figures/tikz/calcul/` i SVG regenerats; `?v=n` incrementat a les referències; panell de fons retirat i filtre de mode fosc a `docs/stylesheets/extra.css` (`extra.css?v=42`); etiquetes de la figura 2.25 recol·locades; PDF del recull de càlcul (`?v=4`) i dels temes 1 (`?v=4`) i 2 (`?v=3`) regenerats. Criteri documentat a `GUIA_GRAFIQUES.md`.
-- **Comprovat en local:** `zensical.exe build --clean` sense incidències; `git diff --check` net; sense imatges trencades a les pàgines d'exercicis i d'optimització; figures 2.20, 2.25 i 2.28 revisades al navegador; les 82 pàgines dels tres PDF revisades en miniatura, amb el mateix nombre de pàgines que abans.
-- **Analitzador de funcions (a petició del professor):** el gràfic i la llegenda usen la mateixa paleta i el mateix filtre, sense panell de fons (`function-analyzer.js?v=32` a l'analitzador i `?v=25` al derivador, `extra.css?v=43`). Comprovat en local amb una funció racional en tots dos modes; els colors de la interfície de l'eina no s'han canviat.
-- **Límits:** en mode fosc els colors són els que dona el filtre i no coincideixen exactament amb els de la referència (la corba surt més lila i el verd, més fosc). Els PDF dels apunts conserven el seu fons de figura `#f1f4fa`.
-- **Publicació:** commit `722173c`, verificat al web públic el 2 de novembre de 2026: `extra.css?v=43` amb el filtre, `function-analyzer.js?v=32` amb la paleta nova, figura 2.25 en mode fosc a `calcul/aplicacions-derivades/04_optimitzacio/`, i els enllaços i les mides dels PDF nous.
-
-## Com registrar una tasca incompleta
-
-Substitueix l'apartat de la darrera tasca o afegeix un pendent concret amb: objectiu acordat, fitxers afectats, feina feta, feina que falta, comprovacions executades, bloqueig real si n'hi ha i pròxim pas. Registra el commit i la URL comprovada si s'ha publicat. Elimina els pendents resolts i evita mantenir un diari de tota la conversa.
