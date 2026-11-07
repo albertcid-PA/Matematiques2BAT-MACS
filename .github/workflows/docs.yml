@@ -32,7 +32,7 @@ jobs:
           python-version: "3.x"
 
       - name: Instal·la Zensical
-        run: pip install zensical
+        run: pip install zensical==0.1.0
 
       - name: Construeix el web
         run: zensical build --clean

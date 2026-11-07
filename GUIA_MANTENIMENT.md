@@ -37,7 +37,7 @@ Estat comprovat l'1 de novembre de 2026, amb Claude Code a `C:\Users\acid8\Docum
 
 | Element | Ruta | Estat |
 |:--|:--|:--|
-| Entorn `.venv` | `.venv\Scripts\python.exe` (Python 3.14.7) i `.venv\Scripts\zensical.exe` | Recreat a la carpeta actual. Conté Zensical 0.0.63, `pypdf` i `reportlab`. Els scripts de PDF l'utilitzen tant per a Zensical com per a Python. |
+| Entorn `.venv` | `.venv\Scripts\python.exe` (Python 3.14.7) i `.venv\Scripts\zensical.exe` | Recreat a la carpeta actual. Conté Zensical 0.1.0 (la mateixa versió fixada a `.github/workflows/docs.yml`; si s'actualitza, canvia-la als dos llocs i a l'ordre de recreació de sota), `pypdf` i `reportlab`. Els scripts de PDF l'utilitzen tant per a Zensical com per a Python. |
 | Python base | `C:\Users\acid8\AppData\Local\Python\pythoncore-3.14-64\python.exe` | Serveix per recrear `.venv`. |
 | Edge | `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe` | Existeix. |
 | MiKTeX i Git | pdfLaTeX, XeLaTeX, latexmk i `pdftoppm`; Git | Disponibles. |
@@ -47,7 +47,7 @@ Els llançadors `.exe` de `.venv`, com `zensical.exe`, porten escrita la ruta ab
 ```powershell
 Move-Item .venv tmp\venv-antic
 & "C:\Users\acid8\AppData\Local\Python\pythoncore-3.14-64\python.exe" -m venv .venv
-& ".\.venv\Scripts\python.exe" -m pip install zensical==0.0.63 pypdf reportlab
+& ".\.venv\Scripts\python.exe" -m pip install zensical==0.1.0 pypdf reportlab
 & ".\.venv\Scripts\zensical.exe" build --clean
 ```
 
