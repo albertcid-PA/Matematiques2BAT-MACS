@@ -133,7 +133,7 @@ Consulta primer [GUIA_GRAFIQUES.md](GUIA_GRAFIQUES.md). Per regenerar una sola f
 & ".\scripts\compila_figures.ps1" -Source ".\figures\tikz\calcul\fig_1_4_ordre_infinits_exponencial.tex"
 ```
 
-Sense `-Source`, el script regenera totes les figures. Revisa l'SVG, incrementa `?v=n` en totes les referències afectades i actualitza també les fonts de les pàgines generades. Si la figura surt en un PDF, regenera'l després.
+Sense `-Source`, el script regenera totes les figures. Només puja el `?v=n` de les que han canviat: compara cada SVG abans i després, suma 1 al número a totes les referències de `docs/` i `sources/` (excepte els resultats generats) i, si ha tocat `sources/calcul/`, executa `genera_pagines_practica.py`. Al final mostra un resum. Revisa l'SVG i, si la figura surt en un PDF, regenera'l després.
 
 Quan canviïs CSS o JavaScript amb una versió `?v=n` a la configuració o als carregadors, actualitza també la versió corresponent per evitar recursos antics al navegador.
 

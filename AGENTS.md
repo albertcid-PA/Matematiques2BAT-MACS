@@ -101,7 +101,7 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 ## Figures
 
 - Edita el `.tex` de `figures/tikz/` i regenera l'SVG; no modifiquis mai l'SVG manualment. Mantén tots dos fitxers sincronitzats.
-- Totes les referències a SVG dins del Markdown porten `?v=n`, que cal incrementar cada vegada que es regenera la figura.
+- Totes les referències a SVG dins del Markdown porten `?v=n`. Regenera les figures amb `scripts/compila_figures.ps1`, que puja aquest número quan l'SVG canvia; si generes un SVG per una altra via, puja'l a mà.
 - La resta de criteris (numeració, peu de figura, colors, escala, etiquetes) i el procediment són a [GUIA_GRAFIQUES.md](GUIA_GRAFIQUES.md).
 
 ## Preparació d'exàmens

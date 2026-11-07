@@ -10,7 +10,7 @@ Les gràfiques matemàtiques del projecte tenen dos fitxers relacionats:
 - Mantén una escala coherent, etiquetes llegibles i cap text a sobre de les corbes o de les acotacions.
 - En figures geomètriques, dibuixa amb línia discontínua només les arestes realment ocultes.
 - Després de regenerar una figura, revisa visualment el resultat abans de publicar.
-- Totes les referències a l'SVG dins del Markdown porten `?v=n`. Quan regeneris la figura, incrementa aquest número en totes les referències, incloses les de les fonts de les pàgines generades, perquè el navegador no reutilitzi una versió antiga. Si la figura surt en un PDF, regenera'l.
+- Totes les referències a l'SVG dins del Markdown porten `?v=n`, perquè el navegador no reutilitzi una versió antiga. `scripts/compila_figures.ps1` el puja sol: compara l'SVG abans i després de compilar i, si ha canviat, suma 1 al número a totes les referències de `docs/` i `sources/`. Si n'ha tocat alguna font de `sources/calcul/`, regenera també la pràctica de càlcul. Una figura nova s'ha de citar a mà amb `?v=1`. Si la figura surt en un PDF, regenera'l.
 
 ## Actualització automàtica
 
@@ -19,7 +19,7 @@ Les gràfiques matemàtiques del projecte tenen dos fitxers relacionats:
 3. Modifica el codi TikZ o PGFPlots.
 4. Desa'l amb `Ctrl+S`.
 
-LaTeX Workshop executarà automàticament la recepta **TikZ a SVG per al web**. El fitxer SVG s'actualitzarà dins de `docs/img` i, si el servidor de Zensical està actiu, el navegador mostrarà el canvi.
+LaTeX Workshop executarà automàticament la recepta **TikZ a SVG per al web**. El fitxer SVG s'actualitzarà dins de `docs/img`, el `?v=n` de les referències pujarà si la figura ha canviat (cada desada amb canvis el torna a pujar) i, si el servidor de Zensical està actiu, el navegador mostrarà el canvi.
 
 No cal editar mai l'SVG manualment.
 
