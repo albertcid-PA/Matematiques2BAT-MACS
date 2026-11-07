@@ -1,9 +1,10 @@
 #!/bin/sh
 # Hook versionat del projecte. S'activa una vegada per còpia del repositori amb:
 #     git config core.hooksPath .githooks
-# Atura el commit si els canvis afegits tenen espais sobrers o si algun fitxer
-# generat (SVG, PDF, pràctica de càlcul, ?v=n) no està al dia. Vegeu
-# «Sincronia dels fitxers generats» a GUIA_MANTENIMENT.md.
+# Atura el commit si els canvis afegits tenen espais sobrers, si algun fitxer
+# generat (SVG, PDF, pràctica de càlcul, ?v=n) no està al dia o si la numeració
+# o les referències de les figures no són coherents. Vegeu «Comprovació
+# automàtica en fer un commit» a GUIA_MANTENIMENT.md.
 # No el saltis amb --no-verify sense el permís del professor.
 
 arrel=$(git rev-parse --show-toplevel) || exit 1
@@ -26,8 +27,14 @@ done
 
 if [ -z "$python" ]; then
     echo "pre-commit: no s'ha trobat l'entorn .venv; no s'ha pogut comprovar la sincronia dels fitxers generats." >&2
-elif ! PYTHONUTF8=1 PYTHONIOENCODING=utf-8 "$python" scripts/comprova_sincronia.py --staged >&2; then
-    errors=1
+else
+    if ! PYTHONUTF8=1 PYTHONIOENCODING=utf-8 "$python" scripts/comprova_sincronia.py --staged >&2; then
+        errors=1
+    fi
+    # Numeració i referències de les figures (sobre els fitxers de la carpeta)
+    if ! PYTHONUTF8=1 PYTHONIOENCODING=utf-8 "$python" scripts/comprova_figures.py >&2; then
+        errors=1
+    fi
 fi
 
 if [ "$errors" -ne 0 ]; then

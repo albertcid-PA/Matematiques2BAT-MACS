@@ -143,6 +143,7 @@ Quan canviïs CSS o JavaScript amb una versió `?v=n` a la configuració o als c
 & ".\.venv\Scripts\zensical.exe" build --clean
 git diff --check
 & ".\.venv\Scripts\python.exe" scripts\comprova_sincronia.py
+& ".\.venv\Scripts\python.exe" scripts\comprova_figures.py
 ```
 
 La compilació ha d'acabar amb `No issues found`. A PowerShell 5.1, Zensical escriu aquest missatge per stderr i pot aparèixer com un `NativeCommandError` vermell; el que compta és el codi de sortida 0. Per revisar canvis del web:
@@ -167,7 +168,7 @@ Amb `--staged` només comprova el que s'ha afegit amb `git add`; amb `--des orig
 
 ### Comprovació automàtica en fer un commit
 
-El hook versionat [`.githooks/pre-commit`](.githooks/pre-commit) executa `git diff --cached --check` i `scripts/comprova_sincronia.py --staged`, i atura el commit si alguna comprovació falla. No compila el web: `build --clean` continua sent un pas manual. Si no troba l'entorn `.venv`, ho avisa i deixa fer el commit sense comprovar la sincronia.
+El hook versionat [`.githooks/pre-commit`](.githooks/pre-commit) executa `git diff --cached --check`, `scripts/comprova_sincronia.py --staged` i `scripts/comprova_figures.py` (numeració i referències de les figures, sobre els fitxers de la carpeta), i atura el commit si alguna comprovació falla. No compila el web: `build --clean` continua sent un pas manual. Si no troba l'entorn `.venv`, ho avisa i deixa fer el commit sense comprovar la sincronia.
 
 S'activa una sola vegada per còpia del repositori (comprovat el 7 de novembre de 2026 a la carpeta de treball):
 

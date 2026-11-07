@@ -199,5 +199,5 @@ if ($changed.Count -gt 0) {
     }
 
     Write-Host ""
-    Write-Host "Revisa les figures canviades. Si alguna surt en un PDF, regenera'l." -ForegroundColor Yellow
+    Write-Host "Revisa les figures canviades amb scripts\revisa_figures.py. Si alguna surt en un PDF, regenera'l." -ForegroundColor Yellow
 }

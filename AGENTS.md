@@ -102,6 +102,7 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 
 - Edita el `.tex` de `figures/tikz/` i regenera l'SVG; no modifiquis mai l'SVG manualment. Mantén tots dos fitxers sincronitzats.
 - Totes les referències a SVG dins del Markdown porten `?v=n`. Regenera les figures amb `scripts/compila_figures.ps1`, que puja aquest número quan l'SVG canvia; si generes un SVG per una altra via, puja'l a mà.
+- Després de regenerar figures, revisa-les amb el full que prepara `scripts/revisa_figures.py` (abans, ara i mode fosc).
 - La resta de criteris (numeració, peu de figura, colors, escala, etiquetes) i el procediment són a [GUIA_GRAFIQUES.md](GUIA_GRAFIQUES.md).
 
 ## Preparació d'exàmens
@@ -122,7 +123,7 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
 
 ## Comprovació local
 
-- Compila sempre amb `zensical build --clean` des de l'entorn `.venv`; ha d'acabar amb `No issues found`. Executa també `git diff --check` i `scripts/comprova_sincronia.py`, que avisa de figures, PDF, pràctica de càlcul o `?v=n` sense actualitzar. Les comandes exactes són a «Comprovació i publicació» de [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md).
+- Compila sempre amb `zensical build --clean` des de l'entorn `.venv`; ha d'acabar amb `No issues found`. Executa també `git diff --check`, `scripts/comprova_sincronia.py`, que avisa de figures, PDF, pràctica de càlcul o `?v=n` sense actualitzar, i `scripts/comprova_figures.py`, que revisa la numeració i les referències de les figures. Les comandes exactes són a «Comprovació i publicació» de [GUIA_MANTENIMENT.md](GUIA_MANTENIMENT.md).
 - Revisa al navegador local la pàgina modificada i els enllaços principals: ordre del menú, fórmules, taules, figures i absència d'errors de consola. Reutilitza el servidor existent si el port `8000` ja està ocupat pel projecte.
 
 ## Git i publicació

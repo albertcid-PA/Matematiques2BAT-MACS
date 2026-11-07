@@ -69,6 +69,18 @@ Git desa i publica tots dos fitxers:
 
 El servidor de GitHub no instal·la ni executa LaTeX. GitHub Actions construeix directament el web de Zensical amb els SVG generats localment.
 
+## Revisió i comprovació
+
+Després de regenerar figures, prepara un full de revisió:
+
+```powershell
+& ".\.venv\Scripts\python.exe" scripts\revisa_figures.py
+```
+
+Per a cada SVG modificat respecte de l'últim commit, mostra en una fila la versió anterior, la nova i la nova en mode fosc, amb el peu de la figura. Ho desa a `tmp\revisio-figures\`: `index.html` i, amb Edge, imatges `revisio_n.png` de vuit figures cadascuna. Amb `--totes` inclou totes les figures; amb `--des origin/main`, totes les que encara no s'han publicat.
+
+`scripts/comprova_figures.py` revisa totes les figures de `docs/`: que cada una tingui un peu «Figura n.» enllaçat al seu `.tex`, que el número coincideixi amb el nom del fitxer (`fig_2_19_…` ↔ 2.19, `fig_pau_c_3_…` ↔ PAU.C.3), que la referència porti `?v=n`, que no hi hagi números repetits ni forats, que a les pàgines de teoria els números vagin en ordre d'aparició i que no quedin `.tex` sense SVG, SVG sense `.tex` ni SVG sense citar. El hook `pre-commit` l'executa en cada commit.
+
 ## Compilació manual de reserva
 
 Des de l'arrel del projecte pots regenerar totes les figures amb:
