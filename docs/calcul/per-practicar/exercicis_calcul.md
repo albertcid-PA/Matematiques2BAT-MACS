@@ -530,14 +530,14 @@ Calcula la derivada de cada funció. Quan s'indiqui un punt, calcula també el v
     - **c)** Per aplicar la regla de la cadena, anomenem $h$ la funció de l'enunciat i prenem
 
         $$
-        f(x)=\sqrt{x}\quad\Longrightarrow\quad f'(x)=\frac1{2\sqrt{x}},
+        u(x)=\sqrt{x}\quad\Longrightarrow\quad u'(x)=\frac1{2\sqrt{x}},
         $$
 
         $$
-        g(x)=x+5\quad\Longrightarrow\quad g'(x)=1.
+        v(x)=x+5\quad\Longrightarrow\quad v'(x)=1.
         $$
 
-        Com que $h(x)=f(g(x))$, apliquem $h'(x)=f'(g(x))g'(x)$:
+        Com que $h(x)=u(v(x))$, apliquem $h'(x)=u'(v(x))v'(x)$:
 
         $$
         h'(x)=\frac1{2\sqrt{x+5}}\cdot1=\frac1{2\sqrt{x+5}},\qquad
@@ -547,16 +547,16 @@ Calcula la derivada de cada funció. Quan s'indiqui un punt, calcula també el v
     - **d)** Anomenem $h$ la funció de l'enunciat i prenem
 
         $$
-        f(x)=e^x\quad\Longrightarrow\quad f'(x)=e^x,
+        u(x)=e^x\quad\Longrightarrow\quad u'(x)=e^x,
         $$
 
         $$
-        g(x)=2x\quad\Longrightarrow\quad g'(x)=2.
+        v(x)=2x\quad\Longrightarrow\quad v'(x)=2.
         $$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)=e^{2x}\cdot2=2e^{2x},\qquad h'(0)=2e^0=2.$$
+        $$h'(x)=u'(v(x))v'(x)=e^{2x}\cdot2=2e^{2x},\qquad h'(0)=2e^0=2.$$
 
 ---
 
@@ -657,110 +657,110 @@ Deriva les funcions compostes següents:
 ??? example "Mostra la solució pas a pas de l'exercici 1.12"
     **Resolució pas a pas**
 
-    Com que a la regla de la cadena reservem $f$ per a la funció exterior i $g$ per a la interior, anomenem $h$ la funció de cada enunciat. En tots els apartats fem servir
+    Com que a la regla de la cadena reservem $u$ per a la funció exterior i $v$ per a la interior, anomenem $h$ la funció de cada enunciat. En tots els apartats fem servir
 
-    $$h(x)=f(g(x))\quad\Longrightarrow\quad h'(x)=f'(g(x))g'(x).$$
+    $$h(x)=u(v(x))\quad\Longrightarrow\quad h'(x)=u'(v(x))v'(x).$$
 
     - **a)** Prenem
 
-        $$f(x)=x^7\Longrightarrow f'(x)=7x^6,\qquad
-        g(x)=2x-3\Longrightarrow g'(x)=2.$$
+        $$u(x)=x^7\Longrightarrow u'(x)=7x^6,\qquad
+        v(x)=2x-3\Longrightarrow v'(x)=2.$$
 
         Per tant,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =7(2x-3)^6\cdot2
         =14(2x-3)^6.
         $$
 
     - **b)** Prenem
 
-        $$f(x)=\sqrt{x}\Longrightarrow f'(x)=\frac1{2\sqrt{x}},\qquad
-        g(x)=x^2+5\Longrightarrow g'(x)=2x.$$
+        $$u(x)=\sqrt{x}\Longrightarrow u'(x)=\frac1{2\sqrt{x}},\qquad
+        v(x)=x^2+5\Longrightarrow v'(x)=2x.$$
 
         Per tant,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =\frac1{2\sqrt{x^2+5}}\cdot2x
         =\frac{x}{\sqrt{x^2+5}}.
         $$
 
     - **c)** Primer escrivim $h(x)=(3x+1)^{-4}$. Prenem
 
-        $$f(x)=x^{-4}\Longrightarrow f'(x)=-4x^{-5},\qquad
-        g(x)=3x+1\Longrightarrow g'(x)=3.$$
+        $$u(x)=x^{-4}\Longrightarrow u'(x)=-4x^{-5},\qquad
+        v(x)=3x+1\Longrightarrow v'(x)=3.$$
 
         Per tant,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =-4(3x+1)^{-5}\cdot3
         =-\frac{12}{(3x+1)^5}.
         $$
 
     - **d)** Prenem
 
-        $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=x^2-2x\Longrightarrow g'(x)=2x-2.$$
+        $$u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=x^2-2x\Longrightarrow v'(x)=2x-2.$$
 
         Per tant,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =e^{x^2-2x}(2x-2)
         =(2x-2)e^{x^2-2x}.
         $$
 
     - **e)** Prenem
 
-        $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
-        g(x)=4x^2+1\Longrightarrow g'(x)=8x.$$
+        $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x,\qquad
+        v(x)=4x^2+1\Longrightarrow v'(x)=8x.$$
 
         Per tant,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =\frac1{4x^2+1}\cdot8x
         =\frac{8x}{4x^2+1}.
         $$
 
     - **f)** Prenem
 
-        $$f(x)=x^{-2}\Longrightarrow f'(x)=-2x^{-3},\qquad
-        g(x)=x^3+1\Longrightarrow g'(x)=3x^2.$$
+        $$u(x)=x^{-2}\Longrightarrow u'(x)=-2x^{-3},\qquad
+        v(x)=x^3+1\Longrightarrow v'(x)=3x^2.$$
 
         Per tant,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =-2(x^3+1)^{-3}\cdot3x^2
         =-\frac{6x^2}{(x^3+1)^3}.
         $$
 
     - **g)** Prenem
 
-        $$f(x)=\sqrt{x}\Longrightarrow f'(x)=\frac1{2\sqrt{x}},\qquad
-        g(x)=1-e^x\Longrightarrow g'(x)=-e^x.$$
+        $$u(x)=\sqrt{x}\Longrightarrow u'(x)=\frac1{2\sqrt{x}},\qquad
+        v(x)=1-e^x\Longrightarrow v'(x)=-e^x.$$
 
         Per tant,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =\frac1{2\sqrt{1-e^x}}\cdot(-e^x)
         =-\frac{e^x}{2\sqrt{1-e^x}}.
         $$
 
     - **h)** Prenem
 
-        $$f(x)=3^x\Longrightarrow f'(x)=3^x\ln3,\qquad
-        g(x)=2x+1\Longrightarrow g'(x)=2.$$
+        $$u(x)=3^x\Longrightarrow u'(x)=3^x\ln3,\qquad
+        v(x)=2x+1\Longrightarrow v'(x)=2.$$
 
         Per tant,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =3^{2x+1}\ln3\cdot2
         =2\ln3\cdot3^{2x+1}.
         $$
@@ -818,21 +818,14 @@ Calcula la derivada de les funcions següents i simplifica el resultat:
         =\frac{16x}{(x^2+4)^2}.
         $$
 
-    - **b)** Anomenem $h$ la funció de l'enunciat i apliquem directament la regla del quocient. Abans derivem el denominador $v(x)=(3-x)^2$ amb la regla de la cadena. Prenem
+    - **b)** Anomenem $h$ la funció de l'enunciat i apliquem directament la regla del quocient. Abans derivem el denominador $v(x)=(3-x)^2$ amb la regla de la cadena: la funció exterior és el quadrat i la interior, $3-x$.
 
-        $$
-        f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
-        g(x)=3-x\Longrightarrow g'(x)=-1.
-        $$
-
-        Com que $v(x)=f(g(x))$,
-
-        $$v'(x)=f'(g(x))g'(x)=2(3-x)(-1)=-2(3-x).$$
+        $$v'(x)=2(3-x)\,(3-x)'=2(3-x)(-1)=-2(3-x).$$
 
         Ara, amb $u(x)=x-2$ i $u'(x)=1$, apliquem la regla del quocient:
 
         $$
-        h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v(x)^2}
+        h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v^2(x)}
         =\frac{(3-x)^2+2(x-2)(3-x)}{(3-x)^4}
         =\frac{x-1}{(3-x)^3}.
         $$
@@ -850,12 +843,12 @@ Calcula la derivada de les funcions següents i simplifica el resultat:
 
     - **d)** Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=x^5\Longrightarrow f'(x)=5x^4,\qquad
-        g(x)=\frac34-\frac{x}{6}\Longrightarrow g'(x)=-\frac16.$$
+        $$u(x)=x^5\Longrightarrow u'(x)=5x^4,\qquad
+        v(x)=\frac34-\frac{x}{6}\Longrightarrow v'(x)=-\frac16.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)
+        $$h'(x)=u'(v(x))v'(x)
         =5\left(\frac34-\frac{x}{6}\right)^4\left(-\frac16\right)
         =-\frac56\left(\frac34-\frac{x}{6}\right)^4.$$
 
@@ -865,13 +858,13 @@ Calcula la derivada de les funcions següents i simplifica el resultat:
 
     - **f)** Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=x^6\Longrightarrow f'(x)=6x^5,\qquad
-        g(x)=3\sqrt{x}+2\Longrightarrow g'(x)=\frac3{2\sqrt{x}}.$$
+        $$u(x)=x^6\Longrightarrow u'(x)=6x^5,\qquad
+        v(x)=3\sqrt{x}+2\Longrightarrow v'(x)=\frac3{2\sqrt{x}}.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =6(3\sqrt{x}+2)^5\cdot\frac3{2\sqrt{x}}
         =\frac{9(3\sqrt{x}+2)^5}{\sqrt{x}}.
         $$
@@ -894,40 +887,35 @@ Troba la derivada de les funcions següents i simplifica-la sempre que sigui pos
 
         $$u(x)=x^4\Longrightarrow u'(x)=4x^3.$$
 
-        Per derivar $v(x)=(x-2)^3$, apliquem la regla de la cadena. Prenem
+        Per derivar $v(x)=(x-2)^3$, apliquem la regla de la cadena: la funció exterior és el cub i la interior, $x-2$.
 
-        $$f(x)=x^3\Longrightarrow f'(x)=3x^2,\qquad
-        g(x)=x-2\Longrightarrow g'(x)=1.$$
-
-        Com que $v(x)=f(g(x))$,
-
-        $$v'(x)=f'(g(x))g'(x)=3(x-2)^2\cdot1=3(x-2)^2.$$
+        $$v'(x)=3(x-2)^2\,(x-2)'=3(x-2)^2\cdot1=3(x-2)^2.$$
 
         Per tant,
 
         $$
-        h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v(x)^2}
+        h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v^2(x)}
         =\frac{4x^3(x-2)^3-3x^4(x-2)^2}{(x-2)^6}
         =\frac{x^3(x-8)}{(x-2)^4}.
         $$
 
     - **b)** Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=x^4\Longrightarrow f'(x)=4x^3,$$
+        $$u(x)=x^4\Longrightarrow u'(x)=4x^3,$$
 
-        $$g(x)=\frac{x^2-3}{x}.$$
+        $$v(x)=\frac{x^2-3}{x}.$$
 
-        Derivem $g$ directament amb la regla del quocient:
+        Derivem $v$ directament amb la regla del quocient:
 
         $$
-        g'(x)=\frac{2x\cdot x-(x^2-3)\cdot1}{x^2}
+        v'(x)=\frac{2x\cdot x-(x^2-3)\cdot1}{x^2}
         =\frac{x^2+3}{x^2}.
         $$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =4\left(\frac{x^2-3}{x}\right)^3\frac{x^2+3}{x^2}
         =\frac{4(x^2-3)^3(x^2+3)}{x^5}.
         $$
@@ -936,31 +924,21 @@ Troba la derivada de les funcions següents i simplifica-la sempre que sigui pos
 
         $$u(x)=x^2\Longrightarrow u'(x)=2x.$$
 
-        Per derivar $v(x)=(3x-1)^4$, apliquem la regla de la cadena. Prenem
+        Per derivar $v(x)=(3x-1)^4$, apliquem la regla de la cadena: la funció exterior és la quarta potència i la interior, $3x-1$.
 
-        $$f(x)=x^4\Longrightarrow f'(x)=4x^3,\qquad
-        g(x)=3x-1\Longrightarrow g'(x)=3.$$
-
-        Com que $v(x)=f(g(x))$,
-
-        $$v'(x)=f'(g(x))g'(x)=4(3x-1)^3\cdot3=12(3x-1)^3.$$
+        $$v'(x)=4(3x-1)^3\,(3x-1)'=4(3x-1)^3\cdot3=12(3x-1)^3.$$
 
         Per tant,
 
         $$
-        h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v(x)^2}
+        h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v^2(x)}
         =\frac{2x(3x-1)^4-12x^2(3x-1)^3}{(3x-1)^8}
         =-\frac{2x(3x+1)}{(3x-1)^5}.
         $$
 
-    - **d)** Apliquem directament la regla del quocient. El numerador és $u(x)=4-x^2$, de manera que $u'(x)=-2x$. Per derivar el denominador $v(x)=x^2-6x+9=(x-3)^2$, apliquem la regla de la cadena. Prenem
+    - **d)** Apliquem directament la regla del quocient. El numerador és $u(x)=4-x^2$, de manera que $u'(x)=-2x$. Per derivar el denominador $v(x)=x^2-6x+9=(x-3)^2$, apliquem la regla de la cadena: la funció exterior és el quadrat i la interior, $x-3$.
 
-        $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
-        g(x)=x-3\Longrightarrow g'(x)=1.$$
-
-        Com que $v(x)=f(g(x))$,
-
-        $$v'(x)=f'(g(x))g'(x)=2(x-3).$$
+        $$v'(x)=2(x-3)\,(x-3)'=2(x-3).$$
 
         Així,
 
@@ -971,18 +949,18 @@ Troba la derivada de les funcions següents i simplifica-la sempre que sigui pos
 
     - **e)** Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=x^{3/2}\Longrightarrow f'(x)=\frac32x^{1/2},$$
+        $$u(x)=x^{3/2}\Longrightarrow u'(x)=\frac32x^{1/2},$$
 
-        $$g(x)=\frac{2-x}{2+x}.$$
+        $$v(x)=\frac{2-x}{2+x}.$$
 
-        Derivem $g$ directament amb la regla del quocient:
+        Derivem $v$ directament amb la regla del quocient:
 
-        $$g'(x)=\frac{(-1)(2+x)-(2-x)\cdot1}{(2+x)^2}=-\frac4{(2+x)^2}.$$
+        $$v'(x)=\frac{(-1)(2+x)-(2-x)\cdot1}{(2+x)^2}=-\frac4{(2+x)^2}.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)
-        =\frac32g(x)^{1/2}g'(x)
+        $$h'(x)=u'(v(x))v'(x)
+        =\frac32v(x)^{1/2}v'(x)
         =-\frac6{(x+2)^2}\sqrt{\frac{2-x}{2+x}}.$$
 
     - **f)** Derivem $\frac3x$ directament amb la regla del quocient i $\frac{x^2}{4}$ amb la regla de la constant:
@@ -1008,32 +986,28 @@ Deriva les funcions següents:
 
     - **a)** Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
-        g(x)=x^2+3\Longrightarrow g'(x)=2x.$$
+        $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x,\qquad
+        v(x)=x^2+3\Longrightarrow v'(x)=2x.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)=\frac1{x^2+3}\cdot2x=\frac{2x}{x^2+3}.$$
+        $$h'(x)=u'(v(x))v'(x)=\frac1{x^2+3}\cdot2x=\frac{2x}{x^2+3}.$$
 
     - **b)** Aquesta funció té dues composicions. Anomenem $h$ la funció de l'enunciat i prenem primer
 
-        $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
-        g(x)=\sqrt{2-x}.$$
+        $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x,\qquad
+        v(x)=\sqrt{2-x}.$$
 
-        Per derivar $g$, prenem $p(x)=\sqrt{x}$ i $q(x)=2-x$:
-
-        $$
-        p'(x)=\frac1{2\sqrt{x}},\qquad q'(x)=-1,
-        $$
+        La funció interior $v$ també és una composició: la funció exterior és l'arrel quadrada i la interior, $2-x$. Per la regla de la cadena,
 
         $$
-        g'(x)=p'(q(x))q'(x)=-\frac1{2\sqrt{2-x}}.
+        v'(x)=\frac1{2\sqrt{2-x}}\,(2-x)'=-\frac1{2\sqrt{2-x}}.
         $$
 
-        Com que $h(x)=f(g(x))$, tornem a aplicar la regla de la cadena:
+        Com que $h(x)=u(v(x))$, tornem a aplicar la regla de la cadena:
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =\frac1{\sqrt{2-x}}\left(-\frac1{2\sqrt{2-x}}\right)
         =-\frac1{2(2-x)}.
         $$
@@ -1042,63 +1016,63 @@ Deriva les funcions següents:
 
         $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x.$$
 
-        El denominador $v(x)=e^{2x}$ és una composició. Prenem $f(x)=e^x$ i $g(x)=2x$:
+        El denominador $v(x)=e^{2x}$ és una composició: la funció exterior és $e^x$ i la interior, $2x$. Per la regla de la cadena,
 
-        $$v'(x)=f'(g(x))g'(x)=e^{2x}\cdot2=2e^{2x}.$$
+        $$v'(x)=e^{2x}\,(2x)'=e^{2x}\cdot2=2e^{2x}.$$
 
         Per tant,
 
         $$
-        h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v(x)^2}
+        h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v^2(x)}
         =\frac{\frac1x e^{2x}-2(\ln x)e^{2x}}{e^{4x}}
         =e^{-2x}\left(\frac1x-2\ln x\right).
         $$
 
     - **d)** Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=3x^2-2\Longrightarrow g'(x)=6x.$$
+        $$u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=3x^2-2\Longrightarrow v'(x)=6x.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)=e^{3x^2-2}\cdot6x=6xe^{3x^2-2}.$$
+        $$h'(x)=u'(v(x))v'(x)=e^{3x^2-2}\cdot6x=6xe^{3x^2-2}.$$
 
     - **e)** Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=\log_3x\Longrightarrow f'(x)=\frac1{x\ln3},\qquad
-        g(x)=x^2+1\Longrightarrow g'(x)=2x.$$
+        $$u(x)=\log_3x\Longrightarrow u'(x)=\frac1{x\ln3},\qquad
+        v(x)=x^2+1\Longrightarrow v'(x)=2x.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =\frac1{(x^2+1)\ln3}\cdot2x
         =\frac{2x}{(x^2+1)\ln3}.
         $$
 
     - **f)** Aquesta funció té dues composicions. Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
-        g(x)=\ln\frac2x.$$
+        $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x,\qquad
+        v(x)=\ln\frac2x.$$
 
-        Per derivar $g$, prenem $p(x)=\ln x$ i $q(x)=\frac2x$. Derivem $q$ directament amb la regla del quocient:
-
-        $$
-        q'(x)=\frac{0\cdot x-2\cdot1}{x^2}=-\frac2{x^2}.
-        $$
-
-        Apliquem la regla de la cadena a $g(x)=p(q(x))$:
+        La funció interior $v$ també és una composició: la funció exterior és el logaritme i la interior, $\frac2x$. Derivem aquesta última directament amb la regla del quocient:
 
         $$
-        g'(x)=p'(q(x))q'(x)
+        \left(\frac2x\right)'=\frac{0\cdot x-2\cdot1}{x^2}=-\frac2{x^2}.
+        $$
+
+        Per la regla de la cadena,
+
+        $$
+        v'(x)=\frac1{2/x}\left(\frac2x\right)'
         =\frac1{2/x}\left(-\frac2{x^2}\right)
         =-\frac1x.
         $$
 
-        Finalment, com que $h(x)=f(g(x))$, tornem a aplicar la regla de la cadena:
+        Finalment, com que $h(x)=u(v(x))$, tornem a aplicar la regla de la cadena:
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =\frac1{\ln(2/x)}\left(-\frac1x\right)
         =-\frac1{x\ln(2/x)}.
         $$
@@ -1125,12 +1099,12 @@ Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
 
     - **b)** Anomenem $h$ la funció de l'enunciat i, per a la primera derivada, prenem
 
-        $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=3x\Longrightarrow g'(x)=3.$$
+        $$u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=3x\Longrightarrow v'(x)=3.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)=e^{3x}\cdot3=3e^{3x}.$$
+        $$h'(x)=u'(v(x))v'(x)=e^{3x}\cdot3=3e^{3x}.$$
 
         En les derivades següents tornem a aplicar la mateixa regla de la cadena a $e^{3x}$:
 
@@ -1148,12 +1122,12 @@ Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
 
     - **d)** Anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
-        g(x)=x+3\Longrightarrow g'(x)=1.$$
+        $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x,\qquad
+        v(x)=x+3\Longrightarrow v'(x)=1.$$
 
         Per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)=\frac1{x+3}.$$
+        $$h'(x)=u'(v(x))v'(x)=\frac1{x+3}.$$
 
         Derivem les fraccions següents directament amb la regla del quocient:
 
@@ -1164,12 +1138,12 @@ Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
 
         Per obtenir la tercera derivada, el denominador és una composició. Prenem
 
-        $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
-        g(x)=x+3\Longrightarrow g'(x)=1.$$
+        $$u(x)=x^2\Longrightarrow u'(x)=2x,\qquad
+        v(x)=x+3\Longrightarrow v'(x)=1.$$
 
         Per la regla de la cadena,
 
-        $$\left((x+3)^2\right)'=f'(g(x))g'(x)=2(x+3).$$
+        $$\left((x+3)^2\right)'=u'(v(x))v'(x)=2(x+3).$$
 
         Tornem a aplicar directament la regla del quocient:
 
@@ -1187,12 +1161,12 @@ Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
 
         Per obtenir la segona derivada, el denominador és una composició. Prenem
 
-        $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
-        g(x)=x+2\Longrightarrow g'(x)=1.$$
+        $$u(x)=x^2\Longrightarrow u'(x)=2x,\qquad
+        v(x)=x+2\Longrightarrow v'(x)=1.$$
 
         Per la regla de la cadena,
 
-        $$\left((x+2)^2\right)'=f'(g(x))g'(x)=2(x+2).$$
+        $$\left((x+2)^2\right)'=u'(v(x))v'(x)=2(x+2).$$
 
         Tornem a aplicar directament la regla del quocient:
 
@@ -1203,12 +1177,12 @@ Calcula $f'(x)$, $f''(x)$ i $f'''(x)$ per a cadascuna de les funcions següents:
 
         Per obtenir la tercera derivada, prenem ara
 
-        $$f(x)=x^3\Longrightarrow f'(x)=3x^2,\qquad
-        g(x)=x+2\Longrightarrow g'(x)=1.$$
+        $$u(x)=x^3\Longrightarrow u'(x)=3x^2,\qquad
+        v(x)=x+2\Longrightarrow v'(x)=1.$$
 
         Per la regla de la cadena,
 
-        $$\left((x+2)^3\right)'=f'(g(x))g'(x)=3(x+2)^2.$$
+        $$\left((x+2)^3\right)'=u'(v(x))v'(x)=3(x+2)^2.$$
 
         Apliquem una altra vegada directament la regla del quocient:
 
@@ -1637,14 +1611,14 @@ $$
 
         Per tant, $g$ és contínua en $x=0$.
 
-        Per no confondre la funció $g$ de l'enunciat amb la funció interior de la regla de la cadena, anomenem $H$ la funció de l'enunciat. En el tram exponencial, $H(x)=e^{2x}$, i prenem
+        Anomenem $H$ la funció $g$ de l'enunciat. En el tram exponencial, $H(x)=e^{2x}$, i prenem
 
-        $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=2x\Longrightarrow g'(x)=2.$$
+        $$u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=2x\Longrightarrow v'(x)=2.$$
 
-        Així, $H(x)=f(g(x))$ en aquest tram i
+        Així, $H(x)=u(v(x))$ en aquest tram i
 
-        $$H'(x)=f'(g(x))g'(x)=e^{2x}\cdot2=2e^{2x}.$$
+        $$H'(x)=u'(v(x))v'(x)=e^{2x}\cdot2=2e^{2x}.$$
 
         $$H'(0^-)=2e^0=2,\qquad H'(0^+)=2.$$
 
@@ -1991,12 +1965,12 @@ Determina els intervals de creixement i de decreixement i calcula els màxims i 
         Cal separar també $x=1$. Creix a $(-\infty,-1)$ i $(3,+\infty)$; decreix a $(-1,1)$ i $(1,3)$. Hi ha un màxim relatiu a $(-1,-2)$ i un mínim relatiu a $(3,6)$.
     - **d)** Anomenem $F$ la funció de l'enunciat i apliquem la regla del producte. Per derivar el factor exponencial, prenem
 
-        $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=-x\Longrightarrow g'(x)=-1.$$
+        $$u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=-x\Longrightarrow v'(x)=-1.$$
 
         Per la regla de la cadena,
 
-        $$\left(e^{-x}\right)'=f'(g(x))g'(x)=-e^{-x}.$$
+        $$\left(e^{-x}\right)'=u'(v(x))v'(x)=-e^{-x}.$$
 
         Ara apliquem la regla del producte:
 
@@ -2046,9 +2020,9 @@ Fes un estudi complet del creixement, el decreixement i els extrems relatius de 
         $$
 
         Decreix a $(-\infty,0)$ i creix a $(0,+\infty)$; té un mínim relatiu i absolut a $(0,-4)$.
-    - **d)** Anomenem $F$ la funció de l'enunciat i apliquem la regla del producte. El factor $e^{-x}$ és una composició: prenem $f(x)=e^x$ i $g(x)=-x$, amb $f'(x)=e^x$ i $g'(x)=-1$. Per la regla de la cadena,
+    - **d)** Anomenem $F$ la funció de l'enunciat i apliquem la regla del producte. El factor $e^{-x}$ és una composició: prenem $u(x)=e^x$ i $v(x)=-x$, amb $u'(x)=e^x$ i $v'(x)=-1$. Per la regla de la cadena,
 
-        $$\left(e^{-x}\right)'=f'(g(x))g'(x)=e^{-x}(-1)=-e^{-x}.$$
+        $$\left(e^{-x}\right)'=u'(v(x))v'(x)=e^{-x}(-1)=-e^{-x}.$$
 
         Per tant,
 
@@ -2286,14 +2260,14 @@ $$
     Primer comprovem la continuïtat en el punt d'unió; després derivem cada tram i comparem les derivades laterals.
 
     - **a)** A $x=1$, el límit per l'esquerra és $4$ i el valor pel tram dret és $2$: hi ha un salt. Les derivades són $-2x+4$ i $2x-2$. La funció creix en cadascun dels dos trams i $(1,2)$ és un mínim relatiu del tram dret, però no és derivable al punt de salt.
-    - **b)** A $x=0$, els dos trams valen $2$: és contínua. Per no confondre la funció $g$ de l'enunciat amb la funció interior, l'anomenem $H$. En el primer tram, $H'(x)=3x^2-3=3(x-1)(x+1)$. En el segon tram hi ha una composició; prenem
+    - **b)** A $x=0$, els dos trams valen $2$: és contínua. Anomenem $H$ la funció $g$ de l'enunciat. En el primer tram, $H'(x)=3x^2-3=3(x-1)(x+1)$. En el segon tram hi ha una composició; prenem
 
-        $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
-        g(x)=x-1\Longrightarrow g'(x)=1.$$
+        $$u(x)=x^2\Longrightarrow u'(x)=2x,\qquad
+        v(x)=x-1\Longrightarrow v'(x)=1.$$
 
         Per la regla de la cadena,
 
-        $$\left((x-1)^2+1\right)'=f'(g(x))g'(x)+0=2(x-1).$$
+        $$\left((x-1)^2+1\right)'=u'(v(x))v'(x)+0=2(x-1).$$
 
         Les derivades laterals a $x=0$ són $-3$ i $-2$, que no coincideixen; $(0,2)$ és un punt angulós. Hi ha un màxim relatiu a $(-1,4)$ i un mínim relatiu a $(1,1)$.
     - **c)** A $x=1$, els dos trams valen $3$: és contínua. En el primer tram, $h'(x)=3^x\ln3$. Derivem el segon tram directament amb la regla del quocient:
@@ -2358,14 +2332,14 @@ Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós 
 
     - **a)** L'arrel cúbica està definida per a tot real: $D_f=\mathbb{R}$. Els zeros són $x=\pm3$ i $f(0)=\sqrt[3]{9}$. Per derivar, anomenem $h$ la funció de l'enunciat i prenem
 
-        $$f(x)=\sqrt[3]{x}=x^{1/3}\Longrightarrow f'(x)=\frac13x^{-2/3},$$
+        $$u(x)=\sqrt[3]{x}=x^{1/3}\Longrightarrow u'(x)=\frac13x^{-2/3},$$
 
-        $$g(x)=9-x^2\Longrightarrow g'(x)=-2x.$$
+        $$v(x)=9-x^2\Longrightarrow v'(x)=-2x.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =\frac13(9-x^2)^{-2/3}(-2x)
         =\frac{-2x}{3(9-x^2)^{2/3}}.
         $$
@@ -2374,14 +2348,14 @@ Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós 
     - **b)** Cal $x(x-4)\geq0$, de manera que $D_f=(-\infty,0]\cup[4,+\infty)$. Els talls amb l'eix $X$ són $(0,0)$ i $(4,0)$. A l'esquerra la funció s'acosta a l'obliqua $y=-x+2$ i a la dreta, a $y=x-2$.
     - **c)** Cal $x^2-4>0$: $D_f=(-\infty,-2)\cup(2,+\infty)$. Els zeros compleixen $\ln(x^2-4)=0$, és a dir, $x^2-4=1$; per tant, $x=\pm\sqrt5$. Les rectes $x=-2$ i $x=2$ són asímptotes verticals.
     - **d)** Com que $x^2+2\geq2$, $\ln(x^2+2)\geq\ln2>0$. El domini és $\mathbb{R}$ i l'únic tall amb els eixos és $(0,0)$.
-    - **e)** Per no confondre la funció $q$ de l'enunciat amb la funció interior, l'anomenem $h$. Prenem
+    - **e)** Anomenem $h$ la funció $q$ de l'enunciat i prenem
 
-        $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=-x^2\Longrightarrow g'(x)=-2x.$$
+        $$u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=-x^2\Longrightarrow v'(x)=-2x.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)=e^{-x^2}(-2x)=-2xe^{-x^2}.$$
+        $$h'(x)=u'(v(x))v'(x)=e^{-x^2}(-2x)=-2xe^{-x^2}.$$
 
         L'exponencial és sempre positiu, de manera que creix si $x<0$ i decreix si $x>0$. Té un màxim a $(0,1)$. Com que $-x^2\to-\infty$ als dos infinits,
 
@@ -2393,12 +2367,12 @@ Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós 
         Per tant, $y=0$ és una asímptota horitzontal als dos infinits.
     - **f)** Anomenem $H$ la funció $r$ de l'enunciat i apliquem la regla del producte. El factor exponencial és una composició; prenem
 
-        $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=-2x\Longrightarrow g'(x)=-2.$$
+        $$u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=-2x\Longrightarrow v'(x)=-2.$$
 
         Per la regla de la cadena,
 
-        $$\left(e^{-2x}\right)'=f'(g(x))g'(x)=-2e^{-2x}.$$
+        $$\left(e^{-2x}\right)'=u'(v(x))v'(x)=-2e^{-2x}.$$
 
         Apliquem ara la regla del producte:
 
@@ -2423,17 +2397,17 @@ Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós 
         el punt crític és $x=\sqrt e$. Decreix fins a $\sqrt e$, separant a $x=1$, i creix després; té un mínim a $(\sqrt e,2e)$.
     - **h)** $D_f=(-\infty,-3)\cup(3,+\infty)$ i $x=\pm3$ són asímptotes verticals. Per derivar, anomenem $h$ la funció $t$ de l'enunciat i prenem
 
-        $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
-        g(x)=x^2-9\Longrightarrow g'(x)=2x.$$
+        $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x,\qquad
+        v(x)=x^2-9\Longrightarrow v'(x)=2x.$$
 
         Per la regla de la cadena,
 
-        $$h'(x)=f'(g(x))g'(x)=\frac1{x^2-9}\cdot2x=\frac{2x}{x^2-9}.$$
+        $$h'(x)=u'(v(x))v'(x)=\frac1{x^2-9}\cdot2x=\frac{2x}{x^2-9}.$$
 
         Per tant, decreix a $(-\infty,-3)$ i creix a $(3,+\infty)$.
-    - **i)** Anomenem $H$ la funció $u$ de l'enunciat i apliquem la regla del producte. Per al factor $(x-1)^2$, prenem $f(x)=x^2$ i $g(x)=x-1$; per la regla de la cadena,
+    - **i)** Per no confondre la funció $u$ de l'enunciat amb la $u$ de la regla de la cadena, l'anomenem $H$. Apliquem la regla del producte. Per al factor $(x-1)^2$, prenem $u(x)=x^2$ i $v(x)=x-1$; per la regla de la cadena,
 
-        $$\left((x-1)^2\right)'=f'(g(x))g'(x)=2(x-1)\cdot1=2(x-1).$$
+        $$\left((x-1)^2\right)'=u'(v(x))v'(x)=2(x-1)\cdot1=2(x-1).$$
 
         Ara apliquem la regla del producte:
 
@@ -2647,38 +2621,36 @@ Calcula la derivada de cadascuna de les funcions següents. Simplifica el result
         =8x^3+x^2(x+3)e^x.
         $$
 
-    - **e)** Per no confondre la funció $q$ de l'enunciat amb la funció interior, l'anomenem $h$. Prenem
+    - **e)** Anomenem $h$ la funció $q$ de l'enunciat i prenem
 
-        $$f(x)=\ln x\Longrightarrow f'(x)=\frac1x,\qquad
-        g(x)=2x^2+7\Longrightarrow g'(x)=4x.$$
+        $$u(x)=\ln x\Longrightarrow u'(x)=\frac1x,\qquad
+        v(x)=2x^2+7\Longrightarrow v'(x)=4x.$$
 
-        Com que $h(x)=f(g(x))$, per la regla de la cadena,
+        Com que $h(x)=u(v(x))$, per la regla de la cadena,
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =\frac1{2x^2+7}\cdot4x
         =\frac{4x}{2x^2+7}.
         $$
 
-    - **f)** Aquesta funció té dues composicions. Per no confondre la funció $r$ de l'enunciat amb les funcions de la regla de la cadena, l'anomenem $h$. Prenem
+    - **f)** Aquesta funció té dues composicions. Anomenem $h$ la funció $r$ de l'enunciat i prenem
 
-        $$f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=(x^2-1)^3.$$
+        $$u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=(x^2-1)^3.$$
 
-        Per derivar $g$, prenem $p(x)=x^3$ i $q(x)=x^2-1$:
-
-        $$p'(x)=3x^2,\qquad q'(x)=2x,$$
+        La funció interior $v$ també és una composició: la funció exterior és el cub i la interior, $x^2-1$. Per la regla de la cadena,
 
         $$
-        g'(x)=p'(q(x))q'(x)
+        v'(x)=3(x^2-1)^2\,(x^2-1)'
         =3(x^2-1)^2\cdot2x
         =6x(x^2-1)^2.
         $$
 
-        Finalment, com que $h(x)=f(g(x))$, tornem a aplicar la regla de la cadena:
+        Finalment, com que $h(x)=u(v(x))$, tornem a aplicar la regla de la cadena:
 
         $$
-        h'(x)=f'(g(x))g'(x)
+        h'(x)=u'(v(x))v'(x)
         =e^{(x^2-1)^3}\cdot6x(x^2-1)^2
         =6x(x^2-1)^2e^{(x^2-1)^3}.
         $$
@@ -2943,15 +2915,15 @@ $$
     Per derivar el factor $\sqrt{225-r^2}$, apliquem la regla de la cadena. Prenem
 
     $$
-    f(x)=\sqrt{x}\Longrightarrow f'(x)=\frac1{2\sqrt{x}},\qquad
-    g(x)=225-x^2\Longrightarrow g'(x)=-2x.
+    u(x)=\sqrt{x}\Longrightarrow u'(x)=\frac1{2\sqrt{x}},\qquad
+    v(x)=225-x^2\Longrightarrow v'(x)=-2x.
     $$
 
     Per tant,
 
     $$
     \left(\sqrt{225-r^2}\right)'
-    =f'(g(r))g'(r)
+    =u'(v(r))v'(r)
     =\frac1{2\sqrt{225-r^2}}(-2r)
     =-\frac{r}{\sqrt{225-r^2}}.
     $$
@@ -3004,15 +2976,15 @@ El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des 
     El radical és una composició. Prenem
 
     $$
-    f(x)=\sqrt{x}\Longrightarrow f'(x)=\frac1{2\sqrt{x}},\qquad
-    g(x)=x^2+3.600\Longrightarrow g'(x)=2x.
+    u(x)=\sqrt{x}\Longrightarrow u'(x)=\frac1{2\sqrt{x}},\qquad
+    v(x)=x^2+3.600\Longrightarrow v'(x)=2x.
     $$
 
     Per la regla de la cadena,
 
     $$
     \left(\sqrt{x^2+3.600}\right)'
-    =f'(g(x))g'(x)
+    =u'(v(x))v'(x)
     =\frac1{2\sqrt{x^2+3.600}}\cdot2x
     =\frac{x}{\sqrt{x^2+3.600}}.
     $$
@@ -3539,15 +3511,15 @@ on $t$ és el temps transcorregut, en mesos, des de l'inici de la campanya.
     - **b)** Per derivar el factor exponencial, apliquem la regla de la cadena. Prenem
 
         $$
-        f(x)=e^x\Longrightarrow f'(x)=e^x,\qquad
-        g(x)=-\frac x2\Longrightarrow g'(x)=-\frac12.
+        u(x)=e^x\Longrightarrow u'(x)=e^x,\qquad
+        v(x)=-\frac x2\Longrightarrow v'(x)=-\frac12.
         $$
 
         Per tant,
 
         $$
         \left(e^{-t/2}\right)'
-        =f'(g(t))g'(t)
+        =u'(v(t))v'(t)
         =e^{-t/2}\left(-\frac12\right)
         =-\frac12e^{-t/2}.
         $$
@@ -3970,12 +3942,12 @@ on $t$ és el nombre d'anys transcorreguts des de l'obertura.
 
     - **c)** Derivem per trams. En el segon tram hi ha la composició $(t-14)^2$. Prenem
 
-        $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
-        g(x)=x-14\Longrightarrow g'(x)=1.$$
+        $$u(x)=x^2\Longrightarrow u'(x)=2x,\qquad
+        v(x)=x-14\Longrightarrow v'(x)=1.$$
 
         Per la regla de la cadena,
 
-        $$\left((t-14)^2\right)'=f'(g(t))g'(t)=2(t-14).$$
+        $$\left((t-14)^2\right)'=u'(v(t))v'(t)=2(t-14).$$
 
         Per tant,
 
@@ -4032,12 +4004,12 @@ $$
 
     - **b)** Derivem cada tram. En el primer tram hi ha la composició $(t+1)^2$. Prenem
 
-        $$f(x)=x^2\Longrightarrow f'(x)=2x,\qquad
-        g(x)=x+1\Longrightarrow g'(x)=1.$$
+        $$u(x)=x^2\Longrightarrow u'(x)=2x,\qquad
+        v(x)=x+1\Longrightarrow v'(x)=1.$$
 
         Per la regla de la cadena,
 
-        $$\left((t+1)^2\right)'=f'(g(t))g'(t)=2(t+1).$$
+        $$\left((t+1)^2\right)'=u'(v(t))v'(t)=2(t+1).$$
 
         Per tant,
 

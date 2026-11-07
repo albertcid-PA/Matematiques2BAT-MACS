@@ -131,10 +131,10 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
 ### Suma i resta
 
 !!! abstract "Regla de derivació: suma i resta"
-    Si $h(x)=f(x)\pm g(x)$, aleshores
+    Si $h(x)=u(x)\pm v(x)$, aleshores
 
     $$
-    h'(x)=f'(x)\pm g'(x).
+    h'(x)=u'(x)\pm v'(x).
     $$
 
 !!! example "Exemple"
@@ -151,10 +151,10 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
 ### Multiplicació per una constant
 
 !!! abstract "Regla de derivació: multiplicació per una constant"
-    Si $h(x)=k f(x)$, aleshores
+    Si $h(x)=k\,u(x)$, aleshores
 
     $$
-    h'(x)=k f'(x).
+    h'(x)=k\,u'(x).
     $$
 
 !!! example "Exemple"
@@ -171,10 +171,10 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
 ### Producte
 
 !!! abstract "Regla de derivació: producte"
-    Si $h(x)=f(x)g(x)$, aleshores
+    Si $h(x)=u(x)v(x)$, aleshores
 
     $$
-    h'(x)=f'(x)g(x)+f(x)g'(x).
+    h'(x)=u'(x)v(x)+u(x)v'(x).
     $$
 
 !!! example "Exemple"
@@ -202,13 +202,13 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
     Si
 
     $$
-    h(x)=\frac{f(x)}{g(x)},
+    h(x)=\frac{u(x)}{v(x)},
     $$
 
     aleshores
 
     $$
-    h'(x)=\frac{f'(x)g(x)-f(x)g'(x)}{g^2(x)}.
+    h'(x)=\frac{u'(x)v(x)-u(x)v'(x)}{v^2(x)}.
     $$
 
 !!! example "Exemple"
@@ -240,13 +240,13 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
 ## 4. Composició: regla de la cadena
 
 !!! abstract "Regla de derivació: composició"
-    Si $h(x)=f(g(x))$, aleshores
+    Si $h(x)=u(v(x))$, aleshores
 
     $$
-    h'(x)=f'(g(x))g'(x).
+    h'(x)=u'(v(x))v'(x).
     $$
 
-    També podem escriure la composició com $f(g(x))=(f\circ g)(x)$.
+    També podem escriure la composició com $u(v(x))=(u\circ v)(x)$.
 
 !!! example "Exemple 1"
     $$
@@ -256,13 +256,13 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
     Prenem
 
     $$
-    f(x)=2^x \quad\longrightarrow\quad f'(x)=\ln(2)2^x
+    u(x)=2^x \quad\longrightarrow\quad u'(x)=\ln(2)2^x
     $$
 
     i
 
     $$
-    g(x)=x^2+3 \quad\longrightarrow\quad g'(x)=2x.
+    v(x)=x^2+3 \quad\longrightarrow\quad v'(x)=2x.
     $$
 
     Apliquem la regla de la cadena:
