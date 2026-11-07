@@ -280,24 +280,76 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
     h(x)=\ln\sqrt{4x^2+1}.
     $$
 
-    Apliquem successivament les derivades del logaritme i de l'arrel:
+    Per calcular $h(x)$ a partir de $x$ fem tres operacions, l'una dins de l'altra:
+
+    $$
+    x
+    \;\longrightarrow\;
+    4x^2+1
+    \;\longrightarrow\;
+    \sqrt{4x^2+1}
+    \;\longrightarrow\;
+    \ln\sqrt{4x^2+1}.
+    $$
+
+    Per tant, haurem d'aplicar la regla de la cadena dues vegades. Comencem per la funció de fora, el logaritme. Prenem
+
+    $$
+    u(x)=\ln(x) \quad\longrightarrow\quad u'(x)=\frac{1}{x}
+    $$
+
+    i
+
+    $$
+    v(x)=\sqrt{4x^2+1},
+    $$
+
+    de manera que $h(x)=u(v(x))$. Apliquem la regla de la cadena:
 
     $$
     \begin{aligned}
     h'(x)
-      &=\frac{1}{\sqrt{4x^2+1}}\left(\sqrt{4x^2+1}\right)'\\
-      &=\frac{1}{\sqrt{4x^2+1}}\cdot
-        \frac{1}{2\sqrt{4x^2+1}}\cdot(4x^2+1)'\\
-      &=\frac{1}{\sqrt{4x^2+1}}\cdot
-        \frac{1}{2\sqrt{4x^2+1}}\cdot8x.
+      &=u'(v(x))\,v'(x)\\
+      &=\frac{1}{\sqrt{4x^2+1}}\left(\sqrt{4x^2+1}\right)'.
     \end{aligned}
     $$
 
-    Simplifiquem:
+    Ara cal derivar $v(x)=\sqrt{4x^2+1}$, que també és una composició: l'arrel quadrada d'un polinomi. Com que $\sqrt{x}=x^{\frac12}$, la derivada de l'arrel és
 
     $$
-    h'(x)
-      =\frac{8x}{2\left(\sqrt{4x^2+1}\right)^2}
-      =\frac{8x}{2(4x^2+1)}
-      =\frac{4x}{4x^2+1}.
+    \left(\sqrt{x}\right)'=\frac12x^{-\frac12}=\frac{1}{2\sqrt{x}}.
     $$
+
+    Hi tornem a aplicar la regla de la cadena: derivem l'arrel sense canviar-ne l'interior i multipliquem per la derivada de l'interior:
+
+    $$
+    \begin{aligned}
+    \left(\sqrt{4x^2+1}\right)'
+      &=\frac{1}{2\sqrt{4x^2+1}}\,(4x^2+1)'\\
+      &=\frac{1}{2\sqrt{4x^2+1}}\cdot8x\\
+      &=\frac{4x}{\sqrt{4x^2+1}}.
+    \end{aligned}
+    $$
+
+    Substituïm aquest resultat a $h'(x)$ i simplifiquem, tenint en compte que el quadrat d'una arrel quadrada és el radicand:
+
+    $$
+    \begin{aligned}
+    h'(x)
+      &=\frac{1}{\sqrt{4x^2+1}}\cdot\frac{4x}{\sqrt{4x^2+1}}\\
+      &=\frac{4x}{\left(\sqrt{4x^2+1}\right)^2}\\
+      &=\frac{4x}{4x^2+1}.
+    \end{aligned}
+    $$
+
+    !!! tip "Diverses composicions"
+        Quan hi ha diverses composicions, derivem de fora cap a dins. Cada operació aporta un factor, en què l'interior es manté igual:
+
+        $$
+        h'(x)=
+        \underbrace{\frac{1}{\sqrt{4x^2+1}}}_{\text{logaritme}}
+        \cdot
+        \underbrace{\frac{1}{2\sqrt{4x^2+1}}}_{\text{arrel}}
+        \cdot
+        \underbrace{8x}_{\text{polinomi}}.
+        $$
