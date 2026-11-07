@@ -757,12 +757,13 @@
   background: transparent;
 }
 
-.md-typeset .fa-ruffini th[rowspan] {
+/* L'arrel va a la segona fila, a l'esquerra de la línia vertical. */
+.md-typeset .fa-ruffini th {
   border-right: 2px solid var(--md-default-fg-color);
-  vertical-align: middle;
 }
 
-.md-typeset .fa-ruffini tr:last-child td {
+.md-typeset .fa-ruffini tr:last-child td,
+.md-typeset .fa-ruffini tr:last-child th {
   border-top: 2px solid var(--md-default-fg-color);
 }
 

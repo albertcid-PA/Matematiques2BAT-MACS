@@ -842,7 +842,7 @@
     const top = division.descending.map((value) => `<td>${formula(texNumber(value, false), false)}</td>`).join("");
     const products = [`<td></td>`, ...division.products.map((value) => `<td>${formula(texNumber(value, false), false)}</td>`)].join("");
     const bottom = division.bottom.map((value) => `<td>${formula(texNumber(value, false), false)}</td>`).join("");
-    html += `<div class="fa-table-scroll"><table class="fa-ruffini"><tbody><tr><th rowspan="3">${formula(texNumber(ruffiniRoot, false), false)}</th>${top}</tr><tr>${products}</tr><tr>${bottom}</tr></tbody></table></div>`;
+    html += `<div class="fa-table-scroll"><table class="fa-ruffini"><tbody><tr><th></th>${top}</tr><tr><th>${formula(texNumber(ruffiniRoot, false), false)}</th>${products}</tr><tr><th></th>${bottom}</tr></tbody></table></div>`;
     html += `<p>El residu és ${formula("0", false)} i el quocient és ${formula(`Q(x)=${polynomialToTex(quotient)}`, false)}. Per tant:</p>`;
     html += formula(`${label}(x)=${rootFactorTex(ruffiniRoot)}\\,(${polynomialToTex(quotient)})`);
     html += `<p>Ja tenim la solució ${formula(`x=${texNumber(ruffiniRoot)}`, false)}. Ara resolem ${formula(`${polynomialToTex(quotient)}=0`, false)}:</p>`;

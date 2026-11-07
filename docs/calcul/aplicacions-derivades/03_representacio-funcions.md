@@ -189,8 +189,8 @@ El canvi de signe de $f'$ permet classificar els candidats: de $+$ a $-$ hi ha u
 
     $$
     \begin{array}{r|rrrr}
-    3 & 1 & -3 & -9 & 27\\
-      &   & 3  & 0  & -27\\ \hline
+      & 1 & -3 & -9 & 27\\
+    3 &   & 3  & 0  & -27\\ \hline
       & 1 & 0  & -9 & 0
     \end{array}
     $$

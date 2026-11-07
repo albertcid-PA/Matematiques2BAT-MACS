@@ -77,6 +77,7 @@ El professor alterna Claude Code i Codex en aquesta mateixa carpeta. Els assiste
   - `warning`: errors habituals o restriccions.
 - Conserva el mateix estil visual i la mida de text del web. Reutilitza les classes de `extra.css` abans de crear-ne de noves.
 - A les regles de derivació, anomena $h(x)$ la funció que es deriva i $u$, $v$ les funcions que hi intervenen: $h=u\pm v$, $h=k\,u$, $h=u\,v$, $h=\frac{u}{v}$ i, a la regla de la cadena, $h(x)=u(v(x))$, amb $h'(x)=u'(v(x))\,v'(x)$. Als apunts i a les solucions, quan una composició és dins d'una altra regla que ja fa servir $u$ i $v$, o dins d'una altra composició, aplica-hi la regla de la cadena directament, sense lletres noves: $\left((3-x)^2\right)'=2(3-x)\,(3-x)'$. El derivador pas a pas fa servir la mateixa notació i aplica cada regla de la cadena en passos propis, d'una en una.
+- A les taules de Ruffini, escriu l'arrel a la segona fila, la dels productes, a l'esquerra de la línia vertical; la primera fila només conté els coeficients.
 - Els passos d'un procediment han de ser concrets i ordenats. En l'estudi de la monotonia, inclou tots els punts importants: discontinuïtats, extrems del domini, punts d'unió i candidats a extrem.
 - A les taules de monotonia, posa els punts importants en columnes pròpies entre els intervals. Indica-hi si cada punt és un màxim, un mínim, una discontinuïtat o un punt d'unió sense extrem, segons correspongui.
 

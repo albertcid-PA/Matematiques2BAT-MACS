@@ -4,7 +4,7 @@ En aquest tema utilitzarem les derivades per estudiar el comportament de les fun
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega 2. Aplicacions de les derivades**](../../assets/apunts/tema_2_aplicacions_derivades.pdf?v=4){ target="_blank" rel="noopener" }
+[**Descarrega 2. Aplicacions de les derivades**](../../assets/apunts/tema_2_aplicacions_derivades.pdf?v=5){ target="_blank" rel="noopener" }
 
 </div>
 
