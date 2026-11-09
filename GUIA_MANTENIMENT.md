@@ -191,7 +191,7 @@ La publicació funciona així:
 
 Repositori: <https://github.com/albertcid-PA/Matematiques2BAT-MACS>.
 
-Amb Claude Code es treballa directament al repositori principal: l'1 de novembre de 2026, `git status` i `git fetch origin` hi han funcionat sense opcions especials, i `main` coincidia amb `origin/main`. El `push` també hi ha funcionat (commit `9304002`, 2 de novembre de 2026). Amb Codex, el relleu és a la mateixa carpeta; el 4 de novembre de 2026 s'hi han fet servir Git i el `push`, però no consta que s'hi hagi comprovat l'entorn `.venv`. Si el `push` falla per autenticació, no canviïs credencials ni la configuració global: informa'n el professor perquè l'executi des d'un terminal propi. No forcis mai el `push`, llevat que el professor demani explícitament reescriure l'historial publicat; si el remot ha avançat, integra'n abans els canvis.
+Amb Claude Code es treballa directament al repositori principal: l'1 de novembre de 2026, `git status` i `git fetch origin` hi han funcionat sense opcions especials, i `main` coincidia amb `origin/main`. El `push` també hi ha funcionat (commit `bf6a46c`, 2 de novembre de 2026). Amb Codex, el relleu és a la mateixa carpeta; el 4 de novembre de 2026 s'hi han fet servir Git i el `push`, però no consta que s'hi hagi comprovat l'entorn `.venv`. Si el `push` falla per autenticació, no canviïs credencials ni la configuració global: informa'n el professor perquè l'executi des d'un terminal propi. No forcis mai el `push`, llevat que el professor demani explícitament reescriure l'historial publicat; si el remot ha avançat, integra'n abans els canvis.
 
 ## Manteniment del context
 
