@@ -9,7 +9,7 @@ Apartat de relleu entre assistents (vegeu «Relleu entre assistents» a [AGENTS.
 - **Darrer torn:** Claude Code, 9 de novembre de 2026, després d'un torn de Codex el mateix dia.
 - **Reescriptura de l'historial (Codex, 9 de novembre de 2026, a petició del professor):** s'ha afegit `Co-Authored-By: Codex <noreply@openai.com>` als 27 commits de setembre posteriors a `c2515fe` i s'ha fet `push --force` a `main` (ara `b9e0b3d`, 346 commits). Els 16 commits anteriors i `c2515fe` no han canviat, per conservar la signatura verificada de GitHub de `c2515fe`; per això aquests 16 continuen sense coautoria. Han canviat tots els hashes posteriors a `c2515fe`.
 - **Comprovat per Claude Code:** els 346 commits tenen els mateixos arbres, autors i dates que a la branca `backup-abans-coautor`; només difereix el missatge dels 27 commits, amb la línia afegida. `c2515fe` continua verificat a GitHub. GitHub Actions 42660510169 ha acabat bé sobre `b9e0b3d` i el web públic respon. Els hashes citats a aquest fitxer i a `GUIA_MANTENIMENT.md` s'han substituït pels nous.
-- **Branca de seguretat:** `backup-abans-coautor` (historial anterior, a `b4a155e`) es conserva en local fins que el professor indiqui que es pot esborrar.
+- **Branca de seguretat:** `backup-abans-coautor` (historial anterior, a `b4a155e`) s'ha esborrat després de la verificació.
 - **Feina anterior publicada a `origin/main` (Claude Code, 7 de novembre de 2026):**
   - `ddf0ac5`: instruccions simplificades (patch del professor). `AGENTS.md` conserva els criteris i remet a les guies; la norma d'informar per separat del que s'ha modificat, comprovat i pendent hi passa des de `CLAUDE.md`.
   - `1934225`: Zensical 0.1.0 fixat a `.venv` i a `.github/workflows/docs.yml` (abans el flux instal·lava la darrera versió). Verificat: el flux instal·la la 0.1.0, compila amb `No issues found` i el web públic respon.
@@ -23,7 +23,7 @@ Apartat de relleu entre assistents (vegeu «Relleu entre assistents» a [AGENTS.
 - **Material de consulta:** `materials/` és local i ignorada per Git. El criteri d'ús és a `AGENTS.md` i l'inventari, a `materials/INVENTARI.md`.
 - **Fora del repositori:** l'examen «2_PP1.2 Domini, valor absolut, funcions a trossos i optimització» i el seu solucionari són a Google Drive. Les fonts del solucionari són a `tmp/solucionari_2_PP1.2/` i la còpia a `output/pdf/`, totes dues ignorades per Git. El professor revisa l'examen abans de donar-lo per bo.
 - **Sense commit:** res dels fitxers versionats.
-- **Pròxim pas:** decidir si s'esborra `backup-abans-coautor`; si no, esperar les indicacions del professor.
+- **Pròxim pas:** cap d'immediat; esperar les indicacions del professor.
 - **Decisions pendents del professor:** les indicades a «Darrera tasca» i l'ordre de la figura 2.28: a la pàgina de pràctica de càlcul surt a l'enunciat de l'exercici 2.33, després de les figures 2.29–2.41 de les solucions anteriors, perquè els números segueixen l'ordre del recull d'enunciats. `comprova_figures.py` no controla l'ordre a les pàgines de pràctica.
 
 ## Inventari verificat al repositori
