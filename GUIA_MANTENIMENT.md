@@ -41,6 +41,9 @@ Estat comprovat l'1 de novembre de 2026, amb Claude Code a `C:\Users\acid8\Docum
 | Python base | `C:\Users\acid8\AppData\Local\Python\pythoncore-3.14-64\python.exe` | Serveix per recrear `.venv`. |
 | Edge | `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe` | Existeix. |
 | MiKTeX i Git | pdfLaTeX, XeLaTeX, latexmk i `pdftoppm`; Git | Disponibles. |
+| Manim (opcional) | `.venv`, mòdul `manim` (Manim Community 0.22.1) | Instal·lat el 12 de novembre de 2026 per a possibles animacions. Cap script ni pàgina del web no l'utilitza. |
+
+Manim fa servir el `latex` i el `dvisvgm` de MiKTeX per a `MathTex`, i el FFmpeg que porta PyAV, de manera que no cal instal·lar FFmpeg a part. Una escena es renderitza amb `& ".\.venv\Scripts\python.exe" -m manim -ql fitxer.py NomEscena` (`-qh` per a alta qualitat). Els vídeos es generen a `media\` dins de la carpeta des d'on s'executa l'ordre; fes-ho fora del repositori o a `tmp\`. L'ordre de recreació de sota no l'inclou: si es recrea `.venv` i cal Manim, afegeix-lo amb `& ".\.venv\Scripts\python.exe" -m pip install manim`.
 
 Els llançadors `.exe` de `.venv`, com `zensical.exe`, porten escrita la ruta absoluta de la carpeta on es va crear l'entorn. Si el projecte es torna a moure, deixen de funcionar sense cap missatge (codi de sortida 1). Ja va passar quan la carpeta es va moure de `Documents\ChatGPT` a `Documents\ClaudeGPT`. Mentrestant, `& ".\.venv\Scripts\python.exe" -m zensical ...` continua funcionant, i la solució és recrear l'entorn:
 
