@@ -5,7 +5,7 @@
 
     Utilitza-la després d'intentar la derivada en paper. Pots mostrar els passos d'un en un per comparar-los amb el teu procediment.
 
-<div id="derivative-tool" class="fa-tool dt-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=27" data-tool-url="../../../javascripts/derivative-tool.js?v=4">
+<div id="derivative-tool" class="fa-tool dt-tool" data-engine-url="../../../javascripts/function-analyzer.js?v=36" data-tool-url="../../../javascripts/derivative-tool.js?v=4">
   <noscript>
     <p class="fa-message fa-message--error">Cal activar el JavaScript del navegador per utilitzar el derivador.</p>
   </noscript>
@@ -19,6 +19,7 @@
     <div class="fa-example-row" aria-label="Exemples de derivades">
       <span>Prova:</span>
       <button type="button" data-derivative-example="6*x^4-3*x+2">polinòmica</button>
+      <button type="button" data-derivative-example="x^5/5+4/x^4-root(4,x^3)">suma de potències</button>
       <button type="button" data-derivative-example="x^3*4^x">producte</button>
       <button type="button" data-derivative-example="x^3/4^x">divisió</button>
       <button type="button" data-derivative-example="2^(x^2+3)">composició</button>

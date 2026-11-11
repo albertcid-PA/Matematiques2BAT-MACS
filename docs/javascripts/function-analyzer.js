@@ -685,9 +685,34 @@
     return `${left}${texNumber(interval.lower, false)},${texNumber(interval.upper, false)}${right}`;
   }
 
+  // Agrupa els intervals separats només per un punt aïllat i escriu cada grup com
+  // un interval menys aquests punts. Els buits reals es mantenen com a unió.
   function texDomain(intervals) {
-    if (intervals.length === 1 && intervals[0].lower === -Infinity && intervals[0].upper === Infinity) return "\\mathbb{R}";
-    return intervals.map(texInterval).join("\\cup");
+    if (!intervals.length) return "\\varnothing";
+    const groups = [];
+    intervals.forEach((interval) => {
+      const last = groups[groups.length - 1];
+      const touches = last
+        && Number.isFinite(interval.lower)
+        && Math.abs(last.upper - interval.lower) <= EPS
+        && !last.upperClosed
+        && !interval.lowerClosed;
+      if (touches) {
+        last.holes.push(interval.lower);
+        last.upper = interval.upper;
+        last.upperClosed = interval.upperClosed;
+      } else {
+        groups.push({ ...interval, holes: [] });
+      }
+    });
+    const parts = groups.map((group) => {
+      const whole = group.lower === -Infinity && group.upper === Infinity;
+      const base = whole ? "\\mathbb{R}" : texInterval(group);
+      if (!group.holes.length) return base;
+      const holes = `\\{${group.holes.map((value) => texNumber(value)).join(",")}\\}`;
+      return groups.length > 1 ? `\\left(${base}\\setminus${holes}\\right)` : `${base}\\setminus${holes}`;
+    });
+    return parts.join("\\cup");
   }
 
   function toTex(node) {
@@ -972,17 +997,15 @@
     }));
   }
 
+  function intervalConditionTex(interval) {
+    if (interval.lower === -Infinity && interval.upper === Infinity) return "x\\in\\mathbb{R}";
+    if (interval.lower === -Infinity) return `x${interval.upperClosed ? "\\leq" : "<"}${texNumber(interval.upper, false)}`;
+    if (interval.upper === Infinity) return `x${interval.lowerClosed ? "\\geq" : ">"}${texNumber(interval.lower, false)}`;
+    return `${texNumber(interval.lower, false)}${interval.lowerClosed ? "\\leq " : "<"}x${interval.upperClosed ? "\\leq" : "<"}${texNumber(interval.upper, false)}`;
+  }
+
   function piecewiseTex(branches) {
-    const rows = branches.map((branch) => {
-      const interval = branch.interval;
-      let condition;
-      if (interval.lower === -Infinity) condition = `x${interval.upperClosed ? "\\leq" : "<"}${texNumber(interval.upper, false)}`;
-      else if (interval.upper === Infinity) condition = `x${interval.lowerClosed ? "\\geq" : ">"}${texNumber(interval.lower, false)}`;
-      else {
-        condition = `${texNumber(interval.lower, false)}${interval.lowerClosed ? "\\leq " : "<"}x${interval.upperClosed ? "\\leq" : "<"}${texNumber(interval.upper, false)}`;
-      }
-      return `${branch.tex},& ${condition}`;
-    });
+    const rows = branches.map((branch) => `${branch.tex},& ${intervalConditionTex(branch.interval)}`);
     return `\\begin{cases}${rows.join("\\\\[3pt]")}\\end{cases}`;
   }
 
@@ -1589,7 +1612,21 @@
     model.branches.forEach((branch) => {
       branch.constraints.forEach((constraint) => {
         const relation = constraint.kind === "positive" ? ">0" : constraint.kind === "nonnegative" ? "\\geq0" : "\\neq0";
-        constraints.push(`<li>${constraint.source === "denominador" ? "El denominador" : constraint.source === "logaritme" ? "L'argument del logaritme" : "El radicand"} ha de complir ${formula(`${toTex(constraint.node)}${relation}`, false)}.</li>`);
+        let detail = "";
+        if (constraint.kind === "nonzero" && model.branches.length > 1) {
+          const zeros = findRootsNumeric(constraint.node);
+          const condition = formula(intervalConditionTex(branch.interval), false);
+          const inside = zeros.filter((x) => intervalContains(branch.interval, x, true));
+          const outside = zeros.filter((x) => !intervalContains(branch.interval, x, true));
+          const list = (values) => values.map((x) => formula(`x=${texNumber(x)}`, false)).join(", ");
+          if (inside.length) {
+            detail += ` El denominador s'anul·la en ${list(inside)}, que ${inside.length === 1 ? "és" : "són"} dins del tram ${condition}: ${inside.length === 1 ? "aquest punt no pertany" : "aquests punts no pertanyen"} al domini.`;
+          }
+          if (outside.length) {
+            detail += ` ${inside.length ? "També s'anul·la" : "El denominador s'anul·la"} en ${list(outside)}, però ${outside.length === 1 ? "queda" : "queden"} fora del tram ${condition}: no afecta el domini.`;
+          }
+        }
+        constraints.push(`<li>${constraint.source === "denominador" ? "El denominador" : constraint.source === "logaritme" ? "L'argument del logaritme" : "El radicand"} ha de complir ${formula(`${toTex(constraint.node)}${relation}`, false)}.${detail}</li>`);
       });
     });
     if (!constraints.length) {
@@ -3257,6 +3294,224 @@
     };
   }
 
+  // Funcions que són una suma de termes a·x^n amb n enter o fraccionari, escrits amb
+  // divisions, potències negatives o arrels: es reescriuen com a suma de potències i
+  // es deriven terme a terme, com un polinomi.
+  function signedRationalConstant(node) {
+    const current = unwrapParentheses(node);
+    if (current && current.isOperatorNode && current.isUnary() && ["+", "-"].includes(current.op)) {
+      const inner = signedRationalConstant(current.args[0]);
+      if (!inner) return null;
+      return current.op === "-" ? { numerator: -inner.numerator, denominator: inner.denominator } : inner;
+    }
+    return constantRationalData(current);
+  }
+
+  function addRationals(left, right) {
+    return normalizedRational(
+      left.numerator * right.denominator + right.numerator * left.denominator,
+      left.denominator * right.denominator,
+    );
+  }
+
+  function powerTermData(node, flags) {
+    const current = unwrapParentheses(node);
+    if (!current) return null;
+    const constant = signedRationalConstant(current);
+    if (constant) return { coefficient: constant, exponent: { numerator: 0, denominator: 1 } };
+    if (isVariableX(current)) return { coefficient: { numerator: 1, denominator: 1 }, exponent: { numerator: 1, denominator: 1 } };
+    if (current.isOperatorNode && current.isUnary() && current.op === "-") {
+      const inner = powerTermData(current.args[0], flags);
+      if (!inner) return null;
+      return { ...inner, coefficient: { numerator: -inner.coefficient.numerator, denominator: inner.coefficient.denominator } };
+    }
+    if (current.isOperatorNode && current.op === "^") {
+      if (!isVariableX(current.args[0])) return null;
+      const exponent = signedRationalConstant(current.args[1]);
+      if (!exponent) return null;
+      if (exponent.numerator < 0) flags.negative = true;
+      if (exponent.denominator !== 1) flags.fractional = true;
+      return { coefficient: { numerator: 1, denominator: 1 }, exponent };
+    }
+    const radical = radicalParts(current);
+    if (radical) {
+      const inner = powerTermData(radical.radicand, flags);
+      if (!inner || inner.coefficient.numerator !== 1 || inner.coefficient.denominator !== 1) return null;
+      if (inner.exponent.denominator !== 1 || inner.exponent.numerator <= 0) return null;
+      const exponentNumerator = inner.exponent.numerator;
+      if (radical.index % 2 === 0) {
+        if (exponentNumerator % 2 === 0) return null;
+        flags.evenRoot = true;
+      }
+      flags.radical = true;
+      return { coefficient: inner.coefficient, exponent: normalizedRational(exponentNumerator, radical.index) };
+    }
+    if (current.isOperatorNode && (current.op === "*" || current.op === "/") && current.args.length === 2) {
+      const left = powerTermData(current.args[0], flags);
+      const right = powerTermData(current.args[1], flags);
+      if (!left || !right) return null;
+      if (current.op === "*") {
+        return {
+          coefficient: multiplyRationals(left.coefficient, right.coefficient),
+          exponent: addRationals(left.exponent, right.exponent),
+        };
+      }
+      if (right.coefficient.numerator === 0) return null;
+      if (right.exponent.numerator !== 0) flags.divisionByPower = true;
+      else if (left.exponent.numerator !== 0) flags.constantDivision = true;
+      return {
+        coefficient: divideRationals(left.coefficient, right.coefficient),
+        exponent: addRationals(left.exponent, { numerator: -right.exponent.numerator, denominator: right.exponent.denominator }),
+      };
+    }
+    return null;
+  }
+
+  function powerVariableTex(exponent) {
+    if (exponent.numerator === 0) return "";
+    if (exponent.numerator === 1 && exponent.denominator === 1) return "x";
+    return `x^{${rationalTex(exponent)}}`;
+  }
+
+  function signedTermTex(isFirst, negative, body) {
+    if (negative) return `-${body}`;
+    return isFirst ? body : `+${body}`;
+  }
+
+  function powerMonomialTex(coefficient, exponent) {
+    const magnitude = { numerator: Math.abs(coefficient.numerator), denominator: coefficient.denominator };
+    const variable = powerVariableTex(exponent);
+    const unit = magnitude.numerator === 1 && magnitude.denominator === 1;
+    if (!variable) return rationalTex(magnitude);
+    return unit ? variable : `${rationalTex(magnitude)}\\,${variable}`;
+  }
+
+  function powerSumTex(terms) {
+    const visible = terms.filter((term) => term.coefficient.numerator !== 0);
+    if (!visible.length) return "0";
+    return visible
+      .map((term, index) => signedTermTex(index === 0, term.coefficient.numerator < 0, powerMonomialTex(term.coefficient, term.exponent)))
+      .join("");
+  }
+
+  function radicalPowerTex(exponent) {
+    // exponent > 0
+    if (exponent.denominator === 1) return powerVariableTex(exponent);
+    const power = exponent.numerator === 1 ? "x" : `x^{${exponent.numerator}}`;
+    return exponent.denominator === 2 ? `\\sqrt{${power}}` : `\\sqrt[${exponent.denominator}]{${power}}`;
+  }
+
+  function positiveExponentTermTex(coefficient, exponent) {
+    const magnitude = { numerator: Math.abs(coefficient.numerator), denominator: coefficient.denominator };
+    if (exponent.numerator >= 0) {
+      const variable = exponent.numerator === 0 ? "" : radicalPowerTex(exponent);
+      if (!variable) return rationalTex(magnitude);
+      if (magnitude.numerator === 1 && magnitude.denominator === 1) return variable;
+      if (magnitude.denominator === 1) return `${magnitude.numerator}\\,${variable}`;
+      return `\\frac{${magnitude.numerator === 1 ? "" : magnitude.numerator}${variable}}{${magnitude.denominator}}`;
+    }
+    const positive = { numerator: -exponent.numerator, denominator: exponent.denominator };
+    const denominator = `${magnitude.denominator === 1 ? "" : magnitude.denominator}${radicalPowerTex(positive)}`;
+    return `\\frac{${magnitude.numerator}}{${denominator}}`;
+  }
+
+  function powerSumDerivativeStudy(node) {
+    const flags = {};
+    const terms = additiveTerms(node).map((term) => {
+      const data = powerTermData(term.node, flags);
+      if (!data) return null;
+      return {
+        coefficient: { numerator: term.sign * data.coefficient.numerator, denominator: data.coefficient.denominator },
+        exponent: data.exponent,
+      };
+    });
+    if (!terms.length || terms.some((term) => !term)) return null;
+    const needsRewriting = terms.some((term) => term.exponent.numerator < 0 || term.exponent.denominator !== 1);
+    if (!needsRewriting) return null;
+
+    const properties = [];
+    if (flags.constantDivision) properties.push(formula("\\frac{a\\,x^n}{b}=\\frac{a}{b}\\,x^n", false));
+    if (flags.divisionByPower || flags.negative) properties.push(formula("\\frac{a}{x^n}=a\\,x^{-n}", false));
+    if (flags.radical || flags.fractional) properties.push(formula("\\sqrt[k]{x^m}=x^{\\frac{m}{k}}", false));
+    const propertyList = properties.length > 1
+      ? `${properties.slice(0, -1).join(", ")} i ${properties[properties.length - 1]}`
+      : properties.join("");
+    let domainExplanation = "";
+    let domainTex = "";
+    if (flags.evenRoot) {
+      const strict = terms.some((term) => term.exponent.numerator < 0);
+      domainTex = strict ? "x>0,\\qquad " : "x\\geq0,\\qquad ";
+      domainExplanation = strict
+        ? ` Hi ha una arrel d’índex parell, que demana ${formula("x\\geq0", false)}, i una potència de ${formula("x", false)} al denominador, que demana ${formula("x\\neq0", false)}: treballem amb ${formula("x>0", false)}.`
+        : ` Hi ha una arrel d’índex parell, que demana ${formula("x\\geq0", false)}: en aquest domini podem escriure la potència fraccionària sense valor absolut.`;
+    }
+    const rewrittenTex = powerSumTex(terms);
+    const sourceTex = toTex(node);
+    const steps = [];
+    steps.push(derivativeStudyStep(
+      "Pas previ: escrivim la funció com una suma de potències",
+      `Encara no derivem. Escrivim cada terme en la forma ${formula("a\\,x^n", false)} amb ${properties.length > 1 ? "les propietats" : "la propietat"} ${propertyList}. Així la funció queda com un polinomi amb exponents enters o fraccionaris i la podem derivar terme a terme.${domainExplanation}`,
+      `${domainTex}f(x)=${sourceTex}=${rewrittenTex}`,
+      "Propietats de les potències",
+    ));
+    steps.push(derivativeStudyStep(
+      "Recordem les derivades elementals",
+      "Derivem terme a terme. La regla de la potència també val quan l’exponent és negatiu o fraccionari: multipliquem per l’exponent i hi restem una unitat. La derivada d’una constant és zero.",
+      "(a\\,x^n)'=a\\cdot n\\,x^{n-1},\\qquad c'=0",
+      "Derivada d’una potència i derivada d’una constant",
+    ));
+
+    const derivedTerms = terms.filter((term) => term.coefficient.numerator !== 0 && term.exponent.numerator !== 0);
+    const calculation = derivedTerms.map((term, index) => {
+      const magnitude = { numerator: Math.abs(term.coefficient.numerator), denominator: term.coefficient.denominator };
+      const unit = magnitude.numerator === 1 && magnitude.denominator === 1;
+      const exponentTex = term.exponent.numerator < 0 ? `\\left(${rationalTex(term.exponent)}\\right)` : rationalTex(term.exponent);
+      const newExponent = addRationals(term.exponent, { numerator: -1, denominator: 1 });
+      const variable = powerVariableTex(newExponent);
+      const body = `${unit ? "" : `${rationalTex(magnitude)}\\cdot`}${exponentTex}${variable ? `\\,${variable}` : ""}`;
+      return signedTermTex(index === 0, term.coefficient.numerator < 0, body);
+    }).join("") || "0";
+    steps.push(derivativeStudyStep(
+      "Derivem terme a terme",
+      "Apliquem la regla a cada terme i conservem els signes. Els termes constants tenen derivada zero.",
+      `f'(x)=${calculation}`,
+      "Derivada d’una potència",
+    ));
+
+    const resultTerms = derivedTerms.map((term) => ({
+      coefficient: multiplyRationals(term.coefficient, term.exponent),
+      exponent: addRationals(term.exponent, { numerator: -1, denominator: 1 }),
+    }));
+    const productTex = powerSumTex(resultTerms);
+    if (productTex !== calculation) {
+      steps.push(derivativeStudyStep(
+        "Fem les multiplicacions",
+        "Multipliquem els coeficients i calculem els nous exponents.",
+        `f'(x)=${productTex}`,
+        "Simplificació algebraica",
+      ));
+    }
+    let finalTex = productTex;
+    if (resultTerms.some((term) => term.exponent.numerator < 0 || term.exponent.denominator !== 1)) {
+      finalTex = resultTerms
+        .filter((term) => term.coefficient.numerator !== 0)
+        .map((term, index) => signedTermTex(index === 0, term.coefficient.numerator < 0, positiveExponentTermTex(term.coefficient, term.exponent)))
+        .join("") || "0";
+      steps.push(derivativeStudyStep(
+        "Tornem a escriure el resultat",
+        `Desfem el pas previ: les potències d’exponent negatiu passen al denominador amb ${formula("x^{-n}=\\frac{1}{x^n}", false)} i les d’exponent fraccionari tornen a ser arrels amb ${formula("x^{\\frac{m}{k}}=\\sqrt[k]{x^m}", false)}.`,
+        `f'(x)=${finalTex}`,
+        "Propietats de les potències",
+      ));
+    }
+    return {
+      sourceTex,
+      derivativeTex: finalTex,
+      rules: ["Propietats de les potències", "Derivació terme a terme"],
+      steps,
+    };
+  }
+
   function deriveExpressionStudy(value) {
     const parsed = parseExpression(value);
     if (containsNode(parsed.node, (current) => nodeFunctionName(current) === "abs")) {
@@ -3272,6 +3527,8 @@
         steps: evenRadicalStudy.steps,
       };
     }
+    const powerSumStudy = powerSumDerivativeStudy(parsed.node);
+    if (powerSumStudy) return powerSumStudy;
     const preparation = derivativeFriendlyTransformation(parsed.node);
     const node = preparation.steps.length ? preparation.node : sourceNode;
     const derivative = derivativeNode(node);
