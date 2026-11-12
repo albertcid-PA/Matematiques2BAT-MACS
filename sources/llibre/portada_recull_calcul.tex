@@ -1,0 +1,73 @@
+% Portada i índex del recull d'enunciats de càlcul.
+% Els compila scripts/munta_recull_pdf.py amb XeLaTeX i els posa davant del PDF del recull.
+% L'script genera index_recull.tex (entrades de l'índex amb el número de pàgina) i
+% parametres_recull.tex (text d'edició i mida de l'índex). Sense aquests fitxers, només surt la portada.
+% Fa servir l'estil dels apunts (apunts.sty) perquè coincideixi amb la portada dels PDF dels temes.
+\documentclass[11pt,a4paper,oneside]{book}
+\usepackage{apunts}
+\hypersetup{pdftitle={Recull d'enunciats de càlcul},pdfauthor={Albert Cid},pdflang={ca}}
+\pagestyle{empty}
+\usepackage{multicol}
+\setlength{\columnsep}{2.2em}
+
+\newcommand{\edicio}{}
+\newcommand{\midaindex}{\normalsize}
+\InputIfFileExists{parametres_recull.tex}{}{}
+
+% \entradaindex{nivell}{títol}{pàgina}: nivell 2 (bloc), 3 (apartat) o 4 (subapartat)
+\newcommand{\puntsindex}{\nobreak\leaders\hbox to 0.7em{\hss.\hss}\hfill\nobreak}
+\newcommand{\paginaindex}[1]{\makebox[1.8em][r]{#1}}
+\newcommand{\entradaindex}[3]{%
+  \ifnum#1=2
+    \par\vspace{0.7em}\noindent\hangindent=1em{\bfseries\color{tema}#2\puntsindex\paginaindex{#3}}\par\vspace{0.2em}%
+  \else\ifnum#1=3
+    \par\noindent\hangindent=1.8em\hspace*{0.8em}#2\puntsindex\paginaindex{#3}\par
+  \else
+    \par\noindent\hangindent=2.8em\hspace*{1.8em}{\color{black!70}#2}\puntsindex{\color{black!70}\paginaindex{#3}}\par
+  \fi\fi}
+
+\begin{document}
+\begin{titlepage}
+  \sffamily\color{tema}
+  \vspace*{0.16\textheight}
+  {\Large Matemàtiques Aplicades a les Ciències Socials II\par}
+  \vspace{0.4em}
+  {\large\color{black!60}2n de Batxillerat\par}
+  \vspace{3.2em}
+  {\color{tema}\rule{\linewidth}{1.2pt}\par}
+  \vspace{1.4em}
+  {\Large\MakeUppercase{Càlcul}\par}
+  \vspace{0.5em}
+  {\fontsize{38}{44}\selectfont\bfseries Recull d'enunciats\par}
+  \vspace{1.4em}
+  {\color{tema}\rule{\linewidth}{1.2pt}\par}
+  \vspace{2.2em}
+  \autoria
+  \vspace{3em}
+  {\large\color{black!80}
+  \begin{tabular}{@{}l@{\hspace{1em}}l@{}}
+    \color{tema}Tema 1 & Repàs de límits i derivades\\[0.5em]
+    \color{tema}Tema 2 & Aplicacions de les derivades\\[0.5em]
+    \color{tema}PAU & Problemes de càlcul
+  \end{tabular}\par}
+  \vfill
+  {\normalsize\color{black!55}Recull d'exercicis\ifx\edicio\empty\else\ · \edicio\fi. Les solucions pas a pas són al web, a
+  \href{https://albertcid-pa.github.io/Matematiques2BAT-MACS/calcul/per-practicar/exercicis_calcul/}{Càlcul\,›\,Per practicar}.\par}
+  \vspace{1.2em}
+  {\color{black!25}\rule{\linewidth}{0.4pt}\par}
+  \vspace{0.8em}
+  \llicencia
+\end{titlepage}
+
+\IfFileExists{index_recull.tex}{%
+  \newpage
+  {\sffamily\midaindex\setlength{\parskip}{0pt}\linespread{1.25}\selectfont
+   {\color{tema}\fontsize{24}{28}\selectfont\bfseries Índex\par}
+   \vspace{0.3em}
+   {\color{tema}\rule{\linewidth}{1.2pt}\par}
+   \vspace{0.2em}
+   {\color{black!55}\small Els números de pàgina són els del peu de cada pàgina d'exercicis.\par}
+   \vspace{0.4em}
+   \begin{multicols}{2}\raggedright\input{index_recull.tex}\end{multicols}\par}
+}{}
+\end{document}

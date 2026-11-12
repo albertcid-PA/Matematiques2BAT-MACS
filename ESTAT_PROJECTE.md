@@ -22,7 +22,7 @@ Apartat de relleu entre assistents (vegeu «Relleu entre assistents» a [AGENTS.
 - **`?v=n`:** es manté com a enter que s'incrementa, com proposava l'assistent; el professor ha aprovat l'script que el puja, però no ha decidit expressament descartar una versió calculada a partir del contingut.
 - **Material de consulta:** `materials/` és local i ignorada per Git. El criteri d'ús és a `AGENTS.md` i l'inventari, a `materials/INVENTARI.md`.
 - **Fora del repositori:** l'examen «2_PP1.2 Domini, valor absolut, funcions a trossos i optimització» i el seu solucionari són a Google Drive. Les fonts del solucionari són a `tmp/solucionari_2_PP1.2/` i la còpia a `output/pdf/`, totes dues ignorades per Git. El professor revisa l'examen abans de donar-lo per bo.
-- **Sense commit:** res dels fitxers versionats.
+- **Recull de càlcul (Claude Code, 12 de novembre de 2026):** el recull d'enunciats té portada i índex d'una pàgina amb números de pàgina i marcadors (`sources/llibre/portada_recull_calcul.tex`, `scripts/munta_recull_pdf.py`). A la pàgina d'exercicis hi ha també un enllaç discret a l'«edició en lletra gran» (`scripts/genera_pdf_recull_calcul_lletra_gran.py`); per indicació del professor no s'hi esmenta la dislèxia. Es publica en el commit d'aquesta tasca.
 - **Pròxim pas:** cap d'immediat; esperar les indicacions del professor.
 - **Decisions pendents del professor:** les indicades a «Darrera tasca» i l'ordre de la figura 2.28: a la pàgina de pràctica de càlcul surt a l'enunciat de l'exercici 2.33, després de les figures 2.29–2.41 de les solucions anteriors, perquè els números segueixen l'ordre del recull d'enunciats. `comprova_figures.py` no controla l'ordre a les pàgines de pràctica.
 

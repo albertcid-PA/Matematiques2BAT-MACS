@@ -76,7 +76,8 @@ Revisa el diff de la pàgina i del recull generats. L'execució sobreescriu els 
 
 | PDF | Fonts del contingut | Script | Destinació publicable |
 |:--|:--|:--|:--|
-| Enunciats de càlcul | Enunciats de `sources/calcul/` | `scripts/genera_pdf_recull_calcul.ps1` | `docs/assets/exercicis/recull_enunciats_calcul.pdf` |
+| Enunciats de càlcul | Enunciats de `sources/calcul/` i portada `sources/llibre/portada_recull_calcul.tex` | `scripts/genera_pdf_recull_calcul.ps1` | `docs/assets/exercicis/recull_enunciats_calcul.pdf` |
+| Enunciats de càlcul en lletra gran | Les mateixes | `scripts/genera_pdf_recull_calcul_lletra_gran.py` | `docs/assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf` |
 | Tema 1 | `01_limits.md` i `02_derivades.md` de `docs/calcul/repas-limits-derivades/` | `scripts/genera_pdf_tema.py 1` | `docs/assets/apunts/tema_1_repas_limits_derivades.pdf` |
 | Tema 2 | Les quatre pàgines de contingut de `docs/calcul/aplicacions-derivades/` | `scripts/genera_pdf_tema.py 2` | `docs/assets/apunts/tema_2_aplicacions_derivades.pdf` |
 | Tema 3 | Les tres pàgines de contingut de `docs/algebra-lineal/sistemes-gauss/` | `scripts/genera_pdf_tema.py 3` | `docs/assets/apunts/tema_3_sistemes_metode_gauss.pdf` |
@@ -109,7 +110,9 @@ El script PowerShell crida el generador de Markdown corresponent; no cal executa
 & ".\scripts\genera_pdf_recull_calcul.ps1"
 ```
 
-Crea una pàgina temporal `__pdf-...md` dins de `docs/`, serveix `site/`, imprimeix amb Edge, afegeix el peu de pàgina i desa també una còpia amb el mateix nom a `output/pdf/`. En acabar elimina la pàgina temporal i torna a compilar.
+Crea una pàgina temporal `__pdf-...md` dins de `docs/`, serveix `site/`, imprimeix amb Edge, i crida `scripts/munta_recull_pdf.py`. Aquest compila amb XeLaTeX la portada i l'índex (`sources/llibre/portada_recull_calcul.tex`, amb l'estil `apunts.sty` de les portades dels temes), els posa al davant, afegeix el peu de pàgina (numerat a partir de la primera pàgina d'exercicis) i els marcadors, i desa també una còpia amb el mateix nom a `output/pdf/`. Els títols de l'índex surten dels `##`–`####` del Markdown i les pàgines, de l'esquema que Edge genera amb `--generate-pdf-document-outline`; si no coincideixen en nombre, el muntador s'atura. En acabar elimina la pàgina temporal i torna a compilar.
+
+**Edició en lletra gran:** `.venv\Scripts\python.exe scripts\genera_pdf_recull_calcul_lletra_gran.py` genera `output/pdf/recull_enunciats_calcul_lletra_gran.pdf` i la còpia publicable a `docs/assets/exercicis/`, amb el mateix contingut, portada i índex, però amb lletra sense serifa de 12 pt, interlineat 1,5, sense cursiva i amb els exercicis separats. L'enllaç discret de la pàgina d'exercicis és al generador `scripts/genera_pagines_practica.py`; puja-hi el `?v=n` quan canviï. Fa servir el port `8769` i, com el recull ordinari, elimina la pàgina temporal en acabar.
 
 El port temporal és el `8768`. Comprova que estigui disponible; no aturis processos aliens per alliberar-lo. Si una execució s'interromp, comprova si ha quedat una pàgina temporal abans de fer la compilació final.
 

@@ -63,7 +63,7 @@ try {
         throw "El servidor temporal no ha respost a $url"
     }
 
-    $edgeOutput = & $edge "--headless=new" "--disable-gpu" "--no-pdf-header-footer" "--run-all-compositor-stages-before-draw" "--user-data-dir=$profileDir" "--print-to-pdf=$rawPdf" $url 2>&1
+    $edgeOutput = & $edge "--headless=new" "--disable-gpu" "--no-pdf-header-footer" "--run-all-compositor-stages-before-draw" "--generate-pdf-document-outline" "--user-data-dir=$profileDir" "--print-to-pdf=$rawPdf" $url 2>&1
     $edgeExitCode = $LASTEXITCODE
     if ($edgeOutput) {
         $edgeOutput | ForEach-Object { Write-Host $_ }
@@ -75,9 +75,9 @@ try {
         throw "Edge no ha pogut generar el PDF (codi $edgeExitCode)."
     }
 
-    & $python (Join-Path $PSScriptRoot "afegeix_peu_pdf.py") $rawPdf $outputPdf "Recull d'enunciats de càlcul" "Exercicis dels temes 1 i 2 i problemes PAU de càlcul" "Matemàtiques Aplicades a les Ciències Socials II · Enunciats de càlcul"
+    & $python (Join-Path $PSScriptRoot "munta_recull_pdf.py") $rawPdf $outputPdf --md $printSource
     if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $outputPdf)) {
-        throw "No s'ha pogut afegir el peu de pàgina al PDF."
+        throw "No s'ha pogut muntar el PDF (portada, índex i peu de pàgina)."
     }
 
     Copy-Item -LiteralPath $outputPdf -Destination $webPdf -Force

@@ -7,7 +7,7 @@ Compara els fitxers canviats amb un commit de referència (HEAD, per defecte) i 
 2. si un SVG o un PDF publicat ha canviat i alguna referència conserva el mateix ?v=n;
 3. si la pràctica de càlcul no coincideix amb el que generen les fonts de sources/calcul;
 4. si han canviat les pàgines, les figures o l'estil d'un tema i el seu PDF no s'ha regenerat;
-5. si han canviat els enunciats o les figures del recull de càlcul i el PDF no s'ha regenerat.
+5. si han canviat els enunciats o les figures del recull de càlcul i els PDF (ordinari i en lletra gran) no s'han regenerat.
 
 Ús, des de l'arrel del repositori:
 
@@ -32,8 +32,10 @@ import genera_pdf_tema as tema_pdf  # noqa: E402
 PRACTICA_WEB = "docs/calcul/per-practicar/exercicis_calcul.md"
 PRACTICA_RECULL = "sources/generated/recull-enunciats-calcul.md"
 PDF_RECULL = "docs/assets/exercicis/recull_enunciats_calcul.pdf"
+PDF_RECULL_GRAN = "docs/assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf"
 FONTS_RECULL = ["sources/calcul/exercicis.md", "sources/calcul/problemes-pau.md",
-                PRACTICA_RECULL, "scripts/genera_pdf_recull_calcul.ps1"]
+                PRACTICA_RECULL, "scripts/genera_pdf_recull_calcul.ps1",
+                "sources/llibre/portada_recull_calcul.tex", "scripts/munta_recull_pdf.py"]
 FONTS_TOTS_ELS_TEMES = ["sources/llibre/apunts.sty", "scripts/genera_pdf_tema.py"]
 CARPETES_REFERENCIES = ["docs", "sources", "scripts"]
 RE_VERSIO = re.compile(r"\?v=\d+")
@@ -186,6 +188,8 @@ def comprova_recull(estat, problemes):
     figures = figures_citades(estat.actual(PRACTICA_RECULL), ARREL / "docs" / "calcul" / "per-practicar")
     motius |= figures & estat.canviats
     comprova_pdf(estat, problemes, PDF_RECULL, motius)
+    motius_gran = (motius - {"scripts/genera_pdf_recull_calcul.ps1"}) |         ({"scripts/genera_pdf_recull_calcul_lletra_gran.py"} & estat.canviats)
+    comprova_pdf(estat, problemes, PDF_RECULL_GRAN, motius_gran)
 
 
 def main(argv):
