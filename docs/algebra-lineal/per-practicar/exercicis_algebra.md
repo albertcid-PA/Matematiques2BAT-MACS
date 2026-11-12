@@ -966,6 +966,2193 @@ Una compra al supermercat costa $100\,€$ sense IVA. Inclou productes bàsics, 
     | Estalvi de $13\,€$ | SCI | La dada és redundant: no determina la distribució de la compra. |
     | Estalvi de $14\,€$ | SI | La dada contradiu les condicions inicials. |
 
+## Tema 4. Matrius
+
+!!! tip "Com treballar"
+    Abans d'operar, comprova les dimensions de les matrius. En calcular una inversa pel mètode de Gauss-Jordan, anota cada transformació i aplica-la a tota la fila, també a la part dreta de la barra. En una equació matricial, conserva el costat on multiplica cada matriu i comprova el resultat a l'equació inicial.
+
+### Concepte, tipus i operacions
+
+**4.1.**
+Considera les matrius
+
+$$
+A=\begin{pmatrix}3&-1&0\end{pmatrix}
+\qquad
+B=\begin{pmatrix}-4&0\\0&-4\end{pmatrix}
+\qquad
+C=\begin{pmatrix}1&4&-2\\4&0&5\\-2&5&3\end{pmatrix}
+\qquad
+D=\begin{pmatrix}1&0&0\\7&-2&0\\3&1&4\end{pmatrix}
+$$
+
+**a)** Indica l'ordre de cada matriu i de quin tipus és.
+
+**b)** Escriu els elements $c_{23}$, $c_{32}$ i $d_{31}$.
+
+**c)** Calcula $C^t$ i $D^t$. Quina de les dues matrius és simètrica?
+
+**d)** Escriu la matriu $E=(e_{ij})_{2\times3}$ que compleix $e_{ij}=2i-j$ i la seva transposada.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.1"
+    **Apartat a)**
+
+    | Matriu | Ordre | Tipus |
+    |:--|:--|:--|
+    | $A$ | $1\times3$ | Matriu fila. |
+    | $B$ | $2\times2$ | Quadrada, diagonal i escalar: els dos elements de la diagonal són iguals. No és la identitat, perquè valen $-4$. |
+    | $C$ | $3\times3$ | Quadrada. |
+    | $D$ | $3\times3$ | Quadrada i triangular inferior: els elements per sobre de la diagonal principal són zero. |
+
+    **Apartat b)**
+
+    El primer subíndex indica la fila i el segon, la columna:
+
+    $$
+    c_{23}=5,
+    \qquad
+    c_{32}=5,
+    \qquad
+    d_{31}=3.
+    $$
+
+    **Apartat c)**
+
+    Les files de cada matriu passen a ser columnes:
+
+    $$
+    C^t=\begin{pmatrix}1&4&-2\\4&0&5\\-2&5&3\end{pmatrix}
+    \qquad
+    D^t=\begin{pmatrix}1&7&3\\0&-2&1\\0&0&4\end{pmatrix}
+    $$
+
+    Com que $C^t=C$, la matriu $C$ és **simètrica**: els elements situats simètricament respecte de la diagonal principal coincideixen, com $c_{23}=c_{32}=5$. En canvi, $D^t\neq D$; de fet, la transposada d'una matriu triangular inferior és triangular superior.
+
+    **Apartat d)**
+
+    A cada posició substituïm $i$ pel número de la fila i $j$ pel de la columna a la fórmula $e_{ij}=2i-j$:
+
+    $$
+    E=
+    \begin{pmatrix}
+    2\cdot1-1&2\cdot1-2&2\cdot1-3\\
+    2\cdot2-1&2\cdot2-2&2\cdot2-3
+    \end{pmatrix}
+    =
+    \begin{pmatrix}1&0&-1\\3&2&1\end{pmatrix}
+    $$
+
+    $$
+    E^t=\begin{pmatrix}1&3\\0&2\\-1&1\end{pmatrix}
+    $$
+
+    $E$ és d'ordre $2\times3$ i $E^t$, d'ordre $3\times2$.
+
+---
+
+**4.2.**
+**a)** Calcula $x$, $y$, $z$ i $t$ perquè es compleixi la igualtat
+
+$$
+\begin{pmatrix}
+x+y&2z\\
+x-y&t
+\end{pmatrix}
+=
+\begin{pmatrix}
+7&z+3\\
+1&2x
+\end{pmatrix}
+$$
+
+**b)** Poden ser iguals les matrius $\begin{pmatrix}1&2&3\end{pmatrix}$ i $\begin{pmatrix}1\\2\\3\end{pmatrix}$? Justifica-ho.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.2"
+    **Apartat a)**
+
+    Les dues matrius són d'ordre $2\times2$, de manera que la igualtat té sentit. Cada expressió de la primera matriu ha de coincidir amb l'element que ocupa la mateixa posició a la segona:
+
+    $$
+    \begin{pmatrix}
+    x+y&2z\\
+    x-y&t
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    7&z+3\\
+    1&2x
+    \end{pmatrix}
+    $$
+
+    Igualant posició a posició, obtenim el sistema
+
+    $$
+    \begin{cases}
+    x+y=7\\
+    2z=z+3\\
+    x-y=1\\
+    t=2x
+    \end{cases}
+    $$
+
+    Sumant la primera i la tercera equació, $2x=8$, és a dir, $x=4$. Aleshores $y=7-4=3$. De la segona equació obtenim $z=3$ i, de l'última, $t=2\cdot4=8$.
+
+    $$
+    \boxed{x=4,\qquad y=3,\qquad z=3,\qquad t=8}
+    $$
+
+    **Comprovació:** les dues matrius valen $\begin{pmatrix}7&6\\1&8\end{pmatrix}$.
+
+    **Apartat b)**
+
+    No. Tenen els mateixos nombres en el mateix ordre, però la primera és d'ordre $1\times3$ i la segona, d'ordre $3\times1$. Dues matrius només poden ser iguals si tenen el mateix ordre.
+
+---
+
+**4.3.**
+Considera les matrius
+
+$$
+A=\begin{pmatrix}2&-1&3\\0&4&-2\end{pmatrix}
+\qquad
+B=\begin{pmatrix}1&-5\\3&0\\-2&4\end{pmatrix}
+\qquad
+C=\begin{pmatrix}3&-2\\-5&1\end{pmatrix}
+$$
+
+**a)** Indica quines de les operacions següents es poden efectuar i, en aquest cas, l'ordre del resultat: $A+B$, $A+B^t$, $AB$, $BA$, $AC$, $CA$ i $C^2$.
+
+**b)** Efectua les operacions de l'apartat anterior que es puguin fer i comprova que el resultat té l'ordre que havies indicat.
+
+**c)** Calcula $2A-B^t$ i $AB-3C$.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.3"
+    **Apartat a)**
+
+    $A$ és d'ordre $2\times3$, $B$ d'ordre $3\times2$, $B^t$ d'ordre $2\times3$ i $C$ d'ordre $2\times2$. Per sumar cal el mateix ordre; per multiplicar, el nombre de columnes del primer factor ha de coincidir amb el nombre de files del segon.
+
+    | Operació | Dimensions | Es pot fer? | Ordre del resultat |
+    |:--|:--|:--|:--|
+    | $A+B$ | $2\times3$ i $3\times2$ | No | — |
+    | $A+B^t$ | $2\times3$ i $2\times3$ | Sí | $2\times3$ |
+    | $AB$ | $(2\times\mathbf{3})\cdot(\mathbf{3}\times2)$ | Sí | $2\times2$ |
+    | $BA$ | $(3\times\mathbf{2})\cdot(\mathbf{2}\times3)$ | Sí | $3\times3$ |
+    | $AC$ | $(2\times\mathbf{3})\cdot(\mathbf{2}\times2)$ | No | — |
+    | $CA$ | $(2\times\mathbf{2})\cdot(\mathbf{2}\times3)$ | Sí | $2\times3$ |
+    | $C^2$ | $(2\times\mathbf{2})\cdot(\mathbf{2}\times2)$ | Sí | $2\times2$ |
+
+    Observa que $AB$ i $BA$ existeixen tots dos, però ni tan sols tenen el mateix ordre.
+
+    **Apartat b)**
+
+    Per sumar $A+B^t$, primer transposem $B$:
+
+    $$
+    A+B^t=
+    \begin{pmatrix}2&-1&3\\0&4&-2\end{pmatrix}
+    +
+    \begin{pmatrix}1&3&-2\\-5&0&4\end{pmatrix}
+    =
+    \begin{pmatrix}3&2&1\\-5&4&2\end{pmatrix}
+    \qquad(2\times3)
+    $$
+
+    En els productes, cada element s'obté multiplicant una fila del primer factor per una columna del segon:
+
+    $$
+    AB=
+    \begin{pmatrix}
+    2\cdot1+(-1)\cdot3+3\cdot(-2)&2\cdot(-5)+(-1)\cdot0+3\cdot4\\
+    0\cdot1+4\cdot3+(-2)\cdot(-2)&0\cdot(-5)+4\cdot0+(-2)\cdot4
+    \end{pmatrix}
+    $$
+
+    $$
+    AB=
+    \begin{pmatrix}-7&2\\16&-8\end{pmatrix}
+    \qquad(2\times2)
+    $$
+
+    $$
+    BA=
+    \begin{pmatrix}1&-5\\3&0\\-2&4\end{pmatrix}
+    \begin{pmatrix}2&-1&3\\0&4&-2\end{pmatrix}
+    $$
+
+    $$
+    BA=
+    \begin{pmatrix}
+    2+0&-1-20&3+10\\
+    6+0&-3+0&9+0\\
+    -4+0&2+16&-6-8
+    \end{pmatrix}
+    =
+    \begin{pmatrix}2&-21&13\\6&-3&9\\-4&18&-14\end{pmatrix}
+    \qquad(3\times3)
+    $$
+
+    $$
+    CA=
+    \begin{pmatrix}3&-2\\-5&1\end{pmatrix}
+    \begin{pmatrix}2&-1&3\\0&4&-2\end{pmatrix}
+    $$
+
+    $$
+    CA=
+    \begin{pmatrix}
+    6+0&-3-8&9+4\\
+    -10+0&5+4&-15-2
+    \end{pmatrix}
+    =
+    \begin{pmatrix}6&-11&13\\-10&9&-17\end{pmatrix}
+    \qquad(2\times3)
+    $$
+
+    $$
+    C^2=
+    \begin{pmatrix}3&-2\\-5&1\end{pmatrix}
+    \begin{pmatrix}3&-2\\-5&1\end{pmatrix}
+    =
+    \begin{pmatrix}
+    9+10&-6-2\\
+    -15-5&10+1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}19&-8\\-20&11\end{pmatrix}
+    \qquad(2\times2)
+    $$
+
+    Tots els resultats tenen l'ordre previst a l'apartat a).
+
+    **Apartat c)**
+
+    Multipliquem $A$ per $2$ i hi restem la transposada de $B$:
+
+    $$
+    2A-B^t=
+    \begin{pmatrix}4&-2&6\\0&8&-4\end{pmatrix}
+    -
+    \begin{pmatrix}1&3&-2\\-5&0&4\end{pmatrix}
+    =
+    \begin{pmatrix}3&-5&8\\5&8&-8\end{pmatrix}
+    $$
+
+    Aprofitem el producte $AB$ de l'apartat b):
+
+    $$
+    AB-3C=
+    \begin{pmatrix}-7&2\\16&-8\end{pmatrix}
+    -
+    \begin{pmatrix}9&-6\\-15&3\end{pmatrix}
+    =
+    \begin{pmatrix}-16&8\\31&-11\end{pmatrix}
+    $$
+
+---
+
+**4.4.**
+Considera les matrius
+
+$$
+A=\begin{pmatrix}4&1\\0&-3\end{pmatrix}
+\qquad
+B=\begin{pmatrix}1&0\\4&2\end{pmatrix}
+$$
+
+**a)** Calcula $(A+B)^2$ i $A^2+2AB+B^2$. Obtens el mateix resultat?
+
+**b)** Desenvolupa $(A+B)^2=(A+B)(A+B)$ amb la propietat distributiva i explica la diferència.
+
+**c)** Quina condició han de complir dues matrius quadrades perquè $(A+B)^2=A^2+2AB+B^2$?
+
+??? example "Mostra la solució pas a pas de l'exercici 4.4"
+    **Apartat a)**
+
+    $$
+    A+B=\begin{pmatrix}5&1\\4&-1\end{pmatrix}
+    \qquad
+    (A+B)^2=
+    \begin{pmatrix}5&1\\4&-1\end{pmatrix}
+    \begin{pmatrix}5&1\\4&-1\end{pmatrix}
+    =
+    \begin{pmatrix}29&4\\16&5\end{pmatrix}
+    $$
+
+    D'altra banda,
+
+    $$
+    A^2=\begin{pmatrix}16&1\\0&9\end{pmatrix}
+    \qquad
+    AB=\begin{pmatrix}8&2\\-12&-6\end{pmatrix}
+    \qquad
+    B^2=\begin{pmatrix}1&0\\12&4\end{pmatrix}
+    $$
+
+    $$
+    A^2+2AB+B^2=
+    \begin{pmatrix}16&1\\0&9\end{pmatrix}
+    +
+    \begin{pmatrix}16&4\\-24&-12\end{pmatrix}
+    +
+    \begin{pmatrix}1&0\\12&4\end{pmatrix}
+    =
+    \begin{pmatrix}33&5\\-12&1\end{pmatrix}
+    $$
+
+    Els resultats **no** coincideixen.
+
+    **Apartat b)**
+
+    Aplicant la propietat distributiva i conservant l'ordre dels factors,
+
+    $$
+    (A+B)^2=(A+B)(A+B)=A^2+AB+BA+B^2.
+    $$
+
+    Per obtenir $2AB$ caldria que $BA=AB$, però
+
+    $$
+    BA=
+    \begin{pmatrix}1&0\\4&2\end{pmatrix}
+    \begin{pmatrix}4&1\\0&-3\end{pmatrix}
+    =
+    \begin{pmatrix}4&1\\16&-2\end{pmatrix}
+    \neq
+    \begin{pmatrix}8&2\\-12&-6\end{pmatrix}
+    =AB.
+    $$
+
+    **Comprovació:** $A^2+AB+BA+B^2=\begin{pmatrix}16+8+4+1&1+2+1+0\\0-12+16+12&9-6-2+4\end{pmatrix}=\begin{pmatrix}29&4\\16&5\end{pmatrix}$, que és $(A+B)^2$.
+
+    **Apartat c)**
+
+    La igualtat es compleix quan $AB=BA$, és a dir, quan les matrius **commuten**. Les identitats notables dels nombres no es poden aplicar directament a les matrius.
+
+---
+
+**4.5.**
+Considera les matrius
+
+$$
+A=\begin{pmatrix}2&-3&1\\1&4&0\end{pmatrix}
+\qquad
+X=\begin{pmatrix}x&2\\y&-1\\3&1\end{pmatrix}
+$$
+
+Sabem que
+
+$$
+AX=\begin{pmatrix}-1&8\\9&-2\end{pmatrix}
+$$
+
+**a)** Calcula $x$ i $y$.
+
+**b)** Substitueix els valors obtinguts a $X$ i comprova que el producte $AX$ dona la matriu indicada.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.5"
+    **Apartat a)**
+
+    $A$ és d'ordre $2\times3$ i $X$, d'ordre $3\times2$, de manera que $AX$ és d'ordre $2\times2$. Efectuem el producte multiplicant cada fila d'$A$ per cada columna de $X$:
+
+    $$
+    AX=
+    \begin{pmatrix}
+    2x+(-3)y+1\cdot3&2\cdot2+(-3)\cdot(-1)+1\cdot1\\
+    1\cdot x+4y+0\cdot3&1\cdot2+4\cdot(-1)+0\cdot1
+    \end{pmatrix}
+    $$
+
+    $$
+    AX=
+    \begin{pmatrix}
+    2x-3y+3&8\\
+    x+4y&-2
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    -1&8\\
+    9&-2
+    \end{pmatrix}
+    $$
+
+    !!! note "Les posicions sense incògnites"
+        La segona columna de $X$ no té incògnites, de manera que la segona columna d'$AX$ dona nombres. Aquests nombres han de coincidir amb els de la matriu donada: aquí hi coincideixen, $8$ i $-2$. Si no hi coincidissin, hi hauria un error de càlcul o la igualtat no es podria complir per a cap valor de $x$ i $y$.
+
+    Igualant els elements de la primera columna, obtenim el sistema
+
+    $$
+    \begin{cases}
+    2x-3y+3=-1\\
+    x+4y=9
+    \end{cases}
+    \quad\Longleftrightarrow\quad
+    \begin{cases}
+    2x-3y=-4\\
+    x+4y=9
+    \end{cases}
+    $$
+
+    De la segona equació, $x=9-4y$. Substituint a la primera, $18-8y-3y=-4$, és a dir, $11y=22$. Per tant, $y=2$ i $x=9-8=1$.
+
+    $$
+    \boxed{x=1,\qquad y=2}
+    $$
+
+    **Apartat b)**
+
+    Amb $x=1$ i $y=2$,
+
+    $$
+    X=\begin{pmatrix}1&2\\2&-1\\3&1\end{pmatrix}
+    $$
+
+    $$
+    AX=
+    \begin{pmatrix}
+    2\cdot1+(-3)\cdot2+1\cdot3&2\cdot2+(-3)\cdot(-1)+1\cdot1\\
+    1\cdot1+4\cdot2+0\cdot3&1\cdot2+4\cdot(-1)+0\cdot1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    -1&8\\
+    9&-2
+    \end{pmatrix}
+    $$
+
+    El producte coincideix amb la matriu donada.
+
+---
+
+**4.6.**
+Considera la matriu
+
+$$
+A=\begin{pmatrix}4&0\\5&4\end{pmatrix}
+$$
+
+**a)** Troba totes les matrius $X$ d'ordre $2\times2$ que commuten amb $A$, és a dir, que compleixen $AX=XA$.
+
+**b)** D'entre aquestes matrius, troba la que compleix
+
+$$
+X\begin{pmatrix}1\\-1\end{pmatrix}=\begin{pmatrix}-2\\3\end{pmatrix}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 4.6"
+    **Apartat a)**
+
+    Escrivim $X=\begin{pmatrix}a&b\\c&d\end{pmatrix}$ i calculem els dos productes:
+
+    $$
+    AX=
+    \begin{pmatrix}4&0\\5&4\end{pmatrix}
+    \begin{pmatrix}a&b\\c&d\end{pmatrix}
+    =
+    \begin{pmatrix}4a&4b\\5a+4c&5b+4d\end{pmatrix}
+    $$
+
+    $$
+    XA=
+    \begin{pmatrix}a&b\\c&d\end{pmatrix}
+    \begin{pmatrix}4&0\\5&4\end{pmatrix}
+    =
+    \begin{pmatrix}4a+5b&4b\\4c+5d&4d\end{pmatrix}
+    $$
+
+    La condició $AX=XA$ és, doncs, la igualtat de matrius
+
+    $$
+    \begin{pmatrix}4a&4b\\5a+4c&5b+4d\end{pmatrix}
+    =
+    \begin{pmatrix}4a+5b&4b\\4c+5d&4d\end{pmatrix}
+    $$
+
+    Igualant els elements que ocupen la mateixa posició, obtenim el sistema
+
+    $$
+    \begin{cases}
+    4a=4a+5b\\
+    4b=4b\\
+    5a+4c=4c+5d\\
+    5b+4d=4d
+    \end{cases}
+    \quad\Longrightarrow\quad
+    \begin{cases}
+    b=0\\
+    a=d
+    \end{cases}
+    $$
+
+    Els elements $a$ i $c$ poden prendre qualsevol valor. Les matrius que commuten amb $A$ són
+
+    $$
+    \boxed{X=\begin{pmatrix}a&0\\c&a\end{pmatrix},\qquad a,c\in\mathbb{R}}
+    $$
+
+    **Apartat b)**
+
+    $$
+    \begin{pmatrix}a&0\\c&a\end{pmatrix}
+    \begin{pmatrix}1\\-1\end{pmatrix}
+    =
+    \begin{pmatrix}a\\c-a\end{pmatrix}
+    =
+    \begin{pmatrix}-2\\3\end{pmatrix}
+    $$
+
+    Per tant, $a=-2$ i $c=3+a=1$:
+
+    $$
+    \boxed{X=\begin{pmatrix}-2&0\\1&-2\end{pmatrix}}
+    $$
+
+    **Comprovació:** $AX=XA=\begin{pmatrix}-8&0\\-6&-8\end{pmatrix}$.
+
+---
+
+**4.7.**
+**a)** Considera les matrius
+
+$$
+A=\begin{pmatrix}a&3\\-2&1\end{pmatrix}
+\qquad
+B=\begin{pmatrix}7&b\\-4&1\end{pmatrix}
+$$
+
+on $a$ i $b$ són nombres reals. Troba $a$ i $b$ perquè les matrius commutin, és a dir, perquè $AB=BA$.
+
+**b)** Considera la matriu
+
+$$
+D=\begin{pmatrix}x&2\\y&x\end{pmatrix}
+$$
+
+Troba $x$ i $y$ perquè
+
+$$
+D^2=\begin{pmatrix}7&12\\-6&7\end{pmatrix}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 4.7"
+    **Apartat a)**
+
+    Efectuem els dos productes dins la matriu:
+
+    $$
+    AB=
+    \begin{pmatrix}
+    a\cdot7+3\cdot(-4)&a\cdot b+3\cdot1\\
+    -2\cdot7+1\cdot(-4)&-2\cdot b+1\cdot1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    7a-12&ab+3\\
+    -18&1-2b
+    \end{pmatrix}
+    $$
+
+    $$
+    BA=
+    \begin{pmatrix}
+    7\cdot a+b\cdot(-2)&7\cdot3+b\cdot1\\
+    -4\cdot a+1\cdot(-2)&-4\cdot3+1\cdot1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    7a-2b&21+b\\
+    -4a-2&-11
+    \end{pmatrix}
+    $$
+
+    La condició $AB=BA$ és la igualtat de matrius
+
+    $$
+    \begin{pmatrix}
+    7a-12&ab+3\\
+    -18&1-2b
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    7a-2b&21+b\\
+    -4a-2&-11
+    \end{pmatrix}
+    $$
+
+    Igualant els elements que ocupen la mateixa posició, obtenim
+
+    $$
+    \begin{cases}
+    7a-12=7a-2b\\
+    ab+3=21+b\\
+    -18=-4a-2\\
+    1-2b=-11
+    \end{cases}
+    $$
+
+    De la primera equació, $-12=-2b$, és a dir, $b=6$. De la tercera, $4a=16$, és a dir, $a=4$.
+
+    !!! note "Cal comprovar totes les equacions"
+        Hi ha quatre equacions i només dues incògnites. Els valors trobats han de complir també les altres dues: $4\cdot6+3=27=21+6$ i $1-2\cdot6=-11$. Si alguna no es complís, no hi hauria cap valor de $a$ i $b$ que fes commutar les matrius.
+
+    $$
+    \boxed{a=4,\qquad b=6}
+    $$
+
+    **Comprovació:** amb aquests valors, $AB=BA=\begin{pmatrix}16&27\\-18&-11\end{pmatrix}$.
+
+    **Apartat b)**
+
+    $$
+    D^2=
+    \begin{pmatrix}x&2\\y&x\end{pmatrix}
+    \begin{pmatrix}x&2\\y&x\end{pmatrix}
+    =
+    \begin{pmatrix}
+    x\cdot x+2\cdot y&x\cdot2+2\cdot x\\
+    y\cdot x+x\cdot y&y\cdot2+x\cdot x
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    x^2+2y&4x\\
+    2xy&x^2+2y
+    \end{pmatrix}
+    $$
+
+    Igualem el resultat amb la matriu donada:
+
+    $$
+    \begin{pmatrix}
+    x^2+2y&4x\\
+    2xy&x^2+2y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    7&12\\
+    -6&7
+    \end{pmatrix}
+    $$
+
+    Igualant els elements que ocupen la mateixa posició,
+
+    $$
+    \begin{cases}
+    x^2+2y=7\\
+    4x=12\\
+    2xy=-6
+    \end{cases}
+    $$
+
+    La diagonal dona dues vegades la mateixa equació. De $4x=12$ obtenim $x=3$ i, substituint a la primera, $9+2y=7$, és a dir, $y=-1$. La tercera equació també es compleix: $2\cdot3\cdot(-1)=-6$.
+
+    $$
+    \boxed{x=3,\qquad y=-1}
+    $$
+
+    **Comprovació:**
+
+    $$
+    \begin{pmatrix}3&2\\-1&3\end{pmatrix}
+    \begin{pmatrix}3&2\\-1&3\end{pmatrix}
+    =
+    \begin{pmatrix}9-2&6+6\\-3-3&-2+9\end{pmatrix}
+    =
+    \begin{pmatrix}7&12\\-6&7\end{pmatrix}
+    $$
+
+---
+
+**4.8.**
+Considera la matriu
+
+$$
+A=\begin{pmatrix}3&-7\\1&-2\end{pmatrix}
+$$
+
+**a)** Calcula $A^2$ i $A^3$.
+
+**b)** Utilitza el resultat anterior per calcular $A^6$ i $A^{12}$.
+
+**c)** Dedueix $A^{-1}$ a partir d'$A^3$ i comprova el resultat.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.8"
+    **Apartat a)**
+
+    $$
+    A^2=
+    \begin{pmatrix}3&-7\\1&-2\end{pmatrix}
+    \begin{pmatrix}3&-7\\1&-2\end{pmatrix}
+    =
+    \begin{pmatrix}9-7&-21+14\\3-2&-7+4\end{pmatrix}
+    =
+    \begin{pmatrix}2&-7\\1&-3\end{pmatrix}
+    $$
+
+    $$
+    A^3=A^2\cdot A=
+    \begin{pmatrix}2&-7\\1&-3\end{pmatrix}
+    \begin{pmatrix}3&-7\\1&-2\end{pmatrix}
+    =
+    \begin{pmatrix}6-7&-14+14\\3-3&-7+6\end{pmatrix}
+    =
+    \begin{pmatrix}-1&0\\0&-1\end{pmatrix}
+    =-I
+    $$
+
+    **Apartat b)**
+
+    Com que $A^3=-I$,
+
+    $$
+    A^6=A^3\cdot A^3=(-I)(-I)=I
+    $$
+
+    $$
+    A^{12}=A^6\cdot A^6=I\cdot I=I
+    $$
+
+    No cal fer cap producte de matrius més: n'hi ha prou amb el resultat $A^3=-I$.
+
+    **Apartat c)**
+
+    De $A^3=-I$ obtenim $A\cdot\left(-A^2\right)=I$ i també $\left(-A^2\right)\cdot A=I$. Per tant,
+
+    $$
+    A^{-1}=-A^2=\begin{pmatrix}-2&7\\-1&3\end{pmatrix}
+    $$
+
+    **Comprovació:**
+
+    $$
+    AA^{-1}=
+    \begin{pmatrix}3&-7\\1&-2\end{pmatrix}
+    \begin{pmatrix}-2&7\\-1&3\end{pmatrix}
+    =
+    \begin{pmatrix}-6+7&21-21\\-2+2&7-6\end{pmatrix}
+    =
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+    $$
+
+### Matriu inversa
+
+**4.9.**
+Considera la matriu
+
+$$
+A=\begin{pmatrix}5&-2\\-7&3\end{pmatrix}
+$$
+
+**a)** Quina de les matrius següents és la inversa d'$A$? Justifica-ho fent els productes.
+
+$$
+M=\begin{pmatrix}3&2\\7&5\end{pmatrix}
+\qquad
+N=\begin{pmatrix}3&-2\\-7&5\end{pmatrix}
+$$
+
+**b)** Un company diu que la inversa d'$A$ s'obté invertint cada element:
+
+$$
+P=\begin{pmatrix}\frac15&-\frac12\\[2pt]-\frac17&\frac13\end{pmatrix}
+$$
+
+Comprova que no té raó.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.9"
+    **Apartat a)**
+
+    Una matriu és la inversa d'$A$ si el producte per $A$ dona la identitat. Calculem $AM$:
+
+    $$
+    AM=
+    \begin{pmatrix}5&-2\\-7&3\end{pmatrix}
+    \begin{pmatrix}3&2\\7&5\end{pmatrix}
+    =
+    \begin{pmatrix}15-14&10-10\\-21+21&-14+15\end{pmatrix}
+    =
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+    $$
+
+    També es compleix en l'altre ordre:
+
+    $$
+    MA=
+    \begin{pmatrix}3&2\\7&5\end{pmatrix}
+    \begin{pmatrix}5&-2\\-7&3\end{pmatrix}
+    =
+    \begin{pmatrix}15-14&-6+6\\35-35&-14+15\end{pmatrix}
+    =
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+    $$
+
+    Per tant, **$M$ és la inversa d'$A$**. En canvi,
+
+    $$
+    AN=
+    \begin{pmatrix}5&-2\\-7&3\end{pmatrix}
+    \begin{pmatrix}3&-2\\-7&5\end{pmatrix}
+    =
+    \begin{pmatrix}15+14&-10-10\\-21-21&14+15\end{pmatrix}
+    =
+    \begin{pmatrix}29&-20\\-42&29\end{pmatrix}
+    $$
+
+    no és la identitat: **$N$ no és la inversa d'$A$**.
+
+    **Apartat b)**
+
+    $$
+    AP=
+    \begin{pmatrix}5&-2\\-7&3\end{pmatrix}
+    \begin{pmatrix}\frac15&-\frac12\\[2pt]-\frac17&\frac13\end{pmatrix}
+    =
+    \begin{pmatrix}
+    1+\frac27&-\frac52-\frac23\\[2pt]
+    -\frac75-\frac37&\frac72+1
+    \end{pmatrix}
+    $$
+
+    Ja el primer element, $1+\frac27$, és diferent d'$1$, i el de la segona fila i la primera columna és diferent de $0$. El producte no és la identitat i, per tant, $P$ no és la inversa d'$A$.
+
+    !!! warning "Error habitual"
+        La inversa d'una matriu no s'obté invertint cada element. Es defineix mitjançant el producte: $AA^{-1}=A^{-1}A=I$.
+
+---
+
+**4.10.**
+Calcula la inversa de la matriu
+
+$$
+B=\begin{pmatrix}3&1\\5&2\end{pmatrix}
+$$
+
+a partir de la definició, és a dir, per coeficients. Comprova el resultat.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.10"
+    Escrivim la inversa amb quatre coeficients desconeguts i imposem $BB^{-1}=I_2$:
+
+    $$
+    \begin{pmatrix}3&1\\5&2\end{pmatrix}
+    \begin{pmatrix}x&y\\z&t\end{pmatrix}
+    =
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+    $$
+
+    Efectuem el producte dins la matriu:
+
+    $$
+    \begin{pmatrix}
+    3x+z&3y+t\\
+    5x+2z&5y+2t
+    \end{pmatrix}
+    =
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+    $$
+
+    Igualant els elements que ocupen la mateixa posició, obtenim quatre equacions, que se separen en dos sistemes: un amb $x$ i $z$ (primera columna) i un altre amb $y$ i $t$ (segona columna):
+
+    $$
+    \begin{cases}
+    3x+z=1\\
+    5x+2z=0
+    \end{cases}
+    \qquad
+    \begin{cases}
+    3y+t=0\\
+    5y+2t=1
+    \end{cases}
+    $$
+
+    Al primer sistema, multipliquem la primera equació per $2$ i hi restem la segona: $6x-5x=2-0$, és a dir, $x=2$. Aleshores $z=1-3\cdot2=-5$.
+
+    Al segon, fem el mateix: $6y-5y=0-1$, és a dir, $y=-1$. Aleshores $t=0-3\cdot(-1)=3$.
+
+    $$
+    \boxed{B^{-1}=\begin{pmatrix}2&-1\\-5&3\end{pmatrix}}
+    $$
+
+    **Comprovació:**
+
+    $$
+    BB^{-1}=
+    \begin{pmatrix}3&1\\5&2\end{pmatrix}
+    \begin{pmatrix}2&-1\\-5&3\end{pmatrix}
+    =
+    \begin{pmatrix}6-5&-3+3\\10-10&-5+6\end{pmatrix}
+    =
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+    $$
+
+---
+
+**4.11.**
+Calcula pel mètode de Gauss-Jordan la inversa de les matrius següents, si existeix. Comprova el resultat.
+
+$$
+A=\begin{pmatrix}7&4\\5&3\end{pmatrix}
+\qquad
+B=\begin{pmatrix}0&2\\3&5\end{pmatrix}
+\qquad
+C=\begin{pmatrix}6&-4\\-9&6\end{pmatrix}
+$$
+
+$$
+D=\begin{pmatrix}0&1&1\\1&2&0\\1&3&2\end{pmatrix}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 4.11"
+    **Matriu $A$**
+
+    Fem zero sota el primer pivot combinant les dues files:
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    7&4&1&0\\
+    5&3&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_2=7F_2-5F_1}
+    \left(
+    \begin{array}{cc|cc}
+    7&4&1&0\\
+    0&1&-5&7
+    \end{array}
+    \right)
+    $$
+
+    Fem zero damunt del segon pivot i convertim el primer pivot en $1$:
+
+    $$
+    \xrightarrow{F_1=F_1-4F_2}
+    \left(
+    \begin{array}{cc|cc}
+    7&0&21&-28\\
+    0&1&-5&7
+    \end{array}
+    \right)
+    \xrightarrow{F_1=\frac17F_1}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&3&-4\\
+    0&1&-5&7
+    \end{array}
+    \right)
+    $$
+
+    $$
+    \boxed{A^{-1}=\begin{pmatrix}3&-4\\-5&7\end{pmatrix}}
+    $$
+
+    **Comprovació:** $AA^{-1}=\begin{pmatrix}21-20&-28+28\\15-15&-20+21\end{pmatrix}=I_2$.
+
+    **Matriu $B$**
+
+    El primer pivot és zero: intercanviem les files.
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    0&2&1&0\\
+    3&5&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_1\leftrightarrow F_2}
+    \left(
+    \begin{array}{cc|cc}
+    3&5&0&1\\
+    0&2&1&0
+    \end{array}
+    \right)
+    $$
+
+    Ja hi ha un zero sota el primer pivot. Fem zero damunt del segon combinant les dues files, per no introduir fraccions:
+
+    $$
+    \xrightarrow{F_1=2F_1-5F_2}
+    \left(
+    \begin{array}{cc|cc}
+    6&0&-5&2\\
+    0&2&1&0
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_1=\frac16F_1\\F_2=\frac12F_2}}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&-\frac56&\frac13\\[2pt]
+    0&1&\frac12&0
+    \end{array}
+    \right)
+    $$
+
+    A la part dreta extraiem el factor comú $\frac16$:
+
+    $$
+    \boxed{B^{-1}=\begin{pmatrix}-\frac56&\frac13\\[2pt]\frac12&0\end{pmatrix}=\frac16\begin{pmatrix}-5&2\\3&0\end{pmatrix}}
+    $$
+
+    **Comprovació:**
+
+    $$
+    BB^{-1}=
+    \begin{pmatrix}0&2\\3&5\end{pmatrix}
+    \cdot\frac16\begin{pmatrix}-5&2\\3&0\end{pmatrix}
+    =
+    \frac16
+    \begin{pmatrix}0+6&0+0\\-15+15&6+0\end{pmatrix}
+    =
+    \frac16
+    \begin{pmatrix}6&0\\0&6\end{pmatrix}
+    =I_2
+    $$
+
+    **Matriu $C$**
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    6&-4&1&0\\
+    -9&6&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_2=2F_2+3F_1}
+    \left(
+    \begin{array}{cc|cc}
+    6&-4&1&0\\
+    0&0&3&2
+    \end{array}
+    \right)
+    $$
+
+    A la part esquerra ha aparegut una fila de zeros. No es pot arribar a la identitat: **$C$ no té inversa**. Les dues files de $C$ són proporcionals: la segona és $-\frac32$ vegades la primera.
+
+    **Matriu $D$**
+
+    El primer pivot és zero: intercanviem les dues primeres files.
+
+    $$
+    \left(
+    \begin{array}{ccc|ccc}
+    0&1&1&1&0&0\\
+    1&2&0&0&1&0\\
+    1&3&2&0&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_1\leftrightarrow F_2}
+    \left(
+    \begin{array}{ccc|ccc}
+    1&2&0&0&1&0\\
+    0&1&1&1&0&0\\
+    1&3&2&0&0&1
+    \end{array}
+    \right)
+    $$
+
+    Fem zeros sota la diagonal:
+
+    $$
+    \xrightarrow{F_3=F_3-F_1}
+    \left(
+    \begin{array}{ccc|ccc}
+    1&2&0&0&1&0\\
+    0&1&1&1&0&0\\
+    0&1&2&0&-1&1
+    \end{array}
+    \right)
+    \xrightarrow{F_3=F_3-F_2}
+    \left(
+    \begin{array}{ccc|ccc}
+    1&2&0&0&1&0\\
+    0&1&1&1&0&0\\
+    0&0&1&-1&-1&1
+    \end{array}
+    \right)
+    $$
+
+    Ara fem zeros damunt de la diagonal, començant per la tercera columna:
+
+    $$
+    \xrightarrow{F_2=F_2-F_3}
+    \left(
+    \begin{array}{ccc|ccc}
+    1&2&0&0&1&0\\
+    0&1&0&2&1&-1\\
+    0&0&1&-1&-1&1
+    \end{array}
+    \right)
+    \xrightarrow{F_1=F_1-2F_2}
+    \left(
+    \begin{array}{ccc|ccc}
+    1&0&0&-4&-1&2\\
+    0&1&0&2&1&-1\\
+    0&0&1&-1&-1&1
+    \end{array}
+    \right)
+    $$
+
+    $$
+    \boxed{D^{-1}=\begin{pmatrix}-4&-1&2\\2&1&-1\\-1&-1&1\end{pmatrix}}
+    $$
+
+    **Comprovació:**
+
+    $$
+    DD^{-1}=
+    \begin{pmatrix}0&1&1\\1&2&0\\1&3&2\end{pmatrix}
+    \begin{pmatrix}-4&-1&2\\2&1&-1\\-1&-1&1\end{pmatrix}
+    $$
+
+    $$
+    DD^{-1}=
+    \begin{pmatrix}
+    0+2-1&0+1-1&0-1+1\\
+    -4+4+0&-1+2+0&2-2+0\\
+    -4+6-2&-1+3-2&2-3+2
+    \end{pmatrix}
+    =I_3
+    $$
+
+---
+
+**4.12.**
+Indica quines de les matrius següents tenen inversa. Justifica-ho esglaonant cada matriu pel mètode de Gauss; no cal calcular-ne la inversa.
+
+$$
+A=\begin{pmatrix}-2&6\\1&-3\end{pmatrix}
+\qquad
+B=\begin{pmatrix}5&3\\7&4\end{pmatrix}
+\qquad
+C=\begin{pmatrix}0&4\\0&-3\end{pmatrix}
+\qquad
+D=\begin{pmatrix}0&2\\5&1\end{pmatrix}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 4.12"
+    Si en esglaonar una matriu quadrada apareix una fila de zeros, no es pot arribar a la identitat i la matriu no té inversa. Si no n'apareix cap, sí que en té. Per decidir-ho n'hi ha prou d'esglaonar la matriu: no cal escriure la identitat al costat.
+
+    **Matriu $A$**
+
+    $$
+    \begin{pmatrix}-2&6\\1&-3\end{pmatrix}
+    \xrightarrow{F_2=2F_2+F_1}
+    \begin{pmatrix}-2&6\\0&0\end{pmatrix}
+    $$
+
+    Apareix una fila de zeros: **$A$ no té inversa**. La primera fila és $-2$ vegades la segona.
+
+    **Matriu $B$**
+
+    $$
+    \begin{pmatrix}5&3\\7&4\end{pmatrix}
+    \xrightarrow{F_2=5F_2-7F_1}
+    \begin{pmatrix}5&3\\0&-1\end{pmatrix}
+    $$
+
+    Els dos pivots són diferents de zero: **$B$ té inversa**.
+
+    **Matriu $C$**
+
+    Tota la primera columna és zero, de manera que no hi ha cap fila que pugui fer de primer pivot, ni tan sols intercanviant-les. Si continuem esglaonant,
+
+    $$
+    \begin{pmatrix}0&4\\0&-3\end{pmatrix}
+    \xrightarrow{F_2=4F_2+3F_1}
+    \begin{pmatrix}0&4\\0&0\end{pmatrix}
+    $$
+
+    Apareix una fila de zeros: **$C$ no té inversa**.
+
+    **Matriu $D$**
+
+    El primer pivot és zero, però la segona fila no comença per zero. Intercanviem les files:
+
+    $$
+    \begin{pmatrix}0&2\\5&1\end{pmatrix}
+    \xrightarrow{F_1\leftrightarrow F_2}
+    \begin{pmatrix}5&1\\0&2\end{pmatrix}
+    $$
+
+    Ja és esglaonada i els dos pivots són diferents de zero: **$D$ té inversa**.
+
+    | Matriu | Esglaonada | Té inversa? |
+    |:--|:--|:--|
+    | $A$ | Fila de zeros | No |
+    | $B$ | Dos pivots no nuls | Sí |
+    | $C$ | Fila de zeros | No |
+    | $D$ | Dos pivots no nuls, després d'intercanviar files | Sí |
+
+    !!! warning "Un zero a la diagonal no és suficient"
+        Que un element de la diagonal sigui zero, com a $D$, no vol dir que la matriu no tingui inversa. Cal intercanviar files i continuar esglaonant. Només quan apareix una fila de zeros podem afirmar que no en té.
+
+---
+
+**4.13.**
+Considera la matriu
+
+$$
+A=\begin{pmatrix}4&5\\2&3\end{pmatrix}
+$$
+
+**a)** Comprova que $A^2=7A-2I$.
+
+**b)** A partir d'aquesta igualtat, justifica que $A$ té inversa i expressa $A^{-1}$ en funció d'$A$ i d'$I$.
+
+**c)** Calcula $A^{-1}$ i comprova el resultat.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.13"
+    **Apartat a)**
+
+    $$
+    A^2=
+    \begin{pmatrix}4&5\\2&3\end{pmatrix}
+    \begin{pmatrix}4&5\\2&3\end{pmatrix}
+    =
+    \begin{pmatrix}26&35\\14&19\end{pmatrix}
+    $$
+
+    $$
+    7A-2I=
+    \begin{pmatrix}28&35\\14&21\end{pmatrix}
+    -
+    \begin{pmatrix}2&0\\0&2\end{pmatrix}
+    =
+    \begin{pmatrix}26&35\\14&19\end{pmatrix}
+    $$
+
+    Per tant, $A^2=7A-2I$.
+
+    **Apartat b)**
+
+    Passem $7A$ a l'altre membre i traiem $A$ factor comú **per l'esquerra**, escrivint $7A=A\cdot7I$:
+
+    $$
+    A^2-7A=-2I
+    \quad\Longrightarrow\quad
+    A(A-7I)=-2I
+    \quad\Longrightarrow\quad
+    A\cdot\frac12(7I-A)=I.
+    $$
+
+    Com que $A$ commuta amb ella mateixa i amb $I$, també es compleix $\frac12(7I-A)\cdot A=I$. Per tant, $A$ té inversa i
+
+    $$
+    A^{-1}=\frac12(7I-A).
+    $$
+
+    **Apartat c)**
+
+    $$
+    A^{-1}=\frac12
+    \begin{pmatrix}7-4&-5\\-2&7-3\end{pmatrix}
+    =
+    \frac12
+    \begin{pmatrix}3&-5\\-2&4\end{pmatrix}
+    $$
+
+    **Comprovació:** $\begin{pmatrix}4&5\\2&3\end{pmatrix}\begin{pmatrix}3&-5\\-2&4\end{pmatrix}=\begin{pmatrix}2&0\\0&2\end{pmatrix}$ i, multiplicant per $\frac12$, obtenim $I_2$.
+
+### Equacions i sistemes matricials
+
+**4.14.**
+Considera les matrius
+
+$$
+A=\begin{pmatrix}-2&4\\1&6\end{pmatrix}
+\qquad
+B=\begin{pmatrix}-1&-4\\2&-3\end{pmatrix}
+$$
+
+Resol les equacions matricials següents:
+
+**a)** $X+A=B$
+
+**b)** $3X-2A=5B$
+
+**c)** Per què en aquestes equacions no cal calcular cap matriu inversa?
+
+??? example "Mostra la solució pas a pas de l'exercici 4.14"
+    **Apartat a)**
+
+    Restem $A$ als dos membres:
+
+    $$
+    X=B-A=
+    \begin{pmatrix}-1&-4\\2&-3\end{pmatrix}
+    -
+    \begin{pmatrix}-2&4\\1&6\end{pmatrix}
+    =
+    \begin{pmatrix}-1+2&-4-4\\2-1&-3-6\end{pmatrix}
+    =
+    \begin{pmatrix}1&-8\\1&-9\end{pmatrix}
+    $$
+
+    **Apartat b)**
+
+    Sumem $2A$ als dos membres i després dividim entre $3$:
+
+    $$
+    3X=5B+2A
+    \quad\Longrightarrow\quad
+    X=\frac13(5B+2A)
+    $$
+
+    $$
+    5B+2A=
+    \begin{pmatrix}-5&-20\\10&-15\end{pmatrix}
+    +
+    \begin{pmatrix}-4&8\\2&12\end{pmatrix}
+    =
+    \begin{pmatrix}-9&-12\\12&-3\end{pmatrix}
+    $$
+
+    $$
+    X=\frac13\begin{pmatrix}-9&-12\\12&-3\end{pmatrix}
+    =
+    \begin{pmatrix}-3&-4\\4&-1\end{pmatrix}
+    $$
+
+    **Comprovació:**
+
+    $$
+    3X-2A=
+    \begin{pmatrix}-9&-12\\12&-3\end{pmatrix}
+    -
+    \begin{pmatrix}-4&8\\2&12\end{pmatrix}
+    =
+    \begin{pmatrix}-5&-20\\10&-15\end{pmatrix}
+    =5B
+    $$
+
+    **Apartat c)**
+
+    La matriu incògnita $X$ només està sumada a altres matrius o multiplicada per un nombre. Per aïllar-la n'hi ha prou de sumar, restar i dividir entre un nombre, com en una equació de primer grau. La inversa només cal quan $X$ està multiplicada per una matriu.
+
+---
+
+**4.15.**
+Suposa que totes les matrius són quadrades i del mateix ordre. Aïlla la matriu $X$ en cada equació, sense fer cap càlcul amb matrius concretes, i indica quines matrius han de tenir inversa per poder-ho fer.
+
+| | |
+|:--|:--|
+| **a)** $XA+B=C$ | **b)** $AXB=C+B$ |
+| **c)** $2X-AX=B$ | **d)** $A(X+B)=C$ |
+| **e)** $XA-B=3X$ | **f)** $ABX=C$ |
+
+!!! tip "Comprova-ho"
+    Pots comprovar el resultat amb l'eina [Equacions matricials](../eines/aillament-equacions-matricials.md) del laboratori de mates.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.15"
+    En cada pas, multipliquem els dos membres pel mateix costat i conservem l'ordre dels factors.
+
+    **Apartat a)**
+
+    $$
+    XA+B=C
+    \quad\Longrightarrow\quad
+    XA=C-B
+    $$
+
+    $A$ multiplica $X$ per la dreta. Multipliquem els dos membres per $A^{-1}$ per la dreta:
+
+    $$
+    \boxed{X=(C-B)A^{-1}}
+    $$
+
+    Cal que $A$ tingui inversa.
+
+    **Apartat b)**
+
+    Multipliquem per $A^{-1}$ per l'esquerra i per $B^{-1}$ per la dreta:
+
+    $$
+    A^{-1}AXBB^{-1}=A^{-1}(C+B)B^{-1}
+    \quad\Longrightarrow\quad
+    \boxed{X=A^{-1}(C+B)B^{-1}}
+    $$
+
+    Cal que $A$ i $B$ tinguin inversa. Si desenvolupem el resultat, com que $A^{-1}BB^{-1}=A^{-1}$, també es pot escriure $X=A^{-1}CB^{-1}+A^{-1}$.
+
+    **Apartat c)**
+
+    $X$ és a la dreta en tots dos termes. Escrivim $2X=2IX$ i traiem $X$ factor comú per la dreta:
+
+    $$
+    2IX-AX=B
+    \quad\Longrightarrow\quad
+    (2I-A)X=B
+    \quad\Longrightarrow\quad
+    \boxed{X=(2I-A)^{-1}B}
+    $$
+
+    Cal que $2I-A$ tingui inversa. No es pot escriure $(2-A)$, perquè no es pot restar una matriu a un nombre.
+
+    **Apartat d)**
+
+    $A$ multiplica tot el parèntesi per l'esquerra. Multipliquem els dos membres per $A^{-1}$ per l'esquerra:
+
+    $$
+    X+B=A^{-1}C
+    \quad\Longrightarrow\quad
+    \boxed{X=A^{-1}C-B}
+    $$
+
+    Cal que $A$ tingui inversa.
+
+    **Apartat e)**
+
+    Passem $3X$ a l'esquerra i $B$ a la dreta. Ara $X$ és a l'esquerra en tots dos termes, de manera que escrivim $3X=X\cdot3I$:
+
+    $$
+    XA-X\cdot3I=B
+    \quad\Longrightarrow\quad
+    X(A-3I)=B
+    \quad\Longrightarrow\quad
+    \boxed{X=B(A-3I)^{-1}}
+    $$
+
+    Cal que $A-3I$ tingui inversa.
+
+    **Apartat f)**
+
+    Primer multipliquem per $A^{-1}$ per l'esquerra i després per $B^{-1}$, també per l'esquerra:
+
+    $$
+    ABX=C
+    \quad\Longrightarrow\quad
+    BX=A^{-1}C
+    \quad\Longrightarrow\quad
+    \boxed{X=B^{-1}A^{-1}C}
+    $$
+
+    Cal que $A$ i $B$ tinguin inversa. El resultat coincideix amb $X=(AB)^{-1}C$, perquè $(AB)^{-1}=B^{-1}A^{-1}$: en invertir un producte, l'ordre dels factors canvia.
+
+    | Equació | Solució | Han de tenir inversa |
+    |:--|:--|:--|
+    | $XA+B=C$ | $X=(C-B)A^{-1}$ | $A$ |
+    | $AXB=C+B$ | $X=A^{-1}(C+B)B^{-1}$ | $A$ i $B$ |
+    | $2X-AX=B$ | $X=(2I-A)^{-1}B$ | $2I-A$ |
+    | $A(X+B)=C$ | $X=A^{-1}C-B$ | $A$ |
+    | $XA-B=3X$ | $X=B(A-3I)^{-1}$ | $A-3I$ |
+    | $ABX=C$ | $X=B^{-1}A^{-1}C$ | $A$ i $B$ |
+
+---
+
+**4.16.**
+Considera les matrius
+
+$$
+A=\begin{pmatrix}4&3\\5&4\end{pmatrix}
+\qquad
+B=\begin{pmatrix}4&2\\5&3\end{pmatrix}
+$$
+
+**a)** Resol l'equació $AX=B$.
+
+**b)** Resol l'equació $XA=B$.
+
+**c)** Per què les dues solucions no coincideixen?
+
+??? example "Mostra la solució pas a pas de l'exercici 4.16"
+    Totes dues equacions necessiten $A^{-1}$. La calculem pel mètode de Gauss-Jordan, combinant files amb els dos coeficients per evitar fraccions:
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    4&3&1&0\\
+    5&4&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_2=4F_2-5F_1}
+    \left(
+    \begin{array}{cc|cc}
+    4&3&1&0\\
+    0&1&-5&4
+    \end{array}
+    \right)
+    $$
+
+    $$
+    \xrightarrow{F_1=F_1-3F_2}
+    \left(
+    \begin{array}{cc|cc}
+    4&0&16&-12\\
+    0&1&-5&4
+    \end{array}
+    \right)
+    \xrightarrow{F_1=\frac14F_1}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&4&-3\\
+    0&1&-5&4
+    \end{array}
+    \right)
+    $$
+
+    $$
+    A^{-1}=\begin{pmatrix}4&-3\\-5&4\end{pmatrix}
+    $$
+
+    **Apartat a)**
+
+    $A$ multiplica $X$ per l'esquerra. Multipliquem els dos membres per $A^{-1}$ **per l'esquerra**:
+
+    $$
+    AX=B
+    \quad\Longrightarrow\quad
+    X=A^{-1}B=
+    \begin{pmatrix}4&-3\\-5&4\end{pmatrix}
+    \begin{pmatrix}4&2\\5&3\end{pmatrix}
+    =
+    \begin{pmatrix}1&-1\\0&2\end{pmatrix}
+    $$
+
+    **Comprovació:** $AX=\begin{pmatrix}4+0&-4+6\\5+0&-5+8\end{pmatrix}=\begin{pmatrix}4&2\\5&3\end{pmatrix}=B$.
+
+    **Apartat b)**
+
+    Ara $A$ multiplica $X$ per la dreta. Multipliquem els dos membres per $A^{-1}$ **per la dreta**:
+
+    $$
+    XA=B
+    \quad\Longrightarrow\quad
+    X=BA^{-1}=
+    \begin{pmatrix}4&2\\5&3\end{pmatrix}
+    \begin{pmatrix}4&-3\\-5&4\end{pmatrix}
+    =
+    \begin{pmatrix}6&-4\\5&-3\end{pmatrix}
+    $$
+
+    **Comprovació:** $XA=\begin{pmatrix}24-20&18-16\\20-15&15-12\end{pmatrix}=\begin{pmatrix}4&2\\5&3\end{pmatrix}=B$.
+
+    **Apartat c)**
+
+    Perquè el producte de matrius no és commutatiu: en general, $A^{-1}B\neq BA^{-1}$. Per això cal identificar sempre a quin costat de $X$ hi ha cada matriu.
+
+---
+
+**4.17.**
+Resol les equacions matricials següents:
+
+**a)** $AX+B=3X$, on
+
+$$
+A=\begin{pmatrix}7&3\\5&7\end{pmatrix}
+\qquad
+B=\begin{pmatrix}-10&4\\-13&5\end{pmatrix}
+$$
+
+**b)** $XA-X=C$, on
+
+$$
+A=\begin{pmatrix}4&5\\1&3\end{pmatrix}
+\qquad
+C=\begin{pmatrix}3&5\\-5&-8\end{pmatrix}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 4.17"
+    **Apartat a)**
+
+    Agrupem els termes amb $X$ en un membre:
+
+    $$
+    AX-3X=-B.
+    $$
+
+    Per treure $X$ factor comú per la dreta, escrivim $3X=3IX$:
+
+    $$
+    (A-3I)X=-B.
+    $$
+
+    $$
+    A-3I=
+    \begin{pmatrix}7&3\\5&7\end{pmatrix}
+    -
+    \begin{pmatrix}3&0\\0&3\end{pmatrix}
+    =
+    \begin{pmatrix}4&3\\5&4\end{pmatrix}
+    $$
+
+    Aquesta matriu és la de l'exercici 4.16, de manera que $(A-3I)^{-1}=\begin{pmatrix}4&-3\\-5&4\end{pmatrix}$. Multipliquem per l'esquerra:
+
+    $$
+    X=(A-3I)^{-1}(-B)=
+    \begin{pmatrix}4&-3\\-5&4\end{pmatrix}
+    \begin{pmatrix}10&-4\\13&-5\end{pmatrix}
+    =
+    \begin{pmatrix}1&-1\\2&0\end{pmatrix}
+    $$
+
+    **Comprovació:** $AX+B=\begin{pmatrix}13&-7\\19&-5\end{pmatrix}+\begin{pmatrix}-10&4\\-13&5\end{pmatrix}=\begin{pmatrix}3&-3\\6&0\end{pmatrix}=3X$.
+
+    **Apartat b)**
+
+    Ara $X$ és a l'esquerra en tots dos termes. Escrivim $X=XI$ i traiem $X$ factor comú per l'esquerra:
+
+    $$
+    XA-XI=C
+    \quad\Longrightarrow\quad
+    X(A-I)=C
+    \quad\Longrightarrow\quad
+    X=C(A-I)^{-1}.
+    $$
+
+    Calculem $A-I=\begin{pmatrix}3&5\\1&2\end{pmatrix}$ i la seva inversa. Posem a dalt la fila que comença per $1$:
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    3&5&1&0\\
+    1&2&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_1\leftrightarrow F_2}
+    \left(
+    \begin{array}{cc|cc}
+    1&2&0&1\\
+    3&5&1&0
+    \end{array}
+    \right)
+    \xrightarrow{F_2=F_2-3F_1}
+    \left(
+    \begin{array}{cc|cc}
+    1&2&0&1\\
+    0&-1&1&-3
+    \end{array}
+    \right)
+    $$
+
+    $$
+    \xrightarrow{F_1=F_1+2F_2}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&2&-5\\
+    0&-1&1&-3
+    \end{array}
+    \right)
+    \xrightarrow{F_2=-F_2}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&2&-5\\
+    0&1&-1&3
+    \end{array}
+    \right)
+    $$
+
+    $$
+    X=C(A-I)^{-1}=
+    \begin{pmatrix}3&5\\-5&-8\end{pmatrix}
+    \begin{pmatrix}2&-5\\-1&3\end{pmatrix}
+    =
+    \begin{pmatrix}1&0\\-2&1\end{pmatrix}
+    $$
+
+    **Comprovació:** $XA-X=\begin{pmatrix}4&5\\-7&-7\end{pmatrix}-\begin{pmatrix}1&0\\-2&1\end{pmatrix}=\begin{pmatrix}3&5\\-5&-8\end{pmatrix}=C$.
+
+    !!! warning "Error habitual"
+        No escriguis $(A-3)X$ ni $X(A-1)$: no es pot restar un nombre a una matriu. Cal escriure la matriu identitat, $3I$ o $I$, abans de treure factor comú.
+
+---
+
+**4.18.**
+Resol el sistema d'equacions matricials
+
+$$
+\begin{cases}
+2X+Y=
+\begin{pmatrix}
+3&2\\
+2&7
+\end{pmatrix}\\[6pt]
+X-3Y=
+\begin{pmatrix}
+5&-13\\
+-6&0
+\end{pmatrix}
+\end{cases}
+$$
+
+??? example "Mostra la solució pas a pas de l'exercici 4.18"
+    Multipliquem la primera equació per $3$ i hi sumem la segona per eliminar $Y$:
+
+    $$
+    6X+3Y+X-3Y=
+    \begin{pmatrix}9&6\\6&21\end{pmatrix}
+    +
+    \begin{pmatrix}5&-13\\-6&0\end{pmatrix}
+    \quad\Longrightarrow\quad
+    7X=\begin{pmatrix}14&-7\\0&21\end{pmatrix}
+    $$
+
+    Dividim tots els elements entre $7$:
+
+    $$
+    X=\begin{pmatrix}2&-1\\0&3\end{pmatrix}
+    $$
+
+    Aïllem $Y$ de la primera equació:
+
+    $$
+    Y=
+    \begin{pmatrix}3&2\\2&7\end{pmatrix}
+    -2X=
+    \begin{pmatrix}3&2\\2&7\end{pmatrix}
+    -
+    \begin{pmatrix}4&-2\\0&6\end{pmatrix}
+    =
+    \begin{pmatrix}-1&4\\2&1\end{pmatrix}
+    $$
+
+    $$
+    \boxed{
+    X=\begin{pmatrix}2&-1\\0&3\end{pmatrix}
+    \qquad
+    Y=\begin{pmatrix}-1&4\\2&1\end{pmatrix}
+    }
+    $$
+
+    **Comprovació a la segona equació:** $X-3Y=\begin{pmatrix}2+3&-1-12\\0-6&3-3\end{pmatrix}=\begin{pmatrix}5&-13\\-6&0\end{pmatrix}$.
+
+---
+
+**4.19.**
+Considera el sistema
+
+$$
+\begin{cases}
+y+z=1\\
+x+2y=1\\
+x+3y+2z=4
+\end{cases}
+$$
+
+**a)** Escriu-lo en la forma $MX=N$ i resol-lo amb la matriu inversa. Fixa't que la matriu de coeficients és la matriu $D$ de l'exercici 4.11.
+
+**b)** Resol el sistema que té els mateixos coeficients i els termes independents $2$, $1$ i $3$, respectivament. Per què no cal tornar a esglaonar?
+
+??? example "Mostra la solució pas a pas de l'exercici 4.19"
+    **Apartat a)**
+
+    Ordenem les incògnites $x$, $y$, $z$ i escrivim els zeros dels coeficients que falten:
+
+    $$
+    \underbrace{\begin{pmatrix}0&1&1\\1&2&0\\1&3&2\end{pmatrix}}_{M}
+    \underbrace{\begin{pmatrix}x\\y\\z\end{pmatrix}}_{X}
+    =
+    \underbrace{\begin{pmatrix}1\\1\\4\end{pmatrix}}_{N}
+    $$
+
+    A l'exercici 4.11 hem obtingut
+
+    $$
+    M^{-1}=\begin{pmatrix}-4&-1&2\\2&1&-1\\-1&-1&1\end{pmatrix}
+    $$
+
+    Per tant,
+
+    $$
+    X=M^{-1}N=
+    \begin{pmatrix}-4&-1&2\\2&1&-1\\-1&-1&1\end{pmatrix}
+    \begin{pmatrix}1\\1\\4\end{pmatrix}
+    =
+    \begin{pmatrix}-4-1+8\\2+1-4\\-1-1+4\end{pmatrix}
+    =
+    \begin{pmatrix}3\\-1\\2\end{pmatrix}
+    $$
+
+    La solució és $\boxed{x=3,\ y=-1,\ z=2}$.
+
+    **Comprovació:** $-1+2=1$, $\ 3-2=1$ i $3-3+4=4$.
+
+    **Apartat b)**
+
+    Només canvia la columna dels termes independents. Com que ja coneixem $M^{-1}$, n'hi ha prou de fer un producte:
+
+    $$
+    X=M^{-1}\begin{pmatrix}2\\1\\3\end{pmatrix}
+    =
+    \begin{pmatrix}-8-1+6\\4+1-3\\-2-1+3\end{pmatrix}
+    =
+    \begin{pmatrix}-3\\2\\0\end{pmatrix}
+    $$
+
+    La solució és $\boxed{x=-3,\ y=2,\ z=0}$.
+
+    **Comprovació:** $2+0=2$, $\ -3+4=1$ i $-3+6+0=3$.
+
+    Aquest és l'avantatge del mètode: quan cal resoldre diversos sistemes amb la mateixa matriu de coeficients, la inversa es calcula una sola vegada.
+
+### Problemes de matrius
+
+**4.20.**
+Una empresa de càtering ofereix tres menús: infantil ($I$), estàndard ($E$) i vegetarià ($V$). Aquest cap de setmana té dos encàrrecs: un casament ($C$), amb $15$ menús infantils, $80$ d'estàndard i $20$ de vegetarians, i un congrés ($G$), amb $120$ menús estàndard i $30$ de vegetarians.
+
+Cada menú infantil necessita $0{,}3\,\text{kg}$ d'aliments i $5$ minuts de feina del personal; cada menú estàndard, $0{,}5\,\text{kg}$ i $8$ minuts, i cada menú vegetarià, $0{,}4\,\text{kg}$ i $6$ minuts. Els aliments costen, de mitjana, $12\,€/\text{kg}$ i cada minut de feina del personal, $0{,}50\,€$.
+
+**a)** Escriu la matriu $Q$ dels encàrrecs (files: encàrrecs; columnes: menús), la matriu $N$ dels recursos que necessita cada menú i la matriu columna $c$ dels costos de cada recurs.
+
+**b)** Calcula $QN$ i interpreta'n els elements.
+
+**c)** Calcula $Nc$ i $QNc$. Què representen?
+
+**d)** El producte $NQ$ també es pot calcular. Té sentit en aquest context? Justifica-ho.
+
+??? example "Mostra la solució pas a pas de l'exercici 4.20"
+    **Apartat a)**
+
+    Perquè els productes encaixin, les columnes de $Q$ i les files de $N$ han de seguir el mateix ordre de menús, i les columnes de $N$ i les files de $c$, el mateix ordre de recursos. El congrés no demana menús infantils, de manera que hi escrivim un $0$:
+
+    $$
+    Q=
+    \begin{array}{cc}
+    &\begin{array}{ccc}I\!&\!E\!&\!V\end{array}\\[0.5mm]
+    \begin{array}{c}C\\G\end{array}
+    &
+    \begin{pmatrix}
+    15&80&20\\
+    0&120&30
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    $$
+    N=
+    \begin{array}{cc}
+    &\begin{array}{cc}\text{kg}\!&\!\text{min}\end{array}\\[0.5mm]
+    \begin{array}{c}I\\E\\V\end{array}
+    &
+    \begin{pmatrix}
+    0{,}3&5\\
+    0{,}5&8\\
+    0{,}4&6
+    \end{pmatrix}
+    \end{array}
+    \qquad
+    c=
+    \begin{array}{cc}
+    &\begin{array}{c}€\end{array}\\[0.5mm]
+    \begin{array}{c}\text{kg}\\\text{min}\end{array}
+    &
+    \begin{pmatrix}
+    12\\
+    0{,}5
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    **Apartat b)**
+
+    $Q$ és d'ordre $2\times3$ i $N$, d'ordre $3\times2$; el producte és d'ordre $2\times2$:
+
+    $$
+    QN=
+    \begin{pmatrix}
+    15\cdot0{,}3+80\cdot0{,}5+20\cdot0{,}4&15\cdot5+80\cdot8+20\cdot6\\
+    0\cdot0{,}3+120\cdot0{,}5+30\cdot0{,}4&0\cdot5+120\cdot8+30\cdot6
+    \end{pmatrix}
+    $$
+
+    $$
+    QN=
+    \begin{array}{cc}
+    &\begin{array}{cc}\text{kg}\!&\!\text{min}\end{array}\\[0.5mm]
+    \begin{array}{c}C\\G\end{array}
+    &
+    \begin{pmatrix}
+    52{,}5&835\\
+    72&1140
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Les files són els encàrrecs i les columnes, els recursos. El casament necessita $52{,}5\,\text{kg}$ d'aliments i $835$ minuts de feina, i el congrés, $72\,\text{kg}$ i $1140$ minuts.
+
+    **Apartat c)**
+
+    $$
+    Nc=
+    \begin{pmatrix}
+    0{,}3\cdot12+5\cdot0{,}5\\
+    0{,}5\cdot12+8\cdot0{,}5\\
+    0{,}4\cdot12+6\cdot0{,}5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    6{,}1\\
+    10\\
+    7{,}8
+    \end{pmatrix}
+    $$
+
+    És el cost de preparació de cada menú: un menú infantil costa $6{,}10\,€$; un d'estàndard, $10\,€$, i un de vegetarià, $7{,}80\,€$.
+
+    $$
+    QNc=(QN)c=
+    \begin{pmatrix}
+    52{,}5\cdot12+835\cdot0{,}5\\
+    72\cdot12+1140\cdot0{,}5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    1047{,}5\\
+    1434
+    \end{pmatrix}
+    $$
+
+    És el cost de preparació de cada encàrrec: $1047{,}50\,€$ el del casament i $1434\,€$ el del congrés. També es pot calcular com $Q(Nc)$, amb el cost de cada menú:
+
+    $$
+    Q(Nc)=
+    \begin{pmatrix}
+    15\cdot6{,}1+80\cdot10+20\cdot7{,}8\\
+    0\cdot6{,}1+120\cdot10+30\cdot7{,}8
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    1047{,}5\\
+    1434
+    \end{pmatrix}
+    $$
+
+    **Apartat d)**
+
+    $N$ és d'ordre $3\times2$ i $Q$ d'ordre $2\times3$, de manera que $NQ$ existeix i és d'ordre $3\times3$. Però no té sentit: cada element multiplicaria els recursos d'un menú (columnes de $N$: kg i minuts) per les quantitats d'un encàrrec (files de $Q$). Les categories que es combinen no coincideixen. Que un producte es pugui calcular no vol dir que tingui significat.
+
+---
+
+**4.21.**
+Dues companyies elèctriques, A i B, es reparteixen els clients d'una comarca. Cada any, el $80\,\%$ dels clients d'A s'hi queden i el $20\,\%$ passen a B, mentre que el $90\,\%$ dels clients de B s'hi queden i el $10\,\%$ passen a A. No hi ha clients nous ni baixes. Aquest any, A té $5900$ clients i B, $4100$.
+
+**a)** Escriu la matriu $M$ que, multiplicada per la columna dels clients d'un any, dona la columna dels clients de l'any següent. Indica què representen les files i les columnes.
+
+**b)** Calcula quants clients tindrà cada companyia l'any vinent i d'aquí a dos anys. Comprova que el resultat de dos anys coincideix amb $M^2$ multiplicada pels clients d'aquest any.
+
+**c)** Calcula $M^{-1}$ i utilitza-la per saber quants clients tenia cada companyia l'any passat.
+
+**d)** Per què el nombre total de clients no canvia?
+
+??? example "Mostra la solució pas a pas de l'exercici 4.21"
+    **Apartat a)**
+
+    Si $a$ i $b$ són els clients d'A i de B d'un any, l'any següent A en tindrà $0{,}8a+0{,}1b$ i B, $0{,}2a+0{,}9b$. Escrivim aquestes expressions en una matriu columna i les expressem com un producte:
+
+    $$
+    \begin{pmatrix}
+    0{,}8a+0{,}1b\\
+    0{,}2a+0{,}9b
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    0{,}8&0{,}1\\
+    0{,}2&0{,}9
+    \end{pmatrix}
+    \begin{pmatrix}
+    a\\
+    b
+    \end{pmatrix}
+    $$
+
+    Per tant,
+
+    $$
+    M=
+    \begin{array}{cc}
+    &\begin{array}{cc}\text{d'A}\!&\!\text{de B}\end{array}\\[0.5mm]
+    \begin{array}{c}\text{a A}\\\text{a B}\end{array}
+    &
+    \begin{pmatrix}
+    0{,}8&0{,}1\\
+    0{,}2&0{,}9
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Les columnes indiquen la companyia d'origen i les files, la companyia on són els clients l'any següent.
+
+    **Apartat b)**
+
+    $$
+    M\begin{pmatrix}5900\\4100\end{pmatrix}
+    =
+    \begin{pmatrix}0{,}8\cdot5900+0{,}1\cdot4100\\0{,}2\cdot5900+0{,}9\cdot4100\end{pmatrix}
+    =
+    \begin{pmatrix}5130\\4870\end{pmatrix}
+    $$
+
+    $$
+    M\begin{pmatrix}5130\\4870\end{pmatrix}
+    =
+    \begin{pmatrix}0{,}8\cdot5130+0{,}1\cdot4870\\0{,}2\cdot5130+0{,}9\cdot4870\end{pmatrix}
+    =
+    \begin{pmatrix}4591\\5409\end{pmatrix}
+    $$
+
+    L'any vinent A tindrà $5130$ clients i B, $4870$. D'aquí a dos anys, A en tindrà $4591$ i B, $5409$.
+
+    Comprovem-ho amb $M^2$:
+
+    $$
+    M^2=
+    \begin{pmatrix}0{,}8&0{,}1\\0{,}2&0{,}9\end{pmatrix}
+    \begin{pmatrix}0{,}8&0{,}1\\0{,}2&0{,}9\end{pmatrix}
+    =
+    \begin{pmatrix}0{,}66&0{,}17\\0{,}34&0{,}83\end{pmatrix}
+    $$
+
+    $$
+    M^2\begin{pmatrix}5900\\4100\end{pmatrix}
+    =
+    \begin{pmatrix}3894+697\\2006+3403\end{pmatrix}
+    =
+    \begin{pmatrix}4591\\5409\end{pmatrix}
+    $$
+
+    **Apartat c)**
+
+    Per evitar decimals, primer multipliquem les dues files per $10$. Aquesta transformació també s'aplica a la part dreta:
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    0{,}8&0{,}1&1&0\\
+    0{,}2&0{,}9&0&1
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_1=10F_1\\F_2=10F_2}}
+    \left(
+    \begin{array}{cc|cc}
+    8&1&10&0\\
+    2&9&0&10
+    \end{array}
+    \right)
+    \xrightarrow{F_2=4F_2-F_1}
+    \left(
+    \begin{array}{cc|cc}
+    8&1&10&0\\
+    0&35&-10&40
+    \end{array}
+    \right)
+    $$
+
+    $$
+    \xrightarrow{F_1=35F_1-F_2}
+    \left(
+    \begin{array}{cc|cc}
+    280&0&360&-40\\
+    0&35&-10&40
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_1=\frac{1}{280}F_1\\F_2=\frac{1}{35}F_2}}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&\frac97&-\frac17\\[2pt]
+    0&1&-\frac27&\frac87
+    \end{array}
+    \right)
+    $$
+
+    $$
+    M^{-1}=\frac17\begin{pmatrix}9&-1\\-2&8\end{pmatrix}
+    $$
+
+    Si $\begin{pmatrix}a\\b\end{pmatrix}$ són els clients de l'any passat, $M\begin{pmatrix}a\\b\end{pmatrix}=\begin{pmatrix}5900\\4100\end{pmatrix}$. Multipliquem per $M^{-1}$ per l'esquerra:
+
+    $$
+    \begin{pmatrix}a\\b\end{pmatrix}
+    =
+    \frac17\begin{pmatrix}9&-1\\-2&8\end{pmatrix}
+    \begin{pmatrix}5900\\4100\end{pmatrix}
+    =
+    \frac17\begin{pmatrix}49\,000\\21\,000\end{pmatrix}
+    =
+    \begin{pmatrix}7000\\3000\end{pmatrix}
+    $$
+
+    L'any passat, A tenia $7000$ clients i B, $3000$.
+
+    **Comprovació:**
+
+    $$
+    M\begin{pmatrix}7000\\3000\end{pmatrix}
+    =
+    \begin{pmatrix}0{,}8\cdot7000+0{,}1\cdot3000\\0{,}2\cdot7000+0{,}9\cdot3000\end{pmatrix}
+    =
+    \begin{pmatrix}5900\\4100\end{pmatrix}
+    $$
+
+    **Apartat d)**
+
+    Cada columna de $M$ suma $1$: tots els clients d'una companyia continuen a la mateixa o passen a l'altra. Per això el total es manté en $10\,000$ clients: $5900+4100=5130+4870=4591+5409=10\,000$.
+
+---
+
+**4.22.**
+Per enviar un missatge xifrat, s'assigna a cada lletra el seu lloc a l'alfabet ($A=1$, $B=2$, ..., $Z=26$) i a l'espai, el $0$:
+
+espai $0$ · A $1$ · B $2$ · C $3$ · D $4$ · E $5$ · F $6$ · G $7$ · H $8$ · I $9$ · J $10$ · K $11$ · L $12$ · M $13$ · N $14$ · O $15$ · P $16$ · Q $17$ · R $18$ · S $19$ · T $20$ · U $21$ · V $22$ · W $23$ · X $24$ · Y $25$ · Z $26$
+
+Els nombres s'agrupen de dos en dos, com a columnes d'una matriu $M$ de dues files, i s'envia la matriu $E=AM$, on
+
+$$
+A=\begin{pmatrix}4&3\\5&4\end{pmatrix}
+$$
+
+**a)** Xifra la paraula PAU. Afegeix un espai al final perquè el nombre de símbols sigui parell.
+
+**b)** Has rebut la matriu
+
+$$
+E=\begin{pmatrix}55&134&99\\69&172&129\end{pmatrix}
+$$
+
+Explica com es pot recuperar $M$ i desxifra el missatge.
+
+**c)** Per què la matriu de xifratge ha de tenir inversa?
+
+??? example "Mostra la solució pas a pas de l'exercici 4.22"
+    **Apartat a)**
+
+    PAU seguida d'un espai correspon a $16$, $1$, $21$ i $0$. Les parelles $(16,1)$ i $(21,0)$ són les columnes de $M$:
+
+    $$
+    E=AM=
+    \begin{pmatrix}4&3\\5&4\end{pmatrix}
+    \begin{pmatrix}16&21\\1&0\end{pmatrix}
+    =
+    \begin{pmatrix}64+3&84+0\\80+4&105+0\end{pmatrix}
+    =
+    \begin{pmatrix}67&84\\84&105\end{pmatrix}
+    $$
+
+    **Apartat b)**
+
+    Com que $E=AM$ i $A$ multiplica $M$ per l'esquerra, $M=A^{-1}E$. La matriu $A$ és la de l'exercici 4.16, de manera que
+
+    $$
+    A^{-1}=\begin{pmatrix}4&-3\\-5&4\end{pmatrix}
+    $$
+
+    $$
+    M=A^{-1}E=
+    \begin{pmatrix}4&-3\\-5&4\end{pmatrix}
+    \begin{pmatrix}55&134&99\\69&172&129\end{pmatrix}
+    $$
+
+    $$
+    M=
+    \begin{pmatrix}
+    220-207&536-516&396-387\\
+    -275+276&-670+688&-495+516
+    \end{pmatrix}
+    =
+    \begin{pmatrix}13&20&9\\1&18&21\end{pmatrix}
+    $$
+
+    Llegim les columnes per ordre: $(13,1)$, $(20,18)$ i $(9,21)$, és a dir, M-A, T-R, I-U. El missatge és **MATRIU**.
+
+    **Apartat c)**
+
+    Per desxifrar cal calcular $M=A^{-1}E$. Si $A$ no tingués inversa, no podríem aïllar $M$, i dos missatges diferents podrien donar la mateixa matriu xifrada.
+
 ## Problemes PAU
 
 ### Sistemes d'equacions en context
@@ -1983,6 +4170,1055 @@ El preu del paquet de tipus A és de $550\,€$ i el del paquet de tipus B és d
     **Apartat b)**
 
     Els ingressos són $3\cdot50+5\cdot20+10\cdot15=150+100+150=400\,€$.
+
+---
+
+### Matrius
+
+**PAU.AL.15.**
+**Matrícules d'una universitat**
+
+*(apartat 4.2 de l'opció A de l'exercici 4 de la convocatòria ordinària de 2026, sèrie 1; 1,25 punts)*. La taula següent recull el nombre d'estudiants de grau (G), màster (M) i doctorat (D) matriculats a les tres facultats —Ciències (C), Enginyeria (E) i Lletres (L)— d'una petita universitat.
+
+| Facultat | Grau (G) | Màster (M) | Doctorat (D) | Total |
+|:--|:--|:--|:--|:--|
+| Ciències (C) | $450$ | $172$ | $41$ | $663$ |
+| Enginyeria (E) | $445$ | $178$ | $45$ | $668$ |
+| Lletres (L) | $438$ | $183$ | $48$ | $669$ |
+| Total | $1333$ | $533$ | $134$ | $2000$ |
+
+- **4.2.** Expresseu la informació de la taula (sense els totals) mitjançant una matriu $3\times3$ i calculeu, utilitzant un producte de matrius, el vector amb el nombre total d'estudiants de grau, màster i doctorat de la universitat.
+
+    Sabem que els estudiants de grau paguen $1000\,€$ de matrícula; els de màster, $1500\,€$, i els de doctorat, $500\,€$. Per mitjà d'un producte de matrius, calculeu l'import total que ingressa la universitat en concepte de matrícules. *[1,25 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.15"
+    Escrivim la matriu amb les facultats a les files i els nivells a les columnes:
+
+    $$
+    E=
+    \begin{array}{cc}
+    &\begin{array}{ccc}\text{G}\!&\!\text{M}\!&\!\text{D}\end{array}\\[0.5mm]
+    \begin{array}{c}\text{C}\\\text{E}\\\text{L}\end{array}
+    &
+    \begin{pmatrix}
+    450&172&41\\
+    445&178&45\\
+    438&183&48
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Per sumar els elements de cada columna, multipliquem $E$ per l'esquerra per una matriu fila d'uns:
+
+    $$
+    \begin{pmatrix}1&1&1\end{pmatrix}E
+    =
+    \begin{pmatrix}450+445+438&172+178+183&41+45+48\end{pmatrix}
+    $$
+
+    $$
+    \begin{pmatrix}1&1&1\end{pmatrix}E
+    =
+    \begin{pmatrix}1333&533&134\end{pmatrix}
+    $$
+
+    La universitat té $1333$ estudiants de grau, $533$ de màster i $134$ de doctorat, com indica la fila de totals de la taula.
+
+    Escrivim els preus de la matrícula en una matriu columna, amb el mateix ordre G, M, D, i la multipliquem pel vector anterior:
+
+    $$
+    \begin{pmatrix}1333&533&134\end{pmatrix}
+    \begin{pmatrix}1000\\1500\\500\end{pmatrix}
+    =1\,333\,000+799\,500+67\,000=2\,199\,500
+    $$
+
+    La universitat ingressa $2\,199\,500\,€$ en concepte de matrícules.
+
+---
+
+**PAU.AL.16.**
+**Repartiment de la feina d'una associació**
+
+*(apartat 4.2 de l'opció B de l'exercici 4 de la convocatòria extraordinària de 2026, sèrie 2; 1 punt)*. Tres amics —la Carme, el Saïd i el Martí— van crear fa uns anys una petita associació dedicada a la divulgació de les matemàtiques. En aquesta associació organitzen tallers per a famílies, visiten escoles i instituts d'arreu del país, i imparteixen seminaris en línia.
+
+El curs passat van dur a terme un total de $240$ activitats, repartides en $96$ tallers familiars, $84$ xerrades en escoles o instituts i $60$ seminaris en línia. Els dos primers tipus d'activitats són presencials, mentre que els seminaris en línia, evidentment, no ho són.
+
+- **4.2.** Els tres amics també volen analitzar com es reparteixen entre ells la feina de preparació de les activitats. Per fer-ho, revisen com s'han organitzat durant una setmana concreta. En total, en aquest període han dedicat $24$ hores a la preparació de tallers familiars, $21$ hores a la preparació de xerrades en centres educatius i $15$ hores a la preparació de seminaris en línia.
+
+    La distribució de la feina de preparació de cadascun dels tres tipus d'activitats és la següent:
+
+    - la Carme s'encarrega del $50\,\%$ de la preparació dels tallers familiars, del $30\,\%$ de la preparació de les xerrades en centres educatius i del $20\,\%$ de la preparació dels seminaris en línia;
+    - el Saïd s'encarrega del $30\,\%$ de la preparació dels tallers familiars, del $50\,\%$ de la preparació de les xerrades en centres educatius i del $20\,\%$ de la preparació dels seminaris en línia;
+    - el Martí s'encarrega del $20\,\%$ de la preparació dels tallers familiars, del $20\,\%$ de la preparació de les xerrades en centres educatius i del $60\,\%$ de la preparació dels seminaris en línia.
+
+    Agrupem aquesta informació en les matrius següents:
+
+    $$
+    R=\begin{pmatrix}0{,}50&0{,}30&0{,}20\\0{,}30&0{,}50&0{,}20\\0{,}20&0{,}20&0{,}60\end{pmatrix},
+    \qquad
+    h=\begin{pmatrix}24\\21\\15\end{pmatrix},
+    $$
+
+    que corresponen a la matriu de repartiment percentual i al vector d'hores totals dedicades a la preparació de cada tipus d'activitat, respectivament.
+
+    Calculeu el vector $R\cdot h$ i interpreteu-ne el significat.
+
+    Quin dels tres amics ha dedicat més hores a la preparació d'activitats? *[1 punt]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.16"
+    A $R$, cada fila correspon a una persona (Carme, Saïd, Martí) i cada columna, a un tipus d'activitat (tallers, xerrades, seminaris). A $h$, cada fila correspon a un tipus d'activitat, en el mateix ordre.
+
+    $$
+    R\cdot h=
+    \begin{pmatrix}
+    0{,}50\cdot24+0{,}30\cdot21+0{,}20\cdot15\\
+    0{,}30\cdot24+0{,}50\cdot21+0{,}20\cdot15\\
+    0{,}20\cdot24+0{,}20\cdot21+0{,}60\cdot15
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    12+6{,}3+3\\
+    7{,}2+10{,}5+3\\
+    4{,}8+4{,}2+9
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    21{,}3\\
+    20{,}7\\
+    18
+    \end{pmatrix}
+    $$
+
+    Cada element és el nombre total d'hores que cada amic ha dedicat aquella setmana a preparar activitats: la Carme, $21{,}3$ hores; el Saïd, $20{,}7$ hores, i el Martí, $18$ hores.
+
+    **Comprovació:** $21{,}3+20{,}7+18=60=24+21+15$, perquè cada columna de $R$ suma $1$.
+
+    La persona que ha dedicat més hores a la preparació és **la Carme**.
+
+---
+
+**PAU.AL.17.**
+**Detalls per a un congrés**
+
+*(apartat a) de l'opció B de l'exercici 4 de la convocatòria ordinària de 2025, sèrie 1; 1,25 punts)*. Al Congrés Català d'Educació Matemàtica (C2EM), que se celebrarà a Lleida el proper mes de juliol, hi assistiran docents d'universitat, d'educació secundària i d'educació infantil i primària.
+
+A hores d'ara, un $10\,\%$ dels docents inscrits són d'universitat, un $50\,\%$ són de secundària i la resta són d'infantil i primària. D'altra banda, un $40\,\%$ dels docents inscrits d'universitat, un $52\,\%$ dels docents inscrits de secundària i un $65\,\%$ dels docents inscrits d'infantil i primària són dones.
+
+- **a)** L'organització del Congrés vol donar un detall diferent a cada grup de docents: el detall de tipus $D1$ per al grup de docents universitaris, el detall de tipus $D2$ per al grup de docents de secundària i el detall de tipus $D3$ per al grup de docents d'infantil i primària. Han demanat pressupost a tres empreses diferents, que anomenarem $E1$, $E2$ i $E3$. La matriu següent ens dona els preus unitaris, en euros, de cada detall de tipus $D1$, $D2$ i $D3$ (files) segons les empreses $E1$, $E2$ i $E3$ (columnes):
+
+    $$
+    \begin{pmatrix}
+    1{,}25&1&1{,}25\\
+    0{,}75&1&1{,}15\\
+    1&0{,}85&0{,}80
+    \end{pmatrix}
+    $$
+
+    La comanda de l'organització es pot representar com un vector fila $(x,y,z)$, en què $x$ representa la quantitat de detalls de tipus $D1$, $y$ és la quantitat de detalls de tipus $D2$ i $z$ correspon a la quantitat de detalls de tipus $D3$ que cal comprar.
+
+    L'organització treballa amb la previsió que al Congrés hi assistiran $1000$ persones en total i que els percentatges de cada grup de docents respecte al total seran els mateixos que els que hi ha en aquest moment de la inscripció.
+
+    Calculeu mitjançant un producte de matrius quina empresa ofereix el millor preu i quin és aquest preu. *[1,25 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.17"
+    Amb $1000$ assistents i els mateixos percentatges, hi haurà $10\,\%$ d'universitat, $50\,\%$ de secundària i $40\,\%$ d'infantil i primària:
+
+    $$
+    x=100,\qquad y=500,\qquad z=400.
+    $$
+
+    El vector fila de la comanda té les columnes $D1$, $D2$, $D3$, que coincideixen amb les files de la matriu de preus. El producte dona el cost total a cada empresa:
+
+    $$
+    \begin{pmatrix}100&500&400\end{pmatrix}
+    \begin{pmatrix}
+    1{,}25&1&1{,}25\\
+    0{,}75&1&1{,}15\\
+    1&0{,}85&0{,}80
+    \end{pmatrix}
+    $$
+
+    $$
+    \begin{pmatrix}125+375+400&100+500+340&125+575+320\end{pmatrix}
+    =
+    \begin{pmatrix}900&940&1020\end{pmatrix}
+    $$
+
+    Les tres comandes costarien $900\,€$, $940\,€$ i $1020\,€$. L'empresa que ofereix el millor preu és **$E1$**, amb un cost de $900\,€$.
+
+---
+
+**PAU.AL.18.**
+**Proveïdors d'una fàbrica de pasta**
+
+*(apartat a) de l'opció A de l'exercici 4 de la convocatòria ordinària de 2025, sèrie 4; 1,25 punts)*. Una fàbrica es dedica a elaborar pasta. Tot el procés de producció es pot resumir en tres etapes:
+
+1. Compra de matèries primeres. Per a elaborar la pasta, l'empresa ha de comprar oli, farina i sal de bona qualitat. La compra la pot fer a tres proveïdors diferents. El primer proveïdor ven l'oli a $3\,€/\text{L}$, la farina a $0{,}6\,€/\text{kg}$ i la sal a $1\,€/\text{kg}$. El segon proveïdor ven l'oli a $3{,}5\,€/\text{L}$, la farina a $1\,€/\text{kg}$ i la sal a $0{,}7\,€/\text{kg}$. Finalment, el tercer proveïdor ven l'oli a $2{,}5\,€/\text{L}$, la farina a $0{,}8\,€/\text{kg}$ i la sal a $0{,}9\,€/\text{kg}$.
+2. Elaboració, empaquetament i control de qualitat. Es fabrica i s'envasa la pasta. Posteriorment, es comprova que la pasta estigui ben feta i envasada correctament, i es verifica que els paquets pesin $500\,\text{g}$ de mitjana.
+3. Venda. L'estratègia de venda i el preu dels paquets es determinen fent un estudi de mercat.
+
+- **a)** L'empresa necessita $300$ litres d'oli, $700\,\text{kg}$ de farina i $25\,\text{kg}$ de sal. Escriviu aquesta informació juntament amb els preus per producte de cada proveïdor en forma matricial (deixant ben clar el que representen les files i les columnes) i calculeu mitjançant un producte de matrius el cost total de la comanda per cada proveïdor. Quin dels tres proveïdors és el més econòmic? *[1,25 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.18"
+    Escrivim la comanda com una matriu fila, amb les columnes en l'ordre oli, farina i sal, i els preus en una matriu amb les mateixes matèries primeres a les files i els proveïdors a les columnes:
+
+    $$
+    Q=
+    \begin{array}{cc}
+    &\begin{array}{ccc}\text{oli}\!&\!\text{farina}\!&\!\text{sal}\end{array}\\[0.5mm]
+    &
+    \begin{pmatrix}
+    300&700&25
+    \end{pmatrix}
+    \end{array}
+    \qquad
+    P=
+    \begin{array}{cc}
+    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    \begin{array}{c}\text{oli}\\\text{farina}\\\text{sal}\end{array}
+    &
+    \begin{pmatrix}
+    3&3{,}5&2{,}5\\
+    0{,}6&1&0{,}8\\
+    1&0{,}7&0{,}9
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    $Q$ és d'ordre $1\times3$ i $P$, d'ordre $3\times3$; el producte és una matriu fila amb el cost a cada proveïdor:
+
+    $$
+    QP=
+    \begin{pmatrix}
+    900+420+25&1050+700+17{,}5&750+560+22{,}5
+    \end{pmatrix}
+    $$
+
+    $$
+    QP=
+    \begin{pmatrix}
+    1345&1767{,}5&1332{,}5
+    \end{pmatrix}
+    $$
+
+    La comanda costaria $1345\,€$ al primer proveïdor, $1767{,}50\,€$ al segon i $1332{,}50\,€$ al tercer. El més econòmic és **el tercer proveïdor**.
+
+---
+
+**PAU.AL.19.**
+**Matrius màgiques**
+
+*(qüestió 4 de la convocatòria ordinària de 2024, sèrie 1; 2,5 punts)*. Diem que una matriu és màgica si la suma dels elements de cada fila i de cada columna té com a resultat en tots els casos el mateix valor, que s'anomena *constant màgica*.
+
+El Martí ha trobat una manera de crear matrius màgiques triant tres nombres qualssevol i multiplicant-los per les matrius següents:
+
+$$
+A=\begin{pmatrix}1&-1&0\\-1&0&1\\0&1&-1\end{pmatrix},
+\qquad
+B=\begin{pmatrix}0&-1&1\\1&0&-1\\-1&1&0\end{pmatrix}
+\qquad\text{i}\qquad
+C=\begin{pmatrix}0&3&0\\1&1&1\\2&-1&2\end{pmatrix}.
+$$
+
+El Martí proposa als seus amics que cadascú construeixi la seva matriu màgica particular a partir del dia del seu aniversari, del mes del seu aniversari i de la seva edat.
+
+- **a)** Sabent que el Martí va néixer el $10$ de març i que té $18$ anys, calculeu $10\cdot A+3\cdot B+18\cdot C$. Comproveu que la matriu resultant és màgica i indiqueu quina és la seva constant màgica (el valor comú de la suma de les files i les columnes). *[1,25 punts]*
+- **b)** El Martí ha calculat la matriu màgica del seu pare, que fa l'aniversari el $8$ de setembre, i ha obtingut que la seva constant màgica és $153$. Quina edat té el pare del Martí? *[1,25 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.19"
+    **Apartat a)**
+
+    $$
+    10A=\begin{pmatrix}10&-10&0\\-10&0&10\\0&10&-10\end{pmatrix}
+    \qquad
+    3B=\begin{pmatrix}0&-3&3\\3&0&-3\\-3&3&0\end{pmatrix}
+    $$
+
+    $$
+    18C=\begin{pmatrix}0&54&0\\18&18&18\\36&-18&36\end{pmatrix}
+    $$
+
+    $$
+    10A+3B+18C=
+    \begin{pmatrix}
+    10&41&3\\
+    11&18&25\\
+    33&-5&26
+    \end{pmatrix}
+    $$
+
+    Sumes de les files: $10+41+3=54$, $\ 11+18+25=54$ i $33-5+26=54$.
+
+    Sumes de les columnes: $10+11+33=54$, $\ 41+18-5=54$ i $3+25+26=54$.
+
+    Totes valen $54$: la matriu és màgica i la seva constant màgica és $\boxed{54}$.
+
+    **Apartat b)**
+
+    Observem les matrius de partida: a $A$ i a $B$ totes les files i les columnes sumen $0$, i a $C$ totes sumen $3$. Si $d$ és el dia, $m$ el mes i $e$ l'edat, cada fila i cada columna de $dA+mB+eC$ suma
+
+    $$
+    d\cdot0+m\cdot0+e\cdot3=3e.
+    $$
+
+    La constant màgica només depèn de l'edat. Per al pare,
+
+    $$
+    3e=153\quad\Longrightarrow\quad e=51.
+    $$
+
+    El pare del Martí té **$51$ anys**. A l'apartat a) es compleix el mateix: $3\cdot18=54$.
+
+    **Comprovació:**
+
+    $$
+    8A+9B+51C=
+    \begin{pmatrix}
+    8+0+0&-8-9+153&0+9+0\\
+    -8+9+51&0+0+51&8-9+51\\
+    0-9+102&8+9-51&-8+0+102
+    \end{pmatrix}
+    $$
+
+    $$
+    8A+9B+51C=
+    \begin{pmatrix}
+    8&136&9\\
+    52&51&50\\
+    93&-34&94
+    \end{pmatrix}
+    $$
+
+    Totes les files i totes les columnes sumen $153$.
+
+---
+
+**PAU.AL.20.**
+**Artesania de fusta**
+
+*(qüestió 4 de la convocatòria ordinària de 2024, sèrie 5; 2,5 punts)*. La Laia, una aficionada a l'artesania feta amb fusta, va muntar un petit negoci fa un parell de mesos. Al seu taller, elabora tres tipus de productes amb fusta reciclada, que després posa a la venda: noms personalitzats, paraules decoratives i baldufes.
+
+Durant el primer mes, la Laia va tenir tres clients: el primer va adquirir $2$ noms personalitzats i $3$ baldufes; el segon va adquirir $1$ nom personalitzat, $2$ paraules decoratives i $5$ baldufes, i el tercer només va comprar $4$ baldufes.
+
+- **a)** Construïu la matriu $3\times3$ corresponent a les vendes, en què les files representin els clients ($C1$, $C2$ i $C3$) i les columnes representin els productes que van adquirir. Si el primer mes la Laia va vendre els noms personalitzats ($N$) a $20\,€$ cadascun, les paraules decoratives ($P$) a $18\,€$ cadascuna i les baldufes ($B$) a $6\,€$ cadascuna, calculeu quant va facturar a cada client per la seva comanda mitjançant un producte de matrius. *[1,5 punts]*
+- **b)** Per tal d'incentivar les vendes, el segon mes la Laia va aplicar un descompte al preu de venda de tots els productes. Durant aquest mes, també va tenir tres clients i va obtenir la matriu de vendes següent:
+
+    $$
+    \begin{array}{cc}
+    &\begin{array}{ccc}N\!&\!P\!&\!B\end{array}\\[0.5mm]
+    \begin{array}{c}C1\\C2\\C3\end{array}
+    &
+    \begin{pmatrix}
+    3&1&2\\
+    2&0&4\\
+    1&2&3
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Si durant el segon mes la Laia va facturar $78\,€$ al primer client, $52\,€$ al segon client i $62\,€$ al tercer client, a quin preu va vendre cada producte? *[1 punt]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.20"
+    **Apartat a)**
+
+    Les files són els clients i les columnes, els productes $N$, $P$ i $B$. Els preus formen una matriu columna amb el mateix ordre de productes:
+
+    $$
+    V=
+    \begin{array}{cc}
+    &\begin{array}{ccc}N\!&\!P\!&\!B\end{array}\\[0.5mm]
+    \begin{array}{c}C1\\C2\\C3\end{array}
+    &
+    \begin{pmatrix}
+    2&0&3\\
+    1&2&5\\
+    0&0&4
+    \end{pmatrix}
+    \end{array}
+    \qquad
+    p=\begin{pmatrix}20\\18\\6\end{pmatrix}
+    $$
+
+    $$
+    Vp=
+    \begin{pmatrix}
+    2\cdot20+0\cdot18+3\cdot6\\
+    1\cdot20+2\cdot18+5\cdot6\\
+    0\cdot20+0\cdot18+4\cdot6
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    58\\
+    86\\
+    24
+    \end{pmatrix}
+    $$
+
+    La Laia va facturar $58\,€$ al primer client, $86\,€$ al segon i $24\,€$ al tercer.
+
+    **Apartat b)**
+
+    Si $n$, $q$ i $b$ són els nous preus dels noms, les paraules i les baldufes, la facturació de cada client és el producte de la matriu de vendes per la columna dels preus:
+
+    $$
+    \begin{pmatrix}3&1&2\\2&0&4\\1&2&3\end{pmatrix}
+    \begin{pmatrix}n\\q\\b\end{pmatrix}
+    =
+    \begin{pmatrix}78\\52\\62\end{pmatrix}
+    $$
+
+    Efectuem el producte i escrivim el resultat com una matriu:
+
+    $$
+    \begin{pmatrix}3n+q+2b\\2n+4b\\n+2q+3b\end{pmatrix}
+    =
+    \begin{pmatrix}78\\52\\62\end{pmatrix}
+    $$
+
+    Igualant els elements que ocupen la mateixa posició, obtenim el sistema
+
+    $$
+    \begin{cases}
+    3n+q+2b=78\\
+    2n+4b=52\\
+    n+2q+3b=62
+    \end{cases}
+    $$
+
+    El resolem pel mètode de Gauss, començant per la fila que té coeficient $1$ a la primera incògnita:
+
+    $$
+    \left(
+    \begin{array}{ccc|c}
+    1&2&3&62\\
+    2&0&4&52\\
+    3&1&2&78
+    \end{array}
+    \right)
+    \xrightarrow{\substack{F_2=F_2-2F_1\\F_3=F_3-3F_1}}
+    \left(
+    \begin{array}{ccc|c}
+    1&2&3&62\\
+    0&-4&-2&-72\\
+    0&-5&-7&-108
+    \end{array}
+    \right)
+    $$
+
+    $$
+    \xrightarrow{F_2=-\frac12F_2}
+    \left(
+    \begin{array}{ccc|c}
+    1&2&3&62\\
+    0&2&1&36\\
+    0&-5&-7&-108
+    \end{array}
+    \right)
+    \xrightarrow{F_3=2F_3+5F_2}
+    \left(
+    \begin{array}{ccc|c}
+    1&2&3&62\\
+    0&2&1&36\\
+    0&0&-9&-36
+    \end{array}
+    \right)
+    $$
+
+    Per substitució enrere: $b=4$, $\ 2q+4=36\Rightarrow q=16$ i $n+32+12=62\Rightarrow n=18$.
+
+    El segon mes va vendre els noms personalitzats a $18\,€$, les paraules decoratives a $16\,€$ i les baldufes a $4\,€$: cada producte $2\,€$ més barat que el primer mes.
+
+    **Comprovació:** $3\cdot18+16+2\cdot4=78$, $\ 2\cdot18+4\cdot4=52$ i $18+2\cdot16+3\cdot4=62$.
+
+---
+
+**PAU.AL.21.**
+**Espectadors d'un cinema**
+
+*(qüestió 4 de la convocatòria extraordinària de 2024, sèrie 3; 2,5 punts)*. Un cinema disposa de dues sales en les quals es projecten dues pel·lícules diferents. La taula següent mostra el nombre de persones que han assistit a la projecció de cada pel·lícula la darrera setmana, agrupades per franges d'edat:
+
+| Franja d'edat | Pel·lícula de la sala 1 | Pel·lícula de la sala 2 |
+|:--|:--|:--|
+| Menys de $18$ anys | $122$ | $620$ |
+| $18$-$65$ anys | $930$ | $433$ |
+| Més de $65$ anys | $384$ | $281$ |
+
+La informació de la taula anterior es registra amb la forma matricial
+
+$$
+A=\begin{pmatrix}122&620\\930&433\\384&281\end{pmatrix}.
+$$
+
+- **a)** Considerant la matriu $B=\begin{pmatrix}1\\1\end{pmatrix}$, calculeu el producte $A\cdot B$. Expliqueu el significat de la matriu obtinguda.
+
+    Sabem que una entrada per a persones de menys de $18$ anys costa $5\,€$, una entrada per a adults d'entre $18$ i $65$ anys costa $8{,}5\,€$ i una entrada per a adults de més de $65$ anys costa $6{,}5\,€$. Trobeu una matriu $C=\begin{pmatrix}a&b&c\end{pmatrix}$ de manera que el producte $C\cdot A\cdot B$ doni els ingressos setmanals totals obtinguts per la venda d'entrades, i calculeu els ingressos corresponents a aquesta setmana. *[1,5 punts]*
+- **b)** Al cap d'uns mesos, el registre setmanal és donat per la matriu
+
+    $$
+    D=\begin{pmatrix}84&23\\338&x\\256&408\end{pmatrix},
+    $$
+
+    però hi ha un valor que s'ha esborrat, el del nombre de persones entre $18$ i $65$ anys que han assistit a la segona pel·lícula, i l'hem denotat per $x$. Calculeu el valor de $x$ sabent que els ingressos totals d'aquella setmana van ser de $12\,076\,€$. *[1 punt]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.21"
+    **Apartat a)**
+
+    Multiplicar per la columna d'uns suma els elements de cada fila:
+
+    $$
+    A\cdot B=
+    \begin{pmatrix}122+620\\930+433\\384+281\end{pmatrix}
+    =
+    \begin{pmatrix}742\\1363\\665\end{pmatrix}
+    $$
+
+    Cada element és el nombre total d'espectadors d'una franja d'edat, sumant les dues sales: $742$ menors de $18$ anys, $1363$ persones d'entre $18$ i $65$ anys i $665$ persones de més de $65$ anys.
+
+    Per obtenir els ingressos, cal multiplicar cada franja pel preu de la seva entrada. Com que $A\cdot B$ té les franges en l'ordre de les files, $C$ ha de tenir els preus en el mateix ordre:
+
+    $$
+    C=\begin{pmatrix}5&8{,}5&6{,}5\end{pmatrix}
+    $$
+
+    $$
+    C\cdot A\cdot B=
+    \begin{pmatrix}5&8{,}5&6{,}5\end{pmatrix}
+    \begin{pmatrix}742\\1363\\665\end{pmatrix}
+    =3710+11\,585{,}5+4322{,}5=19\,618
+    $$
+
+    Els ingressos d'aquesta setmana han estat de $19\,618\,€$.
+
+    **Apartat b)**
+
+    Repetim el càlcul amb la matriu $D$:
+
+    $$
+    D\cdot B=\begin{pmatrix}84+23\\338+x\\256+408\end{pmatrix}=\begin{pmatrix}107\\338+x\\664\end{pmatrix}
+    $$
+
+    $$
+    C\cdot D\cdot B=5\cdot107+8{,}5\,(338+x)+6{,}5\cdot664
+    $$
+
+    $$
+    C\cdot D\cdot B=535+2873+8{,}5x+4316=7724+8{,}5x
+    $$
+
+    Igualem als ingressos d'aquella setmana:
+
+    $$
+    7724+8{,}5x=12\,076
+    \quad\Longrightarrow\quad
+    8{,}5x=4352
+    \quad\Longrightarrow\quad
+    x=512.
+    $$
+
+    A la segona pel·lícula hi van assistir **$512$ persones** d'entre $18$ i $65$ anys.
+
+---
+
+**PAU.AL.22.**
+**Places d'un centre cívic**
+
+*(qüestió 2 de la convocatòria ordinària de 2023, sèrie 1; 2,5 punts)*. Un centre cívic ofereix cursos de francès de nivell principiant, intermedi i avançat. Els alumnes inscrits, si ho desitgen, tenen garantida una plaça per al curs següent. És per això que, abans d'acabar el curs, es fan les reserves de plaça per al curs vinent. De l'alumnat de nivell principiant, un $15\,\%$ vol repetir el mateix curs, un $50\,\%$ vol fer el curs intermedi i un $5\,\%$ vol passar directament al curs de nivell avançat. Pel que fa a l'alumnat de nivell intermedi, un $10\,\%$ vol repetir el curs i un $60\,\%$ vol fer el curs de nivell avançat. Finalment, de l'alumnat de nivell avançat, un $20\,\%$ vol repetir el curs. Cap alumne no demana reserva de plaça per a un curs de nivell inferior i la resta d'alumnes no volen continuar al centre el curs vinent. Aquest any hi ha hagut $100$ alumnes matriculats de nivell principiant, $90$ de nivell intermedi i $60$ de nivell avançat.
+
+- **a)** Calculeu el nombre de places que cal reservar de cada nivell per al curs següent mitjançant un producte de matrius. *[1,25 punts]*
+- **b)** El mateix centre cívic ofereix dos horaris de ioga, un de matí i un de tarda. Per al proper curs, el $50\,\%$ dels alumnes que actualment fan ioga al matí volen continuar amb el mateix horari, mentre que un $30\,\%$ volen passar a l'horari de tarda. La resta d'alumnes de matí no continuaran. Pel que fa als alumnes que actualment fan ioga a la tarda, un $40\,\%$ volen passar a l'horari de matí i un $60\,\%$ volen continuar fent l'horari de tarda. Si sabem que per al curs següent cal reservar $49$ places per a l'horari de matí i $51$ places per a l'horari de tarda, quants alumnes hi ha matriculats actualment en cada horari? *[1,25 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.22"
+    **Apartat a)**
+
+    Construïm una matriu en què les columnes indiquen el nivell actual i les files, el nivell que es reserva per al curs vinent. Cada element és la proporció d'alumnes que fa aquest pas:
+
+    $$
+    T=
+    \begin{array}{cc}
+    &\begin{array}{ccc}\text{P}\!&\!\text{I}\!&\!\text{A}\end{array}\\[0.5mm]
+    \begin{array}{c}\text{P}\\\text{I}\\\text{A}\end{array}
+    &
+    \begin{pmatrix}
+    0{,}15&0&0\\
+    0{,}50&0{,}10&0\\
+    0{,}05&0{,}60&0{,}20
+    \end{pmatrix}
+    \end{array}
+    $$
+
+    Els zeros indiquen que ningú no demana un nivell inferior. Multipliquem per la columna dels alumnes actuals:
+
+    $$
+    T\begin{pmatrix}100\\90\\60\end{pmatrix}
+    =
+    \begin{pmatrix}
+    0{,}15\cdot100\\
+    0{,}50\cdot100+0{,}10\cdot90\\
+    0{,}05\cdot100+0{,}60\cdot90+0{,}20\cdot60
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    15\\
+    59\\
+    71
+    \end{pmatrix}
+    $$
+
+    Cal reservar $15$ places de nivell principiant, $59$ de nivell intermedi i $71$ de nivell avançat.
+
+    **Apartat b)**
+
+    Ara les columnes són l'horari actual (matí, tarda) i les files, l'horari del curs vinent. Si $m$ i $t$ són els alumnes actuals de matí i de tarda,
+
+    $$
+    \begin{pmatrix}0{,}5&0{,}4\\0{,}3&0{,}6\end{pmatrix}
+    \begin{pmatrix}m\\t\end{pmatrix}
+    =
+    \begin{pmatrix}49\\51\end{pmatrix}
+    $$
+
+    Efectuem el producte i escrivim el resultat com una matriu:
+
+    $$
+    \begin{pmatrix}0{,}5m+0{,}4t\\0{,}3m+0{,}6t\end{pmatrix}
+    =
+    \begin{pmatrix}49\\51\end{pmatrix}
+    $$
+
+    Igualant els elements que ocupen la mateixa posició, obtenim el sistema
+
+    $$
+    \begin{cases}
+    0{,}5m+0{,}4t=49\\
+    0{,}3m+0{,}6t=51
+    \end{cases}
+    $$
+
+    Multipliquem les dues equacions per $10$ i dividim la segona entre $3$:
+
+    $$
+    \begin{cases}
+    5m+4t=490\\
+    m+2t=170
+    \end{cases}
+    $$
+
+    De la segona, $m=170-2t$. Substituint a la primera,
+
+    $$
+    5(170-2t)+4t=490
+    \quad\Longrightarrow\quad
+    850-6t=490
+    \quad\Longrightarrow\quad
+    t=60,
+    $$
+
+    i $m=170-120=50$.
+
+    Actualment hi ha **$50$ alumnes al matí i $60$ a la tarda**.
+
+    **Comprovació:** $0{,}5\cdot50+0{,}4\cdot60=25+24=49$ i $0{,}3\cdot50+0{,}6\cdot60=15+36=51$.
+
+---
+
+**PAU.AL.23.**
+**Una equació amb paràmetres**
+
+*(qüestió 5 de la convocatòria ordinària de 2023, sèrie 5; 2,5 punts)*. Considereu les matrius $A=\begin{pmatrix}a&b\\0&a\end{pmatrix}$ i $B=\begin{pmatrix}0&1\\0&0\end{pmatrix}$, en què $a$ i $b$ són dos paràmetres reals.
+
+- **a)** Trobeu els valors dels paràmetres $a$ i $b$ per als quals es compleix que $A^2-2A=B$. *[1,25 punts]*
+- **b)** Si $a=1$ i $b=1$, resoleu l'equació matricial $2A=A\cdot X+B$. *[1,25 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.23"
+    **Apartat a)**
+
+    $$
+    A^2=
+    \begin{pmatrix}a&b\\0&a\end{pmatrix}
+    \begin{pmatrix}a&b\\0&a\end{pmatrix}
+    =
+    \begin{pmatrix}a^2&2ab\\0&a^2\end{pmatrix}
+    $$
+
+    $$
+    A^2-2A=
+    \begin{pmatrix}a^2-2a&2ab-2b\\0&a^2-2a\end{pmatrix}
+    =
+    \begin{pmatrix}0&1\\0&0\end{pmatrix}
+    $$
+
+    Igualem els elements que ocupen la mateixa posició:
+
+    $$
+    \begin{cases}
+    a^2-2a=0\\
+    2ab-2b=1
+    \end{cases}
+    \quad\Longleftrightarrow\quad
+    \begin{cases}
+    a(a-2)=0\\
+    2b(a-1)=1
+    \end{cases}
+    $$
+
+    De la primera equació, $a=0$ o $a=2$:
+
+    - si $a=0$, $\ -2b=1$ i $b=-\frac12$;
+    - si $a=2$, $\ 2b=1$ i $b=\frac12$.
+
+    Hi ha dues solucions: $\boxed{a=0,\ b=-\tfrac12}$ i $\boxed{a=2,\ b=\tfrac12}$.
+
+    **Apartat b)**
+
+    Si $a=b=1$, $A=\begin{pmatrix}1&1\\0&1\end{pmatrix}$. Aïllem el terme que conté $X$:
+
+    $$
+    2A=AX+B
+    \quad\Longrightarrow\quad
+    AX=2A-B
+    \quad\Longrightarrow\quad
+    X=A^{-1}(2A-B).
+    $$
+
+    Calculem $A^{-1}$ pel mètode de Gauss-Jordan:
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    1&1&1&0\\
+    0&1&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_1=F_1-F_2}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&1&-1\\
+    0&1&0&1
+    \end{array}
+    \right)
+    \qquad
+    A^{-1}=\begin{pmatrix}1&-1\\0&1\end{pmatrix}
+    $$
+
+    $$
+    2A-B=
+    \begin{pmatrix}2&2\\0&2\end{pmatrix}
+    -
+    \begin{pmatrix}0&1\\0&0\end{pmatrix}
+    =
+    \begin{pmatrix}2&1\\0&2\end{pmatrix}
+    $$
+
+    $$
+    X=
+    \begin{pmatrix}1&-1\\0&1\end{pmatrix}
+    \begin{pmatrix}2&1\\0&2\end{pmatrix}
+    =
+    \boxed{\begin{pmatrix}2&-1\\0&2\end{pmatrix}}
+    $$
+
+    **Comprovació:** $AX+B=\begin{pmatrix}2&1\\0&2\end{pmatrix}+\begin{pmatrix}0&1\\0&0\end{pmatrix}=\begin{pmatrix}2&2\\0&2\end{pmatrix}=2A$.
+
+---
+
+**PAU.AL.24.**
+**Potències d'una matriu**
+
+*(qüestió 5 de la convocatòria extraordinària de 2023, sèrie 2; 2,5 punts)*. Considereu la matriu $A=\begin{pmatrix}1&a\\2&-1\end{pmatrix}$, en què $a$ és un paràmetre real.
+
+- **a)** Si anomenem $I$ la matriu identitat d'ordre $2$, trobeu el valor de $a$ per al qual $A^2=I$. *[1 punt]*
+- **b)** Per a $a=-1$, calculeu $A^2$, $A^3$ i $A^4$. Feu servir els càlculs anteriors per a deduir el valor de $A^{-1}$ i de $A^{23}$. *[1,5 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.24"
+    **Apartat a)**
+
+    $$
+    A^2=
+    \begin{pmatrix}1&a\\2&-1\end{pmatrix}
+    \begin{pmatrix}1&a\\2&-1\end{pmatrix}
+    =
+    \begin{pmatrix}1+2a&a-a\\2-2&2a+1\end{pmatrix}
+    =
+    \begin{pmatrix}1+2a&0\\0&1+2a\end{pmatrix}
+    $$
+
+    Imposem que el resultat sigui la matriu identitat:
+
+    $$
+    \begin{pmatrix}1+2a&0\\0&1+2a\end{pmatrix}
+    =
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+    $$
+
+    Els elements de fora de la diagonal ja coincideixen. Igualant els de la diagonal, $1+2a=1$, és a dir, $\boxed{a=0}$.
+
+    **Apartat b)**
+
+    Si $a=-1$, $A=\begin{pmatrix}1&-1\\2&-1\end{pmatrix}$ i, per l'apartat anterior,
+
+    $$
+    A^2=\begin{pmatrix}1+2(-1)&0\\0&1+2(-1)\end{pmatrix}=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=-I.
+    $$
+
+    $$
+    A^3=A^2\cdot A=-A=\begin{pmatrix}-1&1\\-2&1\end{pmatrix}
+    \qquad
+    A^4=A^3\cdot A=-A^2=I=\begin{pmatrix}1&0\\0&1\end{pmatrix}
+    $$
+
+    Com que $A\cdot A^3=A^3\cdot A=A^4=I$, la inversa d'$A$ és $A^3$:
+
+    $$
+    A^{-1}=A^3=\begin{pmatrix}-1&1\\-2&1\end{pmatrix}
+    $$
+
+    Les potències es repeteixen de quatre en quatre. Com que $23=4\cdot5+3$,
+
+    $$
+    A^{23}=\left(A^4\right)^5A^3=I\cdot A^3=\begin{pmatrix}-1&1\\-2&1\end{pmatrix}
+    $$
+
+    **Comprovació de la inversa:** $\begin{pmatrix}1&-1\\2&-1\end{pmatrix}\begin{pmatrix}-1&1\\-2&1\end{pmatrix}=\begin{pmatrix}-1+2&1-1\\-2+2&2-1\end{pmatrix}=I$.
+
+---
+
+**PAU.AL.25.**
+**Quan és invertible un producte?**
+
+*(qüestió 5 de la convocatòria ordinària de 2022, sèrie 2; 2,5 punts)*. Considereu les matrius $P=\begin{pmatrix}0&2&-1\\a&2&3\end{pmatrix}$ i $A=\begin{pmatrix}-1&-2\\0&1\\1&-1\end{pmatrix}$, en què $a$ és un paràmetre real.
+
+- **a)** Trobeu per a quins valors de $a$ és invertible la matriu obtinguda del resultat del producte $P\cdot A$. *[1,5 punts]*
+- **b)** Si $a=2$, trobeu la matriu $X$ que satisfà l'equació matricial $P\cdot A+X=I$, en què $I$ denota la matriu identitat d'ordre $2$. *[1 punt]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.25"
+    **Apartat a)**
+
+    $P$ és d'ordre $2\times3$ i $A$, d'ordre $3\times2$, de manera que $P\cdot A$ és quadrada d'ordre $2$:
+
+    $$
+    P\cdot A=
+    \begin{pmatrix}
+    0\cdot(-1)+2\cdot0+(-1)\cdot1&0\cdot(-2)+2\cdot1+(-1)\cdot(-1)\\
+    a\cdot(-1)+2\cdot0+3\cdot1&a\cdot(-2)+2\cdot1+3\cdot(-1)
+    \end{pmatrix}
+    $$
+
+    $$
+    P\cdot A=
+    \begin{pmatrix}
+    -1&3\\
+    3-a&-2a-1
+    \end{pmatrix}
+    $$
+
+    Esglaonem: el primer pivot és $-1$ i fem zero a sota sense dividir:
+
+    $$
+    \begin{pmatrix}
+    -1&3\\
+    3-a&-2a-1
+    \end{pmatrix}
+    \xrightarrow{F_2=F_2+(3-a)F_1}
+    \begin{pmatrix}
+    -1&3\\
+    0&-2a-1+3(3-a)
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    -1&3\\
+    0&8-5a
+    \end{pmatrix}
+    $$
+
+    La matriu no té inversa si apareix una fila de zeros, és a dir, si $8-5a=0$. Per tant, $P\cdot A$ és invertible per a tot $a\neq\dfrac85$.
+
+    **Apartat b)**
+
+    Si $a=2$, $P\cdot A=\begin{pmatrix}-1&3\\1&-5\end{pmatrix}$. Aïllem $X$ restant $P\cdot A$ als dos membres:
+
+    $$
+    X=I-P\cdot A=
+    \begin{pmatrix}1&0\\0&1\end{pmatrix}
+    -
+    \begin{pmatrix}-1&3\\1&-5\end{pmatrix}
+    =
+    \boxed{\begin{pmatrix}2&-3\\-1&6\end{pmatrix}}
+    $$
+
+---
+
+**PAU.AL.26.**
+**Una incògnita triangular**
+
+*(qüestió 3 de la convocatòria ordinària de 2022, sèrie 5; 2,5 punts)*. Calculeu la matriu $X$ que verifica $A\cdot X\cdot B=C$, sabent que
+
+$$
+X=\begin{pmatrix}a&b\\0&c\end{pmatrix},
+\quad
+A=\begin{pmatrix}1&0\\1&1\end{pmatrix},
+\quad
+B=\begin{pmatrix}1&2\\-1&-3\end{pmatrix}
+\quad\text{i}\quad
+C=\begin{pmatrix}-1&-2\\-3&-8\end{pmatrix}.
+$$
+
+*[2,5 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.26"
+    $A$ multiplica $X$ per l'esquerra i $B$, per la dreta. Si totes dues són invertibles,
+
+    $$
+    AXB=C
+    \quad\Longrightarrow\quad
+    X=A^{-1}CB^{-1}.
+    $$
+
+    Calculem les inverses pel mètode de Gauss-Jordan:
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    1&0&1&0\\
+    1&1&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_2=F_2-F_1}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&1&0\\
+    0&1&-1&1
+    \end{array}
+    \right)
+    \qquad
+    A^{-1}=\begin{pmatrix}1&0\\-1&1\end{pmatrix}
+    $$
+
+    $$
+    \left(
+    \begin{array}{cc|cc}
+    1&2&1&0\\
+    -1&-3&0&1
+    \end{array}
+    \right)
+    \xrightarrow{F_2=F_2+F_1}
+    \left(
+    \begin{array}{cc|cc}
+    1&2&1&0\\
+    0&-1&1&1
+    \end{array}
+    \right)
+    $$
+
+    $$
+    \xrightarrow{F_1=F_1+2F_2}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&3&2\\
+    0&-1&1&1
+    \end{array}
+    \right)
+    \xrightarrow{F_2=-F_2}
+    \left(
+    \begin{array}{cc|cc}
+    1&0&3&2\\
+    0&1&-1&-1
+    \end{array}
+    \right)
+    \qquad
+    B^{-1}=\begin{pmatrix}3&2\\-1&-1\end{pmatrix}
+    $$
+
+    Ara multipliquem respectant l'ordre:
+
+    $$
+    A^{-1}C=
+    \begin{pmatrix}1&0\\-1&1\end{pmatrix}
+    \begin{pmatrix}-1&-2\\-3&-8\end{pmatrix}
+    =
+    \begin{pmatrix}-1&-2\\-2&-6\end{pmatrix}
+    $$
+
+    $$
+    X=\left(A^{-1}C\right)B^{-1}=
+    \begin{pmatrix}-1&-2\\-2&-6\end{pmatrix}
+    \begin{pmatrix}3&2\\-1&-1\end{pmatrix}
+    =
+    \begin{pmatrix}-1&0\\0&2\end{pmatrix}
+    $$
+
+    El resultat té la forma demanada, amb $a=-1$, $b=0$ i $c=2$:
+
+    $$
+    \boxed{X=\begin{pmatrix}-1&0\\0&2\end{pmatrix}}
+    $$
+
+    **Comprovació:** $AX=\begin{pmatrix}-1&0\\-1&2\end{pmatrix}$ i $AXB=\begin{pmatrix}-1&-2\\-1-2&-2-6\end{pmatrix}=\begin{pmatrix}-1&-2\\-3&-8\end{pmatrix}=C$.
+
+    !!! tip "Un altre camí"
+        També es pot resoldre per coeficients: calcular $AXB$ amb $a$, $b$ i $c$ i igualar-lo a $C$. Surten quatre equacions lineals amb tres incògnites, que han de ser compatibles.
+
+---
+
+**PAU.AL.27.**
+**Matrius que commuten**
+
+*(qüestió 5 de la convocatòria extraordinària de 2022, sèrie 3; 2,5 punts)*. Considereu les matrius $A=\begin{pmatrix}1&-1\\0&2\end{pmatrix}$ i $B=\begin{pmatrix}2&1\\0&a\end{pmatrix}$, en què $a$ és un paràmetre real.
+
+- **a)** Calculeu per a quin valor de $a$ les dues matrius commuten, és a dir, per a quin valor de $a$ es compleix que $A\cdot B=B\cdot A$. Comproveu que per a aquest valor de $a$ se satisfà que $A\cdot B=2\cdot I$, en què $I$ és la matriu identitat d'ordre dos. *[1,25 punts]*
+- **b)** Per al valor de $a$ trobat a l'apartat anterior, calculeu les matrius inverses de les matrius $A$ i $B$. Podeu aplicar la relació $A\cdot B=2\cdot I$. *[1,25 punts]*
+
+??? example "Mostra la solució pas a pas del problema PAU.AL.27"
+    **Apartat a)**
+
+    $$
+    A\cdot B=
+    \begin{pmatrix}1&-1\\0&2\end{pmatrix}
+    \begin{pmatrix}2&1\\0&a\end{pmatrix}
+    =
+    \begin{pmatrix}2&1-a\\0&2a\end{pmatrix}
+    $$
+
+    $$
+    B\cdot A=
+    \begin{pmatrix}2&1\\0&a\end{pmatrix}
+    \begin{pmatrix}1&-1\\0&2\end{pmatrix}
+    =
+    \begin{pmatrix}2&0\\0&2a\end{pmatrix}
+    $$
+
+    La condició $A\cdot B=B\cdot A$ és la igualtat de matrius
+
+    $$
+    \begin{pmatrix}2&1-a\\0&2a\end{pmatrix}
+    =
+    \begin{pmatrix}2&0\\0&2a\end{pmatrix}
+    $$
+
+    Les posicions $(1,1)$, $(2,1)$ i $(2,2)$ coincideixen per a qualsevol $a$. Igualant la posició $(1,2)$, $1-a=0$, és a dir, $\boxed{a=1}$.
+
+    Per a aquest valor,
+
+    $$
+    A\cdot B=\begin{pmatrix}2&0\\0&2\end{pmatrix}=2\cdot I.
+    $$
+
+    **Apartat b)**
+
+    Dividim per $2$ la igualtat $A\cdot B=2I$:
+
+    $$
+    A\cdot\left(\tfrac12B\right)=I.
+    $$
+
+    Com que $A$ i $B$ commuten, també $\left(\tfrac12B\right)\cdot A=\tfrac12\,B\cdot A=\tfrac12\,A\cdot B=I$. Per tant, $\tfrac12B$ és la inversa d'$A$ i, pel mateix raonament, $\tfrac12A$ és la inversa de $B$:
+
+    $$
+    A^{-1}=\frac12B=\begin{pmatrix}1&\frac12\\[2pt]0&\frac12\end{pmatrix}
+    \qquad
+    B^{-1}=\frac12A=\begin{pmatrix}\frac12&-\frac12\\[2pt]0&1\end{pmatrix}
+    $$
+
+    **Comprovació:** $A\cdot A^{-1}=\begin{pmatrix}1&\frac12-\frac12\\0&1\end{pmatrix}=I$ i $B\cdot B^{-1}=\begin{pmatrix}1&-1+1\\0&1\end{pmatrix}=I$.
 
 ---
 

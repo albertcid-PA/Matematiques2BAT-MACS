@@ -27,3 +27,7 @@ En aquest tema aprendrem a representar informació mitjançant matrius, a operar
 ## Problemes de matrius
 
 - [**Problemes de matrius**](05_problemes-matrius.md) — organització de dades, elecció de les operacions i interpretació dels resultats en problemes contextualitzats.
+
+## Per practicar
+
+- [**Exercicis i problemes**](../per-practicar/exercicis_algebra.md#tema-4-matrius) — activitats del tema 4 i problemes PAU de matrius, amb les solucions pas a pas desplegables.
