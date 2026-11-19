@@ -98,6 +98,8 @@ Comprova els resultats després d'haver resolt cada problema i d'haver-ne justif
 - **c)** La demanda és de $300$ unitats i els ingressos màxims són de $3.000\,€$ setmanals.
 - **d)** $\displaystyle E(p)=\frac{p(10+2p)}{500-10p-p^2}$; $E(5)=\frac4{17}\approx0{,}235$ i $E(10)=1$.
 
+### Comparació de dos models
+
 **PAU.C.11. Tarifes de dues companyies de taxi**
 
 - **a)** $f(x)=20+0{,}4x$.
@@ -106,9 +108,17 @@ Comprova els resultats després d'haver resolt cada problema i d'haver-ne justif
 - **d)** Les dues tarifes coincideixen per a un trajecte de $50\,\text{km}$, amb un preu de $40\,€$.
 - **e)** La diferència màxima es produeix als $15\,\text{km}$ i és de $12{,}25\,€$; en aquest punt, la companyia B és la més barata.
 
+**PAU.C.12. Impressió d'un llibre**
+
+- **a)** Amb $500$ exemplars, $M_A(5)=18\,€$ i $M_B(5)=4{,}25\,€$: és més econòmica B. Amb $4.000$ exemplars, $M_A(40)=4\,€$ i $M_B(40)\approx5{,}13\,€$: és més econòmica A.
+- **b)** $\displaystyle\lim_{x\to0^+}M_A(x)=+\infty$ i $\displaystyle\lim_{x\to+\infty}M_A(x)=2$. En tirades molt petites, el cost de preparació es reparteix entre pocs exemplars i el cost per exemplar es dispara; en tirades molt grans, s'acosta a $2\,€$, però sempre és més gran. No pot costar menys de $2\,€$.
+- **c)** El cost per exemplar de B és mínim amb $1.000$ exemplars ($x=10$) i és de $4\,€$.
+- **d)** Les dues impremtes coincideixen amb $3.000$ exemplars ($x=30$), amb un cost de $\frac{14}{3}\approx4{,}67\,€$ per exemplar.
+- **e)** Amb menys de $3.000$ exemplars convé la impremta B; amb més de $3.000$, la impremta A.
+
 ## Funcions a trossos
 
-**PAU.C.12. Tarifa d'una empresa de paqueteria**
+**PAU.C.13. Tarifa d'una empresa de paqueteria**
 
 - **a)** Un paquet de $9{,}5\,\text{kg}$ costa $120\,€$ i un de $13\,\text{kg}$, $173\,€$.
 - **b)**
@@ -131,7 +141,7 @@ $$
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_5_tarifa_paqueteria.tex">Figura PAU.C.5.</a></strong> Tarifa de l'empresa de paqueteria.</figcaption>
 </figure>
 
-**PAU.C.13. Cost de neteja d'una empresa**
+**PAU.C.14. Cost de neteja d'una empresa**
 
 - **a)** $C(0)=10$, $C(10)=20$ i $C(20)=10$ centenars d'euros: $1.000\,€$, $2.000\,€$ i $1.000\,€$, respectivament.
 - **b)** $C(10)=20$ i $\displaystyle\lim_{t\to10^+}C(t)=20$; és contínua a $t=10$.
@@ -143,7 +153,7 @@ $$
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_6_cost_neteja.tex">Figura PAU.C.6.</a></strong> Evolució del cost de neteja.</figcaption>
 </figure>
 
-**PAU.C.14. Evolució del preu d'un producte**
+**PAU.C.15. Evolució del preu d'un producte**
 
 - **a)** $P(2)=40$ i $\displaystyle\lim_{t\to2^+}P(t)=40$; és contínua a $t=2$.
 - **b)** Creix a $[0,2]$ i decreix a $(2,10]$.

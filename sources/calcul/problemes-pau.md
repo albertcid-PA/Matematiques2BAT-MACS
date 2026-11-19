@@ -124,6 +124,8 @@ $$
 
 Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i quan és de $10\,€$. No cal memoritzar aquesta fórmula.
 
+### Comparació de dos models
+
 **PAU.C.11. Tarifes de dues companyies de taxi** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
 
 $$
@@ -138,9 +140,24 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 - **d)** Calcula la distància positiva per a la qual les dues tarifes coincideixen.
 - **e)** Considerant només els trajectes des de $0\,\text{km}$ fins a la distància trobada, determina quan és màxima la diferència de preu entre les dues tarifes i calcula aquesta diferència.
 
+**PAU.C.12. Impressió d'un llibre** *(problema d'entrenament de tipus PAU)*. Una editorial ha demanat pressupost a dues impremtes per imprimir un llibre. La impremta A té un cost de preparació elevat, però cada exemplar li surt barat; la impremta B gairebé no té cost de preparació, però el cost de cada exemplar augmenta en les tirades grans. Si $x$ és el nombre d'exemplars, en centenars, el cost per exemplar, en euros, és
+
+$$
+M_A(x)=2+\frac{80}{x},
+\qquad
+M_B(x)=3+0{,}05x+\frac{5}{x},
+\qquad x>0.
+$$
+
+- **a)** Calcula el cost per exemplar de cada impremta si s'imprimeixen $500$ exemplars i si se n'imprimeixen $4.000$. Quina impremta és més econòmica en cada cas?
+- **b)** Calcula $\displaystyle\lim_{x\to0^+}M_A(x)$ i $\displaystyle\lim_{x\to+\infty}M_A(x)$ i interpreta'n el significat en el context. Pot arribar a costar menys de $2\,€$ cada exemplar amb la impremta A?
+- **c)** Amb quina tirada és mínim el cost per exemplar de la impremta B? Quin és aquest cost?
+- **d)** Per a quina tirada les dues impremtes tenen el mateix cost per exemplar? Quin és aquest cost?
+- **e)** Indica quina impremta convé segons el nombre d'exemplars que s'imprimeixin.
+
 ## Funcions a trossos
 
-**PAU.C.12. Tarifa d'una empresa de paqueteria** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
+**PAU.C.13. Tarifa d'una empresa de paqueteria** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
 
 - fins a $2\,\text{kg}$, el preu és fix i val $30\,€$;
 - si el paquet pesa més de $2\,\text{kg}$ però menys d'$11\,\text{kg}$, els primers $2\,\text{kg}$ costen $15\,€$ per quilogram i la resta, $12\,€$ per quilogram;
@@ -152,7 +169,7 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 - **d)** Representa gràficament la funció per a $0<x\leq25$.
 - **e)** Si un enviament ha costat $162\,€$, calcula el pes del paquet i comprova a quin tram pertany la solució.
 
-**PAU.C.13. Cost de neteja d'una empresa** *(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
+**PAU.C.14. Cost de neteja d'una empresa** *(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
 
 $$
 C(t)=
@@ -169,7 +186,7 @@ on $t$ és el nombre d'anys transcorreguts des de l'obertura.
 - **c)** Estudia la monotonia de cada tram i representa gràficament la funció.
 - **d)** Determina en quin moment el cost va ser màxim i calcula aquest cost en euros.
 
-**PAU.C.14. Evolució del preu d'un producte** *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
+**PAU.C.15. Evolució del preu d'un producte** *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
 
 $$
 P(t)=

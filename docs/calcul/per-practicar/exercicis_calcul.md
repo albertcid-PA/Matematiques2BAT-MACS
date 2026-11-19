@@ -4,7 +4,7 @@ En aquesta pàgina tens tots els enunciats dels temes 1, 2 i 3 de càlcul i els 
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=9){ target="_blank" rel="noopener" } · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=2){ target="_blank" rel="noopener" }
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=10){ target="_blank" rel="noopener" } · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=3){ target="_blank" rel="noopener" }
 
 </div>
 
@@ -3782,6 +3782,8 @@ Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i 
 
 ---
 
+#### Comparació de dos models
+
 **PAU.C.11.**
 **Tarifes de dues companyies de taxi**
 
@@ -3838,9 +3840,103 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 
 ---
 
+**PAU.C.12.**
+**Impressió d'un llibre**
+
+*(problema d'entrenament de tipus PAU)*. Una editorial ha demanat pressupost a dues impremtes per imprimir un llibre. La impremta A té un cost de preparació elevat, però cada exemplar li surt barat; la impremta B gairebé no té cost de preparació, però el cost de cada exemplar augmenta en les tirades grans. Si $x$ és el nombre d'exemplars, en centenars, el cost per exemplar, en euros, és
+
+$$
+M_A(x)=2+\frac{80}{x},
+\qquad
+M_B(x)=3+0{,}05x+\frac{5}{x},
+\qquad x>0.
+$$
+
+- **a)** Calcula el cost per exemplar de cada impremta si s'imprimeixen $500$ exemplars i si se n'imprimeixen $4.000$. Quina impremta és més econòmica en cada cas?
+- **b)** Calcula $\displaystyle\lim_{x\to0^+}M_A(x)$ i $\displaystyle\lim_{x\to+\infty}M_A(x)$ i interpreta'n el significat en el context. Pot arribar a costar menys de $2\,€$ cada exemplar amb la impremta A?
+- **c)** Amb quina tirada és mínim el cost per exemplar de la impremta B? Quin és aquest cost?
+- **d)** Per a quina tirada les dues impremtes tenen el mateix cost per exemplar? Quin és aquest cost?
+- **e)** Indica quina impremta convé segons el nombre d'exemplars que s'imprimeixin.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.12"
+    **Resolució pas a pas**
+
+    - **a)** $500$ exemplars corresponen a $x=5$ i $4.000$ exemplars, a $x=40$:
+
+        $$M_A(5)=2+\frac{80}{5}=18,\qquad M_B(5)=3+0{,}25+1=4{,}25,$$
+
+        $$M_A(40)=2+\frac{80}{40}=4,\qquad M_B(40)=3+2+0{,}125=5{,}125.$$
+
+        Amb $500$ exemplars és més econòmica la impremta B ($4{,}25\,€$ per exemplar davant de $18\,€$); amb $4.000$ exemplars, la impremta A ($4\,€$ davant d'uns $5{,}13\,€$).
+
+    - **b)**
+
+        $$\lim_{x\to0^+}\left(2+\frac{80}{x}\right)=2+\frac{80}{0^+}=+\infty,
+        \qquad
+        \lim_{x\to+\infty}\left(2+\frac{80}{x}\right)=2+0=2.$$
+
+        La recta $x=0$ és una asímptota vertical: en tirades molt petites, el cost de preparació es reparteix entre pocs exemplars i el cost per exemplar es fa molt gran. La recta $y=2$ és una asímptota horitzontal: en tirades molt grans, el cost per exemplar s'acosta a $2\,€$.
+
+        Com que $\dfrac{80}{x}>0$ per a tot $x>0$, $M_A(x)>2$. Per tant, amb la impremta A cada exemplar no pot costar mai menys de $2\,€$.
+
+    - **c)** Derivem el cost per exemplar de B:
+
+        $$M_B'(x)=0{,}05-\frac{5}{x^2}.$$
+
+        Resolem $M_B'(x)=0$:
+
+        $$0{,}05=\frac{5}{x^2}\Longrightarrow x^2=100\Longrightarrow x=10\quad(x>0).$$
+
+        | $x$ | $(0,10)$ | $10$ | $(10,+\infty)$ |
+        |:---:|:---:|:---:|:---:|
+        | Comprovació | $M_B'(5)=-0{,}15$ | $M_B'(10)=0$ | $M_B'(20)=0{,}0375$ |
+        | Signe de $M_B'(x)$ | $-$ | $0$ | $+$ |
+        | Comportament de $M_B$ | decreix | mínim | creix |
+
+        $$M_B(10)=3+0{,}5+0{,}5=4.$$
+
+        El cost per exemplar de B és mínim amb una tirada de $1.000$ exemplars i és de $4\,€$.
+
+    - **d)** Igualem els dos costos i multipliquem per $x>0$:
+
+        $$
+        2+\frac{80}{x}=3+0{,}05x+\frac{5}{x}
+        \Longrightarrow 2x+80=3x+0{,}05x^2+5
+        \Longrightarrow 0{,}05x^2+x-75=0.
+        $$
+
+        Multiplicant per $20$, $x^2+20x-1.500=0$:
+
+        $$x=\frac{-20\pm\sqrt{400+6.000}}{2}=\frac{-20\pm80}{2}.$$
+
+        Obtenim $x=30$ i $x=-50$. Només és vàlida $x=30$, és a dir, $3.000$ exemplars, amb un cost per exemplar de
+
+        $$M_A(30)=2+\frac{80}{30}=\frac{14}{3}\approx4{,}67\,€.$$
+
+    - **e)** Estudiem el signe de la diferència
+
+        $$
+        \begin{aligned}
+        D(x)&=M_A(x)-M_B(x)=\frac{75}{x}-1-0{,}05x\\
+            &=\frac{-0{,}05(x^2+20x-1.500)}{x}=\frac{-0{,}05(x-30)(x+50)}{x}.
+        \end{aligned}
+        $$
+
+        Per a $x>0$, el denominador i el factor $x+50$ són positius, de manera que el signe de $D$ depèn de $x-30$:
+
+        | $x$ | $(0,30)$ | $30$ | $(30,+\infty)$ |
+        |:---:|:---:|:---:|:---:|
+        | Comprovació | $D(10)=6$ | $D(30)=0$ | $D(40)=-1{,}125$ |
+        | Signe de $D(x)$ | $+$ | $0$ | $-$ |
+        | Impremta més econòmica | B | mateix cost | A |
+
+        Amb menys de $3.000$ exemplars convé la impremta B, i amb més de $3.000$, la impremta A.
+
+---
+
 ### Funcions a trossos
 
-**PAU.C.12.**
+**PAU.C.13.**
 **Tarifa d'una empresa de paqueteria**
 
 *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 5)*. Per enviar un paquet a una distància determinada, una empresa aplica les tarifes següents:
@@ -3855,7 +3951,7 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 - **d)** Representa gràficament la funció per a $0<x\leq25$.
 - **e)** Si un enviament ha costat $162\,€$, calcula el pes del paquet i comprova a quin tram pertany la solució.
 
-??? example "Mostra la solució pas a pas del problema PAU.C.12"
+??? example "Mostra la solució pas a pas del problema PAU.C.13"
     **Resolució pas a pas**
 
     - **a)** Per $9{,}5\,\text{kg}$ s'aplica el segon tram:
@@ -3905,7 +4001,7 @@ on $x\geq0$ és la distància recorreguda en quilòmetres.
 
 ---
 
-**PAU.C.13.**
+**PAU.C.14.**
 **Cost de neteja d'una empresa**
 
 *(basat en el problema 4 de la convocatòria ordinària de 2023, sèrie 5)*. El cost anual de la neteja d'una empresa, expressat en centenars d'euros, és
@@ -3925,7 +4021,7 @@ on $t$ és el nombre d'anys transcorreguts des de l'obertura.
 - **c)** Estudia la monotonia de cada tram i representa gràficament la funció.
 - **d)** Determina en quin moment el cost va ser màxim i calcula aquest cost en euros.
 
-??? example "Mostra la solució pas a pas del problema PAU.C.13"
+??? example "Mostra la solució pas a pas del problema PAU.C.14"
     **Resolució pas a pas**
 
     - **a)**
@@ -3972,7 +4068,7 @@ on $t$ és el nombre d'anys transcorreguts des de l'obertura.
 
 ---
 
-**PAU.C.14.**
+**PAU.C.15.**
 **Evolució del preu d'un producte**
 
 *(basat en el problema 2 de la convocatòria extraordinària de 2020, sèrie 4)*. Un producte va estar a la venda durant deu anys. El seu preu $P(t)$, en euros, depenia del temps $t$, en anys, segons
@@ -3991,7 +4087,7 @@ $$
 - **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
 - **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
 
-??? example "Mostra la solució pas a pas del problema PAU.C.14"
+??? example "Mostra la solució pas a pas del problema PAU.C.15"
     **Resolució pas a pas**
 
     - **a)** En el punt d'unió,

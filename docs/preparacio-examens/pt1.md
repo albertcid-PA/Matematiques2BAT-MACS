@@ -118,11 +118,12 @@ Els problemes PAU de càlcul són el material principal de la preparació. Cada 
 |:--|:--|
 | **Estudi i interpretació d'una funció** | **PAU.C.1**, **PAU.C.2**, **PAU.C.3**, **PAU.C.4** |
 | **Funcions exponencials i logarítmiques** | **PAU.C.5**, **PAU.C.6** |
-| **Construcció de la funció i optimització** | **PAU.C.7**, **PAU.C.8**, **PAU.C.9**, **PAU.C.10**, **PAU.C.11** |
-| **Funcions a trossos** | **PAU.C.12**, **PAU.C.13**, **PAU.C.14** |
+| **Construcció de la funció i optimització** | **PAU.C.7**, **PAU.C.8**, **PAU.C.9**, **PAU.C.10** |
+| **Comparació de dos models** | **PAU.C.11**, **PAU.C.12** |
+| **Funcions a trossos** | **PAU.C.13**, **PAU.C.14**, **PAU.C.15** |
 
 !!! note "Apartats de taxa de variació mitjana"
-    Els apartats **PAU.C.3 b** i **PAU.C.14 d** demanen una taxa de variació mitjana. Són útils per interpretar el model, però la coordinació de la PAU ha indicat que no hi haurà preguntes explícites d'aquest tipus.
+    Els apartats **PAU.C.3 b** i **PAU.C.15 d** demanen una taxa de variació mitjana. Són útils per interpretar el model, però la coordinació de la PAU ha indicat que no hi haurà preguntes explícites d'aquest tipus.
 
 [Obre els problemes PAU de càlcul](../calcul/per-practicar/exercicis_calcul.md#problemes-pau){ .md-button .md-button--primary }
 
@@ -132,9 +133,9 @@ Fes cada simulacre d'una tirada, en paper i amb el temps controlat. Corregeix-lo
 
 | Simulacre | Problemes |
 |:--|:--|
-| **Simulacre 1** | **PAU.C.1**, **PAU.C.6**, **PAU.C.9** i **PAU.C.13** |
-| **Simulacre 2** | **PAU.C.2**, **PAU.C.5**, **PAU.C.7** i **PAU.C.12** |
-| **Simulacre 3** | **PAU.C.4**, **PAU.C.10**, **PAU.C.11** i **PAU.C.14** (sense l'apartat d) |
+| **Simulacre 1** | **PAU.C.1**, **PAU.C.6**, **PAU.C.9** i **PAU.C.14** |
+| **Simulacre 2** | **PAU.C.2**, **PAU.C.5**, **PAU.C.7** i **PAU.C.13** |
+| **Simulacre 3** | **PAU.C.4**, **PAU.C.10**, **PAU.C.11** i **PAU.C.15** (sense l'apartat d) |
 
 Quan els hagis fet, continua amb problemes de càlcul de convocatòries anteriors. Al [Canal Universitats](https://universitats.gencat.cat/ca/pau/models-examen-anys-anteriors/matematiques-aplicades-cc/) hi ha els exàmens i els **criteris de correcció oficials**: llegeix-los per veure com es reparteix la puntuació de cada apartat.
 

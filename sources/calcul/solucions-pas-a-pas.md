@@ -2643,6 +2643,79 @@ La maleta de volum màxim té una amplada de $2{,}5\,\text{dm}$, una llargada de
 
 **PAU.C.12.**
 
+- **a)** $500$ exemplars corresponen a $x=5$ i $4.000$ exemplars, a $x=40$:
+
+    $$M_A(5)=2+\frac{80}{5}=18,\qquad M_B(5)=3+0{,}25+1=4{,}25,$$
+
+    $$M_A(40)=2+\frac{80}{40}=4,\qquad M_B(40)=3+2+0{,}125=5{,}125.$$
+
+    Amb $500$ exemplars és més econòmica la impremta B ($4{,}25\,€$ per exemplar davant de $18\,€$); amb $4.000$ exemplars, la impremta A ($4\,€$ davant d'uns $5{,}13\,€$).
+
+- **b)**
+
+    $$\lim_{x\to0^+}\left(2+\frac{80}{x}\right)=2+\frac{80}{0^+}=+\infty,
+    \qquad
+    \lim_{x\to+\infty}\left(2+\frac{80}{x}\right)=2+0=2.$$
+
+    La recta $x=0$ és una asímptota vertical: en tirades molt petites, el cost de preparació es reparteix entre pocs exemplars i el cost per exemplar es fa molt gran. La recta $y=2$ és una asímptota horitzontal: en tirades molt grans, el cost per exemplar s'acosta a $2\,€$.
+
+    Com que $\dfrac{80}{x}>0$ per a tot $x>0$, $M_A(x)>2$. Per tant, amb la impremta A cada exemplar no pot costar mai menys de $2\,€$.
+
+- **c)** Derivem el cost per exemplar de B:
+
+    $$M_B'(x)=0{,}05-\frac{5}{x^2}.$$
+
+    Resolem $M_B'(x)=0$:
+
+    $$0{,}05=\frac{5}{x^2}\Longrightarrow x^2=100\Longrightarrow x=10\quad(x>0).$$
+
+    | $x$ | $(0,10)$ | $10$ | $(10,+\infty)$ |
+    |:---:|:---:|:---:|:---:|
+    | Comprovació | $M_B'(5)=-0{,}15$ | $M_B'(10)=0$ | $M_B'(20)=0{,}0375$ |
+    | Signe de $M_B'(x)$ | $-$ | $0$ | $+$ |
+    | Comportament de $M_B$ | decreix | mínim | creix |
+
+    $$M_B(10)=3+0{,}5+0{,}5=4.$$
+
+    El cost per exemplar de B és mínim amb una tirada de $1.000$ exemplars i és de $4\,€$.
+
+- **d)** Igualem els dos costos i multipliquem per $x>0$:
+
+    $$
+    2+\frac{80}{x}=3+0{,}05x+\frac{5}{x}
+    \Longrightarrow 2x+80=3x+0{,}05x^2+5
+    \Longrightarrow 0{,}05x^2+x-75=0.
+    $$
+
+    Multiplicant per $20$, $x^2+20x-1.500=0$:
+
+    $$x=\frac{-20\pm\sqrt{400+6.000}}{2}=\frac{-20\pm80}{2}.$$
+
+    Obtenim $x=30$ i $x=-50$. Només és vàlida $x=30$, és a dir, $3.000$ exemplars, amb un cost per exemplar de
+
+    $$M_A(30)=2+\frac{80}{30}=\frac{14}{3}\approx4{,}67\,€.$$
+
+- **e)** Estudiem el signe de la diferència
+
+    $$
+    \begin{aligned}
+    D(x)&=M_A(x)-M_B(x)=\frac{75}{x}-1-0{,}05x\\
+        &=\frac{-0{,}05(x^2+20x-1.500)}{x}=\frac{-0{,}05(x-30)(x+50)}{x}.
+    \end{aligned}
+    $$
+
+    Per a $x>0$, el denominador i el factor $x+50$ són positius, de manera que el signe de $D$ depèn de $x-30$:
+
+    | $x$ | $(0,30)$ | $30$ | $(30,+\infty)$ |
+    |:---:|:---:|:---:|:---:|
+    | Comprovació | $D(10)=6$ | $D(30)=0$ | $D(40)=-1{,}125$ |
+    | Signe de $D(x)$ | $+$ | $0$ | $-$ |
+    | Impremta més econòmica | B | mateix cost | A |
+
+    Amb menys de $3.000$ exemplars convé la impremta B, i amb més de $3.000$, la impremta A.
+
+**PAU.C.13.**
+
 - **a)** Per $9{,}5\,\text{kg}$ s'aplica el segon tram:
 
     $$2\cdot15+7{,}5\cdot12=30+90=120\,€.$$
@@ -2683,7 +2756,7 @@ La maleta de volum màxim té una amplada de $2{,}5\,\text{dm}$, una llargada de
 
     que sí pertany a $[11,25]$.
 
-**PAU.C.13.**
+**PAU.C.14.**
 
 - **a)**
 
@@ -2722,7 +2795,7 @@ La maleta de volum màxim té una amplada de $2{,}5\,\text{dm}$, una llargada de
 
     $$C(14)=28\text{ centenars}=2.800\,€.$$
 
-**PAU.C.14.**
+**PAU.C.15.**
 
 - **a)** En el punt d'unió,
 
