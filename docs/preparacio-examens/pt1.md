@@ -42,17 +42,6 @@ Aquesta prova trimestral només inclou el bloc de càlcul. Prepara-la com el pro
 | **Valor absolut** | Escriure una funció amb valor absolut com una funció a trossos i interpretar-la. | [Representació de funcions](../calcul/representacio-funcions/03_representacio-funcions.md) |
 | **Optimització** | Construir la funció que cal optimitzar a partir de l'enunciat, determinar-ne el domini, justificar el màxim o el mínim i respondre la pregunta. | [Optimització](../calcul/optimitzacio/01_optimitzacio.md) |
 
-### Què ha indicat la coordinació que no es demanarà a la PAU
-
-- Asímptotes obliqües.
-- La recta tangent a una gràfica en un punt.
-- El teorema de Bolzano.
-- Integrals.
-- Funcions trigonomètriques.
-- Indeterminacions del tipus $1^\infty$.
-- Preguntes explícites de taxa de variació mitjana.
-- La regla de L'Hôpital no és necessària: si surt un límit, es pot resoldre sense aplicar-la. La pots fer servir, però amb justificació.
-
 !!! note "Exponencials i logaritmes"
     Les funcions exponencials i logarítmiques poden aparèixer en qualsevol part del problema: en l'estudi de la derivabilitat, en el càlcul d'extrems relatius, en la representació gràfica o en l'anàlisi de propietats com els límits.
 
@@ -135,7 +124,7 @@ Fes cada simulacre d'una tirada, en paper i amb el temps controlat. Corregeix-lo
 |:--|:--|
 | **Simulacre 1** | **PAU.C.1**, **PAU.C.6**, **PAU.C.9** i **PAU.C.14** |
 | **Simulacre 2** | **PAU.C.2**, **PAU.C.5**, **PAU.C.7** i **PAU.C.13** |
-| **Simulacre 3** | **PAU.C.4**, **PAU.C.10**, **PAU.C.11** i **PAU.C.15** (sense l'apartat d) |
+| **Simulacre 3** | **PAU.C.4**, **PAU.C.10**, **PAU.C.11** i **PAU.C.15** |
 
 Quan els hagis fet, continua amb problemes de càlcul de convocatòries anteriors. Al [Canal Universitats](https://universitats.gencat.cat/ca/pau/models-examen-anys-anteriors/matematiques-aplicades-cc/) hi ha els exàmens i els **criteris de correcció oficials**: llegeix-los per veure com es reparteix la puntuació de cada apartat.
 
