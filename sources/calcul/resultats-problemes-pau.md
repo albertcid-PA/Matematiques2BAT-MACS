@@ -72,9 +72,7 @@ Comprova els resultats després d'haver resolt cada problema i d'haver-ne justif
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_4_cost_mitja.tex">Figura PAU.C.4.</a></strong> Cost mitjà segons la producció.</figcaption>
 </figure>
 
-## Modelització, comparació i optimització
-
-### Construcció de la funció a partir de l'enunciat
+## Modelització i optimització
 
 **PAU.C.7. Reserves d'un hotel**
 
@@ -98,7 +96,7 @@ Comprova els resultats després d'haver resolt cada problema i d'haver-ne justif
 - **c)** La demanda és de $300$ unitats i els ingressos màxims són de $3.000\,€$ setmanals.
 - **d)** $\displaystyle E(p)=\frac{p(10+2p)}{500-10p-p^2}$; $E(5)=\frac4{17}\approx0{,}235$ i $E(10)=1$.
 
-### Comparació de dos models
+## Comparació de dos models
 
 **PAU.C.11. Tarifes de dues companyies de taxi**
 

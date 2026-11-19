@@ -316,7 +316,7 @@ En aquesta pàgina tens tots els enunciats dels temes 1, 2 i 3 de càlcul i els 
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=10){{ target="_blank" rel="noopener" }} · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=3){{ target="_blank" rel="noopener" }}
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=11){{ target="_blank" rel="noopener" }} · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=4){{ target="_blank" rel="noopener" }}
 
 </div>
 

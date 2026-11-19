@@ -794,9 +794,7 @@ on $x$ és la producció expressada en centenars d'unitats. Per exemple, $x=3$ c
 - **d)** L'empresa s'ha proposat aconseguir un cost mitjà inferior a $18\,€$ per unitat. Justifica si aquest objectiu és possible segons el model.
 - **e)** Estudia què passa amb el cost mitjà quan la producció s'apropa a zero i quan augmenta indefinidament. Fes un esbós de la gràfica que reflecteixi aquest comportament i el mínim obtingut.
 
-### Modelització, comparació i optimització
-
-#### Construcció de la funció a partir de l'enunciat
+### Modelització i optimització
 
 **PAU.C.7. Reserves d'un hotel** *(basat en l'exercici 4, opció B, de la convocatòria ordinària de 2025, sèrie 1)*. Un hotel cobra $80\,€$ per una habitació doble i, amb aquest preu, preveu tenir $100$ reserves. Un estudi indica que, per cada euro de descompte, s'aconseguiran dues reserves més.
 
@@ -832,7 +830,7 @@ $$
 
 Troba l'expressió d'$E(p)$ i calcula'n el valor quan el preu és de $5\,€$ i quan és de $10\,€$. No cal memoritzar aquesta fórmula.
 
-#### Comparació de dos models
+### Comparació de dos models
 
 **PAU.C.11. Tarifes de dues companyies de taxi** *(basat en el problema 1 de la convocatòria ordinària de 2024, sèrie 1)*. La companyia A cobra una quantitat fixa de $20\,€$ més $0{,}4\,€$ per quilòmetre. La tarifa de la companyia B és
 
