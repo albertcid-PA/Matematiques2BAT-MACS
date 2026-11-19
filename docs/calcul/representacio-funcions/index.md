@@ -1,10 +1,10 @@
-# 2. Aplicacions de les derivades
+# 2. Representació de funcions
 
-En aquest tema utilitzarem les derivades per estudiar el comportament de les funcions, representar-les i resoldre problemes d'optimització.
+En aquest tema utilitzarem les derivades per estudiar el comportament de les funcions i representar-les.
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega 2. Aplicacions de les derivades**](../../assets/apunts/tema_2_aplicacions_derivades.pdf?v=5){ target="_blank" rel="noopener" }
+[**Descarrega 2. Representació de funcions**](../../assets/apunts/tema_2_representacio_funcions.pdf?v=1){ target="_blank" rel="noopener" }
 
 </div>
 
@@ -17,6 +17,6 @@ En aquest tema utilitzarem les derivades per estudiar el comportament de les fun
 - [**Creixement, decreixement i extrems**](02_creixement-extrems.md) — interpretació del signe de la primera derivada i localització de màxims i mínims.
 - [**Representació de funcions**](03_representacio-funcions.md) — estudi de funcions polinòmiques, racionals, irracionals, exponencials, logarítmiques, a trossos i amb valor absolut.
 
-## Optimització
+## Per practicar
 
-- [**Optimització de funcions**](04_optimitzacio.md) — plantejament, resolució i interpretació de problemes contextualitzats.
+- [**Exercicis i problemes**](../per-practicar/exercicis_calcul.md#tema-2-representacio-de-funcions) — activitats del tema 2, amb les solucions pas a pas desplegables.

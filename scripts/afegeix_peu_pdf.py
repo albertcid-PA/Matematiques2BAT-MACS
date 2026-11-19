@@ -12,7 +12,7 @@ def add_footer(
     source: Path,
     destination: Path,
     title: str = "Exercicis de càlcul",
-    subject: str = "Recull d'exercicis dels temes 1 i 2",
+    subject: str = "Recull d'exercicis dels temes 1, 2 i 3",
     footer_text: str = "Matemàtiques Aplicades a les Ciències Socials II · Exercicis de càlcul",
 ) -> None:
     reader = PdfReader(str(source))

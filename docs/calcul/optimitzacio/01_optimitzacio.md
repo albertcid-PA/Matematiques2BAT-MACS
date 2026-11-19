@@ -9,8 +9,8 @@ En els problemes d'optimització sovint cal expressar longituds, àrees o volums
 En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar el **perímetre**. En qualsevol figura poligonal, el perímetre és la **suma de les longituds de tots els costats**.
 
 <figure markdown="span">
-  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/calcul/fig_2_19_repas_geometria_plana.svg?v=9){ width="900" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_19_repas_geometria_plana.tex">Figura 2.19.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
+  ![Quadrat, rectangle, triangle, cercle i polígon regular amb les dimensions i les fórmules de l'àrea i del perímetre](../../img/calcul/fig_3_1_repas_geometria_plana.svg?v=9){ width="900" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_1_repas_geometria_plana.tex">Figura 3.1.</a></strong> Àrees i perímetres de les figures planes més habituals.</figcaption>
 </figure>
 
 | Figura | Àrea | Perímetre |
@@ -29,8 +29,8 @@ En les figures planes utilitzarem $A$ per indicar l'**àrea** i $P$ per indicar 
 En els cossos geomètrics utilitzarem $A_T$ per indicar l'**àrea total** i $V$ per indicar el **volum**. L'àrea total és la suma de les àrees de totes les superfícies que formen el cos.
 
 <figure markdown="span">
-  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/calcul/fig_2_20_repas_geometria_espai.svg?v=13){ width="960" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_20_repas_geometria_espai.tex">Figura 2.20.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
+  ![Prisma rectangular, cilindre, piràmide de base quadrada, con i esfera amb els seus desplegaments i les fórmules de l'àrea total i del volum](../../img/calcul/fig_3_2_repas_geometria_espai.svg?v=13){ width="960" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_2_repas_geometria_espai.tex">Figura 3.2.</a></strong> Cossos geomètrics, desplegaments, àrees totals i volums.</figcaption>
 </figure>
 
 | Cos geomètric | Àrea total | Volum |
@@ -266,8 +266,8 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     - $y$: altura de la capsa, en centímetres.
 
     <figure markdown="span">
-      ![Capsa oberta de base quadrada amb el costat x i l'altura y](../../img/calcul/fig_2_21_capsa_oberta.svg?v=8){ width="520" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_21_capsa_oberta.tex">Figura 2.21.</a></strong> Variables de la capsa de base quadrada i sense tapa.</figcaption>
+      ![Capsa oberta de base quadrada amb el costat x i l'altura y](../../img/calcul/fig_3_3_capsa_oberta.svg?v=8){ width="520" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_3_capsa_oberta.tex">Figura 3.3.</a></strong> Variables de la capsa de base quadrada i sense tapa.</figcaption>
     </figure>
 
 
@@ -551,8 +551,8 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     Com que $f(x)$ està expressada en desenes de persones, el model preveu que, amb el pas del temps, el nombre setmanal de visitants **s'aproximarà a zero**. Això no vol dir que en una setmana concreta hagi de ser exactament zero, sinó que l'afluència prevista serà cada vegada més petita.
 
     <figure markdown="span">
-      ![Gràfica del nombre setmanal de visitants amb un màxim a la segona setmana](../../img/calcul/fig_2_22_visitants_exposicio.svg?v=5){ width="700" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_22_visitants_exposicio.tex">Figura 2.22.</a></strong> Evolució prevista del nombre setmanal de visitants, expressat en desenes de persones.</figcaption>
+      ![Gràfica del nombre setmanal de visitants amb un màxim a la segona setmana](../../img/calcul/fig_3_4_visitants_exposicio.svg?v=5){ width="700" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_4_visitants_exposicio.tex">Figura 3.4.</a></strong> Evolució prevista del nombre setmanal de visitants, expressat en desenes de persones.</figcaption>
     </figure>
 ### 3.3 Benefici màxim d'una empresa de joguines
 
@@ -732,8 +732,8 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     - Entre $10$ i $18$ milers de nines, el benefici **decreix** fins a $20$ milers d'euros.
 
     <figure markdown="span">
-      ![Gràfica del benefici de Joguines Pallaresos en funció dels milers de nines](../../img/calcul/fig_2_23_benefici_empresa.svg?v=6){ width="700" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_23_benefici_empresa.tex">Figura 2.23.</a></strong> Benefici en funció dels milers de nines fabricades.</figcaption>
+      ![Gràfica del benefici de Joguines Pallaresos en funció dels milers de nines](../../img/calcul/fig_3_5_benefici_empresa.svg?v=6){ width="700" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_5_benefici_empresa.tex">Figura 3.5.</a></strong> Benefici en funció dels milers de nines fabricades.</figcaption>
     </figure>
 
 ### 3.4 Contractació de venedors i ingressos màxims
@@ -863,8 +863,8 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     Per tant, la secció ha de tenir **$18$ venedors en total** i obtindrà uns ingressos mensuals màxims de **$64\,800$ €**.
 
     <figure markdown="span">
-      ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/calcul/fig_2_24_ingressos_venedors.svg?v=5){ width="700" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_24_ingressos_venedors.tex">Figura 2.24.</a></strong> Ingressos mensuals en funció del nombre de venedors nous contractats.</figcaption>
+      ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/calcul/fig_3_6_ingressos_venedors.svg?v=5){ width="700" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_6_ingressos_venedors.tex">Figura 3.6.</a></strong> Ingressos mensuals en funció del nombre de venedors nous contractats.</figcaption>
     </figure>
 
 ### 3.5 Estudi i optimització d'una funció a trossos
@@ -1056,8 +1056,8 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     **Apartat f. Representem la funció**
 
     <figure markdown="span">
-      ![Gràfica del preu d'un producte definit mitjançant una funció a trossos](../../img/calcul/fig_2_25_preu_producte_trossos.svg?v=4){ width="720" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_25_preu_producte_trossos.tex">Figura 2.25.</a></strong> Evolució del preu del producte, expressat en centenars d'euros.</figcaption>
+      ![Gràfica del preu d'un producte definit mitjançant una funció a trossos](../../img/calcul/fig_3_7_preu_producte_trossos.svg?v=4){ width="720" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_7_preu_producte_trossos.tex">Figura 3.7.</a></strong> Evolució del preu del producte, expressat en centenars d'euros.</figcaption>
     </figure>
 
     **Apartat g. Estudiem el comportament a llarg termini**
@@ -1081,3 +1081,140 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
     $$
 
     El preu s'aproxima als $4$ centenars d'euros per valors superiors, però no hi arriba mai. Per tant, després dels primers cinc anys, el preu de venda **no tornarà a ser mai de $400$ €**, encara que s'hi aproximarà cada vegada més.
+
+### 3.6 Comparació de dos models
+
+Per comparar dues opcions, com ara dues tarifes o dues màquines, restem els dos models: $D(x)=f(x)-g(x)$. És el que ja fem amb el benefici, $B(x)=I(x)-C(x)$. A més de buscar el màxim de la diferència, ara també ens preguntarem **on coincideixen** els models ($D(x)=0$) i **quin és més gran** en cada interval (signe de $D$).
+
+!!! example "Exemple 6. Lloguer d'una màquina envasadora"
+    Una cooperativa que fa melmelada ha de llogar una màquina per envasar entre $0$ i $1\,200$ pots diaris. Té dues ofertes. Si $x$ és el nombre de centenars de pots envasats en un dia, el cost diari de cada màquina, expressat en centenars d'euros, és:
+
+    $$
+    C_A(x)=0{,}5x^2+x+20,
+    \qquad
+    C_B(x)=7x+10,
+    \qquad
+    0\leq x\leq12.
+    $$
+
+    **a)** Calcula el cost diari de cada màquina si s'envasen $100$ pots i si se n'envasen $600$. Quina màquina és més econòmica en cada cas?
+
+    **b)** Per a quines produccions les dues màquines tenen el mateix cost?
+
+    **c)** Per a quines produccions és més econòmica cada màquina?
+
+    **d)** Dins de l'interval de producció en què la màquina A és més econòmica, quina producció permet estalviar més diners respecte de la màquina B? Quin és aquest estalvi?
+
+    **Pas 1. Identifiquem les variables i el domini**
+
+    - $x$: nombre de pots envasats en un dia, en centenars;
+    - $C_A(x)$ i $C_B(x)$: cost diari de cada màquina, en centenars d'euros.
+
+    Els dos models fan servir la mateixa variable i les mateixes unitats, i el domini és $[0,12]$.
+
+    **Apartat a. Comparem els costos en dos valors concrets**
+
+    Per a $100$ pots, $x=1$:
+
+    $$
+    C_A(1)=0{,}5+1+20=21{,}5,
+    \qquad
+    C_B(1)=7+10=17.
+    $$
+
+    Per a $600$ pots, $x=6$:
+
+    $$
+    C_A(6)=0{,}5\cdot36+6+20=44,
+    \qquad
+    C_B(6)=7\cdot6+10=52.
+    $$
+
+    Per tant, per envasar $100$ pots és més econòmica la **màquina B** ($1\,700$ € davant de $2\,150$ €), però per envasar-ne $600$ és més econòmica la **màquina A** ($4\,400$ € davant de $5\,200$ €). Cap de les dues màquines és sempre la millor opció.
+
+    **Pas 2. Definim la funció diferència**
+
+    Com que volem saber quant s'estalvia amb la màquina A, restem el cost de la màquina A del de la màquina B:
+
+    $$
+    \begin{aligned}
+    D(x)
+      &=C_B(x)-C_A(x)\\
+      &=7x+10-\left(0{,}5x^2+x+20\right)\\
+      &=-0{,}5x^2+6x-10.
+    \end{aligned}
+    $$
+
+    Amb aquest ordre, $D(x)>0$ vol dir que la màquina B és més cara i, per tant, que convé la màquina A. El valor $D(x)$ és l'estalvi que s'obté amb la màquina A: fa el paper d'un benefici.
+
+    **Apartat b. Trobem on coincideixen els dos costos**
+
+    Resolem $D(x)=0$:
+
+    $$
+    -0{,}5x^2+6x-10=0
+    \quad\Longleftrightarrow\quad
+    x^2-12x+20=0.
+    $$
+
+    Aplicant la fórmula de l'equació de segon grau,
+
+    $$
+    x=\frac{12\pm\sqrt{144-80}}{2}=\frac{12\pm8}{2}.
+    $$
+
+    Obtenim $x=2$ i $x=10$, tots dos dins del domini. Ho comprovem:
+
+    $$
+    C_A(2)=C_B(2)=24,
+    \qquad
+    C_A(10)=C_B(10)=80.
+    $$
+
+    Per tant, les dues màquines tenen el mateix cost quan s'envasen **$200$ pots** ($2\,400$ € diaris) i quan se n'envasen **$1\,000$** ($8\,000$ € diaris).
+
+    **Apartat c. Estudiem el signe de la diferència**
+
+    Els punts $x=2$ i $x=10$ divideixen el domini en tres intervals. Estudiem el signe de $D$ en cadascun:
+
+    | $x$ | $[0,2)$ | $2$ | $(2,10)$ | $10$ | $(10,12]$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Comprovació | $D(1)=-4{,}5$ | $D(2)=0$ | $D(6)=8$ | $D(10)=0$ | $D(11)=-4{,}5$ |
+    | Signe de $D(x)$ | $-$ | $0$ | $+$ | $0$ | $-$ |
+    | Màquina més econòmica | B | mateix cost | A | mateix cost | B |
+
+    Per tant:
+
+    - si s'envasen **menys de $200$ pots** o **més de $1\,000$ pots**, convé la **màquina B**;
+    - si s'envasen **entre $200$ i $1\,000$ pots**, convé la **màquina A**.
+
+    La màquina A té un cost fix més alt, però és més barata per a produccions mitjanes. Per a produccions grans, el terme $0{,}5x^2$ fa créixer el seu cost més de pressa que el de la màquina B.
+
+    **Apartat d. Maximitzem l'estalvi**
+
+    Busquem el màxim de $D(x)$ a l'interval $[2,10]$, on la màquina A és més econòmica, igual que buscaríem un benefici màxim:
+
+    $$
+    D'(x)=-x+6=0
+    \quad\Longrightarrow\quad
+    x=6\in(2,10).
+    $$
+
+    La derivada és positiva a $[2,6)$ i negativa a $(6,10]$, i $D''(x)=-1<0$; per tant, $x=6$ és un màxim. Als extrems de l'interval, $D(2)=D(10)=0$, de manera que el màxim absolut a $[2,10]$ és
+
+    $$
+    D(6)=-0{,}5\cdot36+6\cdot6-10=8.
+    $$
+
+    Per tant, l'estalvi màxim amb la màquina A s'obté quan s'envasen **$600$ pots diaris** i és de **$800$ € diaris**: la màquina A costa $4\,400$ € i la màquina B, $5\,200$ €.
+
+    <figure markdown="span">
+      ![A dalt, gràfiques del cost diari de les dues màquines envasadores, amb els punts de tall; a sota, gràfica de la funció diferència D(x), amb els zeros i l'estalvi màxim](../../img/calcul/fig_3_8_comparacio_maquines.svg?v=1){ width="700" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_8_comparacio_maquines.tex">Figura 3.8.</a></strong> A dalt, cost diari de les dues màquines; a sota, estalvi $D(x)=C_B(x)-C_A(x)$. A la zona ombrejada, entre $200$ i $1\,000$ pots, $D(x)>0$ i la màquina A és més econòmica.</figcaption>
+    </figure>
+
+!!! warning "Errors habituals en la comparació de models"
+    - Restar els models sense parèntesis: $7x+10-0{,}5x^2+x+20$ és incorrecte.
+    - Comparar els models en un sol valor i treure'n una conclusió per a tot el domini.
+    - Donar per bones solucions de $D(x)=0$ que no pertanyen al domini del context.
+    - Oblidar que, si es demana la diferència màxima en tot el domini sense dir quina opció és més cara, s'han de comparar també els extrems del domini. En aquest exemple, als extrems del domini, $\lvert D(0)\rvert=\lvert D(12)\rvert=10$, i la màquina B és més econòmica en tots dos.

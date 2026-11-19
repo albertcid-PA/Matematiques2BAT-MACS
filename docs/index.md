@@ -6,14 +6,14 @@ Aquest lloc recull, tema per tema, el contingut treballat a classe, amb explicac
 
 ## Blocs del curs
 
-- [**Càlcul**](calcul/index.md) — repàs de límits i derivades, aplicacions de les derivades, representació de funcions i optimització.
+- [**Càlcul**](calcul/index.md) — repàs de límits i derivades, representació de funcions i optimització.
 - [**Àlgebra lineal**](algebra-lineal/index.md) — sistemes d'equacions, mètode de Gauss, matrius i problemes contextualitzats.
 - [**Probabilitat i estadística**](probabilitat-estadistica/index.md) — probabilitat condicionada, teorema de Bayes, distribucions de probabilitat i inferència estadística.
 
 ## Preparació d'exàmens
 
 - [**Prova parcial del 1r trimestre núm. 1: Càlcul**](preparacio-examens/pp1-1.md) — temari, itinerari de pràctica, comprovació final i instruccions per treballar amb el tutor d'IA.
-- [**Prova parcial del 1r trimestre núm. 2: Càlcul**](preparacio-examens/pp1-2.md) — preparació de tot el càlcul dels temes 1 i 2 amb problemes contextualitzats de tipus PAU i especial atenció a l'optimització.
+- [**Prova parcial del 1r trimestre núm. 2: Càlcul**](preparacio-examens/pp1-2.md) — preparació de tot el càlcul dels temes 1, 2 i 3 amb problemes contextualitzats de tipus PAU i especial atenció a l'optimització.
 
 ## Autoria i eines
 

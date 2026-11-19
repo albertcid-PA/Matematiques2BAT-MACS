@@ -1453,8 +1453,8 @@ Totes sis funcions tenen domini $\mathbb{R}$. Factoritzem per trobar els talls a
 - **f)** $f(x)=x^2(x-4)^2$; els zeros són $0$ i $4$, tots dos dobles. Com que $f'(x)=4x(x-2)(x-4)$, té mínims a $(0,0)$ i $(4,0)$ i un màxim a $(2,16)$. Per l'ordre dels infinits, conservem $x^4$: $\lim_{x\to-\infty}f(x)=\lim_{x\to-\infty}x^4=+\infty$ i $\lim_{x\to+\infty}f(x)=\lim_{x\to+\infty}x^4=+\infty$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=5){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_18.tex">Figura 2.31.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
+  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_23_resultat_exercici_2_18.svg?v=5){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_23_resultat_exercici_2_18.tex">Figura 2.23.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
 </figure>
 
 **2.19.**
@@ -1986,7 +1986,7 @@ $$
 
 La funció és contínua als dos punts d'unió. Els pendents són $-3$, $1$ i $3$; com que canvien, no és derivable a $x=-2$ ni a $x=1$.
 
-**2.29.**
+**3.1.**
 
 Siguin $x$ els costats perpendiculars al mur i $y$ el costat paral·lel. Només cal tancar tres costats:
 
@@ -2002,7 +2002,7 @@ Com que $A''(x)=-4<0$, és un màxim. Aleshores $y=120-60=60$. Les dimensions ò
 
 $$A_{\max}=30\cdot60=1.800\,\text{m}^2.$$
 
-**2.30.**
+**3.2.**
 
 Siguin $x$ el costat horitzontal i $y$ el vertical. Com que $xy=6$, $y=\frac6x$, amb $x>0$. El cost total és
 
@@ -2016,7 +2016,7 @@ Com que $C''(x)=\frac{144}{x^3}>0$, és un mínim. El cost és
 
 $$C_{\min}=8\cdot3+\frac{72}{3}=48\,€.$$
 
-**2.31.**
+**3.3.**
 
 La superfície d'un cilindre tancat és
 
@@ -2036,7 +2036,7 @@ Com que $V''(10)=-60\pi<0$, és un màxim. L'altura és $h=30-10=20\,\text{cm}$ 
 
 $$V_{\max}=\pi\cdot10^2\cdot20=2.000\pi\,\text{cm}^3.$$
 
-**2.32.**
+**3.4.**
 
 De $r^2+h^2=225$ obtenim
 
@@ -2083,7 +2083,7 @@ i la capacitat màxima,
 
 $$V_{\max}=\frac13\pi(150)(5\sqrt3)=250\pi\sqrt3\,\text{cm}^3.$$
 
-**2.33.**
+**3.5.**
 
 Siguin $x=OP$. Aleshores el socorrista corre $BP=100-x$ metres i neda $\sqrt{x^2+60^2}$ metres. El temps és
 
@@ -2124,7 +2124,7 @@ $$T_{\min}=\frac{50}{3}+20\sqrt2\approx44{,}95\,\text{s}.$$
 
 Si corre fins a $O$, tarda $\frac{100}{6}+\frac{60}{2}=46{,}67\,\text{s}$. Si neda immediatament, tarda $\frac{\sqrt{100^2+60^2}}2\approx58{,}31\,\text{s}$. El punt interior és realment la millor opció.
 
-**2.34.**
+**3.6.**
 
 Siguin $x$ els augments de $2\,€$. El preu és $40+2x$ i es venen $500-20x$ entrades. Com que el nombre d'entrades no pot ser negatiu, el domini és $0\leq x\leq25$.
 
@@ -2154,7 +2154,7 @@ $$B_{\max}=43\cdot430-2.000=16.490\,€.$$
 
 Si el preu només pot variar de $2$ en $2\,€$, comparem $x=3$ i $x=4$: tant $46\,€$ com $48\,€$ donen un benefici de $16.480\,€$.
 
-**2.35.**
+**3.7.**
 
 Els ingressos són
 
@@ -2174,7 +2174,7 @@ $$B(328)=7.377{,}12\,€,\qquad B(329)=7.377{,}13\,€.$$
 
 Cal fabricar $329$ unitats.
 
-**2.36.**
+**3.8.**
 
 El cost mitjà és
 
@@ -2190,7 +2190,7 @@ $$C_m=12+24\sqrt{10}\approx87{,}895\,€.$$
 
 Comparant $94$ i $95$ unitats, el cost mitjà és lleugerament menor per a $95$; per tant, cal fabricar $95$ unitats.
 
-**2.37.**
+**3.9.**
 
 Estudiem cada tram dins del seu interval.
 
@@ -2210,7 +2210,7 @@ $$B(0)=20,\qquad B(4)=36,\qquad B(5)=38,\qquad B(8)=20.$$
 
 Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. La gràfica uneix el primer tram creixent amb el segon, que arriba al màxim $(5,38)$ i baixa fins a $(8,20)$.
 
-**2.38.**
+**3.10.**
 
 Siguin $x$ l'amplada de la maleta, $y$ la llargada i $h$ l'alçada, totes expressades en decímetres. Com que l'alçada és el triple de l'amplada,
 

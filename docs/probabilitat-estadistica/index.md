@@ -4,11 +4,11 @@ Aquest bloc reuneix la probabilitat, les distribucions i la inferència estadís
 
 ## Temes
 
-- [**5. Probabilitat i teorema de Bayes**](probabilitat/index.md).
-- [**6. Distribucions de probabilitat**](distribucions/index.md).
-- [**7. Inferència estadística**](inferencia/index.md).
+- [**6. Probabilitat i teorema de Bayes**](probabilitat/index.md).
+- [**7. Distribucions de probabilitat**](distribucions/index.md).
+- [**8. Inferència estadística**](inferencia/index.md).
 
 ## Per practicar
 
-- [**Exercicis dels temes 5, 6 i 7**](exercicis.md) — col·lecció completa d'exercicis de probabilitat i estadística, agrupats per tema.
+- [**Exercicis dels temes 6, 7 i 8**](exercicis.md) — col·lecció completa d'exercicis de probabilitat i estadística, agrupats per tema.
 - [**Problemes PAU**](problemes-pau.md) — problemes de probabilitat i estadística de les PAU, identificats amb l'any i la convocatòria.

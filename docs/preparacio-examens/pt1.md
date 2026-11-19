@@ -3,7 +3,7 @@
 Aquesta prova s'ha de preparar **com si fos el problema de càlcul de les PAU**. Per això, aquesta pàgina segueix les orientacions oficials de la PAU de Matemàtiques Aplicades a les Ciències Socials i els aclariments de la reunió de coordinació de la matèria per a la PAU 2026. L'objectiu és arribar a la prova amb el mateix nivell, el mateix tipus de preguntes i la mateixa exigència de justificació que trobaràs al juny.
 
 !!! abstract "Temari de la prova"
-    Entra **tot el bloc de càlcul dels temes 1 i 2**: límits, asímptotes, derivades, continuïtat i derivabilitat, càlcul de coeficients, creixement i decreixement, extrems, representació de funcions i optimització.
+    Entra **tot el bloc de càlcul dels temes 1, 2 i 3**: límits, asímptotes, derivades, continuïtat i derivabilitat, càlcul de coeficients, creixement i decreixement, extrems, representació de funcions i optimització.
 
     Has de saber treballar amb funcions **polinòmiques, racionals, exponencials, logarítmiques, a trossos i amb valor absolut**, que són les que fa servir la PAU.
 
@@ -34,13 +34,13 @@ Aquesta prova trimestral només inclou el bloc de càlcul. Prepara-la com el pro
 
 | Bloc | Què et poden demanar | Apunts |
 |:--|:--|:--|
-| **Funcions i les seves propietats** | Identificar, representar i analitzar funcions polinòmiques, exponencials, logarítmiques i a trossos; determinar el domini, tant algebraic com del context. | [Representació de funcions](../calcul/aplicacions-derivades/03_representacio-funcions.md) |
+| **Funcions i les seves propietats** | Identificar, representar i analitzar funcions polinòmiques, exponencials, logarítmiques i a trossos; determinar el domini, tant algebraic com del context. | [Representació de funcions](../calcul/representacio-funcions/03_representacio-funcions.md) |
 | **Límits i asímptotes** | Calcular límits de funcions racionals i aplicar-los a les asímptotes horitzontals i verticals; estudiar el comportament a llarg termini d'un model, també si és exponencial o logarítmic. | [Repàs de límits](../calcul/repas-limits-derivades/01_limits.md) |
 | **Derivades** | Derivar funcions polinòmiques, racionals, exponencials i logarítmiques. Pot sortir la regla de la cadena, sempre amb funcions senzilles. | [Repàs de derivades](../calcul/repas-limits-derivades/02_derivades.md) |
-| **Estudi local** | Estudiar la continuïtat i la derivabilitat, també en els punts d'unió d'una funció a trossos, i calcular coeficients a partir d'aquestes condicions. | [Derivabilitat](../calcul/aplicacions-derivades/01_derivabilitat.md) |
-| **Monotonia i extrems** | Trobar els intervals de creixement i decreixement i els extrems relatius i absoluts, i interpretar-los en el context. | [Creixement i extrems](../calcul/aplicacions-derivades/02_creixement-extrems.md) |
-| **Valor absolut** | Escriure una funció amb valor absolut com una funció a trossos i interpretar-la. | [Representació de funcions](../calcul/aplicacions-derivades/03_representacio-funcions.md) |
-| **Optimització** | Construir la funció que cal optimitzar a partir de l'enunciat, determinar-ne el domini, justificar el màxim o el mínim i respondre la pregunta. | [Optimització](../calcul/aplicacions-derivades/04_optimitzacio.md) |
+| **Estudi local** | Estudiar la continuïtat i la derivabilitat, també en els punts d'unió d'una funció a trossos, i calcular coeficients a partir d'aquestes condicions. | [Derivabilitat](../calcul/representacio-funcions/01_derivabilitat.md) |
+| **Monotonia i extrems** | Trobar els intervals de creixement i decreixement i els extrems relatius i absoluts, i interpretar-los en el context. | [Creixement i extrems](../calcul/representacio-funcions/02_creixement-extrems.md) |
+| **Valor absolut** | Escriure una funció amb valor absolut com una funció a trossos i interpretar-la. | [Representació de funcions](../calcul/representacio-funcions/03_representacio-funcions.md) |
+| **Optimització** | Construir la funció que cal optimitzar a partir de l'enunciat, determinar-ne el domini, justificar el màxim o el mínim i respondre la pregunta. | [Optimització](../calcul/optimitzacio/01_optimitzacio.md) |
 
 ### Què ha indicat la coordinació que no es demanarà a la PAU
 
@@ -165,7 +165,7 @@ Si l'eina no coincideix amb el teu resultat, localitza el **primer** desacord, e
 
 !!! abstract "Posa en marxa el tutor amb NotebookLM"
     1. Entra a [NotebookLM](https://notebooklm.google.com/) amb un **compte personal de Google** i crea un quadern nou.
-    2. A **Afegeix fonts → Lloc web**, incorpora aquesta pàgina, els apunts dels temes 1 i 2 i la pàgina d'**Exercicis i problemes** de càlcul.
+    2. A **Afegeix fonts → Lloc web**, incorpora aquesta pàgina, els apunts dels temes 1, 2 i 3 i la pàgina d'**Exercicis i problemes** de càlcul.
     3. Copia al xat una de les instruccions següents.
     4. Resol cada pregunta en paper i envia al tutor el teu procediment, no només el resultat.
 

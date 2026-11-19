@@ -241,15 +241,15 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 - **b)** Determina els coeficients $a$, $b$ i $c$.
 - **c)** Classifica l'extrem relatiu mitjançant la derivada segona.
 
-## Tema 2. Aplicacions de les derivades
+## Tema 2. Representació de funcions
 
 ### Derivabilitat
 
 **2.1.** Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
 
 <figure markdown="span">
-  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/calcul/fig_2_26_exercici_punts_no_derivables.svg?v=4){ width="920" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_exercici_punts_no_derivables.tex">Figura 2.26.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../img/calcul/fig_2_19_exercici_punts_no_derivables.svg?v=4){ width="920" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_19_exercici_punts_no_derivables.tex">Figura 2.19.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
 </figure>
 
 **2.2.** La figura representa una funció $y=f(x)$.
@@ -258,8 +258,8 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 - **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
 
 <figure markdown="span">
-  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/calcul/fig_2_27_exercici_derivades_grafica.svg?v=4){ width="700" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_27_exercici_derivades_grafica.tex">Figura 2.27.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../img/calcul/fig_2_20_exercici_derivades_grafica.svg?v=4){ width="700" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_20_exercici_derivades_grafica.tex">Figura 2.20.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
 </figure>
 
 #### Estudi en els punts d'unió
@@ -591,30 +591,30 @@ $$
 - **b)** Escriu $p$ com una funció a trossos.
 - **c)** Indica en quins punts no és derivable i representa-la.
 
-### Optimització
+## Tema 3. Optimització
 
 En cada problema, identifica les dades i defineix les variables necessàries. Construeix una funció d'una sola variable que representi la magnitud que es vol maximitzar o minimitzar, determina'n el domini i resol el problema. Justifica l'òptim i expressa el resultat amb les unitats corresponents.
 
-#### Geometria plana
+### Geometria plana
 
-**2.29. Hort urbà al costat d'un mur.** Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo. **Determina les dimensions de l'hort perquè l'àrea sigui màxima i calcula aquesta àrea.**
+**3.1. Hort urbà al costat d'un mur.** Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo. **Determina les dimensions de l'hort perquè l'àrea sigui màxima i calcula aquesta àrea.**
 
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-**2.30. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $6\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
+**3.2. Aparador rectangular.** Una botiga vol construir un aparador rectangular de $6\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
 
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un mínim.
 
-#### Geometria a l'espai
+### Geometria a l'espai
 
-**2.31. Llauna cilíndrica.** Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$. **Determina el radi i l'altura de la llauna perquè el volum sigui màxim i calcula aquest volum.**
+**3.3. Llauna cilíndrica.** Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$. **Determina el radi i l'altura de la llauna perquè el volum sigui màxim i calcula aquest volum.**
 
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-**2.32. Recipient cònic.** Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
+**3.4. Recipient cònic.** Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
 
 $$
 r^2+h^2=15^2.
@@ -625,28 +625,28 @@ $$
 - **a)** Construeix la funció que cal optimitzar a partir de la relació donada i indica'n el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-#### Temps mínim
+### Temps mínim
 
-**2.33. Rescat a la platja.** Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
+**3.5. Rescat a la platja.** Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
 
 El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. **Determina en quin punt de la costa ha de començar a nedar perquè el temps total del rescat sigui mínim i calcula aquest temps.**
 
 <figure markdown="span" class="exercise-statement-figure--compact">
-  ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../img/calcul/fig_2_28_rescat_platja.svg?v=3){ width="650" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_rescat_platja.tex">Figura 2.28.</a></strong> Esquema del recorregut del socorrista en l'exercici 2.33.</figcaption>
+  ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../img/calcul/fig_3_9_rescat_platja.svg?v=3){ width="650" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_9_rescat_platja.tex">Figura 3.9.</a></strong> Esquema del recorregut del socorrista en l'exercici 3.5.</figcaption>
 </figure>
 
 - **a)** Defineix una variable que situï el punt $P$ i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema, justifica el mínim i compara'l amb les opcions de fer tot el trajecte possible corrent o començar a nedar immediatament.
 
-#### Ingressos i beneficis
+### Ingressos i beneficis
 
-**2.34. Entrades d'un espectacle.** Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$. **Determina el preu de l'entrada que maximitza el benefici i calcula el nombre d'entrades venudes i el benefici màxim.**
+**3.6. Entrades d'un espectacle.** Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$. **Determina el preu de l'entrada que maximitza el benefici i calcula el nombre d'entrades venudes i el benefici màxim.**
 
 - **a)** Defineix la variable i expressa en funció d'ella els ingressos i les despeses. Calcula la funció de benefici com a ingressos menys despeses, indicant el domini que té sentit en el context.
 - **b)** Resol el problema i interpreta el resultat.
 
-**2.35. Producció d'una cooperativa.** El cost de produir $x$ unitats d'un article és
+**3.7. Producció d'una cooperativa.** El cost de produir $x$ unitats d'un article és
 
 $$
 C(x)=0{,}03x^2+4x+180,
@@ -663,9 +663,9 @@ La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fab
 - **a)** Construeix la funció de benefici a partir dels ingressos i els costos i indica'n el domini.
 - **b)** Resol primer el problema considerant $x$ una variable real. Després, com que només es poden fabricar unitats senceres, compara els enters necessaris i dona la decisió final.
 
-#### Cost mitjà
+### Cost mitjà
 
-**2.36. Cost mitjà de fabricació.** El cost total, en euros, de fabricar $x$ unitats d'un producte és
+**3.8. Cost mitjà de fabricació.** El cost total, en euros, de fabricar $x$ unitats d'un producte és
 
 $$
 C(x)=0{,}4x^2+12x+3.600, \qquad x>0.
@@ -676,9 +676,9 @@ $$
 - **a)** Construeix la funció de cost mitjà i indica'n el domini.
 - **b)** Resol primer el problema considerant $x$ una variable real. Després, si la producció ha de ser entera, compara els enters necessaris i dona la decisió final.
 
-#### Optimització d'una funció a trossos
+### Optimització d'una funció a trossos
 
-**2.37. Campanya publicitària.** Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Vol determinar quina inversió proporciona el benefici màxim i calcular aquest benefici. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
+**3.9. Campanya publicitària.** Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Vol determinar quina inversió proporciona el benefici màxim i calcular aquest benefici. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
 
 $$
 B(x)=
@@ -691,9 +691,9 @@ $$
 - **a)** Estudia la funció en tot el domini i determina la inversió que proporciona el benefici màxim. Justifica el resultat tenint en compte el punt d'unió i els extrems del domini.
 - **b)** Representa gràficament la funció i interpreta el resultat en el context del problema.
 
-#### Geometria a l'espai: problema integrador
+### Geometria a l'espai: problema integrador
 
-**2.38. Maletes Pallaresos.** Vueling demana que la suma de l'amplada, la llargada i l'alçada de les maletes facturades sigui de $15\,\text{dm}$. Maletes Pallaresos vol dissenyar una maleta amb aquesta condició i amb una alçada igual al triple de l'amplada.
+**3.10. Maletes Pallaresos.** Vueling demana que la suma de l'amplada, la llargada i l'alçada de les maletes facturades sigui de $15\,\text{dm}$. Maletes Pallaresos vol dissenyar una maleta amb aquesta condició i amb una alçada igual al triple de l'amplada.
 
 - **a)** Troba la funció que determina el volum de la maleta en funció de la seva amplada i indica'n el domini.
 - **b)** Troba les dimensions que ha de tenir la maleta perquè el volum sigui màxim i justifica-ho.

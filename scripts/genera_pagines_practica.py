@@ -39,7 +39,7 @@ def demote_headings(text: str) -> str:
 
 
 def exercise_marker(line: str) -> tuple[str, str] | None:
-    bold = re.match(r"^\*\*((?:[12]\.\d+|PAU\.C\.\d+)\.)(?:\s+([^*]+?))?\*\*(.*)$", line)
+    bold = re.match(r"^\*\*((?:[1-3]\.\d+|PAU\.C\.\d+)\.)(?:\s+([^*]+?))?\*\*(.*)$", line)
     if bold:
         number = bold.group(1).rstrip(".")
         title = (bold.group(2) or "").strip()
@@ -48,7 +48,7 @@ def exercise_marker(line: str) -> tuple[str, str] | None:
         return label, remainder
 
     html = re.match(
-        r'^<p class="exercise-result-lead"><strong>((?:[12]\.\d+)\.)</strong>(.*?)</p>$',
+        r'^<p class="exercise-result-lead"><strong>((?:[1-3]\.\d+)\.)</strong>(.*?)</p>$',
         line,
     )
     if html:
@@ -80,7 +80,7 @@ def statement_blocks(path: Path) -> dict[str, list[str]]:
         if marker:
             flush()
             label, remainder = marker
-            number_match = re.match(r"^(PAU\.C\.\d+|[12]\.\d+)", label)
+            number_match = re.match(r"^(PAU\.C\.\d+|[1-3]\.\d+)", label)
             if number_match is None:
                 raise ValueError(f"No s'ha pogut identificar l'exercici: {line}")
             current_number = number_match.group(1)
@@ -130,7 +130,7 @@ def developed_solution_blocks(path: Path) -> dict[str, list[str]]:
         if marker:
             flush()
             label, remainder = marker
-            number_match = re.match(r"^(PAU\.C\.\d+|[12]\.\d+)", label)
+            number_match = re.match(r"^(PAU\.C\.\d+|[1-3]\.\d+)", label)
             if number_match is None:
                 raise ValueError(f"No s'ha pogut identificar la solució desenvolupada: {line}")
             current_number = number_match.group(1)
@@ -186,7 +186,7 @@ def solution_details(
             current_body.pop(0)
         while current_body and not current_body[-1].strip():
             current_body.pop()
-        number_match = re.match(r"^(PAU\.C\.\d+|[12]\.\d+)", current_label)
+        number_match = re.match(r"^(PAU\.C\.\d+|[1-3]\.\d+)", current_label)
         if number_match is None:
             raise ValueError(f"No s'ha pogut identificar la solució: {current_label}")
         number = number_match.group(1)
@@ -312,11 +312,11 @@ def generate_solution_page() -> str:
     continuation_resources = trailing_resources(CALCUL_SOURCES / "problemes-pau.md")
     return f"""# Exercicis i problemes {{.pdf-exercise-collection}}
 
-En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
+En aquesta pàgina tens tots els enunciats dels temes 1, 2 i 3 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=8){{ target="_blank" rel="noopener" }} · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=1){{ target="_blank" rel="noopener" }}
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=9){{ target="_blank" rel="noopener" }} · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=2){{ target="_blank" rel="noopener" }}
 
 </div>
 

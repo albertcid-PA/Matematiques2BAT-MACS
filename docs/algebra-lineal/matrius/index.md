@@ -1,10 +1,10 @@
-# 4. Matrius
+# 5. Matrius
 
 En aquest tema aprendrem a representar informació mitjançant matrius, a operar-hi i a resoldre equacions i sistemes en què les incògnites són matrius.
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega 4. Matrius**](../../assets/apunts/tema_4_matrius.pdf?v=2){ target="_blank" rel="noopener" }
+[**Descarrega 5. Matrius**](../../assets/apunts/tema_5_matrius.pdf?v=1){ target="_blank" rel="noopener" }
 
 </div>
 
@@ -30,4 +30,4 @@ En aquest tema aprendrem a representar informació mitjançant matrius, a operar
 
 ## Per practicar
 
-- [**Exercicis i problemes**](../per-practicar/exercicis_algebra.md#tema-4-matrius) — activitats del tema 4 i problemes PAU de matrius, amb les solucions pas a pas desplegables.
+- [**Exercicis i problemes**](../per-practicar/exercicis_algebra.md#tema-5-matrius) — activitats del tema 5 i problemes PAU de matrius, amb les solucions pas a pas desplegables.

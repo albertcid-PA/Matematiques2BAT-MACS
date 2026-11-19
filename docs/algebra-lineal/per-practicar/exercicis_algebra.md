@@ -5,11 +5,11 @@ En aquesta pàgina tens els enunciats del bloc d'àlgebra lineal i els problemes
 !!! tip "Com treballar"
     En aplicar el mètode de Gauss, anota cada transformació de fila, mantén sempre el mateix ordre de les incògnites i acaba classificant el sistema. Si el pivot és zero, intercanvia files. Per no treballar amb fraccions, combina dues files amb els dos coeficients, per exemple $F_3=2F_3-3F_1$.
 
-## Tema 3. Sistemes i mètode de Gauss
+## Tema 4. Sistemes i mètode de Gauss
 
 ### Equacions lineals, sistemes i classificació
 
-**3.1.**
+**4.1.**
 Indica quines de les equacions següents són lineals. Justifica les que no ho són.
 
 | | |
@@ -18,7 +18,7 @@ Indica quines de les equacions següents són lineals. Justifica les que no ho s
 | **c)** $x^2+y=4$ | **d)** $\dfrac{x}{2}-3y=0$ |
 | **e)** $2^x+y=4$ | **f)** $4y-7z=3$ |
 
-??? example "Mostra la solució pas a pas de l'exercici 3.1"
+??? example "Mostra la solució pas a pas de l'exercici 4.1"
     Les equacions **a)**, **d)** i **f)** són lineals perquè les incògnites només apareixen elevades a $1$ i multiplicades per nombres.
 
     - **b)** no és lineal perquè conté el producte $xy$;
@@ -27,7 +27,7 @@ Indica quines de les equacions següents són lineals. Justifica les que no ho s
 
 ---
 
-**3.2.**
+**4.2.**
 Comprova si $(x,y,z)=(1,3,-2)$ és solució del sistema
 
 $$
@@ -38,7 +38,7 @@ x-y+2z=-6\\
 \end{cases}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 3.2"
+??? example "Mostra la solució pas a pas de l'exercici 4.2"
     Substituïm $x=1$, $y=3$ i $z=-2$ en totes les equacions:
 
     $$
@@ -57,7 +57,7 @@ $$
 
 ---
 
-**3.3.**
+**4.3.**
 Resol el sistema esglaonat següent i classifica'l:
 
 $$
@@ -68,7 +68,7 @@ x+3y-2z=-3\\
 \end{cases}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 3.3"
+??? example "Mostra la solució pas a pas de l'exercici 4.3"
     Resolem de baix cap amunt:
 
     $$
@@ -89,7 +89,7 @@ $$
 
 En aquests exercicis hauràs d'intercanviar files quan el pivot sigui zero o quan una altra fila ofereixi un pivot igual a $1$, i combinar files amb els dos coeficients per evitar fraccions.
 
-**3.4.**
+**4.4.**
 Resol pel mètode de Gauss i classifica el sistema:
 
 $$
@@ -100,7 +100,7 @@ x+4y+3z=-2
 \end{cases}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 3.4"
+??? example "Mostra la solució pas a pas de l'exercici 4.4"
     La tercera equació té coeficient $1$ a la $x$. Si la posem a la primera fila, el pivot és $1$ i podem fer zeros sense fraccions:
 
     $$
@@ -199,7 +199,7 @@ $$
 
 ---
 
-**3.5.**
+**4.5.**
 Resol pel mètode de Gauss i classifica el sistema:
 
 $$
@@ -210,7 +210,7 @@ $$
 \end{cases}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 3.5"
+??? example "Mostra la solució pas a pas de l'exercici 4.5"
     La primera equació no conté la $x$: el pivot és zero i hem de començar intercanviant files.
 
     $$
@@ -293,7 +293,7 @@ $$
 
 ---
 
-**3.6.**
+**4.6.**
 Resol pel mètode de Gauss i classifica el sistema:
 
 $$
@@ -304,7 +304,7 @@ $$
 \end{cases}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 3.6"
+??? example "Mostra la solució pas a pas de l'exercici 4.6"
     Fem zeros a la primera columna. Per a la tercera fila combinem els dos coeficients:
 
     $$
@@ -367,7 +367,7 @@ $$
 
 ---
 
-**3.7.**
+**4.7.**
 Resol pel mètode de Gauss i classifica el sistema. Si té infinites solucions, escriu-ne dues de particulars.
 
 $$
@@ -378,7 +378,7 @@ $$
 \end{cases}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 3.7"
+??? example "Mostra la solució pas a pas de l'exercici 4.7"
     Cap coeficient de la $x$ no val $1$. Per no introduir fraccions, combinem cada fila amb la primera utilitzant els dos coeficients:
 
     $$
@@ -438,7 +438,7 @@ $$
 
 ---
 
-**3.8.**
+**4.8.**
 Resol pel mètode de Gauss i classifica el sistema:
 
 $$
@@ -449,7 +449,7 @@ $$
 \end{cases}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 3.8"
+??? example "Mostra la solució pas a pas de l'exercici 4.8"
     La primera equació no conté la $x$, de manera que intercanviem les dues primeres files. Després eliminem la $x$ de la tercera fila amb els dos coeficients:
 
     $$
@@ -510,14 +510,14 @@ $$
 
 ### Problemes de sistemes
 
-**3.9.**
+**4.9.**
 Una inversora destina $12\,000\,€$ a comprar accions de tres empreses, A, B i C. Al cap d'un any, les accions d'A s'han revaloritzat un $5\,\%$, les de B han perdut un $2\,\%$ i les de C s'han revaloritzat un $8\,\%$. La quantitat invertida en B és el doble de la invertida en C.
 
 **a)** Si el guany total ha estat de $380\,€$, quant ha invertit en cada empresa?
 
 **b)** Un amic seu afirma que, amb les mateixes condicions, ell va acabar l'any amb una pèrdua de $60\,€$. És possible? Justifica-ho.
 
-??? example "Mostra la solució pas a pas de l'exercici 3.9"
+??? example "Mostra la solució pas a pas de l'exercici 4.9"
     Anomenem $x$, $y$ i $z$ els euros invertits en A, B i C, respectivament.
 
     **Apartat a)**
@@ -596,14 +596,14 @@ Una inversora destina $12\,000\,€$ a comprar accions de tres empreses, A, B i 
 
 ---
 
-**3.10.**
+**4.10.**
 Un patinet elèctric es ven a $726\,€$, IVA del $21\,\%$ inclòs. El preu sense IVA es reparteix en tres parts: el cost de fabricació, el cost de transport i distribució i el benefici de la botiga. El cost de transport és el $20\,\%$ del cost de fabricació, i el benefici de la botiga és el $25\,\%$ de la suma dels costos de fabricació i de transport.
 
 **a)** Calcula el cost de fabricació, el cost de transport i el benefici de la botiga.
 
 **b)** Durant les rebaixes, la botiga fa un descompte del $10\,\%$ sobre el preu final, IVA inclòs. Si els costos de fabricació i de transport no canvien, quin percentatge del seu benefici perd la botiga?
 
-??? example "Mostra la solució pas a pas de l'exercici 3.10"
+??? example "Mostra la solució pas a pas de l'exercici 4.10"
     Anomenem:
 
     - $x$: cost de fabricació, en euros;
@@ -688,7 +688,7 @@ Un patinet elèctric es ven a $726\,€$, IVA del $21\,\%$ inclòs. El preu sens
 
 ---
 
-**3.11.**
+**4.11.**
 En una factura de la llum, l'energia es cobra per trams horaris: $0{,}30\,€$ el $\text{kWh}$ en hores punta, $0{,}15\,€$ en hores pla i $0{,}10\,€$ en hores vall. Un mes, una família ha consumit $300\,\text{kWh}$. La companyia informa que el $60\,\%$ del consum ha estat en hores punta i pla, i que el $40\,\%$ ha estat en hores vall.
 
 **a)** Planteja el sistema, resol-lo pel mètode de Gauss i classifica'l. Es pot saber quants $\text{kWh}$ s'han consumit en cada tram?
@@ -697,7 +697,7 @@ En una factura de la llum, l'energia es cobra per trams horaris: $0{,}30\,€$ e
 
 **c)** Quin percentatge de l'import de l'energia correspon a les hores punta?
 
-??? example "Mostra la solució pas a pas de l'exercici 3.11"
+??? example "Mostra la solució pas a pas de l'exercici 4.11"
     Anomenem $x$, $y$ i $z$ els $\text{kWh}$ consumits en hores punta, pla i vall, respectivament.
 
     **Apartat a)**
@@ -818,7 +818,7 @@ En una factura de la llum, l'energia es cobra per trams horaris: $0{,}30\,€$ e
 
 ---
 
-**3.12.**
+**4.12.**
 Una compra al supermercat costa $100\,€$ sense IVA. Inclou productes bàsics, amb un IVA del $4\,\%$, altres aliments, amb un IVA del $10\,\%$, i productes de neteja, amb un IVA del $21\,\%$. L'import sense IVA dels aliments al $10\,\%$ supera en $30\,€$ el dels productes bàsics. En cada apartat, afegeix només la dada indicada a les dues condicions anteriors, resol el sistema pel mètode de Gauss, classifica'l i interpreta'n el resultat.
 
 **a)** El tiquet indica que l'import total, IVA inclòs, és de $112{,}10\,€$.
@@ -827,7 +827,7 @@ Una compra al supermercat costa $100\,€$ sense IVA. Inclou productes bàsics, 
 
 **c)** Un altre tiquet, amb les mateixes condicions inicials i la mateixa promoció, indica que l'estalvi total és de $14\,€$.
 
-??? example "Mostra la solució pas a pas de l'exercici 3.12"
+??? example "Mostra la solució pas a pas de l'exercici 4.12"
     Anomenem $x$, $y$ i $z$ els imports sense IVA, en euros, dels productes bàsics, dels aliments al $10\,\%$ i dels productes de neteja, respectivament.
 
     Les dues condicions comunes són $x+y+z=100$ i $y=x+30$, és a dir, $x-y=-30$. Primer les esglaonem:
@@ -966,14 +966,14 @@ Una compra al supermercat costa $100\,€$ sense IVA. Inclou productes bàsics, 
     | Estalvi de $13\,€$ | SCI | La dada és redundant: no determina la distribució de la compra. |
     | Estalvi de $14\,€$ | SI | La dada contradiu les condicions inicials. |
 
-## Tema 4. Matrius
+## Tema 5. Matrius
 
 !!! tip "Com treballar"
     Abans d'operar, comprova les dimensions de les matrius. En calcular una inversa pel mètode de Gauss-Jordan, anota cada transformació i aplica-la a tota la fila, també a la part dreta de la barra. En una equació matricial, conserva el costat on multiplica cada matriu i comprova el resultat a l'equació inicial.
 
 ### Concepte, tipus i operacions
 
-**4.1.**
+**5.1.**
 Considera les matrius
 
 $$
@@ -994,7 +994,7 @@ $$
 
 **d)** Escriu la matriu $E=(e_{ij})_{2\times3}$ que compleix $e_{ij}=2i-j$ i la seva transposada.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.1"
+??? example "Mostra la solució pas a pas de l'exercici 5.1"
     **Apartat a)**
 
     | Matriu | Ordre | Tipus |
@@ -1050,7 +1050,7 @@ $$
 
 ---
 
-**4.2.**
+**5.2.**
 **a)** Calcula $x$, $y$, $z$ i $t$ perquè es compleixi la igualtat
 
 $$
@@ -1067,7 +1067,7 @@ $$
 
 **b)** Poden ser iguals les matrius $\begin{pmatrix}1&2&3\end{pmatrix}$ i $\begin{pmatrix}1\\2\\3\end{pmatrix}$? Justifica-ho.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.2"
+??? example "Mostra la solució pas a pas de l'exercici 5.2"
     **Apartat a)**
 
     Les dues matrius són d'ordre $2\times2$, de manera que la igualtat té sentit. Cada expressió de la primera matriu ha de coincidir amb l'element que ocupa la mateixa posició a la segona:
@@ -1109,7 +1109,7 @@ $$
 
 ---
 
-**4.3.**
+**5.3.**
 Considera les matrius
 
 $$
@@ -1126,7 +1126,7 @@ $$
 
 **c)** Calcula $2A-B^t$ i $AB-3C$.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.3"
+??? example "Mostra la solució pas a pas de l'exercici 5.3"
     **Apartat a)**
 
     $A$ és d'ordre $2\times3$, $B$ d'ordre $3\times2$, $B^t$ d'ordre $2\times3$ i $C$ d'ordre $2\times2$. Per sumar cal el mateix ordre; per multiplicar, el nombre de columnes del primer factor ha de coincidir amb el nombre de files del segon.
@@ -1250,7 +1250,7 @@ $$
 
 ---
 
-**4.4.**
+**5.4.**
 Considera les matrius
 
 $$
@@ -1265,7 +1265,7 @@ $$
 
 **c)** Quina condició han de complir dues matrius quadrades perquè $(A+B)^2=A^2+2AB+B^2$?
 
-??? example "Mostra la solució pas a pas de l'exercici 4.4"
+??? example "Mostra la solució pas a pas de l'exercici 5.4"
     **Apartat a)**
 
     $$
@@ -1330,7 +1330,7 @@ $$
 
 ---
 
-**4.5.**
+**5.5.**
 Considera les matrius
 
 $$
@@ -1349,7 +1349,7 @@ $$
 
 **b)** Substitueix els valors obtinguts a $X$ i comprova que el producte $AX$ dona la matriu indicada.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.5"
+??? example "Mostra la solució pas a pas de l'exercici 5.5"
     **Apartat a)**
 
     $A$ és d'ordre $2\times3$ i $X$, d'ordre $3\times2$, de manera que $AX$ és d'ordre $2\times2$. Efectuem el producte multiplicant cada fila d'$A$ per cada columna de $X$:
@@ -1423,7 +1423,7 @@ $$
 
 ---
 
-**4.6.**
+**5.6.**
 Considera la matriu
 
 $$
@@ -1438,7 +1438,7 @@ $$
 X\begin{pmatrix}1\\-1\end{pmatrix}=\begin{pmatrix}-2\\3\end{pmatrix}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 4.6"
+??? example "Mostra la solució pas a pas de l'exercici 5.6"
     **Apartat a)**
 
     Escrivim $X=\begin{pmatrix}a&b\\c&d\end{pmatrix}$ i calculem els dos productes:
@@ -1510,7 +1510,7 @@ $$
 
 ---
 
-**4.7.**
+**5.7.**
 **a)** Considera les matrius
 
 $$
@@ -1533,7 +1533,7 @@ $$
 D^2=\begin{pmatrix}7&12\\-6&7\end{pmatrix}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 4.7"
+??? example "Mostra la solució pas a pas de l'exercici 5.7"
     **Apartat a)**
 
     Efectuem els dos productes dins la matriu:
@@ -1661,7 +1661,7 @@ $$
 
 ---
 
-**4.8.**
+**5.8.**
 Considera la matriu
 
 $$
@@ -1674,7 +1674,7 @@ $$
 
 **c)** Dedueix $A^{-1}$ a partir d'$A^3$ i comprova el resultat.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.8"
+??? example "Mostra la solució pas a pas de l'exercici 5.8"
     **Apartat a)**
 
     $$
@@ -1734,7 +1734,7 @@ $$
 
 ### Matriu inversa
 
-**4.9.**
+**5.9.**
 Considera la matriu
 
 $$
@@ -1757,7 +1757,7 @@ $$
 
 Comprova que no té raó.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.9"
+??? example "Mostra la solució pas a pas de l'exercici 5.9"
     **Apartat a)**
 
     Una matriu és la inversa d'$A$ si el producte per $A$ dona la identitat. Calculem $AM$:
@@ -1818,7 +1818,7 @@ Comprova que no té raó.
 
 ---
 
-**4.10.**
+**5.10.**
 Calcula la inversa de la matriu
 
 $$
@@ -1827,7 +1827,7 @@ $$
 
 a partir de la definició, és a dir, per coeficients. Comprova el resultat.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.10"
+??? example "Mostra la solució pas a pas de l'exercici 5.10"
     Escrivim la inversa amb quatre coeficients desconeguts i imposem $BB^{-1}=I_2$:
 
     $$
@@ -1884,7 +1884,7 @@ a partir de la definició, és a dir, per coeficients. Comprova el resultat.
 
 ---
 
-**4.11.**
+**5.11.**
 Calcula pel mètode de Gauss-Jordan la inversa de les matrius següents, si existeix. Comprova el resultat.
 
 $$
@@ -1899,7 +1899,7 @@ $$
 D=\begin{pmatrix}0&1&1\\1&2&0\\1&3&2\end{pmatrix}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 4.11"
+??? example "Mostra la solució pas a pas de l'exercici 5.11"
     **Matriu $A$**
 
     Fem zero sota el primer pivot combinant les dues files:
@@ -2113,7 +2113,7 @@ $$
 
 ---
 
-**4.12.**
+**5.12.**
 Indica quines de les matrius següents tenen inversa. Justifica-ho esglaonant cada matriu pel mètode de Gauss; no cal calcular-ne la inversa.
 
 $$
@@ -2126,7 +2126,7 @@ C=\begin{pmatrix}0&4\\0&-3\end{pmatrix}
 D=\begin{pmatrix}0&2\\5&1\end{pmatrix}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 4.12"
+??? example "Mostra la solució pas a pas de l'exercici 5.12"
     Si en esglaonar una matriu quadrada apareix una fila de zeros, no es pot arribar a la identitat i la matriu no té inversa. Si no n'apareix cap, sí que en té. Per decidir-ho n'hi ha prou d'esglaonar la matriu: no cal escriure la identitat al costat.
 
     **Matriu $A$**
@@ -2185,7 +2185,7 @@ $$
 
 ---
 
-**4.13.**
+**5.13.**
 Considera la matriu
 
 $$
@@ -2198,7 +2198,7 @@ $$
 
 **c)** Calcula $A^{-1}$ i comprova el resultat.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.13"
+??? example "Mostra la solució pas a pas de l'exercici 5.13"
     **Apartat a)**
 
     $$
@@ -2252,7 +2252,7 @@ $$
 
 ### Equacions i sistemes matricials
 
-**4.14.**
+**5.14.**
 Considera les matrius
 
 $$
@@ -2269,7 +2269,7 @@ Resol les equacions matricials següents:
 
 **c)** Per què en aquestes equacions no cal calcular cap matriu inversa?
 
-??? example "Mostra la solució pas a pas de l'exercici 4.14"
+??? example "Mostra la solució pas a pas de l'exercici 5.14"
     **Apartat a)**
 
     Restem $A$ als dos membres:
@@ -2328,7 +2328,7 @@ Resol les equacions matricials següents:
 
 ---
 
-**4.15.**
+**5.15.**
 Suposa que totes les matrius són quadrades i del mateix ordre. Aïlla la matriu $X$ en cada equació, sense fer cap càlcul amb matrius concretes, i indica quines matrius han de tenir inversa per poder-ho fer.
 
 | | |
@@ -2340,7 +2340,7 @@ Suposa que totes les matrius són quadrades i del mateix ordre. Aïlla la matriu
 !!! tip "Comprova-ho"
     Pots comprovar el resultat amb l'eina [Equacions matricials](../eines/aillament-equacions-matricials.md) del laboratori de mates.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.15"
+??? example "Mostra la solució pas a pas de l'exercici 5.15"
     En cada pas, multipliquem els dos membres pel mateix costat i conservem l'ordre dels factors.
 
     **Apartat a)**
@@ -2436,7 +2436,7 @@ Suposa que totes les matrius són quadrades i del mateix ordre. Aïlla la matriu
 
 ---
 
-**4.16.**
+**5.16.**
 Considera les matrius
 
 $$
@@ -2451,7 +2451,7 @@ $$
 
 **c)** Per què les dues solucions no coincideixen?
 
-??? example "Mostra la solució pas a pas de l'exercici 4.16"
+??? example "Mostra la solució pas a pas de l'exercici 5.16"
     Totes dues equacions necessiten $A^{-1}$. La calculem pel mètode de Gauss-Jordan, combinant files amb els dos coeficients per evitar fraccions:
 
     $$
@@ -2529,7 +2529,7 @@ $$
 
 ---
 
-**4.17.**
+**5.17.**
 Resol les equacions matricials següents:
 
 **a)** $AX+B=3X$, on
@@ -2548,7 +2548,7 @@ A=\begin{pmatrix}4&5\\1&3\end{pmatrix}
 C=\begin{pmatrix}3&5\\-5&-8\end{pmatrix}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 4.17"
+??? example "Mostra la solució pas a pas de l'exercici 5.17"
     **Apartat a)**
 
     Agrupem els termes amb $X$ en un membre:
@@ -2572,7 +2572,7 @@ $$
     \begin{pmatrix}4&3\\5&4\end{pmatrix}
     $$
 
-    Aquesta matriu és la de l'exercici 4.16, de manera que $(A-3I)^{-1}=\begin{pmatrix}4&-3\\-5&4\end{pmatrix}$. Multipliquem per l'esquerra:
+    Aquesta matriu és la de l'exercici 5.16, de manera que $(A-3I)^{-1}=\begin{pmatrix}4&-3\\-5&4\end{pmatrix}$. Multipliquem per l'esquerra:
 
     $$
     X=(A-3I)^{-1}(-B)=
@@ -2653,7 +2653,7 @@ $$
 
 ---
 
-**4.18.**
+**5.18.**
 Resol el sistema d'equacions matricials
 
 $$
@@ -2671,7 +2671,7 @@ X-3Y=
 \end{cases}
 $$
 
-??? example "Mostra la solució pas a pas de l'exercici 4.18"
+??? example "Mostra la solució pas a pas de l'exercici 5.18"
     Multipliquem la primera equació per $3$ i hi sumem la segona per eliminar $Y$:
 
     $$
@@ -2714,7 +2714,7 @@ $$
 
 ---
 
-**4.19.**
+**5.19.**
 Considera el sistema
 
 $$
@@ -2725,11 +2725,11 @@ x+3y+2z=4
 \end{cases}
 $$
 
-**a)** Escriu-lo en la forma $MX=N$ i resol-lo amb la matriu inversa. Fixa't que la matriu de coeficients és la matriu $D$ de l'exercici 4.11.
+**a)** Escriu-lo en la forma $MX=N$ i resol-lo amb la matriu inversa. Fixa't que la matriu de coeficients és la matriu $D$ de l'exercici 5.11.
 
 **b)** Resol el sistema que té els mateixos coeficients i els termes independents $2$, $1$ i $3$, respectivament. Per què no cal tornar a esglaonar?
 
-??? example "Mostra la solució pas a pas de l'exercici 4.19"
+??? example "Mostra la solució pas a pas de l'exercici 5.19"
     **Apartat a)**
 
     Ordenem les incògnites $x$, $y$, $z$ i escrivim els zeros dels coeficients que falten:
@@ -2741,7 +2741,7 @@ $$
     \underbrace{\begin{pmatrix}1\\1\\4\end{pmatrix}}_{N}
     $$
 
-    A l'exercici 4.11 hem obtingut
+    A l'exercici 5.11 hem obtingut
 
     $$
     M^{-1}=\begin{pmatrix}-4&-1&2\\2&1&-1\\-1&-1&1\end{pmatrix}
@@ -2783,7 +2783,7 @@ $$
 
 ### Problemes de matrius
 
-**4.20.**
+**5.20.**
 Una empresa de càtering ofereix tres menús: infantil ($I$), estàndard ($E$) i vegetarià ($V$). Aquest cap de setmana té dos encàrrecs: un casament ($C$), amb $15$ menús infantils, $80$ d'estàndard i $20$ de vegetarians, i un congrés ($G$), amb $120$ menús estàndard i $30$ de vegetarians.
 
 Cada menú infantil necessita $0{,}3\,\text{kg}$ d'aliments i $5$ minuts de feina del personal; cada menú estàndard, $0{,}5\,\text{kg}$ i $8$ minuts, i cada menú vegetarià, $0{,}4\,\text{kg}$ i $6$ minuts. Els aliments costen, de mitjana, $12\,€/\text{kg}$ i cada minut de feina del personal, $0{,}50\,€$.
@@ -2796,7 +2796,7 @@ Cada menú infantil necessita $0{,}3\,\text{kg}$ d'aliments i $5$ minuts de fein
 
 **d)** El producte $NQ$ també es pot calcular. Té sentit en aquest context? Justifica-ho.
 
-??? example "Mostra la solució pas a pas de l'exercici 4.20"
+??? example "Mostra la solució pas a pas de l'exercici 5.20"
     **Apartat a)**
 
     Perquè els productes encaixin, les columnes de $Q$ i les files de $N$ han de seguir el mateix ordre de menús, i les columnes de $N$ i les files de $c$, el mateix ordre de recursos. El congrés no demana menús infantils, de manera que hi escrivim un $0$:
@@ -2919,7 +2919,7 @@ Cada menú infantil necessita $0{,}3\,\text{kg}$ d'aliments i $5$ minuts de fein
 
 ---
 
-**4.21.**
+**5.21.**
 Dues companyies elèctriques, A i B, es reparteixen els clients d'una comarca. Cada any, el $80\,\%$ dels clients d'A s'hi queden i el $20\,\%$ passen a B, mentre que el $90\,\%$ dels clients de B s'hi queden i el $10\,\%$ passen a A. No hi ha clients nous ni baixes. Aquest any, A té $5900$ clients i B, $4100$.
 
 **a)** Escriu la matriu $M$ que, multiplicada per la columna dels clients d'un any, dona la columna dels clients de l'any següent. Indica què representen les files i les columnes.
@@ -2930,7 +2930,7 @@ Dues companyies elèctriques, A i B, es reparteixen els clients d'una comarca. C
 
 **d)** Per què el nombre total de clients no canvia?
 
-??? example "Mostra la solució pas a pas de l'exercici 4.21"
+??? example "Mostra la solució pas a pas de l'exercici 5.21"
     **Apartat a)**
 
     Si $a$ i $b$ són els clients d'A i de B d'un any, l'any següent A en tindrà $0{,}8a+0{,}1b$ i B, $0{,}2a+0{,}9b$. Escrivim aquestes expressions en una matriu columna i les expressem com un producte:
@@ -3085,7 +3085,7 @@ Dues companyies elèctriques, A i B, es reparteixen els clients d'una comarca. C
 
 ---
 
-**4.22.**
+**5.22.**
 Per enviar un missatge xifrat, s'assigna a cada lletra el seu lloc a l'alfabet ($A=1$, $B=2$, ..., $Z=26$) i a l'espai, el $0$:
 
 espai $0$ · A $1$ · B $2$ · C $3$ · D $4$ · E $5$ · F $6$ · G $7$ · H $8$ · I $9$ · J $10$ · K $11$ · L $12$ · M $13$ · N $14$ · O $15$ · P $16$ · Q $17$ · R $18$ · S $19$ · T $20$ · U $21$ · V $22$ · W $23$ · X $24$ · Y $25$ · Z $26$
@@ -3108,7 +3108,7 @@ Explica com es pot recuperar $M$ i desxifra el missatge.
 
 **c)** Per què la matriu de xifratge ha de tenir inversa?
 
-??? example "Mostra la solució pas a pas de l'exercici 4.22"
+??? example "Mostra la solució pas a pas de l'exercici 5.22"
     **Apartat a)**
 
     PAU seguida d'un espai correspon a $16$, $1$, $21$ i $0$. Les parelles $(16,1)$ i $(21,0)$ són les columnes de $M$:
@@ -3125,7 +3125,7 @@ Explica com es pot recuperar $M$ i desxifra el missatge.
 
     **Apartat b)**
 
-    Com que $E=AM$ i $A$ multiplica $M$ per l'esquerra, $M=A^{-1}E$. La matriu $A$ és la de l'exercici 4.16, de manera que
+    Com que $E=AM$ i $A$ multiplica $M$ per l'esquerra, $M=A^{-1}E$. La matriu $A$ és la de l'exercici 5.16, de manera que
 
     $$
     A^{-1}=\begin{pmatrix}4&-3\\-5&4\end{pmatrix}

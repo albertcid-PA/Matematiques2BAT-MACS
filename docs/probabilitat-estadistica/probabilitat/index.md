@@ -1,4 +1,4 @@
-# 5. Probabilitat i teorema de Bayes
+# 6. Probabilitat i teorema de Bayes
 
 !!! note "En preparació"
     Aquest apartat es redactarà quan comenci el bloc de probabilitat i estadística.

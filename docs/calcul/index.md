@@ -5,11 +5,12 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 ## Temes
 
 - [**1. Repàs de límits i derivades**](repas-limits-derivades/index.md) — interpretació i càlcul de límits, taxa de variació mitjana, derivada i regles de derivació.
-- [**2. Aplicacions de les derivades**](aplicacions-derivades/index.md) — derivabilitat, creixement i extrems, representació de funcions i optimització.
+- [**2. Representació de funcions**](representacio-funcions/index.md) — derivabilitat, creixement i extrems i representació de funcions.
+- [**3. Optimització**](optimitzacio/index.md) — problemes d'optimització contextualitzats i comparació de dos models.
 
 ## Per practicar
 
-- [**Exercicis i problemes**](per-practicar/exercicis_calcul.md) — tots els enunciats dels temes 1 i 2 i els problemes PAU, amb un únic PDF d'enunciats i les solucions pas a pas desplegables.
+- [**Exercicis i problemes**](per-practicar/exercicis_calcul.md) — tots els enunciats dels temes 1, 2 i 3 i els problemes PAU, amb un únic PDF d'enunciats i les solucions pas a pas desplegables.
 
 ## Laboratori de mates
 
@@ -19,4 +20,4 @@ En aquest bloc repassarem les eines de càlcul diferencial de primer de batxille
 ## Preparació de la prova
 
 - [**Prova parcial del 1r trimestre núm. 1: Càlcul**](../preparacio-examens/pp1-1.md) — recorregut de preparació de la prova, amb tot el bloc de càlcul excepte optimització i problemes PAU.
-- [**Prova parcial del 1r trimestre núm. 2: Càlcul**](../preparacio-examens/pp1-2.md) — tot el temari dels temes 1 i 2, amb problemes contextualitzats de tipus PAU i especial atenció a l'optimització.
+- [**Prova parcial del 1r trimestre núm. 2: Càlcul**](../preparacio-examens/pp1-2.md) — tot el temari dels temes 1, 2 i 3, amb problemes contextualitzats de tipus PAU i especial atenció a l'optimització.

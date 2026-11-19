@@ -1,10 +1,10 @@
-# 3. Sistemes i mètode de Gauss
+# 4. Sistemes i mètode de Gauss
 
 En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineals, a resoldre'ls amb el mètode de Gauss i a utilitzar-los per modelitzar problemes.
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega 3. Sistemes i mètode de Gauss**](../../assets/apunts/tema_3_sistemes_metode_gauss.pdf?v=4){ target="_blank" rel="noopener" }
+[**Descarrega 4. Sistemes i mètode de Gauss**](../../assets/apunts/tema_4_sistemes_metode_gauss.pdf?v=1){ target="_blank" rel="noopener" }
 
 </div>
 
@@ -22,4 +22,4 @@ En aquest tema aprendrem a reconèixer i classificar sistemes d'equacions lineal
 
 ## Per practicar
 
-- [**Exercicis i problemes**](../per-practicar/exercicis_algebra.md#tema-3-sistemes-i-metode-de-gauss) — activitats del tema 3 i problemes PAU, amb les solucions pas a pas desplegables.
+- [**Exercicis i problemes**](../per-practicar/exercicis_algebra.md#tema-4-sistemes-i-metode-de-gauss) — activitats del tema 4 i problemes PAU, amb les solucions pas a pas desplegables.

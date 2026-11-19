@@ -115,7 +115,7 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 
 **1.21.** $a=0$, $b=-3$, $c=2$; $p(x)=x^3-3x+2$. El punt $Q=(1,0)$ és un mínim relatiu perquè $p''(1)=6>0$.
 
-## Tema 2. Aplicacions de les derivades
+## Tema 2. Representació de funcions
 
 ### Derivabilitat
 
@@ -130,15 +130,15 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 **2.5.** És contínua a $x=2$, però no és derivable: les derivades laterals tendeixen a $-\infty$ i $+\infty$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../img/calcul/fig_2_29_resultat_exercici_2_5.svg?v=5){ width="760" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_29_resultat_exercici_2_5.tex">Figura 2.29.</a></strong> Interpretació gràfica de la continuïtat i la no derivabilitat a $x=2$.</figcaption>
+  ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../img/calcul/fig_2_21_resultat_exercici_2_5.svg?v=5){ width="760" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_21_resultat_exercici_2_5.tex">Figura 2.21.</a></strong> Interpretació gràfica de la continuïtat i la no derivabilitat a $x=2$.</figcaption>
 </figure>
 
 **2.6.** A $x=-2$ és contínua però no derivable ($f'(-2^-)=1$ i $f'(-2^+)=2$). A $x=1$ presenta una discontinuïtat de salt. $f'(x)=2x+5$ si $x<-2$, $f'(x)=2$ si $-2<x<1$ i $f'(x)=1$ si $x>1$.
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../img/calcul/fig_2_30_resultat_exercici_2_6.svg?v=4){ width="88%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_30_resultat_exercici_2_6.tex">Figura 2.30.</a></strong> Representació de $f$ i de $f'$ en l'exercici 2.6.</figcaption>
+  ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../img/calcul/fig_2_22_resultat_exercici_2_6.svg?v=4){ width="88%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_22_resultat_exercici_2_6.tex">Figura 2.22.</a></strong> Representació de $f$ i de $f'$ en l'exercici 2.6.</figcaption>
 </figure>
 
 **2.7.** **a)** És contínua en tot $\mathbb{R}$ i derivable excepte a $x=2$; $f'(x)=0$ si $x<0$, $f'(x)=2x$ si $0\leq x<2$ i $f'(x)=2$ si $x>2$. **b)** És contínua i derivable en tot $\mathbb{R}$; $g'(x)=2e^{2x}$ si $x\leq 0$ i $g'(x)=2$ si $x>0$.
@@ -257,8 +257,8 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 | **f)** | Talls $x=0$ i $x=4$; tall $Y=0$; $f(x)\to+\infty$ als dos infinits. | Decreix a $(-\infty,0)\cup(2,4)$ i creix a $(0,2)\cup(4,+\infty)$. Mínims $(0,0)$ i $(4,0)$; màxim $(2,16)$. |
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=5){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_18.tex">Figura 2.31.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
+  ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../img/calcul/fig_2_23_resultat_exercici_2_18.svg?v=5){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_23_resultat_exercici_2_18.tex">Figura 2.23.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
 </figure>
 
 <p class="exercise-result-lead"><strong>2.19.</strong></p>
@@ -274,13 +274,13 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 | **g)** | $D=\mathbb{R}\setminus\{-1\}$; AV $x=-1$; asímptota obliqua $y=-x+1$; tall $(0,0)$. | Decreix a $(-\infty,-2)\cup(0,+\infty)$ i creix a $(-2,-1)\cup(-1,0)$; mínim $(-2,4)$ i màxim $(0,0)$. |
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../img/calcul/fig_2_32_resultat_exercici_2_19_1.svg?v=5){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_19_1.tex">Figura 2.32.</a></strong> Representacions dels apartats a–d de l'exercici 2.19.</figcaption>
+  ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../img/calcul/fig_2_24_resultat_exercici_2_19_1.svg?v=5){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_24_resultat_exercici_2_19_1.tex">Figura 2.24.</a></strong> Representacions dels apartats a–d de l'exercici 2.19.</figcaption>
 </figure>
 
 <figure markdown="span" class="exercise-solution-figure">
-  ![Representacions de les tres darreres funcions racionals de l'exercici 2.19](../img/calcul/fig_2_33_resultat_exercici_2_19_2.svg?v=4){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_33_resultat_exercici_2_19_2.tex">Figura 2.33.</a></strong> Representacions dels apartats e–g de l'exercici 2.19.</figcaption>
+  ![Representacions de les tres darreres funcions racionals de l'exercici 2.19](../img/calcul/fig_2_25_resultat_exercici_2_19_2.svg?v=4){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_25_resultat_exercici_2_19_2.tex">Figura 2.25.</a></strong> Representacions dels apartats e–g de l'exercici 2.19.</figcaption>
 </figure>
 
 **2.20.**
@@ -291,8 +291,8 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 - **d)** Discontinuïtat de salt a $x=0$. Creix a $(-\infty,0)$ i decreix a $(0,+\infty)$; màxim $(0,1)$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=7){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_20.tex">Figura 2.34.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
+  ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../img/calcul/fig_2_26_resultat_exercici_2_20.svg?v=7){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_resultat_exercici_2_20.tex">Figura 2.26.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
 </figure>
 
 **2.21.** **a)** $[-4,+\infty)$; **b)** $(-\infty,1)\cup(3,+\infty)$; **c)** $(-\infty,2]\cup[3,+\infty)$; **d)** $(3,+\infty)$.
@@ -310,13 +310,13 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 - **i)** $\lim_{x\to-\infty}u(x)=0$ i $\lim_{x\to+\infty}u(x)=+\infty$; té l'asímptota horitzontal $y=0$ només quan $x\to-\infty$. Com que $u'(x)=e^x(x-1)(x+1)$, creix a $(-\infty,-1)\cup(1,+\infty)$ i decreix a $(-1,1)$; màxim $(-1,4/e)$ i mínim $(1,0)$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions dels quatre primers apartats de l'exercici 2.22](../img/calcul/fig_2_35_resultat_exercici_2_22_1.svg?v=4){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_35_resultat_exercici_2_22_1.tex">Figura 2.35.</a></strong> Representacions dels apartats a–d de l'exercici 2.22.</figcaption>
+  ![Representacions dels quatre primers apartats de l'exercici 2.22](../img/calcul/fig_2_27_resultat_exercici_2_22_1.svg?v=4){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_27_resultat_exercici_2_22_1.tex">Figura 2.27.</a></strong> Representacions dels apartats a–d de l'exercici 2.22.</figcaption>
 </figure>
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions dels cinc darrers apartats de l'exercici 2.22](../img/calcul/fig_2_36_resultat_exercici_2_22_2.svg?v=5){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_36_resultat_exercici_2_22_2.tex">Figura 2.36.</a></strong> Representacions dels apartats e–i de l'exercici 2.22.</figcaption>
+  ![Representacions dels cinc darrers apartats de l'exercici 2.22](../img/calcul/fig_2_28_resultat_exercici_2_22_2.svg?v=5){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_resultat_exercici_2_22_2.tex">Figura 2.28.</a></strong> Representacions dels apartats e–i de l'exercici 2.22.</figcaption>
 </figure>
 
 **2.23.**
@@ -328,8 +328,8 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 - **e)** $\frac{x}{2-x}$ si $x<2$ i $\frac{x}{x-2}$ si $x>2$; no està definida a $x=2$, on té una asímptota vertical, i per tant no hi és derivable.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les cinc funcions amb valor absolut de l'exercici 2.23](../img/calcul/fig_2_37_resultat_exercici_2_23.svg?v=6){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_37_resultat_exercici_2_23.tex">Figura 2.37.</a></strong> Representacions de les funcions de l'exercici 2.23.</figcaption>
+  ![Representacions de les cinc funcions amb valor absolut de l'exercici 2.23](../img/calcul/fig_2_29_resultat_exercici_2_23.svg?v=6){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_29_resultat_exercici_2_23.tex">Figura 2.29.</a></strong> Representacions de les funcions de l'exercici 2.23.</figcaption>
 </figure>
 
 **2.24.**
@@ -340,8 +340,8 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 - **d)** Zeros $x=2,3$; màxim central $(\frac52,\frac14)$ i mínims $(2,0)$, $(3,0)$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-  ![Representacions de les quatre funcions de l'exercici 2.24](../img/calcul/fig_2_38_resultat_exercici_2_24.svg?v=4){ width="100%" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_38_resultat_exercici_2_24.tex">Figura 2.38.</a></strong> Representacions de les funcions de l'exercici 2.24.</figcaption>
+  ![Representacions de les quatre funcions de l'exercici 2.24](../img/calcul/fig_2_30_resultat_exercici_2_24.svg?v=4){ width="100%" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_30_resultat_exercici_2_24.tex">Figura 2.30.</a></strong> Representacions de les funcions de l'exercici 2.24.</figcaption>
 </figure>
 
 ### Síntesi
@@ -357,15 +357,15 @@ Per tant, $f$ creix en tot $\mathbb{R}$, encara que $f'(1)=0$.
 **2.26.** $D_f=\mathbb{R}\setminus\{-3,3\}$. Talls $x=\pm\sqrt2$ i $y=\frac23$. AV $x=\pm3$ i AH $y=3$. Límits: a $-3$, $+\infty$ per l'esquerra i $-\infty$ per la dreta; a $3$, $-\infty$ per l'esquerra i $+\infty$ per la dreta. Creix per $x<0$ i decreix per $x>0$, separant pels punts exclosos; màxim relatiu $(0,\frac23)$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
-  ![Representació completa de la funció racional de l'exercici 2.26](../img/calcul/fig_2_39_resultat_exercici_2_26.svg?v=3){ width="760" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_39_resultat_exercici_2_26.tex">Figura 2.39.</a></strong> Representació completa de la funció de l'exercici 2.26.</figcaption>
+  ![Representació completa de la funció racional de l'exercici 2.26](../img/calcul/fig_2_31_resultat_exercici_2_26.svg?v=3){ width="760" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_26.tex">Figura 2.31.</a></strong> Representació completa de la funció de l'exercici 2.26.</figcaption>
 </figure>
 
 **2.27.** $D_g=\mathbb{R}\setminus\{1\}$. AV $x=1$, amb límits $-\infty$ i $+\infty$; AH $y=0$ quan $x\to-\infty$, mentre que $g(x)\to+\infty$ quan $x\to+\infty$. $g'(x)=\frac{e^x(x-2)}{(x-1)^2}$: decreix a $(-\infty,1)\cup(1,2)$ i creix a $(2,+\infty)$; mínim $(2,e^2)$. Tall amb l'eix $Y$: $(0,-1)$; no talla l'eix $X$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
-  ![Representació completa de la funció exponencial racional de l'exercici 2.27](../img/calcul/fig_2_40_resultat_exercici_2_27.svg?v=3){ width="760" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_40_resultat_exercici_2_27.tex">Figura 2.40.</a></strong> Representació completa de la funció de l'exercici 2.27.</figcaption>
+  ![Representació completa de la funció exponencial racional de l'exercici 2.27](../img/calcul/fig_2_32_resultat_exercici_2_27.svg?v=3){ width="760" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_27.tex">Figura 2.32.</a></strong> Representació completa de la funció de l'exercici 2.27.</figcaption>
 </figure>
 
 <p class="exercise-result-lead"><strong>2.28.</strong></p>
@@ -382,33 +382,33 @@ $$
 És contínua en tot $\mathbb{R}$ i no és derivable a $x=-2$ ni a $x=1$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
-  ![Representació de la funció amb valor absolut de l'exercici 2.28](../img/calcul/fig_2_41_resultat_exercici_2_28.svg?v=3){ width="760" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_41_resultat_exercici_2_28.tex">Figura 2.41.</a></strong> Representació de la funció de l'exercici 2.28.</figcaption>
+  ![Representació de la funció amb valor absolut de l'exercici 2.28](../img/calcul/fig_2_33_resultat_exercici_2_28.svg?v=3){ width="760" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_33_resultat_exercici_2_28.tex">Figura 2.33.</a></strong> Representació de la funció de l'exercici 2.28.</figcaption>
 </figure>
 
-### Optimització
+## Tema 3. Optimització
 
-**2.29.** Costat perpendicular al mur: $30\,\text{m}$; costat paral·lel: $60\,\text{m}$; àrea màxima: $1.800\,\text{m}^2$.
+**3.1.** Costat perpendicular al mur: $30\,\text{m}$; costat paral·lel: $60\,\text{m}$; àrea màxima: $1.800\,\text{m}^2$.
 
-**2.30.** Costats horitzontals: $3\,\text{m}$; costats verticals: $2\,\text{m}$. Cost mínim: $48\,€$.
+**3.2.** Costats horitzontals: $3\,\text{m}$; costats verticals: $2\,\text{m}$. Cost mínim: $48\,€$.
 
-**2.31.** $r=10\,\text{cm}$, $h=20\,\text{cm}$; volum màxim $2.000\pi\,\text{cm}^3$.
+**3.3.** $r=10\,\text{cm}$, $h=20\,\text{cm}$; volum màxim $2.000\pi\,\text{cm}^3$.
 
-**2.32.** $r=5\sqrt6\,\text{cm}$, $h=5\sqrt3\,\text{cm}$; capacitat màxima $250\pi\sqrt3\,\text{cm}^3$.
+**3.4.** $r=5\sqrt6\,\text{cm}$, $h=5\sqrt3\,\text{cm}$; capacitat màxima $250\pi\sqrt3\,\text{cm}^3$.
 
-**2.33.** Ha de començar a nedar en un punt situat a $15\sqrt2\approx21{,}21\,\text{m}$ d'$O$; per tant, corre uns $78{,}79\,\text{m}$. Temps mínim: $\frac{50}{3}+20\sqrt2\approx44{,}95\,\text{s}$. Córrer fins a $O$ dona $46{,}67\,\text{s}$ i nedar immediatament, aproximadament $58{,}31\,\text{s}$.
+**3.5.** Ha de començar a nedar en un punt situat a $15\sqrt2\approx21{,}21\,\text{m}$ d'$O$; per tant, corre uns $78{,}79\,\text{m}$. Temps mínim: $\frac{50}{3}+20\sqrt2\approx44{,}95\,\text{s}$. Córrer fins a $O$ dona $46{,}67\,\text{s}$ i nedar immediatament, aproximadament $58{,}31\,\text{s}$.
 
-**2.34.** En el model continu, el preu òptim és $47\,€$, es venen $430$ entrades i el benefici màxim és $16.490\,€$. Si el preu només pot variar de $2$ en $2\,€$, tant $46\,€$ com $48\,€$ donen un benefici de $16.480\,€$.
+**3.6.** En el model continu, el preu òptim és $47\,€$, es venen $430$ entrades i el benefici màxim és $16.490\,€$. Si el preu només pot variar de $2$ en $2\,€$, tant $46\,€$ com $48\,€$ donen un benefici de $16.480\,€$.
 
-**2.35.** $B(x)=-0{,}07x^2+46x-180$. Òptim continu: $x=\frac{2.300}{7}\approx328{,}57$. Cal fabricar **329 unitats**; benefici màxim enter: $7.377{,}13\,€$.
+**3.7.** $B(x)=-0{,}07x^2+46x-180$. Òptim continu: $x=\frac{2.300}{7}\approx328{,}57$. Cal fabricar **329 unitats**; benefici màxim enter: $7.377{,}13\,€$.
 
-**2.36.** $C_m(x)=0{,}4x+12+\frac{3.600}{x}$. Òptim continu: $x=30\sqrt{10}\approx94{,}87$ i $C_m=12+24\sqrt{10}\approx87{,}895\,€$. Si la producció és entera, cal fabricar **95 unitats**, amb un cost mitjà d'uns $87{,}895\,€$.
+**3.8.** $C_m(x)=0{,}4x+12+\frac{3.600}{x}$. Òptim continu: $x=30\sqrt{10}\approx94{,}87$ i $C_m=12+24\sqrt{10}\approx87{,}895\,€$. Si la producció és entera, cal fabricar **95 unitats**, amb un cost mitjà d'uns $87{,}895\,€$.
 
-**2.37.** El benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. Al punt d'unió, $B(4)=36$; als extrems, $B(0)=B(8)=20$.
+**3.9.** El benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. Al punt d'unió, $B(4)=36$; als extrems, $B(0)=B(8)=20$.
 
 <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
-  ![Representació de la funció de benefici a trossos de l'exercici 2.37](../img/calcul/fig_2_42_resultat_exercici_2_37.svg?v=3){ width="760" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_42_resultat_exercici_2_37.tex">Figura 2.42.</a></strong> Representació del benefici de l'exercici 2.37.</figcaption>
+  ![Representació de la funció de benefici a trossos de l'exercici 3.9](../img/calcul/fig_3_10_resultat_exercici_3_9.svg?v=3){ width="760" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_10_resultat_exercici_3_9.tex">Figura 3.10.</a></strong> Representació del benefici de l'exercici 3.9.</figcaption>
 </figure>
 
-**2.38.** Amplada: $2{,}5\,\text{dm}$; llargada: $5\,\text{dm}$; alçada: $7{,}5\,\text{dm}$. Volum màxim: $93{,}75\,\text{dm}^3$.
+**3.10.** Amplada: $2{,}5\,\text{dm}$; llargada: $5\,\text{dm}$; alçada: $7{,}5\,\text{dm}$. Volum màxim: $93{,}75\,\text{dm}^3$.

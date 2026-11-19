@@ -104,7 +104,7 @@ def main() -> None:
     parser.add_argument("destinacio", type=Path)
     parser.add_argument("--md", type=Path, required=True, help="Markdown d'on surt el recull")
     parser.add_argument("--titol", default="Recull d'enunciats de càlcul")
-    parser.add_argument("--tema", default="Exercicis dels temes 1 i 2 i problemes PAU de càlcul")
+    parser.add_argument("--tema", default="Exercicis dels temes 1, 2 i 3 i problemes PAU de càlcul")
     parser.add_argument("--peu", default="Matemàtiques Aplicades a les Ciències Socials II · Enunciats de càlcul")
     parser.add_argument("--edicio", default="", help="text discret per a la portada (p. ex. «Edició en lletra gran»)")
     parser.add_argument("--index-gran", action="store_true", help="índex amb lletra més gran")

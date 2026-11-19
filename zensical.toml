@@ -14,12 +14,15 @@ nav = [
       { "Repàs de límits" = "calcul/repas-limits-derivades/01_limits.md" },
       { "Repàs de derivades" = "calcul/repas-limits-derivades/02_derivades.md" },
     ] },
-    { "2. Aplicacions de les derivades" = [
-      { "Índex" = "calcul/aplicacions-derivades/index.md" },
-      { "Derivabilitat" = "calcul/aplicacions-derivades/01_derivabilitat.md" },
-      { "Creixement i extrems" = "calcul/aplicacions-derivades/02_creixement-extrems.md" },
-      { "Representació de funcions" = "calcul/aplicacions-derivades/03_representacio-funcions.md" },
-      { "Optimització" = "calcul/aplicacions-derivades/04_optimitzacio.md" },
+    { "2. Representació de funcions" = [
+      { "Índex" = "calcul/representacio-funcions/index.md" },
+      { "Derivabilitat" = "calcul/representacio-funcions/01_derivabilitat.md" },
+      { "Creixement i extrems" = "calcul/representacio-funcions/02_creixement-extrems.md" },
+      { "Representació de funcions" = "calcul/representacio-funcions/03_representacio-funcions.md" },
+    ] },
+    { "3. Optimització" = [
+      { "Índex" = "calcul/optimitzacio/index.md" },
+      { "Optimització" = "calcul/optimitzacio/01_optimitzacio.md" },
     ] },
     { "Per practicar" = [
       { "Exercicis i problemes" = "calcul/per-practicar/exercicis_calcul.md" },
@@ -32,13 +35,13 @@ nav = [
   ] },
   { "Àlgebra lineal" = [
     { "Introducció" = "algebra-lineal/index.md" },
-    { "3. Sistemes i mètode de Gauss" = [
+    { "4. Sistemes i mètode de Gauss" = [
       { "Índex" = "algebra-lineal/sistemes-gauss/index.md" },
       { "Sistemes d'equacions lineals" = "algebra-lineal/sistemes-gauss/01_sistemes-equacions-lineals.md" },
       { "Mètode de Gauss" = "algebra-lineal/sistemes-gauss/02_metode-gauss.md" },
       { "Problemes de sistemes" = "algebra-lineal/sistemes-gauss/03_plantejament-problemes.md" },
     ] },
-    { "4. Matrius" = [
+    { "5. Matrius" = [
       { "Índex" = "algebra-lineal/matrius/index.md" },
       { "Concepte i tipus de matrius" = "algebra-lineal/matrius/01_concepte-tipus.md" },
       { "Operacions amb matrius" = "algebra-lineal/matrius/02_operacions.md" },
@@ -59,12 +62,12 @@ nav = [
   ] },
   { "Probabilitat i estadística" = [
     { "Introducció" = "probabilitat-estadistica/index.md" },
-    { "5. Probabilitat i teorema de Bayes" = "probabilitat-estadistica/probabilitat/index.md" },
-    { "6. Distribucions de probabilitat" = "probabilitat-estadistica/distribucions/index.md" },
-    { "7. Inferència estadística" = "probabilitat-estadistica/inferencia/index.md" },
+    { "6. Probabilitat i teorema de Bayes" = "probabilitat-estadistica/probabilitat/index.md" },
+    { "7. Distribucions de probabilitat" = "probabilitat-estadistica/distribucions/index.md" },
+    { "8. Inferència estadística" = "probabilitat-estadistica/inferencia/index.md" },
     { "Per practicar" = [
       { "Índex" = "probabilitat-estadistica/per-practicar/index.md" },
-      { "Exercicis dels temes 5, 6 i 7" = "probabilitat-estadistica/exercicis.md" },
+      { "Exercicis dels temes 6, 7 i 8" = "probabilitat-estadistica/exercicis.md" },
       { "Problemes PAU" = "probabilitat-estadistica/problemes-pau.md" },
     ] },
   ] },

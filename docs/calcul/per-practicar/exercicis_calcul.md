@@ -1,10 +1,10 @@
 # Exercicis i problemes {.pdf-exercise-collection}
 
-En aquesta pàgina tens tots els enunciats dels temes 1 i 2 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
+En aquesta pàgina tens tots els enunciats dels temes 1, 2 i 3 de càlcul i els problemes PAU. Resol cada activitat al quadern i desplega'n la solució només quan vulguis comprovar el procediment.
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=8){ target="_blank" rel="noopener" } · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=1){ target="_blank" rel="noopener" }
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=9){ target="_blank" rel="noopener" } · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=2){ target="_blank" rel="noopener" }
 
 </div>
 
@@ -1335,7 +1335,7 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 
 ---
 
-## Tema 2. Aplicacions de les derivades
+## Tema 2. Representació de funcions
 
 ### Derivabilitat
 
@@ -1343,8 +1343,8 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 Observa les sis gràfiques i indica en quins punts les funcions no són derivables. En cada cas, explica gràficament el motiu. Alguna de les funcions és derivable en tot $\mathbb{R}$?
 
 <figure markdown="span">
-  ![Sis gràfiques per identificar punts en què una funció no és derivable](../../img/calcul/fig_2_26_exercici_punts_no_derivables.svg?v=4){ width="920" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_exercici_punts_no_derivables.tex">Figura 2.26.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
+  ![Sis gràfiques per identificar punts en què una funció no és derivable](../../img/calcul/fig_2_19_exercici_punts_no_derivables.svg?v=4){ width="920" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_19_exercici_punts_no_derivables.tex">Figura 2.19.</a></strong> Estudi gràfic de la derivabilitat.</figcaption>
 </figure>
 
 ??? example "Mostra la solució pas a pas de l'exercici 2.1"
@@ -1368,8 +1368,8 @@ La figura representa una funció $y=f(x)$.
 - **b)** Indica en quins punts la funció no és derivable i justifica la resposta gràficament.
 
 <figure markdown="span">
-  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../../img/calcul/fig_2_27_exercici_derivades_grafica.svg?v=4){ width="700" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_27_exercici_derivades_grafica.tex">Figura 2.27.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
+  ![Gràfica d'una funció formada per un arc de paràbola, un tram constant i un tram rectilini](../../img/calcul/fig_2_20_exercici_derivades_grafica.svg?v=4){ width="700" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_20_exercici_derivades_grafica.tex">Figura 2.20.</a></strong> Càlcul de derivades a partir d'una gràfica.</figcaption>
 </figure>
 
 ??? example "Mostra la solució pas a pas de l'exercici 2.2"
@@ -1478,8 +1478,8 @@ $$
     No hi ha una derivada finita comuna; la funció no és derivable a $x=2$ i la gràfica hi presenta dues semitangents verticals.
 
     <figure markdown="span" class="exercise-solution-figure">
-      ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../../img/calcul/fig_2_29_resultat_exercici_2_5.svg?v=5){ width="760" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_29_resultat_exercici_2_5.tex">Figura 2.29.</a></strong> Interpretació gràfica de la continuïtat i la no derivabilitat a $x=2$.</figcaption>
+      ![Gràfica de la funció de l'exercici 2.5, amb tangent vertical en el punt d'unió](../../img/calcul/fig_2_21_resultat_exercici_2_5.svg?v=5){ width="760" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_21_resultat_exercici_2_5.tex">Figura 2.21.</a></strong> Interpretació gràfica de la continuïtat i la no derivabilitat a $x=2$.</figcaption>
     </figure>
 
 ---
@@ -1535,8 +1535,8 @@ $$
     $$
 
     <figure markdown="span" class="exercise-solution-figure">
-      ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../../img/calcul/fig_2_30_resultat_exercici_2_6.svg?v=4){ width="88%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_30_resultat_exercici_2_6.tex">Figura 2.30.</a></strong> Representació de $f$ i de $f'$ en l'exercici 2.6.</figcaption>
+      ![Gràfiques de la funció i de la seva derivada en l'exercici 2.6](../../img/calcul/fig_2_22_resultat_exercici_2_6.svg?v=4){ width="88%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_22_resultat_exercici_2_6.tex">Figura 2.22.</a></strong> Representació de $f$ i de $f'$ en l'exercici 2.6.</figcaption>
     </figure>
 
 ---
@@ -2056,8 +2056,8 @@ Estudia i representa les funcions polinòmiques següents. Indica el domini, els
     - **f)** $f(x)=x^2(x-4)^2$; els zeros són $0$ i $4$, tots dos dobles. Com que $f'(x)=4x(x-2)(x-4)$, té mínims a $(0,0)$ i $(4,0)$ i un màxim a $(2,16)$. Per l'ordre dels infinits, conservem $x^4$: $\lim_{x\to-\infty}f(x)=\lim_{x\to-\infty}x^4=+\infty$ i $\lim_{x\to+\infty}f(x)=\lim_{x\to+\infty}x^4=+\infty$.
 
     <figure markdown="span" class="exercise-solution-figure">
-      ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../../img/calcul/fig_2_31_resultat_exercici_2_18.svg?v=5){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_18.tex">Figura 2.31.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
+      ![Representacions de les sis funcions polinòmiques de l'exercici 2.18](../../img/calcul/fig_2_23_resultat_exercici_2_18.svg?v=5){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_23_resultat_exercici_2_18.tex">Figura 2.23.</a></strong> Representacions de les funcions polinòmiques de l'exercici 2.18.</figcaption>
     </figure>
 
 ---
@@ -2200,13 +2200,13 @@ Estudia i representa les funcions racionals següents. Calcula els límits quan 
         Té un mínim relatiu a $(-2,4)$ i un màxim relatiu a $(0,0)$.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_32_resultat_exercici_2_19_1.svg?v=5){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_19_1.tex">Figura 2.32.</a></strong> Representacions dels apartats a–d de l'exercici 2.19.</figcaption>
+      ![Representacions de les quatre primeres funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_24_resultat_exercici_2_19_1.svg?v=5){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_24_resultat_exercici_2_19_1.tex">Figura 2.24.</a></strong> Representacions dels apartats a–d de l'exercici 2.19.</figcaption>
     </figure>
 
     <figure markdown="span" class="exercise-solution-figure">
-      ![Representacions de les tres darreres funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_33_resultat_exercici_2_19_2.svg?v=4){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_33_resultat_exercici_2_19_2.tex">Figura 2.33.</a></strong> Representacions dels apartats e–g de l'exercici 2.19.</figcaption>
+      ![Representacions de les tres darreres funcions racionals de l'exercici 2.19](../../img/calcul/fig_2_25_resultat_exercici_2_19_2.svg?v=4){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_25_resultat_exercici_2_19_2.tex">Figura 2.25.</a></strong> Representacions dels apartats e–g de l'exercici 2.19.</figcaption>
     </figure>
 
 ---
@@ -2288,8 +2288,8 @@ $$
         Aquesta derivada és positiva quan $x<0$, mentre que la derivada del segon tram és $-\frac14<0$. Així, $(0,1)$ és un màxim relatiu del tram dret, però la funció no és derivable al punt de salt.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../../img/calcul/fig_2_34_resultat_exercici_2_20.svg?v=7){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_34_resultat_exercici_2_20.tex">Figura 2.34.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
+      ![Representacions de les quatre funcions a trossos de l'exercici 2.20](../../img/calcul/fig_2_26_resultat_exercici_2_20.svg?v=7){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_26_resultat_exercici_2_20.tex">Figura 2.26.</a></strong> Representacions de les funcions a trossos de l'exercici 2.20.</figcaption>
     </figure>
 
 ---
@@ -2428,13 +2428,13 @@ Fes els estudis indicats i, en cada apartat, representa en un gràfic un esbós 
         Per tant, a l'esquerra, $y=0$ és asímptota horitzontal.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions dels quatre primers apartats de l'exercici 2.22](../../img/calcul/fig_2_35_resultat_exercici_2_22_1.svg?v=4){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_35_resultat_exercici_2_22_1.tex">Figura 2.35.</a></strong> Representacions dels apartats a–d de l'exercici 2.22.</figcaption>
+      ![Representacions dels quatre primers apartats de l'exercici 2.22](../../img/calcul/fig_2_27_resultat_exercici_2_22_1.svg?v=4){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_27_resultat_exercici_2_22_1.tex">Figura 2.27.</a></strong> Representacions dels apartats a–d de l'exercici 2.22.</figcaption>
     </figure>
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions dels cinc darrers apartats de l'exercici 2.22](../../img/calcul/fig_2_36_resultat_exercici_2_22_2.svg?v=5){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_36_resultat_exercici_2_22_2.tex">Figura 2.36.</a></strong> Representacions dels apartats e–i de l'exercici 2.22.</figcaption>
+      ![Representacions dels cinc darrers apartats de l'exercici 2.22](../../img/calcul/fig_2_28_resultat_exercici_2_22_2.svg?v=5){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_resultat_exercici_2_22_2.tex">Figura 2.28.</a></strong> Representacions dels apartats e–i de l'exercici 2.22.</figcaption>
     </figure>
 
 ---
@@ -2515,8 +2515,8 @@ Escriu cada funció a trossos, dibuixa'n la gràfica i indica en quins punts no 
     En els apartats **a)**, **b)**, **c)** i **d)**, els trams coincideixen en els punts d'unió i la funció és contínua. Les derivades laterals són diferents en cada punt de canvi; per tant, aquests punts són angulosos. A l'apartat **e)**, la funció no està definida a $x=2$: no hi és contínua ni derivable, i és derivable en tota la resta del domini.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions de les cinc funcions amb valor absolut de l'exercici 2.23](../../img/calcul/fig_2_37_resultat_exercici_2_23.svg?v=6){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_37_resultat_exercici_2_23.tex">Figura 2.37.</a></strong> Representacions de les funcions de l'exercici 2.23.</figcaption>
+      ![Representacions de les cinc funcions amb valor absolut de l'exercici 2.23](../../img/calcul/fig_2_29_resultat_exercici_2_23.svg?v=6){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_29_resultat_exercici_2_23.tex">Figura 2.29.</a></strong> Representacions de les funcions de l'exercici 2.23.</figcaption>
     </figure>
 
 ---
@@ -2582,8 +2582,8 @@ Estudia i representa les funcions següents:
     En els zeros del polinomi interior, la gràfica rebota sobre l'eix $X$ i hi apareixen punts angulosos.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--multi">
-      ![Representacions de les quatre funcions de l'exercici 2.24](../../img/calcul/fig_2_38_resultat_exercici_2_24.svg?v=4){ width="100%" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_38_resultat_exercici_2_24.tex">Figura 2.38.</a></strong> Representacions de les funcions de l'exercici 2.24.</figcaption>
+      ![Representacions de les quatre funcions de l'exercici 2.24](../../img/calcul/fig_2_30_resultat_exercici_2_24.svg?v=4){ width="100%" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_30_resultat_exercici_2_24.tex">Figura 2.30.</a></strong> Representacions de les funcions de l'exercici 2.24.</figcaption>
     </figure>
 
 ---
@@ -2703,8 +2703,8 @@ Determina'n el domini, els talls amb els eixos, les asímptotes verticals i hori
         El denominador és positiu; per tant, $f'>0$ si $x<0$ i $f'<0$ si $x>0$, separant pels punts exclosos. La funció creix a $(-\infty,-3)$, $(-3,0)$ i decreix a $(0,3)$, $(3,+\infty)$. Hi ha un màxim relatiu a $(0,\frac23)$.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
-      ![Representació completa de la funció racional de l'exercici 2.26](../../img/calcul/fig_2_39_resultat_exercici_2_26.svg?v=3){ width="760" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_39_resultat_exercici_2_26.tex">Figura 2.39.</a></strong> Representació completa de la funció de l'exercici 2.26.</figcaption>
+      ![Representació completa de la funció racional de l'exercici 2.26](../../img/calcul/fig_2_31_resultat_exercici_2_26.svg?v=3){ width="760" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_31_resultat_exercici_2_26.tex">Figura 2.31.</a></strong> Representació completa de la funció de l'exercici 2.26.</figcaption>
     </figure>
 
 ---
@@ -2754,8 +2754,8 @@ Troba les asímptotes verticals i horitzontals, calcula els límits laterals en 
         $$\left(2,g(2)\right)=(2,e^2).$$
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
-      ![Representació completa de la funció exponencial racional de l'exercici 2.27](../../img/calcul/fig_2_40_resultat_exercici_2_27.svg?v=3){ width="760" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_40_resultat_exercici_2_27.tex">Figura 2.40.</a></strong> Representació completa de la funció de l'exercici 2.27.</figcaption>
+      ![Representació completa de la funció exponencial racional de l'exercici 2.27](../../img/calcul/fig_2_32_resultat_exercici_2_27.svg?v=3){ width="760" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_32_resultat_exercici_2_27.tex">Figura 2.32.</a></strong> Representació completa de la funció de l'exercici 2.27.</figcaption>
     </figure>
 
 ---
@@ -2796,15 +2796,15 @@ $$
     La funció és contínua als dos punts d'unió. Els pendents són $-3$, $1$ i $3$; com que canvien, no és derivable a $x=-2$ ni a $x=1$.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
-      ![Representació de la funció amb valor absolut de l'exercici 2.28](../../img/calcul/fig_2_41_resultat_exercici_2_28.svg?v=3){ width="760" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_41_resultat_exercici_2_28.tex">Figura 2.41.</a></strong> Representació de la funció de l'exercici 2.28.</figcaption>
+      ![Representació de la funció amb valor absolut de l'exercici 2.28](../../img/calcul/fig_2_33_resultat_exercici_2_28.svg?v=3){ width="760" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_33_resultat_exercici_2_28.tex">Figura 2.33.</a></strong> Representació de la funció de l'exercici 2.28.</figcaption>
     </figure>
 
 ---
 
-### Optimització
+## Tema 3. Optimització
 
-**2.29.**
+**3.1.**
 **Hort urbà al costat d'un mur.**
 
 Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectangular. Un dels costats de l'hort coincideix amb un mur i no cal tancar-lo. **Determina les dimensions de l'hort perquè l'àrea sigui màxima i calcula aquesta àrea.**
@@ -2812,7 +2812,7 @@ Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectan
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.29"
+??? example "Mostra la solució pas a pas de l'exercici 3.1"
     **Resolució pas a pas**
 
     Siguin $x$ els costats perpendiculars al mur i $y$ el costat paral·lel. Només cal tancar tres costats:
@@ -2831,7 +2831,7 @@ Una cooperativa disposa de $120\,\text{m}$ de tanca per delimitar un hort rectan
 
 ---
 
-**2.30.**
+**3.2.**
 **Aparador rectangular.**
 
 Una botiga vol construir un aparador rectangular de $6\,\text{m}^2$. El perfil metàl·lic dels costats horitzontals costa $4\,€$ per metre i el dels costats verticals, $6\,€$ per metre. **Determina les dimensions de l'aparador perquè el cost del perfil sigui mínim i calcula aquest cost.**
@@ -2839,7 +2839,7 @@ Una botiga vol construir un aparador rectangular de $6\,\text{m}^2$. El perfil m
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un mínim.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.30"
+??? example "Mostra la solució pas a pas de l'exercici 3.2"
     **Resolució pas a pas**
 
     Siguin $x$ el costat horitzontal i $y$ el vertical. Com que $xy=6$, $y=\frac6x$, amb $x>0$. El cost total és
@@ -2856,7 +2856,7 @@ Una botiga vol construir un aparador rectangular de $6\,\text{m}^2$. El perfil m
 
 ---
 
-**2.31.**
+**3.3.**
 **Llauna cilíndrica.**
 
 Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600\pi\,\text{cm}^2$. **Determina el radi i l'altura de la llauna perquè el volum sigui màxim i calcula aquest volum.**
@@ -2864,7 +2864,7 @@ Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600
 - **a)** Defineix les variables i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.31"
+??? example "Mostra la solució pas a pas de l'exercici 3.3"
     **Resolució pas a pas**
 
     La superfície d'un cilindre tancat és
@@ -2887,7 +2887,7 @@ Es vol fabricar una llauna cilíndrica tancada amb una superfície total de $600
 
 ---
 
-**2.32.**
+**3.4.**
 **Recipient cònic.**
 
 Es vol construir un recipient cònic amb una generatriu de $15\,\text{cm}$. Si $r$ és el radi de la base i $h$ l'altura, es compleix
@@ -2901,7 +2901,7 @@ $$
 - **a)** Construeix la funció que cal optimitzar a partir de la relació donada i indica'n el domini.
 - **b)** Resol el problema i justifica que les dimensions obtingudes proporcionen un màxim.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.32"
+??? example "Mostra la solució pas a pas de l'exercici 3.4"
     **Resolució pas a pas**
 
     De $r^2+h^2=225$ obtenim
@@ -2951,7 +2951,7 @@ $$
 
 ---
 
-**2.33.**
+**3.5.**
 **Rescat a la platja.**
 
 Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més proper a una persona que necessita ajuda és a $100\,\text{m}$ de $B$, i la persona és a $60\,\text{m}$ mar endins, en direcció perpendicular a la costa des d'$O$. El socorrista corre a $6\,\text{m/s}$ i neda a $2\,\text{m/s}$.
@@ -2959,14 +2959,14 @@ Un socorrista es troba al punt $B$ de la platja. El punt $O$ de la costa més pr
 El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des d'allà, neda en línia recta. **Determina en quin punt de la costa ha de començar a nedar perquè el temps total del rescat sigui mínim i calcula aquest temps.**
 
 <figure markdown="span" class="exercise-statement-figure--compact">
-  ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../../img/calcul/fig_2_28_rescat_platja.svg?v=3){ width="650" }
-  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_28_rescat_platja.tex">Figura 2.28.</a></strong> Esquema del recorregut del socorrista en l'exercici 2.33.</figcaption>
+  ![Esquema del recorregut del socorrista: corre de B a P per la costa i neda de P fins a la persona situada mar endins](../../img/calcul/fig_3_9_rescat_platja.svg?v=3){ width="650" }
+  <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_9_rescat_platja.tex">Figura 3.9.</a></strong> Esquema del recorregut del socorrista en l'exercici 3.5.</figcaption>
 </figure>
 
 - **a)** Defineix una variable que situï el punt $P$ i construeix la funció que cal optimitzar, indicant-ne el domini.
 - **b)** Resol el problema, justifica el mínim i compara'l amb les opcions de fer tot el trajecte possible corrent o començar a nedar immediatament.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.33"
+??? example "Mostra la solució pas a pas de l'exercici 3.5"
     **Resolució pas a pas**
 
     Siguin $x=OP$. Aleshores el socorrista corre $BP=100-x$ metres i neda $\sqrt{x^2+60^2}$ metres. El temps és
@@ -3010,7 +3010,7 @@ El socorrista corre des de $B$ fins a un punt $P$ situat entre $B$ i $O$ i, des 
 
 ---
 
-**2.34.**
+**3.6.**
 **Entrades d'un espectacle.**
 
 Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que, per cada augment de $2\,€$, es vendran $20$ entrades menys. Cada espectador genera una despesa de $4\,€$ i l'organització té uns costos fixos de $2.000\,€$. **Determina el preu de l'entrada que maximitza el benefici i calcula el nombre d'entrades venudes i el benefici màxim.**
@@ -3018,7 +3018,7 @@ Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que,
 - **a)** Defineix la variable i expressa en funció d'ella els ingressos i les despeses. Calcula la funció de benefici com a ingressos menys despeses, indicant el domini que té sentit en el context.
 - **b)** Resol el problema i interpreta el resultat.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.34"
+??? example "Mostra la solució pas a pas de l'exercici 3.6"
     **Resolució pas a pas**
 
     Siguin $x$ els augments de $2\,€$. El preu és $40+2x$ i es venen $500-20x$ entrades. Com que el nombre d'entrades no pot ser negatiu, el domini és $0\leq x\leq25$.
@@ -3051,7 +3051,7 @@ Una sala ven $500$ entrades quan el preu és de $40\,€$. Un estudi preveu que,
 
 ---
 
-**2.35.**
+**3.7.**
 **Producció d'una cooperativa.**
 
 El cost de produir $x$ unitats d'un article és
@@ -3071,7 +3071,7 @@ La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fab
 - **a)** Construeix la funció de benefici a partir dels ingressos i els costos i indica'n el domini.
 - **b)** Resol primer el problema considerant $x$ una variable real. Després, com que només es poden fabricar unitats senceres, compara els enters necessaris i dona la decisió final.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.35"
+??? example "Mostra la solució pas a pas de l'exercici 3.7"
     **Resolució pas a pas**
 
     Els ingressos són
@@ -3094,7 +3094,7 @@ La cooperativa pot produir entre $0$ i $400$ unitats i ven totes les unitats fab
 
 ---
 
-**2.36.**
+**3.8.**
 **Cost mitjà de fabricació.**
 
 El cost total, en euros, de fabricar $x$ unitats d'un producte és
@@ -3108,7 +3108,7 @@ $$
 - **a)** Construeix la funció de cost mitjà i indica'n el domini.
 - **b)** Resol primer el problema considerant $x$ una variable real. Després, si la producció ha de ser entera, compara els enters necessaris i dona la decisió final.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.36"
+??? example "Mostra la solució pas a pas de l'exercici 3.8"
     **Resolució pas a pas**
 
     El cost mitjà és
@@ -3127,7 +3127,7 @@ $$
 
 ---
 
-**2.37.**
+**3.9.**
 **Campanya publicitària.**
 
 Una empresa estudia el benefici mensual que obté segons la quantitat invertida en una campanya publicitària. Vol determinar quina inversió proporciona el benefici màxim i calcular aquest benefici. Si $x$ és la inversió, en milers d'euros, el benefici mensual $B(x)$, també expressat en milers d'euros, ve donat per
@@ -3143,7 +3143,7 @@ $$
 - **a)** Estudia la funció en tot el domini i determina la inversió que proporciona el benefici màxim. Justifica el resultat tenint en compte el punt d'unió i els extrems del domini.
 - **b)** Representa gràficament la funció i interpreta el resultat en el context del problema.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.37"
+??? example "Mostra la solució pas a pas de l'exercici 3.9"
     **Resolució pas a pas**
 
     Estudiem cada tram dins del seu interval.
@@ -3165,13 +3165,13 @@ $$
     Per tant, el benefici màxim és de $38$ milers d'euros i s'obté amb una inversió de $5$ milers d'euros. La gràfica uneix el primer tram creixent amb el segon, que arriba al màxim $(5,38)$ i baixa fins a $(8,20)$.
 
     <figure markdown="span" class="exercise-solution-figure exercise-solution-figure--compact">
-      ![Representació de la funció de benefici a trossos de l'exercici 2.37](../../img/calcul/fig_2_42_resultat_exercici_2_37.svg?v=3){ width="760" }
-      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_42_resultat_exercici_2_37.tex">Figura 2.42.</a></strong> Representació del benefici de l'exercici 2.37.</figcaption>
+      ![Representació de la funció de benefici a trossos de l'exercici 3.9](../../img/calcul/fig_3_10_resultat_exercici_3_9.svg?v=3){ width="760" }
+      <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_10_resultat_exercici_3_9.tex">Figura 3.10.</a></strong> Representació del benefici de l'exercici 3.9.</figcaption>
     </figure>
 
 ---
 
-**2.38.**
+**3.10.**
 **Maletes Pallaresos.**
 
 Vueling demana que la suma de l'amplada, la llargada i l'alçada de les maletes facturades sigui de $15\,\text{dm}$. Maletes Pallaresos vol dissenyar una maleta amb aquesta condició i amb una alçada igual al triple de l'amplada.
@@ -3180,7 +3180,7 @@ Vueling demana que la suma de l'amplada, la llargada i l'alçada de les maletes 
 - **b)** Troba les dimensions que ha de tenir la maleta perquè el volum sigui màxim i justifica-ho.
 - **c)** Calcula el volum màxim de la maleta.
 
-??? example "Mostra la solució pas a pas de l'exercici 2.38"
+??? example "Mostra la solució pas a pas de l'exercici 3.10"
     **Resolució pas a pas**
 
     Siguin $x$ l'amplada de la maleta, $y$ la llargada i $h$ l'alçada, totes expressades en decímetres. Com que l'alçada és el triple de l'amplada,

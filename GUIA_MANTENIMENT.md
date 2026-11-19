@@ -21,7 +21,7 @@ No editis manualment `sources/generated/` ni `site/`. Els resultats de `sources/
 
 | Fitxer de `sources/calcul/` | Funció |
 |:--|:--|
-| `exercicis.md` | Enunciats dels temes 1 i 2. |
+| `exercicis.md` | Enunciats dels temes 1, 2 i 3. |
 | `problemes-pau.md` | Enunciats PAU i recursos per continuar practicant. |
 | `resultats-exercicis.md` | Resultats breus i figures de les solucions dels exercicis. |
 | `resultats-problemes-pau.md` | Resultats breus i figures de les solucions PAU. |
@@ -79,13 +79,14 @@ Revisa el diff de la pàgina i del recull generats. L'execució sobreescriu els 
 | Enunciats de càlcul | Enunciats de `sources/calcul/` i portada `sources/llibre/portada_recull_calcul.tex` | `scripts/genera_pdf_recull_calcul.ps1` | `docs/assets/exercicis/recull_enunciats_calcul.pdf` |
 | Enunciats de càlcul en lletra gran | Les mateixes | `scripts/genera_pdf_recull_calcul_lletra_gran.py` | `docs/assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf` |
 | Tema 1 | `01_limits.md` i `02_derivades.md` de `docs/calcul/repas-limits-derivades/` | `scripts/genera_pdf_tema.py 1` | `docs/assets/apunts/tema_1_repas_limits_derivades.pdf` |
-| Tema 2 | Les quatre pàgines de contingut de `docs/calcul/aplicacions-derivades/` | `scripts/genera_pdf_tema.py 2` | `docs/assets/apunts/tema_2_aplicacions_derivades.pdf` |
-| Tema 3 | Les tres pàgines de contingut de `docs/algebra-lineal/sistemes-gauss/` | `scripts/genera_pdf_tema.py 3` | `docs/assets/apunts/tema_3_sistemes_metode_gauss.pdf` |
-| Tema 4 | Les cinc pàgines de contingut de `docs/algebra-lineal/matrius/` | `scripts/genera_pdf_tema.py 4` | `docs/assets/apunts/tema_4_matrius.pdf` |
+| Tema 2 | Les tres pàgines de contingut de `docs/calcul/representacio-funcions/` | `scripts/genera_pdf_tema.py 2` | `docs/assets/apunts/tema_2_representacio_funcions.pdf` |
+| Tema 3 | La pàgina de contingut de `docs/calcul/optimitzacio/` | `scripts/genera_pdf_tema.py 3` | `docs/assets/apunts/tema_3_optimitzacio.pdf` |
+| Tema 4 | Les tres pàgines de contingut de `docs/algebra-lineal/sistemes-gauss/` | `scripts/genera_pdf_tema.py 4` | `docs/assets/apunts/tema_4_sistemes_metode_gauss.pdf` |
+| Tema 5 | Les cinc pàgines de contingut de `docs/algebra-lineal/matrius/` | `scripts/genera_pdf_tema.py 5` | `docs/assets/apunts/tema_5_matrius.pdf` |
 
 ### PDF de teoria dels temes
 
-`scripts/genera_pdf_tema.py` llegeix els temes del menú de `zensical.toml`: és tema qualsevol entrada que comenci per un número, com «5. Probabilitat i teorema de Bayes». Pren el títol i la introducció de l'`index.md` i les pàgines de l'entrada, ho converteix a LaTeX amb l'estil de `sources/llibre/apunts.sty` i compila amb XeLaTeX. Necessita MiKTeX amb les lletres TeX Gyre; per als fulls de revisió, també `pypdf` i `pdftoppm`.
+`scripts/genera_pdf_tema.py` llegeix els temes del menú de `zensical.toml`: és tema qualsevol entrada que comenci per un número, com «6. Probabilitat i teorema de Bayes». Pren el títol i la introducció de l'`index.md` i les pàgines de l'entrada, ho converteix a LaTeX amb l'estil de `sources/llibre/apunts.sty` i compila amb XeLaTeX. Necessita MiKTeX amb les lletres TeX Gyre; per als fulls de revisió, també `pypdf` i `pdftoppm`.
 
 ```powershell
 & ".\.venv\Scripts\python.exe" scripts\genera_pdf_tema.py --llista      # temes detectats i estat
