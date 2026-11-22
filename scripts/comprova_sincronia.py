@@ -7,7 +7,9 @@ Compara els fitxers canviats amb un commit de referència (HEAD, per defecte) i 
 2. si un SVG o un PDF publicat ha canviat i alguna referència conserva el mateix ?v=n;
 3. si la pràctica de càlcul no coincideix amb el que generen les fonts de sources/calcul;
 4. si han canviat les pàgines, les figures o l'estil d'un tema i el seu PDF no s'ha regenerat;
-5. si han canviat els enunciats o les figures del recull de càlcul i els PDF (ordinari i en lletra gran) no s'han regenerat.
+5. si han canviat els enunciats o les figures del recull de càlcul i els PDF (ordinari i en lletra gran) no s'han regenerat;
+6. si els enunciats de la pràctica d'àlgebra no coincideixen amb el recull generat o els PDF del recull d'àlgebra
+   no s'han regenerat (els canvis només a les solucions no hi compten).
 
 Ús, des de l'arrel del repositori:
 
@@ -27,6 +29,7 @@ ARREL = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ARREL / "scripts"))
 
 import genera_pagines_practica as practica  # noqa: E402
+import genera_pdf_recull_algebra as recull_algebra  # noqa: E402
 import genera_pdf_tema as tema_pdf  # noqa: E402
 
 PRACTICA_WEB = "docs/calcul/per-practicar/exercicis_calcul.md"
@@ -36,6 +39,12 @@ PDF_RECULL_GRAN = "docs/assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf
 FONTS_RECULL = ["sources/calcul/exercicis.md", "sources/calcul/problemes-pau.md",
                 PRACTICA_RECULL, "scripts/genera_pdf_recull_calcul.ps1",
                 "sources/llibre/portada_recull_calcul.tex", "scripts/munta_recull_pdf.py"]
+PRACTICA_ALGEBRA = "docs/algebra-lineal/per-practicar/exercicis_algebra.md"
+RECULL_ALGEBRA = "sources/generated/recull-enunciats-algebra.md"
+PDF_ALGEBRA = "docs/assets/exercicis/recull_enunciats_algebra.pdf"
+PDF_ALGEBRA_GRAN = "docs/assets/exercicis/recull_enunciats_algebra_lletra_gran.pdf"
+FONTS_ALGEBRA = [RECULL_ALGEBRA, "scripts/genera_pdf_recull_algebra.py",
+                 "sources/llibre/portada_recull_algebra.tex", "scripts/munta_recull_pdf.py"]
 FONTS_TOTS_ELS_TEMES = ["sources/llibre/apunts.sty", "scripts/genera_pdf_tema.py"]
 CARPETES_REFERENCIES = ["docs", "sources", "scripts"]
 RE_VERSIO = re.compile(r"\?v=\d+")
@@ -192,6 +201,29 @@ def comprova_recull(estat, problemes):
     comprova_pdf(estat, problemes, PDF_RECULL_GRAN, motius_gran)
 
 
+def comprova_recull_algebra(estat, problemes):
+    implicats = {PRACTICA_ALGEBRA, *FONTS_ALGEBRA}
+    if estat.staged and not (implicats & estat.canviats):
+        return  # el commit no toca el recull d'àlgebra
+    pagina = estat.actual(PRACTICA_ALGEBRA)
+    if pagina is not None:
+        esperat = recull_algebra.pagina_recull(pagina)
+        disc = (ARREL / RECULL_ALGEBRA).read_text(encoding="utf-8").replace("\r\n", "\n") \
+            if (ARREL / RECULL_ALGEBRA).exists() else None
+        if disc != esperat:
+            problemes.append(f"{RECULL_ALGEBRA} no coincideix amb els enunciats de {PRACTICA_ALGEBRA}: "
+                             "executa scripts/genera_pdf_recull_algebra.py.")
+        elif estat.staged and (estat.actual(RECULL_ALGEBRA) or "").replace("\r\n", "\n") != esperat:
+            problemes.append(f"{RECULL_ALGEBRA} està regenerat, però no s'ha afegit al commit (git add).")
+    motius = {p for p in FONTS_ALGEBRA if p in estat.canviats}
+    if RECULL_ALGEBRA in motius and estat.antic(RECULL_ALGEBRA) is not None and \
+            text_comparable(estat.antic(RECULL_ALGEBRA)) == text_comparable(estat.actual(RECULL_ALGEBRA)):
+        motius.discard(RECULL_ALGEBRA)
+    comprova_pdf(estat, problemes, PDF_ALGEBRA, motius)
+    motius_gran = motius | ({"scripts/genera_pdf_recull_calcul_lletra_gran.py"} & estat.canviats)
+    comprova_pdf(estat, problemes, PDF_ALGEBRA_GRAN, motius_gran)
+
+
 def main(argv):
     parser = argparse.ArgumentParser(description="Comprova que els fitxers generats estan al dia.")
     parser.add_argument("--staged", action="store_true", help="comprova només el que s'ha afegit amb git add")
@@ -208,6 +240,7 @@ def main(argv):
     comprova_practica(estat, problemes)
     comprova_temes(estat, problemes)
     comprova_recull(estat, problemes)
+    comprova_recull_algebra(estat, problemes)
 
     abast = "els canvis afegits amb git add" if args.staged else f"els canvis respecte de {args.des}"
     if problemes:

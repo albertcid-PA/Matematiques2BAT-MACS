@@ -9,7 +9,7 @@ Aquesta guia descriu el funcionament verificable del repositori. Els criteris do
 | Apunts dels temes 1–4 | Markdown de cada tema dins de `docs/` | Web i PDF del tema corresponent. |
 | Pràctica de càlcul | `sources/calcul/` | `scripts/genera_pagines_practica.py` genera `docs/calcul/per-practicar/exercicis_calcul.md` i `sources/generated/recull-enunciats-calcul.md`. |
 | Textos fixos i enllaç al PDF de la pràctica de càlcul | `scripts/genera_pagines_practica.py` | Cal regenerar la pàgina després de canviar-los. La versió `?v=n` està escrita al generador. |
-| Pràctica d'àlgebra lineal | `docs/algebra-lineal/per-practicar/exercicis_algebra.md` | Edició directa; no té un generador equivalent identificat al repositori. |
+| Pràctica d'àlgebra lineal | `docs/algebra-lineal/per-practicar/exercicis_algebra.md` | Edició directa (enunciats i solucions). `scripts/genera_pdf_recull_algebra.py` en treu els enunciats a `sources/generated/recull-enunciats-algebra.md` i genera els PDF del recull. Els enllaços al PDF, amb `?v=n`, són a l'inici de la mateixa pàgina. |
 | Figures | `.tex` dins de `figures/tikz/` | SVG a la mateixa ruta relativa dins de `docs/img/`; consulta [GUIA_GRAFIQUES.md](GUIA_GRAFIQUES.md). |
 | Navegació i configuració | `zensical.toml` | Menús, tema, extensions i càrrega dels recursos. |
 | Estils comuns i impressió | `docs/stylesheets/extra.css` | Estils de pantalla i del recull d'exercicis en PDF. Els PDF de teoria fan servir `sources/llibre/apunts.sty`. |
@@ -78,6 +78,7 @@ Revisa el diff de la pàgina i del recull generats. L'execució sobreescriu els 
 |:--|:--|:--|:--|
 | Enunciats de càlcul | Enunciats de `sources/calcul/` i portada `sources/llibre/portada_recull_calcul.tex` | `scripts/genera_pdf_recull_calcul.ps1` | `docs/assets/exercicis/recull_enunciats_calcul.pdf` |
 | Enunciats de càlcul en lletra gran | Les mateixes | `scripts/genera_pdf_recull_calcul_lletra_gran.py` | `docs/assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf` |
+| Enunciats d'àlgebra lineal (ordinari i en lletra gran) | Enunciats de `exercicis_algebra.md` i portada `sources/llibre/portada_recull_algebra.tex` | `scripts/genera_pdf_recull_algebra.py` | `docs/assets/exercicis/recull_enunciats_algebra.pdf` i `recull_enunciats_algebra_lletra_gran.pdf` |
 | Tema 1 | `01_limits.md` i `02_derivades.md` de `docs/calcul/repas-limits-derivades/` | `scripts/genera_pdf_tema.py 1` | `docs/assets/apunts/tema_1_repas_limits_derivades.pdf` |
 | Tema 2 | Les tres pàgines de contingut de `docs/calcul/representacio-funcions/` | `scripts/genera_pdf_tema.py 2` | `docs/assets/apunts/tema_2_representacio_funcions.pdf` |
 | Tema 3 | La pàgina de contingut de `docs/calcul/optimitzacio/` | `scripts/genera_pdf_tema.py 3` | `docs/assets/apunts/tema_3_optimitzacio.pdf` |
@@ -116,6 +117,19 @@ Crea una pàgina temporal `__pdf-...md` dins de `docs/`, serveix `site/`, imprim
 **Edició en lletra gran:** `.venv\Scripts\python.exe scripts\genera_pdf_recull_calcul_lletra_gran.py` genera `output/pdf/recull_enunciats_calcul_lletra_gran.pdf` i la còpia publicable a `docs/assets/exercicis/`, amb el mateix contingut, portada i índex, però amb lletra sense serifa de 12 pt, interlineat 1,5, sense cursiva i amb els exercicis separats. L'enllaç discret de la pàgina d'exercicis és al generador `scripts/genera_pagines_practica.py`; puja-hi el `?v=n` quan canviï. Fa servir el port `8769` i, com el recull ordinari, elimina la pàgina temporal en acabar.
 
 El port temporal és el `8768`. Comprova que estigui disponible; no aturis processos aliens per alliberar-lo. Si una execució s'interromp, comprova si ha quedat una pàgina temporal abans de fer la compilació final.
+
+### Recull d'enunciats d'àlgebra lineal
+
+```powershell
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_recull_algebra.py               # les dues edicions
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_recull_algebra.py --ordinari    # només l'ordinària
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_recull_algebra.py --lletra-gran # només la de lletra gran
+& ".\.venv\Scripts\python.exe" scripts\genera_pdf_recull_algebra.py --nomes-md    # només el Markdown d'enunciats
+```
+
+La pàgina de pràctica d'àlgebra no té fonts separades: l'script en treu els enunciats (sense els desplegables `??? example`, el requadre «Comprova-ho» que remet a una eina del web ni els recursos finals) i els desa a `sources/generated/recull-enunciats-algebra.md`, amb un salt de pàgina abans dels problemes PAU. Després segueix el procediment del recull de càlcul: crea una pàgina temporal `__pdf-...md` dins de `docs/algebra-lineal/per-practicar/` (així els enllaços relatius no canvien), compila, serveix `site/` (ports `8770` i `8771`), imprimeix amb Edge i munta el PDF amb `scripts/munta_recull_pdf.py`, amb la portada `sources/llibre/portada_recull_algebra.tex`. L'edició en lletra gran fa servir l'estil de `genera_pdf_recull_calcul_lletra_gran.py`. Les pàgines temporals porten una regla d'impressió pròpia perquè un paràgraf no quedi separat de la fórmula, llista, taula o requadre que introdueix, ni el títol d'un PAU de la seva procedència. En acabar elimina les pàgines temporals i torna a compilar. Puja el `?v=n` dels dos enllaços de l'inici d'`exercicis_algebra.md` quan publiquis un PDF nou.
+
+Un canvi que només toca les solucions no canvia el Markdown d'enunciats i no obliga a regenerar els PDF.
 
 ### Maquetació i comprovació
 
@@ -170,6 +184,7 @@ La compilació ha d'acabar amb `No issues found`. A PowerShell 5.1, Zensical esc
 | Pràctica de càlcul | `exercicis_calcul.md` o `recull-enunciats-calcul.md` no coincideixen amb el que genera `sources/calcul/`. |
 | PDF dels temes | Han canviat les pàgines del tema, el títol o la introducció de l'índex, les figures que hi surten, `apunts.sty` o `genera_pdf_tema.py`, i el PDF no. |
 | Recull de càlcul | Han canviat els enunciats, les figures que hi surten o el seu script, i el PDF no. |
+| Recull d'àlgebra | `recull-enunciats-algebra.md` no coincideix amb els enunciats d'`exercicis_algebra.md`, o han canviat aquest Markdown, el generador, la portada o el muntador i els PDF no. |
 
 Amb `--staged` només comprova el que s'ha afegit amb `git add`; amb `--des origin/main`, tot el que encara no s'ha publicat. Treballa a partir dels fitxers canviats, de manera que no detecta un PDF que ja estigués desfasat en un commit anterior. Tampoc detecta els canvis d'`extra.css` que afecten la impressió del recull ni si el contingut d'un PDF regenerat és correcte: la revisió visual continua sent necessària.
 
