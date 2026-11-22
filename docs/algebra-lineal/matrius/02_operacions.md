@@ -26,7 +26,7 @@ Les operacions amb matrius tenen condicions pròpies. Abans de calcular, cal com
     $$
     Q_1=
     \begin{array}{cc}
-    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{P_1}}{\hphantom{10}}&\overset{\displaystyle\mathclap{P_2}}{\hphantom{5}}&\overset{\displaystyle\mathclap{P_3}}{\hphantom{8}}\end{matrix}\\[0.5mm]
     \begin{array}{c}M_1\\M_2\end{array}
     &
     \begin{pmatrix}
@@ -39,7 +39,7 @@ Les operacions amb matrius tenen condicions pròpies. Abans de calcular, cal com
     $$
     Q_2=
     \begin{array}{cc}
-    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{P_1}}{\hphantom{12}}&\overset{\displaystyle\mathclap{P_2}}{\hphantom{11}}&\overset{\displaystyle\mathclap{P_3}}{\hphantom{9}}\end{matrix}\\[0.5mm]
     \begin{array}{c}M_1\\M_2\end{array}
     &
     \begin{pmatrix}
@@ -54,7 +54,7 @@ Les operacions amb matrius tenen condicions pròpies. Abans de calcular, cal com
     $$
     Q_1+Q_2=
     \begin{array}{cc}
-    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{P_1}}{\hphantom{22}}&\overset{\displaystyle\mathclap{P_2}}{\hphantom{20}}&\overset{\displaystyle\mathclap{P_3}}{\hphantom{17}}\end{matrix}\\[0.5mm]
     \begin{array}{c}M_1\\M_2\end{array}
     &
     \begin{pmatrix}
@@ -69,7 +69,7 @@ Les operacions amb matrius tenen condicions pròpies. Abans de calcular, cal com
     $$
     Q_2-Q_1=
     \begin{array}{cc}
-    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{P_1}}{\hphantom{-1}}&\overset{\displaystyle\mathclap{P_2}}{\hphantom{-1}}&\overset{\displaystyle\mathclap{P_3}}{\hphantom{1}}\end{matrix}\\[0.5mm]
     \begin{array}{c}M_1\\M_2\end{array}
     &
     \begin{pmatrix}
@@ -102,7 +102,7 @@ $$
     $$
     2Q_1=
     \begin{array}{cc}
-    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{P_1}}{\hphantom{20}}&\overset{\displaystyle\mathclap{P_2}}{\hphantom{10}}&\overset{\displaystyle\mathclap{P_3}}{\hphantom{16}}\end{matrix}\\[0.5mm]
     \begin{array}{c}M_1\\M_2\end{array}
     &
     \begin{pmatrix}
@@ -134,7 +134,7 @@ Cada element del producte s'obté multiplicant una fila de la primera matriu per
     $$
     Q=
     \begin{array}{cc}
-    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{P_1}}{\hphantom{10}}&\overset{\displaystyle\mathclap{P_2}}{\hphantom{5}}&\overset{\displaystyle\mathclap{P_3}}{\hphantom{8}}\end{matrix}\\[0.5mm]
     \begin{array}{c}M_1\\M_2\\M_3\end{array}
     &
     \begin{pmatrix}
@@ -150,7 +150,7 @@ Cada element del producte s'obté multiplicant una fila de la primera matriu per
     $$
     P=
     \begin{array}{cc}
-    &\begin{array}{cc}\text{A}\!&\!\text{B}\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{\text{A}}}{\hphantom{3}}&\overset{\displaystyle\mathclap{\text{B}}}{\hphantom{4}}\end{matrix}\\[0.5mm]
     \begin{array}{c}P_1\\P_2\\P_3\end{array}
     &
     \begin{pmatrix}
@@ -166,7 +166,7 @@ Cada element del producte s'obté multiplicant una fila de la primera matriu per
     $$
     QP=
     \begin{array}{cc}
-    &\begin{array}{cc}C_A\!&\!C_B\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{C_A}}{\hphantom{87}}&\overset{\displaystyle\mathclap{C_B}}{\hphantom{100}}\end{matrix}\\[0.5mm]
     \begin{array}{c}M_1\\M_2\\M_3\end{array}
     &
     \begin{pmatrix}

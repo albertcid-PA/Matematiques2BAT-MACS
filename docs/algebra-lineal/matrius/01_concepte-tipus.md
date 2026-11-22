@@ -171,7 +171,7 @@ Per tant, si $A$ és d'ordre $m\times n$, la seva transposada és d'ordre $n\tim
     $$
     Q=
     \begin{array}{cc}
-    &\begin{array}{ccc}P_1\!&\!P_2\!&\!P_3\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{P_1}}{\hphantom{10}}&\overset{\displaystyle\mathclap{P_2}}{\hphantom{5}}&\overset{\displaystyle\mathclap{P_3}}{\hphantom{8}}\end{matrix}\\[0.5mm]
     \begin{array}{c}M_1\\M_2\end{array}
     &
     \begin{pmatrix}
@@ -186,7 +186,7 @@ Per tant, si $A$ és d'ordre $m\times n$, la seva transposada és d'ordre $n\tim
     $$
     Q^t=
     \begin{array}{cc}
-    &\begin{array}{cc}M_1\!&\!M_2\end{array}\\[0.5mm]
+    &\begin{matrix}\overset{\displaystyle\mathclap{M_1}}{\hphantom{10}}&\overset{\displaystyle\mathclap{M_2}}{\hphantom{6}}\end{matrix}\\[0.5mm]
     \begin{array}{c}P_1\\P_2\\P_3\end{array}
     &
     \begin{pmatrix}
