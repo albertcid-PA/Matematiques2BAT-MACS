@@ -4,7 +4,7 @@ En aquest tema utilitzarem les derivades per resoldre problemes d'optimització 
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega 3. Optimització**](../../assets/apunts/tema_3_optimitzacio.pdf?v=2){ target="_blank" rel="noopener" }
+[**Descarrega 3. Optimització**](../../assets/apunts/tema_3_optimitzacio.pdf?v=3){ target="_blank" rel="noopener" }
 
 </div>
 

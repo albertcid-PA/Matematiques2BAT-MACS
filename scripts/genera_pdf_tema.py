@@ -247,8 +247,17 @@ def table(lines):
         aligns.append("c" if s.startswith(":") and s.endswith(":") else "r" if s.endswith(":") else "l")
     allrows = [head] + rows
     text_llarg = max(_llarg(c) for r in allrows for c in r)
+    ajustada = n <= 4 and text_llarg > 45
 
     def cel(c):
+        # Un <br> dins d'una cel·la separa línies: en les columnes de paràgraf de
+        # tabularx n'hi ha prou amb \newline; en les altres cal una subtaula.
+        parts = re.split(r"<br\s*/?>", c)
+        if len(parts) > 1:
+            parts = [inline(p.strip()) for p in parts]
+            if ajustada:
+                return "\\newline\\rule{0pt}{3ex}".join(parts)
+            return "\\begin{tabular}[c]{@{}%s@{}}%s\\end{tabular}" % ("l", "\\\\".join(parts))
         # A les taules molt amples, els textos llargs es parteixen en línies
         if n >= 6 and _llarg(c) > 20:
             return "\\parbox[c]{2.6cm}{\\centering\\strut %s\\strut}" % inline(c)
@@ -266,7 +275,7 @@ def table(lines):
         cos += [" & ".join(cap(c) for c in head) + " \\\\", "\\midrule"]
     cos += [" & ".join(cel(c) for c in r) + " \\\\" for r in rows]
     cos.append("\\bottomrule")
-    if n <= 4 and text_llarg > 45:
+    if ajustada:
         prim = "l" if max(_llarg(r[0]) for r in allrows) < 28 else "Y"
         spec = prim + "Y" * (n - 1)
         return "\n".join(["\\begin{center}", "\\begin{tabularx}{\\linewidth}{%s}" % spec, *cos,

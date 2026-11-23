@@ -103,6 +103,7 @@ Revisa el diff de la pàgina i del recull generats. L'execució sobreescriu els 
 - Les figures es compilen des de `figures/tikz/` amb la lletra del llibre i es guarden a `tmp/llibre/figures/`. Només es recompilen les noves o modificades. Els SVG del web no intervenen.
 - El generador treu els números escrits als títols del Markdown perquè LaTeX numera els apartats. Per això la numeració del PDF (2.2.1) no coincideix amb la del web.
 - Si troba un bloc HTML o una imatge que no sap convertir, s'atura amb un missatge. Cal afegir-hi la conversió, no editar el LaTeX generat.
+- Dins d'una cel·la de taula, `<br>` separa línies, també al PDF. Per evitar que KaTeX parteixi una fórmula d'una columna estreta després de l'igual, agrupa-la amb claus: `${I_2=\begin{pmatrix}…\end{pmatrix}}$`.
 
 ### Recull d'enunciats de càlcul
 

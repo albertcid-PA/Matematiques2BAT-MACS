@@ -112,7 +112,7 @@ Les matrius es poden classificar segons la forma o segons els seus elements.
 | Matriu nul·la | Tots els elements són $0$. | $O=\begin{pmatrix}0&0\\0&0\end{pmatrix}$ |
 | Matriu diagonal | És quadrada i tots els elements que no són a la diagonal principal són $0$. | $\begin{pmatrix}2&0\\0&-1\end{pmatrix}$ |
 | Matriu escalar | És diagonal i tots els elements de la diagonal principal són iguals. | $\begin{pmatrix}3&0\\0&3\end{pmatrix}$ |
-| Matriu identitat | És escalar i els elements de la diagonal principal són $1$. | $I_2=\begin{pmatrix}1&0\\0&1\end{pmatrix}$ |
+| Matriu identitat | És escalar i els elements de la diagonal principal són $1$. | ${I_2=\begin{pmatrix}1&0\\0&1\end{pmatrix}}$<br>${I_3=\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}}$ |
 
 Una matriu quadrada d'ordre $n$ té $n$ files i $n$ columnes. La seva diagonal principal està formada pels elements $a_{11},a_{22},\ldots,a_{nn}$.
 
