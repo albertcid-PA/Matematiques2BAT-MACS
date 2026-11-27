@@ -1022,6 +1022,60 @@ $$p''(x)=6x+2a=6x,\qquad p''(1)=6>0.$$
 
 Per tant, $Q=(1,0)$ és un mínim relatiu.
 
+**1.22.**
+
+Les $17$ h corresponen a $t=1$ i les $19$ h, a $t=3$. La funció s'expressa en centenars de persones. Calculem la derivada:
+
+$$P'(t)=3t^2-18t+24=3\,(t^2-6t+8)=3\,(t-2)(t-4).$$
+
+- **a)** El nombre de persones és el valor de la funció i el ritme és el valor de la derivada:
+
+    $$P(1)=1-9+24=16,\qquad P'(1)=3-18+24=9.$$
+
+    A les $17$ h hi ha $1\,600$ persones connectades i el nombre de persones connectades augmenta a un ritme de $9$ centenars, és a dir, $900$ persones per hora.
+
+- **b)** Calculem la derivada a $t=3$:
+
+    $$P'(3)=27-54+24=-3.$$
+
+    Com que $P'(3)<0$, el nombre de persones connectades disminueix, a un ritme de $300$ persones per hora.
+
+- **c)** El nombre de persones ni augmenta ni disminueix quan el ritme és zero:
+
+    $$P'(t)=3\,(t-2)(t-4)=0\quad\Longrightarrow\quad t=2,\ t=4.$$
+
+    Això passa a les $18$ h i a les $20$ h.
+
+- **d)** Necessitem també $P(3)=27-81+72=18$. La taxa de variació mitjana entre $t=1$ i $t=3$ és
+
+    $$\frac{P(3)-P(1)}{3-1}=\frac{18-16}{2}=1.$$
+
+    De mitjana, entre les $17$ h i les $19$ h el nombre de persones connectades augmenta $100$ persones per hora. En canvi, a les $19$ h disminueix a un ritme de $300$ persones per hora: la taxa mitjana resumeix tot l'interval, mentre que la derivada descriu el que passa en un instant concret.
+
+**1.23.**
+
+- **a)** Substituïm a la funció:
+
+    $$T(0)=200\,e^{0}+20=220,\qquad T(10)=200\,e^{-1}+20\approx93{,}58.$$
+
+    En apagar-lo, el forn és a $220\,^\circ\text{C}$ i, al cap de $10$ minuts, a uns $93{,}58\,^\circ\text{C}$.
+
+- **b)** Derivem amb la regla de la cadena:
+
+    $$T'(t)=200\,e^{-0{,}1t}\,(-0{,}1t)'=200\,e^{-0{,}1t}\cdot(-0{,}1)=-20\,e^{-0{,}1t}.$$
+
+    Avaluem la derivada en els dos instants:
+
+    $$T'(0)=-20,\qquad T'(10)=-20\,e^{-1}\approx-7{,}36.$$
+
+    Les derivades són negatives perquè la temperatura disminueix. En apagar-lo, el forn es refreda a un ritme de $20\,^\circ\text{C}$ per minut i, al cap de $10$ minuts, a un ritme d'uns $7{,}36\,^\circ\text{C}$ per minut.
+
+- **c)** Com que $e^{-0{,}1t}>0$, sempre tenim $T'(t)<0$: la temperatura sempre disminueix. El ritme de refredament és
+
+    $$|T'(t)|=20\,e^{-0{,}1t},$$
+
+    que es fa més petit quan $t$ augmenta, perquè $e^{-0{,}1t}$ és decreixent. Per tant, el forn es refreda cada vegada més a poc a poc.
+
 **2.1.**
 
 Una funció només pot ser derivable en un punt si és contínua i la gràfica hi té una única tangent amb pendent finit. Observant cada gràfica:
@@ -1986,6 +2040,78 @@ $$
 
 La funció és contínua als dos punts d'unió. Els pendents són $-3$, $1$ i $3$; com que canvien, no és derivable a $x=-2$ ni a $x=1$.
 
+**2.29.**
+
+Les $8$ h corresponen a $t=0$ i la funció s'expressa en desenes de vehicles.
+
+- **a)** Derivem, traiem factor comú $3$ i resolem:
+
+    $$A'(t)=3t^2-18t+24=3\,(t^2-6t+8)=3\,(t-2)(t-4)=0\quad\Longrightarrow\quad t=2,\ t=4.$$
+
+    Calculem els valors als candidats i als extrems del domini:
+
+    $$A(0)=10,\qquad A(2)=8-36+48+10=30,\qquad A(4)=64-144+96+10=26,\qquad A(7)=343-441+168+10=80.$$
+
+    | $t$ | $0$ | $(0,2)$ | $2$ | $(2,4)$ | $4$ | $(4,7)$ | $7$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $A'$ | | $+$ | $0$ | $-$ | $0$ | $+$ | |
+    | Valor d'$A$ | $10$ | creix | $30$ | decreix | $26$ | creix | $80$ |
+    | Tipus de punt | extrem<br>del domini | | màxim<br>relatiu | | mínim<br>relatiu | | extrem<br>del domini |
+
+    La funció creix a $(0,2)\cup(4,7)$ i decreix a $(2,4)$.
+
+    **Interpretació.** El màxim relatiu $(2,30)$ indica que a les $10$ h hi ha $300$ vehicles i que a partir d'aquest moment el nombre de vehicles comença a disminuir. El mínim relatiu $(4,26)$ indica que a les $12$ h hi ha $260$ vehicles i que a partir d'aquest moment torna a augmentar.
+
+- **b)** Comparem els extrems relatius amb els valors als extrems del domini: $10$, $30$, $26$ i $80$.
+
+    El màxim absolut és $A(7)=80$: a les $15$ h hi ha més vehicles, $800$. No coincideix amb el màxim relatiu, perquè després de les $12$ h la funció torna a créixer i supera el valor $30$.
+
+    El mínim absolut és $A(0)=10$: a les $8$ h hi ha menys vehicles, $100$. Tampoc coincideix amb el mínim relatiu, perquè $A(0)=10<A(4)=26$.
+
+- **c)** Les $11$ h corresponen a $t=3$:
+
+    $$A'(3)=27-54+24=-3.$$
+
+    Com que $A'(3)<0$, el nombre de vehicles disminueix, a un ritme de $3$ desenes, és a dir, $30$ vehicles per hora.
+
+**2.30.**
+
+- **a)** Derivem amb la regla del quocient:
+
+    $$C'(t)=\frac{40\,(t^2+16)-40t\cdot2t}{(t^2+16)^2}=\frac{640-40t^2}{(t^2+16)^2}=\frac{40\,(16-t^2)}{(t^2+16)^2}.$$
+
+    El denominador és sempre positiu. Dins del domini, $16-t^2=0$ només per a $t=4$.
+
+    | $t$ | $0$ | $(0,4)$ | $4$ | $(4,+\infty)$ |
+    |:---:|:---:|:---:|:---:|:---:|
+    | Signe de $C'$ | | $+$ | $0$ | $-$ |
+    | Valor de $C$ | $0$ | creix | $5$ | decreix |
+    | Tipus de punt | extrem<br>del domini | | màxim | |
+
+    La concentració creix durant les quatre primeres hores i després decreix. El màxim és
+
+    $$C(4)=\frac{160}{32}=5.$$
+
+    La concentració màxima és de $5\,\text{mg/L}$ i s'assoleix $4$ hores després de prendre el medicament. Com que la funció creix fins a $t=4$ i decreix després, aquest màxim relatiu també és absolut.
+
+- **b)** El ritme és el valor de la derivada:
+
+    $$C'(2)=\frac{40\cdot12}{400}=1{,}2,\qquad C'(8)=\frac{40\cdot(-48)}{6\,400}=-0{,}3.$$
+
+    Al cap de dues hores, la concentració augmenta a un ritme de $1{,}2\,\text{mg/L}$ per hora. Al cap de vuit hores, disminueix a un ritme de $0{,}3\,\text{mg/L}$ per hora.
+
+- **c)** Calculem el límit per l'ordre dels infinits: el denominador és de grau més alt que el numerador.
+
+    $$\lim_{t\to+\infty}\frac{40t}{t^2+16}=0.$$
+
+    A llarg termini, la concentració s'acosta a zero: l'organisme elimina el medicament de mica en mica.
+
+- **d)** Resolem $C(t)>4$. Com que $t^2+16>0$, podem multiplicar sense canviar la desigualtat:
+
+    $$40t>4t^2+64\quad\Longleftrightarrow\quad4t^2-40t+64<0\quad\Longleftrightarrow\quad t^2-10t+16<0.$$
+
+    Les arrels de $t^2-10t+16$ són $t=2$ i $t=8$, i l'expressió és negativa entre elles. El medicament fa efecte entre la segona i la vuitena hora després de prendre'l, és a dir, durant $6$ hores.
+
 **3.1.**
 
 Siguin $x$ els costats perpendiculars al mur i $y$ el costat paral·lel. Només cal tancar tres costats:
@@ -2262,6 +2388,42 @@ V_{\max}=2{,}5\cdot5\cdot7{,}5
 $$
 
 La maleta de volum màxim té una amplada de $2{,}5\,\text{dm}$, una llargada de $5\,\text{dm}$ i una alçada de $7{,}5\,\text{dm}$.
+
+**3.11.**
+
+- **a)** Els ingressos són el preu per la quantitat venuda:
+
+    $$I(x)=x\,p(x)=x(20-0{,}05x)=20x-0{,}05x^2.$$
+
+    Els costos són els de material més els fixos:
+
+    $$C(x)=4x+300.$$
+
+    El benefici és la diferència:
+
+    $$B(x)=I(x)-C(x)=-0{,}05x^2+16x-300,\qquad 0\leq x\leq400.$$
+
+- **b)** Derivem i igualem a zero:
+
+    $$B'(x)=-0{,}1x+16=0\quad\Longrightarrow\quad x=160.$$
+
+    Com que $B''(x)=-0{,}1<0$, és un màxim, i com que és l'únic extrem i $B$ és una paràbola oberta cap avall, és el màxim absolut de l'interval. El preu i el benefici són
+
+    $$p(160)=20-8=12\,€,\qquad B(160)=-1\,280+2\,560-300=980\,€.$$
+
+    El taller ha d'estampar $160$ samarretes a la setmana i vendre-les a $12\,€$; el benefici setmanal màxim és de $980\,€$.
+
+- **c)** Els ingressos i els costos són iguals quan el benefici és zero:
+
+    $$-0{,}05x^2+16x-300=0.$$
+
+    Multipliquem per $-20$ i resolem:
+
+    $$x^2-320x+6\,000=0,\qquad x=\frac{320\pm\sqrt{102\,400-24\,000}}{2}=\frac{320\pm280}{2}.$$
+
+    Obtenim $x=20$ i $x=300$, tots dos dins del domini. Amb $20$ samarretes (a $19\,€$) o amb $300$ samarretes (a $5\,€$), els ingressos cobreixen exactament els costos.
+
+    Com que $B$ és una paràbola oberta cap avall, $B(x)>0$ entre les dues solucions: el taller té beneficis si estampa més de $20$ i menys de $300$ samarretes a la setmana, i pèrdues fora d'aquest interval.
 
 **PAU.C.1.**
 
@@ -2837,3 +2999,43 @@ La maleta de volum màxim té una amplada de $2{,}5\,\text{dm}$, una llargada de
     $$\operatorname{TVM}_{[5,10]}=\frac{8-28}{10-5}=-4\,€\text{ per any}.$$
 
 - **e)** La gràfica va de $(0,0)$ a $(2,40)$ seguint el tram parabòlic i continua amb la recta decreixent que arriba a $(10,8)$. El punt d'unió $(2,40)$ és també el màxim absolut.
+
+**PAU.C.16.**
+
+Fem servir les relacions de l'apartat de fórmules d'optimització: temps $=\dfrac{\text{espai}}{\text{velocitat}}$, consum total $=$ consum per hora $\cdot$ temps i cost del gasoil $=$ preu per litre $\cdot$ consum total.
+
+- **a)** A $40\,\text{km/h}$, el temps del viatge és
+
+    $$t=\frac{300}{40}=7{,}5\ \text{hores}.$$
+
+    El consum per hora és $G(40)=5+\frac{1\,600}{98}=\frac{1\,045}{49}\approx21{,}33$ litres. Per tant,
+
+    $$\text{gasoil}=\frac{1\,045}{49}\cdot7{,}5\cdot1{,}96=313{,}5\,€,\qquad\text{conductor}=7{,}5\cdot14{,}70=110{,}25\,€.$$
+
+    El viatge dura $7{,}5$ hores i el cost total és de $313{,}5+110{,}25=423{,}75\,€$.
+
+- **b)** A una velocitat $x$, el viatge dura $\dfrac{300}{x}$ hores. El cost del gasoil i el del conductor són
+
+    $$\left(5+\frac{x^2}{98}\right)\cdot\frac{300}{x}\cdot1{,}96=\frac{2\,940}{x}+6x,\qquad\frac{300}{x}\cdot14{,}70=\frac{4\,410}{x}.$$
+
+    Sumant-los,
+
+    $$C(x)=\frac{2\,940}{x}+6x+\frac{4\,410}{x}=\frac{7\,350}{x}+6x,\qquad0<x\leq40.$$
+
+- **c)** Derivem i igualem a zero:
+
+    $$C'(x)=-\frac{7\,350}{x^2}+6=0\quad\Longrightarrow\quad x^2=\frac{7\,350}{6}=1\,225\quad\Longrightarrow\quad x=35.$$
+
+    Descartem $x=-35$, perquè la velocitat ha de ser positiva. Estudiem el signe de la derivada:
+
+    | $x$ | $(0,35)$ | $35$ | $(35,40]$ |
+    |:---:|:---:|:---:|:---:|
+    | Valor de prova | $C'(10)=-67{,}5$ | $0$ | $C'(40)\approx1{,}41$ |
+    | Signe de $C'$ | $-$ | $0$ | $+$ |
+    | Comportament de $C$ | decreix | mínim | creix |
+
+    El cost decreix fins a $x=35$ i creix després; per tant, $x=35$ és el mínim absolut de l'interval. El cost mínim és
+
+    $$C(35)=\frac{7\,350}{35}+6\cdot35=210+210=420\,€.$$
+
+    El tractor ha de circular a $35\,\text{km/h}$, i aleshores el viatge costa $420\,€$.

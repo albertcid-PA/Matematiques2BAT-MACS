@@ -241,6 +241,31 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
 - **b)** Determina els coeficients $a$, $b$ i $c$.
 - **c)** Classifica l'extrem relatiu mitjançant la derivada segona.
 
+### Interpretació de la derivada en un context
+
+La derivada en un punt indica a quin ritme varia una magnitud en aquell instant. Respon sempre amb les unitats del context i tingues en compte l'escala en què s'expressa la funció.
+
+**1.22.** El nombre de persones connectades a una aplicació de missatgeria, en centenars, $t$ hores després de les $16$ h, ve donat per
+
+$$
+P(t)=t^3-9t^2+24t,\qquad 0\leq t\leq6.
+$$
+
+- **a)** Quantes persones hi ha connectades a les $17$ h? A quin ritme varia el nombre de persones connectades en aquest moment?
+- **b)** A quin ritme varia el nombre de persones connectades a les $19$ h? Augmenta o disminueix?
+- **c)** En quins instants el nombre de persones connectades ni augmenta ni disminueix?
+- **d)** Calcula la taxa de variació mitjana entre les $17$ h i les $19$ h i compara-la amb el resultat de l'apartat **b)**.
+
+**1.23.** Quan s'apaga un forn, la temperatura a l'interior, en graus Celsius, $t$ minuts després d'apagar-lo, ve donada per
+
+$$
+T(t)=200\,e^{-0{,}1t}+20,\qquad t\geq0.
+$$
+
+- **a)** Quina temperatura hi ha en el moment d'apagar-lo? I al cap de $10$ minuts?
+- **b)** A quin ritme es refreda el forn en el moment d'apagar-lo? I al cap de $10$ minuts?
+- **c)** El forn es refreda cada vegada més de pressa o cada vegada més a poc a poc? Justifica-ho a partir de l'expressió de $T'(t)$.
+
 ## Tema 2. Representació de funcions
 
 ### Derivabilitat
@@ -591,6 +616,27 @@ $$
 - **b)** Escriu $p$ com una funció a trossos.
 - **c)** Indica en quins punts no és derivable i representa-la.
 
+**2.29.** El nombre de vehicles que hi ha en un aparcament, en desenes, $t$ hores després de les $8$ h, ve donat per
+
+$$
+A(t)=t^3-9t^2+24t+10,\qquad 0\leq t\leq7.
+$$
+
+- **a)** Estudia el creixement i el decreixement de la funció i troba'n els extrems relatius. Interpreta'ls en el context del problema.
+- **b)** En quin moment hi ha més vehicles a l'aparcament i quants n'hi ha? I en quin moment n'hi ha menys? Coincideixen aquests moments amb els extrems relatius? Justifica-ho.
+- **c)** A quin ritme varia el nombre de vehicles a les $11$ h? Augmenta o disminueix?
+
+**2.30.** La concentració d'un medicament a la sang, en mil·ligrams per litre, $t$ hores després de prendre'l, ve donada per
+
+$$
+C(t)=\frac{40t}{t^2+16},\qquad t\geq0.
+$$
+
+- **a)** Estudia el creixement i el decreixement de la funció. Quan s'assoleix la concentració màxima i quina és?
+- **b)** A quin ritme varia la concentració al cap de dues hores? I al cap de vuit hores?
+- **c)** Què passa amb la concentració a llarg termini? Interpreta-ho.
+- **d)** El medicament fa efecte mentre la concentració supera els $4\,\text{mg/L}$. Entre quins instants fa efecte i durant quant de temps?
+
 ## Tema 3. Optimització
 
 En cada problema, identifica les dades i defineix les variables necessàries. Construeix una funció d'una sola variable que representi la magnitud que es vol maximitzar o minimitzar, determina'n el domini i resol el problema. Justifica l'òptim i expressa el resultat amb les unitats corresponents.
@@ -698,6 +744,14 @@ $$
 - **a)** Troba la funció que determina el volum de la maleta en funció de la seva amplada i indica'n el domini.
 - **b)** Troba les dimensions que ha de tenir la maleta perquè el volum sigui màxim i justifica-ho.
 - **c)** Calcula el volum màxim de la maleta.
+
+### Ingressos iguals als costos
+
+**3.11. Samarretes personalitzades.** Un taller estampa $x$ samarretes personalitzades a la setmana i les ven totes. Per poder-les vendre, el preu de cada samarreta ha de ser $p(x)=20-0{,}05x$ euros. Cada samarreta li costa $4\,€$ de material i, a més, té uns costos fixos de $300\,€$ setmanals. El taller pot estampar com a màxim $400$ samarretes a la setmana.
+
+- **a)** Expressa en funció de $x$ els ingressos i els costos setmanals. Escriu la funció $B(x)$ que dona el benefici setmanal.
+- **b)** Quantes samarretes ha d'estampar per obtenir el benefici màxim? A quin preu les ha de vendre i quin és aquest benefici?
+- **c)** Per a quines quantitats de samarretes els ingressos i els costos són iguals? Entre quines quantitats té beneficis el taller?
 
 !!! note "Preparació de les PAU"
     Continua amb els [problemes PAU de càlcul de l'apartat Per practicar](per-practicar/exercicis_calcul.md#problemes-pau), ordenats per continguts i amb exercicis de convocatòries reals i d'entrenament de tipus PAU.
@@ -907,6 +961,18 @@ $$
 - **c)** Calcula el preu màxim assolit i l'any en què es va assolir.
 - **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
 - **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
+
+### Costos de transport
+
+**PAU.C.16. Trasllat d'un tractor** *(basat en la qüestió 3 de la convocatòria ordinària de 2024, sèrie 1)*. Una pagesa contracta un conductor perquè porti un tractor fins a un poble situat a $300\,\text{km}$. El gasoil costa $1{,}96\,€$ per litre i el conductor cobra $14{,}70\,€$ per hora. El tractor fa tot el trajecte a una velocitat constant de $x$ quilòmetres per hora, amb $0<x\leq40$, i el seu consum de gasoil, en litres per hora, és
+
+$$
+G(x)=5+\frac{x^2}{98}.
+$$
+
+- **a)** Si el tractor circula a $40\,\text{km/h}$, la velocitat màxima permesa, quant de temps dura el viatge? Quin és el cost total, sumant el gasoil i el sou del conductor?
+- **b)** Comprova que el cost total del viatge en funció de la velocitat és $C(x)=\dfrac{7\,350}{x}+6x$.
+- **c)** A quina velocitat ha de circular el tractor perquè el cost total sigui mínim? Justifica que és un mínim i calcula aquest cost.
 
 !!! note "Recursos per continuar practicant"
 

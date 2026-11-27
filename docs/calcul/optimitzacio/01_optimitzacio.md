@@ -95,6 +95,15 @@ En molts enunciats, la funció objectiu no apareix directament. Abans cal combin
 
 Aquí, $e$ és l'espai recorregut, $v$ la velocitat, $t$ el temps, $g(v)$ el consum per unitat de temps, $Q$ la quantitat consumida, $p_\ell$ el preu per litre, $p_h$ el preu per hora, $p$ el preu de venda i $q$ la quantitat venuda o produïda. En la fórmula del cost total de producció, $C_F$ és el cost fix i $c_u$ el cost per unitat, quan aquest és constant.
 
+!!! note "Ingressos iguals als costos"
+    Com que $B=I-C_T$, els ingressos i els costos són iguals exactament quan el benefici és zero. Per respondre «amb quina producció (o amb quin preu) els ingressos i els costos són iguals?», resol l'equació
+
+    $$
+    I(x)=C_T(x)\quad\Longleftrightarrow\quad B(x)=0
+    $$
+
+    i comprova que les solucions pertanyen al domini del problema. Si $B$ és una paràbola oberta cap avall, entre les dues solucions l'empresa té beneficis ($B>0$) i fora d'elles té pèrdues ($B<0$). És el mateix procediment que per comparar dos models (vegeu l'[exemple 6](#36-comparacio-de-dos-models)).
+
 !!! note "Comprova les unitats en els problemes de consum"
     Si $g(v)$ està expressat en litres per hora i $t$ en hores, aleshores $Q=g(v)\cdot t$ queda expressat en litres. No confonguis el **consum per hora** amb el **consum total del trajecte**.
 
@@ -866,6 +875,24 @@ Per tant, el rectangle d'àrea màxima és un quadrat de dimensions $5\,\text{cm
       ![Gràfica dels ingressos mensuals en funció del nombre de venedors nous](../../img/calcul/fig_3_6_ingressos_venedors.svg?v=5){ width="700" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_3_6_ingressos_venedors.tex">Figura 3.6.</a></strong> Ingressos mensuals en funció del nombre de venedors nous contractats.</figcaption>
     </figure>
+
+!!! tip "Esquema: el preu i la quantitat varien linealment"
+    Molts problemes diuen que, **per cada** augment (o descompte) d'una quantitat fixa, es guanyen o es perden unes unitats. En aquests casos:
+
+    1. Anomena $x$ el **nombre de vegades** que s'aplica el canvi.
+    2. Escriu el preu i la quantitat en funció de $x$, partint dels valors inicials $p_0$ i $q_0$ i sumant o restant el que canvia cada vegada. Per exemple, si per cada $2\,€$ d'augment es venen $20$ unitats menys:
+
+        $$
+        p(x)=p_0+2x,\qquad q(x)=q_0-20x.
+        $$
+
+        Si el canvi és un descompte, el preu es resta i la quantitat se suma.
+
+    3. Els ingressos són $I(x)=p(x)\cdot q(x)$. Si hi ha costos, el benefici és $B(x)=I(x)-C(x)$, on el cost depèn de la quantitat venuda, $q(x)$, no de $x$.
+    4. El domini surt del context: el preu i la quantitat no poden ser negatius.
+    5. Després d'optimitzar, **torna al context**: la resposta no és $x$, sinó el preu $p(x)$, la quantitat $q(x)$ o el nombre total d'unitats.
+
+    A l'exemple 4, cada venedor nou fa baixar $200\,€$ els ingressos de cada venedor: $p(x)=4\,800-200x$ és l'ingrés per venedor i $q(x)=12+x$, el nombre de venedors.
 
 ### 3.5 Estudi i optimització d'una funció a trossos
 

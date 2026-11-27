@@ -111,6 +111,13 @@ Interpretem separadament el resultat de cada límit:
 - Si el límit és un nombre real $L$, la funció **convergeix a $L$** en aquell extrem.
 - Si el límit és $+\infty$ o $-\infty$, la funció té una **branca infinita** en aquell extrem.
 
+!!! note "Comportament a llarg termini en un context"
+    Si la variable és el temps, les preguntes «a llarg termini», «amb el pas del temps» o «a quin valor tendeix...» es responen calculant $\lim\limits_{t\to+\infty}f(t)$. Interpreta el resultat amb les unitats i l'escala del problema:
+
+    - si el límit és un nombre $L$, la magnitud **s'estabilitza** a prop de $L$; per exemple, si $f$ s'expressa en centenars i $L=7$, el valor s'aproxima a $700$, encara que no l'arribi a assolir;
+    - si el límit és $0$, la magnitud es fa cada vegada més petita;
+    - si el límit és $+\infty$, la magnitud creix sense límit, i això sovint indica que el model només és vàlid durant un temps limitat.
+
 ### Pas 7. Extrems relatius
 
 !!! abstract "Definició: màxim i mínim relatius"

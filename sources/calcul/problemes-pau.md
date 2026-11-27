@@ -200,6 +200,18 @@ $$
 - **d)** Calcula la taxa de variació mitjana del preu durant els darrers cinc anys.
 - **e)** Representa la funció i assenyala-hi el punt d'unió i el màxim absolut.
 
+## Costos de transport
+
+**PAU.C.16. Trasllat d'un tractor** *(basat en la qüestió 3 de la convocatòria ordinària de 2024, sèrie 1)*. Una pagesa contracta un conductor perquè porti un tractor fins a un poble situat a $300\,\text{km}$. El gasoil costa $1{,}96\,€$ per litre i el conductor cobra $14{,}70\,€$ per hora. El tractor fa tot el trajecte a una velocitat constant de $x$ quilòmetres per hora, amb $0<x\leq40$, i el seu consum de gasoil, en litres per hora, és
+
+$$
+G(x)=5+\frac{x^2}{98}.
+$$
+
+- **a)** Si el tractor circula a $40\,\text{km/h}$, la velocitat màxima permesa, quant de temps dura el viatge? Quin és el cost total, sumant el gasoil i el sou del conductor?
+- **b)** Comprova que el cost total del viatge en funció de la velocitat és $C(x)=\dfrac{7\,350}{x}+6x$.
+- **c)** A quina velocitat ha de circular el tractor perquè el cost total sigui mínim? Justifica que és un mínim i calcula aquest cost.
+
 !!! note "Recursos per continuar practicant"
 
     **PAU de Catalunya**

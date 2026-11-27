@@ -163,3 +163,11 @@ $$
   ![Evolució del preu del producte amb el màxim assenyalat](../img/calcul/fig_pau_c_7_preu_producte.svg?v=3){ width="560" }
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_7_preu_producte.tex">Figura PAU.C.7.</a></strong> Evolució del preu del producte.</figcaption>
 </figure>
+
+## Costos de transport
+
+**PAU.C.16. Trasllat d'un tractor**
+
+- **a)** El viatge dura $7{,}5$ hores i costa $423{,}75\,€$.
+- **b)** $C(x)=G(x)\cdot\frac{300}{x}\cdot1{,}96+\frac{300}{x}\cdot14{,}70=\frac{7\,350}{x}+6x$.
+- **c)** El cost és mínim a $35\,\text{km/h}$ i val $420\,€$.

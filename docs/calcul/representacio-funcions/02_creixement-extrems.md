@@ -11,6 +11,9 @@ La derivada ens permet descriure com varia una funció. El signe de $f'(x)$ indi
     - si $f'(x)<0$, la funció és **decreixent**;
     - si $f'(x)=0$ en tot l'interval, la funció és **constant**.
 
+!!! note "Signe i valor de la derivada"
+    El **signe** de $f'(a)$ indica si la funció creix o decreix en $a$; el **valor** de $f'(a)$ indica a quin ritme ho fa. En un problema contextualitzat, una pregunta com «a quin ritme augmenta el nombre de persones al cap d'una hora?» es respon calculant $f'(1)$ i expressant-lo amb les unitats del context. Ho trobaràs explicat a [Interpretació de la derivada en un context](../repas-limits-derivades/02_derivades.md#interpretacio-de-la-derivada-en-un-context).
+
 !!! note "Recorda"
     Per determinar els intervals de creixement i decreixement no n'hi ha prou amb resoldre $f'(x)=0$. Cal estudiar el **signe** de $f'$ en els intervals que determinen els punts crítics i els punts on la funció o la derivada no existeixen.
 
@@ -50,6 +53,8 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
     - si $f''(a)<0$, la funció té un **màxim relatiu** en $x=a$;
     - si $f''(a)>0$, la funció té un **mínim relatiu** en $x=a$;
     - si $f''(a)=0$, el criteri **no permet decidir** i cal estudiar el canvi de signe de $f'$.
+
+    Per justificar un extrem n'hi ha prou amb el canvi de signe de $f'$. La segona derivada és només una comprovació complementària.
 
 !!! warning "Un punt amb derivada zero no sempre és un extrem"
     En $f(x)=x^3$ tenim $f'(0)=0$, però la funció és creixent a tots dos costats de $0$. Per tant, $(0,0)$ no és ni un màxim ni un mínim. Sempre cal comprovar el canvi de signe de $f'$.
@@ -195,16 +200,140 @@ La classificació més segura es fa amb el canvi de signe de $f'$:
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_9_creixement_polinomi_exponencial.tex">Figura 2.9.</a></strong> Creixement, decreixement i extrems de $f(x)=x^2e^{-x}$.</figcaption>
     </figure>
 
-## 3. Esquema d'un estudi complet
+## 3. Extrems absoluts en un interval tancat
+
+En molts problemes la funció només té sentit en un interval tancat, com $0\leq t\leq9$ hores. Aleshores no n'hi ha prou de trobar els extrems relatius: cal saber quin és el valor **més gran** i el **més petit** de tot l'interval.
+
+!!! abstract "Definició: màxim i mínim absoluts"
+    Una funció té un **màxim absolut** en $x=a$ si $f(a)$ és el valor més gran que pren la funció en tot el domini considerat. Té un **mínim absolut** en $x=a$ si $f(a)$ és el valor més petit.
+
+    Si $f$ és contínua en un interval tancat $[p,q]$, té sempre un màxim absolut i un mínim absolut, i els assoleix en un extrem relatiu o en un extrem del domini, $x=p$ o $x=q$.
+
+!!! tip "Procediment"
+    1. Troba els extrems relatius de $f$ dins de l'interval.
+    2. Calcula el valor de la funció als extrems del domini, $f(p)$ i $f(q)$.
+    3. Compara tots aquests valors: el més gran és el màxim absolut i el més petit, el mínim absolut.
+
+    A la taula de monotonia, els extrems del domini ocupen les columnes primera i última.
+
+!!! warning "Un màxim relatiu no sempre és el màxim absolut"
+    - Un màxim relatiu només és el valor més gran **a prop** del punt. Si després la funció torna a créixer, pot assolir un valor més gran en un altre punt, sovint en un extrem del domini.
+    - El màxim o el mínim absolut es pot assolir en més d'un punt. Si $f(p)$ i un mínim relatiu tenen el mateix valor, tots dos punts són mínims absoluts.
+
+!!! example "Exemple 3. Extrems absoluts en un interval tancat"
+    Busquem els extrems absoluts de la funció de l'exemple 1,
+
+    $$
+    f(x)=x^3-3x^2-9x+5,
+    $$
+
+    en l'interval $[-2,6]$.
+
+    A l'exemple 1 hem vist que té un màxim relatiu en $x=-1$ i un mínim relatiu en $x=3$. Tots dos valors pertanyen a l'interval. Calculem també la funció als extrems del domini:
+
+    $$
+    f(-2)=-8-12+18+5=3,\qquad f(6)=216-108-54+5=59.
+    $$
+
+    | $x$ | $-2$ | $(-2,-1)$ | $-1$ | $(-1,3)$ | $3$ | $(3,6)$ | $6$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+    | Signe de $f'$ | | $+$ | $0$ | $-$ | $0$ | $+$ | |
+    | Valor de $f$ | $3$ | creix | $10$ | decreix | $-22$ | creix | $59$ |
+    | Tipus de punt | extrem<br>del domini | | màxim<br>relatiu | | mínim<br>relatiu | | extrem<br>del domini |
+
+    Comparem els valors $3$, $10$, $-22$ i $59$:
+
+    - el **màxim absolut** és $59$ i s'assoleix en $x=6$, un extrem del domini, no en el màxim relatiu;
+    - el **mínim absolut** és $-22$ i s'assoleix en $x=3$, on coincideix amb el mínim relatiu.
+
+### Interpretació dels extrems en un context
+
+Quan la funció descriu una situació real, els extrems s'han d'explicar amb les paraules i les unitats del problema, no només amb les coordenades.
+
+!!! tip "Com s'interpreta un extrem"
+    Per a cada extrem, indica:
+
+    1. **quan** passa: el valor de la variable, amb unitats;
+    2. **quant** val la magnitud en aquell moment, tenint en compte l'escala (desenes, centenars, milers...);
+    3. **què canvia** a partir d'aquell moment: si la magnitud passa d'augmentar a disminuir o al revés.
+
+    Per exemple, si el nombre de persones d'un museu, en desenes, $t$ hores després d'obrir, té un màxim relatiu a $(3,\,25)$, una bona interpretació és: «Tres hores després d'obrir hi ha $250$ persones, i a partir d'aquest moment el nombre de persones comença a disminuir.» Si és un màxim relatiu però no absolut, cal afegir-ho: més tard hi haurà més persones.
+
+### Equacions i inequacions en un context
+
+Moltes preguntes d'un problema contextualitzat no demanen un extrem, sinó un valor o un interval. Cada tipus de pregunta es tradueix en un càlcul diferent:
+
+| Pregunta | Càlcul |
+|:--|:--|
+| Quant val la magnitud en l'instant $a$? | Calcular $f(a)$. |
+| Quan val exactament $k$? | Resoldre l'equació $f(x)=k$. |
+| Quan supera el valor $k$? Quan no hi ha pèrdues? | Resoldre la inequació $f(x)>k$ o $B(x)\geq0$. |
+| Quan és millor una opció que l'altra? | Estudiar el signe de la diferència dels dos models. |
+
+!!! tip "Com es resol una inequació en un context"
+    1. Passa-ho tot a un costat, de manera que quedi $g(x)>0$, $g(x)\geq0$, $g(x)<0$ o $g(x)\leq0$.
+    2. Resol l'equació $g(x)=0$ i queda't amb les solucions que pertanyen al domini del problema.
+    3. Aquestes solucions divideixen el domini en intervals. Estudia el signe de $g$ en cada interval amb un valor de prova.
+    4. Respon amb l'interval que compleix la condició, amb les unitats del problema.
+
+    Per comparar dos models, com dues tarifes o dues màquines, el procediment és el mateix amb la funció diferència. Ho trobaràs a l'[exemple 6 d'optimització](../optimitzacio/01_optimitzacio.md#36-comparacio-de-dos-models).
+
+!!! example "Exemple 4. Visitants d'una fira"
+    El nombre de persones que hi ha en una fira, en centenars, $t$ hores després d'obrir, ve donat per
+
+    $$
+    V(t)=-t^2+12t,\qquad 0\leq t\leq12.
+    $$
+
+    **Quantes persones hi ha al cap de $2$ hores?**
+
+    $$
+    V(2)=-4+24=20.
+    $$
+
+    Al cap de $2$ hores hi ha $2\,000$ persones.
+
+    **Quan hi ha exactament $3\,200$ persones?** Com que la funció s'expressa en centenars, resolem $V(t)=32$:
+
+    $$
+    -t^2+12t=32
+    \quad\Longleftrightarrow\quad
+    t^2-12t+32=0
+    \quad\Longleftrightarrow\quad
+    t=\frac{12\pm\sqrt{144-128}}{2}=\frac{12\pm4}{2}.
+    $$
+
+    Obtenim $t=4$ i $t=8$, tots dos dins del domini: hi ha $3\,200$ persones $4$ hores i $8$ hores després d'obrir.
+
+    **Durant quant de temps hi ha més de $2\,700$ persones?** Resolem $V(t)>27$, és a dir, $g(t)=-t^2+12t-27>0$. Les solucions de $g(t)=0$ són
+
+    $$
+    t^2-12t+27=0
+    \quad\Longleftrightarrow\quad
+    t=\frac{12\pm\sqrt{144-108}}{2}=\frac{12\pm6}{2}
+    \quad\Longrightarrow\quad
+    t=3,\ t=9.
+    $$
+
+    | $t$ | $[0,3)$ | $3$ | $(3,9)$ | $9$ | $(9,12]$ |
+    |:---:|:---:|:---:|:---:|:---:|:---:|
+    | Valor de prova | $g(0)=-27$ | $0$ | $g(6)=9$ | $0$ | $g(12)=-27$ |
+    | Signe de $g$ | $-$ | $0$ | $+$ | $0$ | $-$ |
+
+    Hi ha més de $2\,700$ persones entre la tercera i la novena hora després d'obrir, és a dir, durant $6$ hores.
+
+## 4. Esquema d'un estudi complet
 
 Per estudiar el creixement i els extrems d'una funció:
 
-1. Troba el **domini**.
+1. Troba el **domini**. Si el context el limita, escriu l'interval que té sentit.
 2. Calcula $f'$ i localitza els punts crítics.
-3. Fes la taula de signes de $f'$.
+3. Fes la taula de signes de $f'$, amb els punts crítics, les discontinuïtats, els punts d'unió i els extrems del domini.
 4. Escriu els intervals de creixement i decreixement i classifica els extrems.
 5. Si existeix $f''$ en els punts amb $f'(x)=0$, comprova la classificació amb el signe de la segona derivada.
 6. Calcula les ordenades dels extrems substituint els valors de $x$ en la funció original.
+7. Si el domini és un interval tancat, compara aquests valors amb els dels extrems del domini per trobar els extrems absoluts.
+8. En un problema contextualitzat, interpreta cada resultat amb les unitats del problema.
 
 !!! tip "En funcions definides a trossos"
     Cal afegir a la taula tots els punts d'unió. Un extrem també pot aparèixer en un punt on $f'$ no existeix, sempre que el valor pertanyi al domini i es produeixi el canvi de creixement corresponent.

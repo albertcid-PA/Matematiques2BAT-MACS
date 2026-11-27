@@ -110,6 +110,7 @@ Els problemes PAU de càlcul són el material principal de la preparació. Cada 
 | **Construcció de la funció i optimització** | **PAU.C.7**, **PAU.C.8**, **PAU.C.9**, **PAU.C.10** |
 | **Comparació de dos models** | **PAU.C.11**, **PAU.C.12** |
 | **Funcions a trossos** | **PAU.C.13**, **PAU.C.14**, **PAU.C.15** |
+| **Costos de transport** | **PAU.C.16** |
 
 !!! note "Apartats de taxa de variació mitjana"
     Els apartats **PAU.C.3 b** i **PAU.C.15 d** demanen una taxa de variació mitjana. Són útils per interpretar el model, però la coordinació de la PAU ha indicat que no hi haurà preguntes explícites d'aquest tipus.

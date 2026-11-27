@@ -115,6 +115,12 @@ Aquest document permet comprovar els resultats del recull d'exercicis. Abans de 
 
 **1.21.** $a=0$, $b=-3$, $c=2$; $p(x)=x^3-3x+2$. El punt $Q=(1,0)$ és un mínim relatiu perquè $p''(1)=6>0$.
 
+### Interpretació de la derivada
+
+**1.22.** **a)** $P(1)=16$: $1\,600$ persones; $P'(1)=9$: augmenta a un ritme de $900$ persones per hora. **b)** $P'(3)=-3$: disminueix a un ritme de $300$ persones per hora. **c)** A $t=2$ (18 h) i a $t=4$ (20 h). **d)** La taxa de variació mitjana és $1$: de mitjana augmenta $100$ persones per hora, tot i que a les $19$ h disminueix.
+
+**1.23.** **a)** $T(0)=220\,^\circ\text{C}$; $T(10)\approx93{,}58\,^\circ\text{C}$. **b)** $T'(0)=-20$: es refreda a $20\,^\circ\text{C}$ per minut; $T'(10)\approx-7{,}36$: es refreda a uns $7{,}36\,^\circ\text{C}$ per minut. **c)** Cada vegada més a poc a poc, perquè $|T'(t)|=20\,e^{-0{,}1t}$ disminueix quan $t$ augmenta.
+
 ## Tema 2. Representació de funcions
 
 ### Derivabilitat
@@ -386,6 +392,10 @@ $$
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_2_33_resultat_exercici_2_28.tex">Figura 2.33.</a></strong> Representació de la funció de l'exercici 2.28.</figcaption>
 </figure>
 
+**2.29.** **a)** Creix a $(0,2)\cup(4,7)$ i decreix a $(2,4)$; màxim relatiu $(2,30)$ i mínim relatiu $(4,26)$: a les $10$ h hi ha $300$ vehicles i a les $12$ h, $260$. **b)** Més vehicles a les $15$ h, amb $800$ ($A(7)=80$); menys a les $8$ h, amb $100$ ($A(0)=10$). Cap dels dos coincideix amb un extrem relatiu. **c)** $A'(3)=-3$: disminueix a un ritme de $30$ vehicles per hora.
+
+**2.30.** **a)** Creix a $(0,4)$ i decreix a $(4,+\infty)$; concentració màxima de $5\,\text{mg/L}$ al cap de $4$ hores. **b)** $C'(2)=1{,}2$: augmenta a $1{,}2\,\text{mg/L}$ per hora; $C'(8)=-0{,}3$: disminueix a $0{,}3\,\text{mg/L}$ per hora. **c)** $\lim_{t\to+\infty}C(t)=0$: el medicament s'elimina progressivament. **d)** Entre $t=2$ i $t=8$: durant $6$ hores.
+
 ## Tema 3. Optimització
 
 **3.1.** Costat perpendicular al mur: $30\,\text{m}$; costat paral·lel: $60\,\text{m}$; àrea màxima: $1.800\,\text{m}^2$.
@@ -412,3 +422,5 @@ $$
 </figure>
 
 **3.10.** Amplada: $2{,}5\,\text{dm}$; llargada: $5\,\text{dm}$; alçada: $7{,}5\,\text{dm}$. Volum màxim: $93{,}75\,\text{dm}^3$.
+
+**3.11.** $B(x)=-0{,}05x^2+16x-300$, amb $0\leq x\leq400$. Benefici màxim de $980\,€$ amb $160$ samarretes a $12\,€$. Ingressos i costos iguals amb $20$ i amb $300$ samarretes; hi ha beneficis si $20<x<300$.

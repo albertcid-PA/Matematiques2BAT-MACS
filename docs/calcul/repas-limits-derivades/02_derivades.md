@@ -26,6 +26,64 @@ Geomètricament, la taxa de variació mitjana és el pendent de la recta secant 
   <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_1_11_definicio_derivada.tex">Figura 1.11.</a></strong> Definició de derivada.</figcaption>
 </figure>
 
+### Interpretació de la derivada en un context
+
+Quan una funció descriu una magnitud real, com un nombre de persones, un benefici o una temperatura, la derivada indica com de pressa canvia aquesta magnitud.
+
+!!! abstract "Definició: ritme de variació"
+    Si una magnitud $f(t)$ depèn d'una variable $t$, la derivada $f'(a)$ indica **a quin ritme varia $f$ en l'instant $t=a$**: quant augmenta o disminueix $f$ per cada unitat de $t$ en aquell moment.
+
+    - Les unitats de $f'(a)$ són les **unitats de $f$ per unitat de $t$**: persones per hora, euros per unitat produïda, graus per minut...
+    - Si $f'(a)>0$, la magnitud **augmenta** a un ritme de $f'(a)$ unitats per unitat de $t$.
+    - Si $f'(a)<0$, la magnitud **disminueix** a un ritme de $|f'(a)|$ unitats per unitat de $t$.
+    - Si $f'(a)=0$, en aquell instant la magnitud ni augmenta ni disminueix.
+
+    Les preguntes «a quin ritme augmenta...», «amb quina rapidesa disminueix...» o «a quina velocitat creix...» en un instant concret es responen calculant $f'(a)$.
+
+!!! warning "Errors habituals"
+    - No confonguis $f(a)$, que indica **quant val** la magnitud en l'instant $a$, amb $f'(a)$, que indica **com de pressa canvia** en aquest instant.
+    - Escriu sempre les unitats i tingues en compte l'escala de la funció. Si $f$ s'expressa en milers de persones, $f'(a)=6$ vol dir que augmenta a un ritme de $6\,000$ persones per unitat de temps.
+    - El ritme en un instant no és la taxa de variació mitjana, que mesura el canvi mitjà entre dos instants.
+
+!!! example "Exemple"
+    El nombre d'usuaris connectats a una plataforma de vídeo, en milers, $t$ hores després de les $16$ h, ve donat per
+
+    $$
+    U(t)=-t^2+8t+2,\qquad 0\leq t\leq8.
+    $$
+
+    Volem saber quants usuaris hi ha i a quin ritme varia el nombre d'usuaris a les $17$ h ($t=1$) i a les $22$ h ($t=6$).
+
+    Calculem la derivada:
+
+    $$
+    U'(t)=-2t+8.
+    $$
+
+    **A les $17$ h.**
+
+    $$
+    U(1)=-1+8+2=9,\qquad U'(1)=-2+8=6.
+    $$
+
+    Hi ha $9\,000$ usuaris connectats i el nombre d'usuaris **augmenta** a un ritme de $6\,000$ usuaris per hora.
+
+    **A les $22$ h.**
+
+    $$
+    U(6)=-36+48+2=14,\qquad U'(6)=-12+8=-4.
+    $$
+
+    Hi ha $14\,000$ usuaris connectats i el nombre d'usuaris **disminueix** a un ritme de $4\,000$ usuaris per hora.
+
+    **Comparació amb la taxa de variació mitjana.** Entre $t=1$ i $t=6$,
+
+    $$
+    \frac{U(6)-U(1)}{6-1}=\frac{14-9}{5}=1.
+    $$
+
+    De mitjana, entre les $17$ h i les $22$ h el nombre d'usuaris augmenta $1\,000$ usuaris per hora, tot i que a les $22$ h ja disminueix. La taxa de variació mitjana resumeix un interval; la derivada descriu un instant.
+
 ## 2. Derivades de funcions elementals
 
 ### Funció constant

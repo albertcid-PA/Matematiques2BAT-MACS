@@ -4,7 +4,7 @@ En aquesta pàgina tens tots els enunciats dels temes 1, 2 i 3 de càlcul i els 
 
 <div class="practice-actions" markdown="1">
 
-[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=11){ target="_blank" rel="noopener" } · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=4){ target="_blank" rel="noopener" }
+[**Descarrega els enunciats en PDF**](../../assets/exercicis/recull_enunciats_calcul.pdf?v=12){ target="_blank" rel="noopener" } · [edició en lletra gran](../../assets/exercicis/recull_enunciats_calcul_lletra_gran.pdf?v=5){ target="_blank" rel="noopener" }
 
 </div>
 
@@ -1332,6 +1332,91 @@ La seva gràfica passa pel punt $P=(0,2)$ i té un extrem relatiu en el punt $Q=
     $$p''(x)=6x+2a=6x,\qquad p''(1)=6>0.$$
 
     Per tant, $Q=(1,0)$ és un mínim relatiu.
+
+---
+
+### Interpretació de la derivada
+
+**1.22.**
+El nombre de persones connectades a una aplicació de missatgeria, en centenars, $t$ hores després de les $16$ h, ve donat per
+
+$$
+P(t)=t^3-9t^2+24t,\qquad 0\leq t\leq6.
+$$
+
+- **a)** Quantes persones hi ha connectades a les $17$ h? A quin ritme varia el nombre de persones connectades en aquest moment?
+- **b)** A quin ritme varia el nombre de persones connectades a les $19$ h? Augmenta o disminueix?
+- **c)** En quins instants el nombre de persones connectades ni augmenta ni disminueix?
+- **d)** Calcula la taxa de variació mitjana entre les $17$ h i les $19$ h i compara-la amb el resultat de l'apartat **b)**.
+
+??? example "Mostra la solució pas a pas de l'exercici 1.22"
+    **Resolució pas a pas**
+
+    Les $17$ h corresponen a $t=1$ i les $19$ h, a $t=3$. La funció s'expressa en centenars de persones. Calculem la derivada:
+
+    $$P'(t)=3t^2-18t+24=3\,(t^2-6t+8)=3\,(t-2)(t-4).$$
+
+    - **a)** El nombre de persones és el valor de la funció i el ritme és el valor de la derivada:
+
+        $$P(1)=1-9+24=16,\qquad P'(1)=3-18+24=9.$$
+
+        A les $17$ h hi ha $1\,600$ persones connectades i el nombre de persones connectades augmenta a un ritme de $9$ centenars, és a dir, $900$ persones per hora.
+
+    - **b)** Calculem la derivada a $t=3$:
+
+        $$P'(3)=27-54+24=-3.$$
+
+        Com que $P'(3)<0$, el nombre de persones connectades disminueix, a un ritme de $300$ persones per hora.
+
+    - **c)** El nombre de persones ni augmenta ni disminueix quan el ritme és zero:
+
+        $$P'(t)=3\,(t-2)(t-4)=0\quad\Longrightarrow\quad t=2,\ t=4.$$
+
+        Això passa a les $18$ h i a les $20$ h.
+
+    - **d)** Necessitem també $P(3)=27-81+72=18$. La taxa de variació mitjana entre $t=1$ i $t=3$ és
+
+        $$\frac{P(3)-P(1)}{3-1}=\frac{18-16}{2}=1.$$
+
+        De mitjana, entre les $17$ h i les $19$ h el nombre de persones connectades augmenta $100$ persones per hora. En canvi, a les $19$ h disminueix a un ritme de $300$ persones per hora: la taxa mitjana resumeix tot l'interval, mentre que la derivada descriu el que passa en un instant concret.
+
+---
+
+**1.23.**
+Quan s'apaga un forn, la temperatura a l'interior, en graus Celsius, $t$ minuts després d'apagar-lo, ve donada per
+
+$$
+T(t)=200\,e^{-0{,}1t}+20,\qquad t\geq0.
+$$
+
+- **a)** Quina temperatura hi ha en el moment d'apagar-lo? I al cap de $10$ minuts?
+- **b)** A quin ritme es refreda el forn en el moment d'apagar-lo? I al cap de $10$ minuts?
+- **c)** El forn es refreda cada vegada més de pressa o cada vegada més a poc a poc? Justifica-ho a partir de l'expressió de $T'(t)$.
+
+??? example "Mostra la solució pas a pas de l'exercici 1.23"
+    **Resolució pas a pas**
+
+    - **a)** Substituïm a la funció:
+
+        $$T(0)=200\,e^{0}+20=220,\qquad T(10)=200\,e^{-1}+20\approx93{,}58.$$
+
+        En apagar-lo, el forn és a $220\,^\circ\text{C}$ i, al cap de $10$ minuts, a uns $93{,}58\,^\circ\text{C}$.
+
+    - **b)** Derivem amb la regla de la cadena:
+
+        $$T'(t)=200\,e^{-0{,}1t}\,(-0{,}1t)'=200\,e^{-0{,}1t}\cdot(-0{,}1)=-20\,e^{-0{,}1t}.$$
+
+        Avaluem la derivada en els dos instants:
+
+        $$T'(0)=-20,\qquad T'(10)=-20\,e^{-1}\approx-7{,}36.$$
+
+        Les derivades són negatives perquè la temperatura disminueix. En apagar-lo, el forn es refreda a un ritme de $20\,^\circ\text{C}$ per minut i, al cap de $10$ minuts, a un ritme d'uns $7{,}36\,^\circ\text{C}$ per minut.
+
+    - **c)** Com que $e^{-0{,}1t}>0$, sempre tenim $T'(t)<0$: la temperatura sempre disminueix. El ritme de refredament és
+
+        $$|T'(t)|=20\,e^{-0{,}1t},$$
+
+        que es fa més petit quan $t$ augmenta, perquè $e^{-0{,}1t}$ és decreixent. Per tant, el forn es refreda cada vegada més a poc a poc.
 
 ---
 
@@ -2802,6 +2887,107 @@ $$
 
 ---
 
+**2.29.**
+El nombre de vehicles que hi ha en un aparcament, en desenes, $t$ hores després de les $8$ h, ve donat per
+
+$$
+A(t)=t^3-9t^2+24t+10,\qquad 0\leq t\leq7.
+$$
+
+- **a)** Estudia el creixement i el decreixement de la funció i troba'n els extrems relatius. Interpreta'ls en el context del problema.
+- **b)** En quin moment hi ha més vehicles a l'aparcament i quants n'hi ha? I en quin moment n'hi ha menys? Coincideixen aquests moments amb els extrems relatius? Justifica-ho.
+- **c)** A quin ritme varia el nombre de vehicles a les $11$ h? Augmenta o disminueix?
+
+??? example "Mostra la solució pas a pas de l'exercici 2.29"
+    **Resolució pas a pas**
+
+    Les $8$ h corresponen a $t=0$ i la funció s'expressa en desenes de vehicles.
+
+    - **a)** Derivem, traiem factor comú $3$ i resolem:
+
+        $$A'(t)=3t^2-18t+24=3\,(t^2-6t+8)=3\,(t-2)(t-4)=0\quad\Longrightarrow\quad t=2,\ t=4.$$
+
+        Calculem els valors als candidats i als extrems del domini:
+
+        $$A(0)=10,\qquad A(2)=8-36+48+10=30,\qquad A(4)=64-144+96+10=26,\qquad A(7)=343-441+168+10=80.$$
+
+        | $t$ | $0$ | $(0,2)$ | $2$ | $(2,4)$ | $4$ | $(4,7)$ | $7$ |
+        |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+        | Signe de $A'$ | | $+$ | $0$ | $-$ | $0$ | $+$ | |
+        | Valor d'$A$ | $10$ | creix | $30$ | decreix | $26$ | creix | $80$ |
+        | Tipus de punt | extrem<br>del domini | | màxim<br>relatiu | | mínim<br>relatiu | | extrem<br>del domini |
+
+        La funció creix a $(0,2)\cup(4,7)$ i decreix a $(2,4)$.
+
+        **Interpretació.** El màxim relatiu $(2,30)$ indica que a les $10$ h hi ha $300$ vehicles i que a partir d'aquest moment el nombre de vehicles comença a disminuir. El mínim relatiu $(4,26)$ indica que a les $12$ h hi ha $260$ vehicles i que a partir d'aquest moment torna a augmentar.
+
+    - **b)** Comparem els extrems relatius amb els valors als extrems del domini: $10$, $30$, $26$ i $80$.
+
+        El màxim absolut és $A(7)=80$: a les $15$ h hi ha més vehicles, $800$. No coincideix amb el màxim relatiu, perquè després de les $12$ h la funció torna a créixer i supera el valor $30$.
+
+        El mínim absolut és $A(0)=10$: a les $8$ h hi ha menys vehicles, $100$. Tampoc coincideix amb el mínim relatiu, perquè $A(0)=10<A(4)=26$.
+
+    - **c)** Les $11$ h corresponen a $t=3$:
+
+        $$A'(3)=27-54+24=-3.$$
+
+        Com que $A'(3)<0$, el nombre de vehicles disminueix, a un ritme de $3$ desenes, és a dir, $30$ vehicles per hora.
+
+---
+
+**2.30.**
+La concentració d'un medicament a la sang, en mil·ligrams per litre, $t$ hores després de prendre'l, ve donada per
+
+$$
+C(t)=\frac{40t}{t^2+16},\qquad t\geq0.
+$$
+
+- **a)** Estudia el creixement i el decreixement de la funció. Quan s'assoleix la concentració màxima i quina és?
+- **b)** A quin ritme varia la concentració al cap de dues hores? I al cap de vuit hores?
+- **c)** Què passa amb la concentració a llarg termini? Interpreta-ho.
+- **d)** El medicament fa efecte mentre la concentració supera els $4\,\text{mg/L}$. Entre quins instants fa efecte i durant quant de temps?
+
+??? example "Mostra la solució pas a pas de l'exercici 2.30"
+    **Resolució pas a pas**
+
+    - **a)** Derivem amb la regla del quocient:
+
+        $$C'(t)=\frac{40\,(t^2+16)-40t\cdot2t}{(t^2+16)^2}=\frac{640-40t^2}{(t^2+16)^2}=\frac{40\,(16-t^2)}{(t^2+16)^2}.$$
+
+        El denominador és sempre positiu. Dins del domini, $16-t^2=0$ només per a $t=4$.
+
+        | $t$ | $0$ | $(0,4)$ | $4$ | $(4,+\infty)$ |
+        |:---:|:---:|:---:|:---:|:---:|
+        | Signe de $C'$ | | $+$ | $0$ | $-$ |
+        | Valor de $C$ | $0$ | creix | $5$ | decreix |
+        | Tipus de punt | extrem<br>del domini | | màxim | |
+
+        La concentració creix durant les quatre primeres hores i després decreix. El màxim és
+
+        $$C(4)=\frac{160}{32}=5.$$
+
+        La concentració màxima és de $5\,\text{mg/L}$ i s'assoleix $4$ hores després de prendre el medicament. Com que la funció creix fins a $t=4$ i decreix després, aquest màxim relatiu també és absolut.
+
+    - **b)** El ritme és el valor de la derivada:
+
+        $$C'(2)=\frac{40\cdot12}{400}=1{,}2,\qquad C'(8)=\frac{40\cdot(-48)}{6\,400}=-0{,}3.$$
+
+        Al cap de dues hores, la concentració augmenta a un ritme de $1{,}2\,\text{mg/L}$ per hora. Al cap de vuit hores, disminueix a un ritme de $0{,}3\,\text{mg/L}$ per hora.
+
+    - **c)** Calculem el límit per l'ordre dels infinits: el denominador és de grau més alt que el numerador.
+
+        $$\lim_{t\to+\infty}\frac{40t}{t^2+16}=0.$$
+
+        A llarg termini, la concentració s'acosta a zero: l'organisme elimina el medicament de mica en mica.
+
+    - **d)** Resolem $C(t)>4$. Com que $t^2+16>0$, podem multiplicar sense canviar la desigualtat:
+
+        $$40t>4t^2+64\quad\Longleftrightarrow\quad4t^2-40t+64<0\quad\Longleftrightarrow\quad t^2-10t+16<0.$$
+
+        Les arrels de $t^2-10t+16$ són $t=2$ i $t=8$, i l'expressió és negativa entre elles. El medicament fa efecte entre la segona i la vuitena hora després de prendre'l, és a dir, durant $6$ hores.
+
+---
+
 ## Tema 3. Optimització
 
 **3.1.**
@@ -3233,6 +3419,54 @@ Vueling demana que la suma de l'amplada, la llargada i l'alçada de les maletes 
     $$
 
     La maleta de volum màxim té una amplada de $2{,}5\,\text{dm}$, una llargada de $5\,\text{dm}$ i una alçada de $7{,}5\,\text{dm}$.
+
+---
+
+**3.11.**
+**Samarretes personalitzades.**
+
+Un taller estampa $x$ samarretes personalitzades a la setmana i les ven totes. Per poder-les vendre, el preu de cada samarreta ha de ser $p(x)=20-0{,}05x$ euros. Cada samarreta li costa $4\,€$ de material i, a més, té uns costos fixos de $300\,€$ setmanals. El taller pot estampar com a màxim $400$ samarretes a la setmana.
+
+- **a)** Expressa en funció de $x$ els ingressos i els costos setmanals. Escriu la funció $B(x)$ que dona el benefici setmanal.
+- **b)** Quantes samarretes ha d'estampar per obtenir el benefici màxim? A quin preu les ha de vendre i quin és aquest benefici?
+- **c)** Per a quines quantitats de samarretes els ingressos i els costos són iguals? Entre quines quantitats té beneficis el taller?
+
+??? example "Mostra la solució pas a pas de l'exercici 3.11"
+    **Resolució pas a pas**
+
+    - **a)** Els ingressos són el preu per la quantitat venuda:
+
+        $$I(x)=x\,p(x)=x(20-0{,}05x)=20x-0{,}05x^2.$$
+
+        Els costos són els de material més els fixos:
+
+        $$C(x)=4x+300.$$
+
+        El benefici és la diferència:
+
+        $$B(x)=I(x)-C(x)=-0{,}05x^2+16x-300,\qquad 0\leq x\leq400.$$
+
+    - **b)** Derivem i igualem a zero:
+
+        $$B'(x)=-0{,}1x+16=0\quad\Longrightarrow\quad x=160.$$
+
+        Com que $B''(x)=-0{,}1<0$, és un màxim, i com que és l'únic extrem i $B$ és una paràbola oberta cap avall, és el màxim absolut de l'interval. El preu i el benefici són
+
+        $$p(160)=20-8=12\,€,\qquad B(160)=-1\,280+2\,560-300=980\,€.$$
+
+        El taller ha d'estampar $160$ samarretes a la setmana i vendre-les a $12\,€$; el benefici setmanal màxim és de $980\,€$.
+
+    - **c)** Els ingressos i els costos són iguals quan el benefici és zero:
+
+        $$-0{,}05x^2+16x-300=0.$$
+
+        Multipliquem per $-20$ i resolem:
+
+        $$x^2-320x+6\,000=0,\qquad x=\frac{320\pm\sqrt{102\,400-24\,000}}{2}=\frac{320\pm280}{2}.$$
+
+        Obtenim $x=20$ i $x=300$, tots dos dins del domini. Amb $20$ samarretes (a $19\,€$) o amb $300$ samarretes (a $5\,€$), els ingressos cobreixen exactament els costos.
+
+        Com que $B$ és una paràbola oberta cap avall, $B(x)>0$ entre les dues solucions: el taller té beneficis si estampa més de $20$ i menys de $300$ samarretes a la setmana, i pèrdues fora d'aquest interval.
 
 ---
 
@@ -4133,6 +4367,64 @@ $$
       ![Evolució del preu del producte amb el màxim assenyalat](../../img/calcul/fig_pau_c_7_preu_producte.svg?v=3){ width="560" }
       <figcaption><strong><a href="https://github.com/albertcid-PA/Matematiques2BAT-MACS/blob/main/figures/tikz/calcul/fig_pau_c_7_preu_producte.tex">Figura PAU.C.7.</a></strong> Evolució del preu del producte.</figcaption>
     </figure>
+
+---
+
+### Costos de transport
+
+**PAU.C.16.**
+**Trasllat d'un tractor**
+
+*(basat en la qüestió 3 de la convocatòria ordinària de 2024, sèrie 1)*. Una pagesa contracta un conductor perquè porti un tractor fins a un poble situat a $300\,\text{km}$. El gasoil costa $1{,}96\,€$ per litre i el conductor cobra $14{,}70\,€$ per hora. El tractor fa tot el trajecte a una velocitat constant de $x$ quilòmetres per hora, amb $0<x\leq40$, i el seu consum de gasoil, en litres per hora, és
+
+$$
+G(x)=5+\frac{x^2}{98}.
+$$
+
+- **a)** Si el tractor circula a $40\,\text{km/h}$, la velocitat màxima permesa, quant de temps dura el viatge? Quin és el cost total, sumant el gasoil i el sou del conductor?
+- **b)** Comprova que el cost total del viatge en funció de la velocitat és $C(x)=\dfrac{7\,350}{x}+6x$.
+- **c)** A quina velocitat ha de circular el tractor perquè el cost total sigui mínim? Justifica que és un mínim i calcula aquest cost.
+
+??? example "Mostra la solució pas a pas del problema PAU.C.16"
+    **Resolució pas a pas**
+
+    Fem servir les relacions de l'apartat de fórmules d'optimització: temps $=\dfrac{\text{espai}}{\text{velocitat}}$, consum total $=$ consum per hora $\cdot$ temps i cost del gasoil $=$ preu per litre $\cdot$ consum total.
+
+    - **a)** A $40\,\text{km/h}$, el temps del viatge és
+
+        $$t=\frac{300}{40}=7{,}5\ \text{hores}.$$
+
+        El consum per hora és $G(40)=5+\frac{1\,600}{98}=\frac{1\,045}{49}\approx21{,}33$ litres. Per tant,
+
+        $$\text{gasoil}=\frac{1\,045}{49}\cdot7{,}5\cdot1{,}96=313{,}5\,€,\qquad\text{conductor}=7{,}5\cdot14{,}70=110{,}25\,€.$$
+
+        El viatge dura $7{,}5$ hores i el cost total és de $313{,}5+110{,}25=423{,}75\,€$.
+
+    - **b)** A una velocitat $x$, el viatge dura $\dfrac{300}{x}$ hores. El cost del gasoil i el del conductor són
+
+        $$\left(5+\frac{x^2}{98}\right)\cdot\frac{300}{x}\cdot1{,}96=\frac{2\,940}{x}+6x,\qquad\frac{300}{x}\cdot14{,}70=\frac{4\,410}{x}.$$
+
+        Sumant-los,
+
+        $$C(x)=\frac{2\,940}{x}+6x+\frac{4\,410}{x}=\frac{7\,350}{x}+6x,\qquad0<x\leq40.$$
+
+    - **c)** Derivem i igualem a zero:
+
+        $$C'(x)=-\frac{7\,350}{x^2}+6=0\quad\Longrightarrow\quad x^2=\frac{7\,350}{6}=1\,225\quad\Longrightarrow\quad x=35.$$
+
+        Descartem $x=-35$, perquè la velocitat ha de ser positiva. Estudiem el signe de la derivada:
+
+        | $x$ | $(0,35)$ | $35$ | $(35,40]$ |
+        |:---:|:---:|:---:|:---:|
+        | Valor de prova | $C'(10)=-67{,}5$ | $0$ | $C'(40)\approx1{,}41$ |
+        | Signe de $C'$ | $-$ | $0$ | $+$ |
+        | Comportament de $C$ | decreix | mínim | creix |
+
+        El cost decreix fins a $x=35$ i creix després; per tant, $x=35$ és el mínim absolut de l'interval. El cost mínim és
+
+        $$C(35)=\frac{7\,350}{35}+6\cdot35=210+210=420\,€.$$
+
+        El tractor ha de circular a $35\,\text{km/h}$, i aleshores el viatge costa $420\,€$.
 
 ---
 
